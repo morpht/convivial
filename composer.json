@@ -35,8 +35,6 @@
     "drupal/convivial_core": "^1.0",
     "drupal/convivial_enricher": "^1.0",
     "drupal/convivial_profiler": "^1.0",
-    "drupal/core": "^9.4",
-    "drupal/core-composer-scaffold": "^9.4",
     "drupal/crop": "^2.2",
     "drupal/csp": "^1.16",
     "drupal/ctools": "^4.0",
@@ -212,6 +210,7 @@
     }
   },
   "require-dev": {
+    "drupal/core-composer-scaffold": "^9.4",
     "drupal/coder": "^8.3"
   }
 }
