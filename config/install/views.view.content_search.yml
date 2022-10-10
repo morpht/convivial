@@ -269,7 +269,7 @@ display:
               person: search
               topic: search
       query:
-        type: views_query
+        type: search_api_query
         options:
           bypass_access: false
           skip_access: false
@@ -320,10 +320,8 @@ display:
     display_plugin: block
     position: 1
     display_options:
-      cache:
-        type: none
       defaults:
-        cache: false
+        cache: true
       display_extenders: {  }
     cache_metadata:
       max-age: -1
