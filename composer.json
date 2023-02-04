@@ -148,12 +148,8 @@
     "enable-patching": true,
     "composer-exit-on-patch-failure": true,
     "patches": {
-      "drupal/ckeditor": {
-        "#3330723: Changing an existing embedded media's alignment or alt data attributes does not get saved with CKEditor" : "https://www.drupal.org/files/issues/2023-01-03/3330723-3.patch"
-      },
       "drupal/core": {
         "Dialog drupalAutoButtons option should be respected on initial load": "https://www.drupal.org/files/issues/2022-12-15/2793343-dialog-drupalautobuttons-73.patch",
-        "Changing an existing embedded media's alignment or alt data attributes does not get saved with CKEditor": "https://www.drupal.org/files/issues/2022-12-21/3102249-52.patch",
         "There should be no output of default formatter for empty text field when summary has content": "https://www.drupal.org/files/issues/2018-07-19/empty_text_formatter_for_empty_fields-2309585-13.patch",
         "Site lock and basic auth combo": "https://www.drupal.org/files/issues/basic_auth_0.patch"
       },
