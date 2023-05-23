@@ -3,9 +3,9 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.full
-    - field.field.node.person.body
     - field.field.node.person.field_banner_image
     - field.field.node.person.field_banner_title
+    - field.field.node.person.field_body
     - field.field.node.person.field_components
     - field.field.node.person.field_featured_links
     - field.field.node.person.field_featured_title
@@ -20,12 +20,14 @@ dependencies:
     - field.field.node.person.field_person_position
     - field.field.node.person.field_search_exclude
     - field.field.node.person.field_stage
+    - field.field.node.person.field_summary
     - field.field.node.person.field_thumbnail
     - field.field.node.person.field_toc
     - field.field.node.person.field_updated_date
     - field.field.node.person.layout_builder__layout
     - field.field.node.person.layout_selection
     - node.type.person
+    - views.view.map
     - views.view.person_content
   module:
     - convivial_layouts
@@ -179,21 +181,6 @@ third_party_settings:
           label: ''
           context_mapping: {  }
         components:
-          418a03e7-ac8f-4400-8bb7-732f71e3de05:
-            uuid: 418a03e7-ac8f-4400-8bb7-732f71e3de05
-            region: content
-            configuration:
-              id: 'field_block:node:person:body'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: text_default
-                label: hidden
-                settings: {  }
-                third_party_settings: {  }
-            weight: 2
-            additional: {  }
           138d4ae9-c60f-4686-80dc-095c88b72449:
             uuid: 138d4ae9-c60f-4686-80dc-095c88b72449
             region: content
@@ -211,7 +198,7 @@ third_party_settings:
                 settings:
                   view_mode: default
                 third_party_settings: {  }
-            weight: 3
+            weight: 4
             additional: {  }
           ce090b31-ba88-421f-8a8f-00b311e30172:
             uuid: ce090b31-ba88-421f-8a8f-00b311e30172
@@ -282,6 +269,19 @@ third_party_settings:
               items_per_page: none
             weight: 6
             additional: {  }
+          789df3d0-1f1e-4ec5-965d-5358aa10f5f1:
+            uuid: 789df3d0-1f1e-4ec5-965d-5358aa10f5f1
+            region: content
+            configuration:
+              id: 'views_block:map-block'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 5
+            additional: {  }
           437abdae-3c36-4af5-9912-64b655109cac:
             uuid: 437abdae-3c36-4af5-9912-64b655109cac
             region: content
@@ -302,6 +302,24 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 7
             additional: {  }
+          edc1ebe9-0534-47b3-9cbf-489589411eea:
+            uuid: edc1ebe9-0534-47b3-9cbf-489589411eea
+            region: content
+            configuration:
+              id: 'field_block:node:person:field_body'
+              label: Body
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
         third_party_settings: {  }
   layout_library:
     enable: true
@@ -310,13 +328,6 @@ targetEntityType: node
 bundle: person
 mode: full
 content:
-  body:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 101
-    region: content
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
@@ -388,6 +399,7 @@ content:
 hidden:
   field_banner_image: true
   field_banner_title: true
+  field_body: true
   field_featured_links: true
   field_featured_title: true
   field_goal: true
@@ -398,6 +410,7 @@ hidden:
   field_meta_tags: true
   field_person_position: true
   field_stage: true
+  field_summary: true
   field_updated_date: true
   layout_builder__layout: true
   layout_selection: true

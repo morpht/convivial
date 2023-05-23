@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:content:978b8adc-b852-49fd-bdef-6cbe6a42b5bb'
+  module:
+    - block_content
+  theme:
+    - convivial_bootstrap
+id: convivial_bootstrap_footer_logo
+theme: convivial_bootstrap
+region: footer_content
+weight: -21
+provider: null
+plugin: 'block_content:978b8adc-b852-49fd-bdef-6cbe6a42b5bb'
+settings:
+  id: 'block_content:978b8adc-b852-49fd-bdef-6cbe6a42b5bb'
+  label: 'Footer logo'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

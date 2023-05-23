@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:content:69642132-68fa-4fb6-b0e3-10015b542127'
+  module:
+    - block_content
+    - system
+  theme:
+    - convivial_bootstrap
+id: help_campaign
+theme: convivial_bootstrap
+region: postscript_3
+weight: 0
+provider: null
+plugin: 'block_content:69642132-68fa-4fb6-b0e3-10015b542127'
+settings:
+  id: 'block_content:69642132-68fa-4fb6-b0e3-10015b542127'
+  label: 'Help - Campaign'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /campaign

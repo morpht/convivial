@@ -5,20 +5,19 @@ id: prod
 label: Production
 description: ''
 weight: 0
+stackable: false
+storage: folder
 folder: ../config/prod
 module:
   autologout: 0
   encrypt: 0
-  ga_login: 0
   google_tag: 0
   key: 0
   real_aes: 0
   tfa: 0
 theme: {  }
-blacklist: {  }
-graylist:
+complete_list: {  }
+partial_list:
   - environment_indicator.indicator
   - recombee.settings
   - system.mail
-graylist_dependents: true
-graylist_skip_equal: true

@@ -5,14 +5,13 @@ id: test
 label: Test
 description: ''
 weight: 0
+storage: folder
 folder: ../config/test
 module:
   autologout: 0
 theme: {  }
-blacklist: {  }
-graylist:
+complete_list: {  }
+partial_list:
   - environment_indicator.indicator
   - recombee.settings
   - system.mail
-graylist_dependents: true
-graylist_skip_equal: true

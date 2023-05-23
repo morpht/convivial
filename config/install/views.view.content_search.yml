@@ -320,8 +320,10 @@ display:
     display_plugin: block
     position: 1
     display_options:
+      cache:
+        type: none
       defaults:
-        cache: true
+        cache: false
       display_extenders: {  }
     cache_metadata:
       max-age: -1

@@ -4,66 +4,179 @@ dependencies:
   config:
     - filter.format.rich_text
   module:
-    - ckeditor
+    - ckeditor5
 format: rich_text
-editor: ckeditor
+editor: ckeditor5
 settings:
   toolbar:
-    rows:
-      -
-        -
-          name: Formatting
-          items:
-            - Bold
-            - Italic
-            - JustifyLeft
-            - JustifyCenter
-            - JustifyRight
-            - JustifyBlock
-            - Underline
-            - Strike
-            - RemoveFormat
-            - Superscript
-            - Subscript
-            - Format
-            - Styles
-        -
-          name: Links
-          items:
-            - DrupalLink
-            - DrupalUnlink
-        -
-          name: Lists
-          items:
-            - Table
-            - BulletedList
-            - NumberedList
-            - Outdent
-            - Indent
-        -
-          name: Media
-          items:
-            - Blockquote
-            - DrupalImage
-            - DrupalMediaLibrary
-        -
-          name: Tools
-          items:
-            - PasteFromWord
-            - Source
+    items:
+      - bold
+      - italic
+      - alignment
+      - underline
+      - strikethrough
+      - removeFormat
+      - superscript
+      - subscript
+      - heading
+      - style
+      - '|'
+      - link
+      - '|'
+      - insertTable
+      - bulletedList
+      - numberedList
+      - outdent
+      - indent
+      - '|'
+      - blockQuote
+      - drupalInsertImage
+      - drupalMedia
+      - '|'
+      - sourceEditing
+      - '|'
+      - code
   plugins:
-    drupallink:
+    ckeditor5_alignment:
+      enabled_alignments:
+        - center
+        - justify
+        - left
+        - right
+    ckeditor5_heading:
+      enabled_headings:
+        - heading1
+        - heading2
+        - heading3
+        - heading4
+        - heading5
+        - heading6
+    ckeditor5_imageResize:
+      allow_resize: true
+    ckeditor5_list:
+      reversed: false
+      startIndex: true
+    ckeditor5_sourceEditing:
+      allowed_tags:
+        - '<cite>'
+        - '<dl>'
+        - '<dt>'
+        - '<dd>'
+        - '<be>'
+        - '<colgroup span>'
+        - '<col span>'
+        - '<i class>'
+        - '<form accept-charset action method class>'
+        - '<input aria-label autocomplete maxlength name placeholder size type class>'
+        - '<button type value data-bs-toggle data-bs-placement title class>'
+        - '<svg width height viewbox fill xmlns class>'
+        - '<path fill-rule d>'
+        - '<div class="callout callout--dark callout--light decision-tree decision-tree__summary decision-tree__summary_infos decision-tree__footer step step__answers step__content step__info step__qa text-align-left text-align-center text-align-right text-align-justify" data-cookie data-show-summary id>'
+        - '<blockquote cite>'
+        - '<h1 id class>'
+        - '<h2 id class>'
+        - '<h3 id class>'
+        - '<h4 id class>'
+        - '<h5 id class>'
+        - '<h6 id class>'
+        - '<caption class>'
+        - '<tbody class>'
+        - '<thead class>'
+        - '<tfoot class>'
+        - '<th scope class>'
+        - '<td class>'
+        - '<tr class>'
+        - '<ol type>'
+        - '<a class="cta-link btn btn-primary btn-secondary btn-link step__answer step__button step__button--back step__button--restart" data-answer-path data-bs-toggle data-entity-type data-entity-uuid data-entity-substitution href hreflang title>'
+        - '<img data-entity-type data-entity-uuid class>'
+        - '<drupal-media title>'
+        - '<p class="callout callout--dark callout--light step__content">'
+        - '<ul type class="callout callout--dark callout--light">'
+        - '<li data-stop-filter data-pass-filter>'
+    ckeditor5_style:
+      styles:
+        -
+          label: Introduction
+          element: '<p class="introduction">'
+        -
+          label: 'Alert primary'
+          element: '<p class="alert alert-primary">'
+        -
+          label: 'Alert secondary'
+          element: '<p class="alert alert-secondary">'
+        -
+          label: 'Alert success'
+          element: '<p class="alert alert-success">'
+        -
+          label: 'Alert danger'
+          element: '<p class="alert alert-danger">'
+        -
+          label: 'Alert warning'
+          element: '<p class="alert alert-warning">'
+        -
+          label: 'Alert  info'
+          element: '<p class="alert alert-info">'
+        -
+          label: 'Alert light'
+          element: '<p class="alert alert-light">'
+        -
+          label: 'Alert dark'
+          element: '<p class="alert alert-dark">'
+        -
+          label: 'Bulletless u-list'
+          element: '<ul class="list--bulletless">'
+        -
+          label: 'Inline u-list'
+          element: '<ul class="list--inline">'
+        -
+          label: 'Bulletless o-list'
+          element: '<ol class="list--bulletless">'
+        -
+          label: 'Inline o-list'
+          element: '<ol class="list--inline">'
+        -
+          label: 'CTA link'
+          element: '<a class="cta-link">'
+        -
+          label: 'Primary button'
+          element: '<a class="btn btn-primary">'
+        -
+          label: 'Secondary button'
+          element: '<a class="btn btn-secondary">'
+        -
+          label: 'Link button'
+          element: '<a class="btn btn-link">'
+        -
+          label: 'Table bordered'
+          element: '<table class="table table-bordered">'
+        -
+          label: 'Table alt heading'
+          element: '<table class="table table-alt-heading">'
+        -
+          label: 'Table dark heading'
+          element: '<table class="table table-dark-heading">'
+        -
+          label: 'Table dark alt heading'
+          element: '<table class="table table-dark-alt-heading">'
+        -
+          label: 'Table striped'
+          element: '<table class="table table-striped">'
+        -
+          label: 'Table small'
+          element: '<table class="table table-sm">'
+        -
+          label: Callout
+          element: '<div class="callout">'
+    linkit_extension:
       linkit_enabled: true
       linkit_profile: default
-    stylescombo:
-      styles: "p.introduction|Introduction\r\np.alert.alert-primary|Alert primary\r\np.alert.alert-secondary|Alert secondary\r\np.alert.alert-success|Alert success\r\np.alert.alert-danger|Alert danger\r\np.alert.alert-warning|Alert warning\r\np.alert.alert-info|Alert  info\r\np.alert.alert-light|Alert light\r\np.alert.alert-dark|Alert dark\r\nul.list--bulletless|Bulletless u-list\r\nul.list--inline|Inline u-list\r\nol.list--bulletless|Bulletless o-list\r\nol.list--inline|Inline o-list\r\na.cta-link|CTA link\r\na.btn.btn-primary|Primary button\r\na.btn.btn-secondary|Secondary button\r\na.btn.btn-link|Link button\r\ntable.table.table-bordered|Table bordered\r\ntable.table.table-alt-heading|Table alt heading\r\ntable.table.table-dark-heading|Table dark heading\r\ntable.table.table-dark-alt-heading|Table dark alt heading\r\ntable.table.table-striped|Table striped\r\ntable.table.table-sm|Table small\r\ndiv.callout|Callout"
-    language:
-      language_list: un
+    media_media:
+      allow_view_mode_override: true
 image_upload:
   status: false
   scheme: public
   directory: inline-images
   max_size: ''
   max_dimensions:
-    width: null
-    height: null
+    width: 0
+    height: 0

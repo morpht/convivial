@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:content:10da41c4-65b2-478b-a914-7c27508a9d7d'
+  module:
+    - block_content
+    - system
+  theme:
+    - convivial_bootstrap
+id: help_about
+theme: convivial_bootstrap
+region: postscript_3
+weight: 0
+provider: null
+plugin: 'block_content:10da41c4-65b2-478b-a914-7c27508a9d7d'
+settings:
+  id: 'block_content:10da41c4-65b2-478b-a914-7c27508a9d7d'
+  label: 'Help - About'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /about

@@ -3,11 +3,11 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.title
-    - field.field.node.article.body
     - field.field.node.article.field_about
     - field.field.node.article.field_authored_by
     - field.field.node.article.field_banner_image
     - field.field.node.article.field_banner_title
+    - field.field.node.article.field_body
     - field.field.node.article.field_components
     - field.field.node.article.field_featured_links
     - field.field.node.article.field_featured_title
@@ -23,6 +23,7 @@ dependencies:
     - field.field.node.article.field_social_post
     - field.field.node.article.field_stage
     - field.field.node.article.field_suitable_for
+    - field.field.node.article.field_summary
     - field.field.node.article.field_thumbnail
     - field.field.node.article.field_toc
     - field.field.node.article.field_updated_date
@@ -82,12 +83,12 @@ content:
     weight: 107
     region: content
 hidden:
-  body: true
   content_moderation_control: true
   field_about: true
   field_authored_by: true
   field_banner_image: true
   field_banner_title: true
+  field_body: true
   field_components: true
   field_featured_links: true
   field_featured_title: true
@@ -103,6 +104,7 @@ hidden:
   field_social_post: true
   field_stage: true
   field_suitable_for: true
+  field_summary: true
   field_thumbnail: true
   field_toc: true
   field_updated_date: true

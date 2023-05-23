@@ -2,8 +2,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.body
     - field.storage.node.field_authored_by
+    - field.storage.node.field_body
     - field.storage.node.field_published
   module:
     - datetime
@@ -153,10 +153,10 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        body:
-          id: body
-          table: node__body
-          field: body
+        field_body:
+          id: field_body
+          table: node__field_body
+          field: field_body
           relationship: none
           group_type: group
           admin_label: 'Configure field: Content: Body (Read time)'
@@ -165,7 +165,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "{% set number_of_words = body ? body|split(' ')|length : 1 %}\r\n{% set words_per_minute = 265 %}\r\n{% set read_time = (number_of_words/words_per_minute)|round(0, 'ceil') %}\r\n{{ read_time }} min read"
+            text: "{% set number_of_words = field_body ? field_body|split(' ')|length : 1 %}\r\n{% set words_per_minute = 265 %}\r\n{% set read_time = (number_of_words/words_per_minute)|round(0, 'ceil') %}\r\n{{ read_time }} min read"
             make_link: false
             path: ''
             absolute: false
@@ -311,8 +311,8 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_authored_by'
+        - 'config:field.storage.node.field_body'
         - 'config:field.storage.node.field_published'
   standard:
     id: standard
@@ -331,6 +331,6 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_authored_by'
+        - 'config:field.storage.node.field_body'
         - 'config:field.storage.node.field_published'

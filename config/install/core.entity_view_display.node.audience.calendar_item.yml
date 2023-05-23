@@ -3,9 +3,9 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.calendar_item
-    - field.field.node.audience.body
     - field.field.node.audience.field_banner_image
     - field.field.node.audience.field_banner_title
+    - field.field.node.audience.field_body
     - field.field.node.audience.field_components
     - field.field.node.audience.field_featured_links
     - field.field.node.audience.field_featured_title
@@ -18,6 +18,7 @@ dependencies:
     - field.field.node.audience.field_meta_tags
     - field.field.node.audience.field_search_exclude
     - field.field.node.audience.field_stage
+    - field.field.node.audience.field_summary
     - field.field.node.audience.field_thumbnail
     - field.field.node.audience.field_toc
     - field.field.node.audience.field_updated_date
@@ -80,24 +81,37 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 0
             additional: {  }
-          1c04c975-466b-46b8-a9c1-5eab3377d01a:
-            uuid: 1c04c975-466b-46b8-a9c1-5eab3377d01a
+          ba5e1af8-9fb3-4385-864b-7918dd5fef0a:
+            uuid: ba5e1af8-9fb3-4385-864b-7918dd5fef0a
             region: summary
             configuration:
-              id: 'field_block:node:audience:body'
-              label: Body
+              id: 'field_block:node:audience:field_summary'
+              label: Summary
               label_display: '0'
               provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
               formatter:
-                type: text_summary_or_trimmed
+                type: smart_trim
                 label: hidden
                 settings:
                   trim_length: 160
+                  trim_type: chars
+                  trim_suffix: ''
+                  wrap_output: false
+                  wrap_class: trimmed
+                  more_link: false
+                  more_class: more-link
+                  more_text: More
+                  more_aria_label: 'Read more about [node:title]'
+                  trim_options:
+                    text: false
+                    trim_zero: false
+                    replace_tokens: false
+                  token_browser: ''
                 third_party_settings: {  }
-            weight: 0
+            weight: 1
             additional: {  }
         third_party_settings: {  }
   layout_library:
@@ -117,10 +131,10 @@ content:
     weight: 107
     region: content
 hidden:
-  body: true
   content_moderation_control: true
   field_banner_image: true
   field_banner_title: true
+  field_body: true
   field_components: true
   field_featured_links: true
   field_featured_title: true
@@ -133,6 +147,7 @@ hidden:
   field_meta_tags: true
   field_search_exclude: true
   field_stage: true
+  field_summary: true
   field_thumbnail: true
   field_toc: true
   field_updated_date: true

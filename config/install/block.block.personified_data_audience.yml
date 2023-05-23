@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - personified
+  theme:
+    - convivial_bootstrap
+id: personified_data_audience
+theme: convivial_bootstrap
+region: hidden
+weight: -13
+provider: null
+plugin: personified_data
+settings:
+  id: personified_data
+  label: 'Personified Data - Audience'
+  label_display: '0'
+  provider: personified
+  endpoint: /data/promotion
+  template: promotion_plain
+  params:
+    -
+      source_type: local_storage
+      source_key: audience_affinity
+      endpoint_key: key
+      default_value: 'audience:none'
+visibility: {  }

@@ -3,9 +3,9 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.summary
-    - field.field.node.place.body
     - field.field.node.place.field_banner_image
     - field.field.node.place.field_banner_title
+    - field.field.node.place.field_body
     - field.field.node.place.field_components
     - field.field.node.place.field_featured_links
     - field.field.node.place.field_featured_title
@@ -21,6 +21,7 @@ dependencies:
     - field.field.node.place.field_place_telephone
     - field.field.node.place.field_search_exclude
     - field.field.node.place.field_stage
+    - field.field.node.place.field_summary
     - field.field.node.place.field_thumbnail
     - field.field.node.place.field_toc
     - field.field.node.place.field_updated_date
@@ -81,24 +82,23 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 0
             additional: {  }
-          e144c437-305b-4198-a247-d24de418fdff:
-            uuid: e144c437-305b-4198-a247-d24de418fdff
+          01aeebc6-635b-43cc-adf6-e69d17b12b0f:
+            uuid: 01aeebc6-635b-43cc-adf6-e69d17b12b0f
             region: summary
             configuration:
-              id: 'field_block:node:place:body'
-              label: Body
+              id: 'field_block:node:place:field_summary'
+              label: Summary
               label_display: '0'
               provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
               formatter:
-                type: text_summary_or_trimmed
+                type: basic_string
                 label: hidden
-                settings:
-                  trim_length: 160
+                settings: {  }
                 third_party_settings: {  }
-            weight: 0
+            weight: 1
             additional: {  }
         third_party_settings: {  }
   layout_library:
@@ -109,10 +109,10 @@ bundle: place
 mode: summary
 content: {  }
 hidden:
-  body: true
   content_moderation_control: true
   field_banner_image: true
   field_banner_title: true
+  field_body: true
   field_components: true
   field_featured_links: true
   field_featured_title: true
@@ -128,6 +128,7 @@ hidden:
   field_place_telephone: true
   field_search_exclude: true
   field_stage: true
+  field_summary: true
   field_thumbnail: true
   field_toc: true
   field_updated_date: true

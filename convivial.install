@@ -6,6 +6,8 @@ use Drupal\Component\FileSecurity\FileSecurity;
  * Implements hook_install().
  */
 function convivial_install() {
+  \Drupal::service('module_installer')->install(['convivial_content'], TRUE);
+  \Drupal::service('config.factory')->getEditable('system.site')->set('page.front', '/homepage')->save();
   // Create config folders for all config splits.
   $splits = \Drupal::entityTypeManager()->getStorage('config_split')->loadMultiple();
   $base_path = drupal_get_path('profile', 'convivial') . '/config/';

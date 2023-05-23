@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - personified
+  theme:
+    - convivial_bootstrap
+id: personified_data_articles_topic
+theme: convivial_bootstrap
+region: hidden
+weight: 0
+provider: null
+plugin: personified_data
+settings:
+  id: personified_data
+  label: 'Personified Data - Articles by topic'
+  label_display: '0'
+  provider: personified
+  endpoint: /data/articles-topic
+  template: item_basic_card
+  params:
+    -
+      source_type: local_storage
+      source_key: topic_affinity
+      endpoint_key: key
+      default_value: ''
+visibility: {  }

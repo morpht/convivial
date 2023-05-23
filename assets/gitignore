@@ -86,4 +86,5 @@ private.key
 public.key
 
 .lando/*.sh
+.lando/config/php/local_php.ini
 .local_dbs/

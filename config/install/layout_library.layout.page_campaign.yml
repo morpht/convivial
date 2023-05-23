@@ -29,7 +29,7 @@ layout:
             settings:
               view_mode: default
             third_party_settings: {  }
-        weight: 2
+        weight: 3
         additional: {  }
       e4227578-fc4c-48d6-959a-7313bef46a35:
         uuid: e4227578-fc4c-48d6-959a-7313bef46a35
@@ -49,11 +49,11 @@ layout:
             third_party_settings: {  }
         weight: 0
         additional: {  }
-      c5526fa9-8821-45a7-8807-60fedda32ee3:
-        uuid: c5526fa9-8821-45a7-8807-60fedda32ee3
+      bcc274a6-30d8-4960-a182-554d32184b81:
+        uuid: bcc274a6-30d8-4960-a182-554d32184b81
         region: content
         configuration:
-          id: 'field_block:node:page:body'
+          id: 'field_block:node:page:field_body'
           label: Body
           label_display: '0'
           provider: layout_builder
@@ -65,6 +65,6 @@ layout:
             label: hidden
             settings: {  }
             third_party_settings: {  }
-        weight: 1
+        weight: 2
         additional: {  }
     third_party_settings: {  }

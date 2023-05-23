@@ -3,9 +3,9 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.search_index
-    - field.field.node.person.body
     - field.field.node.person.field_banner_image
     - field.field.node.person.field_banner_title
+    - field.field.node.person.field_body
     - field.field.node.person.field_components
     - field.field.node.person.field_featured_links
     - field.field.node.person.field_featured_title
@@ -20,6 +20,7 @@ dependencies:
     - field.field.node.person.field_person_position
     - field.field.node.person.field_search_exclude
     - field.field.node.person.field_stage
+    - field.field.node.person.field_summary
     - field.field.node.person.field_thumbnail
     - field.field.node.person.field_toc
     - field.field.node.person.field_updated_date
@@ -82,24 +83,6 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 3
             additional: {  }
-          150d8559-a45a-4779-b088-3b9c816470a5:
-            uuid: 150d8559-a45a-4779-b088-3b9c816470a5
-            region: content
-            configuration:
-              id: 'field_block:node:person:body'
-              label: Body
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: text_default
-                label: hidden
-                settings: {  }
-                third_party_settings: {  }
-            weight: 5
-            additional: {  }
           cba4099c-9fa1-4e20-bf0d-e0f235822a72:
             uuid: cba4099c-9fa1-4e20-bf0d-e0f235822a72
             region: content
@@ -117,7 +100,7 @@ third_party_settings:
                 settings:
                   view_mode: default
                 third_party_settings: {  }
-            weight: 6
+            weight: 8
             additional: {  }
           4aa0490c-acec-4866-9b72-655972df7984:
             uuid: 4aa0490c-acec-4866-9b72-655972df7984
@@ -132,6 +115,42 @@ third_party_settings:
                 view_mode: view_mode
               formatter:
                 type: basic_string
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 9
+            additional: {  }
+          a2351d16-a2c6-46aa-9076-27204623f284:
+            uuid: a2351d16-a2c6-46aa-9076-27204623f284
+            region: content
+            configuration:
+              id: 'field_block:node:person:field_summary'
+              label: Summary
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: basic_string
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 6
+            additional: {  }
+          0b69ff43-391e-4379-8ee9-a887a35cbcc4:
+            uuid: 0b69ff43-391e-4379-8ee9-a887a35cbcc4
+            region: content
+            configuration:
+              id: 'field_block:node:person:field_body'
+              label: Body
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
                 label: hidden
                 settings: {  }
                 third_party_settings: {  }
@@ -155,10 +174,10 @@ content:
     weight: 107
     region: content
 hidden:
-  body: true
   content_moderation_control: true
   field_banner_image: true
   field_banner_title: true
+  field_body: true
   field_components: true
   field_featured_links: true
   field_featured_title: true
@@ -173,6 +192,7 @@ hidden:
   field_person_position: true
   field_search_exclude: true
   field_stage: true
+  field_summary: true
   field_thumbnail: true
   field_toc: true
   field_updated_date: true

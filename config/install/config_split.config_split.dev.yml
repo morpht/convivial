@@ -5,6 +5,7 @@ id: dev
 label: Development
 description: ''
 weight: 0
+storage: folder
 folder: ../config/dev
 module:
   autologout: 0
@@ -13,12 +14,10 @@ module:
   google_tag: 0
   stage_file_proxy: 0
 theme: {  }
-blacklist: {  }
-graylist:
+complete_list: {  }
+partial_list:
   - environment_indicator.indicator
   - recombee.settings
   - system.logging
   - system.mail
   - system.performance
-graylist_dependents: true
-graylist_skip_equal: true

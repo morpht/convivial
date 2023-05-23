@@ -3,9 +3,9 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.full
-    - field.field.node.place.body
     - field.field.node.place.field_banner_image
     - field.field.node.place.field_banner_title
+    - field.field.node.place.field_body
     - field.field.node.place.field_components
     - field.field.node.place.field_featured_links
     - field.field.node.place.field_featured_title
@@ -21,6 +21,7 @@ dependencies:
     - field.field.node.place.field_place_telephone
     - field.field.node.place.field_search_exclude
     - field.field.node.place.field_stage
+    - field.field.node.place.field_summary
     - field.field.node.place.field_thumbnail
     - field.field.node.place.field_toc
     - field.field.node.place.field_updated_date
@@ -205,42 +206,36 @@ third_party_settings:
                     empty_behaviour: '0'
                     empty_message: 'No Geofield Value entered for this field'
                   map_center:
-                    lat: ''
-                    lon: ''
-                    center_force: 0
+                    lat: null
+                    lon: null
+                    center_force: false
                     geocode: 'Find my location'
                   map_zoom_and_pan:
                     zoom:
-                      initial: '16'
-                      force: 0
-                      min: '1'
-                      max: '22'
-                      finer: '0'
+                      initial: 16
+                      force: false
+                      min: 1
+                      max: 22
+                      finer: 0
                     gestureHandling: auto
-                    scrollwheel: '1'
-                    draggable: '1'
-                    map_reset: 0
+                    scrollwheel: true
+                    draggable: true
                     map_reset_position: TOP_RIGHT
+                    map_reset: false
                   map_controls:
-                    disable_default_ui: 0
-                    zoom_control: 0
+                    zoom_control: false
                     map_type_id: roadmap
-                    map_type_control: 0
+                    map_type_control: false
                     map_type_control_options_type_ids:
-                      roadmap: 0
-                      satellite: 0
-                      hybrid: 0
-                      terrain: 0
-                    scale_control: 0
-                    street_view_control: 0
-                    fullscreen_control: 0
+                      roadmap: '0'
+                      satellite: '0'
+                      hybrid: '0'
+                      terrain: '0'
+                    scale_control: false
+                    street_view_control: false
+                    fullscreen_control: false
+                    disable_default_ui: false
                   map_marker_and_infowindow:
-                    icon_image_path: ''
-                    infowindow_field: title
-                    multivalue_split: 0
-                    view_mode: full
-                    tooltip_field: '0'
-                    force_open: 0
                     icon_image_mode: icon_file
                     icon_file_wrapper:
                       icon_file:
@@ -250,26 +245,32 @@ third_party_settings:
                         upload: ''
                         is_svg: false
                       image_style: geofield_map_default_icon_style
-                  map_additional_options: ''
-                  map_additional_libraries:
-                    places: 0
-                    drawing: 0
-                    geometry: 0
-                    visualization: 0
-                  map_geometries_options: '{"strokeColor":"black","strokeOpacity":"0.8","strokeWeight":2,"fillColor":"blue","fillOpacity":"0.1","clickable":false}'
+                    icon_image_path: ''
+                    infowindow_field: title
+                    view_mode: full
+                    tooltip_field: '0'
+                    multivalue_split: false
+                    force_open: false
                   map_oms:
-                    map_oms_control: 0
+                    map_oms_control: false
                     map_oms_options: '{"markersWontMove":"true","markersWontHide":"true","basicFormatEvents":"true","nearbyDistance":3}'
+                  map_additional_options: ''
+                  map_geometries_options: '{"strokeColor":"black","strokeOpacity":"0.8","strokeWeight":2,"fillColor":"blue","fillOpacity":"0.1","clickable":false}'
                   custom_style_map:
-                    custom_style_control: 0
                     custom_style_name: ''
                     custom_style_options: ''
-                    custom_style_default: 0
+                    custom_style_control: false
+                    custom_style_default: false
                   map_markercluster:
-                    markercluster_control: 0
                     markercluster_additional_options: '{"maxZoom":12,"gridSize":50}'
+                    markercluster_control: false
+                  map_additional_libraries:
+                    places: false
+                    drawing: false
+                    geometry: false
+                    visualization: false
                   map_lazy_load:
-                    lazy_load: 0
+                    lazy_load: false
                 third_party_settings: {  }
             weight: 0
             additional: {  }
@@ -317,21 +318,6 @@ third_party_settings:
           label: ''
           context_mapping: {  }
         components:
-          36fb7da8-e14a-4aab-a83f-c6159061f97c:
-            uuid: 36fb7da8-e14a-4aab-a83f-c6159061f97c
-            region: content
-            configuration:
-              id: 'field_block:node:place:body'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: text_default
-                label: hidden
-                settings: {  }
-                third_party_settings: {  }
-            weight: 3
-            additional: {  }
           3a2ebf91-9d8f-40b8-be94-7085099121fe:
             uuid: 3a2ebf91-9d8f-40b8-be94-7085099121fe
             region: content
@@ -349,7 +335,7 @@ third_party_settings:
                 settings:
                   view_mode: default
                 third_party_settings: {  }
-            weight: 4
+            weight: 5
             additional: {  }
           4ebaea55-f482-445c-a24a-d77251ee6e6f:
             uuid: 4ebaea55-f482-445c-a24a-d77251ee6e6f
@@ -407,6 +393,24 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 6
             additional: {  }
+          86da7076-b5b3-4a77-8877-075e0dae7eb8:
+            uuid: 86da7076-b5b3-4a77-8877-075e0dae7eb8
+            region: content
+            configuration:
+              id: 'field_block:node:place:field_body'
+              label: Body
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
         third_party_settings: {  }
   layout_library:
     enable: true
@@ -415,13 +419,6 @@ targetEntityType: node
 bundle: place
 mode: full
 content:
-  body:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 101
-    region: content
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
@@ -484,6 +481,7 @@ content:
 hidden:
   field_banner_image: true
   field_banner_title: true
+  field_body: true
   field_featured_links: true
   field_featured_title: true
   field_goal: true
@@ -495,6 +493,7 @@ hidden:
   field_place_geo: true
   field_place_telephone: true
   field_stage: true
+  field_summary: true
   field_updated_date: true
   layout_builder__layout: true
   layout_selection: true

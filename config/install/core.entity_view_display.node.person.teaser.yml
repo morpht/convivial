@@ -3,9 +3,9 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.person.body
     - field.field.node.person.field_banner_image
     - field.field.node.person.field_banner_title
+    - field.field.node.person.field_body
     - field.field.node.person.field_components
     - field.field.node.person.field_featured_links
     - field.field.node.person.field_featured_title
@@ -20,6 +20,7 @@ dependencies:
     - field.field.node.person.field_person_position
     - field.field.node.person.field_search_exclude
     - field.field.node.person.field_stage
+    - field.field.node.person.field_summary
     - field.field.node.person.field_thumbnail
     - field.field.node.person.field_toc
     - field.field.node.person.field_updated_date
@@ -99,25 +100,6 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 0
             additional: {  }
-          11a81788-1b72-40d4-8aeb-1a78e9c8c908:
-            uuid: 11a81788-1b72-40d4-8aeb-1a78e9c8c908
-            region: summary
-            configuration:
-              id: 'field_block:node:person:body'
-              label: Body
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: text_summary_or_trimmed
-                label: hidden
-                settings:
-                  trim_length: 160
-                third_party_settings: {  }
-            weight: 0
-            additional: {  }
         third_party_settings: {  }
   layout_library:
     enable: false
@@ -127,10 +109,10 @@ bundle: person
 mode: teaser
 content: {  }
 hidden:
-  body: true
   content_moderation_control: true
   field_banner_image: true
   field_banner_title: true
+  field_body: true
   field_components: true
   field_featured_links: true
   field_featured_title: true
@@ -145,6 +127,7 @@ hidden:
   field_person_position: true
   field_search_exclude: true
   field_stage: true
+  field_summary: true
   field_thumbnail: true
   field_toc: true
   field_updated_date: true

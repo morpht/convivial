@@ -10,12 +10,10 @@ dependencies:
     - media.type.video
     - node.type.article
     - node.type.audience
-    - node.type.decision_tree
     - node.type.event
     - node.type.page
     - node.type.person
     - node.type.place
-    - node.type.step
     - node.type.topic
     - taxonomy.vocabulary.goal
     - taxonomy.vocabulary.media_tags
@@ -52,7 +50,6 @@ permissions:
   - 'create article content'
   - 'create audience content'
   - 'create audio media'
-  - 'create decision_tree content'
   - 'create event content'
   - 'create file media'
   - 'create image media'
@@ -62,7 +59,6 @@ permissions:
   - 'create place content'
   - 'create promotion microcontent'
   - 'create remote_video media'
-  - 'create step content'
   - 'create terms in goal'
   - 'create terms in media_tags'
   - 'create topic content'
@@ -88,7 +84,6 @@ permissions:
   - 'edit any article content'
   - 'edit any audience content'
   - 'edit any audio media'
-  - 'edit any decision_tree content'
   - 'edit any event content'
   - 'edit any file media'
   - 'edit any image media'
@@ -96,7 +91,6 @@ permissions:
   - 'edit any person content'
   - 'edit any place content'
   - 'edit any remote_video media'
-  - 'edit any step content'
   - 'edit any topic content'
   - 'edit any video media'
   - 'edit own audio media'

@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:components:1556ab50-7d47-418d-9ec6-9ce749ea62f1'
+  module:
+    - block_content
+    - system
+  theme:
+    - convivial_bootstrap
+id: is_helpful
+theme: convivial_bootstrap
+region: cta
+weight: -21
+provider: null
+plugin: 'block_content:1556ab50-7d47-418d-9ec6-9ce749ea62f1'
+settings:
+  id: 'block_content:1556ab50-7d47-418d-9ec6-9ce749ea62f1'
+  label: 'Was this page helpful?'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "<front>\r\n/user\r\n/user/*\r\n/tfa\r\n/tfa/*"

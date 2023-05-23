@@ -3,9 +3,9 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.search_index
-    - field.field.node.audience.body
     - field.field.node.audience.field_banner_image
     - field.field.node.audience.field_banner_title
+    - field.field.node.audience.field_body
     - field.field.node.audience.field_components
     - field.field.node.audience.field_featured_links
     - field.field.node.audience.field_featured_title
@@ -18,6 +18,7 @@ dependencies:
     - field.field.node.audience.field_meta_tags
     - field.field.node.audience.field_search_exclude
     - field.field.node.audience.field_stage
+    - field.field.node.audience.field_summary
     - field.field.node.audience.field_thumbnail
     - field.field.node.audience.field_toc
     - field.field.node.audience.field_updated_date
@@ -80,24 +81,6 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 3
             additional: {  }
-          bcca0f18-513d-46e0-8e2a-c2284884266b:
-            uuid: bcca0f18-513d-46e0-8e2a-c2284884266b
-            region: content
-            configuration:
-              id: 'field_block:node:audience:body'
-              label: Body
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: text_default
-                label: hidden
-                settings: {  }
-                third_party_settings: {  }
-            weight: 5
-            additional: {  }
           42789aeb-dd29-48ba-b031-c040b53a40f2:
             uuid: 42789aeb-dd29-48ba-b031-c040b53a40f2
             region: content
@@ -115,7 +98,7 @@ third_party_settings:
                 settings:
                   view_mode: default
                 third_party_settings: {  }
-            weight: 6
+            weight: 9
             additional: {  }
           c1af6d9a-6dc3-4752-9e9c-976d4c4a2462:
             uuid: c1af6d9a-6dc3-4752-9e9c-976d4c4a2462
@@ -133,7 +116,57 @@ third_party_settings:
                 label: hidden
                 settings: {  }
                 third_party_settings: {  }
-            weight: 7
+            weight: 10
+            additional: {  }
+          be4666f3-59a0-4c83-b7b8-370ee90d80d5:
+            uuid: be4666f3-59a0-4c83-b7b8-370ee90d80d5
+            region: content
+            configuration:
+              id: 'field_block:node:audience:field_summary'
+              label: Summary
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: basic_string
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 5
+            additional: {  }
+          3b05a4e4-f0fc-4c43-81ad-6375215a8c99:
+            uuid: 3b05a4e4-f0fc-4c43-81ad-6375215a8c99
+            region: content
+            configuration:
+              id: 'field_block:node:audience:field_body'
+              label: Body
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: smart_trim
+                label: hidden
+                settings:
+                  trim_length: 160
+                  trim_type: chars
+                  trim_suffix: ''
+                  wrap_output: false
+                  wrap_class: trimmed
+                  more_link: false
+                  more_class: more-link
+                  more_text: More
+                  more_aria_label: 'Read more about [node:title]'
+                  trim_options:
+                    text: false
+                    trim_zero: false
+                    replace_tokens: false
+                  token_browser: ''
+                third_party_settings: {  }
+            weight: 8
             additional: {  }
         third_party_settings: {  }
   layout_library:
@@ -153,10 +186,10 @@ content:
     weight: 107
     region: content
 hidden:
-  body: true
   content_moderation_control: true
   field_banner_image: true
   field_banner_title: true
+  field_body: true
   field_components: true
   field_featured_links: true
   field_featured_title: true
@@ -169,6 +202,7 @@ hidden:
   field_meta_tags: true
   field_search_exclude: true
   field_stage: true
+  field_summary: true
   field_thumbnail: true
   field_toc: true
   field_updated_date: true

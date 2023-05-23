@@ -3,9 +3,9 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.calendar_item
-    - field.field.node.event.body
     - field.field.node.event.field_banner_image
     - field.field.node.event.field_banner_title
+    - field.field.node.event.field_body
     - field.field.node.event.field_components
     - field.field.node.event.field_event_date
     - field.field.node.event.field_event_duration
@@ -23,6 +23,7 @@ dependencies:
     - field.field.node.event.field_social_message
     - field.field.node.event.field_social_post
     - field.field.node.event.field_stage
+    - field.field.node.event.field_summary
     - field.field.node.event.field_thumbnail
     - field.field.node.event.field_toc
     - field.field.node.event.field_updated_date
@@ -85,24 +86,23 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 0
             additional: {  }
-          be8010c3-e0a0-41c3-9774-b01952f298b7:
-            uuid: be8010c3-e0a0-41c3-9774-b01952f298b7
+          c5475b06-fb24-4332-90d8-788bec27b8f8:
+            uuid: c5475b06-fb24-4332-90d8-788bec27b8f8
             region: summary
             configuration:
-              id: 'field_block:node:event:body'
-              label: Body
+              id: 'field_block:node:event:field_summary'
+              label: Summary
               label_display: '0'
               provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
               formatter:
-                type: text_summary_or_trimmed
+                type: basic_string
                 label: hidden
-                settings:
-                  trim_length: 160
+                settings: {  }
                 third_party_settings: {  }
-            weight: 0
+            weight: 1
             additional: {  }
         third_party_settings: {  }
   layout_library:
@@ -113,10 +113,10 @@ bundle: event
 mode: calendar_item
 content: {  }
 hidden:
-  body: true
   content_moderation_control: true
   field_banner_image: true
   field_banner_title: true
+  field_body: true
   field_components: true
   field_event_date: true
   field_event_duration: true
@@ -134,6 +134,7 @@ hidden:
   field_social_message: true
   field_social_post: true
   field_stage: true
+  field_summary: true
   field_thumbnail: true
   field_toc: true
   field_updated_date: true

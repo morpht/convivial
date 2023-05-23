@@ -3,9 +3,9 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.image
-    - field.field.node.place.body
     - field.field.node.place.field_banner_image
     - field.field.node.place.field_banner_title
+    - field.field.node.place.field_body
     - field.field.node.place.field_components
     - field.field.node.place.field_featured_links
     - field.field.node.place.field_featured_title
@@ -21,6 +21,7 @@ dependencies:
     - field.field.node.place.field_place_telephone
     - field.field.node.place.field_search_exclude
     - field.field.node.place.field_stage
+    - field.field.node.place.field_summary
     - field.field.node.place.field_thumbnail
     - field.field.node.place.field_toc
     - field.field.node.place.field_updated_date
@@ -71,10 +72,10 @@ bundle: place
 mode: image
 content: {  }
 hidden:
-  body: true
   content_moderation_control: true
   field_banner_image: true
   field_banner_title: true
+  field_body: true
   field_components: true
   field_featured_links: true
   field_featured_title: true
@@ -90,6 +91,7 @@ hidden:
   field_place_telephone: true
   field_search_exclude: true
   field_stage: true
+  field_summary: true
   field_thumbnail: true
   field_toc: true
   field_updated_date: true

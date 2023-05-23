@@ -9,11 +9,11 @@ type: 'canonical_entities:node'
 pattern: '[node:menu-link:parent:url:path]/[node:title]'
 selection_criteria:
   2dffb019-4d2f-41ec-b9e6-61302c5c1c9a:
-    id: node_type
+    id: 'entity_bundle:node'
     negate: false
     uuid: 2dffb019-4d2f-41ec-b9e6-61302c5c1c9a
     context_mapping:
-      node: node
+      node: '@node.node_route_context:node'
     bundles:
       audience: audience
       page: page

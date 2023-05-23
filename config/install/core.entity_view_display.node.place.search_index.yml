@@ -3,9 +3,9 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.search_index
-    - field.field.node.place.body
     - field.field.node.place.field_banner_image
     - field.field.node.place.field_banner_title
+    - field.field.node.place.field_body
     - field.field.node.place.field_components
     - field.field.node.place.field_featured_links
     - field.field.node.place.field_featured_title
@@ -21,6 +21,7 @@ dependencies:
     - field.field.node.place.field_place_telephone
     - field.field.node.place.field_search_exclude
     - field.field.node.place.field_stage
+    - field.field.node.place.field_summary
     - field.field.node.place.field_thumbnail
     - field.field.node.place.field_toc
     - field.field.node.place.field_updated_date
@@ -83,24 +84,6 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 3
             additional: {  }
-          a66737f9-608f-4ecd-9e37-b29fed8ba089:
-            uuid: a66737f9-608f-4ecd-9e37-b29fed8ba089
-            region: content
-            configuration:
-              id: 'field_block:node:place:body'
-              label: Body
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: text_default
-                label: hidden
-                settings: {  }
-                third_party_settings: {  }
-            weight: 5
-            additional: {  }
           a98d6c89-83a0-4364-bf8a-c04f19b40298:
             uuid: a98d6c89-83a0-4364-bf8a-c04f19b40298
             region: content
@@ -118,7 +101,7 @@ third_party_settings:
                 settings:
                   view_mode: default
                 third_party_settings: {  }
-            weight: 6
+            weight: 8
             additional: {  }
           14066359-dba7-42b2-ad8c-d08cc99083c9:
             uuid: 14066359-dba7-42b2-ad8c-d08cc99083c9
@@ -136,7 +119,43 @@ third_party_settings:
                 label: hidden
                 settings: {  }
                 third_party_settings: {  }
-            weight: 8
+            weight: 9
+            additional: {  }
+          0265bc9e-5a20-4023-888b-67b509b9d31c:
+            uuid: 0265bc9e-5a20-4023-888b-67b509b9d31c
+            region: content
+            configuration:
+              id: 'field_block:node:place:field_summary'
+              label: Summary
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: basic_string
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 6
+            additional: {  }
+          41fb0ed8-578d-422e-908b-1e136b2862fe:
+            uuid: 41fb0ed8-578d-422e-908b-1e136b2862fe
+            region: content
+            configuration:
+              id: 'field_block:node:place:field_body'
+              label: Body
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: basic_string
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 7
             additional: {  }
         third_party_settings: {  }
   layout_library:
@@ -147,10 +166,10 @@ bundle: place
 mode: search_index
 content: {  }
 hidden:
-  body: true
   content_moderation_control: true
   field_banner_image: true
   field_banner_title: true
+  field_body: true
   field_components: true
   field_featured_links: true
   field_featured_title: true
@@ -166,6 +185,7 @@ hidden:
   field_place_telephone: true
   field_search_exclude: true
   field_stage: true
+  field_summary: true
   field_thumbnail: true
   field_toc: true
   field_updated_date: true

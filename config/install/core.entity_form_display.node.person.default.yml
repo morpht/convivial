@@ -2,9 +2,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.person.body
     - field.field.node.person.field_banner_image
     - field.field.node.person.field_banner_title
+    - field.field.node.person.field_body
     - field.field.node.person.field_components
     - field.field.node.person.field_featured_links
     - field.field.node.person.field_featured_title
@@ -19,6 +19,7 @@ dependencies:
     - field.field.node.person.field_person_position
     - field.field.node.person.field_search_exclude
     - field.field.node.person.field_stage
+    - field.field.node.person.field_summary
     - field.field.node.person.field_thumbnail
     - field.field.node.person.field_toc
     - field.field.node.person.field_updated_date
@@ -31,7 +32,6 @@ dependencies:
     - datetime
     - field_group
     - layout_paragraphs
-    - maxlength
     - media_library
     - metatag
     - path
@@ -50,7 +50,7 @@ third_party_settings:
       label: Header
       region: content
       parent_name: ''
-      weight: 4
+      weight: 3
       format_type: details
       format_settings:
         classes: ''
@@ -65,7 +65,7 @@ third_party_settings:
       label: Search
       region: content
       parent_name: ''
-      weight: 16
+      weight: 17
       format_type: details_sidebar
       format_settings:
         classes: ''
@@ -80,7 +80,7 @@ third_party_settings:
       label: Display
       region: content
       parent_name: ''
-      weight: 15
+      weight: 16
       format_type: details_sidebar
       format_settings:
         classes: ''
@@ -94,28 +94,9 @@ targetEntityType: node
 bundle: person
 mode: default
 content:
-  body:
-    type: text_textarea_with_summary
-    weight: 5
-    region: content
-    settings:
-      rows: 9
-      summary_rows: 3
-      placeholder: ''
-      show_summary: false
-    third_party_settings:
-      maxlength:
-        maxlength_js: null
-        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
-        maxlength_js_summary: 150
-        maxlength_js_label_summary: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
-        maxlength_js_enforce: false
-        maxlength_js_truncate_html: false
-        maxlength_js_enforce_attribute: false
-        maxlength_js_summary_enforce_attribute: false
   created:
     type: datetime_timestamp
-    weight: 18
+    weight: 19
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -134,14 +115,23 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_body:
+    type: text_textarea
+    weight: 5
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
   field_components:
     type: layout_paragraphs
-    weight: 6
+    weight: 7
     region: content
     settings:
       preview_view_mode: default
       nesting_depth: 0
       require_layouts: 0
+      empty_message: ''
     third_party_settings: {  }
   field_featured_links:
     type: entity_reference_autocomplete
@@ -208,20 +198,21 @@ content:
     third_party_settings: {  }
   field_location:
     type: options_select
-    weight: 8
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
   field_meta_tags:
     type: metatag_firehose
-    weight: 24
+    weight: 25
     region: content
     settings:
       sidebar: true
+      use_details: true
     third_party_settings: {  }
   field_person_position:
     type: string_textfield
-    weight: 7
+    weight: 8
     region: content
     settings:
       size: 60
@@ -236,10 +227,25 @@ content:
     third_party_settings: {  }
   field_stage:
     type: options_select
-    weight: 11
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_summary:
+    type: string_textarea
+    weight: 4
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings:
+      field_formatter_pattern:
+        pattern: ''
+        pattern_error_message: ''
+      maxlength:
+        maxlength_js: 150
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_enforce: false
   field_thumbnail:
     type: media_library_widget
     weight: 2
@@ -249,13 +255,13 @@ content:
     third_party_settings: {  }
   field_toc:
     type: options_select
-    weight: 16
+    weight: 18
     region: content
     settings: {  }
     third_party_settings: {  }
   field_updated_date:
     type: datetime_default
-    weight: 13
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -267,39 +273,44 @@ content:
     third_party_settings: {  }
   layout_selection:
     type: options_select
-    weight: 12
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 14
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 21
+    weight: 22
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 19
+    weight: 20
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
+  simple_sitemap:
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 23
+    weight: 24
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 20
+    weight: 21
     region: content
     settings:
       display_label: true
@@ -314,7 +325,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 17
+    weight: 18
     region: content
     settings:
       match_operator: CONTAINS
@@ -323,7 +334,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 22
+    weight: 23
     region: content
     settings: {  }
     third_party_settings: {  }

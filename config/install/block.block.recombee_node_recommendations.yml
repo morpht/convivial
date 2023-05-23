@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - recombee
+  theme:
+    - convivial_bootstrap
+id: recombee_node_recommendations
+theme: convivial_bootstrap
+region: content
+weight: -21
+provider: null
+plugin: recombee_public_scenario
+settings:
+  id: recombee_public_scenario
+  label: 'More like this'
+  label_display: '0'
+  provider: recombee
+  endpoint: items-to-item
+  scenario: item_items_similar
+  template: recombee_cards_quarters
+  page_size: '4'
+  tracking: false
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      article: article
+      casestudy: casestudy

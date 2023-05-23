@@ -3,11 +3,11 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.search_index
-    - field.field.node.article.body
     - field.field.node.article.field_about
     - field.field.node.article.field_authored_by
     - field.field.node.article.field_banner_image
     - field.field.node.article.field_banner_title
+    - field.field.node.article.field_body
     - field.field.node.article.field_components
     - field.field.node.article.field_featured_links
     - field.field.node.article.field_featured_title
@@ -23,6 +23,7 @@ dependencies:
     - field.field.node.article.field_social_post
     - field.field.node.article.field_stage
     - field.field.node.article.field_suitable_for
+    - field.field.node.article.field_summary
     - field.field.node.article.field_thumbnail
     - field.field.node.article.field_toc
     - field.field.node.article.field_updated_date
@@ -85,24 +86,6 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 3
             additional: {  }
-          04826031-8e77-4ba6-a56a-d902dafa72e3:
-            uuid: 04826031-8e77-4ba6-a56a-d902dafa72e3
-            region: content
-            configuration:
-              id: 'field_block:node:article:body'
-              label: Body
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: text_default
-                label: hidden
-                settings: {  }
-                third_party_settings: {  }
-            weight: 5
-            additional: {  }
           2fabd77d-92c0-4844-bf9f-fceda971dd99:
             uuid: 2fabd77d-92c0-4844-bf9f-fceda971dd99
             region: content
@@ -120,7 +103,7 @@ third_party_settings:
                 settings:
                   view_mode: default
                 third_party_settings: {  }
-            weight: 6
+            weight: 8
             additional: {  }
           6b403522-ebc9-4467-a65e-f7f3e375a4b0:
             uuid: 6b403522-ebc9-4467-a65e-f7f3e375a4b0
@@ -138,7 +121,43 @@ third_party_settings:
                 label: hidden
                 settings: {  }
                 third_party_settings: {  }
+            weight: 9
+            additional: {  }
+          cd25de75-a97c-4dd7-8744-8117d5041ca0:
+            uuid: cd25de75-a97c-4dd7-8744-8117d5041ca0
+            region: content
+            configuration:
+              id: 'field_block:node:article:field_body'
+              label: Body
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
             weight: 7
+            additional: {  }
+          83e0885c-310e-4b2d-a5ad-6b7745c6d828:
+            uuid: 83e0885c-310e-4b2d-a5ad-6b7745c6d828
+            region: content
+            configuration:
+              id: 'field_block:node:article:field_summary'
+              label: Summary
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: basic_string
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 6
             additional: {  }
         third_party_settings: {  }
   layout_library:
@@ -158,12 +177,12 @@ content:
     weight: 107
     region: content
 hidden:
-  body: true
   content_moderation_control: true
   field_about: true
   field_authored_by: true
   field_banner_image: true
   field_banner_title: true
+  field_body: true
   field_components: true
   field_featured_links: true
   field_featured_title: true
@@ -179,6 +198,7 @@ hidden:
   field_social_post: true
   field_stage: true
   field_suitable_for: true
+  field_summary: true
   field_thumbnail: true
   field_toc: true
   field_updated_date: true

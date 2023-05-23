@@ -65,9 +65,6 @@ settings:
       adaptive_height_modifier:
         weight: -40
         enabled: false
-      answer:
-        weight: 38
-        enabled: false
       charts:
         weight: -56
         enabled: true

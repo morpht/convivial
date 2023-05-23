@@ -1,7 +1,7 @@
 name: 'Convivial Layouts'
 type: module
 description: 'Provides custom template layouts.'
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^9.4 || ^10.0
 package: Convivial
 dependencies:
   - layout_builder:layout_builder

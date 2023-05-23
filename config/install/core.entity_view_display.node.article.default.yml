@@ -2,11 +2,11 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.article.body
     - field.field.node.article.field_about
     - field.field.node.article.field_authored_by
     - field.field.node.article.field_banner_image
     - field.field.node.article.field_banner_title
+    - field.field.node.article.field_body
     - field.field.node.article.field_components
     - field.field.node.article.field_featured_links
     - field.field.node.article.field_featured_title
@@ -22,6 +22,7 @@ dependencies:
     - field.field.node.article.field_social_post
     - field.field.node.article.field_stage
     - field.field.node.article.field_suitable_for
+    - field.field.node.article.field_summary
     - field.field.node.article.field_thumbnail
     - field.field.node.article.field_toc
     - field.field.node.article.field_updated_date
@@ -41,13 +42,6 @@ targetEntityType: node
 bundle: article
 mode: default
 content:
-  body:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 101
-    region: content
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
@@ -84,6 +78,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 122
+    region: content
+  field_body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 127
     region: content
   field_components:
     type: entity_reference_revisions_entity_view
@@ -203,6 +204,13 @@ content:
       link: true
     third_party_settings: {  }
     weight: 107
+    region: content
+  field_summary:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 128
     region: content
   field_thumbnail:
     type: entity_reference_entity_view

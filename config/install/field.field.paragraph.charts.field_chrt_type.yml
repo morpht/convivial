@@ -11,7 +11,7 @@ field_name: field_chrt_type
 entity_type: paragraph
 bundle: charts
 label: Type
-description: 'Please note that some of the settings are used only for some of the types. For example <em>pie</em> chart doesn''t have any concept of a Y axis.'
+description: "Please note that some of the settings are used only for some of the types. For example <em>pie</em> chart doesn't have any concept of a Y axis."
 required: false
 translatable: false
 default_value:

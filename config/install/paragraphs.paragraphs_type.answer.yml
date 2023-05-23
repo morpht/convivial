@@ -1,9 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: answer
-label: Answer
-icon_uuid: null
-icon_default: null
-description: 'Provides an Answer to a question in a Step and links to the next Step in the Decision Tree.'
-behavior_plugins: {  }

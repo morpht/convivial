@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_c_colour_classes
+    - paragraphs.paragraphs_type.decision_tree
+  module:
+    - options
+    - unique_content_field_validation
+third_party_settings:
+  unique_content_field_validation:
+    unique: false
+    unique_text: ''
+id: paragraph.decision_tree.field_c_colour_classes
+field_name: field_c_colour_classes
+entity_type: paragraph
+bundle: decision_tree
+label: 'Colour Palette'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

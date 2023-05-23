@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:content:d488ac9b-def5-4509-8910-2cb8da52ccb7'
+  module:
+    - block_content
+    - node
+  theme:
+    - convivial_bootstrap
+id: help_audience
+theme: convivial_bootstrap
+region: postscript_3
+weight: 0
+provider: null
+plugin: 'block_content:d488ac9b-def5-4509-8910-2cb8da52ccb7'
+settings:
+  id: 'block_content:d488ac9b-def5-4509-8910-2cb8da52ccb7'
+  label: 'Help - Audience'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      audience: audience

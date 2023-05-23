@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - personified
+    - system
+  theme:
+    - convivial_bootstrap
+id: personified_data_top_topic
+theme: convivial_bootstrap
+region: hidden
+weight: -11
+provider: null
+plugin: personified_data
+settings:
+  id: personified_data
+  label: 'Personified Data - Top topic'
+  label_display: '0'
+  provider: personified
+  endpoint: /data/promotion
+  template: promotion_plain
+  params:
+    -
+      source_type: local_storage
+      source_key: topic_top
+      endpoint_key: key
+      default_value: topic.none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: '<front>'

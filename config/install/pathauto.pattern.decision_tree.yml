@@ -9,11 +9,11 @@ type: 'canonical_entities:node'
 pattern: '[node:menu-link:parent:url:path]/[node:title]'
 selection_criteria:
   47ba11a6-e476-41b0-9645-1852c7f41b4c:
-    id: node_type
+    id: 'entity_bundle:node'
     negate: false
     uuid: 47ba11a6-e476-41b0-9645-1852c7f41b4c
     context_mapping:
-      node: node
+      node: '@node.node_route_context:node'
     bundles:
       decision_tree: decision_tree
 selection_logic: and

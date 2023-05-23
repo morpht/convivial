@@ -3,9 +3,9 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.image
-    - field.field.node.event.body
     - field.field.node.event.field_banner_image
     - field.field.node.event.field_banner_title
+    - field.field.node.event.field_body
     - field.field.node.event.field_components
     - field.field.node.event.field_event_date
     - field.field.node.event.field_event_duration
@@ -23,6 +23,7 @@ dependencies:
     - field.field.node.event.field_social_message
     - field.field.node.event.field_social_post
     - field.field.node.event.field_stage
+    - field.field.node.event.field_summary
     - field.field.node.event.field_thumbnail
     - field.field.node.event.field_toc
     - field.field.node.event.field_updated_date
@@ -73,10 +74,10 @@ bundle: event
 mode: image
 content: {  }
 hidden:
-  body: true
   content_moderation_control: true
   field_banner_image: true
   field_banner_title: true
+  field_body: true
   field_components: true
   field_event_date: true
   field_event_duration: true
@@ -94,6 +95,7 @@ hidden:
   field_social_message: true
   field_social_post: true
   field_stage: true
+  field_summary: true
   field_thumbnail: true
   field_toc: true
   field_updated_date: true

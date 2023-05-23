@@ -111,9 +111,10 @@ fi
 echo "Wipe local DB: drush @$aliasplatform.lando sql-drop -y"
 drush @$aliasplatform.lando sql-drop -y
 
+dump_size=$(ls -l /app/.local_dbs/$remote.sql.gz | awk '{ print $5 }')
 # gzip runs after pv to get the same pv statistic / size output as when copying gziped db from remote above.
-echo "Import DB: cat /app/.local_dbs/$remote.sql.gz | pv | gzip -d | drush -Dssh.tty=0 @$aliasplatform.lando sqlc"
-cat /app/.local_dbs/$remote.sql.gz | pv | gzip -d | drush -Dssh.tty=0 @$aliasplatform.lando sqlc
+echo "Import DB: cat /app/.local_dbs/$remote.sql.gz | pv -s $dump_size | gzip -d | drush -Dssh.tty=0 @$aliasplatform.lando sqlc"
+cat /app/.local_dbs/$remote.sql.gz | pv -s $dump_size | gzip -d | drush -Dssh.tty=0 @$aliasplatform.lando sqlc
 
 echo "Cache rebuild: drush @$aliasplatform.lando cr"
 drush @$aliasplatform.lando cr

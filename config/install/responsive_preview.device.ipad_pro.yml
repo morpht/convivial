@@ -1,0 +1,11 @@
+langcode: en
+status: 1
+dependencies: {  }
+id: ipad_pro
+label: 'iPad Pro'
+weight: -7
+orientation: portrait
+dimensions:
+  width: 2048
+  height: 2732
+  dppx: 2.0

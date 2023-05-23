@@ -2,9 +2,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.place.body
     - field.field.node.place.field_banner_image
     - field.field.node.place.field_banner_title
+    - field.field.node.place.field_body
     - field.field.node.place.field_components
     - field.field.node.place.field_featured_links
     - field.field.node.place.field_featured_title
@@ -20,6 +20,7 @@ dependencies:
     - field.field.node.place.field_place_telephone
     - field.field.node.place.field_search_exclude
     - field.field.node.place.field_stage
+    - field.field.node.place.field_summary
     - field.field.node.place.field_thumbnail
     - field.field.node.place.field_toc
     - field.field.node.place.field_updated_date
@@ -32,9 +33,8 @@ dependencies:
     - content_moderation
     - datetime
     - field_group
-    - geofield
+    - geofield_map
     - layout_paragraphs
-    - maxlength
     - media_library
     - metatag
     - path
@@ -68,7 +68,7 @@ third_party_settings:
       label: Display
       region: content
       parent_name: ''
-      weight: 12
+      weight: 14
       format_type: details_sidebar
       format_settings:
         classes: ''
@@ -84,7 +84,7 @@ third_party_settings:
       label: Search
       region: content
       parent_name: ''
-      weight: 13
+      weight: 15
       format_type: details_sidebar
       format_settings:
         classes: ''
@@ -98,28 +98,9 @@ targetEntityType: node
 bundle: place
 mode: default
 content:
-  body:
-    type: text_textarea_with_summary
-    weight: 6
-    region: content
-    settings:
-      rows: 9
-      summary_rows: 3
-      placeholder: ''
-      show_summary: false
-    third_party_settings:
-      maxlength:
-        maxlength_js: null
-        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
-        maxlength_js_summary: 150
-        maxlength_js_label_summary: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
-        maxlength_js_enforce: false
-        maxlength_js_truncate_html: false
-        maxlength_js_enforce_attribute: false
-        maxlength_js_summary_enforce_attribute: false
   created:
     type: datetime_timestamp
-    weight: 15
+    weight: 17
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -138,14 +119,23 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_body:
+    type: text_textarea
+    weight: 7
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
   field_components:
     type: layout_paragraphs
-    weight: 7
+    weight: 9
     region: content
     settings:
       preview_view_mode: default
       nesting_depth: 0
       require_layouts: 0
+      empty_message: ''
     third_party_settings: {  }
   field_featured_links:
     type: entity_reference_autocomplete
@@ -167,7 +157,7 @@ content:
     third_party_settings: {  }
   field_goal:
     type: options_select
-    weight: 9
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -185,7 +175,7 @@ content:
     third_party_settings: {  }
   field_hide:
     type: options_select
-    weight: 22
+    weight: 24
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -199,7 +189,7 @@ content:
     third_party_settings: {  }
   field_keywords:
     type: string_textarea
-    weight: 9
+    weight: 19
     region: content
     settings:
       rows: 5
@@ -207,10 +197,11 @@ content:
     third_party_settings: {  }
   field_meta_tags:
     type: metatag_firehose
-    weight: 21
+    weight: 23
     region: content
     settings:
       sidebar: true
+      use_details: true
     third_party_settings: {  }
   field_place_address:
     type: address_default
@@ -219,11 +210,45 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_place_geo:
-    type: geofield_latlon
-    weight: 26
+    type: geofield_map
+    weight: 5
     region: content
     settings:
       html5_geolocation: false
+      default_value:
+        lat: 0.0
+        lon: 0.0
+      map_library: leaflet
+      map_google_api_key: ''
+      map_google_places:
+        places_control: false
+        places_additional_options: ''
+      map_dimensions:
+        width: 100%
+        height: 450px
+      map_type_google: roadmap
+      map_type_leaflet: OpenStreetMap_Mapnik
+      map_type_selector: true
+      zoom_level: 5
+      zoom:
+        start: 6
+        focus: 12
+        min: 0
+        max: 22
+      click_to_find_marker: false
+      click_to_place_marker: false
+      hide_coordinates: false
+      geoaddress_field:
+        field: '0'
+        hidden: false
+        disabled: true
+      map_geocoder:
+        control: 0
+        settings:
+          providers: {  }
+          min_terms: 4
+          delay: 800
+          options: ''
     third_party_settings: {  }
   field_place_telephone:
     type: telephone_default
@@ -234,17 +259,32 @@ content:
     third_party_settings: {  }
   field_search_exclude:
     type: boolean_checkbox
-    weight: 11
+    weight: 20
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   field_stage:
     type: options_select
-    weight: 10
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_summary:
+    type: string_textarea
+    weight: 6
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings:
+      field_formatter_pattern:
+        pattern: ''
+        pattern_error_message: ''
+      maxlength:
+        maxlength_js: 150
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_enforce: false
   field_thumbnail:
     type: media_library_widget
     weight: 1
@@ -260,45 +300,50 @@ content:
     third_party_settings: {  }
   field_updated_date:
     type: datetime_default
-    weight: 23
+    weight: 25
     region: content
     settings: {  }
     third_party_settings: {  }
   layout_selection:
     type: options_select
-    weight: 24
+    weight: 26
     region: content
     settings: {  }
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 11
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 18
+    weight: 20
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 16
+    weight: 18
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
+  simple_sitemap:
+    weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 20
+    weight: 22
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 17
+    weight: 19
     region: content
     settings:
       display_label: true
@@ -313,7 +358,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 14
+    weight: 16
     region: content
     settings:
       match_operator: CONTAINS
@@ -322,7 +367,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 19
+    weight: 21
     region: content
     settings: {  }
     third_party_settings: {  }

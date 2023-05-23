@@ -2,15 +2,16 @@ langcode: en
 status: true
 dependencies:
   module:
-    - color_field
     - paragraphs
 id: paragraph.field_mod_bgi_color_val
 field_name: field_mod_bgi_color_val
 entity_type: paragraph
-type: color_field_type
+type: string
 settings:
-  format: '#HEXHEX'
-module: color_field
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
 locked: false
 cardinality: 1
 translatable: true

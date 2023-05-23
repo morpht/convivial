@@ -3,11 +3,11 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.calendar_item
-    - field.field.node.article.body
     - field.field.node.article.field_about
     - field.field.node.article.field_authored_by
     - field.field.node.article.field_banner_image
     - field.field.node.article.field_banner_title
+    - field.field.node.article.field_body
     - field.field.node.article.field_components
     - field.field.node.article.field_featured_links
     - field.field.node.article.field_featured_title
@@ -23,6 +23,7 @@ dependencies:
     - field.field.node.article.field_social_post
     - field.field.node.article.field_stage
     - field.field.node.article.field_suitable_for
+    - field.field.node.article.field_summary
     - field.field.node.article.field_thumbnail
     - field.field.node.article.field_toc
     - field.field.node.article.field_updated_date
@@ -85,24 +86,23 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 0
             additional: {  }
-          4874ae74-ff85-4c1b-b947-6f9c05da21e6:
-            uuid: 4874ae74-ff85-4c1b-b947-6f9c05da21e6
+          386fca2d-6779-4ef8-b753-cf2e6f309d69:
+            uuid: 386fca2d-6779-4ef8-b753-cf2e6f309d69
             region: summary
             configuration:
-              id: 'field_block:node:article:body'
-              label: Body
+              id: 'field_block:node:article:field_summary'
+              label: Summary
               label_display: '0'
               provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
               formatter:
-                type: text_summary_or_trimmed
+                type: basic_string
                 label: hidden
-                settings:
-                  trim_length: 160
+                settings: {  }
                 third_party_settings: {  }
-            weight: 0
+            weight: 1
             additional: {  }
         third_party_settings: {  }
   layout_library:
@@ -122,12 +122,12 @@ content:
     weight: 107
     region: content
 hidden:
-  body: true
   content_moderation_control: true
   field_about: true
   field_authored_by: true
   field_banner_image: true
   field_banner_title: true
+  field_body: true
   field_components: true
   field_featured_links: true
   field_featured_title: true
@@ -143,6 +143,7 @@ hidden:
   field_social_post: true
   field_stage: true
   field_suitable_for: true
+  field_summary: true
   field_thumbnail: true
   field_toc: true
   field_updated_date: true

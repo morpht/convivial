@@ -9,11 +9,11 @@ type: 'canonical_entities:node'
 pattern: 'news/[node:title]'
 selection_criteria:
   b173e542-e2c3-4bfd-9b69-85eb768d2a4c:
-    id: node_type
+    id: 'entity_bundle:node'
     negate: false
     uuid: b173e542-e2c3-4bfd-9b69-85eb768d2a4c
     context_mapping:
-      node: node
+      node: '@node.node_route_context:node'
     bundles:
       article: article
 selection_logic: and

@@ -9,11 +9,11 @@ type: 'canonical_entities:node'
 pattern: 'about/[node:title]'
 selection_criteria:
   29a8792d-602f-486d-bbb3-3b19b613c604:
-    id: node_type
+    id: 'entity_bundle:node'
     negate: false
     uuid: 29a8792d-602f-486d-bbb3-3b19b613c604
     context_mapping:
-      node: node
+      node: '@node.node_route_context:node'
     bundles:
       person: person
 selection_logic: and

@@ -9,11 +9,11 @@ type: 'canonical_entities:node'
 pattern: '/events/[node:title]'
 selection_criteria:
   8db7a319-41a5-4f2c-9cca-bcb6ce3404d5:
-    id: node_type
+    id: 'entity_bundle:node'
     negate: false
     uuid: 8db7a319-41a5-4f2c-9cca-bcb6ce3404d5
     context_mapping:
-      node: node
+      node: '@node.node_route_context:node'
     bundles:
       event: event
 selection_logic: and

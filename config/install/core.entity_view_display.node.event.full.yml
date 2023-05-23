@@ -3,9 +3,9 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.full
-    - field.field.node.event.body
     - field.field.node.event.field_banner_image
     - field.field.node.event.field_banner_title
+    - field.field.node.event.field_body
     - field.field.node.event.field_components
     - field.field.node.event.field_event_date
     - field.field.node.event.field_event_duration
@@ -23,12 +23,14 @@ dependencies:
     - field.field.node.event.field_social_message
     - field.field.node.event.field_social_post
     - field.field.node.event.field_stage
+    - field.field.node.event.field_summary
     - field.field.node.event.field_thumbnail
     - field.field.node.event.field_toc
     - field.field.node.event.field_updated_date
     - field.field.node.event.layout_builder__layout
     - field.field.node.event.layout_selection
     - node.type.event
+    - views.view.map
   module:
     - convivial_layouts
     - entity_reference_revisions
@@ -38,6 +40,7 @@ dependencies:
     - system
     - text
     - user
+    - views
 third_party_settings:
   layout_builder:
     enabled: true
@@ -180,21 +183,6 @@ third_party_settings:
           label: ''
           context_mapping: {  }
         components:
-          a6b9ac34-e032-4f2e-a6f3-57830c683e7b:
-            uuid: a6b9ac34-e032-4f2e-a6f3-57830c683e7b
-            region: content
-            configuration:
-              id: 'field_block:node:event:body'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: text_default
-                label: hidden
-                settings: {  }
-                third_party_settings: {  }
-            weight: 4
-            additional: {  }
           c9455203-8d3c-4deb-83b6-7c18bffb9587:
             uuid: c9455203-8d3c-4deb-83b6-7c18bffb9587
             region: content
@@ -212,7 +200,7 @@ third_party_settings:
                 settings:
                   view_mode: default
                 third_party_settings: {  }
-            weight: 5
+            weight: 6
             additional: {  }
           7838528c-e232-4f17-b1a3-6e05a5027062:
             uuid: 7838528c-e232-4f17-b1a3-6e05a5027062
@@ -250,7 +238,7 @@ third_party_settings:
                   timezone_override: ''
                   format_type: standard
                 third_party_settings: {  }
-            weight: 9
+            weight: 8
             additional: {  }
           046faf77-b553-4913-94a7-bbf5520a0a01:
             uuid: 046faf77-b553-4913-94a7-bbf5520a0a01
@@ -291,6 +279,37 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 0
             additional: {  }
+          66c1af5c-b9ff-4310-9219-1e35d60fcbd8:
+            uuid: 66c1af5c-b9ff-4310-9219-1e35d60fcbd8
+            region: content
+            configuration:
+              id: 'views_block:map-block'
+              label: ''
+              label_display: '0'
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 7
+            additional: {  }
+          d6e6cab1-efda-48bd-837e-6dfcb50827a5:
+            uuid: d6e6cab1-efda-48bd-837e-6dfcb50827a5
+            region: content
+            configuration:
+              id: 'field_block:node:event:field_body'
+              label: Body
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 5
+            additional: {  }
         third_party_settings: {  }
   layout_library:
     enable: true
@@ -299,13 +318,6 @@ targetEntityType: node
 bundle: event
 mode: full
 content:
-  body:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 101
-    region: content
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
@@ -368,6 +380,7 @@ content:
 hidden:
   field_banner_image: true
   field_banner_title: true
+  field_body: true
   field_event_date: true
   field_event_duration: true
   field_featured_links: true
@@ -381,6 +394,7 @@ hidden:
   field_social_message: true
   field_social_post: true
   field_stage: true
+  field_summary: true
   field_updated_date: true
   layout_builder__layout: true
   layout_selection: true

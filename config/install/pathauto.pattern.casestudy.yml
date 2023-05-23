@@ -9,11 +9,11 @@ type: 'canonical_entities:node'
 pattern: 'case-studies/[node:title]'
 selection_criteria:
   e04e963c-0efe-4879-b9cc-b8d2781b8cfc:
-    id: node_type
+    id: 'entity_bundle:node'
     negate: false
     uuid: e04e963c-0efe-4879-b9cc-b8d2781b8cfc
     context_mapping:
-      node: node
+      node: '@node.node_route_context:node'
     bundles:
       casestudy: casestudy
 selection_logic: and

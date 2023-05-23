@@ -1,0 +1,37 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - personified
+    - system
+  theme:
+    - convivial_bootstrap
+id: personified_campaign
+theme: convivial_bootstrap
+region: cta
+weight: -19
+provider: null
+plugin: personified_data
+settings:
+  id: personified_data
+  label: 'Personified Data - Campaign'
+  label_display: '0'
+  provider: personified
+  endpoint: /data/promotion
+  template: promotion_hero
+  params:
+    -
+      source_type: constant
+      source_key: ''
+      endpoint_key: type
+      default_value: campaign-cta
+    -
+      source_type: local_storage
+      source_key: campaign_affinity
+      endpoint_key: key
+      default_value: education
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/user\r\n/user/*\r\n/tfa\r\n/tfa/*\r\n/search\r\n/search/*"

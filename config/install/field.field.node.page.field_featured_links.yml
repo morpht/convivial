@@ -5,12 +5,10 @@ dependencies:
     - field.storage.node.field_featured_links
     - node.type.article
     - node.type.audience
-    - node.type.decision_tree
     - node.type.event
     - node.type.page
     - node.type.person
     - node.type.place
-    - node.type.step
     - node.type.topic
   module:
     - unique_content_field_validation
@@ -34,12 +32,10 @@ settings:
     target_bundles:
       article: article
       audience: audience
-      decision_tree: decision_tree
       event: event
       page: page
       person: person
       place: place
-      step: step
       topic: topic
     sort:
       field: _none

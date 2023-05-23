@@ -535,11 +535,13 @@ profilers:
         ttl: -1
     destinations:
       -
-        type: set
+        type: flag
         storage_key: store.goal.value
         target_location:
           localstorage: localstorage
           cookie: '0'
+        flag_prefix: ''
+        flag_suffix: ':on'
   device_type:
     name: device_type
     label: 'Device type'
@@ -580,7 +582,7 @@ profilers:
       -
         type: store
         storage_key: location_country
-        ttl: 0
+        ttl: -1
       -
         type: map
         storage_key: location_zone
@@ -621,7 +623,7 @@ profilers:
       -
         type: store
         storage_key: location_lat
-        ttl: 0
+        ttl: -1
     destinations:
       -
         type: season
@@ -654,7 +656,7 @@ profilers:
       -
         type: store
         storage_key: location_lon
-        ttl: 0
+        ttl: -1
     destinations:
       -
         type: copy
@@ -679,7 +681,7 @@ profilers:
       -
         type: store
         storage_key: location_city
-        ttl: 0
+        ttl: -1
     destinations:
       -
         type: copy
@@ -780,11 +782,11 @@ profilers:
       -
         type: language_simple
         storage_key: language-simple
-        ttl: 0
+        ttl: -1
       -
         type: language_full
         storage_key: language-full
-        ttl: 0
+        ttl: -1
     destinations:
       -
         type: copy
@@ -978,11 +980,11 @@ profilers:
       -
         type: officehours
         target_key: office_open
-        normal_start: '2022-04-03'
-        normal_end: '2022-10-01'
+        normal_start: '2023-04-03'
+        normal_end: '2023-10-01'
         normal_offset: '+10'
-        daylight_saving_start: '2022-10-02'
-        daylight_saving_end: '2023-04-02'
+        daylight_saving_start: '2023-10-02'
+        daylight_saving_end: '2024-04-02'
         daylight_saving_offset: '+11'
         office_times:
           -

@@ -1,0 +1,11 @@
+langcode: en
+name: 'Convivial Demo'
+mail: convivial-demo.noreply@pantheon-email.morpht.net
+slogan: ''
+page:
+  403: ''
+  404: /node/73
+  front: /node/13
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: en

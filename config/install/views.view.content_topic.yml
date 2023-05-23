@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.body
+    - field.storage.node.field_body
     - field.storage.node.field_published
     - field.storage.node.field_thumbnail
     - node.type.article
@@ -75,10 +75,10 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        body:
-          id: body
-          table: node__body
-          field: body
+        field_body:
+          id: field_body
+          table: node__field_body
+          field: field_body
           relationship: none
           group_type: group
           admin_label: ''
@@ -125,7 +125,7 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: text_summary_or_trimmed
+          type: text_trimmed
           settings:
             trim_length: 160
           group_column: value
@@ -496,7 +496,7 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.body'
+        - 'config:field.storage.node.field_body'
         - 'config:field.storage.node.field_published'
         - 'config:field.storage.node.field_thumbnail'
   articles:
@@ -547,6 +547,6 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.body'
+        - 'config:field.storage.node.field_body'
         - 'config:field.storage.node.field_published'
         - 'config:field.storage.node.field_thumbnail'

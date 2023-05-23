@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:content:4f858f44-e944-43f9-9aaf-598779a3bee5'
+  module:
+    - block_content
+    - system
+  theme:
+    - convivial_bootstrap
+id: help_test
+theme: convivial_bootstrap
+region: postscript_3
+weight: 0
+provider: null
+plugin: 'block_content:4f858f44-e944-43f9-9aaf-598779a3bee5'
+settings:
+  id: 'block_content:4f858f44-e944-43f9-9aaf-598779a3bee5'
+  label: 'Help - Test'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/test\r\n/test/*"

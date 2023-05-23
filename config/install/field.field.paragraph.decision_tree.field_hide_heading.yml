@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hide_heading
+    - paragraphs.paragraphs_type.decision_tree
+id: paragraph.decision_tree.field_hide_heading
+field_name: field_hide_heading
+entity_type: paragraph
+bundle: decision_tree
+label: 'Hide heading'
+description: 'Hide heading but keep available for screen readers.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

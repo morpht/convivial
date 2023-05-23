@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:content:9245de42-dfd4-4e79-9a88-f2325883e3ce'
+  module:
+    - block_content
+    - system
+  theme:
+    - convivial_bootstrap
+id: help_newsletter_signup
+theme: convivial_bootstrap
+region: postscript_3
+weight: 0
+provider: null
+plugin: 'block_content:9245de42-dfd4-4e79-9a88-f2325883e3ce'
+settings:
+  id: 'block_content:9245de42-dfd4-4e79-9a88-f2325883e3ce'
+  label: 'Help - Newsletter Signup'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /newsletter-signup

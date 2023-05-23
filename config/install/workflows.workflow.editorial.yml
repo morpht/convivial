@@ -4,12 +4,10 @@ dependencies:
   config:
     - node.type.article
     - node.type.audience
-    - node.type.decision_tree
     - node.type.event
     - node.type.page
     - node.type.person
     - node.type.place
-    - node.type.step
     - node.type.topic
   module:
     - content_moderation
@@ -88,11 +86,9 @@ type_settings:
     node:
       - article
       - audience
-      - decision_tree
       - event
       - page
       - person
       - place
-      - step
       - topic
   default_moderation_state: draft

@@ -10,6 +10,7 @@ dependencies:
     - paragraphs.paragraphs_type.content
     - paragraphs.paragraphs_type.content_block
     - paragraphs.paragraphs_type.content_tabs
+    - paragraphs.paragraphs_type.decision_tree
     - paragraphs.paragraphs_type.fastfacts
     - paragraphs.paragraphs_type.gallery
     - paragraphs.paragraphs_type.geochart
@@ -62,6 +63,7 @@ settings:
       section: section
       tiles: tiles
       timeline: timeline
+      decision_tree: decision_tree
       geochart: geochart
       gallery: gallery
       personified_content: personified_content
@@ -79,9 +81,6 @@ settings:
       adaptive_height_modifier:
         weight: -58
         enabled: false
-      answer:
-        weight: 38
-        enabled: false
       charts:
         weight: -75
         enabled: true
@@ -96,6 +95,9 @@ settings:
         enabled: false
       content_tabs:
         weight: -73
+        enabled: true
+      decision_tree:
+        weight: 44
         enabled: true
       fastfact:
         weight: -51
@@ -153,12 +155,6 @@ settings:
         enabled: false
       section:
         weight: -62
-        enabled: true
-      slide:
-        weight: -42
-        enabled: false
-      slideshow:
-        weight: -61
         enabled: true
       snippet:
         weight: 74

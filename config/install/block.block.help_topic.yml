@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:content:bd3003ec-3ed2-45ab-b81c-07eb04a0773c'
+  module:
+    - block_content
+    - node
+  theme:
+    - convivial_bootstrap
+id: help_topic
+theme: convivial_bootstrap
+region: postscript_3
+weight: 0
+provider: null
+plugin: 'block_content:bd3003ec-3ed2-45ab-b81c-07eb04a0773c'
+settings:
+  id: 'block_content:bd3003ec-3ed2-45ab-b81c-07eb04a0773c'
+  label: 'Help - Topic'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      topic: topic

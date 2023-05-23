@@ -8,7 +8,7 @@ dependencies:
 id: convivial_bootstrap_gtranslate
 theme: convivial_bootstrap
 region: top_bar
-weight: 1
+weight: -14
 provider: null
 plugin: gtranslate_block
 settings:

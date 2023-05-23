@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - personified
+    - system
+  theme:
+    - convivial_bootstrap
+id: personified_data_experience
+theme: convivial_bootstrap
+region: hidden
+weight: -12
+provider: null
+plugin: personified_data
+settings:
+  id: personified_data
+  label: 'Personified Data - Experience'
+  label_display: '0'
+  provider: personified
+  endpoint: /data/promotion
+  template: promotion_hero
+  params:
+    -
+      source_type: local_storage
+      source_key: experience
+      endpoint_key: key
+      default_value: 'experience:none'
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: '<front>'

@@ -4,7 +4,6 @@ dependencies:
   config:
     - core.entity_view_display.node.article.full
     - core.entity_view_display.node.audience.full
-    - core.entity_view_display.node.decision_tree.full
     - core.entity_view_display.node.event.full
     - core.entity_view_display.node.page.full
     - core.entity_view_display.node.person.full
@@ -19,12 +18,10 @@ dependencies:
     - media.type.video
     - node.type.article
     - node.type.audience
-    - node.type.decision_tree
     - node.type.event
     - node.type.page
     - node.type.person
     - node.type.place
-    - node.type.step
     - node.type.topic
     - taxonomy.vocabulary.goal
     - taxonomy.vocabulary.media_tags
@@ -52,7 +49,6 @@ dependencies:
     - image
     - layout_builder
     - layout_builder_modal
-    - layout_paragraphs
     - linkit
     - media
     - metatag
@@ -70,12 +66,14 @@ dependencies:
     - rest
     - role_delegation
     - search_api
+    - seckit
+    - shortcut
     - simple_sitemap
     - sitemap
-    - smart_content
     - system
     - taxonomy
     - toolbar
+    - update
     - views_ui
     - webform
     - workflows
@@ -160,7 +158,6 @@ permissions:
   - 'administer site configuration'
   - 'administer sitemap'
   - 'administer sitemap settings'
-  - 'administer smart content'
   - 'administer software updates'
   - 'administer taxonomy'
   - 'administer taxonomy_term display'
@@ -192,7 +189,6 @@ permissions:
   - 'change own username'
   - 'configure all article node layout overrides'
   - 'configure all audience node layout overrides'
-  - 'configure all decision_tree node layout overrides'
   - 'configure all event node layout overrides'
   - 'configure all page node layout overrides'
   - 'configure all person node layout overrides'
@@ -201,7 +197,6 @@ permissions:
   - 'configure any layout'
   - 'configure editable article node layout overrides'
   - 'configure editable audience node layout overrides'
-  - 'configure editable decision_tree node layout overrides'
   - 'configure editable event node layout overrides'
   - 'configure editable page node layout overrides'
   - 'configure editable person node layout overrides'
@@ -211,7 +206,6 @@ permissions:
   - 'create article content'
   - 'create audience content'
   - 'create audio media'
-  - 'create decision_tree content'
   - 'create event content'
   - 'create file media'
   - 'create image media'
@@ -222,7 +216,6 @@ permissions:
   - 'create place content'
   - 'create promotion microcontent'
   - 'create remote_video media'
-  - 'create step content'
   - 'create terms in goal'
   - 'create terms in media_tags'
   - 'create topic content'
@@ -234,7 +227,6 @@ permissions:
   - 'delete any article content'
   - 'delete any audience content'
   - 'delete any audio media'
-  - 'delete any decision_tree content'
   - 'delete any event content'
   - 'delete any file media'
   - 'delete any image media'
@@ -244,21 +236,18 @@ permissions:
   - 'delete any place content'
   - 'delete any promotion microcontent'
   - 'delete any remote_video media'
-  - 'delete any step content'
   - 'delete any topic content'
   - 'delete any video media'
   - 'delete any webform'
   - 'delete any webform submission'
   - 'delete article revisions'
   - 'delete audience revisions'
-  - 'delete decision_tree revisions'
   - 'delete event revisions'
   - 'delete media'
   - 'delete orphan revisions'
   - 'delete own article content'
   - 'delete own audience content'
   - 'delete own audio media'
-  - 'delete own decision_tree content'
   - 'delete own event content'
   - 'delete own file media'
   - 'delete own image media'
@@ -267,7 +256,6 @@ permissions:
   - 'delete own place content'
   - 'delete own promotion microcontent'
   - 'delete own remote_video media'
-  - 'delete own step content'
   - 'delete own topic content'
   - 'delete own video media'
   - 'delete own webform'
@@ -276,7 +264,6 @@ permissions:
   - 'delete paragraph content snippet'
   - 'delete person revisions'
   - 'delete place revisions'
-  - 'delete step revisions'
   - 'delete terms in goal'
   - 'delete terms in media_tags'
   - 'delete topic revisions'
@@ -284,7 +271,6 @@ permissions:
   - 'edit any article content'
   - 'edit any audience content'
   - 'edit any audio media'
-  - 'edit any decision_tree content'
   - 'edit any event content'
   - 'edit any file media'
   - 'edit any image media'
@@ -292,17 +278,14 @@ permissions:
   - 'edit any person content'
   - 'edit any place content'
   - 'edit any remote_video media'
-  - 'edit any step content'
   - 'edit any topic content'
   - 'edit any video media'
   - 'edit any webform'
   - 'edit any webform submission'
   - 'edit behavior plugin settings'
-  - 'edit layout paragraphs plugin config'
   - 'edit own article content'
   - 'edit own audience content'
   - 'edit own audio media'
-  - 'edit own decision_tree content'
   - 'edit own event content'
   - 'edit own file media'
   - 'edit own image media'
@@ -310,7 +293,6 @@ permissions:
   - 'edit own person content'
   - 'edit own place content'
   - 'edit own remote_video media'
-  - 'edit own step content'
   - 'edit own topic content'
   - 'edit own video media'
   - 'edit own webform'
@@ -321,7 +303,6 @@ permissions:
   - 'edit webform source'
   - 'edit webform twig'
   - 'edit webform variants'
-  - 'execute php code'
   - 'export configuration'
   - 'import configuration'
   - 'link to any page'
@@ -331,16 +312,13 @@ permissions:
   - 'revert all revisions'
   - 'revert article revisions'
   - 'revert audience revisions'
-  - 'revert decision_tree revisions'
   - 'revert event revisions'
   - 'revert page revisions'
   - 'revert person revisions'
   - 'revert place revisions'
-  - 'revert step revisions'
   - 'revert topic revisions'
   - 'select account cancellation method'
   - 'switch shortcut sets'
-  - 'switch users'
   - 'synchronize configuration'
   - 'update any media'
   - 'update any promotion microcontent'
@@ -355,7 +333,6 @@ permissions:
   - 'use editorial transition needs_review'
   - 'use editorial transition publish'
   - 'use editorial transition send_back_to_draft'
-  - 'use ipe with page manager'
   - 'use text format rich_text'
   - 'use text format unrestricted_text'
   - 'view all media revisions'
@@ -364,7 +341,6 @@ permissions:
   - 'view any webform submission'
   - 'view article revisions'
   - 'view audience revisions'
-  - 'view decision_tree revisions'
   - 'view event revisions'
   - 'view latest version'
   - 'view media'
@@ -374,8 +350,8 @@ permissions:
   - 'view page revisions'
   - 'view person revisions'
   - 'view place revisions'
-  - 'view step revisions'
   - 'view the administration theme'
   - 'view topic revisions'
   - 'view unpublished microcontent'
   - 'view unpublished paragraphs'
+  - 'view update notifications'

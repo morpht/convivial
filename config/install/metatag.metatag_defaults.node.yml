@@ -4,14 +4,12 @@ dependencies: {  }
 id: node
 label: Content
 tags:
+  canonical_url: '[node:url]'
   'custom_meta_tag_name:goal': '[node:field_goal:0:entity:field_key],[node:field_goal:1:entity:field_key],[node:field_goal:2:entity:field_key],[node:field_goal:3:entity:field_key]'
   'custom_meta_tag_name:stage': '[node:field_stage:0:entity:field_key]'
-  canonical_url: '[node:url]'
-  description: '[node:summary]'
+  description: '[node:field_summary]'
   image_src: '[node:field_thumbnail:entity:field_media_image:full_wide_lg:url]'
-  shortlink: '/node/[node:nid]'
-  title: '[node:title] | [site:name]'
-  og_description: '[node:summary]'
+  og_description: '[node:field_summary]'
   og_image: '[node:field_thumbnail:entity:field_media_image:full_wide_lg:url]'
   og_image_height: '[node:field_thumbnail:entity:field_media_image:full_wide_lg:height]'
   og_image_width: '[node:field_thumbnail:entity:field_media_image:full_wide_lg:width]'
@@ -20,4 +18,6 @@ tags:
   og_type: '[node:content-type]'
   og_updated_time: '[node:changed:html_datetime]'
   og_url: '[node:url]'
+  shortlink: '/node/[node:nid]'
+  title: '[node:title] | [site:name]'
   twitter_cards_type: summary_large_image

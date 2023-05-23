@@ -9,11 +9,11 @@ type: 'canonical_entities:node'
 pattern: '[node:field_step_decision_tree:entity:url:path]/[node:title]'
 selection_criteria:
   fd4f76b8-4333-4853-bab2-50b5001cc063:
-    id: node_type
+    id: 'entity_bundle:node'
     negate: false
     uuid: fd4f76b8-4333-4853-bab2-50b5001cc063
     context_mapping:
-      node: node
+      node: '@node.node_route_context:node'
     bundles:
       step: step
 selection_logic: and

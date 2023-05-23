@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - personified
+    - system
+  theme:
+    - convivial_bootstrap
+id: personified_message_homepage
+theme: convivial_bootstrap
+region: hidden
+weight: -9
+provider: null
+plugin: personified_message
+settings:
+  id: personified_message
+  label: 'Personified Message - Homepage'
+  label_display: '0'
+  provider: personified
+  template: "{{#if localstorage.location_country}}\r\n  <p>{{localstorage.location_country}} is a very nice country!</p>\r\n{{/if}}\r\n{{#if localstorage.season}}\r\n  <p>There is {{localstorage.season}} outside, do you enjoy this season?</p>\r\n{{/if}}\r\n<p>You visited this site {{localstorage.visits}} times...<br/>\r\n  {{#eq localstorage.experience 'experience:none'}}\r\n    We are glad that you have visited Convivial for the first time.\r\n  {{else eq localstorage.experience 'experience:low'}}\r\n    You already visited a few pages on Convivial, but there is much more.\r\n  {{else eq localstorage.experience 'experience:medium'}}\r\n    We are pleased that your interest in Convivial is growing.\r\n  {{else eq localstorage.experience 'experience:high'}}\r\n    It looks you are already a very experienced Convivial user.\r\n  {{/eq}}\r\n</p>\r\n{{#if localstorage.top_topic}}\r\n  <p>Your top topic is {{localstorage.top_topic}}, nice choice.</p>\r\n{{/if}}"
+  transformer: handlebars
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: '<front>'

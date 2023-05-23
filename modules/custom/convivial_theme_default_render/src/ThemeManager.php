@@ -55,23 +55,13 @@ class ThemeManager extends CoreThemeManager implements ThemeManagerInterface {
   public function render($hook, array $variables) {
     $overloaded = FALSE;
 
-    if ($hook === 'paragraph' &&
-      isset($variables['#array_parents'][1])
-      && $variables['#array_parents'][1] === 'widget') {
-      $front_theme_name = $this->configFactory->get('system.theme')
-        ->get('default');
-      $current_theme = $this->themeInitialization->getActiveThemeByName($front_theme_name);
-      $this->themeManager->setActiveTheme($current_theme);
-      $variables['#overloaded'] = $overloaded = TRUE;
-
-      // We need to make sure to not render nested <form> elements in edit forms.
-      // Webform has a nice code https://git.drupalcode.org/project/webform/-/blob/ea1765bfc1d6052bfcc10c6b7cfbadbc1fb72643/src/Plugin/Field/FieldFormatter/WebformEntityReferenceEntityFormatter.php#L142
-      // and related issue: https://www.drupal.org/project/webform/issues/3122506
-
+    // We need to make sure to not render nested <form> elements in edit forms.
+    // Webform has a nice code https://git.drupalcode.org/project/webform/-/blob/ea1765bfc1d6052bfcc10c6b7cfbadbc1fb72643/src/Plugin/Field/FieldFormatter/WebformEntityReferenceEntityFormatter.php#L142
+    // and related issue: https://www.drupal.org/project/webform/issues/3122506
+    if ($hook === 'paragraph' && isset($variables['#array_parents'][1]) && $variables['#array_parents'][1] === 'widget') {
       // Render early to check for potentially problematic parts.
       $render = $this->themeManager->render($hook, $variables);
-      if((strpos($render, '<!-- nopreview -->') !== false) ||
-        (strpos($render, '<form ') !== false)) {
+      if((strpos($render, '<!-- nopreview -->') !== false) || (strpos($render, '<form ') !== false)) {
         // It's hard to alter $variables properly as it's structure
         // is changing quite a bit.
         // Also, paragraph--hero-search.html.twig has hardcoded form
@@ -88,6 +78,13 @@ class ThemeManager extends CoreThemeManager implements ThemeManagerInterface {
         // @ToDo: Use t().
         $render = "Paragraph preview containing another form can not be previewed when editing content.";
       }
+    }
+
+    if ($hook === 'paragraph') {
+      $front_theme_name = $this->configFactory->get('system.theme')->get('default');
+      $current_theme = $this->themeInitialization->getActiveThemeByName($front_theme_name);
+      $this->themeManager->setActiveTheme($current_theme);
+      $variables['#overloaded'] = $overloaded = TRUE;
     }
 
     // Normal render or render of the nested <form> warning.
