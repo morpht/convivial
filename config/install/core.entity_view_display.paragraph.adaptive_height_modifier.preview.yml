@@ -52,3 +52,4 @@ content:
     region: content
 hidden:
   field_mod_media_query: true
+  search_api_excerpt: true

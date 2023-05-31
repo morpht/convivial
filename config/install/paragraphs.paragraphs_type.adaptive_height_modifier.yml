@@ -5,5 +5,5 @@ id: adaptive_height_modifier
 label: 'Adaptive height'
 icon_uuid: null
 icon_default: null
-description: 'Modify a the relative height so that it adapts to the viewport.'
+description: 'Modify the relative height so that it adapts to the viewport.'
 behavior_plugins: {  }

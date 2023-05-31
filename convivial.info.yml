@@ -1,15 +1,14 @@
 name: Convivial
 type: profile
 description: 'Convivial profile by Morpht.'
-core_version_requirement: '^9.4 || ^10.0'
+core_version_requirement: ^10
 install:
+  - address
   - admin_toolbar
   - admin_toolbar_links_access_filter
   - admin_toolbar_search
   - admin_toolbar_tools
   - antibot
-  - ayrshare
-  - ayrshare_node
   - ban
   - better_exposed_filters
   - chosen
@@ -38,15 +37,18 @@ install:
   - easy_breadcrumb
   - editor
   - entity_class_formatter
-  - entity_clone
   - entity_reference_display
   - entity_reference_revisions
+  - environment_indicator
+  - eu_cookie_compliance
   - facets
   - facets_pretty_paths
   - field_formatter_pattern
   - field_token_value
   - field_ui
   - focal_point
+  - geofield
+  - geofield_map
   - google_analytics
   - google_tag
   - gtranslate
@@ -73,20 +75,13 @@ install:
   - menu_ui
   - metatag_open_graph
   - metatag_twitter_cards
+  - moderation_dashboard
   - modifiers
   - modifiers_adaptive_height
   - modifiers_bg_image
   - modifiers_bg_parallax
   - modifiers_bg_video
-  - modifiers_clip_path
-  - modifiers_color_background
-  - modifiers_custom_linear_gradient
-  - modifiers_custom_radial_gradient
-  - modifiers_datatables
-  - modifiers_fonts
   - modifiers_hide
-  - modifiers_padding
-  - modifiers_relative_height
   - modifiers_scroll_reveal
   - module_filter
   - pantheon_advanced_page_cache
@@ -98,23 +93,30 @@ install:
   - password_policy_length
   - password_policy_username
   - personified
+  - recombee
   - redirect
+  - remove_http_headers
   - replicate
   - replicate_ui
+  - responsive_preview
   - rest
+  - role_delegation
   - sajari
   - search_api
   - search_api_db
   - search_api_field_token
+  - search_api_recombee
   - sendgrid_integration
   - shortcut
   - simple_sitemap
   - sitemap
+  - seckit
   - smart_trim
   - syslog
   - taxonomy
   - telephone
   - toolbar
+  - update
   - username_enumeration_prevention
   - views_ui
   - webform

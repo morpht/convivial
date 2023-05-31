@@ -16,4 +16,5 @@ matchers:
       group_by_bundle: false
       substitution_type: canonical
       include_unpublished: false
+      limit: 100
     weight: 0

@@ -10,6 +10,7 @@ dependencies:
   module:
     - node
     - search_api
+    - search_api_field_token
 id: content
 name: Content
 description: 'Default search index using the database search server'

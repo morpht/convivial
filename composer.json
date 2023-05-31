@@ -89,7 +89,7 @@
     "drupal/migrate_tools": "^6.0",
     "drupal/moderation_sidebar": "^1.4",
     "drupal/modifiers": "^1.5",
-    "drupal/modifiers_pack": "^2.0",
+    "drupal/modifiers_pack": "^2.1",
     "drupal/module_filter": "^4.0",
     "drupal/pantheon_advanced_page_cache": "^2.1",
     "drupal/paragraphs": "^1.13",

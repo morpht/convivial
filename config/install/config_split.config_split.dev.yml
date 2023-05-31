@@ -5,6 +5,7 @@ id: dev
 label: Development
 description: ''
 weight: 0
+stackable: false
 storage: folder
 folder: ../config/dev
 module:

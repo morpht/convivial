@@ -8,7 +8,6 @@ dependencies:
     - eu_cookie_compliance
     - filter
     - redirect
-    - role_delegation
     - system
     - toolbar
 id: manager
@@ -22,12 +21,6 @@ permissions:
   - 'access user profiles'
   - 'administer redirects'
   - 'administer users'
-  - 'assign approver role'
-  - 'assign editor role'
-  - 'assign layout_customizer role'
-  - 'assign manager role'
-  - 'assign submission_viewer role'
-  - 'assign webform_manager role'
   - 'display eu cookie compliance popup'
   - 'use text format rich_text'
   - 'view the administration theme'

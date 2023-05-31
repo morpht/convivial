@@ -26,4 +26,5 @@ hidden:
   field_mod_bgp_color_val: true
   field_mod_parallax: true
   field_mod_parallax_speed: true
+  search_api_excerpt: true
   uid: true

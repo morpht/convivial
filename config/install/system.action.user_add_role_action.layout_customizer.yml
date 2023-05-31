@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.layout_customizer
+  module:
+    - user
+id: user_add_role_action.layout_customizer
+label: 'Add the Layout customizer role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: layout_customizer

@@ -5,6 +5,7 @@ id: test
 label: Test
 description: ''
 weight: 0
+stackable: false
 storage: folder
 folder: ../config/test
 module:
