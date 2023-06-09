@@ -8,24 +8,24 @@ like settings.php and Lando tooling.
 * `convivial profile`
     * **Drupal installation profile. Holds config, default content, scaffolding files like settings.php and Lando tooling.**
     * All changes here will propagate to active projects.
-* `convivial-template`
-    * **Very basic file structure that requires `convivial-profile` in composer. Used as a starting point for new projects.**
+* `convivial-recommended`
+    * **Very basic file structure that requires `convivial profile` in composer. Used as a starting point for new projects.**
     * "Use it and forget it."
 * `[new-project]`
-    * **New git repo based on `convivial-template`. Holds project specific things. Requires `convivial-profile` in composer.**
+    * **New git repo based on `convivial-recommended`. Holds project specific things. Requires `convivial profile` in composer.**
     * New project code is hosted on GitHub and GitHub Actions replicate it to Pantheon.
-    * `composer update` fetches latest changes form `convivial-profile`.
+    * `composer update` fetches latest changes form `convivial profile`.
 
 ## Starting a new site - overview
 
 * Decide on new machine name. Make sure it's available on Pantheon.
-* `Use this template` on https://github.com/morpht/convivial-template
-    * Template provides basic file structure and pull s in the `convivial-profile`.
-    * Rename all mentions of `convivial-template` to new project name.
+* `Use this template` on https://github.com/morpht/convivial-recommended
+    * Template provides basic file structure and pulls in the `convivial profile`.
+    * Rename all mentions of `convivial-recommended` to new project name.
 
-This profile is meant to be used in conjunction with `convivial-template` project template. To start a new project, you should:
+This profile is meant to be used in conjunction with `convivial-recommended` project template. To start a new project, you should:
 
-* Create a new github repo from convivial-template as a template.
+* Create a new github repo from convivial-recommended as a template.
 * Checkout new repo locally and edit .lando.yml (project name, local url).
 * Run `lando composer install`
 * Install site locally with Convivial installation profile.
@@ -43,6 +43,6 @@ This profile is meant to be used in conjunction with `convivial-template` projec
 
 ## Updating
 
-To update configuration, one needs to manually copy new/updated configuration files to convivial-profile/config/install folder and remove uuid and _core: default_hash items there.
+To update configuration, one needs to manually copy new/updated configuration files to convivial/config/install folder and remove uuid and _core: default_hash items there.
 
 [How to write an installation profile](https://www.drupal.org/docs/distributions/creating-distributions/how-to-write-a-drupal-installation-profile)

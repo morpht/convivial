@@ -30,6 +30,8 @@ echo "GITHUB_REF: $GITHUB_REF"
 echo "GH_EVENT_REF: $GH_EVENT_REF"
 echo "GH_EVENT_REF_TYPE: ${GH_EVENT_REF_TYPE}"
 
+git --version
+
 # Prepare variables.
 FOLDER_GITHUB=$(pwd)
 PROJECT_NAME="$(basename `pwd`)"
@@ -112,7 +114,8 @@ echo "GIT_REMOTE: $GIT_REMOTE"
 echo "BRANCHNAME_HOSTING: $BRANCHNAME_HOSTING"
 cd "$FOLDER_HOSTING"
 git clone "$GIT_REMOTE" .
-git checkout "${BRANCHNAME_HOSTING}" || git checkout -b "${BRANCHNAME_HOSTING}"
+git fetch origin
+git switch "${BRANCHNAME_HOSTING}" || git checkout -b "${BRANCHNAME_HOSTING}"
 
 # Remove .git and ignores to make sure everything gets committed.
 cd $FOLDER_GITHUB

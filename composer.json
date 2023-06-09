@@ -165,47 +165,6 @@
       "drupal/redirect": {
         "3037259 - Endless Redirection loop when using Domain access": "https://www.drupal.org/files/issues/2022-09-13/3037259-28.patch"
       }
-    },
-    "drupal-scaffold": {
-      "file-mapping": {
-        "[web-root]/sites/default/settings.php": {
-          "path": "assets/settings.php",
-          "overwrite": false
-        },
-        "[web-root]/sites/default/settings/settings.main.php": "assets/settings/settings.main.php",
-        "[web-root]/sites/default/settings/settings.dev.php": "assets/settings/settings.dev.php",
-        "[web-root]/sites/default/settings/settings.lando.php": "assets/settings/settings.lando.php",
-        "[web-root]/sites/default/settings/settings.live.php": "assets/settings/settings.live.php",
-        "[web-root]/sites/default/settings/settings.local.php": {
-          "path": "assets/settings/settings.local.php",
-          "overwrite": false
-        },
-        "[web-root]/sites/default/settings/settings.pantheon.php": "assets/settings/settings.pantheon.php",
-        "[web-root]/sites/default/settings/settings.test.php": "assets/settings/settings.test.php",
-        ".github/scripts/build.sh": "assets/.github/scripts/build.sh",
-        ".github/scripts/synctags.sh": "assets/.github/scripts/synctags.sh",
-        ".github/workflows/pantheon_deploy.yml": "assets/.github/workflows/pantheon_deploy.yml",
-        ".github/workflows/synctags.yml": "assets/.github/workflows/synctags.yml",
-        "[web-root]/sites/aliases.php": {
-          "path": "assets/aliases.php",
-          "overwrite": false
-        },
-        "[web-root]/sites/development.services.yml": "assets/development.services.yml",
-        ".lando/artefact.sh": "assets/.lando/artefact.sh",
-        ".lando/fresh-install.sh": "assets/.lando/fresh-install.sh",
-        ".lando/setup_terminus.sh": "assets/.lando/setup_terminus.sh",
-        ".lando/verify_mac_ssh_socket.sh": "assets/.lando/verify_mac_ssh_socket.sh",
-        ".gitignore": "assets/gitignore",
-        "pantheon.upstream.yml": {
-          "path": "assets/pantheon.upstream.yml",
-          "overwrite": false
-        },
-        "pantheon.yml": {
-          "path": "assets/pantheon.yml",
-          "overwrite": false
-        },
-        "[web-root]/private/scripts/deploy_after.php": "assets/deploy_after.php"
-      }
     }
   },
   "require-dev": {
