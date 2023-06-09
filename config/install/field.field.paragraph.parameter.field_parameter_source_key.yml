@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_parameter_source_key
+    - paragraphs.paragraphs_type.parameter
+  module:
+    - unique_content_field_validation
+third_party_settings:
+  unique_content_field_validation:
+    unique: false
+    unique_text: ''
+id: paragraph.parameter.field_parameter_source_key
+field_name: field_parameter_source_key
+entity_type: paragraph
+bundle: parameter
+label: 'Source key'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

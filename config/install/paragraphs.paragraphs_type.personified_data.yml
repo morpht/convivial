@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: personified_data
+label: 'Personified data'
+icon_uuid: null
+icon_default: null
+description: 'Provides configurable paragraph to render JSON results.'
+behavior_plugins: {  }

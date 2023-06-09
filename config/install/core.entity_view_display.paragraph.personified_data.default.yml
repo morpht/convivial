@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.personified_data.field_personified_endpoint
+    - field.field.paragraph.personified_data.field_personified_parameters
+    - field.field.paragraph.personified_data.field_personified_template
+    - field.field.paragraph.personified_data.field_vertical_spacing
+    - paragraphs.paragraphs_type.personified_data
+id: paragraph.personified_data.default
+targetEntityType: paragraph
+bundle: personified_data
+mode: default
+content: {  }
+hidden:
+  field_personified_endpoint: true
+  field_personified_parameters: true
+  field_personified_template: true
+  field_vertical_spacing: true
+  search_api_excerpt: true

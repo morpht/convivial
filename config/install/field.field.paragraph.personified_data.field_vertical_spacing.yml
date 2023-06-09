@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vertical_spacing
+    - paragraphs.paragraphs_type.personified_data
+  module:
+    - options
+    - unique_content_field_validation
+third_party_settings:
+  unique_content_field_validation:
+    unique: false
+    unique_text: ''
+id: paragraph.personified_data.field_vertical_spacing
+field_name: field_vertical_spacing
+entity_type: paragraph
+bundle: personified_data
+label: 'Vertical spacing'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

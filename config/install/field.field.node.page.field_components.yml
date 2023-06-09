@@ -22,6 +22,7 @@ dependencies:
     - paragraphs.paragraphs_type.media_list
     - paragraphs.paragraphs_type.node_list
     - paragraphs.paragraphs_type.personified_content
+    - paragraphs.paragraphs_type.personified_data
     - paragraphs.paragraphs_type.plugin_block
     - paragraphs.paragraphs_type.section
     - paragraphs.paragraphs_type.snippet
@@ -69,6 +70,7 @@ settings:
       personified_content: personified_content
       lightbox: lightbox
       layout: layout
+      personified_data: personified_data
       snippet: snippet
     negate: 0
     target_bundles_drag_drop:
@@ -144,8 +146,14 @@ settings:
       parallax_bg_modifier:
         weight: -45
         enabled: false
+      parameter:
+        weight: 62
+        enabled: false
       personified_content:
         weight: 56
+        enabled: true
+      personified_data:
+        weight: 64
         enabled: true
       plugin_block:
         weight: -72
