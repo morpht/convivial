@@ -22,5 +22,4 @@ content:
 hidden:
   created: true
   field_mod_hide: true
-  search_api_excerpt: true
   uid: true

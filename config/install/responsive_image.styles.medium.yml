@@ -2,9 +2,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - image.style.medium
-    - image.style.medium_hi
     - image.style.medium_standard
+    - image.style.medium_hi
   module:
     - convivial_breakpoints
 id: medium

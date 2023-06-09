@@ -5,7 +5,7 @@ like settings.php and Lando tooling.
 
 ## Structure
 
-* `convivial-profile`
+* `convivial profile`
     * **Drupal installation profile. Holds config, default content, scaffolding files like settings.php and Lando tooling.**
     * All changes here will propagate to active projects.
 * `convivial-template`

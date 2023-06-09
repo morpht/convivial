@@ -2,9 +2,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - image.style.large
-    - image.style.large_hi
     - image.style.large_standard
+    - image.style.large_hi
   module:
     - convivial_breakpoints
 id: large

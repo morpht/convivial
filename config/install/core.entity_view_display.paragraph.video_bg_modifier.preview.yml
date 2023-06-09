@@ -26,5 +26,4 @@ hidden:
   field_mod_bgv_color_val: true
   field_mod_bgv_image: true
   field_mod_video: true
-  search_api_excerpt: true
   uid: true

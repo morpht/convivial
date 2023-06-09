@@ -1039,7 +1039,7 @@ visibility:
     id: 'entity_bundle:node'
     negate: false
     context_mapping:
-      node: '@node.node_route_context:node'
+      node: node
     bundles: {  }
   request_path:
     id: request_path

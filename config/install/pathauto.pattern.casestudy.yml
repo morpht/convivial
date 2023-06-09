@@ -13,7 +13,7 @@ selection_criteria:
     negate: false
     uuid: e04e963c-0efe-4879-b9cc-b8d2781b8cfc
     context_mapping:
-      node: '@node.node_route_context:node'
+      node: node
     bundles:
       casestudy: casestudy
 selection_logic: and

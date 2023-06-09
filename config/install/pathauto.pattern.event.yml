@@ -13,7 +13,7 @@ selection_criteria:
     negate: false
     uuid: 8db7a319-41a5-4f2c-9cca-bcb6ce3404d5
     context_mapping:
-      node: '@node.node_route_context:node'
+      node: node
     bundles:
       event: event
 selection_logic: and

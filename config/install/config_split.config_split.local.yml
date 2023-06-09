@@ -5,7 +5,6 @@ id: local
 label: Local
 description: 'Settings for local environment, adding to or overriding general development settings.'
 weight: 5
-stackable: false
 storage: folder
 folder: ../config/local
 module:
