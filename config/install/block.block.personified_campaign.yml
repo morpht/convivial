@@ -27,7 +27,7 @@ settings:
       default_value: campaign-cta
     -
       source_type: local_storage
-      source_key: campaign_affinity
+      source_key: campaign
       endpoint_key: key
       default_value: education
 visibility:

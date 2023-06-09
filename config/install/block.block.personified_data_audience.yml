@@ -21,7 +21,7 @@ settings:
   params:
     -
       source_type: local_storage
-      source_key: audience_affinity
+      source_key: audience
       endpoint_key: key
       default_value: 'audience:none'
 visibility: {  }
