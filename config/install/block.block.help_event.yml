@@ -27,6 +27,6 @@ visibility:
     id: 'entity_bundle:node'
     negate: false
     context_mapping:
-      node: node
+      node: '@node.node_route_context:node'
     bundles:
       event: event
