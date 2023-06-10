@@ -5,6 +5,7 @@ dependencies:
     - 'block_content:components:855cfcd3-ece9-4890-8ca5-e1b18f83cab4'
   module:
     - block_content
+    - user
   theme:
     - convivial_bootstrap
 id: overridepersonalisation
@@ -21,4 +22,11 @@ settings:
   status: true
   info: ''
   view_mode: full
-visibility: {  }
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      site_administrator: site_administrator
