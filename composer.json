@@ -140,7 +140,7 @@
     "npm-asset/scrollreveal": "^4.0.7",
     "npm-asset/videojs-background": "^1.0",
     "oomphinc/composer-installers-extender": "^2.0",
-    "pantheon-systems/drupal-integrations": "^9.0",
+    "pantheon-systems/drupal-integrations": "^10",
     "pantheon-systems/quicksilver-pushback": "^2",
     "pear/archive_tar": "^1.4"
   },
