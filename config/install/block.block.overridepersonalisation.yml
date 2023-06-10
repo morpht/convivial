@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:components:855cfcd3-ece9-4890-8ca5-e1b18f83cab4'
+  module:
+    - block_content
+  theme:
+    - convivial_bootstrap
+id: overridepersonalisation
+theme: convivial_bootstrap
+region: footer_information
+weight: 0
+provider: null
+plugin: 'block_content:855cfcd3-ece9-4890-8ca5-e1b18f83cab4'
+settings:
+  id: 'block_content:855cfcd3-ece9-4890-8ca5-e1b18f83cab4'
+  label: 'Override personalisation '
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
