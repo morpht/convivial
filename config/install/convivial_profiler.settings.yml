@@ -660,7 +660,7 @@ profilers:
           - intent_meta
           - topic_cookie
           - topic_top
-        default_value: 'intent:general'
+        default_value: ''
         target_location:
           localstorage: localstorage
           cookie: '0'
