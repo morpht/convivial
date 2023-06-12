@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.place.field_header_colour_classes
     - field.field.node.place.field_hero_darkness
     - field.field.node.place.field_hide
+    - field.field.node.place.field_intent
     - field.field.node.place.field_introduction
     - field.field.node.place.field_keywords
     - field.field.node.place.field_meta_tags
@@ -34,6 +35,7 @@ dependencies:
     - layout_paragraphs
     - metatag
     - options
+    - telephone
     - text
     - user
 id: node.place.default
@@ -52,7 +54,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 25
+    weight: 19
     region: content
   field_banner_title:
     type: string
@@ -60,14 +62,14 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 26
+    weight: 20
     region: content
   field_body:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 28
+    weight: 22
     region: content
   field_components:
     type: layout_paragraphs
@@ -76,7 +78,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 4
+    weight: 3
     region: content
   field_featured_links:
     type: entity_reference_label
@@ -84,7 +86,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 24
+    weight: 18
     region: content
   field_featured_title:
     type: string
@@ -92,7 +94,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 23
+    weight: 17
     region: content
   field_goal:
     type: entity_reference_label
@@ -100,49 +102,57 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 12
+    weight: 9
     region: content
   field_header_colour_classes:
     type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 9
+    weight: 7
     region: content
   field_hero_darkness:
     type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 8
+    weight: 6
     region: content
   field_hide:
     type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 14
+    weight: 10
+    region: content
+  field_intent:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 16
     region: content
   field_keywords:
     type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 7
+    weight: 5
     region: content
   field_meta_tags:
     type: metatag_empty_formatter
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 11
+    weight: 8
     region: content
   field_place_address:
     type: address_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 19
+    weight: 13
     region: content
   field_place_geo:
     type: geofield_default
@@ -151,14 +161,15 @@ content:
       output_format: wkt
       output_escape: true
     third_party_settings: {  }
-    weight: 20
+    weight: 14
     region: content
   field_place_telephone:
-    type: basic_string
+    type: telephone_link
     label: above
-    settings: {  }
+    settings:
+      title: ''
     third_party_settings: {  }
-    weight: 18
+    weight: 12
     region: content
   field_stage:
     type: entity_reference_label
@@ -166,14 +177,14 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 22
+    weight: 15
     region: content
   field_summary:
     type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 27
+    weight: 21
     region: content
   field_thumbnail:
     type: entity_reference_label
@@ -181,7 +192,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 5
+    weight: 4
     region: content
   field_toc:
     type: list_default
@@ -197,7 +208,7 @@ content:
       timezone_override: ''
       format_type: medium
     third_party_settings: {  }
-    weight: 15
+    weight: 11
     region: content
   links:
     settings: {  }

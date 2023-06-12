@@ -15,6 +15,7 @@ dependencies:
     - field.field.node.event.field_header_colour_classes
     - field.field.node.event.field_hero_darkness
     - field.field.node.event.field_hide
+    - field.field.node.event.field_intent
     - field.field.node.event.field_introduction
     - field.field.node.event.field_keywords
     - field.field.node.event.field_location
@@ -389,6 +390,7 @@ hidden:
   field_header_colour_classes: true
   field_hero_darkness: true
   field_hide: true
+  field_intent: true
   field_location: true
   field_meta_tags: true
   field_social_message: true

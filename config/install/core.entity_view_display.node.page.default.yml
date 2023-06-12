@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.page.field_header_colour_classes
     - field.field.node.page.field_hero_darkness
     - field.field.node.page.field_hide
+    - field.field.node.page.field_intent
     - field.field.node.page.field_introduction
     - field.field.node.page.field_keywords
     - field.field.node.page.field_meta_tags
@@ -48,7 +49,7 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 20
+    weight: 16
     region: content
   field_banner_title:
     type: string
@@ -56,14 +57,14 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 21
+    weight: 17
     region: content
   field_body:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 23
+    weight: 19
     region: content
   field_components:
     type: layout_paragraphs
@@ -72,7 +73,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 4
+    weight: 3
     region: content
   field_featured_links:
     type: entity_reference_label
@@ -80,7 +81,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 18
+    weight: 14
     region: content
   field_featured_title:
     type: string
@@ -88,7 +89,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 19
+    weight: 15
     region: content
   field_goal:
     type: entity_reference_label
@@ -96,42 +97,50 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 12
+    weight: 9
     region: content
   field_header_colour_classes:
     type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 9
+    weight: 7
     region: content
   field_hero_darkness:
     type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 8
+    weight: 6
     region: content
   field_hide:
     type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 14
+    weight: 10
+    region: content
+  field_intent:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 13
     region: content
   field_keywords:
     type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 7
+    weight: 5
     region: content
   field_meta_tags:
     type: metatag_empty_formatter
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 11
+    weight: 8
     region: content
   field_stage:
     type: entity_reference_label
@@ -139,14 +148,14 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 17
+    weight: 12
     region: content
   field_summary:
     type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 22
+    weight: 18
     region: content
   field_thumbnail:
     type: entity_reference_label
@@ -154,7 +163,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 5
+    weight: 4
     region: content
   field_toc:
     type: list_default
@@ -170,7 +179,7 @@ content:
       timezone_override: ''
       format_type: medium
     third_party_settings: {  }
-    weight: 15
+    weight: 11
     region: content
   links:
     settings: {  }

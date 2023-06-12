@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.article.field_goal
     - field.field.node.article.field_header_colour_classes
     - field.field.node.article.field_hero_darkness
+    - field.field.node.article.field_intent
     - field.field.node.article.field_introduction
     - field.field.node.article.field_keywords
     - field.field.node.article.field_meta_tags
@@ -132,6 +133,7 @@ hidden:
   field_goal: true
   field_header_colour_classes: true
   field_hero_darkness: true
+  field_intent: true
   field_introduction: true
   field_keywords: true
   field_meta_tags: true

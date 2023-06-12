@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.page.field_header_colour_classes
     - field.field.node.page.field_hero_darkness
     - field.field.node.page.field_hide
+    - field.field.node.page.field_intent
     - field.field.node.page.field_introduction
     - field.field.node.page.field_keywords
     - field.field.node.page.field_meta_tags
@@ -119,6 +120,7 @@ hidden:
   field_header_colour_classes: true
   field_hero_darkness: true
   field_hide: true
+  field_intent: true
   field_introduction: true
   field_keywords: true
   field_meta_tags: true
