@@ -211,7 +211,7 @@ profilers:
   type:
     name: type
     label: 'Type meta'
-    weight: -9
+    weight: -10
     status: true
     description: 'Saves the "type" meta name to storage.'
     deferred: false
@@ -241,7 +241,7 @@ profilers:
   audience_meta:
     name: audience_meta
     label: 'Audiences meta'
-    weight: -8
+    weight: -9
     status: true
     description: 'Saves the "audiences" meta names to the audience dimension and calculates audience_top.'
     deferred: false
@@ -271,7 +271,7 @@ profilers:
   audience_param:
     name: audience_param
     label: 'Audience param'
-    weight: -7
+    weight: -8
     status: true
     description: 'Saves the "audience" query param to storage.'
     deferred: false
@@ -296,7 +296,7 @@ profilers:
   audience_recent:
     name: audience_recent
     label: 'Audience recent'
-    weight: -8
+    weight: -7
     status: true
     description: 'Saves the "audience_key" to storage.'
     deferred: false
@@ -321,7 +321,7 @@ profilers:
   audience_crm:
     name: audience_crm
     label: 'Audience CRM'
-    weight: -7
+    weight: -6
     status: true
     description: 'Saves the "audience_crm" to storage.'
     deferred: false
@@ -345,10 +345,10 @@ profilers:
           cookie: '0'
   audience:
     name: audience
-    label: 'Audience bestpick'
-    weight: -6
+    label: Audience
+    weight: -5
     status: true
-    description: ''
+    description: 'Picks the best "audience".'
     deferred: false
     sources: {  }
     processors: {  }
@@ -369,7 +369,7 @@ profilers:
   campaign_param:
     name: campaign_param
     label: 'Campaign param'
-    weight: -7
+    weight: -4
     status: true
     description: 'Saves the "campaign" query param to storage.'
     deferred: false
@@ -394,7 +394,7 @@ profilers:
   campaign_crm:
     name: campaign_crm
     label: 'Campaign CRM'
-    weight: -5
+    weight: -3
     status: true
     description: 'Saves the "campaign_crm" to storage.'
     deferred: false
@@ -418,10 +418,10 @@ profilers:
           cookie: '0'
   campaign:
     name: campaign
-    label: 'Picks the best "campaign.'
-    weight: -4
+    label: Campaign
+    weight: -2
     status: true
-    description: ''
+    description: 'Picks the best "campaign".'
     deferred: false
     sources: {  }
     processors: {  }
@@ -441,7 +441,7 @@ profilers:
   topic_meta:
     name: topic_meta
     label: 'Topics meta'
-    weight: -3
+    weight: -1
     status: true
     description: 'Saves the "topics" meta names to the topic dimension and calculates topic_top.'
     deferred: false
@@ -471,7 +471,7 @@ profilers:
   topic_param:
     name: topic_param
     label: 'Topic param'
-    weight: -7
+    weight: 0
     status: true
     description: 'Saves the "topic" query param to storage.'
     deferred: false
@@ -496,7 +496,7 @@ profilers:
   topic_recent:
     name: topic_recent
     label: 'Topic recent'
-    weight: -8
+    weight: 1
     status: true
     description: 'Saves the "topic_key" to storage.'
     deferred: false
@@ -521,7 +521,7 @@ profilers:
   topic_crm:
     name: topic_crm
     label: 'Topic CRM'
-    weight: -2
+    weight: 2
     status: true
     description: 'Saves the "topic_crm" to storage.'
     deferred: false
@@ -545,8 +545,8 @@ profilers:
           cookie: '0'
   topic:
     name: topic
-    label: 'Topic bestpick'
-    weight: 0
+    label: Topic
+    weight: 3
     status: true
     description: 'Picks the best "topic".'
     deferred: false
@@ -566,10 +566,130 @@ profilers:
         target_location:
           localstorage: localstorage
           cookie: '0'
+  intent_meta:
+    name: intent_meta
+    label: 'Intent meta'
+    weight: 4
+    status: true
+    description: 'Saves the "intent" meta names to the intent dimension and calculates intent_top.'
+    deferred: false
+    sources:
+      -
+        type: meta
+        attribute_name: intent
+    processors:
+      -
+        type: dimension
+        storage_key: intent
+        normalize: true
+    destinations:
+      -
+        type: top
+        target_key: intent_top
+        remove_empty: false
+        dimension_key: dimensions.intent
+        target_location:
+          localstorage: localstorage
+          cookie: '0'
+  intent_param:
+    name: intent_param
+    label: 'Intent param'
+    weight: 5
+    status: true
+    description: 'Saves the "intent" query param to storage.'
+    deferred: false
+    sources:
+      -
+        type: query
+        param: intent
+    processors:
+      -
+        type: store
+        storage_key: intent_param
+        ttl: 300
+    destinations:
+      -
+        type: copy
+        target_key: intent_param
+        remove_empty: true
+        storage_key: store.intent_param.value
+        target_location:
+          localstorage: localstorage
+          cookie: '0'
+  intent_cookie:
+    name: intent_cookie
+    label: 'Intent cookie'
+    weight: 6
+    status: true
+    description: 'Saves the "intent" cookie to storage.'
+    deferred: false
+    sources:
+      -
+        type: cookie
+        name: convivial_enricher_convivial_demo_intent
+    processors:
+      -
+        type: store
+        storage_key: intent_cookie
+        ttl: 300
+    destinations:
+      -
+        type: copy
+        target_key: intent_cookie
+        remove_empty: true
+        storage_key: store.intent_cookie.value
+        target_location:
+          localstorage: localstorage
+          cookie: '0'
+  intent:
+    name: intent
+    label: Intent
+    weight: 7
+    status: true
+    description: 'Picks the best "intent".'
+    deferred: false
+    sources: {  }
+    processors: {  }
+    destinations:
+      -
+        type: bestpick
+        target_key: intent
+        remove_empty: true
+        storage_keys:
+          - intent_param
+          - intent_meta
+          - topic_cookie
+          - topic_top
+        default_value: 'intent:general'
+        target_location:
+          localstorage: localstorage
+          cookie: '0'
+  next:
+    name: next
+    label: Next
+    weight: 8
+    status: true
+    description: 'Picks the next best step from intent, campaign and stage.'
+    deferred: false
+    sources: {  }
+    processors: {  }
+    destinations:
+      -
+        type: bestpick
+        target_key: next
+        remove_empty: true
+        storage_keys:
+          - intent
+          - campaign
+          - stage
+        default_value: ''
+        target_location:
+          localstorage: localstorage
+          cookie: '0'
   lifetime_value_meta:
     name: lifetime_value_meta
     label: 'Lifetime value meta'
-    weight: 1
+    weight: 9
     status: true
     description: 'Increments lifetime_value from the "lifetime_value" meta name.'
     deferred: false
@@ -593,7 +713,7 @@ profilers:
   goal:
     name: goal
     label: Goal
-    weight: 2
+    weight: 10
     status: true
     description: 'Saves the "goal" meta name to storage.'
     deferred: false
@@ -618,7 +738,7 @@ profilers:
   device_type:
     name: device_type
     label: 'Device type'
-    weight: 3
+    weight: 11
     status: true
     description: 'Saves the "device_type" user agent  to storage.'
     deferred: false
@@ -643,7 +763,7 @@ profilers:
   location_country:
     name: location_country
     label: 'Location country'
-    weight: 4
+    weight: 12
     status: true
     description: 'Saves the "location_country" cookie to storage.'
     deferred: false
@@ -684,7 +804,7 @@ profilers:
   location_lat:
     name: location_lat
     label: 'Location latitude'
-    weight: 5
+    weight: 13
     status: true
     description: 'Saves the "location_lat" cookie to storage.'
     deferred: false
@@ -717,7 +837,7 @@ profilers:
   location_lon:
     name: location_lon
     label: 'Location longitude'
-    weight: 6
+    weight: 14
     status: true
     description: 'Saves the "location_lon" cookie to storage.'
     deferred: false
@@ -742,7 +862,7 @@ profilers:
   location_city:
     name: location_city
     label: 'Location city'
-    weight: 7
+    weight: 15
     status: true
     description: 'Saves the "location_city" cookie to storage.'
     deferred: false
@@ -767,7 +887,7 @@ profilers:
   pageview:
     name: pageview
     label: Pageview
-    weight: 8
+    weight: 16
     status: true
     description: 'Increments the "pageview" in storage.'
     deferred: false
@@ -815,7 +935,7 @@ profilers:
   searchquery:
     name: searchquery
     label: Searchquery
-    weight: 9
+    weight: 17
     status: true
     description: 'Tracks the searchquery in a log.'
     deferred: false
@@ -843,7 +963,7 @@ profilers:
   language:
     name: language
     label: Language
-    weight: 10
+    weight: 17
     status: true
     description: 'Saves the browser "language" to storage.'
     deferred: false
@@ -872,7 +992,7 @@ profilers:
   stage:
     name: stage
     label: Stage
-    weight: 11
+    weight: 17
     status: true
     description: 'Saves the "stage" meta name to the stage dimension and calculates threshold stage.'
     deferred: false
@@ -939,7 +1059,7 @@ profilers:
   styxkey_recombee_userid:
     name: styxkey_recombee_userid
     label: 'STYXKEY Recombee UserId'
-    weight: 12
+    weight: 17
     status: true
     description: 'Copy RecombeeUserId cookie to STYXKEY_RecombeeUserId to support cookie reading on pantheon platform'
     deferred: false
@@ -965,7 +1085,7 @@ profilers:
   convivial_enricher_clientid:
     name: convivial_enricher_clientid
     label: 'Convivial Enricher ClientId'
-    weight: 13
+    weight: 17
     status: true
     description: 'Saves a client ID provided by Enricher.'
     deferred: false
@@ -998,7 +1118,7 @@ profilers:
   newsletter_signup_form:
     name: newsletter_signup_form
     label: 'Newsletter signup form'
-    weight: 14
+    weight: 17
     status: true
     description: 'Populate the newsletter signup form with hidden variables.'
     deferred: false
@@ -1020,7 +1140,7 @@ profilers:
   convivial_enricher_cookies_remove:
     name: convivial_enricher_cookies_remove
     label: 'Convivial enricher cookies remove'
-    weight: 15
+    weight: 17
     status: true
     description: 'Remove convivial_enricher_convivial_demo_topic, convivial_enricher_convivial_demo_audience, convivial_enricher_convivial_demo_campaign cookies.'
     deferred: false
@@ -1043,7 +1163,7 @@ profilers:
   office_hours:
     name: office_hours
     label: 'Office hours'
-    weight: 0
+    weight: 17
     status: true
     description: 'Calculates whether the office is open based on current time and date.'
     deferred: false
@@ -1094,7 +1214,7 @@ profilers:
   page_helpful:
     name: page_helpful
     label: 'Page helpful'
-    weight: 0
+    weight: 17
     status: true
     description: 'Sends an event on form save to track the satisfaction of the user.'
     deferred: false
