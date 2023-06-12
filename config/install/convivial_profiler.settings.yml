@@ -681,7 +681,6 @@ profilers:
         storage_keys:
           - intent
           - campaign
-          - stage
         default_value: ''
         target_location:
           localstorage: localstorage
