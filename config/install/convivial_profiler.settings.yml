@@ -658,8 +658,8 @@ profilers:
         storage_keys:
           - intent_param
           - intent_meta
-          - topic_cookie
-          - topic_top
+          - intent_cookie
+          - intent_top
         default_value: ''
         target_location:
           localstorage: localstorage
@@ -669,7 +669,7 @@ profilers:
     label: Next
     weight: 8
     status: true
-    description: 'Picks the next best step from intent, campaign and stage.'
+    description: 'Picks the next best step from intent, and campaign.'
     deferred: false
     sources: {  }
     processors: {  }
