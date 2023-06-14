@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.person.field_goal
     - field.field.node.person.field_header_colour_classes
     - field.field.node.person.field_hero_darkness
+    - field.field.node.person.field_intent
     - field.field.node.person.field_introduction
     - field.field.node.person.field_key
     - field.field.node.person.field_keywords
@@ -90,6 +91,7 @@ hidden:
   field_goal: true
   field_header_colour_classes: true
   field_hero_darkness: true
+  field_intent: true
   field_introduction: true
   field_key: true
   field_keywords: true

@@ -24,12 +24,12 @@ settings:
       source_type: constant
       source_key: ''
       endpoint_key: type
-      default_value: campaign-cta
+      default_value: next
     -
       source_type: local_storage
-      source_key: campaign_affinity
+      source_key: next
       endpoint_key: key
-      default_value: education
+      default_value: ''
 visibility:
   request_path:
     id: request_path

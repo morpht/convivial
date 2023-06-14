@@ -1,5 +1,6 @@
 header_style: theme__header--light
 footer_style: theme__footer--dark
+footer_information_style: theme__footer_information--dark
 local_task_style: ''
 logo_width: '300'
 features:

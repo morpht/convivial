@@ -2,9 +2,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.node.field_key
     - field.storage.node.field_summary
     - field.storage.node.field_thumbnail
-    - field.storage.node.field_key
+    - field.storage.node.field_updated_date
     - image.style.medium
   module:
     - datetime
@@ -467,19 +468,19 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        nothing:
-          id: nothing
-          table: views
-          field: nothing
-          relationship: none
+        field_updated_date:
+          id: field_updated_date
+          table: node__field_updated_date
+          field: field_updated_date
+          relationship: field_tasks
           group_type: group
           admin_label: Date
-          plugin_id: custom
+          plugin_id: field
           label: ''
           exclude: false
           alter:
-            alter_text: true
-            text: "{% spaceless %}\r\n{% if field_updated_date %}\r\n  {{ field_updated_date|striptags|spaceless }}\r\n{% endif %}\r\n{% endspaceless %}"
+            alter_text: false
+            text: ''
             make_link: false
             path: ''
             absolute: false
@@ -515,7 +516,22 @@ display:
           empty: ''
           hide_empty: false
           empty_zero: false
-          hide_alter_empty: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: datetime_default
+          settings:
+            timezone_override: ''
+            format_type: standard
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         nothing_1:
           id: nothing_1
           table: views
@@ -780,9 +796,10 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.node.field_key'
         - 'config:field.storage.node.field_summary'
         - 'config:field.storage.node.field_thumbnail'
-        - 'config:field.storage.node.field_key'
+        - 'config:field.storage.node.field_updated_date'
   tasks:
     id: tasks
     display_title: 'REST export'
@@ -839,6 +856,7 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.node.field_key'
         - 'config:field.storage.node.field_summary'
         - 'config:field.storage.node.field_thumbnail'
-        - 'config:field.storage.node.field_key'
+        - 'config:field.storage.node.field_updated_date'
