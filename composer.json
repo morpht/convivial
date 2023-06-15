@@ -131,6 +131,7 @@
     "kint-php/kint": "^3.3",
     "morpht/convivial_bootstrap": "^1.0",
     "morpht/convivial_claro": "^1.0",
+    "morpht/mdt": "dev-main",
     "npm-asset/datatables": "^1.10.19",
     "npm-asset/handlebars": "^4.7",
     "npm-asset/jarallax": "^1.12.4",
