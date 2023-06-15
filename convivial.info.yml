@@ -26,7 +26,6 @@ install:
   - convivial_layouts
   - convivial_profiler
   - convivial_theme_default_render
-  - color_field
   - crop
   - ctools
   - ctools_block
