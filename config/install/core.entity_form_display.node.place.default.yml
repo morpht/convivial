@@ -244,6 +244,7 @@ content:
         max: 22
       click_to_find_marker: false
       click_to_place_marker: false
+      click_to_remove_marker: false
       hide_coordinates: false
       geoaddress_field:
         field: '0'
