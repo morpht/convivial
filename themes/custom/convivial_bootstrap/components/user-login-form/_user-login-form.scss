@@ -1,0 +1,7 @@
+/*! @convivial_bootstrap/user-login-form */
+
+.user-login-form {
+  @include media-breakpoint-up(md) {
+    max-width: 50%;
+  }
+}

@@ -1,0 +1,137 @@
+/*! @convivial_bootstrap/arrangement */
+
+.arrangement {
+  .layout__region-row {
+    @include make-row();
+
+    > .layout__region {
+      @include make-col-ready();
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    &.arrangement--8-4 {
+      .layout__region--first {
+        @include make-col(8);
+      }
+
+      .layout__region--second {
+        @include make-col(4);
+      }
+    }
+
+    &.arrangement--4-8 {
+      .layout__region--first {
+        @include make-col(4);
+      }
+
+      .layout__region--second {
+        @include make-col(8);
+      }
+    }
+
+    &.arrangement--9-3 {
+      .layout__region--first {
+        @include make-col(9);
+      }
+
+      .layout__region--second {
+        @include make-col(3);
+      }
+    }
+
+    &.arrangement--3-9 {
+      .layout__region--first {
+        @include make-col(3);
+      }
+
+      .layout__region--second {
+        @include make-col(9);
+      }
+    }
+
+    &.arrangement--6-6 {
+      .layout__region--first {
+        @include make-col(6);
+      }
+
+      .layout__region--second {
+        @include make-col(6);
+      }
+    }
+
+    &.arrangement--4-4-4 {
+      .layout__region--first {
+        @include make-col(4);
+      }
+
+      .layout__region--second {
+        @include make-col(4);
+      }
+
+      .layout__region--third {
+        @include make-col(4);
+      }
+    }
+
+    &.arrangement--3-6-3 {
+      .layout__region--first {
+        @include make-col(3);
+      }
+
+      .layout__region--second {
+        @include make-col(6);
+      }
+
+      .layout__region--third {
+        @include make-col(3);
+      }
+    }
+
+    &.arrangement--6-3-3 {
+      .layout__region--first {
+        @include make-col(6);
+      }
+
+      .layout__region--second {
+        @include make-col(3);
+      }
+
+      .layout__region--third {
+        @include make-col(3);
+      }
+    }
+
+    &.arrangement--3-3-6 {
+      .layout__region--first {
+        @include make-col(3);
+      }
+
+      .layout__region--second {
+        @include make-col(3);
+      }
+
+      .layout__region--third {
+        @include make-col(6);
+      }
+    }
+
+    &.arrangement--3-3-3-3 {
+      .layout__region--first {
+        @include make-col(3);
+      }
+
+      .layout__region--second {
+        @include make-col(3);
+      }
+
+      .layout__region--third {
+        @include make-col(3);
+      }
+
+      .layout__region--fourth {
+        @include make-col(3);
+      }
+    }
+  }
+}

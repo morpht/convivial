@@ -1,0 +1,13 @@
+/*! @convivial_bootstrap/page */
+
+.not-layout-builder {
+  // Pages not using Layout Builder needs space between page title and content.
+  > .content-top {
+    margin-bottom: $grid-gutter-width;
+  }
+
+  // Pages not using Layout Builder needs space bellow main.
+  .main-content {
+    margin-bottom: 2rem;
+  }
+}

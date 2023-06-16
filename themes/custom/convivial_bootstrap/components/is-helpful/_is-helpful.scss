@@ -1,0 +1,6 @@
+#block-is-helpful {
+  .containerised {
+    @include make-container();
+    @include container-max-widths();
+  }
+}

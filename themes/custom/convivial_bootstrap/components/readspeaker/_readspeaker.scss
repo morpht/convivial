@@ -1,0 +1,15 @@
+/*! @convivial_bootstrap/readspeaker */
+
+.rsbtn {
+  z-index: 1;
+
+  // Paragraph specific styling.
+  .readspeaker & {
+    padding-bottom: 0;
+  }
+}
+
+// Fix the little button with arrow recommended by ReadSpeaker support team.
+.rsbtn button.rsbtn_tooltoggle {
+  box-sizing: border-box;
+}

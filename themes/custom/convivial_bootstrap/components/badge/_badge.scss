@@ -1,0 +1,17 @@
+.badge {
+  margin-top: .5rem;
+
+  &:hover {
+    filter: brightness(85%);
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  &:not(.text-dark) {
+    a {
+      color: white;
+    }
+  }
+}

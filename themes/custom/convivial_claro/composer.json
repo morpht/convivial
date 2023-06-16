@@ -1,0 +1,13 @@
+{
+    "name": "morpht/convivial_claro",
+    "description": "Convivial administration theme",
+    "license": "GPL-2.0-or-later",
+    "authors":[
+        {
+            "name": "Morpht",
+            "homepage": "https://www.morpht.com",
+            "role": "Maintainer"
+        }
+    ],
+    "type": "drupal-theme"
+}

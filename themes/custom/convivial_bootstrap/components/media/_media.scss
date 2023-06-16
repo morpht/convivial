@@ -1,0 +1,123 @@
+/*! @convivial_bootstrap/media */
+
+///
+// Embedded media.
+///
+
+// Alignment.
+.align-left {
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.align-center img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-right {
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+// :not(:only-child) prevents from adding margin to view modes.
+.media-entity:not(:only-child) {
+  margin-bottom: 1rem;
+}
+
+// Image view modes.
+.media-entity--type-image {
+  &.media-entity--view-mode-half,
+  &.media-entity--view-mode-half-wide {
+    @include media-breakpoint-up(sm) {
+      max-width: 50%;
+    }
+  }
+
+  &.media-entity--view-mode-medium,
+  &.media-entity--view-mode-small {
+    max-width: 50%;
+
+    @include media-breakpoint-up(sm) {
+      max-width: 100%;
+    }
+  }
+
+ & .media-entity--view-mode-extra-small {
+    max-width: 35%;
+
+    @include media-breakpoint-up(sm) {
+      max-width: 100%;
+    }
+  }
+
+  &.media-entity--view-mode-tiny {
+    max-width: 17%;
+
+    @include media-breakpoint-up(sm) {
+      max-width: 100%;
+    }
+  }
+
+  // Large and Half view modes pops open on mobile.
+  &.media-entity--view-mode-half,
+  &.media-entity--view-mode-half-wide,
+  &.media-entity--view-mode-large {
+    @include media-breakpoint-down(sm) {
+      &.align-left,
+      &.align-right {
+        float: none;
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+
+  // Whole view mode always pops open.
+  &.media-entity--view-mode-whole,
+  &.media-entity--view-mode-whole-wide {
+    &.align-left,
+    &.align-right {
+      float: none;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}
+
+// Images with caption.
+figure {
+
+  // View modes with caption pops open on mobile.
+  @include media-breakpoint-down(md) {
+    &.align-left,
+    &.align-right {
+      float: none;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    &,
+    &.align-center {
+      display: table;
+    }
+  }
+
+  // Image needs to be always 100% wide.
+  img {
+    width: 100%;
+  }
+
+  .media-entity.media-entity--type-image {
+    margin-bottom: 0;
+    max-width: 100%;
+  }
+
+  figcaption {
+    padding-top: $grid-gutter-width / 2;
+    padding-bottom: $grid-gutter-width / 2;
+  }
+}

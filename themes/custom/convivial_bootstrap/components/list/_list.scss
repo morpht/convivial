@@ -1,0 +1,212 @@
+/*! @convivial_bootstrap/list */
+
+.list-layout--row {
+  .list {
+    @include make-row();
+  }
+
+  .list__item {
+    @include make-col-ready();
+    margin-top: $grid-gutter-width !important;
+
+    &:first-child {
+      margin-top: 0 !important;
+    }
+
+    // Make sure all items has same height.
+    & > * {
+      height: 100%;
+    }
+  }
+}
+
+// Styling for different view modes as selected with Entity Reference Display.
+.list {
+  &.erd-list--calendar-item {
+    .list__item {
+      margin-top: 2px !important;
+    }
+  }
+}
+
+////
+// List layouts.
+////
+
+.list-layout--12 {
+  .list__item {
+    &:not(:first-child) {
+      margin-top: $grid-gutter-width;
+    }
+  }
+}
+
+// Two items in row.
+.list-layout--6-6 {
+  .list__item {
+    @include media-breakpoint-up(md) {
+      @include make-col(6);
+
+      &:nth-child(-n+2) {
+        margin-top: 0 !important;
+      }
+    }
+  }
+}
+
+// Three items in row.
+.list-layout--4-4-4 {
+  .list__item {
+    @include media-breakpoint-up(md) {
+      @include make-col(4);
+
+      &:nth-child(-n+3) {
+        margin-top: 0 !important;
+      }
+    }
+  }
+}
+
+// Four items in row.
+.list-layout--3-3-3-3 {
+  .list__item {
+    @include media-breakpoint-only(sm) {
+      @include make-col(6);
+
+      &:nth-child(-n+2) {
+        margin-top: 0 !important;
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      @include make-col(3);
+
+      &:nth-child(-n+4) {
+        margin-top: 0 !important;
+      }
+    }
+  }
+}
+
+// Six items in row.
+.list-layout--2-2-2-2-2-2 {
+  .list__item {
+    @include media-breakpoint-only(sm) {
+      @include make-col(6);
+
+      &:nth-child(-n+2) {
+        margin-top: 0 !important;
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      @include make-col(3);
+
+      &:nth-child(-n+4) {
+        margin-top: 0 !important;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      @include make-col(2);
+
+      &:nth-child(-n+6) {
+        margin-top: 0 !important;
+      }
+    }
+  }
+}
+
+// Equal columns.
+// Items width can be set dynamically up to 6 items in row.
+.list-layout--equal {
+  .list__item {
+
+    /* two items */
+    &:first-child:nth-last-child(2),
+    &:first-child:nth-last-child(2) ~ .list__item {
+      @include media-breakpoint-up(sm) {
+        margin-top: 0 !important;
+        width: calc(100 / 2 * 1%);
+      }
+    }
+
+    /* three items */
+    &:first-child:nth-last-child(3),
+    &:first-child:nth-last-child(3) ~ .list__item {
+      @include media-breakpoint-up(sm) {
+        margin-top: 0 !important;
+        width: calc(100 / 3 * 1%);
+      }
+    }
+
+    /* four items */
+    &:first-child:nth-last-child(4),
+    &:first-child:nth-last-child(4) ~ .list__item {
+      @include media-breakpoint-up(sm) {
+        margin-top: 0 !important;
+        width: calc(100 / 2 * 1%);
+      }
+
+      @include media-breakpoint-up(md) {
+        width: calc(100 / 4 * 1%);
+      }
+    }
+
+    /* five items */
+    &:first-child:nth-last-child(5),
+    &:first-child:nth-last-child(5) ~ .list__item {
+      @include media-breakpoint-up(sm) {
+        margin-top: 0 !important;
+        width: calc(100 / 3 * 1%);
+      }
+
+      @include media-breakpoint-up(md) {
+        width: calc(100 / 5 * 1%);
+      }
+    }
+
+    /* six items */
+
+    @include media-breakpoint-up(sm) {
+      width: calc(100 / 3 * 1%);
+
+      &:nth-child(-n+3) {
+        margin-top: 0 !important;
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      width: calc(100 / 6 * 1%);
+
+      &:nth-child(-n+6) {
+        margin-top: 0 !important;
+      }
+    }
+  }
+}
+
+// Alternating teaser.
+.list-layout--alternate {
+  .list__item {
+    margin-top: $grid-gutter-width !important;
+
+    &:first-child {
+      margin-top: 0 !important;
+    }
+
+    @include media-breakpoint-up(md) {
+      @include make-col(12);
+
+      &:nth-child(even) {
+        .teaser__image {
+          order: 2;
+        }
+
+        .teaser__content {
+          order: 1;
+        }
+      }
+    }
+  }
+}

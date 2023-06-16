@@ -1,0 +1,121 @@
+/*! @convivial_bootstrap/button */
+
+.btn {
+  display: inline-block;
+  font-family: $btn-font-family;
+  font-weight: $btn-font-weight;
+  line-height: $btn-line-height;
+  color: $body-color;
+  text-align: center;
+  text-decoration: if($link-decoration == none, null, none);
+  white-space: $btn-white-space;
+  vertical-align: middle;
+  cursor: if($enable-button-pointers, pointer, null);
+  user-select: none;
+  background-color: transparent;
+  border: $btn-border-width solid transparent;
+  @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-border-radius);
+  @include transition($btn-transition);
+
+  &:hover {
+    text-decoration: if($link-hover-decoration == underline, none, null);
+  }
+
+  &:focus {
+    outline: solid var(--standard-focus);
+  }
+
+  &:active,
+  &.active {
+    filter: brightness(.9);
+  }
+}
+
+//
+// Alternate buttons
+//
+
+$buttons: (
+  primary: (
+    isdark: true,
+    bg: var(--standard-accent),
+  ),
+  secondary: (
+    isdark: true,
+    bg: var(--standard-link),
+  ),
+  success: (
+    isdark: true,
+    bg: var(--bs-success),
+  ),
+  danger: (
+    isdark: true,
+    bg: var(--bs-danger),
+  ),
+  warning: (
+    isdark: false,
+    bg: var(--bs-warning),
+  ),
+  info: (
+    isdark: false,
+    bg: var(--bs-info),
+  ),
+  light: (
+    isdark: false,
+    bg: var(--light-bg),
+  ),
+  dark: (
+    isdark: true,
+    bg: var(--dark-bg),
+  ),
+);
+
+@each $label, $map in $buttons {
+  $isdark: map-get($map, isdark);
+
+  @if $isdark == true {
+    .btn.btn-#{$label} {
+      @include convivial-button-variant(map-get($map, bg), map-get($map, bg), $lighten-90);
+    }
+
+    .btn.btn-outline-#{$label} {
+      @include convivial-outline-button-variant(map-get($map, bg), $white);
+    }
+  }
+  @else {
+    .btn.btn-#{$label} {
+      @include convivial-button-variant(map-get($map, bg), map-get($map, bg), $darken-90);
+    }
+
+    .btn.btn-outline-#{$label} {
+      @include convivial-outline-button-variant(map-get($map, bg), $black);
+    }
+  }
+}
+
+// Override for light button.
+// On light backgrounds, the light button looks same as the dark button.
+.btn.btn-outline-light {
+  @include convivial-outline-button-variant(var(--dark-bg), $lighten-90);
+}
+
+//
+// Link buttons
+//
+
+// Make a button look and behave like a link
+.btn-link {
+  font-weight: $font-weight-normal;
+  color: $btn-link-color;
+  text-decoration: $link-decoration;
+
+  &:hover {
+    text-decoration: $link-hover-decoration;
+  }
+
+  &:focus {
+    text-decoration: $link-hover-decoration;
+  }
+
+  // No need for an active state here
+}

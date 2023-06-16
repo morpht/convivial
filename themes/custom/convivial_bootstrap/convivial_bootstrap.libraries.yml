@@ -1,0 +1,282 @@
+global-styling:
+  css:
+    component:
+      css/style.css: { }
+
+accessible-megamenu:
+  js:
+    components/accessible-megamenu/accessible-mega-menu.js: { }
+    components/accessible-megamenu/accessible-mega-menu-apply.js: { }
+  dependencies:
+    - core/jquery
+
+anchor:
+  js:
+    components/anchor/anchor.js: { }
+  dependencies:
+    - core/jquery
+    - convivial_bootstrap/anchorific
+    - convivial_bootstrap/smooth-scroll
+
+anchorific:
+  js:
+    libraries/anchorific/min/anchorific.min.js: { minified: true }
+
+back-to-top:
+  js:
+    components/back-to-top/back-to-top.js: { }
+  dependencies:
+    - core/jquery
+
+banner:
+  css:
+    component:
+      components/banner/banner.css: { }
+
+base-bootstrap5-js:
+  js:
+    libraries/bootstrap/dist/js/bootstrap.min.js: { minified: true }
+    js/convivial-bootstrap.js: { }
+  dependencies:
+    - core/jquery
+    - core/once
+    - core/drupal
+
+billboard:
+  remote: https://github.com/naver/billboard.js
+  version: 1.6.2
+  license:
+    url: https://github.com/c3js/c3/blob/master/LICENSE
+  css:
+    theme:
+      libraries/billboard.js/dist/billboard.min.css: { minified: true }
+  js:
+    libraries/billboard.js/dist/billboard.min.js: { minified: true }
+
+billboard-apply:
+  js:
+    components/billboard/billboard.apply.js: { }
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/once
+    - convivial_bootstrap/d3
+    - convivial_bootstrap/billboard
+
+calendar-item:
+  js:
+    components/calendar-item/calendar-item.js: { }
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/once
+
+content-tabs:
+  version: VERSION
+  dependencies:
+    - convivial_bootstrap/van11y-accessible-tab-panel-aria
+
+d3:
+  remote: https://github.com/d3/d3
+  version: 5.7.0
+  license:
+    url: https://github.com/d3/d3/blob/master/LICENSE
+  js:
+    libraries/d3/dist/d3.min.js: { minified: true }
+
+fastfacts:
+  version: VERSION
+  js:
+    components/fastfacts/fastfacts.js: { }
+  dependencies:
+    - core/jquery
+    - core/drupal
+
+font-family:
+  css:
+    theme:
+      https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap: { type: external }
+
+flexslider:
+  css:
+    theme:
+      libraries/flexslider/flexslider.css: { }
+  js:
+    libraries/flexslider/jquery.flexslider-min.js: { minified: true }
+
+flexslider-apply:
+  js:
+    components/slideshow/flexslider.apply.js: { }
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - convivial_bootstrap/flexslider
+
+flipclock:
+  js:
+    libraries/flipclock/compiled/flipclock.min.js: { minified: true }
+  css:
+    theme:
+      libraries/flipclock/compiled/flipclock.css: { }
+  dependencies:
+    - core/jquery
+
+gallery:
+  js:
+    js/gallery.js: { }
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - convivial_bootstrap/glightbox
+
+geochart:
+  version: 1.0
+  header: true
+  js:
+    https://www.gstatic.com/charts/loader.js: { type: external }
+    components/geochart/geochart.js: { }
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/drupalSettings
+    - convivial_bootstrap/d3
+
+glightbox:
+  css:
+    theme:
+      libraries/glightbox/dist/css/glightbox.css: { }
+      libraries/glightbox/dist/css/plyr.css: { }
+  js:
+    libraries/glightbox/dist/js/glightbox.min.js: { }
+
+header:
+  js:
+    components/header/jquery.fixx.js: { }
+    components/header/header.js: { }
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/once
+
+lightbox:
+  js:
+    components/lightbox/lightbox.js: { }
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - convivial_bootstrap/glightbox
+
+jquery_ui:
+  css:
+    theme:
+      libraries/jquery-ui-dist/jquery-ui.theme.min.css: { minified: true }
+  js:
+    libraries/jquery-ui-dist/jquery-ui.min.js: { minified: true }
+
+leaflet:
+  version: 1.3.4
+  css:
+    theme:
+      libraries/leaflet/dist/leaflet.css: { }
+  js:
+    libraries/leaflet/dist/leaflet.js: { }
+
+leaflet-apply:
+  js:
+    components/map/leaflet.apply.js: { }
+  dependencies:
+    - convivial_bootstrap/leaflet
+    - core/drupal
+
+mark-external-links:
+  js:
+    components/external-link/mark-external-links.js: { }
+  dependencies:
+    - core/jquery
+
+object-fit-images:
+  js:
+    libraries/object-fit-images/dist/ofi.min.js: { minified: true }
+
+object-fit-images-apply:
+  js:
+    components/slideshow/ofi.js: { }
+  dependencies:
+    - convivial_bootstrap/object-fit-images
+
+read-speaker:
+  header: true
+  js:
+    components/readspeaker/readspeaker.js: { }
+    //f1-eu.readspeaker.com/script/3/webReader/webReader.js?pids=wr: { type: external, minified: true }
+
+search:
+  js:
+    components/search/search.js: { }
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/once
+
+search_autocomplete:
+  js:
+    components/search-autocomplete/search-autocomplete.js: { }
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/once
+
+smooth-scroll:
+  js:
+    libraries/smooth-scroll/dist/smooth-scroll.polyfills.min.js: { minified: true }
+
+van11y-accessible-tab-panel-aria:
+  remote: https://github.com/nico3333fr/van11y-accessible-tab-panel-aria
+  version: 2.0
+  license:
+    name: MIT
+    url: https://github.com/nico3333fr/van11y-accessible-tab-panel-aria/blob/master/LICENSE
+    gpl-compatible: true
+  js:
+    libraries/van11y-accessible-tab-panel-aria/dist/van11y-accessible-tab-panel-aria.min.js: { minified: true }
+
+scroll_anchor:
+  js:
+    js/scroll-anchor.js: { }
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/once
+    - convivial_bootstrap/sticky_header_height
+
+sticky_header_height:
+  js:
+    js/sticky-header-height.js: { }
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+
+slick_carousel:
+  js:
+    libraries/slick-carousel/slick/slick.min.js: { minified: true }
+  css:
+    theme:
+      libraries/slick-carousel/slick/slick.css: { }
+      libraries/slick-carousel/slick/slick-theme.css: { }
+
+slider:
+  js:
+    components/slider/slider.js: { }
+  dependencies:
+    - convivial_bootstrap/slick_carousel
+
+decision_tree_library:
+  version: 0.1.1
+  js:
+    //cdn.jsdelivr.net/gh/morpht/decision_tree@v0.1.2/decision_tree.min.js: { type: external, minified: true }
+  css:
+    theme:
+      //cdn.jsdelivr.net/gh/morpht/decision_tree@v0.1.2/style.min.css: { type: external, minified: true }

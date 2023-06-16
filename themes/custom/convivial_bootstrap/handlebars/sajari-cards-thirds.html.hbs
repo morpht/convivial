@@ -1,0 +1,19 @@
+<div class="list-layout list-layout--row list-layout--4-4-4">
+  <div class="list">
+    {{#each recomms}}
+      <div class="list__item">
+        <div class="stack stack--simple card card--clickable">
+            <div class="stack__content card-body">
+              <h3 class="stack__title card-title">
+                <a href="{{values.url}}" class="stack__link">
+                  {{values.title}}
+                </a>
+              </h3>
+              <div class="stack__summary">
+                {{values.summary}}
+              </div>
+            </div>
+        </div>
+      </div>
+    {{/each}}
+</div>

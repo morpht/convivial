@@ -1,0 +1,61 @@
+/*! @convivial_bootstrap/image */
+
+.image {
+
+  // All elements need to fill up the full height.
+  &,
+  * {
+    height: 100%;
+  }
+
+  a {
+    display: block;
+  }
+
+  .field--type-image {
+    padding-top: calc(100% / (3 / 2));
+  }
+
+  img {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+
+    // IE11 fix.
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      height: auto;
+    }
+  }
+}
+
+.image__image {
+  overflow: hidden;
+  position: relative;
+}
+
+// Linked tile.
+.image__link {
+  overflow: hidden;
+  transition: box-shadow $view-modes-transition-time;
+
+  img {
+    transition: transform $view-modes-transition-time;
+  }
+
+  &:hover {
+    box-shadow: 0 2px 4px $shadow-color;
+
+    img {
+      transform: scale($view-modes-transform-scale) translate(43.5%, -43.5%);
+    }
+  }
+}
+
+.node--view-mode-image {
+  height: 100%;
+}

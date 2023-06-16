@@ -1,0 +1,263 @@
+/*! @convivial_bootstrap/banner */
+.banner {
+  position: relative;
+
+  @include media-breakpoint-up(lg) {
+    overflow: hidden;
+  }
+
+  // Reset padding on mobile.
+  @include media-breakpoint-down(lg) {
+    body.page__header--transparent &.header,
+    body.page__header--transparent.user-logged-in &.header {
+      padding-top: 0;
+    }
+  }
+
+  // Reset padding on colour palette.
+  &.cp {
+    padding: 0;
+  }
+}
+
+// Background area goes on top of the bg image.
+.banner__background-area {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-top: -50vw;
+
+  // Background color variants.
+  .banner--background-light & {
+    background-color: var(--light-bg);
+  }
+  .banner--background-dark & {
+    background-color: var(--dark-bg);
+  }
+  .banner--background-primary-light & {
+    background-color: var(--primary-light-bg);
+  }
+  .banner--background-primary-dark & {
+    background-color: var(--primary-dark-bg);
+  }
+  .banner--background-primary-light-accent & {
+    background-color: var(--primary-light-accent);
+  }
+  .banner--background-primary-dark-accent & {
+    background-color: var(--primary-dark-accent);
+  }
+  .banner--background-light-accent & {
+    background-color: var(--light-accent);
+  }
+  .banner--background-dark-accent & {
+    background-color: var(--dark-accent);
+  }
+}
+
+.banner__image-area {
+  @include media-breakpoint-up(lg) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  img {
+    width: 100vw;
+    max-width: none;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    height: auto;
+    display: block;
+
+    @include media-breakpoint-up(lg) {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.banner__content-area {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+
+  @include media-breakpoint-up(lg) {
+    position: static;
+    margin-left: auto;
+    margin-right: auto;
+    left: auto;
+    right: auto;
+    height: 23.75rem;
+    width: 100%;
+  }
+}
+
+.banner__content {
+  @include font-size($lead-font-size);
+  font-weight: $lead-font-weight;
+  padding: 1rem;
+
+  @include media-breakpoint-up(lg) {
+    padding: 1rem 1.5rem;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 40em;
+    left: -1rem;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  * + p {
+    margin-top: 1rem;
+  }
+
+  // Position field.
+  .banner--content-center & {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .banner--content-right & {
+    margin-left: auto;
+  }
+}
+
+.banner__link {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:after {
+    z-index: 100;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+// Hero icon.
+.promotion,
+.banner {
+  .hero-icon,
+  svg {
+    fill: $banner-icon-fill;
+  }
+
+  &.cp--dark,
+  &.cp--primary-dark,
+  .cp--dark &,
+  .cp--primary-dark & {
+    .hero-icon,
+    svg {
+      fill: $banner-dark-icon-fill;
+    }
+  }
+}
+
+// Box variant.
+.banner--box {
+  .banner__content {
+    background-color: $banner-bg;
+
+    @include media-breakpoint-up(lg) {
+      background-color: $banner-bg-lg;
+    }
+  }
+
+  &.cp--dark,
+  &.cp--primary-dark {
+    .banner__content {
+      background-color: $banner-dark-bg;
+
+      @include media-breakpoint-up(lg) {
+        background-color: $banner-dark-bg-lg;
+      }
+    }
+  }
+}
+
+// Glass variant.
+.banner--glass {
+  .banner__content {
+    background-color: $lighten-10;
+    border: 1px solid $lighten-10;
+    backdrop-filter: blur(7px);
+
+    @include media-breakpoint-up(lg) {
+      border-radius: 20px;
+    }
+  }
+
+  &.cp--dark,
+  &.cp--primary-dark {
+    .banner__content {
+      background-color: $darken-25;
+      border: 1px solid $darken-25;
+      backdrop-filter: blur(7px);
+    }
+  }
+}
+
+// Banner with vertical center.
+.banner.vertical-center {
+  @include media-breakpoint-up(lg) {
+    .banner__content-area {
+      align-items: center;
+    }
+  }
+}
+
+// Banner with aside.
+.banner--with-aside {
+  .banner__content-area {
+    position: relative;
+    height: unset;
+    width: unset;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    left: 0;
+    right: 0;
+
+    @extend .row;
+  }
+
+  .banner__content {
+    max-width: unset;
+    transform: unset;
+    top: unset;
+    left: unset;
+    padding-top: unset;
+    padding-bottom: unset;
+    margin-bottom: 1rem;
+
+    @extend .col-lg-6;
+
+    @include media-breakpoint-up(lg) {
+      margin-bottom: unset;
+    }
+  }
+
+  .banner__aside {
+    @extend .col-lg-6;
+  }
+}

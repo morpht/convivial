@@ -1,0 +1,338 @@
+/*! @convivial_bootstrap/layout */
+
+.layout {
+  &.layout--header-section {
+    // We want the content to be on top of background modifiers.
+    &.modifiers-has-background .layout__region--content-header {
+      z-index: 2;
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    &.layout--twocol {
+      .layout__region--first > * {
+        padding-right: $grid-gutter-width;
+      }
+
+      .layout__region--second > * {
+        padding-left: $grid-gutter-width;
+      }
+    }
+
+    &.layout--threecol {
+      .layout__region--first > * {
+        padding-right: $grid-gutter-width;
+      }
+
+      .layout__region--second > * {
+        padding-left: $grid-gutter-width;
+        padding-right: $grid-gutter-width;
+      }
+
+      .layout__region--third > * {
+        padding-left: $grid-gutter-width;
+      }
+    }
+
+    &.layout--fourcol {
+      .layout__region--first > * {
+        padding-right: $grid-gutter-width;
+      }
+
+      .layout__region--second > * {
+        padding-left: $grid-gutter-width;
+        padding-right: $grid-gutter-width;
+      }
+
+      .layout__region--third > * {
+        padding-left: $grid-gutter-width;
+        padding-right: $grid-gutter-width;
+      }
+
+      .layout__region--fourth > * {
+        padding-left: $grid-gutter-width;
+      }
+    }
+  }
+
+  // Content needs to be in container when section layout is edgy.
+  &.edgy.edgy--contained > .layout__region-container {
+    @include make-container();
+    @include container-max-widths();
+  }
+
+  &.edgy--contained[class*='color--'] {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &.layout--content-sidebar {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+
+    // Spacing between blocks.
+    > .layout__region > .block + .block {
+      margin-top: 1.5rem;
+    }
+
+    // Sidebar needs to be separated from content on mobile.
+    .layout__region--sidebar {
+      margin-top: 1.5rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: stretch;
+
+      > .layout__region:only-child {
+        width: 100%;
+        padding: 0;
+      }
+
+      > .layout__region--content {
+        padding-right: $grid-gutter-width;
+        width: 75%;
+      }
+
+      > .layout__region--sidebar {
+        margin-top: 0;
+        padding-left: $grid-gutter-width;
+        width: 25%;
+      }
+    }
+  }
+}
+
+////
+// Paragraph layout regions.
+////
+.paragraph-layout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: stretch;
+}
+
+.paragraph-layout__region {
+  > .paragraph {
+    height: auto; // We need to reset height:100%.
+  }
+}
+
+// Two columns (3|9).
+.paragraph-layout--3-9 {
+  .paragraph-layout__region--first {
+    @include media-breakpoint-up(sm) {
+      @include make-col(3);
+    }
+  }
+  .paragraph-layout__region--second {
+    @include media-breakpoint-up(sm) {
+      @include make-col(9);
+    }
+  }
+}
+// Two columns (4|8).
+.paragraph-layout--4-8 {
+  .paragraph-layout__region--first {
+    @include media-breakpoint-up(sm) {
+      @include make-col(4);
+    }
+  }
+  .paragraph-layout__region--second {
+    @include media-breakpoint-up(sm) {
+      @include make-col(8);
+    }
+  }
+}
+// Two columns (5|7).
+.paragraph-layout--5-7 {
+  .paragraph-layout__region--first {
+    @include media-breakpoint-up(sm) {
+      @include make-col(5);
+    }
+  }
+  .paragraph-layout__region--second {
+    @include media-breakpoint-up(sm) {
+      @include make-col(7);
+    }
+  }
+}
+// Two columns (6|6).
+.paragraph-layout--6-6 {
+  .paragraph-layout__region--first {
+    @include media-breakpoint-up(sm) {
+      @include make-col(6);
+    }
+  }
+  .paragraph-layout__region--second {
+    @include media-breakpoint-up(sm) {
+      @include make-col(6);
+    }
+  }
+}
+// Two columns (7|5).
+.paragraph-layout--7-5 {
+  .paragraph-layout__region--first {
+    @include media-breakpoint-up(sm) {
+      @include make-col(7);
+    }
+  }
+  .paragraph-layout__region--second {
+    @include media-breakpoint-up(sm) {
+      @include make-col(5);
+    }
+  }
+}
+// Two columns (8|4).
+.paragraph-layout--8-4 {
+  .paragraph-layout__region--first {
+    @include media-breakpoint-up(sm) {
+      @include make-col(8);
+    }
+  }
+  .paragraph-layout__region--second {
+    @include media-breakpoint-up(sm) {
+      @include make-col(4);
+    }
+  }
+}
+// Two columns (9|3).
+.paragraph-layout--9-3 {
+  .paragraph-layout__region--first {
+    @include media-breakpoint-up(sm) {
+      @include make-col(9);
+    }
+  }
+  .paragraph-layout__region--second {
+    @include media-breakpoint-up(sm) {
+      @include make-col(3);
+    }
+  }
+}
+// Three columns (4|4|4).
+.paragraph-layout--4-4-4 {
+  .paragraph-layout__region--first {
+    @include media-breakpoint-up(sm) {
+      @include make-col(4);
+    }
+  }
+  .paragraph-layout__region--second {
+    @include media-breakpoint-up(sm) {
+      @include make-col(4);
+    };
+  }
+  .paragraph-layout__region--third {
+    @include media-breakpoint-up(sm) {
+      @include make-col(4);
+    }
+  }
+}
+// Three columns (3|6|3).
+.paragraph-layout--3-6-3 {
+  .paragraph-layout__region--first {
+    @include media-breakpoint-up(sm) {
+      @include make-col(3);
+    }
+  }
+  .paragraph-layout__region--second {
+    @include media-breakpoint-up(sm) {
+      @include make-col(6);
+    };
+  }
+  .paragraph-layout__region--third {
+    @include media-breakpoint-up(sm) {
+      @include make-col(3);
+    }
+  }
+}
+// Four columns (3|3|3|3).
+.paragraph-layout--3-3-3-3 {
+  .paragraph-layout__region--first {
+    @include media-breakpoint-up(sm) {
+      @include make-col(3);
+    }
+  }
+  .paragraph-layout__region--second {
+    @include media-breakpoint-up(sm) {
+      @include make-col(3);
+    }
+  }
+  .paragraph-layout__region--third {
+    @include media-breakpoint-up(sm) {
+      @include make-col(3);
+    }
+  }
+  .paragraph-layout__region--fourth {
+    @include media-breakpoint-up(sm) {
+      @include make-col(3);
+    }
+  }
+}
+
+////
+// Highlighted layouts theme settings.
+////
+%highlighted_layout_before {
+  font-size: 1rem;
+  background: #444;
+  color: $white;
+  padding: 2px 4px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.highlighted-layouts {
+  .layout__region {
+    position: relative;
+
+    &:before {
+      @extend %highlighted_layout_before;
+    }
+  }
+
+  .layout--header-section {
+    box-shadow: inset 0 0 0 3px #930000;
+    position: relative;
+
+    &:before {
+      @extend %highlighted_layout_before;
+
+      content: 'header';
+    }
+  }
+
+  .arrangement {
+    .layout__region--first {
+      box-shadow: inset 0 0 0 3px #008F00;
+
+      &:before {
+        content: 'first col';
+      }
+    }
+
+    .layout__region--second {
+      box-shadow: inset 0 0 0 3px #0000FF;
+
+      &:before {
+        content: 'second col';
+      }
+    }
+
+    .layout__region--third {
+      box-shadow: inset 0 0 0 3px #FFFF00;
+
+      &:before {
+        content: 'third col';
+      }
+    }
+
+    .layout__region--fourth {
+      box-shadow: inset 0 0 0 3px #bebebe;
+
+      &:before {
+        content: 'fourth col';
+      }
+    }
+  }
+}

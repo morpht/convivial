@@ -1,0 +1,249 @@
+<?php
+
+/**
+ * @file
+ * Convivial Admin theme file.
+ */
+
+use Drupal\Component\Utility\Html;
+use Drupal\convivial_claro\ConvivialClaroPreRender;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function convivial_claro_form_alter(&$form, FormStateInterface $form_state,
+  $form_id) {
+  $node_form_ids = [
+    'node_page_form',
+    'node_page_edit_form',
+  ];
+
+  if (in_array($form_id, $node_form_ids)) {
+    if (isset($form['field_hero_darkness'])) {
+      $default_theme = \Drupal::config('system.theme')->get('default');
+      $header_appearance = theme_get_setting('appearance', $default_theme);
+      if ($header_appearance !== 'theme__header--transparent') {
+        $form['field_hero_darkness']['#access'] = FALSE;
+      }
+    }
+  }
+
+  // Attach paragraphs form altering.
+  if (isset($form['field_components']['widget']['entity_form'])) {
+    $form['field_components']['widget']['entity_form']['#pre_render'][] = [
+      ConvivialClaroPreRender::class,
+      'paragraphs',
+    ];
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter() for
+ * \Drupal\panels\Form\PanelsContentForm.
+ */
+function convivial_claro_form_panels_block_page_content_alter(&$form,
+  FormStateInterface $form_state, $form_id) {
+  // Increase weight range for all block elements.
+  foreach ($form['blocks'] as &$block) {
+    if (is_array($block) && isset($block['weight'])) {
+      $block['weight']['#delta'] = 20;
+    }
+  }
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter() for \Drupal\node\NodeForm.
+ */
+function convivial_claro_form_node_form_alter(&$form,
+  FormStateInterface $form_state, $form_id) {
+  // Specify main content groups with title and fields.
+  $main_content_groups = _convivial_claro_content_sidebar_groups(theme_get_setting('content_groups'));
+
+  // If main content groups is no empty.
+  if (!empty($main_content_groups)) {
+    // Loop for main content groups.
+    foreach ($main_content_groups as $mkey => $mgroup) {
+      $form[$mkey] = [
+        '#type'       => 'details',
+        '#title'      => Html::escape($mgroup['title']),
+        '#group'      => 'content',
+        '#attributes' => [
+          'class' => ['main-content-group'],
+        ],
+        '#attached'   => [
+          'library' => ['node/drupal.node'],
+        ],
+        '#weight'     => 100,
+        '#optional'   => TRUE,
+        '#open'       => FALSE,
+      ];
+
+      // Move fields to the content body column.
+      foreach ($mgroup['fields'] as $mfield) {
+        if (isset($form[$mfield]) && !empty($form[$mfield])) {
+          $form[$mfield]['#group'] = $mkey;
+        }
+      }
+    }
+  }
+
+  // Specify right sidebar groups with title and fields.
+  $sidebar_groups
+    = _convivial_claro_content_sidebar_groups(theme_get_setting('sidebar_groups'));
+
+  // If sidebar groups is no empty.
+  if (!empty($sidebar_groups)) {
+
+    // Create groups in the right-hand column.
+    foreach ($sidebar_groups as $key => $group) {
+      $form[$key] = [
+        '#type'       => 'details',
+        '#title'      => Html::escape($group['title']),
+        '#group'      => 'advanced',
+        '#attributes' => [
+          'class' => ['node-form-options'],
+        ],
+        '#attached'   => [
+          'library' => ['node/drupal.node'],
+        ],
+        '#weight'     => 100,
+        '#optional'   => TRUE,
+        '#open'       => FALSE,
+      ];
+
+      // Move fields to the right-hand column.
+      foreach ($group['fields'] as $field) {
+        if (isset($form[$field]) && !empty($form[$field])) {
+          $form[$field]['#group'] = $key;
+        }
+      }
+    }
+  }
+
+  // Update field_custom_* boolean values.
+  $form['#validate'][] = '_convivial_claro_node_form_validate';
+
+  return $form;
+}
+
+/**
+ * Create array for content and tab groupping.
+ */
+function _convivial_claro_content_sidebar_groups($theme_settings) {
+
+  // Define array.
+  $content_tab_groups = [];
+
+  // Get value from theme settings.
+  $get_content_group = $theme_settings;
+
+  if (isset($get_content_group) && !empty($get_content_group)) {
+
+    // Create array by line break.
+    $content_group_explode = explode("\n", $get_content_group);
+
+    foreach ($content_group_explode as $groups) {
+      // Create array by | symbol.
+      $group = explode("|", $groups);
+
+      // Create group machine name using title.
+      $group_machine_name = Html::getUniqueId('group-' . $group[0]);
+      $group_fields = array_map('trim', explode(",", $group[1]));
+
+      // Node contents group.
+      $content_tab_groups[$group_machine_name]['title']
+        = Html::escape($group[0]);
+      $content_tab_groups[$group_machine_name]['fields'] = $group_fields;
+    }
+
+  }
+  return $content_tab_groups;
+}
+
+/**
+ * Node form validation handler.
+ *
+ * @see convivial_claro_form_node_form_alter()
+ */
+function _convivial_claro_node_form_validate(array &$form,
+  FormStateInterface $form_state) {
+  /** @var \Drupal\Core\Entity\EntityFormInterface $form_object */
+  $form_object = $form_state->getFormObject();
+  /** @var \Drupal\Core\Entity\FieldableEntityInterface $entity */
+  $entity = $form_object->getEntity();
+
+  // Skip nodes without identifier field or if empty.
+  if (!$entity->hasField('field_identifier') || $entity->get('field_identifier')->isEmpty()) {
+    return;
+  }
+
+  // Update field_custom_* boolean values.
+  $fields_map = [
+    'title'             => 'field_custom_title',
+    'field_description' => 'field_custom_description',
+    'field_url'         => 'field_custom_url',
+  ];
+  foreach ($fields_map as $key => $value) {
+    if ($entity->hasField($key) && $entity->hasField($value)) {
+
+      // Get node field and form values.
+      $field = $entity->get($key);
+      $field_definition = $field->getFieldDefinition();
+      $field_storage = $field_definition->getFieldStorageDefinition();
+      $property = $field_storage->getMainPropertyName();
+      $field_value = $field->getValue()[0][$property];
+      $form_value = $form_state->getValue($key)[0][$property];
+
+      // Set flag if value was changed.
+      if ((string) $field_value !== (string) $form_value) {
+        $form_state->setValue($value, ['value' => TRUE]);
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_form_system_theme_settings_alter().
+ */
+function convivial_claro_form_system_theme_settings_alter(&$form,
+  FormStateInterface $form_state, $form_id = NULL) {
+  // Work-around for a core bug affecting admin themes. See issue #943212.
+  if (isset($form_id)) {
+    return;
+  }
+
+  // Create a section for My Theme settings.
+  $form['convivial_claro_settings'] = [
+    '#type'        => 'vertical_tabs',
+    '#title'       => t('Custom Settings'),
+    '#description' => t('Configure Convivial Admin theme options.'),
+    '#weight'      => -1000,
+    '#open'        => TRUE,
+  ];
+
+  $groups = [
+    'admin_ui' => t('Node edit'),
+  ];
+  foreach ($groups as $group => $title) {
+    $form[$group] = [
+      '#type'  => 'details',
+      '#title' => $title,
+      '#group' => 'convivial_claro_settings',
+    ];
+  }
+
+  $form['admin_ui']['content_groups'] = [
+    '#type'          => 'textarea',
+    '#title'         => t('Content groups'),
+    '#description'   => t('Define the fields to be displayed in a content group. e.g. Group X|field_a, field_b'),
+    '#default_value' => theme_get_setting('content_groups'),
+  ];
+
+  $form['admin_ui']['sidebar_groups'] = [
+    '#type'          => 'textarea',
+    '#title'         => t('Sidebar groups'),
+    '#description'   => t('Define the fields to be displayed in a sidebar group. e.g. Group Y|field_c, field_d '),
+    '#default_value' => theme_get_setting('sidebar_groups'),
+  ];
+}

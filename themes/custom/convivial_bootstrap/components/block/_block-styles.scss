@@ -1,0 +1,136 @@
+/*! @convivial_bootstrap/block-styles */
+
+.block {
+  &.no-background-padding {
+    padding: 0 !important;
+  }
+
+  &.style--hero {
+    padding: 6rem 0 6.5rem 0;
+  }
+
+  &.text-shadow {
+    text-shadow: 1px 1px $black;
+  }
+
+  &.transparent-card {
+    .card {
+      background: rgba(255, 255, 255, .8);
+    }
+  }
+
+  ///
+  // Style classes for node list / item list.
+  ///
+  &.list--no-column-gaps {
+    .list {
+      padding-left: $grid-gutter-width / 2;
+      padding-right: $grid-gutter-width / 2;
+
+      .list__item {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+    }
+  }
+
+  &.list--no-side-gaps {
+    > .containerised {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+  }
+
+  &.list--no-row-gaps {
+    .list__item {
+      margin-top: 0 !important;
+    }
+  }
+
+  // Styles for position field.
+  @include media-breakpoint-up(md) {
+    &.position {
+      &.position--left-33 {
+        > .content > * {
+          width: 33% !important;
+          margin-right: auto;
+        }
+      }
+
+      &.position--left-50 {
+        > .content > * {
+          width: 50% !important;
+          margin-right: auto;
+        }
+      }
+
+      &.position--left-66 {
+        > .content > * {
+          width: 66% !important;
+          margin-right: auto;
+        }
+      }
+
+      &.position--right-33 {
+        > .content > * {
+          width: 33% !important;
+          margin-left: auto;
+        }
+      }
+
+      &.position--right-50 {
+        > .content > * {
+          width: 50% !important;
+          margin-left: auto;
+        }
+      }
+
+      &.position--right-66 {
+        > .content > * {
+          width: 66% !important;
+          margin-left: auto;
+        }
+      }
+
+      &.position--center-33 {
+        > .content > * {
+          width: 33% !important;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+
+      &.position--center-50 {
+        > .content > * {
+          width: 50% !important;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+
+      &.position--center-66 {
+        > .content > * {
+          width: 66% !important;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+    }
+  }
+
+  // Hide heading but keep available for screen readers.
+  &.hide-heading {
+    .content > h2 {
+      position: absolute !important;
+      clip: rect(1px, 1px, 1px, 1px);
+      overflow: hidden;
+      height: 1px;
+      width: 1px;
+      word-wrap: normal;
+
+      + .field--name-body {
+        margin-top: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+/*! @convivial_bootstrap/cta-link */
+
+.cta-link {
+  display: inline-block;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-lg;
+  margin-top: 1rem;
+
+  &::after {
+    border: solid;
+    border-width: 0 3px 3px 0;
+    color: inherit;
+    content: ' ';
+    display: inline-block;
+    margin-left: 5px;
+    padding: 5px;
+    transform: rotate(-45deg);
+    transition: margin-left .3s;
+  }
+
+  &:hover {
+    &::after {
+      border: solid;
+      border-width: 0 3px 3px 0;
+      color: inherit;
+      margin-left: 10px;
+    }
+  }
+
+  &[rel~='external']:after {
+    border: none;
+    transform: none;
+    margin-left: .25rem;
+  }
+}

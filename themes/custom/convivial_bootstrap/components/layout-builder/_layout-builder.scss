@@ -1,0 +1,123 @@
+/*! @convivial_bootstrap/layout-builder */
+
+// Fix for contextual links in LB.
+.layout-builder {
+  .contextual-region .contextual .contextual-links a {
+    color: #333;
+    font-size: small;
+    line-height: .8em;
+    font-weight: normal;
+    text-transform: capitalize;
+  }
+}
+
+.has-layout-builder {
+  .block--help-block {
+    margin-top: $grid-gutter-width;
+    margin-bottom: $grid-gutter-width;
+    padding: $grid-gutter-width / 2 $grid-gutter-width;
+    border: 1px solid #d3d7d9;
+  }
+}
+
+// Increase the spacing between lines of text.
+.ui-widget-content {
+  line-height: 1.5rem;
+}
+
+// Add block link should have same color on all backgrounds variants.
+.layout-builder__add-block a.layout-builder__link--add {
+  color: $link-color;
+
+  &:hover {
+    color: $link-hover-color;
+  }
+}
+
+// Bigger padding prevents from hiding contextual links menu.
+.layout-builder-block {
+  color: $body-color;
+  padding: $grid-gutter-width * 2;
+}
+
+.layout-builder-add-block,
+.layout-builder-update-block,
+.layout-builder-remove-block,
+.layout-builder-block-move,
+.layout-builder-configure-section,
+.layout-builder-remove-section {
+  .description {
+    background: transparent !important;
+  }
+
+  > .form-check {
+    margin-bottom: 1rem;
+  }
+}
+
+.layout-builder-discard-changes {
+  @include make-container();
+  @include container-max-widths();
+  margin-bottom: 1rem;
+
+  .form-wrapper {
+    margin-top: $grid-gutter-width / 2;
+  }
+
+  .button {
+    padding: .375rem .75rem;;
+  }
+}
+
+.layout-builder-form {
+  // Example titles are too long and are overflowing containers, this helps to prevent that.
+  word-break: break-word;
+
+  > .form-wrapper {
+    @include make-container();
+    @include container-max-widths();
+
+    margin-top: $grid-gutter-width;
+    margin-bottom: $grid-gutter-width;
+
+    .form-type-checkbox {
+      margin-top: $grid-gutter-width;
+    }
+  }
+
+  .field--name-moderation-state,
+  > .mb-3 {
+    @include make-container();
+    @include container-max-widths();
+  }
+
+  .mb-3 {
+    .form-item {
+      padding: .5em .6em;
+    }
+  }
+
+  // We don't want any padding inside regions when using layout builder.
+  .layout .layout-builder__region {
+    padding: 0;
+  }
+
+  // Prevent layouts from overflowing when using layout builder.
+  .container {
+    max-width: 100%;
+  }
+}
+
+.layout-builder-revert-overrides {
+  @include make-container();
+  @include container-max-widths();
+}
+
+#drupal-off-canvas {
+  .dropbutton-multiple {
+    .dropbutton-widget {
+      height: auto;
+      width: auto;
+    }
+  }
+}

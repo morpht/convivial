@@ -1,0 +1,60 @@
+/* convivial_bootstrap/sajari */
+.sc {
+  margin-bottom: 3rem;
+
+  .sc__controls {
+    background: transparent;
+  }
+}
+
+*[class^='sc'] + *[class ^='sc']:not(:empty) {
+  margin-top: 1.5rem;
+}
+
+.sj-tabs {
+  margin-top: 1rem;
+}
+
+.sj-paginator {
+  margin-top: 1.5rem;
+}
+
+.sc__sort {
+  padding: 0.5rem 1rem;
+  width: 100%;
+}
+
+.sc__facet {
+  ul {
+    list-style: none;
+    padding-left: 0;
+
+    > li {
+      display: flex;
+      margin-bottom: .125rem;
+    }
+  }
+
+  input {
+    @extend .form-check-input;
+    margin-right: 0.5rem;
+  }
+
+  label {
+    @extend .form-check-label;
+    word-break: break-all;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .sc__controls {
+    width: 250px;
+    background: #EFEFEF;
+    float: left;
+  }
+
+  .sc__content {
+    overflow: auto;
+    padding-left: 1rem;
+  }
+}

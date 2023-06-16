@@ -1,0 +1,20 @@
+/* Paragrapht layout fixes. */
+.layout-paragraphs-layout-region,
+.layout-paragraphs-layout-region .field {
+  position: relative;
+  z-index: 99;
+}
+
+/* Dropdown button fix */
+.dropbutton-widget ul.dropbutton {
+  padding-left: 0;
+}
+
+/* Paragraphs layout controls fix */
+.lpb-controls {
+  color: #232429;
+}
+
+.js-lpb-ui {
+  position: absolute !important;
+}

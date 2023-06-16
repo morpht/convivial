@@ -1,0 +1,129 @@
+/*! @convivial_bootstrap/stack */
+
+.stack {
+  background: $stack-bg;
+  height: 100%;
+
+  .hide-info & {
+    .stack__info {
+      display: none;
+    }
+  }
+}
+
+.stack__image {
+  overflow: hidden;
+
+  a,
+  img {
+    display: block;
+  }
+
+  img {
+    border-top-left-radius: $card-border-radius;
+    border-top-right-radius: $card-border-radius;
+    height: auto;
+    width: 100%;
+  }
+}
+
+.stack__content {
+  .stack__info {
+    @include font-size($h6-font-size);
+    line-height: $headings-line-height;
+    color: $text-muted;
+    margin-bottom: .5rem;
+    text-transform: uppercase;
+  }
+
+  // Title has a full unit gap bellow.
+  .stack__title {
+    @include font-size($h5-font-size);
+  }
+}
+
+.stack__summary {
+  margin-bottom: 1rem;
+}
+
+.stack__date {
+  color: var(--alt-text);
+}
+
+.stack__tags {
+  margin-top: .5rem;
+
+  .field__item {
+    display: inline;
+
+    + .field__item {
+      margin-left: 1rem;
+    }
+  }
+}
+
+// Stack looks the same on all backgrounds.
+.cp {
+  .stack {
+    color: $stack-body-color;
+
+    a:not(.cta-link) {
+      color: $stack-link-color;
+      filter: none;
+
+      &:hover {
+        color: $stack-link-hover-color;
+      }
+    }
+  }
+}
+
+// Clickable card styling.
+.card {
+  // css for making the anchor tag hit area span the entire card
+  &.card--clickable {
+    transition: box-shadow $view-modes-transition-time;
+
+    &:hover {
+      box-shadow: 0 2px 4px $shadow-color;
+
+      .stack__image img {
+        transform: scale($view-modes-transform-scale);
+      }
+    }
+
+    // If any element inside the card receives focus, add a focus ring around the wrapper card div
+    &:focus-within {
+      outline: -webkit-focus-ring-color auto 1px;
+      outline-offset: 2px;
+    }
+
+    //make hit area entire card
+    .card-title a {
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+
+      // don't focus on anchor inside the tag
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .stack__image img {
+      transition: transform $view-modes-transition-time;
+    }
+  }
+}
+
+.node--view-mode-stack-detail,
+.node--view-mode-stack-simple,
+.media-entity--view-mode-stack-detail,
+.media-entity--view-mode-stack-simple {
+  height: 100%;
+}

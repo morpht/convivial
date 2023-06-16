@@ -1,0 +1,13 @@
+/*! @convivial_bootstrap/blockquote */
+
+blockquote {
+  border-left: 10px solid rgba(0,0,0,.06);
+  font-size: 20px;
+  margin: 0 0 22px;
+  padding: 23px;
+  position: relative;
+
+  > p:last-child {
+    margin-bottom: 0;
+  }
+}

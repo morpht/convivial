@@ -1,0 +1,25 @@
+.byline {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.byline__author,
+.byline__published,
+.byline__time {
+  display: inline-flex;
+}
+
+.byline__author {
+  a {
+    margin-left: 0.25rem;
+  }
+}
+
+.byline__author + .byline__published,
+.byline__published + .byline__time {
+  &:before {
+    content: '—';
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+}

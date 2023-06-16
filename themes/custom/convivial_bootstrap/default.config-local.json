@@ -1,0 +1,6 @@
+{
+  "name": "convivial_bootstrap",
+  "description": "Convivial theme local config file.",
+  "browserSyncProxy" : "your_local_url",
+  "browserSyncPort" : 3000
+}

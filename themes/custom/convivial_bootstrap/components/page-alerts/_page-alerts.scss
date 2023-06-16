@@ -1,0 +1,22 @@
+/*! @convivial_bootstrap/page-alerts */
+
+.alert {
+  margin-top: 1rem;
+
+  a {
+    font-weight: $alert-link-font-weight;
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .alert-#{$color} {
+    a {
+      color: shade-color($value, 20%);
+
+      &:hover,
+      &:focus {
+        color: shade-color($value, 25%);
+      }
+    }
+  }
+}

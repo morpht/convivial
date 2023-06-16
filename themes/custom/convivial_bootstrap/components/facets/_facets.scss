@@ -1,0 +1,71 @@
+/*! @convivial_bootstrap/facets */
+
+.block--facets {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+
+  @include media-breakpoint-up(lg) {
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+}
+
+.facets-widget-checkbox {
+  .item-list__checkbox {
+    padding-left: 0;
+    list-style: none;
+
+    // Extend Design System.
+    .facet-item {
+      @extend .form-check;
+      margin-bottom: .125rem;
+
+      input[type="checkbox"] {
+        @extend .form-check-input;
+      }
+
+      label {
+        @extend .form-check-label;
+      }
+    }
+  }
+
+  //When accordion.
+  &.accordion {
+    .accordion-body {
+
+      // Hide title.
+      h3 {
+        display: none;
+
+        @include media-breakpoint-up(lg) {
+          display: block;
+        }
+      }
+    }
+
+    .collapse,
+    .collapsing {
+      padding: 1rem 1.25rem;
+    }
+
+    // Remove accordion on desktop.
+    @include media-breakpoint-up(lg) {
+
+      // Hide button.
+      .accordion-header {
+        display: none;
+      }
+
+      // Keep content visible.
+      .collapse {
+        display: block;
+        padding: 0;
+      }
+    }
+  }
+}
+
+.facets-widget-notice {
+  @include visually-hidden;
+}

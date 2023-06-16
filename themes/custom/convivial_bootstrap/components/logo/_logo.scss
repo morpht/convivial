@@ -1,0 +1,67 @@
+/*! @convivial_bootstrap/logo */
+
+// Multi-logos block.
+// Large = large-screen logo.
+// Small = small-screen logo.
+.logo-block {
+  .logo-block__link {
+    display: block;
+  }
+
+  // Hide inverse logos by default.
+  .logo-block__logo-image--inverse {
+    display: none;
+  }
+}
+
+//
+// Show inverse logos.
+//
+// Header -- Dark.
+.bg-dark,
+.bg-primary-dark {
+  .logo-block {
+
+    // We use 2 separate classes for large and small so we aren't
+    // dependant on both inverse logos being uploaded.
+    &.has-inverse--large .logo-block__logo--large,
+    &.has-inverse--small .logo-block__logo--small {
+
+      // Show the inverse (dark background) logo.
+      .logo-block__logo-image {
+        display: none;
+      }
+
+      .logo-block__logo-image--inverse {
+        display: block;
+      }
+    }
+  }
+}
+
+//
+// Show default logos.
+//
+// Header -- Light.
+.logo-block {
+
+  // We use 2 separate classes for large and small so we aren't
+  // dependant on both inverse logos being uploaded.
+  &.has-inverse--large .logo-block__logo--large,
+  &.has-inverse--small .logo-block__logo--small {
+
+    // Use the default (light background) logo.
+    .logo-block__logo-image {
+      display: block;
+    }
+
+    .logo-block__logo-image--inverse {
+      display: none;
+    }
+  }
+}
+
+// Reset for navbar-brand.
+.logo-block__link.navbar-brand {
+  margin: 0;
+}

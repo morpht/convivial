@@ -1,0 +1,294 @@
+/*! @convivial_bootstrap/title */
+
+.title {
+  height: 100%;
+
+  * {
+    height: 100%;
+  }
+}
+
+$arrow-svg: url('data:image/svg+xml,<svg width="1.5rem" height="15.rem" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#{$black}" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/></svg>');
+$arrow-dark-svg: url('data:image/svg+xml,<svg width="1.5rem" height="15.rem" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#{$white}" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/></svg>');
+
+.title__title {
+  border-top: 1px solid #a0a5ae;
+  border-bottom: 1px solid #a0a5ae;
+  color: $title-body-color;
+  margin: 0;
+
+  a {
+    padding: 1rem;
+    color: $body-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      background: $title-link-hover-color;
+      color: $title-bg;
+    }
+
+    &:after {
+      content: '';
+      background-image: escape-svg($arrow-svg);
+      background-repeat: no-repeat;
+      height: 1.5rem;
+      width: 1.5rem;
+    }
+
+    &:focus:after,
+    &:hover:after {
+      background-image: escape-svg($arrow-dark-svg);
+    }
+  }
+
+  // Dark colour palette.
+  .cp--dark &,
+  .cp--primary-dark &,
+  .cp--seconadry-dark & {
+    color: $title-dark-body-color;
+
+    a {
+      color: $title-dark-link-color;
+
+      &:focus,
+      &:hover {
+        color: $title-dark-link-hover-color;
+
+        &:after {
+          background-image: escape-svg($arrow-dark-svg);
+        }
+      }
+
+      &:after {
+        background-image: escape-svg($arrow-dark-svg);
+      }
+    }
+  }
+}
+
+
+///
+// Lists logic.
+///
+
+// Reset border top when multiple items.
+.list__item + .list__item,
+.views-layout__item + .views-layout__item {
+  .title__title {
+    border-top: 0;
+  }
+}
+
+// No spaces between items.
+.views-layout--title .views-layout__item,
+.erd-list--title .list__item {
+  margin-top: 0 !important;
+}
+
+///
+// List layout.
+///
+
+// Add border-top back for the first item in each column.
+.list-layout--6-6 {
+  .erd-list--title {
+    .list__item {
+      @include media-breakpoint-up(md) {
+        &:nth-child(-n+2) {
+          .title__title {
+            border-top: 1px solid #a0a5ae;
+          }
+        }
+      }
+    }
+  }
+}
+
+.list-layout--4-4-4 {
+  .erd-list--title {
+    .list__item {
+      @include media-breakpoint-up(md) {
+        &:nth-child(-n+3) {
+          .title__title {
+            border-top: 1px solid #a0a5ae;
+          }
+        }
+      }
+    }
+  }
+}
+
+.list-layout--3-3-3-3 {
+  .erd-list--title {
+    .list__item {
+      @include media-breakpoint-up(sm) {
+        &:nth-child(-n+2) {
+          .title__title {
+            border-top: 1px solid #a0a5ae;
+          }
+        }
+      }
+
+      @include media-breakpoint-up(md) {
+        &:nth-child(-n+4) {
+          .title__title {
+            border-top: 1px solid #a0a5ae;
+          }
+        }
+      }
+    }
+  }
+}
+
+.list-layout--2-2-2-2-2-2 {
+  .erd-list--title {
+    .list__item {
+      @include media-breakpoint-up(sm) {
+        &:nth-child(-n+2) {
+          .title__title {
+            border-top: 1px solid #a0a5ae;
+          }
+        }
+      }
+
+      @include media-breakpoint-up(md) {
+        &:nth-child(-n+4) {
+          .title__title {
+            border-top: 1px solid #a0a5ae;
+          }
+        }
+      }
+
+      @include media-breakpoint-up(lg) {
+        &:nth-child(-n+6) {
+          .title__title {
+            border-top: 1px solid #a0a5ae;
+          }
+        }
+      }
+    }
+  }
+}
+
+.list-layout--equal {
+  .erd-list--title {
+    .list__item {
+      @include media-breakpoint-up(sm) {
+        &:nth-child(-n+3) {
+          .title__title {
+            border-top: 1px solid #a0a5ae;
+          }
+        }
+      }
+
+      @include media-breakpoint-up(md) {
+        &:nth-child(-n+6) {
+          .title__title {
+            border-top: 1px solid #a0a5ae;
+          }
+        }
+      }
+    }
+  }
+}
+
+///
+// Views layout.
+///
+
+// Add border-top back for the first item in each column.
+.views-layout--halves {
+  .views-layout__item {
+    @include media-breakpoint-up(md) {
+      &:nth-child(-n+2) {
+        .title__title {
+          border-top: 1px solid #a0a5ae;
+        }
+      }
+    }
+  }
+}
+
+.views-layout--thirds {
+  .views-layout__item {
+    @include media-breakpoint-up(md) {
+      &:nth-child(-n+3) {
+        .title__title {
+          border-top: 1px solid #a0a5ae;
+        }
+      }
+    }
+  }
+}
+
+.views-layout--quarters {
+  .views-layout__item {
+    @include media-breakpoint-up(sm) {
+      &:nth-child(-n+2) {
+        .title__title {
+          border-top: 1px solid #a0a5ae;
+        }
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      &:nth-child(-n+4) {
+        .title__title {
+          border-top: 1px solid #a0a5ae;
+        }
+      }
+    }
+  }
+}
+
+.views-layout--sixths {
+  .views-layout__item {
+    @include media-breakpoint-up(sm) {
+      &:nth-child(-n+2) {
+        .title__title {
+          border-top: 1px solid #a0a5ae;
+        }
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      &:nth-child(-n+4) {
+        .title__title {
+          border-top: 1px solid #a0a5ae;
+        }
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      &:nth-child(-n+6) {
+        .title__title {
+          border-top: 1px solid #a0a5ae;
+        }
+      }
+    }
+  }
+}
+
+.views-layout--equal {
+  .views-layout__item {
+    @include media-breakpoint-up(sm) {
+      &:nth-child(-n+3) {
+        .title__title {
+          border-top: 1px solid #a0a5ae;
+        }
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      &:nth-child(-n+6) {
+        .title__title {
+          border-top: 1px solid #a0a5ae;
+        }
+      }
+    }
+  }
+}

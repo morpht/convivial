@@ -1,0 +1,27 @@
+{% extends "block.html.twig" %}
+{#
+/**
+ * @file
+ * Theme override for tabs.
+ */
+#}
+{# Prepare link attributes. #}
+{% set nav_attributes = create_attribute() %}
+
+{% block content %}
+  {% set classes = [
+    'local-tasks',
+   ]
+  %}
+  {% if content %}
+    <nav{{ nav_attributes.addClass(classes) }} role="navigation" aria-label="{{ 'Tabs'|t }}">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            {{ content }}
+          </div>
+        </div>
+      </div>
+    </nav>
+  {% endif %}
+{% endblock %}

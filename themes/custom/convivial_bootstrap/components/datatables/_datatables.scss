@@ -1,0 +1,35 @@
+/*! @convivial_bootstrap/datatables */
+
+.dataTables_wrapper {
+  margin-top: $grid-gutter-width;
+
+  // Extend Design System.
+  .dataTables_filter input[type="search"] {
+    @extend .form-control;
+  }
+
+  .dataTables_length select {
+    @extend .form-select;
+  }
+
+  // Single line filters.
+  .dataTables_length,
+  .dataTables_filter {
+    @media screen and (max-width: 640px) {
+      text-align: left;
+      display: inline-block;
+      margin-right: $grid-gutter-width;
+    }
+  }
+
+  // Scrollable headings.
+  .dataTables_scroll {
+    overflow-x: scroll;
+
+    .dataTables_scrollHead,
+    .dataTables_scrollBody {
+      // Override inline styling.
+      overflow: initial !important;
+    }
+  }
+}

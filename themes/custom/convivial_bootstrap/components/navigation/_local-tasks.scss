@@ -1,0 +1,46 @@
+/*! @convivial_bootstrap/local-tasks */
+
+.local-tasks {
+  .nav-pills {
+    .nav-link {
+      &:not(.active) {
+        color: $link-color;
+
+        &:hover,
+        &:focus {
+          color: $link-hover-color;
+        }
+      }
+
+      &.active {
+        &:hover,
+        &:focus {
+          background-color: $link-hover-color;
+        }
+      }
+    }
+
+    // Dark variant.
+    .bg-dark &,
+    .bg-primary-dark & {
+      .nav-link {
+        color: $dark-link-color;
+
+        &:hover,
+        &:focus {
+          color: $dark-link-hover-color;
+        }
+
+        &.active {
+          color: $black;
+          background-color: $light;
+
+          &:hover,
+          &:focus {
+            background-color: $white;
+          }
+        }
+      }
+    }
+  }
+}

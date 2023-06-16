@@ -1,0 +1,31 @@
+/*! @convivial_bootstrap/paragraphs */
+
+.paragraph {
+  height: 100%;
+
+  .field__items > .field__item + .field__item > & {
+    padding-top: 2rem;
+  }
+}
+
+.containerised {
+  position: relative;
+  width: 100%;
+}
+
+// Item component.
+.paragraph-item-content {
+  height: 100%;
+}
+
+// Top bar needs to be in container on edgy layouts.
+.top-bar,
+.layout.edgy:not(.edgy--contained),
+.layout--content-edgy {
+
+  // Set container on .containerised when it's inside edgy layout.
+  .field__item > .paragraph > .containerised {
+    @include make-container();
+    @include container-max-widths();
+  }
+}

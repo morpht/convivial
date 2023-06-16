@@ -1,0 +1,48 @@
+/*! @convivial_bootstrap/diff */
+
+$diff-color-background: #fafafa;
+$diff-color-border: #a6a6a6;
+
+.diff-header label {
+  font-weight: bold;
+}
+
+.diff-controls {
+  label {
+    font-weight: bold;
+  }
+
+  .dropbutton-widget {
+    background: $diff-color-background;
+    border: 1px solid $diff-color-border;
+  }
+
+  .dropbutton-action {
+    box-shadow: none;
+
+    a {
+      background-color: $diff-color-background;
+      color: $body-color;
+      padding: 4px 1.5rem;
+      text-decoration: none;
+      white-space: nowrap;
+
+      &:hover {
+        background-color: $white;
+      }
+    }
+
+    &.secondary-action {
+      border-top: 1px solid $diff-color-border;
+    }
+  }
+
+  .dropbutton-toggle button {
+    border-left: 1px solid $diff-color-border;
+
+    &:hover,
+    &:focus {
+      background-color: $white;
+    }
+  }
+}

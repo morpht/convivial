@@ -1,0 +1,66 @@
+/*! @convivial_bootstrap/toc */
+
+.toc {
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  a {
+    display: block;
+    line-height: 24px;
+  }
+
+  .field__label {
+    font-weight: bold;
+    padding: .5rem 0;
+  }
+}
+
+.toc--standard {
+  border-left: 4px solid $link-color;
+  padding-left: 1.5rem;
+
+  a {
+    padding: .5rem 0;
+  }
+
+  .page-layout__sidebar & {
+    position: sticky;
+    top: 0;
+
+    .active > a {
+      color: $link-hover-color;
+    }
+  }
+}
+
+.toc--float-left,
+.toc--float-right {
+  padding: 0 $grid-gutter-width;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999;
+
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
+
+  a {
+    color: rgba(255, 255, 255, .75);
+    font-weight: 600;
+    text-shadow: 0 0 8px rgba(0,0,0,.9), 0 0 6px rgba(0,0,0,.8), 0 0 4px rgba(0,0,0,.7);
+  }
+  .active > a {
+    color: $white;
+  }
+}
+
+.toc--float-left {
+  left: 0;
+}
+
+.toc--float-right {
+  right: 0;
+}

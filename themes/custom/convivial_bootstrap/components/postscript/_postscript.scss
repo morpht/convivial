@@ -1,0 +1,12 @@
+/*! @convivial_bootstrap/postscript */
+
+.postscript {
+  &[class*='bg-'] {
+    padding-top: $grid-gutter-width;
+    padding-bottom: $grid-gutter-width;
+  }
+
+  h2 {
+    font-size: $h5-font-size;
+  }
+}

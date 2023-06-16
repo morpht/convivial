@@ -1,0 +1,145 @@
+// Force slider item have same height.
+.slick-slider {
+  .slick-track {
+    display: flex !important;
+  }
+
+  .slick-slide {
+    height: inherit !important;
+  }
+}
+
+// Reset margin.
+.list.slick-slider {
+  margin-left: unset;
+  margin-right: unset;
+}
+
+// List slider layout.
+.list-layout.list-layout--slider-full-width,
+.list-layout.list-layout--slider-halves,
+.list-layout.list-layout--slider-thirds,
+.list-layout.list-layout--slider-quarters {
+  overflow: hidden;
+
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .list__item {
+    margin: 0.25rem 0.75rem;
+  }
+}
+
+.list-layout--slider-halves,
+.list-layout--slider-thirds,
+.list-layout--slider-quarters {
+
+  @media (min-width: 576px) {
+    .list__item {
+      width: calc(50% - 1.5rem);
+    }
+  }
+}
+
+.list-layout--slider-thirds {
+
+  @media (min-width: 768px) {
+    .list__item {
+      width: calc(33% - 1.5rem);
+    }
+  }
+}
+
+.list-layout--slider-quarters {
+
+  @media (min-width: 768px) {
+    .list__item {
+      width: calc(25% - 1.5rem);
+    }
+  }
+}
+
+// Views slider layout.
+.views-layout.views-layout--slider-full-width,
+.views-layout.views-layout--slider-halves,
+.views-layout.views-layout--slider-thirds,
+.views-layout.views-layout--slider-quarters {
+  overflow: hidden;
+
+  .view-content .views-layout__item {
+    margin: 0.25rem 0.75rem;
+  }
+}
+
+// Slick.
+.slick-slider {
+  .slick-prev,
+  .slick-next {
+    &:before {
+      color: var(--standard-link);
+      transition: $view-modes-transition-time;
+    }
+
+    &:hover,
+    &:focus {
+      &:before {
+        color: var(--standard-focus);
+        opacity: 0.75;
+      }
+    }
+
+    .cp--light & {
+      &:before {
+        color: var(--light-link);
+      }
+
+      &:hover,
+      &:focus {
+        &:before {
+          color: var(--light-focus);
+        }
+      }
+    }
+
+    .cp--dark & {
+      &:before {
+        color: var(--dark-link);
+      }
+
+      &:hover,
+      &:focus {
+        &:before {
+          color: var(--dark-focus);
+        }
+      }
+    }
+
+    .cp--primary & {
+      &:before {
+        color: var(--primary-light-link);
+      }
+
+      &:hover,
+      &:focus {
+        &:before {
+          color: var(--primary-light-focus);
+        }
+      }
+    }
+
+    .cp--primary-dark & {
+      &:before {
+        color: var(--primary-dark-link);
+      }
+
+      &:hover,
+      &:focus {
+        &:before {
+          color: var(--primary-dark-focus);
+        }
+      }
+    }
+  }
+}

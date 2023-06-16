@@ -1,0 +1,21 @@
+name: 'Convivial Claro'
+description: 'Convivial administration theme.'
+base theme: claro
+core_version_requirement: ^9.4 || ^10.0
+type: theme
+libraries:
+  - convivial_claro/global-styles
+  - convivial_claro/layout_paragraphs_hotfix
+  - convivial_claro/layout_paragraphs_embedded_form_removal
+regions:
+  header: 'Header'
+  pre_content: 'Pre-content'
+  breadcrumb: Breadcrumb
+  highlighted: Highlighted
+  help: Help
+  content: Content
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  sidebar_first: 'First sidebar'
+regions_hidden:
+  - sidebar_first

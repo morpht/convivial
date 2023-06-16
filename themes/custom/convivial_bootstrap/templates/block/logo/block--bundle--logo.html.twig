@@ -1,0 +1,85 @@
+{#
+/**
+ * @file
+ * Theme override to display a block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ */
+#}
+{%
+  set classes = [
+  'logo-block',
+  block_class ? block_class,
+]
+%}
+
+{# If logo link title is not empty store its value in link_title variable. #}
+{% if content.field_logo_link[0]['#title'] != '/' %}
+  {% set link_title = content.field_logo_link[0]['#title'] %}
+{% endif %}
+{% set logo_link = content.field_logo_link[0]['#url'] %}
+
+{% if content.field_logo_large_default['#items'] is not empty %}
+  {% set logo_large = file_url(content.field_logo_large_default['#items'].entity.uri.value) %}
+  {% set logo_large_description = content.field_logo_large_default['0']['#description'] %}
+{% endif %}
+{% if content.field_logo_large_inverse['#items'] is not empty %}
+  {% set logo_large_inverse = file_url(content.field_logo_large_inverse['#items'].entity.uri.value) %}
+  {% set logo_large_inverse_description = content.field_logo_large_inverse['0']['#description'] %}
+  {% set classes = classes|merge(['has-inverse--large']) %}
+{% endif %}
+{% if content.field_logo_small_default['#items'] is not empty %}
+  {% set logo_small = file_url(content.field_logo_small_default['#items'].entity.uri.value) %}
+  {% set logo_small_description = content.field_logo_small_default['0']['#description'] %}
+{% endif %}
+{% if content.field_logo_small_inverse['#items'] is not empty %}
+  {% set logo_small_inverse = file_url(content.field_logo_small_inverse['#items'].entity.uri.value) %}
+  {% set logo_small_inverse_description = content.field_logo_small_inverse['0']['#description'] %}
+  {% set classes = classes|merge(['has-inverse--small']) %}
+{% endif %}
+
+
+<div{{ attributes|without('region').addClass(classes) }}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+
+  {% block content %}
+    {% if logo_large|render|striptags('<img>')|trim %}
+      <a class="logo-block__link navbar-brand" href="{{ logo_link ? logo_link : '/' }}" title="{{ link_title ? link_title : 'Home' }}">
+        <span class="logo-block__logo logo-block__logo--large">
+          <img class="logo-block__logo-image" src="{{ logo_large }}" alt="{{ logo_large_description ? logo_large_description : site_name~' logo' }}">
+            {% if logo_large_inverse|render|striptags('<img>')|trim %}
+              <img class="logo-block__logo-image logo-block__logo-image--inverse" src="{{ logo_large_inverse }}" alt="{{ logo_large_inverse_description ? logo_large_inverse_description : site_name~' logo' }}">
+            {% endif %}
+        </span>
+        <span class="logo-block__logo logo-block__logo--small">
+        {% if logo_small|render|striptags('<img>')|trim %}
+          <img class="logo-block__logo-image" src="{{ logo_small }}" alt="{{ logo_small_description ? logo_small_description : site_name~' logo' }}">
+        {% endif %}
+          {% if logo_small_inverse|render|striptags('<img>')|trim %}
+            <img class="logo-block__logo-image logo-block__logo-image--inverse" src="{{ logo_small_inverse }}" alt="{{ logo_small_inverse_description ? logo_small_inverse_description : site_name~' logo' }}">
+          {% endif %}
+        </span>
+      </a>
+    {% endif %}
+  {% endblock %}
+</div>

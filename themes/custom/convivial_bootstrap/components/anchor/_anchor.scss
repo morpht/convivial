@@ -1,0 +1,41 @@
+/*! @convivial_bootstrap/anchor */
+
+$anchor_icon_size: 25px;
+
+.anchor {
+  margin-left: 10px;
+
+  // Icon.
+  text-indent: -9999px;
+  width: $anchor_icon_size;
+  height: $anchor_icon_size;
+  background-size: $anchor_icon_size;
+  background-image: url('../images/anchor.svg');
+  background-repeat: no-repeat;
+  opacity: .7;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  // Icon for dark backgrounds.
+  .cp--dark &,
+  .cp--primary-dark & {
+    background-image: url('../images/anchor-inverse.svg');
+  }
+
+  // Show anchor on heading hover.
+  h2 & {
+    display: none;
+  }
+
+  h2:hover & {
+    display: inline-block;
+  }
+}
+
+// Vertically align anchor in headings.
+.has-anchor {
+  display: flex;
+  align-items: center;
+}

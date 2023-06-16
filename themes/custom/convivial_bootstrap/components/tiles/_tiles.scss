@@ -1,0 +1,245 @@
+/*! @convivial_bootstrap/tiles */
+
+.tiles {
+  // Mobile only.
+  @include media-breakpoint-down(md) {
+    .containerised > .list > .list__item {
+      margin-bottom: $grid-gutter-width;
+    }
+  }
+
+  // All except mobile.
+  @include media-breakpoint-up(md) {
+    .list {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-gap: 0.5rem;
+      height: 100%;
+
+      .list__item {
+        height: 100%;
+      }
+    }
+
+    .media-entity {
+      height: 100%;
+    }
+  }
+}
+
+// Arrangement.
+@include media-breakpoint-up(md) {
+
+  // Landscapes only.
+  .tiles--landscapes {
+    .list {
+      > .list__item {
+        &:nth-child(4n+1),
+        &:nth-child(4n+3) {
+          grid-column: span 4;
+          grid-row: span 2;
+        }
+
+        &:nth-child(2n),
+        &:nth-child(3n){
+          grid-column: span 2;
+          grid-row: span 1;
+        }
+      }
+    }
+  }
+
+  // Portrait, landscapes and squares.
+  .tiles--portrait-landscapes-squares {
+    .list {
+      > .list__item {
+
+        // Portrait.
+        &:nth-child(12n+1),
+        &:nth-child(12n+8) {
+          grid-column: span 3;
+          grid-row: span 2;
+
+          .field--type-image {
+            padding-top: 141.4%;
+          }
+        }
+
+        // Landscape.
+        &:nth-child(12n+4),
+        &:nth-child(12n+5),
+        &:nth-child(12n+6),
+        &:nth-child(12n+10),
+        &:nth-child(12n+11),
+        &:nth-child(12n+12) {
+          grid-column: span 2;
+          grid-row: span 1;
+
+          .field--type-image {
+            padding-top: 100%;
+          }
+        }
+
+        // Square.
+        &:nth-child(12n+2),
+        &:nth-child(12n+3),
+        &:nth-child(12n+7),
+        &:nth-child(12n+9) {
+          grid-column: span 3;
+          grid-row: span 1;
+
+          .field--type-image {
+            padding-top: 70.7108%;
+          }
+        }
+      }
+    }
+  }
+
+  // Gaps.
+  .tiles--gap-none {
+    .list {
+      grid-gap: 0;
+    }
+  }
+
+  .tiles--gap-small {
+    .list {
+      grid-gap: 0.5rem;
+    }
+  }
+
+  .tiles--gap-normal {
+    .list {
+      grid-gap: 1rem;
+    }
+  }
+
+  .tiles--gap-large {
+    .list {
+      grid-gap: 2rem;
+    }
+  }
+}
+
+// Hexagonal tiles.
+.tiles--hex {
+  .list {
+    --amount: 5;
+    grid-template-columns: repeat(var(--amount), 1fr 2fr) 1fr;
+    grid-gap: 1.5rem 3rem;
+
+    > .list__item {
+      position: relative;
+      grid-column: 1 / span 3;
+      grid-row: calc(var(--counter) + var(--counter)) / span 2;
+      filter: drop-shadow(0 0 10px rgba(#444, .08));
+      height: 0;
+      padding-bottom: 90%;
+
+      > * {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        clip-path: polygon(75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%, 25% 0);
+        text-align: center;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    .list {
+      --amount: 5;
+      --counter: 1;
+
+      > .list__item {
+        @include tiles-grid-item(5);
+      }
+    }
+  }
+
+  @media screen and (min-width: 1120px) and (max-width: 1439px) {
+    .list {
+      --amount: 4;
+      --counter: 1;
+
+      > .list__item {
+        @include tiles-grid-item(4);
+      }
+    }
+  }
+
+  @media screen and (min-width: 840px) and (max-width: 1119px) {
+    .list {
+      --amount: 3;
+      --counter: 1;
+
+      > .list__item {
+        @include tiles-grid-item(3);
+      }
+    }
+  }
+
+  @media screen and (min-width: 480px) and (max-width: 839px) {
+    .list {
+      --amount: 2;
+      --counter: 1;
+
+      > .list__item {
+        @include tiles-grid-item(2);
+      }
+    }
+  }
+
+  @media screen and (max-width: 479px) {
+    .list {
+      --amount: 1;
+    }
+  }
+
+  // Center text to the middle.
+  .tile__link {
+    .tile__title {
+      bottom: 0;
+      padding: 1rem;
+      transition: opacity .3s ease-in-out;
+      background: linear-gradient(to top,rgba(0, 0, 0, .46), rgba(0, 0, 0, .46),rgba(0, 0, 0, 0));
+
+      > div {
+        width: 50%;
+        margin: auto;
+      }
+    }
+
+    &:hover {
+      .tile__title {
+        opacity: 0;
+      }
+    }
+  }
+
+  // Gaps.
+  &.tiles--gap-none {
+    .list {
+      grid-gap: 0;
+    }
+  }
+
+  &.tiles--gap-small {
+    .list {
+      grid-gap: 0.5rem 1rem;
+    }
+  }
+
+  &.tiles--gap-normal {
+    .list {
+      grid-gap: 1rem 2rem;
+    }
+  }
+
+  &.tiles--gap-large {
+    .list {
+      grid-gap: 2rem 4rem;
+    }
+  }
+}

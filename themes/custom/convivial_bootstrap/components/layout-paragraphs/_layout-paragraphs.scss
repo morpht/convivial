@@ -1,0 +1,6 @@
+/*! @convivial_bootstrap/layout-paragraphs */
+
+// Fixes issue with tiles width. Overrides layout-paragraphs-widget.css.
+.layout-paragraphs-field .layout-select__item label {
+  width: 248px;
+}

@@ -1,0 +1,57 @@
+{#
+/**
+ * @file
+ * Theme override for a field lightbox-thumbnail.
+ *
+ * This is a GovCMS 8 feature to support lists for components such as Node List
+ * and Item List and any other list which can have the layout applied to it,
+ * typically by Entity Class Formatter.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - label_hidden: Whether to show the field label or not.
+ * - title_attributes: HTML attributes for the title.
+ * - label: The label for the field.
+ * - multiple: TRUE if a field can contain multiple items.
+ * - items: List of all the field items. Each item contains:
+ *   - attributes: List of HTML attributes for each item.
+ *   - content: The field item's content.
+ * - entity_type: The entity type to which the field belongs.
+ * - field_name: The name of the field.
+ * - field_type: The type of the field.
+ * - label_display: The display settings for the label.
+ *
+ *
+ */
+#}
+{%
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
+  ]
+%}
+{%
+  set title_classes = [
+    'field__label'
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  {% set field_entity = element['#object'].field_lightbox_media.entity %}
+  {% if field_entity.field_media_image %}
+    {% set media_url = file_url(field_entity.field_media_image.entity.uri.value) %}
+  {% else %}
+    {% set media_url = field_entity.field_media_oembed_video.0.value %}
+  {% endif %}
+  {% for item in items %}
+    <a href="{{ media_url }}" class="img"
+            {% if field_entity.field_media_image %}
+              data-sizes="(max-width: 800px) 768px, 992px, 1200px, 2400px"
+              data-srcset="{{ media_url|image_style('full_wide_sm') }} 768w {{ media_url|image_style('full_wide_md') }} 992w {{ media_url|image_style('full_wide_lg') }} 1200w {{ media_url|image_style('full_wide_lg_hi') }} 2400w"
+            {% endif %}
+    >
+      {{ item.content }}
+    </a>
+  {% endfor %}
+</div>

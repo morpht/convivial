@@ -1,0 +1,103 @@
+promotion_plain:
+  title: 'Promotion Plain'
+  description: 'Simple Handlebars template for Promotion blocks.'
+  file: handlebars/promotion-plain.html.hbs
+  transformer: handlebars
+  available_for:
+    - personified
+
+promotion_hero:
+  title: 'Promotion Hero'
+  description: 'Handlebars template for Promotion blocks.'
+  file: handlebars/promotion-hero.html.hbs
+  transformer: handlebars
+  available_for:
+    - personified
+
+item_basic_card:
+  title: 'Basic Card'
+  description: 'Simple Handlebars template for Promotion blocks.'
+  file: handlebars/item-basic-card.html.hbs
+  transformer: handlebars
+  available_for:
+    - personified
+
+item_image_card:
+  title: 'Image Card'
+  description: 'Handlebars template for Promotion blocks.'
+  file: handlebars/item-image-card.html.hbs
+  transformer: handlebars
+  available_for:
+    - personified
+
+item_summary:
+  title: 'Summary'
+  description: 'Handlebars template for Promotion blocks.'
+  file: handlebars/item-summary.html.hbs
+  transformer: handlebars
+  available_for:
+    - personified
+
+item_teaser:
+  title: 'Teaser'
+  description: 'Handlebars template for Promotion blocks.'
+  file: handlebars/item-teaser.html.hbs
+  transformer: handlebars
+  available_for:
+    - personified
+
+recombee_cards_quarters:
+  title: 'Recombee: Cards - quarters'
+  description: 'Simple Handlebars template for Recombee.'
+  file: handlebars/recombee-cards-quarters.html.hbs
+  transformer: handlebars
+  available_for:
+    - recombee
+
+recombee_summary_quarters:
+  title: 'Recombee: Summary - quarters'
+  description: 'Simple Handlebars template for Recombee.'
+  file: handlebars/recombee-summary-quarters.html.hbs
+  transformer: handlebars
+  available_for:
+    - recombee
+
+recombee_title_quarters:
+  title: 'Recombee: Title - full'
+  description: 'Simple Handlebars template for Recombee.'
+  file: handlebars/recombee-title-quarters.html.hbs
+  transformer: handlebars
+  available_for:
+    - recombee
+
+sajari_cards_thirds:
+  title: 'Sajari Cards - thirds'
+  description: 'Title linked and description.'
+  file: handlebars/sajari-cards-thirds.html.hbs
+  transformer: handlebars
+  available_for:
+    - sajari_search
+
+sajari_results:
+  title: 'Sajari results'
+  description: 'Title linked and description.'
+  file: handlebars/sajari-results.html.hbs
+  transformer: handlebars
+  available_for:
+    - sajari_search
+
+sajari_summary_full:
+  title: 'Sajari Summary - full'
+  description: 'Title linked and description.'
+  file: handlebars/sajari-summary-full.html.hbs
+  transformer: handlebars
+  available_for:
+    - sajari_search
+
+sajari_title_full:
+  title: 'Sajari Title - full'
+  description: 'Title linked and description.'
+  file: handlebars/sajari-title-full.html.hbs
+  transformer: handlebars
+  available_for:
+    - sajari_search

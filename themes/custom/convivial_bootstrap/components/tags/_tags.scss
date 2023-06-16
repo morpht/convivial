@@ -1,0 +1,25 @@
+.badge-primary,
+.badge-secondary {
+  &,
+  .color--alt &,
+  .color--dark &,
+  .color--dark-alt & {
+    a {
+      color: $colordark-foreground-text;
+
+      &:hover {
+        color: $colordark-foreground-text;
+      }
+    }
+  }
+
+  .bs-bg--dark &,
+  .color--dark & {
+    background-color: $colordark-background-alt-suggestion;
+  }
+
+  .bs-bg--dark.bs-bg--alt &,
+  .color--dark-alt & {
+    background-color: $colordark-background;
+  }
+}

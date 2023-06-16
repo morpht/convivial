@@ -1,0 +1,168 @@
+// Container widths
+//
+// Set the container width.
+// See convivial_bootstrap/libraries/bootstrap/scss/_containers.scss
+@mixin container-max-widths($container-max-widths: $container-max-widths) {
+  @each $breakpoint, $container-max-width in $container-max-widths {
+    @include media-breakpoint-up($breakpoint) {
+      max-width: $container-max-width;
+    }
+  }
+}
+
+// Social share icons
+//
+// Mixin for calculating all the modifications variants.
+// See convivial_bootstrap/components/social-share/_social-share.scss
+@mixin social-share-size($size-num) {
+  .social-share__service {
+    height: nth($sizes, $size-num);
+    line-height: nth($sizes, $size-num);
+    padding-right: nth($sizes, $size-num) / 4;
+    width: nth($sizes, $size-num);
+
+    @include media-breakpoint-up(sm) {
+      width: auto;
+    }
+
+    &:before {
+      background-size: nth($sizes, $size-num) / 1.6 nth($sizes, $size-num) / 1.6 ;
+      height: nth($sizes, $size-num);
+      line-height: nth($sizes, $size-num);
+      width: nth($sizes, $size-num);
+    }
+  }
+  &.social-share--rounded .social-share__service {
+    border-radius: $social-share-border-radius;
+
+    &:before {
+      border-radius: $social-share-border-radius;
+    }
+  }
+  &.social-share--pill .social-share__service {
+    border-radius: nth($sizes, $size-num) / 2;
+
+    &:before {
+      border-radius: nth($sizes, $size-num) / 2;
+    }
+  }
+  &.social-share--half-pill .social-share__service {
+    border-radius: nth($sizes, $size-num) / 2;
+
+    @include media-breakpoint-up(sm) {
+      border-radius: nth($sizes, $size-num) / 2 $social-share-border-radius $social-share-border-radius nth($sizes, $size-num) / 2 ;
+    }
+
+    &:before {
+      border-radius: nth($sizes, $size-num) / 2;
+    }
+  }
+
+  &.social-share--row .social-share__service {
+    margin: nth($sizes, $size-num) / 10;
+  }
+
+  &.social-share--column .social-share__service {
+    width: auto;
+
+    + .social-share__service {
+      margin-top: nth($sizes, $size-num) / 5;
+    }
+  }
+
+  &.social-share--icon-only .social-share__service {
+    overflow: hidden;
+    width: nth($sizes, $size-num);
+  }
+
+  &.social-share--label-only .social-share__service {
+    padding-left: nth($sizes, $size-num) / 4;
+    text-align: center;
+    width: auto;
+
+    &:before {
+      display: none;
+    }
+  }
+}
+
+// Tiles grid item
+//
+// Mixin for calculating number of items within row.
+// See convivial_bootstrap/components/tiles/_tiles.scss
+@mixin tiles-grid-item($amount) {
+  @for $i from 1 through $amount {
+    &:nth-of-type(#{$amount}n + #{$i}) {
+      grid-column: #{$i + $i - 1} / span 3;
+      @if $i % 2 == 0 {
+        grid-row: calc(var(--counter) + var(--counter) - 1) / span 2;
+      }
+    }
+  }
+
+  @for $i from 1 through 20 {
+    &:nth-of-type(n + #{$i * $amount + 1}) {
+      --counter: #{$i + 1};
+    }
+  }
+}
+
+// Button variants
+//
+// Easily pump out default styles, as well as :hover, :focus, :active,
+// for all buttons
+@mixin convivial-button-variant($background, $border, $color: color-contrast($background)) {
+  color: $color;
+  @include gradient-bg($background);
+  border-color: $border;
+  @include box-shadow($btn-box-shadow);
+
+  &:hover {
+    color: $color;
+    filter: brightness(85%);
+  }
+
+  &:focus {
+    color: $color;
+    @include gradient-bg($background);
+  }
+
+  &:active,
+  &.active {
+    color: $color;
+    filter: brightness(90%);
+    // Remove CSS gradients if they're enabled
+    background-image: if($enable-gradients, none, null);
+  }
+}
+
+@mixin convivial-outline-button-variant(
+  $color,
+  $color-hover,
+  $active-background: $color,
+  $active-border: $color,
+  $active-color: $color-hover
+) {
+  color: $color;
+  border-color: $color;
+
+  &:hover {
+    color: $color-hover;
+    background-color: $active-background;
+    border-color: $active-border;
+    filter: brightness(100%); // We need to override links.
+  }
+
+  &:focus {
+    color: $color;
+  }
+
+  &:active,
+  &.active {
+    color: $active-color;
+    background-color: $active-background;
+    // Remove CSS gradients if they're enabled
+    background-image: if($enable-gradients, none, null);
+    border-color: $active-border;
+  }
+}

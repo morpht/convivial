@@ -1,0 +1,228 @@
+/*! @convivial_bootstrap/views */
+
+.view {
+  nav {
+    margin: 1.5rem 0;
+  }
+}
+
+.more-link {
+  margin-top: 1rem;
+  text-align: center;
+
+  a {
+    @extend .btn;
+    @extend .btn-primary;
+  }
+}
+
+// Views need container when rendered in edgy page or edgy region.
+.top-bar,
+.page-layout--edgy {
+  .views-element-container {
+    @include make-container();
+    @include container-max-widths();
+    padding-top: $grid-gutter-width;
+    padding-bottom: $grid-gutter-width;
+  }
+}
+
+///
+// Views layout.
+///
+
+.views-layout--row {
+  .view-content {
+    @include make-row();
+  }
+
+  .views-layout__item {
+    @include make-col-ready();
+    margin-top: $grid-gutter-width !important;
+
+    &:first-child {
+      margin-top: 0 !important;
+    }
+
+    // Make sure all items has same height.
+    & > * {
+      height: 100%;
+    }
+  }
+}
+
+///
+// Specific styles for the view layout classes.
+///
+
+.views-layout--full-width {
+  .views-layout__item {
+    &:not(:first-child) {
+      margin-top: $grid-gutter-width;
+    }
+  }
+}
+
+// Two items in row.
+.views-layout--halves {
+  .views-layout__item {
+    @include media-breakpoint-up(md) {
+      @include make-col(6);
+
+      &:nth-child(-n+2) {
+        margin-top: 0 !important;
+      }
+    }
+  }
+}
+
+// Three items in row.
+.views-layout--thirds {
+  .views-layout__item {
+    @include media-breakpoint-up(md) {
+      @include make-col(4);
+
+      &:nth-child(-n+3) {
+        margin-top: 0 !important;
+      }
+    }
+  }
+}
+
+// Four items in row.
+.views-layout--quarters {
+  .views-layout__item {
+    @include media-breakpoint-only(sm) {
+      @include make-col(6);
+
+      &:nth-child(-n+2) {
+        margin-top: 0 !important;
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      @include make-col(3);
+
+      &:nth-child(-n+4) {
+        margin-top: 0 !important;
+      }
+    }
+  }
+}
+
+// Six items in row.
+.views-layout--sixths {
+  .views-layout__item {
+    @include media-breakpoint-only(sm) {
+      @include make-col(6);
+
+      &:nth-child(-n+2) {
+        margin-top: 0 !important;
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      @include make-col(3);
+
+      &:nth-child(-n+4) {
+        margin-top: 0 !important;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      @include make-col(2);
+
+      &:nth-child(-n+6) {
+        margin-top: 0 !important;
+      }
+    }
+  }
+}
+
+///
+// Equal columns.
+// Items width can be set dynamically up to 6 items in row.
+///
+.views-layout--equal .views-layout__item {
+
+  /* one item */
+  &:only-of-type {
+    width: 100%;
+  }
+
+  /* two items */
+  &:nth-of-type(1):nth-last-of-type(2),
+  &:nth-of-type(1):nth-last-of-type(2) ~ .views-layout__item {
+    @include media-breakpoint-up(md) {
+      width: calc(100 / 2 * 1%);
+    }
+  }
+
+  /* three items */
+  &:nth-of-type(1):nth-last-of-type(3),
+  &:nth-of-type(1):nth-last-of-type(3) ~ .views-layout__item {
+    @include media-breakpoint-up(md) {
+      width: calc(100 / 3 * 1%);
+    }
+  }
+
+  /* four items */
+  &:nth-of-type(1):nth-last-of-type(4),
+  &:nth-of-type(1):nth-last-of-type(4) ~ .views-layout__item {
+    @include media-breakpoint-up(md) {
+      width: calc(100 / 2 * 1%);
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: calc(100 / 4 * 1%);
+    }
+  }
+
+  /* five items */
+  &:nth-of-type(1):nth-last-of-type(5),
+  &:nth-of-type(1):nth-last-of-type(5) ~ .views-layout__item {
+    @include media-breakpoint-up(md) {
+      width: calc(100 / 3 * 1%);
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: calc(100 / 5 * 1%);
+    }
+  }
+
+  /* six items */
+  @include media-breakpoint-up(md) {
+    width: calc(100 / 3 * 1%);
+
+    &:nth-child(-n+3) {
+      margin-top: 0 !important;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: calc(100 / 6 * 1%);
+
+    &:nth-child(-n+6) {
+      margin-top: 0 !important;
+    }
+  }
+}
+
+// Alternating teaser.
+.views-layout--alternate {
+  .views-layout__item {
+    @include media-breakpoint-up(md) {
+      @include make-col(12);
+
+      &:nth-child(even) {
+        .teaser__image {
+          order: 2;
+        }
+
+        .teaser__content {
+          order: 1;
+        }
+      }
+    }
+  }
+}

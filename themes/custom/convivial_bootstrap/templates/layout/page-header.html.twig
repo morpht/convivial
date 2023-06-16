@@ -1,0 +1,170 @@
+{# Prepare top bar attributes. #}
+{% set top_bar_attributes = create_attribute() %}
+
+{# Add top bar classes. #}
+{% set top_bar_classes = [
+    'top-bar',
+    top_bar_style ? top_bar_style,
+  ]
+%}
+{% if page.top_bar|render|striptags|trim %}
+  <section{{ top_bar_attributes.addClass(top_bar_classes) }} aria-label="Top bar region">
+    <div class="container">
+      {{ page.top_bar }}
+    </div>
+  </section>
+{% endif %}{# /.top-bar #}
+
+{# Prepare header attributes. #}
+{% set header_attributes = create_attribute() %}
+
+{# Save the original Header colour scheme as it can be modified below. #}
+{% set theme_header_style = header_style %}
+
+{# Override theme settings with a page field settings. #}
+{% if header_transparency %}
+  {% if hero_darkness == 'hero-background--dark' or hero_darkness == 'hero-background--dark-image' %}
+    {% set header_style = 'bg-dark' %}
+  {% elseif hero_darkness == 'hero-background--light' or hero_darkness == 'hero-background--light-image' %}
+    {% set header_style = 'bg-light' %}
+  {% endif %}
+{% endif %}
+
+{# Add header classes. #}
+{% set header_classes = [
+    'bs-header',
+    header_style ? header_style,
+    header_layout ? header_layout,
+    header_width ? header_width,
+  ]
+%}
+{% if not logged_in %}
+  {% set header_classes = header_classes|merge([header_stickiness]) %}
+{% endif %}
+
+{# Prepare navbar attributes. #}
+{% set navbar_attributes = create_attribute() %}
+
+{% set navbar_classes = [
+    'navbar',
+    'navbar-expand-lg',
+  ]
+%}
+
+{% if header_layout != 'bs-header--no-header' %}
+  <header{{ header_attributes.addClass(header_classes) }} role="banner" data-header-style="{{ theme_header_style }}">
+    <div class="bs-header__content {{ header_style }}">
+
+      {% if header_layout == 'bs-header--inline-menu' %}
+        <div class="{% if header_width == 'bs-header--contained' %}container{% else %}container-fluid{% endif %}">
+          <div{{ navbar_attributes.addClass(navbar_classes) }}>
+            {% if page.logo|render|striptags('<img>')|trim %}
+              {{ page.logo }}
+            {% endif %} {# /.logo #}
+
+            {% if page.navigation|render|striptags|trim %}
+              <button class="navbar-toggler"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#navbar-collapse"
+                      aria-controls="navbar-collapse"
+                      aria-expanded="false"
+                      aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            {% endif %}{# /.navbar-toggler #}
+
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              {% if page.navigation|render|striptags|trim %}
+                {{ page.navigation }}
+              {% endif %}{# /.navigation #}
+
+              {% if page.search|render|striptags|trim %}
+                <div class="search">
+                  {{ page.search }}
+                </div>
+              {% endif %}{# /.search #}
+            </div>
+            {% if page.search|render|striptags|trim %}
+              <button class="searchform-toggler" type="button" data-bs-target="#navbar-collapse" aria-label="Toggle search form">
+                <svg width="22" height="22" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <circle fill="none" stroke="#000" stroke-width="1.5" cx="9" cy="9" r="7"></circle>
+                  <path fill="none" stroke="#000" stroke-width="1.5" d="M14,14 L20,20 L14,14 Z"></path>
+                </svg>
+              </button>
+            {% endif %}{# /.search-toggler #}
+          </div>
+        </div>
+      {% endif %}
+
+      {% if header_layout == 'bs-header--menu-bar' %}
+        <div class="{% if header_width == 'bs-header--contained' %}container{% else %}container-fluid{% endif %}">
+          <div class="row">
+            {% if page.logo|render|striptags('<img><a>')|trim %}
+              <div class="logo col-lg-6">
+                {{ page.logo }}
+              </div>
+            {% endif %} {# /.logo #}
+
+
+            {% if page.search|render|striptags|trim %}
+              <div class="search search--large col-lg-6">
+                {{ page.search }}
+
+                <button class="searchform-toggler" type="button" data-bs-target="#navbar-collapse" aria-label="Toggle search form">
+                  <svg width="22" height="22" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <circle fill="none" stroke="#000" stroke-width="1.5" cx="9" cy="9" r="7"></circle>
+                    <path fill="none" stroke="#000" stroke-width="1.5" d="M14,14 L20,20 L14,14 Z"></path>
+                  </svg>
+                </button>
+              </div>
+            {% endif %}{# /.search #}
+          </div>
+        </div>
+        <div{{ navbar_attributes.addClass(navbar_classes) }}>
+          <div class="navbar__container">
+            {#
+            Second search form within small-screen nav because 1 search
+            form wasn't possible due to the layout and markup.
+            #}
+            {% if page.search|render|striptags|trim %}
+              <div class="search search--small">
+                {{ page.search_mobile }}
+              </div>
+            {% endif %}{# /.search #}
+
+            {% if page.navigation|render|striptags|trim %}
+              <button class="navbar-toggler"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#navbar-collapse"
+                      aria-controls="navbar-collapse"
+                      aria-expanded="false"
+                      aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            {% endif %}{# /.navbar-toggler #}
+          </div>
+
+          <div class="collapse navbar-collapse" id="navbar-collapse">
+            <div class="navbar-collapse__container">
+              {% if page.navigation|render|striptags|trim %}
+                {{ page.navigation }}
+              {% endif %}{# /.navigation #}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+    </div>
+
+    {{ page.admin }}
+
+    {% if page.messages %}
+      <section class="bs-header__messages container" aria-label="Messages region">
+        {{ page.messages }}
+      </section>
+    {% endif %}
+
+  </header>
+{% endif %}

@@ -1,0 +1,41 @@
+{#
+/**
+ * @file
+ * Component for a timeline.
+ *
+ * Variables:
+ * - content.field_title: [string] Heading of the timeline.
+ * - section.date: [array] The timeline section. Each section is an object containing:
+ * - section.date: [date] Date of the timeline item.
+ * - section.image: [image] Image of the timeline item.
+ * - item|raw: [array] The section item.
+ */
+#}
+{% block timeline %}
+  <div class="timeline__content">
+    {% for section in sections %}
+      <div class="timeline__item">
+        <div class="timeline__item-image">
+          {{ section.image }}
+        </div>
+        <div class="timeline__item-content">
+
+          <div class="timeline__item-group">
+            {% for key,item in section.items %}
+              <div class="card">
+                <div class="card-body">
+                  {% if key == 0 %}
+                    <div class="timeline__item-date">
+                      {{ section.date }}
+                    </div>
+                  {% endif %}
+                  {{ item|raw }}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

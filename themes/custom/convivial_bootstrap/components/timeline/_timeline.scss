@@ -1,0 +1,234 @@
+/*! @convivial_bootstrap/timeline */
+
+$timeline-image-width-fallback: 56px;
+$timeline-image-width: 3.5rem;
+
+// Prevents from wrong positioning of the image.
+.timeline {
+  .contextual-region {
+    font-size: 0;
+  }
+
+  .timeline__item-date {
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+
+    + * {
+      margin-top: 1rem;
+
+      // Reset margin top on elements going after Timeline item date.
+      @include media-breakpoint-up(md) {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.timeline__content {
+  margin-top: 2rem;
+  position: relative;
+  padding-top: $grid-gutter-width * 2;
+  padding-bottom: $grid-gutter-width * 2;
+
+  // Middle line.
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    background: $dark;
+    left: calc(50% - 1px);
+    height: 100%;
+    width: 2px;
+  }
+}
+
+.timeline__item {
+  width: calc(50% + (#{$timeline-image-width-fallback} / 2));
+  width: calc(50% + (#{$timeline-image-width} / 2));
+  position: relative;
+  display: flex;
+
+  &:nth-child(odd) {
+    flex-direction: row-reverse;
+
+    .timeline__item-image {
+      margin-right: 0;
+      margin-left: $timeline-image-width / 2;
+    }
+
+    .timeline__item-date {
+      left: calc(100% + (#{$timeline-image-width} * 2));
+      transform: translateY(-50%);
+    }
+
+    .timeline__item-group {
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: -16px;
+        height: 20px;
+        width: 20px;
+        background-color: $white;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
+        transform: scaleX(-1);
+        z-index: 1;
+        border-top: 1px solid $card-border-color;
+      }
+    }
+  }
+
+  &:nth-child(even) {
+    margin-left: auto;
+
+    .timeline__item-image {
+      margin-left: 0;
+      margin-right: $timeline-image-width / 2;
+    }
+
+    .timeline__item-date {
+      right: calc(100% + (#{$timeline-image-width} * 2));
+      transform: translateY(-50%);
+    }
+
+    .timeline__item-group {
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -16px;
+        height: 20px;
+        width: 20px;
+        background-color: $white;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
+        z-index: 1;
+        border-top: 1px solid $card-border-color;
+      }
+    }
+  }
+
+  &:not(:last-of-type) {
+    margin-bottom: $grid-gutter-width * 2;
+  }
+}
+
+.timeline__item-image {
+  transform: scale(1);
+  opacity: 1;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: relative;
+  height: $timeline-image-width;
+  width: $timeline-image-width;
+  background-color: $white;
+  border: 2px solid $white;
+  border-radius: 50%;
+  box-shadow: 0 .1px .3px rgba(0, 0, 0, .06), 0 1px 2px rgba(0, 0, 0, .12);
+
+  // Reset view mode styling.
+  .media-entity--type-image {
+    max-width: 100%;
+  }
+
+  img {
+    height: $timeline-image-width / 3;
+    width: $timeline-image-width / 3;
+  }
+}
+
+.timeline__item-content {
+  display: flex;
+  flex-grow: 1;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.timeline__item-group {
+  position: relative;
+  top: $timeline-image-width / 2;
+  flex-grow: 1;
+
+  // Override card.
+  .card {
+    display: block;
+    margin-bottom: $timeline-image-width / 3;
+    overflow: unset;
+  }
+
+}
+
+// Mobile only.
+@include media-breakpoint-down(sm) {
+  .timeline__item {
+    &:nth-child(odd) {
+      flex-direction: inherit;
+      margin-left: auto;
+
+      .timeline__item-image {
+        margin-left: 0;
+        margin-right: $timeline-image-width / 2;
+      }
+
+      .timeline__item-group {
+        &:before {
+          left: -10px;
+          right: unset;
+          transform: none;
+        }
+      }
+    }
+  }
+
+  .timeline__content {
+    &:before {
+      left: $timeline-image-width / 2;
+    }
+  }
+
+  .timeline__item {
+    width: 100%;
+
+    &:nth-child(odd) {
+      .timeline__item-date {
+        position: unset;
+        top: unset;
+        left: unset;
+        white-space: unset;
+        right: unset;
+        transform: unset;
+      }
+    }
+
+    &:nth-child(even) {
+      .timeline__item-date {
+        position: unset;
+        top: unset;
+        left: unset;
+        white-space: unset;
+        right: unset;
+        transform: unset;
+      }
+    }
+  }
+}
+
+// Dark variants.
+.cp--dark,
+.cp--primary-dark {
+  .timeline__content:before {
+    background: $white;
+  }
+
+  // Desktop only.
+  @include media-breakpoint-up(sm) {
+    .timeline__item-date {
+      color: $white;
+    }
+  }
+}

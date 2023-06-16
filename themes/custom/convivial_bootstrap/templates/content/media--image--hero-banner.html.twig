@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ * Theme override to display a media item for Hero Banner component.
+ *
+ * Available variables:
+ * - name: Name of the media.
+ * - content: Media content.
+ *
+ * @see template_preprocess_media()
+ *
+ * @ingroup themeable
+ */
+#}
+{% if content %}
+  {{ content }}
+{% endif %}
+{{ title_suffix.contextual_links }}

@@ -1,0 +1,44 @@
+/*! @convivial_bootstrap/breadcrumb */
+
+.breadcrumb {
+  background-color: transparent;
+  margin-top: 1rem;
+  padding-left: 0;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.breadcrumb-item {
+  align-items: center;
+}
+
+// Breadcrumb for dark backgrounds.
+.cp--dark,
+.cp--primary-dark {
+  .breadcrumb {
+    color: $dark-body-color;
+
+    a {
+      color: $dark-link-color;
+
+      &:hover,
+      &:focus {
+        color: $dark-link-hover-color;
+      }
+    }
+  }
+
+  .breadcrumb-item {
+    &.active {
+      color: $dark-body-color;
+    }
+  }
+
+  // Separator between items.
+  .breadcrumb-item+.breadcrumb-item:before {
+    color: $dark-body-color;
+    opacity: .75;
+  }
+}

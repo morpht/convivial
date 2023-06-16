@@ -1,0 +1,39 @@
+.layout--header-section {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  .layout__region--content-header {
+    @include media-breakpoint-up(lg) {
+      max-width: 75%;
+    }
+  }
+
+
+  .page__header--transparent &.modifiers-has-background {
+    &:after {
+      background: rgba(255, 255, 255, 0.5);
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+
+      @include media-breakpoint-up(md) {
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+      }
+    }
+
+    &.cp--dark,
+    &.cp--primary-dark {
+      &:after {
+        background: rgba(0, 0, 0, 0.5);
+
+        @include media-breakpoint-up(md) {
+          background: linear-gradient(90deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+        }
+      }
+    }
+  }
+}

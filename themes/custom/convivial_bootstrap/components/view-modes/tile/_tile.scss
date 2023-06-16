@@ -1,0 +1,98 @@
+/*! @convivial_bootstrap/tile */
+
+.tile {
+  position: relative;
+  height: 100%;
+}
+
+.tile__title {
+  background: linear-gradient(to top,rgba($tile-overlay, .46), rgba($tile-overlay, .46),rgba($tile-overlay, 0));
+  bottom: 0;
+  color: $tile-body-color;
+  margin: 0;
+  max-height: 100%;
+  overflow: hidden;
+  padding: 1.5em .5em .5em;
+  position: absolute;
+  text-shadow: 0 0 6px transparentize($tile-overlay, .25);
+  width: 100%;
+  z-index: 2;
+
+  a {
+    color: $tile-link-color;
+    display: block;
+    padding: 8px;
+
+    &:hover,
+    &:focus {
+      color: $tile-link-hover-color;
+    }
+  }
+}
+
+.tile__summary {
+  display: none;
+}
+
+.tile__image {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+
+  * {
+    height: 100%;
+  }
+
+  // Landscape ratio.
+  .field--type-image {
+    padding-top: calc(100% / (3 / 2));
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    object-fit: cover;
+
+    // IE11 fix.
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      height: auto;
+    }
+  }
+}
+
+// Linked tile.
+.tile__link {
+  display: block;
+  height: 100%;
+  overflow: hidden;
+
+  img {
+    transition: transform $view-modes-transition-time;
+  }
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 1px 4px $shadow-color;
+
+    .tile__title {
+      text-decoration: none;
+    }
+
+    img {
+      transform: scale($view-modes-transform-scale) translate(43.5%, -43.5%);
+    }
+  }
+
+  .tile__title {
+    text-decoration: underline; // We want underline only on title.
+  }
+}
+
+.node--view-mode-tile {
+  height: 100%;
+}

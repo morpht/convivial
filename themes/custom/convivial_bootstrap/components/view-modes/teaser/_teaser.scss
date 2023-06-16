@@ -1,0 +1,168 @@
+/*! @convivial_bootstrap/teaser */
+
+// Default styling for teaser view mode.
+$teaser__small_image-width: 8rem; // 128px
+$teaser--medium_image-width: 12.5rem; // 200px
+
+.teaser {
+  display: flex;
+  flex-direction: row;
+
+  .hide-info & {
+    .teaser__info {
+      display: none;
+    }
+  }
+}
+
+.teaser__image {
+  order: 1;
+
+  a {
+    display: block;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.teaser__content {
+  order: 2;
+}
+
+.teaser__info {
+  @include font-size($small-font-size);
+  color: var(--alt-text);
+  margin-bottom: .5rem;
+  text-transform: uppercase;
+
+  // Dark colour palette.
+  .cp--dark &,
+  .cp--primary-dark &,
+  .cp--seconadry-dark & {
+    color: $dark-body-color;
+  }
+}
+
+// Title has a full unit gap bellow.
+.teaser__title {
+
+  a {
+    color: $teaser-link-color;
+
+    &:focus,
+    &:hover {
+      color: $teaser-link-hover-color;
+    }
+
+    // Dark colour palette.
+    .cp--dark &,
+    .cp--primary-dark &,
+    .cp--seconadry-dark & {
+      color: $teaser-dark-link-color;
+
+      &:hover {
+        color: $teaser-dark-link-hover-color;
+      }
+    }
+  }
+}
+
+.teaser__summary {
+  margin-bottom: .5rem;
+}
+
+.teaser__tags {
+  color: $text-muted;
+  @include font-size($small-font-size);
+}
+
+// Teaser small dimensions.
+.teaser--small {
+  .teaser__image {
+    padding-right: 1rem;
+    width: $teaser--small_image-width;
+  }
+
+  .teaser__content {
+    width: calc(100% - #{$teaser--small_image-width});
+  }
+}
+
+// Teaser (medium) dimensions.
+.teaser--medium {
+  @include media-breakpoint-down(sm) {
+    flex-direction: column;
+
+    .teaser__image {
+      margin-bottom: 1rem;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    .teaser__image {
+      padding-right: 1rem;
+      width: $teaser--medium_image-width;
+    }
+
+    .teaser__content {
+      width: calc(100% - #{$teaser--medium_image-width});
+    }
+  }
+}
+
+// Teaser (big) dimensions.
+.teaser--big {
+  display: flex;
+  flex-direction: column;
+
+  @include media-breakpoint-up(sm) {
+    flex-direction: row;
+  }
+
+  .teaser__image {
+    @include media-breakpoint-up(sm) {
+      width: 50%;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .teaser__content {
+    padding: $grid-gutter-width;
+
+    @include media-breakpoint-up(sm) {
+      align-self: center;
+      width: 50%;
+    }
+
+    .teaser__title {
+      font-size: $h2-font-size;
+      font-weight: $headings-font-weight;
+      line-height: $headings-line-height;
+    }
+  }
+}
+
+// LB form fix.
+.layout-builder {
+  .teaser {
+    .teaser__image {
+      width: 30%;
+      padding: 0;
+    }
+
+    .teaser__content {
+      width: 70%;
+    }
+
+    .teaser__summary {
+      max-width: 100%;
+    }
+  }
+}

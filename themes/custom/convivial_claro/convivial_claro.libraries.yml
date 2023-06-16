@@ -1,0 +1,12 @@
+global-styles:
+  css:
+    theme:
+      css/styles.css: { }
+
+layout_paragraphs_hotfix:
+  version: 1.x
+  js:
+    js/layout-paragraphs-hotfix.js: { }
+  dependencies:
+    - core/jquery
+    - core/drupal

@@ -1,0 +1,21 @@
+{{#if this.length}}
+  {{#each this}}
+    <div class="promotion cp_trackable {{ classes }}"{{#if type}} data-cp-category="{{ type }}"{{/if}}{{#if label}} data-cp-label="{{ label }}"{{/if}}>
+      {{#if heading}}
+        <h2>
+          {{#if link}}
+            <a href="{{ link }}">{{ heading }}</a>
+          {{else}}
+            {{ heading }}
+          {{/if}}
+        </h2>
+      {{/if}}
+      {{#if body}}
+        {{{ body }}}
+      {{/if}}
+      {{#if aside}}
+        {{{ aside }}}
+      {{/if}}
+    </div>
+  {{/each}}
+{{/if}}

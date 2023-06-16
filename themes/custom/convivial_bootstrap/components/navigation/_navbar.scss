@@ -1,0 +1,106 @@
+/*! @convivial_bootstrap/navigation */
+
+.navbar {
+  // Disable shrinking on logo.
+  .region-logo {
+    flex-shrink: 0;
+  }
+}
+
+.navbar__container {
+  @include make-container();
+  @include container-max-widths();
+
+  @include media-breakpoint-up(lg) {
+    max-width: 100%;
+    width: 100%;
+    padding: 0;
+  }
+}
+
+// Menu bar variant.
+// Because we have more than one layout variant we need to remove grid classes from menu--main--navigation.html.twig
+// template and use our custom classes which are extended by grid based on required layout.
+.bs-header--menu-bar {
+
+  // Contained layout.
+  &.bs-header--contained {
+    .navbar-collapse__container {
+      @include make-container();
+      @include container-max-widths()
+    }
+  }
+
+  // Fluid-width layout.
+  &.bs-header--fluid {
+    .navbar-collapse__container {
+      @include make-container();
+    }
+  }
+
+  .region-navigation {
+    width: 100%;
+  }
+}
+
+// Light navbar.
+.navbar {
+  .nav-link {
+    color: $navbar-light-color;
+
+    &:hover,
+    &:focus {
+      color: $navbar-light-hover-color;
+    }
+
+    &.disabled {
+      color: $navbar-light-disabled-color;
+    }
+  }
+
+  .show > .nav-link,
+  .nav-link.active {
+    color: $navbar-light-active-color;
+  }
+
+  .navbar-toggler {
+    color: $navbar-light-color;
+    border-color: $navbar-light-toggler-border-color;
+  }
+
+  .navbar-toggler-icon {
+    background-image: escape-svg($navbar-light-toggler-icon-bg);
+  }
+}
+
+.bg-dark,
+.bg-primary-dark {
+  .navbar {
+    .nav-link {
+      color: $navbar-dark-color;
+
+      &:hover,
+      &:focus {
+        color: $navbar-dark-hover-color;
+      }
+
+      &.disabled {
+        color: $navbar-dark-disabled-color;
+      }
+    }
+
+    .show > .nav-link,
+    .nav-link.active {
+      color: $navbar-dark-active-color;
+    }
+
+    .navbar-toggler {
+      color: $navbar-dark-color;
+      border-color: $navbar-dark-toggler-border-color;
+    }
+
+    .navbar-toggler-icon {
+      background-image: escape-svg($navbar-dark-toggler-icon-bg);
+    }
+  }
+}

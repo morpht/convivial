@@ -1,0 +1,12 @@
+/*! @convivial_bootstrap/modifiers */
+
+.modifiers-has-background {
+  padding: 2rem $grid-gutter-width / 2;
+
+  // Set z-index for all elements inside modifiers-has-background class
+  // to put content on the top of the background.
+  > *:not(.containerised) {
+    position: relative;
+    z-index: 2;
+  }
+}

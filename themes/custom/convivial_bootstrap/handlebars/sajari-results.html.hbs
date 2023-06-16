@@ -1,0 +1,18 @@
+<div class="list-layout list-layout--12">
+  <div class="list">
+    {{#each this}}
+      <div class="list__item">
+        <div class="search">
+          <div class="search__content">
+            <h3 class="search__title">
+              <a href="{{url}}">{{title}}</a>
+            </h3>
+            <div class="search__summary">
+              {{description}}
+            </div>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>

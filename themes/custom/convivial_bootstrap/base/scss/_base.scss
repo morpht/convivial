@@ -1,0 +1,12 @@
+/*! @convivial_bootstrap/base */
+
+img,
+svg {
+  max-width: 100%;
+}
+
+a {
+  &:focus {
+    outline-color: var(--standard-focus);
+  }
+}

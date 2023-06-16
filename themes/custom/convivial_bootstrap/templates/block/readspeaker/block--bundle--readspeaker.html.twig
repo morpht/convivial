@@ -1,0 +1,54 @@
+{#
+/**
+ * @file
+ * Theme override to display a block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ */
+#}
+{{ attach_library('convivial_bootstrap/read-speaker') }}
+{%
+  set classes = [
+    'readspeaker',
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+  ]
+%}
+<div{{ attributes|without('region').addClass(classes) }}>
+  {{ title_prefix }}
+  {% if label %}
+    <h2{{ title_attributes }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+  {% block content %}
+    <div class="block-content">
+      <div id="readspeaker_button1" class="rs_skip rsbtn rs_preserve">
+        <a rel="nofollow" class="rsbtn_play" accesskey="L" title="Listen to this page using ReadSpeaker webReader"
+           href="//app-eu.readspeaker.com/cgi-bin/rsent?customerid={{ content.field_readspeaker_id.0 }}&amp;lang=en_au&amp;voice=Jack&amp;readclass={{ content.field_readspeaker_class.0 }}&amp;url={{ url('<current>')|e('url')|url_encode }}">
+          <span class="rsbtn_left rsimg rspart"><span class="rsbtn_text"><span>Listen</span></span></span>
+          <span class="rsbtn_right rsimg rsplay rspart"></span>
+        </a>
+      </div>
+    </div>
+  {% endblock %}
+</div>

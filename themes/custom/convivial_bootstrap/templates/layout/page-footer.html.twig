@@ -1,0 +1,96 @@
+{# Prepare footer_information attributes. #}
+{% set footer_information_attributes = create_attribute() %}
+
+{# Add footer information classes. #}
+{%
+  set footer_information_classes = [
+    'footer-information',
+    footer_information_style ? footer_information_style,
+  ]
+%}
+{% if page.footer_information %}
+  <section{{ footer_information_attributes.addClass(footer_information_classes) }}>
+    <div class="container">
+      <div class="footer__information">
+        {{ page.footer_information }}
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{# Prepare footer attributes. #}
+{% set postscript_attributes = create_attribute() %}
+
+{# Add footer classes. #}
+{%
+  set postscript_classes = [
+    'postscript',
+    postscript_style ? postscript_style,
+  ]
+%}
+
+{% if page.postscript_1 or page.postscript_2 or page.postscript_3 or page.postscript_4 or page.legal %}
+  <section{{ postscript_attributes.addClass(postscript_classes).setAttribute('role', 'contentinfo') }}>
+    <div class="container">
+      {% if page.postscript_1 or page.postscript_2 or page.postscript_3 or page.postscript_4 %}
+        <div class="row">
+          {% if page.postscript_1 %}
+            <div class="postscript__1 col-md-3">
+              {{ page.postscript_1 }}
+            </div>
+          {% endif %}{# /.postscript__1 #}
+
+          {% if page.postscript_2 %}
+            <div class="postscript__2 col-md-3">
+              {{ page.postscript_2 }}
+            </div>
+          {% endif %}{# /.postscript__2 #}
+
+          {% if page.postscript_3 %}
+            <div class="postscript__3 col-md-3">
+              {{ page.postscript_3 }}
+            </div>
+          {% endif %}{# /.postscript__3 #}
+
+          {% if page.postscript_4 %}
+            <div class="postscript__4 col-md-3">
+              {{ page.postscript_4 }}
+            </div>
+          {% endif %}{# /.postscript__4 #}
+        </div>{# /.postscript #}
+      {% endif %}
+    </div>
+  </section>{# /.footer #}
+{% endif %}
+
+{# Prepare footer attributes. #}
+{% set footer_attributes = create_attribute() %}
+
+{# Add footer classes. #}
+{%
+  set footer_classes = [
+    'footer',
+    footer_style ? footer_style,
+  ]
+%}
+
+{% if page.footer_content or page.footer_sidebar %}
+  <footer{{ footer_attributes.addClass(footer_classes).setAttribute('role', 'contentinfo') }}>
+    <div class="container">
+      {% if page.footer_sidebar %}
+        <div class="row">
+          <div class="footer__content col-sm-8">
+            {{ page.footer_content }}
+          </div>
+          <div class="footer__sidebar col-sm-4">
+            {{ page.footer_sidebar }}
+          </div>
+        </div>
+      {% else %}
+        <div class="footer__content col-sm-12">
+          {{ page.footer_content }}
+        </div>
+      {% endif %}
+    </div>
+  </footer>
+{% endif %}

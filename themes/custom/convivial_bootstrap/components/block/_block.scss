@@ -1,0 +1,11 @@
+.layout--content-edgy {
+  .block--field-blocknodepagefield-body,
+  .block--field-blocknodepagefield-toc {
+    .content {
+      @include make-container();
+      @include container-max-widths();
+
+      margin-top: 1.5rem;
+    }
+  }
+}

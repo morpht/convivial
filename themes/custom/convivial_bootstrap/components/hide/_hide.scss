@@ -1,0 +1,8 @@
+/*! @convivial_bootstrap/hide */
+
+.hide-branding {
+  .bs-header__content,
+  .footer {
+    display: none;
+  }
+}

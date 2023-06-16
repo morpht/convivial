@@ -1,0 +1,15 @@
+/*! @convivial_bootstrap/footer */
+
+.footer {
+  &[class*='bg-'] {
+    padding-top: $grid-gutter-width;
+    padding-bottom: $grid-gutter-width;
+  }
+}
+
+// Separate content and sidebar on mobile.
+@include media-breakpoint-down(sm) {
+  .footer__content + .footer__sidebar {
+    margin-top: $grid-gutter-width;
+  }
+}

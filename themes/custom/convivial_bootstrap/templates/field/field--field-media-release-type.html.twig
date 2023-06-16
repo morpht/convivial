@@ -1,0 +1,33 @@
+{#
+/**
+* Release type field should have the tags component styling.
+*/
+#}
+{%
+  set classes = [
+  'field',
+  'field--name-' ~ field_name|clean_class,
+  'field--type-' ~ field_type|clean_class,
+  'field--label-' ~ label_display,
+]
+%}
+{%
+  set title_classes = [
+  label_display == 'visually_hidden' ? 'visually-hidden',
+  label_display == 'above' ? 'position-above',
+  label_display == 'inline' ? 'position-inline',
+]
+%}
+
+{% block tags %}
+  <div{{ attributes.addClass(classes) }}>
+    {% if not label_hidden %}
+      <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
+    {% endif %}
+
+    {% for item in items %}
+      <span class="badge badge-primary">{{ item.content }}</span>
+    {% endfor %}
+
+  </div>
+{% endblock %}

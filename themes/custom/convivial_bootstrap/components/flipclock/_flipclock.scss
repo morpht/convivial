@@ -1,0 +1,13 @@
+/*! @convivial_bootstrap/flipclock */
+
+.flip-clock-wrapper {
+  display: inline-block;
+  width: auto !important;
+}
+
+.cp--dark,
+.cp--primary-dark {
+  .flip-clock-divider .flip-clock-label {
+    color: $white;
+  }
+}

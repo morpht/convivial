@@ -1,0 +1,15 @@
+/*! @convivial_bootstrap/top-bar */
+
+.top-bar {
+  background: $black;
+  padding: $grid-gutter-width / 2 0;
+
+  p:last-child {
+    margin: 0;
+  }
+
+  .region-top-bar {
+    display: flex;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,9 @@
+# Theme artefacts in themes.
+config-local.json
+css/style.css.map
+js/*.map
+libraries/*.map
+assets/bootstrap/
+
+# Phpstrom.
+.idea

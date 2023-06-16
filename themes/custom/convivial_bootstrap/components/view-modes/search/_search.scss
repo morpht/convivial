@@ -1,0 +1,18 @@
+/*! @convivial_bootstrap/search */
+
+.search__info {
+  color: var(--alt-text);
+  margin-bottom: .5rem;
+}
+
+// Title has a full unit gap bellow.
+.search__title {
+  a {
+    color: $search-link-color;
+
+    &:focus,
+    &:hover {
+      color: $search-link-hover-color;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+/*! @convivial_bootstrap/back-to-top */
+
+.back-to-top__link {
+  background-color: transparentize($black, .25%);
+  border: none;
+  border-radius: 100%;
+  color: transparentize($white, .25%);
+  display: block;
+  opacity: 0;
+  overflow: hidden;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  height: 3.75rem;
+  width: 3.75rem;
+  transition: all 600ms ease-in-out;
+  z-index: -1;
+
+  &:hover {
+    background-color: transparentize($black, .18%);
+    color: transparentize($white, .18%);
+  }
+
+  &.is-visible {
+    opacity: 1;
+    transition: all 300ms ease-in-out;
+    z-index: 9999;
+  }
+
+  svg {
+    font-size: 1.875rem;
+    height: 3.65rem;
+  }
+}

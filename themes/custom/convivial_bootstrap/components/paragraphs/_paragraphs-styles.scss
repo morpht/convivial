@@ -1,0 +1,210 @@
+/*! @convivial_bootstrap/paragraphs-styles */
+
+.paragraph {
+  &.breakout > .containerised {
+    max-width: 100% !important;
+  }
+
+  &.no-side-gaps {
+    > .containerised {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+  }
+
+  &.no-background-padding {
+    padding: 0 !important;
+  }
+
+  &.style--hero {
+    padding: 6rem 0 6.5rem 0;
+  }
+
+  &.text-shadow {
+    text-shadow: 1px 1px $black;
+  }
+
+  &.transparent-card {
+    .card {
+      background: rgba(255, 255, 255, .8);
+    }
+  }
+
+  // Add extra padding top so the content is not covering the logo, menu
+  // and admin tabs.
+  &.no-header-first-component {
+    padding-top: 7.6rem;
+
+    &.style--hero {
+      padding-top: 7rem;
+      padding-bottom: 3.5rem;
+
+      @include media-breakpoint-up(md) {
+        padding-top: 10rem;
+        padding-bottom: 6.5rem;
+      }
+    }
+
+    // Logged in user.
+    .user-logged-in &,
+    .user-logged-in &.style--hero {
+      padding-top: 11rem;
+
+      @include media-breakpoint-up(md) {
+        padding-top: 12rem;
+      }
+    }
+  }
+
+
+  ///
+  // Style classes for node list / item list.
+  ///
+  &.list--no-column-gaps {
+    .list {
+      padding-left: $grid-gutter-width / 2;
+      padding-right: $grid-gutter-width / 2;
+    }
+
+    .list__item {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+  }
+
+  &.list--no-side-gaps {
+    > .containerised {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+  }
+
+  &.list--no-row-gaps {
+    .list__item {
+      margin-top: 0 !important;
+    }
+  }
+
+  ///
+  // Style classes for section paragraph.
+  ///
+  &.section--no-column-gaps {
+    .section-components {
+      padding-left: $grid-gutter-width / 2;
+      padding-right: $grid-gutter-width / 2;
+    }
+
+    .section-components__item {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+  }
+
+  // Combination of breakout and no-column-gaps.
+  &.section--no-side-gaps {
+    .section-components {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &.section--no-row-gaps {
+    .section-components > .section-components__item {
+      margin-top: 0 !important;
+    }
+  }
+
+  ///
+  // Styles for position field.
+  ///
+  @include media-breakpoint-up(md) {
+    &.position {
+      &.position--left-33 {
+        > .containerised > * {
+          width: 33% !important;
+          margin-right: auto;
+        }
+      }
+
+      &.position--left-50 {
+        > .containerised > * {
+          width: 50% !important;
+          margin-right: auto;
+        }
+      }
+
+      &.position--left-66 {
+        > .containerised > * {
+          width: 66% !important;
+          margin-right: auto;
+        }
+      }
+
+      &.position--right-33 {
+        > .containerised > * {
+          width: 33% !important;
+          margin-left: auto;
+        }
+      }
+
+      &.position--right-50 {
+        > .containerised > * {
+          width: 50% !important;
+          margin-left: auto;
+        }
+      }
+
+      &.position--right-66 {
+        > .containerised > * {
+          width: 66% !important;
+          margin-left: auto;
+        }
+      }
+
+      &.position--center-33 {
+        > .containerised > * {
+          width: 33% !important;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+
+      &.position--center-50 {
+        > .containerised > * {
+          width: 50% !important;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+
+      &.position--center-66 {
+        > .containerised > * {
+          width: 66% !important;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+    }
+  }
+
+  // Hide heading but keep available for screen readers.
+  &.hide-heading {
+    > .containerised {
+      > h2,
+      > .paragraph__content > h2 {
+        position: absolute !important;
+        clip: rect(1px, 1px, 1px, 1px);
+        overflow: hidden;
+        height: 1px;
+        width: 1px;
+        word-wrap: normal;
+
+        + .field--name-field-il-nodes,
+        + .field--name-field-nl-nodes,
+        + .field--name-field-body {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}

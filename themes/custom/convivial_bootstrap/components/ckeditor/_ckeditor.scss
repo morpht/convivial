@@ -1,0 +1,25 @@
+/*! @convivial_bootstrap/ckeditor */
+
+///
+// Special CKEditor classes.
+///
+.introduction {
+  @extend .lead;
+}
+
+// Lists.
+.list--bulletless {
+  @extend .list-unstyled;
+}
+
+.list--inline {
+  @extend .list-inline;
+
+  &:only-child {
+    margin: 0;
+  }
+}
+
+.list--inline li {
+  @extend .list-inline-item;
+}
