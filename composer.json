@@ -110,7 +110,7 @@
     "drupal/role_delegation": "^1.2",
     "drupal/sajari": "^1.0",
     "drupal/schema_metatag": "^2.2",
-    "drupal/search_api": "^1.23",
+    "drupal/search_api": "^1.27",
     "drupal/search_api_autocomplete": "^1.5",
     "drupal/search_api_field_token": "^1.0",
     "drupal/search_api_recombee": "^4.0",
