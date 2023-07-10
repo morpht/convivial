@@ -29,7 +29,7 @@ This profile is meant to be used in conjunction with `convivial-recommended` pro
 * Checkout new repo locally and edit .lando.yml (project name, local url).
 * Run `lando composer install`
 * Install site locally with Convivial installation profile.
-* Create Pantheon Drupal 9 site from link here https://pantheon.io/docs/drupal-9.
+* Create Pantheon Drupal 10 site from link here https://docs.pantheon.io/drupal-10.
 * Edit drush/sites/pantheon/{project}.site.yml to add there Pantheon site hash instead of %hash%
 * Edit repository secrets at github to add there Pantheon git url.
 * Upload database from local to pantheon.
