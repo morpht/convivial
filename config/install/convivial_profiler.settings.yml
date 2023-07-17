@@ -616,6 +616,31 @@ profilers:
         target_location:
           localstorage: localstorage
           cookie: '0'
+  intent_recent:
+    name: intent_recent
+    label: 'Intent recent'
+    weight: -7
+    status: true
+    description: 'Saves the "intent_key" to storage.'
+    deferred: false
+    sources:
+      -
+        type: meta
+        attribute_name: intent_key
+    processors:
+      -
+        type: store
+        storage_key: intent_recent
+        ttl: 300
+    destinations:
+      -
+        type: copy
+        target_key: intent_recent
+        remove_empty: true
+        storage_key: store.intent_recent.value
+        target_location:
+          localstorage: localstorage
+          cookie: '0'
   intent_cookie:
     name: intent_cookie
     label: 'Intent cookie'
@@ -657,10 +682,37 @@ profilers:
         remove_empty: true
         storage_keys:
           - intent_param
-          - intent_meta
           - intent_cookie
+          - intent_recent
           - intent_top
         default_value: ''
+        target_location:
+          localstorage: localstorage
+          cookie: '0'
+  intent_satisfied:
+    name: intent_satisfied
+    label: 'Intent Satisfied'
+    weight: 0
+    status: true
+    description: ''
+    deferred: false
+    sources:
+      -
+        type: meta
+        attribute_name: intent_satisfied
+    processors:
+      -
+        type: unstore
+        storage_key: intent_satisfied
+        storage_value: intent_recent
+        unstore_key: store.intent_recent.value
+    destinations:
+      -
+        type: remove
+        storage_keys:
+          - temp.intent_satisfied.value
+        static_values:
+          - ''
         target_location:
           localstorage: localstorage
           cookie: '0'
