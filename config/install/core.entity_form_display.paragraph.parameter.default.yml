@@ -1,0 +1,47 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.parameter.field_parameter_default_value
+    - field.field.paragraph.parameter.field_parameter_endpoint_key
+    - field.field.paragraph.parameter.field_parameter_source_key
+    - field.field.paragraph.parameter.field_parameter_source_type
+    - paragraphs.paragraphs_type.parameter
+id: paragraph.parameter.default
+targetEntityType: paragraph
+bundle: parameter
+mode: default
+content:
+  field_parameter_default_value:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_parameter_endpoint_key:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_parameter_source_key:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_parameter_source_type:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

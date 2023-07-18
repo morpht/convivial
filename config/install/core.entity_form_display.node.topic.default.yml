@@ -18,6 +18,7 @@ dependencies:
     - field.field.node.topic.field_search_exclude
     - field.field.node.topic.field_stage
     - field.field.node.topic.field_summary
+    - field.field.node.topic.field_tasks
     - field.field.node.topic.field_thumbnail
     - field.field.node.topic.field_toc
     - field.field.node.topic.field_updated_date
@@ -123,7 +124,7 @@ content:
     third_party_settings: {  }
   field_components:
     type: layout_paragraphs
-    weight: 7
+    weight: 6
     region: content
     settings:
       preview_view_mode: default
@@ -151,7 +152,7 @@ content:
     third_party_settings: {  }
   field_goal:
     type: options_select
-    weight: 8
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -211,7 +212,7 @@ content:
     third_party_settings: {  }
   field_stage:
     type: options_select
-    weight: 9
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -230,6 +231,16 @@ content:
         maxlength_js: 150
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
         maxlength_js_enforce: false
+  field_tasks:
+    type: entity_reference_autocomplete
+    weight: 9
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_thumbnail:
     type: media_library_widget
     weight: 2

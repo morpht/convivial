@@ -38,6 +38,7 @@
     "gulp-sass-glob": "^1.0.8",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.0",
+    "handlebars": "^4.7.7",
     "jshint": "^2.9.5",
     "leaflet": "^1.5.1",
     "node-sass": "^4.14.1",

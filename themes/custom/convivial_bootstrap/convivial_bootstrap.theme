@@ -576,6 +576,15 @@ function convivial_bootstrap_preprocess_paragraph(&$variables) {
 }
 
 /**
+ * Implements template_preprocess_paragraph__personified_data().
+ */
+function convivial_bootstrap_preprocess_paragraph__personified_data(&$variables) {
+  $variables['theme_path'] = \Drupal::service('extension.list.theme')->getPath('convivial_bootstrap');
+  require_once __DIR__ . '/includes/personified_data.inc';
+  _convivial_bootstrap_personified_data($variables, $variables['elements']['#paragraph']);
+}
+
+/**
  * Implements template_preprocess_paragraph__timeline().
  */
 function convivial_bootstrap_preprocess_paragraph__timeline(&$variables) {

@@ -274,9 +274,23 @@ slider:
     - convivial_bootstrap/slick_carousel
 
 decision_tree_library:
-  version: 0.1.1
+  version: 0.1.2
   js:
     //cdn.jsdelivr.net/gh/morpht/decision_tree@v0.1.2/decision_tree.min.js: { type: external, minified: true }
   css:
     theme:
       //cdn.jsdelivr.net/gh/morpht/decision_tree@v0.1.2/style.min.css: { type: external, minified: true }
+
+handlebars:
+  js:
+    libraries/handlebars/dist/handlebars.min.js: { minified: true }
+    js/handlebars_helpers.js: { }
+
+personified_data:
+  js:
+    js/personified-data.js: { }
+  dependencies:
+    - core/jquery
+    - core/js-cookie
+    - core/drupal
+    - convivial_bootstrap/handlebars

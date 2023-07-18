@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_personified_template
+    - paragraphs.paragraphs_type.personified_data
+  module:
+    - options
+    - unique_content_field_validation
+third_party_settings:
+  unique_content_field_validation:
+    unique: false
+    unique_text: ''
+id: paragraph.personified_data.field_personified_template
+field_name: field_personified_template
+entity_type: paragraph
+bundle: personified_data
+label: Template
+description: 'The template to use to display the results.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

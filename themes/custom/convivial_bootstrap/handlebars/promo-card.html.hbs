@@ -1,0 +1,34 @@
+{{#if this.length}}
+  <div class="container">
+    {{#if this.0.title}}<h2>{{ this.0.title }}</h2>{{/if}}
+    <div class="list-layout list-layout--row list-layout--4-4-4">
+      <div role="list" class="list">
+        {{#each this}}
+          <div role="listitem" class="list__item">
+            <div class="stack stack--simple">
+              <div class="stack__content">
+                {{#if date}}
+                  <div class="stack__date">
+                    {{{ date }}}
+                  </div>
+                {{/if}}
+                <a href="{{{ link_url }}}">
+                  {{#if heading}}
+                    <h3 class="stack__title">
+                      {{{ heading }}}
+                    </h3>
+                  {{/if}}
+                </a>
+                {{#if body}}
+                  <div class="stack__summary">
+                    {{~{ body }~}}
+                  </div>
+                {{/if}}
+              </div>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+{{/if}}
