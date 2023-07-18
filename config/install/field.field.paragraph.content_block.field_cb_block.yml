@@ -5,6 +5,8 @@ dependencies:
     - block_content.type.components
     - block_content.type.content
     - block_content.type.logo
+    - block_content.type.personified_content
+    - block_content.type.personified_data
     - block_content.type.search
     - block_content.type.social_share
     - field.storage.paragraph.field_cb_block
@@ -32,6 +34,8 @@ settings:
       components: components
       content: content
       logo: logo
+      personified_content: personified_content
+      personified_data: personified_data
       search: search
       social_share: social_share
     sort:

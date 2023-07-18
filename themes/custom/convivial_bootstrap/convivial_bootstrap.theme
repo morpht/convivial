@@ -431,6 +431,12 @@ function convivial_bootstrap_preprocess_block(&$variables) {
         _convivial_bootstrap_logo($variables, $entity);
         break;
 
+      case 'personified_data':
+        $variables['theme_path'] = \Drupal::service('extension.list.theme')->getPath('convivial_bootstrap');
+        require_once __DIR__ . '/includes/personified_data.inc';
+        _convivial_bootstrap_personified_data($variables, $variables['content']['#block_content']);
+        break;
+
       case 'slideshow':
         require_once __DIR__ . '/includes/slideshow.inc';
         _convivial_bootstrap_slideshow($entity, $variables, 'attributes');
@@ -573,15 +579,6 @@ function convivial_bootstrap_preprocess_paragraph(&$variables) {
   // Add structured data attributes.
   require_once __DIR__ . '/includes/structured_data.inc';
   _convivial_bootstrap_attach_structured_data($variables['paragraph'], $variables, 'attributes');
-}
-
-/**
- * Implements template_preprocess_paragraph__personified_data().
- */
-function convivial_bootstrap_preprocess_paragraph__personified_data(&$variables) {
-  $variables['theme_path'] = \Drupal::service('extension.list.theme')->getPath('convivial_bootstrap');
-  require_once __DIR__ . '/includes/personified_data.inc';
-  _convivial_bootstrap_personified_data($variables, $variables['elements']['#paragraph']);
 }
 
 /**

@@ -16,7 +16,7 @@ mode: default
 content:
   field_personified_endpoint:
     type: string_textfield
-    weight: 0
+    weight: 1
     region: content
     settings:
       size: 60
@@ -24,7 +24,7 @@ content:
     third_party_settings: {  }
   field_personified_parameters:
     type: paragraphs
-    weight: 2
+    weight: 3
     region: content
     settings:
       title: Paragraph
@@ -42,15 +42,22 @@ content:
     third_party_settings: {  }
   field_personified_template:
     type: options_select
-    weight: 1
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
   field_vertical_spacing:
     type: options_select
-    weight: 3
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden:
-  info: true
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }
