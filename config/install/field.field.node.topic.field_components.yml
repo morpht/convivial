@@ -20,8 +20,6 @@ dependencies:
     - paragraphs.paragraphs_type.map
     - paragraphs.paragraphs_type.media_list
     - paragraphs.paragraphs_type.node_list
-    - paragraphs.paragraphs_type.personified_content
-    - paragraphs.paragraphs_type.personified_data
     - paragraphs.paragraphs_type.plugin_block
     - paragraphs.paragraphs_type.section
     - paragraphs.paragraphs_type.snippet
@@ -64,10 +62,8 @@ settings:
       timeline: timeline
       geochart: geochart
       gallery: gallery
-      personified_content: personified_content
       lightbox: lightbox
       layout: layout
-      personified_data: personified_data
       tiles: tiles
       snippet: snippet
     negate: 0

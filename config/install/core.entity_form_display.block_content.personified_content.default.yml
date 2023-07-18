@@ -1,0 +1,57 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.personified_content
+    - field.field.block_content.personified_content.field_modifiers
+    - field.field.block_content.personified_content.field_pc_colour_classes
+    - field.field.block_content.personified_content.field_pc_style_classes
+    - field.field.block_content.personified_content.field_personified_content_text
+    - field.field.block_content.personified_content.field_position
+  module:
+    - paragraphs
+id: block_content.personified_content.default
+targetEntityType: block_content
+bundle: personified_content
+mode: default
+content:
+  field_modifiers:
+    type: entity_reference_paragraphs
+    weight: 4
+    region: content
+    settings:
+      title: Modifiers
+      title_plural: Modifier
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+  field_pc_colour_classes:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_pc_style_classes:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_personified_content_text:
+    type: string_textarea
+    weight: 0
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_position:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  info: true

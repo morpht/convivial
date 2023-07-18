@@ -1,0 +1,50 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - options
+id: block_content.field_personified_template
+field_name: field_personified_template
+entity_type: block_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: promo-card
+      label: 'Promo cards - Third'
+    -
+      value: promotion-plain
+      label: 'Promotion Plain'
+    -
+      value: promotion-hero
+      label: 'Promotion Hero'
+    -
+      value: item-basic-card
+      label: 'Basic Card'
+    -
+      value: item-image-card
+      label: 'Image Card'
+    -
+      value: item-summary
+      label: Summary
+    -
+      value: item-teaser
+      label: Teaser
+    -
+      value: recombee-cards-quarters
+      label: 'Recombee: Cards - quarters'
+    -
+      value: recombee-summary-quarters
+      label: 'Recombee: Summary - quarters'
+    -
+      value: recombee-title-quarters
+      label: 'Recombee: Title - full'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
