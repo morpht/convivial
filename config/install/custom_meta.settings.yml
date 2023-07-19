@@ -33,7 +33,7 @@ tag:
     attribute: name
     name: intent_satisfied
     label: 'Intent Satisfied'
-    description: 'Assigns intent satisfied to content for augmenting the profile when the intent is satisfied.'
+    description: 'Intent Satisfied'
   nid:
     attribute: name
     name: nid
