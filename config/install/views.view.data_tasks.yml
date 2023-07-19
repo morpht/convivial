@@ -6,7 +6,7 @@ dependencies:
     - field.storage.node.field_summary
     - field.storage.node.field_thumbnail
     - field.storage.node.field_updated_date
-    - image.style.medium
+    - image.style.landscape
   module:
     - datetime
     - media
@@ -455,7 +455,7 @@ display:
           type: media_thumbnail
           settings:
             image_link: ''
-            image_style: medium
+            image_style: landscape
             image_loading:
               attribute: lazy
           group_column: target_id
@@ -821,13 +821,13 @@ display:
         options:
           field_options:
             title_1:
-              alias: title
+              alias: heading
               raw_output: false
             type:
               alias: bundle
               raw_output: false
             title:
-              alias: heading
+              alias: title
               raw_output: false
             field_summary:
               alias: body
@@ -836,10 +836,10 @@ display:
               alias: link_url
               raw_output: false
             field_thumbnail:
-              alias: thumbnail
+              alias: image
               raw_output: false
-            nothing:
-              alias: date
+            field_updated_date:
+              alias: ''
               raw_output: false
             nothing_1:
               alias: theme
