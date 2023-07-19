@@ -11,9 +11,6 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: promo-card
-      label: 'Promo cards - Third'
-    -
       value: promotion-plain
       label: 'Promotion Plain'
     -

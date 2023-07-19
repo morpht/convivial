@@ -101,11 +101,3 @@ sajari_title_full:
   transformer: handlebars
   available_for:
     - sajari_search
-
-promo_card:
-  title: 'Promo cards - Third'
-  description: 'Title linked and description.'
-  file: handlebars/promo-card.html.hbs
-  transformer: handlebars
-  available_for:
-    - personified
