@@ -6,7 +6,7 @@
 
   'use strict'
 
-  Drupal.behaviors.personifiedData = {
+  Drupal.behaviors.CBpersonifiedData = {
     attach: function attach(context, settings) {
 
       if (typeof settings.personifiedData === 'undefined') {
