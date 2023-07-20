@@ -1,39 +1,4 @@
 tag:
-  audience:
-    attribute: name
-    name: audience
-    label: 'Content Audience'
-    description: 'Content Audience'
-  audience_key:
-    attribute: name
-    name: audience_key
-    label: 'Recent Content Audience'
-    description: 'Recent Content Audience'
-  author:
-    attribute: name
-    name: author
-    label: 'Content Author'
-    description: 'Content Author'
-  goal:
-    attribute: name
-    name: goal
-    label: 'Content Goal'
-    description: 'The goal this content is suitable for.'
-  intent:
-    attribute: name
-    name: intent
-    label: Intent
-    description: 'Assigns intent to content for augmenting the profile when the content is viewed.'
-  intent_key:
-    attribute: name
-    name: intent_key
-    label: 'Recent Intent'
-    description: 'Recent Content Intent'
-  intent_satisfied:
-    attribute: name
-    name: intent_satisfied
-    label: 'Intent Satisfied'
-    description: 'Intent Satisfied'
   nid:
     attribute: name
     name: nid
@@ -44,24 +9,39 @@ tag:
     name: sitename
     label: Sitename
     description: Sitename
-  stage:
-    attribute: name
-    name: stage
-    label: 'Content Stage'
-    description: 'The stage this content is suitable for.'
-  thumbnail:
-    attribute: name
-    name: thumbnail
-    label: 'Content thumbnail'
-    description: 'Content thumbnail'
-  topic:
-    attribute: name
-    name: topic
-    label: 'Content Topic'
-    description: 'Content Topic'
   type:
     attribute: name
     name: type
     label: 'Content type'
     description: 'Content type'
+  thumbnail:
+    attribute: name
+    name: thumbnail
+    label: 'Content thumbnail'
+    description: 'Content thumbnail'
+  audience:
+    attribute: name
+    name: audience
+    label: 'Content Audience'
+    description: 'Content Audience'
+  author:
+    attribute: name
+    name: author
+    label: 'Content Author'
+    description: 'Content Author'
+  topic:
+    attribute: name
+    name: topic
+    label: 'Content Topic'
+    description: 'Content Topic'
+  goal:
+    attribute: name
+    name: goal
+    label: 'Content Goal'
+    description: 'The goal this content is suitable for.'
+  stage:
+    attribute: name
+    name: stage
+    label: 'Content Stage'
+    description: 'The stage this content is suitable for.'
 prefix: ''
