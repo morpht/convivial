@@ -16,7 +16,7 @@ entity_type: taxonomy_term
 bundle: intent
 label: Key
 description: 'Use this to specify the unique identifier for this taxonomy. This is used to specify the meta tag for personalization.'
-required: true
+required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
