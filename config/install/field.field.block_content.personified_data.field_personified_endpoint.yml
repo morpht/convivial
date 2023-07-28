@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.personified_data
+    - field.storage.block_content.field_personified_endpoint
+  module:
+    - unique_content_field_validation
+third_party_settings:
+  unique_content_field_validation:
+    unique: false
+    unique_text: ''
+id: block_content.personified_data.field_personified_endpoint
+field_name: field_personified_endpoint
+entity_type: block_content
+bundle: personified_data
+label: Endpoint
+description: 'The endpoint URL.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

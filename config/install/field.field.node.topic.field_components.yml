@@ -20,7 +20,6 @@ dependencies:
     - paragraphs.paragraphs_type.map
     - paragraphs.paragraphs_type.media_list
     - paragraphs.paragraphs_type.node_list
-    - paragraphs.paragraphs_type.personified_content
     - paragraphs.paragraphs_type.plugin_block
     - paragraphs.paragraphs_type.section
     - paragraphs.paragraphs_type.snippet
@@ -63,7 +62,6 @@ settings:
       timeline: timeline
       geochart: geochart
       gallery: gallery
-      personified_content: personified_content
       lightbox: lightbox
       layout: layout
       tiles: tiles
@@ -78,9 +76,6 @@ settings:
         enabled: true
       adaptive_height_modifier:
         weight: -57
-        enabled: false
-      answer:
-        weight: 38
         enabled: false
       charts:
         weight: -73
@@ -97,6 +92,9 @@ settings:
       content_tabs:
         weight: -71
         enabled: true
+      decision_tree:
+        weight: 46
+        enabled: false
       fastfact:
         weight: -50
         enabled: false
@@ -142,8 +140,14 @@ settings:
       parallax_bg_modifier:
         weight: -44
         enabled: false
+      parameter:
+        weight: 62
+        enabled: false
       personified_content:
         weight: 56
+        enabled: true
+      personified_data:
+        weight: 64
         enabled: true
       plugin_block:
         weight: -70
@@ -153,12 +157,6 @@ settings:
         enabled: false
       section:
         weight: -60
-        enabled: true
-      slide:
-        weight: -41
-        enabled: false
-      slideshow:
-        weight: -59
         enabled: true
       snippet:
         weight: 74

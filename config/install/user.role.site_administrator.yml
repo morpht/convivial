@@ -64,6 +64,7 @@ dependencies:
     - replicate_ui
     - responsive_image
     - rest
+    - role_delegation
     - search_api
     - seckit
     - shortcut
@@ -83,6 +84,7 @@ is_admin: null
 permissions:
   - 'access administration pages'
   - 'access any webform configuration'
+  - 'access block library'
   - 'access content'
   - 'access content overview'
   - 'access contextual links'
@@ -103,6 +105,8 @@ permissions:
   - 'access webform overview'
   - 'access webform submission user'
   - 'administer account settings'
+  - 'administer block content'
+  - 'administer block types'
   - 'administer block_content display'
   - 'administer block_content fields'
   - 'administer block_content form display'
@@ -173,6 +177,14 @@ permissions:
   - 'administer webform element access'
   - 'administer webform submission'
   - 'administer workflows'
+  - 'assign all roles'
+  - 'assign approver role'
+  - 'assign editor role'
+  - 'assign layout_customizer role'
+  - 'assign manager role'
+  - 'assign site_administrator role'
+  - 'assign submission_viewer role'
+  - 'assign webform_manager role'
   - 'ban IP addresses'
   - 'bypass node access'
   - 'bypass paragraphs type content access'
@@ -241,6 +253,7 @@ permissions:
   - 'delete own audio media'
   - 'delete own event content'
   - 'delete own file media'
+  - 'delete own files'
   - 'delete own image media'
   - 'delete own page content'
   - 'delete own person content'

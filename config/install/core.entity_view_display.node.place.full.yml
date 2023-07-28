@@ -179,11 +179,11 @@ third_party_settings:
       -
         layout_id: convivial_twocol
         layout_settings:
-          context_mapping: {  }
           arrangement: 'arrangement arrangement--8-4'
           containment: 'edgy edgy--contained'
           color: ''
           styles: {  }
+          context_mapping: {  }
         components:
           73464fff-360a-4db1-b275-2302c853a3cd:
             uuid: 73464fff-360a-4db1-b275-2302c853a3cd

@@ -21,7 +21,6 @@ dependencies:
     - paragraphs.paragraphs_type.map
     - paragraphs.paragraphs_type.media_list
     - paragraphs.paragraphs_type.node_list
-    - paragraphs.paragraphs_type.personified_content
     - paragraphs.paragraphs_type.plugin_block
     - paragraphs.paragraphs_type.section
     - paragraphs.paragraphs_type.snippet
@@ -66,7 +65,6 @@ settings:
       decision_tree: decision_tree
       geochart: geochart
       gallery: gallery
-      personified_content: personified_content
       lightbox: lightbox
       layout: layout
       snippet: snippet
@@ -144,8 +142,14 @@ settings:
       parallax_bg_modifier:
         weight: -45
         enabled: false
+      parameter:
+        weight: 62
+        enabled: false
       personified_content:
         weight: 56
+        enabled: true
+      personified_data:
+        weight: 64
         enabled: true
       plugin_block:
         weight: -72

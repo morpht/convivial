@@ -343,6 +343,30 @@ profilers:
         target_location:
           localstorage: localstorage
           cookie: '0'
+  audience_override:
+    name: audience_override
+    label: 'Audience override'
+    weight: 0
+    status: true
+    description: 'Saves the "audience_override" query param to temp storage.'
+    deferred: false
+    sources:
+      -
+        type: query
+        param: audience_override
+    processors:
+      -
+        type: temp
+        storage_key: audience_override
+    destinations:
+      -
+        type: copy
+        target_key: audience_override
+        remove_empty: true
+        storage_key: temp.audience_override.value
+        target_location:
+          localstorage: localstorage
+          cookie: '0'
   audience:
     name: audience
     label: Audience
@@ -358,6 +382,7 @@ profilers:
         target_key: audience
         remove_empty: true
         storage_keys:
+          - audience_override
           - audience_param
           - audience_crm
           - audience_recent
@@ -416,6 +441,30 @@ profilers:
         target_location:
           localstorage: localstorage
           cookie: '0'
+  campaign_override:
+    name: campaign_override
+    label: 'Campaign override'
+    weight: 0
+    status: true
+    description: 'Saves the "campaign_override" query param to temp storage.'
+    deferred: false
+    sources:
+      -
+        type: query
+        param: campaign_override
+    processors:
+      -
+        type: temp
+        storage_key: campaign_override
+    destinations:
+      -
+        type: copy
+        target_key: campaign_override
+        remove_empty: true
+        storage_key: temp.campaign_override.value
+        target_location:
+          localstorage: localstorage
+          cookie: '0'
   campaign:
     name: campaign
     label: Campaign
@@ -431,6 +480,7 @@ profilers:
         target_key: campaign
         remove_empty: true
         storage_keys:
+          - campaign_override
           - campaign_param
           - campaign_crm
           - campaign_utm
@@ -543,6 +593,30 @@ profilers:
         target_location:
           localstorage: localstorage
           cookie: '0'
+  topic_override:
+    name: topic_override
+    label: 'Topic override'
+    weight: 0
+    status: true
+    description: 'Saves the "topic_override" query param to temp storage.'
+    deferred: false
+    sources:
+      -
+        type: query
+        param: topic_override
+    processors:
+      -
+        type: temp
+        storage_key: topic_override
+    destinations:
+      -
+        type: copy
+        target_key: topic_override
+        remove_empty: true
+        storage_key: temp.topic_override.value
+        target_location:
+          localstorage: localstorage
+          cookie: '0'
   topic:
     name: topic
     label: Topic
@@ -558,6 +632,7 @@ profilers:
         target_key: topic
         remove_empty: true
         storage_keys:
+          - topic_override
           - topic_param
           - topic_crm
           - topic_recent
@@ -666,6 +741,30 @@ profilers:
         target_location:
           localstorage: localstorage
           cookie: '0'
+  intent_override:
+    name: intent_override
+    label: 'Intent override'
+    weight: 0
+    status: true
+    description: 'Saves the "intent_override" query param to temp storage.'
+    deferred: false
+    sources:
+      -
+        type: query
+        param: intent_override
+    processors:
+      -
+        type: temp
+        storage_key: intent_override
+    destinations:
+      -
+        type: copy
+        target_key: intent_override
+        remove_empty: true
+        storage_key: temp.intent_override.value
+        target_location:
+          localstorage: localstorage
+          cookie: '0'
   intent:
     name: intent
     label: Intent
@@ -681,6 +780,7 @@ profilers:
         target_key: intent
         remove_empty: true
         storage_keys:
+          - intent_override
           - intent_param
           - intent_cookie
           - intent_recent
@@ -691,7 +791,7 @@ profilers:
   intent_satisfied:
     name: intent_satisfied
     label: 'Intent satisfied meta'
-    weight: 0
+    weight: 8
     status: true
     description: 'Unstores the "intent_recent" if there is a match.'
     deferred: false
@@ -704,7 +804,7 @@ profilers:
         type: unstore_value
         storage_key: intent_satisfied
         storage_value: intent_recent
-        unstore_key: store.intent_recent.value
+        unstore_key: intent_recent
     destinations:
       -
         type: remove
@@ -715,10 +815,33 @@ profilers:
         target_location:
           localstorage: localstorage
           cookie: '0'
+  cta:
+    name: cta
+    label: CTA
+    weight: 9
+    status: true
+    description: ''
+    deferred: false
+    sources: {  }
+    processors: {  }
+    destinations:
+      -
+        type: bestpick
+        target_key: cta
+        remove_empty: true
+        storage_keys:
+          - booked
+          - outcome
+          - campaign
+          - audience
+        default_value: 'audience:general'
+        target_location:
+          localstorage: localstorage
+          cookie: '0'
   next:
     name: next
     label: Next
-    weight: 8
+    weight: 10
     status: true
     description: 'Picks the next best step from intent, and campaign.'
     deferred: false
@@ -739,7 +862,7 @@ profilers:
   lifetime_value_meta:
     name: lifetime_value_meta
     label: 'Lifetime value meta'
-    weight: 9
+    weight: 11
     status: true
     description: 'Increments lifetime_value from the "lifetime_value" meta name.'
     deferred: false
@@ -763,7 +886,7 @@ profilers:
   goal:
     name: goal
     label: Goal
-    weight: 10
+    weight: 12
     status: true
     description: 'Saves the "goal" meta name to storage.'
     deferred: false
@@ -788,7 +911,7 @@ profilers:
   device_type:
     name: device_type
     label: 'Device type'
-    weight: 11
+    weight: 13
     status: true
     description: 'Saves the "device_type" user agent  to storage.'
     deferred: false
@@ -813,7 +936,7 @@ profilers:
   location_country:
     name: location_country
     label: 'Location country'
-    weight: 12
+    weight: 14
     status: true
     description: 'Saves the "location_country" cookie to storage.'
     deferred: false
@@ -854,7 +977,7 @@ profilers:
   location_lat:
     name: location_lat
     label: 'Location latitude'
-    weight: 13
+    weight: 15
     status: true
     description: 'Saves the "location_lat" cookie to storage.'
     deferred: false
@@ -887,7 +1010,7 @@ profilers:
   location_lon:
     name: location_lon
     label: 'Location longitude'
-    weight: 14
+    weight: 16
     status: true
     description: 'Saves the "location_lon" cookie to storage.'
     deferred: false
@@ -912,7 +1035,7 @@ profilers:
   location_city:
     name: location_city
     label: 'Location city'
-    weight: 15
+    weight: 17
     status: true
     description: 'Saves the "location_city" cookie to storage.'
     deferred: false
@@ -937,7 +1060,7 @@ profilers:
   pageview:
     name: pageview
     label: Pageview
-    weight: 16
+    weight: 18
     status: true
     description: 'Increments the "pageview" in storage.'
     deferred: false
@@ -985,7 +1108,7 @@ profilers:
   searchquery:
     name: searchquery
     label: Searchquery
-    weight: 17
+    weight: 19
     status: true
     description: 'Tracks the searchquery in a log.'
     deferred: false
@@ -1013,7 +1136,7 @@ profilers:
   language:
     name: language
     label: Language
-    weight: 17
+    weight: 20
     status: true
     description: 'Saves the browser "language" to storage.'
     deferred: false
@@ -1042,7 +1165,7 @@ profilers:
   stage:
     name: stage
     label: Stage
-    weight: 17
+    weight: 21
     status: true
     description: 'Saves the "stage" meta name to the stage dimension and calculates threshold stage.'
     deferred: false
@@ -1106,10 +1229,34 @@ profilers:
         target_location:
           localstorage: localstorage
           cookie: '0'
+  stage_override:
+    name: stage_override
+    label: 'Stage override'
+    weight: 0
+    status: true
+    description: 'Saves the "stage_override" query param to temp storage.'
+    deferred: false
+    sources:
+      -
+        type: query
+        param: stage_override
+    processors:
+      -
+        type: temp
+        storage_key: stage_override
+    destinations:
+      -
+        type: copy
+        target_key: stage
+        remove_empty: true
+        storage_key: temp.stage_override.value
+        target_location:
+          localstorage: localstorage
+          cookie: '0'
   styxkey_recombee_userid:
     name: styxkey_recombee_userid
     label: 'STYXKEY Recombee UserId'
-    weight: 17
+    weight: 22
     status: true
     description: 'Copy RecombeeUserId cookie to STYXKEY_RecombeeUserId to support cookie reading on pantheon platform'
     deferred: false
@@ -1135,7 +1282,7 @@ profilers:
   convivial_enricher_clientid:
     name: convivial_enricher_clientid
     label: 'Convivial Enricher ClientId'
-    weight: 17
+    weight: 23
     status: true
     description: 'Saves a client ID provided by Enricher.'
     deferred: false
@@ -1168,7 +1315,7 @@ profilers:
   newsletter_signup_form:
     name: newsletter_signup_form
     label: 'Newsletter signup form'
-    weight: 17
+    weight: 24
     status: true
     description: 'Populate the newsletter signup form with hidden variables.'
     deferred: false
@@ -1190,7 +1337,7 @@ profilers:
   convivial_enricher_cookies_remove:
     name: convivial_enricher_cookies_remove
     label: 'Convivial enricher cookies remove'
-    weight: 17
+    weight: 24
     status: true
     description: 'Remove convivial_enricher_convivial_demo_topic, convivial_enricher_convivial_demo_audience, convivial_enricher_convivial_demo_campaign cookies.'
     deferred: false
@@ -1213,7 +1360,7 @@ profilers:
   office_hours:
     name: office_hours
     label: 'Office hours'
-    weight: 17
+    weight: 25
     status: true
     description: 'Calculates whether the office is open based on current time and date.'
     deferred: false
@@ -1264,7 +1411,7 @@ profilers:
   page_helpful:
     name: page_helpful
     label: 'Page helpful'
-    weight: 17
+    weight: 26
     status: true
     description: 'Sends an event on form save to track the satisfaction of the user.'
     deferred: false

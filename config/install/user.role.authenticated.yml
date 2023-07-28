@@ -3,6 +3,7 @@ status: true
 dependencies:
   module:
     - eu_cookie_compliance
+    - file
     - media
     - paragraphs_type_permissions
     - system
@@ -37,7 +38,6 @@ permissions:
   - 'create paragraph content media_list'
   - 'create paragraph content node_list'
   - 'create paragraph content parallax_bg_modifier'
-  - 'create paragraph content personified_content'
   - 'create paragraph content plugin_block'
   - 'create paragraph content scroll_reveal_modifier'
   - 'create paragraph content section'
@@ -47,6 +47,7 @@ permissions:
   - 'create paragraph content video_bg_modifier'
   - 'create paragraph content view'
   - 'create paragraph content webform'
+  - 'delete own files'
   - 'delete own webform submission'
   - 'delete paragraph content accordion'
   - 'delete paragraph content accordion_group'
@@ -72,7 +73,6 @@ permissions:
   - 'delete paragraph content media_list'
   - 'delete paragraph content node_list'
   - 'delete paragraph content parallax_bg_modifier'
-  - 'delete paragraph content personified_content'
   - 'delete paragraph content plugin_block'
   - 'delete paragraph content scroll_reveal_modifier'
   - 'delete paragraph content section'
@@ -108,7 +108,6 @@ permissions:
   - 'update paragraph content media_list'
   - 'update paragraph content node_list'
   - 'update paragraph content parallax_bg_modifier'
-  - 'update paragraph content personified_content'
   - 'update paragraph content plugin_block'
   - 'update paragraph content scroll_reveal_modifier'
   - 'update paragraph content section'
@@ -144,7 +143,6 @@ permissions:
   - 'view paragraph content media_list'
   - 'view paragraph content node_list'
   - 'view paragraph content parallax_bg_modifier'
-  - 'view paragraph content personified_content'
   - 'view paragraph content plugin_block'
   - 'view paragraph content scroll_reveal_modifier'
   - 'view paragraph content section'

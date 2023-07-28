@@ -1,4 +1,6 @@
 {{#if this.length}}
+<div class="container">
+  {{#if this.0.heading}}<h2>{{ this.0.heading }}</h2>{{/if}}
   <div class="list-layout list-layout--row list-layout--4-4-4">
     <div role="list" class="list">
       {{#each this}}
@@ -36,4 +38,5 @@
       {{/each}}
     </div>
   </div>
+</div>
 {{/if}}

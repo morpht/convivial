@@ -1,0 +1,49 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.parameter.field_parameter_default_value
+    - field.field.paragraph.parameter.field_parameter_endpoint_key
+    - field.field.paragraph.parameter.field_parameter_source_key
+    - field.field.paragraph.parameter.field_parameter_source_type
+    - paragraphs.paragraphs_type.parameter
+  module:
+    - options
+id: paragraph.parameter.default
+targetEntityType: paragraph
+bundle: parameter
+mode: default
+content:
+  field_parameter_default_value:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_parameter_endpoint_key:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_parameter_source_key:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_parameter_source_type:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  search_api_excerpt: true

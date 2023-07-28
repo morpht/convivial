@@ -20,6 +20,9 @@ settings:
       value: no-background-padding
       label: 'No background padding'
     -
+      value: no-header-first-component
+      label: 'No header, first component'
+    -
       value: no-side-gaps
       label: 'No side gaps'
     -
