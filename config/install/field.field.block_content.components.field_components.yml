@@ -16,7 +16,6 @@ dependencies:
     - paragraphs.paragraphs_type.map
     - paragraphs.paragraphs_type.media_list
     - paragraphs.paragraphs_type.node_list
-    - paragraphs.paragraphs_type.personified_content
     - paragraphs.paragraphs_type.plugin_block
     - paragraphs.paragraphs_type.section
     - paragraphs.paragraphs_type.view
@@ -52,7 +51,6 @@ settings:
       geochart: geochart
       content_tabs: content_tabs
       fastfacts: fastfacts
-      personified_content: personified_content
       media_list: media_list
     negate: 0
     target_bundles_drag_drop:

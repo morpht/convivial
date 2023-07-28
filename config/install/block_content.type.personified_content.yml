@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: personified_content
+label: 'Personified content'
+revision: 1
+description: 'Display content generated from a Handlebars template which makes use of localstorage data.'

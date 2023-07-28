@@ -19,6 +19,7 @@ dependencies:
     - field.field.node.audience.field_search_exclude
     - field.field.node.audience.field_stage
     - field.field.node.audience.field_summary
+    - field.field.node.audience.field_tasks
     - field.field.node.audience.field_thumbnail
     - field.field.node.audience.field_toc
     - field.field.node.audience.field_updated_date
@@ -151,6 +152,7 @@ hidden:
   field_search_exclude: true
   field_stage: true
   field_summary: true
+  field_tasks: true
   field_thumbnail: true
   field_toc: true
   field_updated_date: true
