@@ -3,6 +3,7 @@ status: true
 dependencies:
   module:
     - eu_cookie_compliance
+    - file
     - system
     - toolbar
     - webform
@@ -22,6 +23,7 @@ permissions:
   - 'create webform'
   - 'delete any webform'
   - 'delete any webform submission'
+  - 'delete own files'
   - 'display eu cookie compliance popup'
   - 'edit any webform'
   - 'edit webform assets'

@@ -41,11 +41,11 @@ third_party_settings:
       -
         layout_id: convivial_onecol
         layout_settings:
-          context_mapping: {  }
           arrangement: null
           containment: container
           color: ''
           styles: null
+          context_mapping: {  }
         components:
           ff277ecc-92ff-4d8b-9ea4-df3b1c474e5b:
             uuid: ff277ecc-92ff-4d8b-9ea4-df3b1c474e5b

@@ -40,7 +40,6 @@ permissions:
   - 'view paragraph content media_list'
   - 'view paragraph content node_list'
   - 'view paragraph content parallax_bg_modifier'
-  - 'view paragraph content personified_content'
   - 'view paragraph content plugin_block'
   - 'view paragraph content scroll_reveal_modifier'
   - 'view paragraph content section'

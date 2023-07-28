@@ -11,6 +11,7 @@ dependencies:
     - core.entity_view_display.node.topic.full
   module:
     - eu_cookie_compliance
+    - file
     - layout_builder
     - system
     - toolbar
@@ -36,5 +37,6 @@ permissions:
   - 'configure editable place node layout overrides'
   - 'configure editable topic node layout overrides'
   - 'create and edit custom blocks'
+  - 'delete own files'
   - 'display eu cookie compliance popup'
   - 'view the administration theme'

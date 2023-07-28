@@ -22,6 +22,7 @@ dependencies:
     - content_moderation
     - contextual
     - eu_cookie_compliance
+    - file
     - filter
     - media
     - microcontent
@@ -74,6 +75,7 @@ permissions:
   - 'delete media'
   - 'delete own audio media'
   - 'delete own file media'
+  - 'delete own files'
   - 'delete own image media'
   - 'delete own promotion microcontent'
   - 'delete own remote_video media'

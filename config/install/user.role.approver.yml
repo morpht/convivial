@@ -15,6 +15,7 @@ dependencies:
     - content_moderation
     - contextual
     - eu_cookie_compliance
+    - file
     - filter
     - media
     - node
@@ -41,6 +42,7 @@ permissions:
   - 'delete any person content'
   - 'delete any place content'
   - 'delete any topic content'
+  - 'delete own files'
   - 'display eu cookie compliance popup'
   - 'edit any article content'
   - 'edit any audience content'
