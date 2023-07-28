@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies: {  }
+id: taxonomy_term__intent
+label: 'Taxonomy term: Intent'
+tags:
+  'custom_meta_tag_name:intent_key': '[term:field_key]'
+  description: '[term:description]'
+  og_title: '[term:name] | [site:name]'
+  title: '[term:name] | [site:name]'

@@ -107,3 +107,9 @@ filters:
         image: image
         remote_video: remote_video
         video: video
+  filter_image_lazy_load:
+    id: filter_image_lazy_load
+    provider: filter
+    status: true
+    weight: -41
+    settings: {  }

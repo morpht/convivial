@@ -3,6 +3,7 @@ status: true
 dependencies:
   module:
     - eu_cookie_compliance
+    - file
     - system
     - toolbar
     - webform
@@ -13,6 +14,7 @@ is_admin: null
 permissions:
   - 'access toolbar'
   - 'access webform overview'
+  - 'delete own files'
   - 'display eu cookie compliance popup'
   - 'view any webform submission'
   - 'view the administration theme'
