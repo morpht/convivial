@@ -6,7 +6,7 @@ profilers:
   set_param:
     name: set_param
     label: 'Set param'
-    weight: -17
+    weight: -27
     status: true
     description: 'Saves "set" query parameter to storage.'
     deferred: false
@@ -28,7 +28,7 @@ profilers:
   unset_param:
     name: unset_param
     label: 'Unset param'
-    weight: -16
+    weight: -26
     status: true
     description: 'Unsets "unset" query parameter from storage.'
     deferred: false
@@ -50,7 +50,7 @@ profilers:
   remove_param:
     name: remove_param
     label: 'Remove param'
-    weight: -15
+    weight: -25
     status: true
     description: 'Removes "remove" query parameter from storage.'
     deferred: false
@@ -75,7 +75,7 @@ profilers:
   utm_campaign_param:
     name: utm_campaign_param
     label: 'UTM campaign param'
-    weight: -14
+    weight: -24
     status: true
     description: 'Saves "utm_campaign" query parameter to storage and set dataLayer event.'
     deferred: false
@@ -106,7 +106,7 @@ profilers:
   utm_source_param:
     name: utm_source_param
     label: 'UTM source param'
-    weight: -13
+    weight: -23
     status: true
     description: 'Saves "utm_source" query parameter to storage.'
     deferred: false
@@ -131,7 +131,7 @@ profilers:
   utm_medium_param:
     name: utm_medium_param
     label: 'UTM medium param'
-    weight: -12
+    weight: -22
     status: true
     description: 'Saves "utm_medium" query parameter to storage.'
     deferred: false
@@ -156,7 +156,7 @@ profilers:
   hour:
     name: hour
     label: Hour
-    weight: -11
+    weight: -21
     status: true
     description: ''
     deferred: false
@@ -211,7 +211,7 @@ profilers:
   type:
     name: type
     label: 'Type meta'
-    weight: -10
+    weight: -20
     status: true
     description: 'Saves the "type" meta name to storage.'
     deferred: false
@@ -241,7 +241,7 @@ profilers:
   audience_meta:
     name: audience_meta
     label: 'Audiences meta'
-    weight: -9
+    weight: -19
     status: true
     description: 'Saves the "audiences" meta names to the audience dimension and calculates audience_top.'
     deferred: false
@@ -271,7 +271,7 @@ profilers:
   audience_param:
     name: audience_param
     label: 'Audience param'
-    weight: -8
+    weight: -18
     status: true
     description: 'Saves the "audience" query param to storage.'
     deferred: false
@@ -296,7 +296,7 @@ profilers:
   audience_recent:
     name: audience_recent
     label: 'Audience recent'
-    weight: -7
+    weight: -17
     status: true
     description: 'Saves the "audience_key" to storage.'
     deferred: false
@@ -321,7 +321,7 @@ profilers:
   audience_crm:
     name: audience_crm
     label: 'Audience CRM'
-    weight: -6
+    weight: -16
     status: true
     description: 'Saves the "audience_crm" to storage.'
     deferred: false
@@ -346,7 +346,7 @@ profilers:
   audience_override:
     name: audience_override
     label: 'Audience override'
-    weight: 0
+    weight: -15
     status: true
     description: 'Saves the "audience_override" query param to temp storage.'
     deferred: false
@@ -370,7 +370,7 @@ profilers:
   audience:
     name: audience
     label: Audience
-    weight: -5
+    weight: -14
     status: true
     description: 'Picks the best "audience".'
     deferred: false
@@ -394,7 +394,7 @@ profilers:
   campaign_param:
     name: campaign_param
     label: 'Campaign param'
-    weight: -4
+    weight: -13
     status: true
     description: 'Saves the "campaign" query param to storage.'
     deferred: false
@@ -419,7 +419,7 @@ profilers:
   campaign_crm:
     name: campaign_crm
     label: 'Campaign CRM'
-    weight: -3
+    weight: -12
     status: true
     description: 'Saves the "campaign_crm" to storage.'
     deferred: false
@@ -444,7 +444,7 @@ profilers:
   campaign_override:
     name: campaign_override
     label: 'Campaign override'
-    weight: 0
+    weight: -11
     status: true
     description: 'Saves the "campaign_override" query param to temp storage.'
     deferred: false
@@ -468,7 +468,7 @@ profilers:
   campaign:
     name: campaign
     label: Campaign
-    weight: -2
+    weight: -10
     status: true
     description: 'Picks the best "campaign".'
     deferred: false
@@ -491,7 +491,7 @@ profilers:
   topic_meta:
     name: topic_meta
     label: 'Topics meta'
-    weight: -1
+    weight: -9
     status: true
     description: 'Saves the "topics" meta names to the topic dimension and calculates topic_top.'
     deferred: false
@@ -521,7 +521,7 @@ profilers:
   topic_param:
     name: topic_param
     label: 'Topic param'
-    weight: 0
+    weight: -8
     status: true
     description: 'Saves the "topic" query param to storage.'
     deferred: false
@@ -546,7 +546,7 @@ profilers:
   topic_recent:
     name: topic_recent
     label: 'Topic recent'
-    weight: 1
+    weight: -7
     status: true
     description: 'Saves the "topic_key" to storage.'
     deferred: false
@@ -571,7 +571,7 @@ profilers:
   topic_crm:
     name: topic_crm
     label: 'Topic CRM'
-    weight: 2
+    weight: -6
     status: true
     description: 'Saves the "topic_crm" to storage.'
     deferred: false
@@ -596,7 +596,7 @@ profilers:
   topic_override:
     name: topic_override
     label: 'Topic override'
-    weight: 0
+    weight: -5
     status: true
     description: 'Saves the "topic_override" query param to temp storage.'
     deferred: false
@@ -620,7 +620,7 @@ profilers:
   topic:
     name: topic
     label: Topic
-    weight: 3
+    weight: -4
     status: true
     description: 'Picks the best "topic".'
     deferred: false
@@ -644,7 +644,7 @@ profilers:
   intent_meta:
     name: intent_meta
     label: 'Intent meta'
-    weight: 4
+    weight: -3
     status: true
     description: 'Saves the "intent" meta names to the intent dimension and calculates intent_top.'
     deferred: false
@@ -669,7 +669,7 @@ profilers:
   intent_param:
     name: intent_param
     label: 'Intent param'
-    weight: 5
+    weight: -2
     status: true
     description: 'Saves the "intent" query param to storage.'
     deferred: false
@@ -694,7 +694,7 @@ profilers:
   intent_recent:
     name: intent_recent
     label: 'Intent recent'
-    weight: -7
+    weight: -1
     status: true
     description: 'Saves the "intent_key" to storage.'
     deferred: false
@@ -719,7 +719,7 @@ profilers:
   intent_cookie:
     name: intent_cookie
     label: 'Intent cookie'
-    weight: 6
+    weight: 0
     status: true
     description: 'Saves the "intent" cookie to storage.'
     deferred: false
@@ -744,7 +744,7 @@ profilers:
   intent_override:
     name: intent_override
     label: 'Intent override'
-    weight: 0
+    weight: 1
     status: true
     description: 'Saves the "intent_override" query param to temp storage.'
     deferred: false
@@ -768,7 +768,7 @@ profilers:
   intent:
     name: intent
     label: Intent
-    weight: 7
+    weight: 2
     status: true
     description: 'Picks the best "intent".'
     deferred: false
@@ -791,7 +791,7 @@ profilers:
   intent_satisfied:
     name: intent_satisfied
     label: 'Intent satisfied meta'
-    weight: 8
+    weight: 3
     status: true
     description: 'Unstores the "intent_recent" if there is a match.'
     deferred: false
@@ -818,7 +818,7 @@ profilers:
   cta:
     name: cta
     label: CTA
-    weight: 9
+    weight: 4
     status: true
     description: ''
     deferred: false
@@ -841,7 +841,7 @@ profilers:
   next:
     name: next
     label: Next
-    weight: 10
+    weight: 5
     status: true
     description: 'Picks the next best step from intent, and campaign.'
     deferred: false
@@ -862,7 +862,7 @@ profilers:
   lifetime_value_meta:
     name: lifetime_value_meta
     label: 'Lifetime value meta'
-    weight: 11
+    weight: 6
     status: true
     description: 'Increments lifetime_value from the "lifetime_value" meta name.'
     deferred: false
@@ -886,7 +886,7 @@ profilers:
   goal:
     name: goal
     label: Goal
-    weight: 12
+    weight: 7
     status: true
     description: 'Saves the "goal" meta name to storage.'
     deferred: false
@@ -911,7 +911,7 @@ profilers:
   device_type:
     name: device_type
     label: 'Device type'
-    weight: 13
+    weight: 8
     status: true
     description: 'Saves the "device_type" user agent  to storage.'
     deferred: false
@@ -936,7 +936,7 @@ profilers:
   location_country:
     name: location_country
     label: 'Location country'
-    weight: 14
+    weight: 9
     status: true
     description: 'Saves the "location_country" cookie to storage.'
     deferred: false
@@ -977,7 +977,7 @@ profilers:
   location_lat:
     name: location_lat
     label: 'Location latitude'
-    weight: 15
+    weight: 10
     status: true
     description: 'Saves the "location_lat" cookie to storage.'
     deferred: false
@@ -1010,7 +1010,7 @@ profilers:
   location_lon:
     name: location_lon
     label: 'Location longitude'
-    weight: 16
+    weight: 11
     status: true
     description: 'Saves the "location_lon" cookie to storage.'
     deferred: false
@@ -1035,7 +1035,7 @@ profilers:
   location_city:
     name: location_city
     label: 'Location city'
-    weight: 17
+    weight: 12
     status: true
     description: 'Saves the "location_city" cookie to storage.'
     deferred: false
@@ -1060,7 +1060,7 @@ profilers:
   pageview:
     name: pageview
     label: Pageview
-    weight: 18
+    weight: 13
     status: true
     description: 'Increments the "pageview" in storage.'
     deferred: false
@@ -1108,7 +1108,7 @@ profilers:
   searchquery:
     name: searchquery
     label: Searchquery
-    weight: 19
+    weight: 14
     status: true
     description: 'Tracks the searchquery in a log.'
     deferred: false
@@ -1136,7 +1136,7 @@ profilers:
   language:
     name: language
     label: Language
-    weight: 20
+    weight: 15
     status: true
     description: 'Saves the browser "language" to storage.'
     deferred: false
@@ -1165,7 +1165,7 @@ profilers:
   stage:
     name: stage
     label: Stage
-    weight: 21
+    weight: 16
     status: true
     description: 'Saves the "stage" meta name to the stage dimension and calculates threshold stage.'
     deferred: false
@@ -1232,7 +1232,7 @@ profilers:
   stage_override:
     name: stage_override
     label: 'Stage override'
-    weight: 0
+    weight: 17
     status: true
     description: 'Saves the "stage_override" query param to temp storage.'
     deferred: false
@@ -1248,7 +1248,7 @@ profilers:
       -
         type: copy
         target_key: stage
-        remove_empty: true
+        remove_empty: false
         storage_key: temp.stage_override.value
         target_location:
           localstorage: localstorage
@@ -1256,7 +1256,7 @@ profilers:
   styxkey_recombee_userid:
     name: styxkey_recombee_userid
     label: 'STYXKEY Recombee UserId'
-    weight: 22
+    weight: 18
     status: true
     description: 'Copy RecombeeUserId cookie to STYXKEY_RecombeeUserId to support cookie reading on pantheon platform'
     deferred: false
@@ -1282,7 +1282,7 @@ profilers:
   convivial_enricher_clientid:
     name: convivial_enricher_clientid
     label: 'Convivial Enricher ClientId'
-    weight: 23
+    weight: 19
     status: true
     description: 'Saves a client ID provided by Enricher.'
     deferred: false
@@ -1315,7 +1315,7 @@ profilers:
   newsletter_signup_form:
     name: newsletter_signup_form
     label: 'Newsletter signup form'
-    weight: 24
+    weight: 20
     status: true
     description: 'Populate the newsletter signup form with hidden variables.'
     deferred: false
@@ -1337,7 +1337,7 @@ profilers:
   convivial_enricher_cookies_remove:
     name: convivial_enricher_cookies_remove
     label: 'Convivial enricher cookies remove'
-    weight: 24
+    weight: 21
     status: true
     description: 'Remove convivial_enricher_convivial_demo_topic, convivial_enricher_convivial_demo_audience, convivial_enricher_convivial_demo_campaign cookies.'
     deferred: false
@@ -1360,7 +1360,7 @@ profilers:
   office_hours:
     name: office_hours
     label: 'Office hours'
-    weight: 25
+    weight: 22
     status: true
     description: 'Calculates whether the office is open based on current time and date.'
     deferred: false
@@ -1411,7 +1411,7 @@ profilers:
   page_helpful:
     name: page_helpful
     label: 'Page helpful'
-    weight: 26
+    weight: 23
     status: true
     description: 'Sends an event on form save to track the satisfaction of the user.'
     deferred: false
