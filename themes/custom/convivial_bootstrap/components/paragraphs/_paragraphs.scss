@@ -3,7 +3,7 @@
 .paragraph {
   height: 100%;
 
-  .field__items > .field__item + .field__item > & {
+  .field--type-entity-reference-revisions > .field__item + .field__item > & {
     padding-top: 2rem;
   }
 }
