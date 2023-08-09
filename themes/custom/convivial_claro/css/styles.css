@@ -10,6 +10,11 @@
   padding-left: 0;
 }
 
+/* Fix for the overflowing content in Claro. */
+.layout-node-form {
+  grid-template-columns: minmax(0, 3fr) minmax(22.5rem, 1fr);
+}
+
 /* Paragraphs layout controls fix */
 .lpb-controls {
   color: #232429;
