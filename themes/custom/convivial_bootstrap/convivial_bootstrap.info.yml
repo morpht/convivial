@@ -16,7 +16,7 @@ libraries:
 ckeditor_stylesheets:
   - css/style.css
 ckeditor5-stylesheets:
-  - css/style.css
+  - css/ckeditor.css
 base theme: false
 regions:
   top_bar: 'Top Bar'

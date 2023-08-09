@@ -1,0 +1,40 @@
+// Variables override.
+@import "variables-override";
+
+// Import Bootstrap.
+@import "../../libraries/bootstrap/scss/functions";
+@import "../../libraries/bootstrap/scss/variables";
+@import "../../libraries/bootstrap/scss/maps";
+@import "../../libraries/bootstrap/scss/mixins";
+@import "../../libraries/bootstrap/scss/utilities";
+@import "../../libraries/bootstrap/scss/root";
+
+// Import Convivial.
+@import "custom-variables";
+@import "mixins";
+@import "color-palette";
+
+.ck-content {
+  @import "../../libraries/bootstrap/scss/type";
+  @import "../../libraries/bootstrap/scss/reboot";
+  @import "../../libraries/bootstrap/scss/alert";
+
+  @import "../../components/blockquote/blockquote";
+  @import "../../components/page-alerts/page-alerts";
+  @import "../../components/callout/callout";
+
+  // Claro theme overrides.
+  blockquote {
+    border-left: 10px solid rgba(0,0,0,0.06) !important;
+    font-style: normal !important;
+  }
+
+  code {
+    background-color: transparent;
+  }
+
+  ol,
+  ul {
+    margin-left: 0;
+  }
+}
