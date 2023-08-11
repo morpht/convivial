@@ -8,5 +8,5 @@ name: Recombee
 description: ''
 backend: recombee
 backend_config:
-  account: ''
-  token: ''
+  account: morpht-convivial-demo
+  token: K0a2jmSEYWxq86joQmHudk8ysV6ZekPMDdOJnIWxsUBd3336nTbQOgrOSdEHxFKy

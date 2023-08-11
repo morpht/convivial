@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.promotion
+    - field.storage.block_content.field_promo_published_date
+  module:
+    - datetime
+id: block_content.promotion.field_promo_published_date
+field_name: field_promo_published_date
+entity_type: block_content
+bundle: promotion
+label: 'Published date'
+description: 'The date the promo was published on. Used for sorting promos to show the most recent.'
+required: true
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

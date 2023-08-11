@@ -2,32 +2,32 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.microcontent.field_body
-    - field.storage.microcontent.field_heading
-    - field.storage.microcontent.field_promo_aside
-    - field.storage.microcontent.field_promo_background
-    - field.storage.microcontent.field_promo_bg_color
-    - field.storage.microcontent.field_promo_colour_classes
-    - field.storage.microcontent.field_promo_link
-    - field.storage.microcontent.field_promo_position
-    - field.storage.microcontent.field_promo_style_classes
-    - field.storage.microcontent.field_promo_variant
+    - block_content.type.promotion
+    - field.storage.block_content.field_body
+    - field.storage.block_content.field_heading
+    - field.storage.block_content.field_promo_aside
+    - field.storage.block_content.field_promo_background
+    - field.storage.block_content.field_promo_bg_color
+    - field.storage.block_content.field_promo_colour_classes
+    - field.storage.block_content.field_promo_link
+    - field.storage.block_content.field_promo_position
+    - field.storage.block_content.field_promo_style_classes
+    - field.storage.block_content.field_promo_variant
     - field.storage.taxonomy_term.field_promotion_type_value
-    - microcontent.type.promotion
   module:
+    - block_content
     - link
-    - microcontent
     - options
     - rest
     - serialization
     - taxonomy
     - text
-id: promotion
-label: 'Promotion Micro-content OLD'
+id: promotion_block_content
+label: 'Promotion Block Content'
 module: views
 description: ''
 tag: ''
-base_table: microcontent_field_data
+base_table: block_content_field_data
 base_field: id
 display:
   default:
@@ -39,7 +39,7 @@ display:
       fields:
         field_heading:
           id: field_heading
-          table: microcontent__field_heading
+          table: block_content__field_heading
           field: field_heading
           relationship: none
           group_type: group
@@ -102,7 +102,7 @@ display:
           field_api_classes: false
         field_body:
           id: field_body
-          table: microcontent__field_body
+          table: block_content__field_body
           field: field_body
           relationship: none
           group_type: group
@@ -164,7 +164,7 @@ display:
           field_api_classes: false
         field_promo_aside:
           id: field_promo_aside
-          table: microcontent__field_promo_aside
+          table: block_content__field_promo_aside
           field: field_promo_aside
           relationship: none
           group_type: group
@@ -226,7 +226,7 @@ display:
           field_api_classes: false
         field_promo_background:
           id: field_promo_background
-          table: microcontent__field_promo_background
+          table: block_content__field_promo_background
           field: field_promo_background
           relationship: none
           group_type: group
@@ -274,9 +274,9 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: entity_reference_entity_view
+          type: entity_reference_label
           settings:
-            view_mode: hero_banner
+            link: true
           group_column: target_id
           group_columns: {  }
           group_rows: true
@@ -289,7 +289,7 @@ display:
           field_api_classes: false
         field_promo_link:
           id: field_promo_link
-          table: microcontent__field_promo_link
+          table: block_content__field_promo_link
           field: field_promo_link
           relationship: none
           group_type: group
@@ -356,7 +356,7 @@ display:
           field_api_classes: false
         field_promo_variant:
           id: field_promo_variant
-          table: microcontent__field_promo_variant
+          table: block_content__field_promo_variant
           field: field_promo_variant
           relationship: none
           group_type: group
@@ -418,7 +418,7 @@ display:
           field_api_classes: false
         field_promo_position:
           id: field_promo_position
-          table: microcontent__field_promo_position
+          table: block_content__field_promo_position
           field: field_promo_position
           relationship: none
           group_type: group
@@ -480,7 +480,7 @@ display:
           field_api_classes: false
         field_promo_style_classes:
           id: field_promo_style_classes
-          table: microcontent__field_promo_style_classes
+          table: block_content__field_promo_style_classes
           field: field_promo_style_classes
           relationship: none
           group_type: group
@@ -542,7 +542,7 @@ display:
           field_api_classes: false
         field_promo_bg_color:
           id: field_promo_bg_color
-          table: microcontent__field_promo_bg_color
+          table: block_content__field_promo_bg_color
           field: field_promo_bg_color
           relationship: none
           group_type: group
@@ -604,7 +604,7 @@ display:
           field_api_classes: false
         field_promo_colour_classes:
           id: field_promo_colour_classes
-          table: microcontent__field_promo_colour_classes
+          table: block_content__field_promo_colour_classes
           field: field_promo_colour_classes
           relationship: none
           group_type: group
@@ -664,15 +664,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        label:
-          id: label
-          table: microcontent_field_data
-          field: label
+        info:
+          id: info
+          table: block_content_field_data
+          field: info
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: microcontent
-          entity_field: label
+          entity_type: null
+          entity_field: info
           plugin_id: field
           label: ''
           exclude: false
@@ -707,18 +707,17 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: false
+          element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: false
+          element_default_classes: true
           empty: ''
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
           type: string
-          settings:
-            link_to_entity: false
+          settings: {  }
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -898,33 +897,35 @@ display:
       filters:
         status:
           id: status
-          table: microcontent_field_data
+          table: block_content_field_data
           field: status
-          entity_type: microcontent
+          entity_type: block_content
           entity_field: status
           plugin_id: boolean
           value: '1'
           group: 1
           expose:
             operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
+        reusable:
+          id: reusable
+          table: block_content_field_data
+          field: reusable
+          entity_type: block_content
+          entity_field: reusable
+          plugin_id: boolean
+          value: '1'
         type:
           id: type
-          table: microcontent_field_data
+          table: block_content_field_data
           field: type
-          entity_type: microcontent
+          entity_type: block_content
           entity_field: type
           plugin_id: bundle
           value:
             promotion: promotion
-          group: 1
-          expose:
-            operator_limit_selection: false
-            operator_list: {  }
         field_promo_keys_value:
           id: field_promo_keys_value
-          table: microcontent__field_promo_keys
+          table: block_content__field_promo_keys
           field: field_promo_keys_value
           relationship: none
           group_type: group
@@ -1036,7 +1037,7 @@ display:
       relationships:
         field_promo_type:
           id: field_promo_type
-          table: microcontent__field_promo_type
+          table: block_content__field_promo_type
           field: field_promo_type
           relationship: none
           group_type: group
@@ -1055,19 +1056,19 @@ display:
         - url
         - url.query_args
       tags:
-        - 'config:field.storage.microcontent.field_body'
-        - 'config:field.storage.microcontent.field_heading'
-        - 'config:field.storage.microcontent.field_promo_aside'
-        - 'config:field.storage.microcontent.field_promo_background'
-        - 'config:field.storage.microcontent.field_promo_bg_color'
-        - 'config:field.storage.microcontent.field_promo_colour_classes'
-        - 'config:field.storage.microcontent.field_promo_link'
-        - 'config:field.storage.microcontent.field_promo_position'
-        - 'config:field.storage.microcontent.field_promo_style_classes'
-        - 'config:field.storage.microcontent.field_promo_variant'
+        - 'config:field.storage.block_content.field_body'
+        - 'config:field.storage.block_content.field_heading'
+        - 'config:field.storage.block_content.field_promo_aside'
+        - 'config:field.storage.block_content.field_promo_background'
+        - 'config:field.storage.block_content.field_promo_bg_color'
+        - 'config:field.storage.block_content.field_promo_colour_classes'
+        - 'config:field.storage.block_content.field_promo_link'
+        - 'config:field.storage.block_content.field_promo_position'
+        - 'config:field.storage.block_content.field_promo_style_classes'
+        - 'config:field.storage.block_content.field_promo_variant'
         - 'config:field.storage.taxonomy_term.field_promotion_type_value'
-  promotion:
-    id: promotion
+  promotion_block_content:
+    id: promotion_block_content
     display_title: 'REST export'
     display_plugin: rest_export
     position: 1
@@ -1087,32 +1088,11 @@ display:
         type: data_field
         options:
           field_options:
-            field_heading:
-              alias: heading
-              raw_output: false
-            field_body:
-              alias: body
-              raw_output: false
-            field_promo_aside:
-              alias: aside
-              raw_output: false
-            field_promo_background:
-              alias: image
-              raw_output: false
-            field_promo_link:
-              alias: link
-              raw_output: false
-            label:
-              alias: label
-              raw_output: false
-            field_promotion_type_value:
-              alias: type
-              raw_output: false
-            nothing:
-              alias: classes
+            info:
+              alias: ''
               raw_output: false
       display_extenders: {  }
-      path: data/promotion-old
+      path: data/promotion
     cache_metadata:
       max-age: 0
       contexts:
@@ -1121,14 +1101,14 @@ display:
         - request_format
         - url
       tags:
-        - 'config:field.storage.microcontent.field_body'
-        - 'config:field.storage.microcontent.field_heading'
-        - 'config:field.storage.microcontent.field_promo_aside'
-        - 'config:field.storage.microcontent.field_promo_background'
-        - 'config:field.storage.microcontent.field_promo_bg_color'
-        - 'config:field.storage.microcontent.field_promo_colour_classes'
-        - 'config:field.storage.microcontent.field_promo_link'
-        - 'config:field.storage.microcontent.field_promo_position'
-        - 'config:field.storage.microcontent.field_promo_style_classes'
-        - 'config:field.storage.microcontent.field_promo_variant'
+        - 'config:field.storage.block_content.field_body'
+        - 'config:field.storage.block_content.field_heading'
+        - 'config:field.storage.block_content.field_promo_aside'
+        - 'config:field.storage.block_content.field_promo_background'
+        - 'config:field.storage.block_content.field_promo_bg_color'
+        - 'config:field.storage.block_content.field_promo_colour_classes'
+        - 'config:field.storage.block_content.field_promo_link'
+        - 'config:field.storage.block_content.field_promo_position'
+        - 'config:field.storage.block_content.field_promo_style_classes'
+        - 'config:field.storage.block_content.field_promo_variant'
         - 'config:field.storage.taxonomy_term.field_promotion_type_value'

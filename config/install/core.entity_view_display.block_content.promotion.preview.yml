@@ -1,0 +1,47 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.promotion
+    - core.entity_view_mode.block_content.preview
+    - field.field.block_content.promotion.field__promo_expires
+    - field.field.block_content.promotion.field_body
+    - field.field.block_content.promotion.field_heading
+    - field.field.block_content.promotion.field_promo_aside
+    - field.field.block_content.promotion.field_promo_background
+    - field.field.block_content.promotion.field_promo_bg_color
+    - field.field.block_content.promotion.field_promo_colour_classes
+    - field.field.block_content.promotion.field_promo_keys
+    - field.field.block_content.promotion.field_promo_link
+    - field.field.block_content.promotion.field_promo_position
+    - field.field.block_content.promotion.field_promo_published_date
+    - field.field.block_content.promotion.field_promo_style_classes
+    - field.field.block_content.promotion.field_promo_type
+    - field.field.block_content.promotion.field_promo_variant
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: block_content.promotion.preview
+targetEntityType: block_content
+bundle: promotion
+mode: preview
+content: {  }
+hidden:
+  field__promo_expires: true
+  field_body: true
+  field_heading: true
+  field_promo_aside: true
+  field_promo_background: true
+  field_promo_bg_color: true
+  field_promo_colour_classes: true
+  field_promo_keys: true
+  field_promo_link: true
+  field_promo_position: true
+  field_promo_published_date: true
+  field_promo_style_classes: true
+  field_promo_type: true
+  field_promo_variant: true
+  search_api_excerpt: true

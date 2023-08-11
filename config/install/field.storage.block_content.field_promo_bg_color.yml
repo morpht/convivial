@@ -1,0 +1,44 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - options
+id: block_content.field_promo_bg_color
+field_name: field_promo_bg_color
+entity_type: block_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: banner--background-light
+      label: Light
+    -
+      value: banner--background-dark
+      label: Dark
+    -
+      value: banner--background-primary-light
+      label: 'Primary light'
+    -
+      value: banner--background-primary-dark
+      label: 'Primary dark'
+    -
+      value: banner--background-primary-light-accent
+      label: 'Primary light accent'
+    -
+      value: banner--background-primary-dark-accent
+      label: 'Primary dark accent'
+    -
+      value: banner--background-light-accent
+      label: 'Light accent'
+    -
+      value: banner--background-dark-accent
+      label: 'Dark accent'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

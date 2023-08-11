@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.promotion
+    - field.storage.block_content.field_promo_aside
+  module:
+    - text
+    - unique_content_field_validation
+third_party_settings:
+  unique_content_field_validation:
+    unique: false
+    unique_text: ''
+id: block_content.promotion.field_promo_aside
+field_name: field_promo_aside
+entity_type: block_content
+bundle: promotion
+label: Aside
+description: 'Content that appears on the side of the main content.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

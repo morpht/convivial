@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.promotion
+    - field.storage.block_content.field__promo_expires
+  module:
+    - datetime
+id: block_content.promotion.field__promo_expires
+field_name: field__promo_expires
+entity_type: block_content
+bundle: promotion
+label: Expires
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

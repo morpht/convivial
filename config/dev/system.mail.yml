@@ -1,2 +1,8 @@
-interface:
-  default: devel_mail_log
+adding:
+  interface:
+    default: devel_mail_log
+removing:
+  _core:
+    default_config_hash: rYgt7uhPafP2ngaN_ZUPFuyI4KdE0zU868zLNSlzKoE
+  interface:
+    default: php_mail
