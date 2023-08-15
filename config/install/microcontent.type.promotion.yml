@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-name: Promotion
-id: promotion
-description: 'Use for promotional blocks which can be displayed to users with various attributes.'
-type_class: ''

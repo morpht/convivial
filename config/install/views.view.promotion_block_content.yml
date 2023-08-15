@@ -1088,8 +1088,29 @@ display:
         type: data_field
         options:
           field_options:
+            field_heading:
+              alias: heading
+              raw_output: false
+            field_body:
+              alias: body
+              raw_output: false
+            field_promo_aside:
+              alias: aside
+              raw_output: false
+            field_promo_background:
+              alias: image
+              raw_output: false
+            field_promo_link:
+              alias: link
+              raw_output: false
             info:
-              alias: ''
+              alias: label
+              raw_output: false
+            field_promotion_type_value:
+              alias: type
+              raw_output: false
+            nothing:
+              alias: classes
               raw_output: false
       display_extenders: {  }
       path: data/promotion
