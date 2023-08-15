@@ -52,7 +52,6 @@ dependencies:
     - linkit
     - media
     - metatag
-    - microcontent
     - module_filter
     - node
     - paragraphs
@@ -92,7 +91,6 @@ permissions:
   - 'access environment indicator'
   - 'access files overview'
   - 'access media overview'
-  - 'access microcontent overview'
   - 'access own webform configuration'
   - 'access shortcuts'
   - 'access site in maintenance mode'
@@ -133,11 +131,6 @@ permissions:
   - 'administer media types'
   - 'administer menu'
   - 'administer meta tags'
-  - 'administer microcontent'
-  - 'administer microcontent display'
-  - 'administer microcontent fields'
-  - 'administer microcontent form display'
-  - 'administer microcontent types'
   - 'administer module_filter'
   - 'administer modules'
   - 'administer node display'
@@ -217,7 +210,6 @@ permissions:
   - 'create paragraph content snippet'
   - 'create person content'
   - 'create place content'
-  - 'create promotion microcontent'
   - 'create remote_video media'
   - 'create terms in goal'
   - 'create terms in media_tags'
@@ -237,7 +229,6 @@ permissions:
   - 'delete any page content'
   - 'delete any person content'
   - 'delete any place content'
-  - 'delete any promotion microcontent'
   - 'delete any remote_video media'
   - 'delete any topic content'
   - 'delete any video media'
@@ -258,7 +249,6 @@ permissions:
   - 'delete own page content'
   - 'delete own person content'
   - 'delete own place content'
-  - 'delete own promotion microcontent'
   - 'delete own remote_video media'
   - 'delete own topic content'
   - 'delete own video media'
@@ -325,9 +315,7 @@ permissions:
   - 'switch shortcut sets'
   - 'synchronize configuration'
   - 'update any media'
-  - 'update any promotion microcontent'
   - 'update media'
-  - 'update own promotion microcontent'
   - 'update paragraph content snippet'
   - 'use admin toolbar search'
   - 'use editorial transition archive'
@@ -356,6 +344,5 @@ permissions:
   - 'view place revisions'
   - 'view the administration theme'
   - 'view topic revisions'
-  - 'view unpublished microcontent'
   - 'view unpublished paragraphs'
   - 'view update notifications'

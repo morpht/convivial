@@ -25,7 +25,6 @@ dependencies:
     - file
     - filter
     - media
-    - microcontent
     - node
     - paragraphs
     - path
@@ -43,7 +42,6 @@ permissions:
   - 'access content overview'
   - 'access contextual links'
   - 'access media overview'
-  - 'access microcontent overview'
   - 'access taxonomy overview'
   - 'access toolbar'
   - 'administer menu'
@@ -58,7 +56,6 @@ permissions:
   - 'create page content'
   - 'create person content'
   - 'create place content'
-  - 'create promotion microcontent'
   - 'create remote_video media'
   - 'create terms in goal'
   - 'create terms in media_tags'
@@ -69,7 +66,6 @@ permissions:
   - 'delete any file media'
   - 'delete any image media'
   - 'delete any media'
-  - 'delete any promotion microcontent'
   - 'delete any remote_video media'
   - 'delete any video media'
   - 'delete media'
@@ -77,7 +73,6 @@ permissions:
   - 'delete own file media'
   - 'delete own files'
   - 'delete own image media'
-  - 'delete own promotion microcontent'
   - 'delete own remote_video media'
   - 'delete own video media'
   - 'delete terms in goal'
@@ -104,9 +99,7 @@ permissions:
   - 'edit terms in media_tags'
   - 'replicate entities'
   - 'update any media'
-  - 'update any promotion microcontent'
   - 'update media'
-  - 'update own promotion microcontent'
   - 'use editorial transition create_new_draft'
   - 'use editorial transition needs_review'
   - 'use text format rich_text'
@@ -116,5 +109,4 @@ permissions:
   - 'view latest version'
   - 'view own unpublished content'
   - 'view the administration theme'
-  - 'view unpublished microcontent'
   - 'view unpublished paragraphs'

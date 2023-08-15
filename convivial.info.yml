@@ -138,7 +138,6 @@ dependencies:
   - layout_discovery
   - media
   - metatag
-  - microcontent
   - node
   - options
   - paragraphs
