@@ -83,6 +83,8 @@
     "drupal/media_library_bulk_upload": "^1.0",
     "drupal/menu_block": "^1.5",
     "drupal/metatag": "^1.19",
+    "drupal/microcontent": "^1.2",
+    "drupal/microcontent_revision_ui": "^1.0",
     "drupal/migrate_file": "^2.1",
     "drupal/migrate_plus": "^6.0",
     "drupal/migrate_source_csv": "^3.4",
