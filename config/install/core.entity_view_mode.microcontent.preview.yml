@@ -1,9 +1,0 @@
-langcode: en
-status: true
-dependencies:
-  module:
-    - microcontent
-id: microcontent.preview
-label: Preview
-targetEntityType: microcontent
-cache: true

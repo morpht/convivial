@@ -1,9 +1,0 @@
-langcode: en
-status: true
-dependencies:
-  module:
-    - microcontent
-id: microcontent.entity_browser
-label: 'Entity browser'
-targetEntityType: microcontent
-cache: true
