@@ -229,8 +229,10 @@ class Importer {
     $this->deleteContent->delete('paragraph');
 
     // Create a paragraph and set its place in any reference entity.
-    $para = $this->processContent('paragraphs', 'paragraph', $this->dictionary["paragraphs"]);
-    $this->importParagraphs($para);
+    if (array_key_exists('paragraphs', $this->dictionary)) {
+      $para = $this->processContent('paragraphs', 'paragraph', $this->dictionary["paragraphs"]);
+      $this->importParagraphs($para);
+    }
 
     if (array_key_exists('menu', $yamlData)) {
       $consent && $this->importMenuLinks($yamlData['menu']);
