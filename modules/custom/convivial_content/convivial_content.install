@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the module.
+ */
+
+/**
+ * Implements hook_module_preinstall().
+ */
+function convivial_content_module_preinstall($module) {
+  if ($module === 'convivial_content' && !\Drupal::service('config.installer')->isSyncing()) {
+    // Run before importing config so blocks are created with the correct
+    // dependencies.
+    // \Drupal::classResolver(InstallHelper::class)->importContent();
+  }
+}

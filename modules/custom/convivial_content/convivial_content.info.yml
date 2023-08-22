@@ -1,0 +1,5 @@
+name: Convivial Content
+type: module
+description: Provide default content for Convivial.
+package: Custom
+core_version_requirement: ^9 || ^10

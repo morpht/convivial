@@ -1,0 +1,6 @@
+convivial_content.import:
+  title: 'Convivial Content Import'
+  description: 'Configuration for Convivial Content.'
+  parent: 'convivial_core.admin_convivial'
+  route_name: 'convivial_content.import'
+  weight: 10

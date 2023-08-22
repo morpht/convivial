@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - unique_content_field_validation
+third_party_settings:
+  unique_content_field_validation:
+    unique: false
+    unique_text: ''
+name: Campaign
+vid: campaign
+description: ''
+weight: 0

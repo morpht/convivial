@@ -1,0 +1,10 @@
+services:
+  convivial_content.delete_content:
+    class: Drupal\convivial_content\DeleteContent
+    arguments: [ '@entity_type.manager' ]
+  convivial_content.importer:
+    class: Drupal\convivial_content\Importer
+    arguments: ['@entity_type.manager', '@current_user', '@file_system', '@module_handler', '@convivial_content.delete_content', '@messenger', '@http_client_factory', '@convivial_content.site_source', '@config.factory']
+  convivial_content.site_source:
+    class: Drupal\convivial_content\SiteSource
+    arguments: ['@http_client']

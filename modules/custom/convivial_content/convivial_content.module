@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Convivial Content module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function convivial_content_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.convivial_content':
+      $output = '';
+      $output .= '<h3>' . t('Convivial Content') . '</h3>';
+      $output .= '<p>' . t('Provide default content for Convivial.') . '</p>';
+      return $output;
+  }
+}
