@@ -3,19 +3,7 @@ convivial_content.settings:
   type: config_object
   label: 'Convivial Content settings'
   mapping:
-    consent_delete:
-      type: boolean
-      label: 'Delete Existing Content'
-      description: 'Check to delete existing content.'
-    sites:
+    source_url:
       type: string
-      label: 'Sites'
-      description: 'Select the Site.'
-    custom_yaml:
-      type: string
-      label: 'YAML'
-      description: 'Custom YAML.'
-    source:
-      type: string
-      label: 'Site Source'
-      description: 'Site Source for the YAML file.'
+      label: 'Source URL'
+      description: 'Enter the source URL to fetch the content.'

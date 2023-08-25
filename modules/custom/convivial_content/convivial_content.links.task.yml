@@ -1,9 +1,9 @@
+convivial_content.settings:
+  route_name: convivial_content.settings
+  title: 'Settings'
+  base_route: convivial_content.settings
+
 convivial_content.import:
   route_name: convivial_content.import
   title: 'Import Content'
-  base_route: convivial_content.import
-
-convivial_content.site_source_config:
-  route_name: convivial_content.site_source_config
-  title: 'Site Source'
-  base_route: convivial_content.import
+  base_route: convivial_content.settings

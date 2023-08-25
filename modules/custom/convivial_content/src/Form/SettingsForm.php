@@ -6,15 +6,15 @@ use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Configure Convivial Content settings for this site.
+ * Convivial Content settings form.
  */
-class SiteSourceConfigForm extends ConfigFormBase {
+class SettingsForm extends ConfigFormBase {
 
   /**
    * {@inheritdoc}
    */
   public function getFormId() {
-    return 'convivial_content_site_source_config';
+    return 'convivial_content_settings_form';
   }
 
   /**
@@ -30,11 +30,11 @@ class SiteSourceConfigForm extends ConfigFormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->config('convivial_content.settings');
 
-    $form['site-source'] = [
+    $form['source_url'] = [
       '#type' => 'url',
-      '#title' => $this->t('Site Source'),
-      '#default_value' => $config->get('source'),
-      '#description' => $this->t('For example: https://raw.githubusercontent.com/morpht/convivial-default-content/main/'),
+      '#title' => $this->t('Source URL'),
+      '#default_value' => $config->get('source_url'),
+      '#description' => $this->t('Enter the source URL to fetch the content. For example: https://raw.githubusercontent.com/morpht/convivial-default-content/main/'),
       '#required' => TRUE,
     ];
     return parent::buildForm($form, $form_state);
@@ -45,7 +45,7 @@ class SiteSourceConfigForm extends ConfigFormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $this->config('convivial_content.settings')
-      ->set('source', $form_state->getValue('site-source'))
+      ->set('source_url', $form_state->getValue('source_url'))
       ->save();
     parent::submitForm($form, $form_state);
   }

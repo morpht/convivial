@@ -38,9 +38,9 @@ class Importer {
   /**
    * Helper Service for deleting content.
    *
-   * @var DeleteContent
+   * @var SiteCleanupManager
    */
-  protected DeleteContent $deleteContent;
+  protected SiteCleanupManager $siteCleanupManager;
 
   /**
    * The messenger service.
@@ -87,9 +87,9 @@ class Importer {
   /**
    * Helper for Sourcing the sites.
    *
-   * @var SiteSource
+   * @var DataSourceManager
    */
-  protected SiteSource $siteSource;
+  protected DataSourceManager $siteSource;
 
   /**
    * The system config factory.
@@ -109,13 +109,13 @@ class Importer {
    *   The file handler.
    * @param \Drupal\Core\Extension\ModuleHandlerInterface $moduleHandler
    *   Module handler.
-   * @param DeleteContent $deleteContent
+   * @param SiteCleanupManager $siteCleanupManager
    *   Helper Service for deleting content.
    * @param \Drupal\Core\Messenger\MessengerInterface $messenger
    *   The messenger service.
    * @param \Drupal\Core\Http\ClientFactory $clientFactory
    *   The Https Client Factory service.
-   * @param SiteSource $siteSource
+   * @param DataSourceManager $siteSource
    *   The helper service to fetch Site Source data.
    */
   public function __construct(
@@ -123,17 +123,17 @@ class Importer {
     AccountInterface $current_user,
     FileSystemInterface $file_system,
     ModuleHandlerInterface $moduleHandler,
-    DeleteContent $deleteContent,
+    SiteCleanupManager $siteCleanupManager,
     MessengerInterface $messenger,
     ClientFactory $clientFactory,
-    SiteSource $siteSource,
+    DataSourceManager $siteSource,
     ConfigFactoryInterface $configFactory
   ) {
     $this->entityTypeManager = $entity_type_manager;
     $this->currentUser = $current_user;
     $this->fileSystem = $file_system;
     $this->moduleHandler = $moduleHandler;
-    $this->deleteContent = $deleteContent;
+    $this->siteCleanupManager = $siteCleanupManager;
     $this->messenger = $messenger;
     $this->clientFactory = $clientFactory;
     $this->siteSource = $siteSource;
@@ -165,12 +165,12 @@ class Importer {
     $this->schema = $this->siteSource->getFileContent($sourceUrl, $schemaFilename);
 
     if (array_key_exists('vocabulary', $yamlData)) {
-      $consent && $this->deleteContent->delete('taxonomy_term');
+      $consent && $this->siteCleanupManager->delete('taxonomy_term');
       $terms = $this->processContent('vocabulary', 'taxonomy_term', $yamlData['vocabulary']);
       $terms && $this->importTerms($terms);
     }
     if (array_key_exists('media', $yamlData)) {
-      $consent && $this->deleteContent->delete('media', 'image');
+      $consent && $this->siteCleanupManager->delete('media', 'image');
       $images = $this->processContent('media', 'media', $yamlData['media']);
       $images && $this->importMedia($images);
     }
@@ -179,7 +179,7 @@ class Importer {
       if ($consent) {
         $type = array_keys($yamlData['content-block']);
         foreach ($type as $name) {
-          $this->deleteContent->delete('block_content', $name);
+          $this->siteCleanupManager->delete('block_content', $name);
         }
       }
       // Import block content.
@@ -190,7 +190,7 @@ class Importer {
       if ($consent) {
         // Delete only the nodes which have exported data.
         foreach ($yamlData['content-type'] as $bundleName => $fields) {
-          $this->deleteContent->delete('node', $bundleName);
+          $this->siteCleanupManager->delete('node', $bundleName);
         }
       }
 
@@ -226,7 +226,7 @@ class Importer {
     }
 
     // @todo Delete existing paragraph which might get imported.
-    $this->deleteContent->delete('paragraph');
+    $this->siteCleanupManager->delete('paragraph');
 
     // Create a paragraph and set its place in any reference entity.
     if (array_key_exists('paragraphs', $this->dictionary)) {

@@ -1,6 +1,5 @@
-convivial_content.import:
-  title: 'Convivial Content Import'
-  description: 'Configuration for Convivial Content.'
+convivial_content.settings:
+  title: 'Convivial Content'
+  description: 'Ships default content for convivial profile.'
   parent: 'convivial_core.admin_convivial'
-  route_name: 'convivial_content.import'
-  weight: 10
+  route_name: 'convivial_content.settings'

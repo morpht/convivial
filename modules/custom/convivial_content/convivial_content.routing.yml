@@ -1,15 +1,15 @@
 convivial_content.import:
-  path: '/admin/config/convivial/content/import'
+  path: '/admin/config/convivial/content'
   defaults:
-    _title: 'Convivial Content Import'
-    _form: 'Drupal\convivial_content\Form\ImportForm'
+    _title: 'Content Import'
+    _form: 'Drupal\convivial_content\Form\ImportSettingsForm'
   requirements:
     _permission: 'access convivial administration pages'
 
-convivial_content.site_source_config:
-  path: '/admin/config/convivial/content/site-source'
+convivial_content.settings:
+  path: '/admin/config/convivial/content/settings'
   defaults:
-    _title: 'Site Source'
-    _form: 'Drupal\convivial_content\Form\SiteSourceConfigForm'
+    _title: 'Convivial Content'
+    _form: 'Drupal\convivial_content\Form\SettingsForm'
   requirements:
     _permission: 'access convivial administration pages'

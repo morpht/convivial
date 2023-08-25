@@ -6,9 +6,9 @@ use GuzzleHttp\ClientInterface;
 use Symfony\Component\Yaml\Yaml;
 
 /**
- * A service that retrieves YAML data.
+ * Data Source Manager.
  */
-class SiteSource {
+class DataSourceManager {
 
   /**
    * The GuzzleHttp client.
@@ -28,58 +28,58 @@ class SiteSource {
   }
 
   /**
-   * Get all the sites name from index.yaml.
+   * Get all the datasets from index.yml.
    *
-   * @param string $siteSource
-   *   URL source of Site data.
+   * @param string $sourceUrl
+   *   Source URL of the data.
    *
-   * @return array
-   *   Return array format of all the sites.
+   * @return array|null
+   *   Return list of retrived datasets.
    *
    * @throws \GuzzleHttp\Exception\GuzzleException
    */
-  public function getSites(string $siteSource): array {
-    $site = [];
-    $siteData = $this->getFileContent($siteSource);
-    if (isset($siteData)) {
-      foreach ($siteData as $siteName => $siteDatum) {
-        $site[$siteName] = $siteDatum['name'];
+  public function fetchDatasets(string $sourceUrl): array {
+    $return = [];
+    $datasets = $this->getFileContent($sourceUrl);
+    if (isset($datasets)) {
+      foreach ($datasets as $name => $dataset) {
+        $return[$name] = $dataset['name'];
       }
     }
-    return $site;
+    return $return;
   }
 
   /**
-   * Get site data for a specific site.
+   * Get a specific dataset.
    *
-   * @param string $siteSource
-   *   Site source URL.
-   * @param string $siteName
-   *   Site name.
+   * @param string $sourceUrl
+   *   Source URL of the data.
+   * @param string $dataset
+   *   Name of the dataset.
    *
    * @return array|null
    *   All the data associated with a particular site.
    *
    * @throws \GuzzleHttp\Exception\GuzzleException
    */
-  public function getSiteData(string $siteSource, string $siteName): ?array {
-    $siteData = $this->getFileContent($siteSource);
-    if (isset($siteData)) {
-      return $siteData[$siteName];
+  public function fetchDataset(string $sourceUrl, string $dataset): ?array {
+    $datasets = $this->getFileContent($sourceUrl);
+    if (isset($datasets)) {
+      return $datasets[$dataset];
     }
     return NULL;
   }
 
   /**
-   * Retrieve the parsed YAML content from a specified URL.
+   * Get the parsed YAML content from a specified URL.
    *
-   * @param string $siteSource
-   *   Site source URL.
+   * @param string $sourceUrl
+   *   Source URL of the data.
    * @param string $fileName
    *   (optional)File name which needs to be fetched.
    *
    * @return array|null
-   *   Parsed data of a YAML set file.
+   *   Parsed data of a YML set file.
    *
    * @throws \GuzzleHttp\Exception\GuzzleException
    * @throws \Exception

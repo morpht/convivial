@@ -5,9 +5,9 @@ namespace Drupal\convivial_content;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 
 /**
- * Service description.
+ * Site cleanup manager.
  */
-class DeleteContent {
+class SiteCleanupManager {
 
   /**
    * The entity type manager.
@@ -31,24 +31,24 @@ class DeleteContent {
    *
    * @param string $entityType
    *   Entity type name.
-   * @param string|null $bundleType
-   *   Bundle type name.
+   * @param string|null $bundle
+   *   Bundle name.
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
-  public function delete(string $entityType, string $bundleType = NULL) {
+  public function delete(string $entityType, string $bundle = NULL) {
     $entityStorage = $this->entityTypeManager->getStorage($entityType);
 
-    if ($bundleType) {
+    if ($bundle) {
       $query = $entityStorage->getQuery();
       switch ($entityType) {
         case 'media':
         case 'taxonomy_term':
           $query
             ->accessCheck('TRUE')
-            ->condition('bundle', $bundleType);
+            ->condition('bundle', $bundle);
           break;
 
         case 'node':
@@ -56,7 +56,7 @@ class DeleteContent {
         case 'paragraph':
           $query
             ->accessCheck('TRUE')
-            ->condition('type', $bundleType);
+            ->condition('type', $bundle);
           break;
       }
       $entity_ids = $query->execute();

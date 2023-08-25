@@ -1,5 +1,8 @@
 name: Convivial Content
 type: module
-description: Provide default content for Convivial.
-package: Custom
-core_version_requirement: ^9 || ^10
+description: Ships default content for convivial profile.
+package: Convivial
+core_version_requirement: ^9.5 || ^10
+configure: convivial_content.site_source_config
+dependencies:
+  - convivial_core:convivial_core
