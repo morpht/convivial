@@ -3,7 +3,7 @@
 namespace Drupal\convivial_content\Form;
 
 use Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException;
-use Drupal\convivial_content\Importer;
+use Drupal\convivial_content\DataImporter;
 use Drupal\convivial_content\DataSourceManager;
 use Drupal\Core\Entity\EntityStorageException;
 use Drupal\Core\Form\FormBase;
@@ -19,9 +19,9 @@ class ImportSettingsForm extends FormBase {
   /**
    * Helper Importer Service.
    *
-   * @var Importer
+   * @var DataImporter
    */
-  protected Importer $importer;
+  protected DataImporter $dataImporter;
 
   /**
    * Helper for Sourcing the sites.
@@ -35,13 +35,13 @@ class ImportSettingsForm extends FormBase {
    *
    *   The factory for configuration objects.
    *
-   * @param Importer $importer
+   * @param DataImporter $dataImporter
    *   The Helper service for Importing contents.
    * @param DataSourceManager $siteSource
    *   A service that retrieves YAML file content from a specified URL.
    */
-  public function __construct(Importer $importer, DataSourceManager $dataSourceManager) {
-    $this->importer = $importer;
+  public function __construct(DataImporter $dataImporter, DataSourceManager $dataSourceManager) {
+    $this->dataImporter = $dataImporter;
     $this->dataSourceManager = $dataSourceManager;
   }
 
@@ -50,7 +50,7 @@ class ImportSettingsForm extends FormBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('convivial_content.importer'),
+      $container->get('convivial_content.data_importer'),
       $container->get('convivial_content.data_source_manager')
     );
   }
@@ -132,7 +132,7 @@ class ImportSettingsForm extends FormBase {
     }
 
     try {
-      $this->importer->importContent($yaml, $sourceUrl, $siteCleanup);
+      $this->dataImporter->importContent($yaml, $sourceUrl, $siteCleanup);
     }
     catch (InvalidPluginDefinitionException $e) {
       throw new InvalidPluginDefinitionException($e->getPluginId(), str_replace('plugin definition', 'derived plugin definition', $e->getMessage()));

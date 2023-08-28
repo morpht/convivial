@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Primary module hooks for Convivial Content module.
- */
-
 use Drupal\Core\Routing\RouteMatchInterface;
 
 /**

@@ -3,6 +3,6 @@ type: module
 description: Ships default content for convivial profile.
 package: Convivial
 core_version_requirement: ^9.5 || ^10
-configure: convivial_content.site_source_config
+configure: convivial_content.settings
 dependencies:
   - convivial_core:convivial_core

@@ -5,6 +5,6 @@ services:
   convivial_content.site_cleanup_manager:
     class: Drupal\convivial_content\SiteCleanupManager
     arguments: [ '@entity_type.manager' ]
-  convivial_content.importer:
-    class: Drupal\convivial_content\Importer
-    arguments: ['@entity_type.manager', '@current_user', '@file_system', '@module_handler', '@convivial_content.site_cleanup_manager', '@messenger', '@http_client_factory', '@convivial_content.data_source_manager', '@config.factory']
+  convivial_content.data_importer:
+    class: Drupal\convivial_content\DataImporter
+    arguments: ['@entity_type.manager', '@current_user', '@file_system', '@module_handler', '@convivial_content.site_cleanup_manager', '@messenger', '@http_client', '@convivial_content.data_source_manager', '@config.factory']

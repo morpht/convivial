@@ -7,7 +7,6 @@ use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\File\FileSystemInterface;
-use Drupal\Core\Http\ClientFactory;
 use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\file\Entity\File;
@@ -15,11 +14,12 @@ use Drupal\media\Entity\Media;
 use Drupal\menu_link_content\Entity\MenuLinkContent;
 use Drupal\node\Entity\Node;
 use Drupal\taxonomy\Entity\Term;
+use GuzzleHttp\ClientInterface;
 
 /**
  * Helper service for Importing content.
  */
-class Importer {
+class DataImporter {
 
   /**
    * Entity type manager.
@@ -64,11 +64,25 @@ class Importer {
   protected FileSystemInterface $fileSystem;
 
   /**
-   * Client Factory service.
+   * The HTTP client.
    *
-   * @var \Drupal\Core\Http\ClientFactory
+   * @var \GuzzleHttp\Client
    */
-  protected ClientFactory $clientFactory;
+  protected $httpClient;
+
+  /**
+   * Helper for Sourcing the sites.
+   *
+   * @var DataSourceManager
+   */
+  protected DataSourceManager $dataSource;
+
+  /**
+   * The system config factory.
+   *
+   * @var \Drupal\Core\Config\ConfigFactoryInterface
+   */
+  protected ConfigFactoryInterface $configFactory;
 
   /**
    * Hold the ids of all the created value.
@@ -85,21 +99,7 @@ class Importer {
   protected array $schema;
 
   /**
-   * Helper for Sourcing the sites.
-   *
-   * @var DataSourceManager
-   */
-  protected DataSourceManager $siteSource;
-
-  /**
-   * The system config factory.
-   *
-   * @var \Drupal\Core\Config\ConfigFactoryInterface
-   */
-  protected ConfigFactoryInterface $configFactory;
-
-  /**
-   * Constructs an Importer object.
+   * Constructs DataImporter object.
    *
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
    *   The entity type manager.
@@ -113,10 +113,12 @@ class Importer {
    *   Helper Service for deleting content.
    * @param \Drupal\Core\Messenger\MessengerInterface $messenger
    *   The messenger service.
-   * @param \Drupal\Core\Http\ClientFactory $clientFactory
-   *   The Https Client Factory service.
-   * @param DataSourceManager $siteSource
+   * @param \GuzzleHttp\ClientInterface $httpClient
+   *   The HTTP client.
+   * @param \Drupal\convivial_content\DataSourceManager $dataSource
    *   The helper service to fetch Site Source data.
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $configFactory
+   *   Config Factory.
    */
   public function __construct(
     EntityTypeManagerInterface $entity_type_manager,
@@ -125,8 +127,8 @@ class Importer {
     ModuleHandlerInterface $moduleHandler,
     SiteCleanupManager $siteCleanupManager,
     MessengerInterface $messenger,
-    ClientFactory $clientFactory,
-    DataSourceManager $siteSource,
+    ClientInterface $httpClient,
+    DataSourceManager $dataSource,
     ConfigFactoryInterface $configFactory
   ) {
     $this->entityTypeManager = $entity_type_manager;
@@ -135,22 +137,21 @@ class Importer {
     $this->moduleHandler = $moduleHandler;
     $this->siteCleanupManager = $siteCleanupManager;
     $this->messenger = $messenger;
-    $this->clientFactory = $clientFactory;
-    $this->siteSource = $siteSource;
+    $this->httpClient = $httpClient;
+    $this->dataSource = $dataSource;
     $this->configFactory = $configFactory;
     $this->dictionary = [];
     $this->schema = [];
-
   }
 
   /**
-   * Import all the entities.
+   * Import data into the Drupal entities.
    *
    * @param array $yamlData
    *   Array of all the entities.
    * @param string $sourceUrl
    *   Source Url.
-   * @param int $consent
+   * @param int $siteCleanup
    *   Consent for deleting existing entities.
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
@@ -159,42 +160,44 @@ class Importer {
    * @throws \GuzzleHttp\Exception\GuzzleException
    * @throws \Exception
    */
-  public function importContent(array $yamlData, string $sourceUrl, int $consent) {
+  public function importContent(array $yamlData, string $sourceUrl, int $siteCleanup) {
 
     $schemaFilename = $yamlData['schema'] . '.yaml';
-    $this->schema = $this->siteSource->getFileContent($sourceUrl, $schemaFilename);
+    $this->schema = $this->dataSource->getFileContent($sourceUrl, $schemaFilename);
 
-    if (array_key_exists('vocabulary', $yamlData)) {
-      $consent && $this->siteCleanupManager->delete('taxonomy_term');
-      $terms = $this->processContent('vocabulary', 'taxonomy_term', $yamlData['vocabulary']);
+    // Use if statement over switch to keep
+    // control of the ordering of data processing.
+    if (array_key_exists('taxonomy_term', $yamlData)) {
+      $siteCleanup && $this->siteCleanupManager->delete('taxonomy_term');
+      $terms = $this->processContent('taxonomy_term', $yamlData['taxonomy_term']);
       $terms && $this->importTerms($terms);
     }
     if (array_key_exists('media', $yamlData)) {
-      $consent && $this->siteCleanupManager->delete('media', 'image');
-      $images = $this->processContent('media', 'media', $yamlData['media']);
+      $siteCleanup && $this->siteCleanupManager->delete('media', 'image');
+      $images = $this->processContent( 'media', $yamlData['media']);
       $images && $this->importMedia($images);
     }
-    if (array_key_exists('content-block', $yamlData)) {
+    if (array_key_exists('block_content', $yamlData)) {
       // Delete the only block_content that will be imported.
-      if ($consent) {
-        $type = array_keys($yamlData['content-block']);
+      if ($siteCleanup) {
+        $type = array_keys($yamlData['block_content']);
         foreach ($type as $name) {
           $this->siteCleanupManager->delete('block_content', $name);
         }
       }
       // Import block content.
-      $blockContent = $this->processContent('content-block', 'block_content', $yamlData['content-block']);
+      $blockContent = $this->processContent( 'block_content', $yamlData['block_content']);
       $blockContent && $this->importBlockContent($blockContent);
     }
-    if (array_key_exists('content-type', $yamlData)) {
-      if ($consent) {
+    if (array_key_exists('node', $yamlData)) {
+      if ($siteCleanup) {
         // Delete only the nodes which have exported data.
-        foreach ($yamlData['content-type'] as $bundleName => $fields) {
+        foreach ($yamlData['node'] as $bundleName => $fields) {
           $this->siteCleanupManager->delete('node', $bundleName);
         }
       }
 
-      $nodes = $this->processContent('content-type', 'node', $yamlData['content-type']);
+      $nodes = $this->processContent('node', $yamlData['node']);
       $this->importNode($nodes);
     }
 
@@ -225,20 +228,20 @@ class Importer {
       }
     }
 
-    // @todo Delete existing paragraph which might get imported.
+    // Delete all existing paragraphs before importing.
     $this->siteCleanupManager->delete('paragraph');
 
     // Create a paragraph and set its place in any reference entity.
-    if (array_key_exists('paragraphs', $this->dictionary)) {
-      $para = $this->processContent('paragraphs', 'paragraph', $this->dictionary["paragraphs"]);
-      $this->importParagraphs($para);
+    if (array_key_exists('paragraph', $this->dictionary)) {
+      $paragraph = $this->processContent( 'paragraph', $this->dictionary["paragraph"]);
+      $this->importParagraphs($paragraph);
     }
 
     if (array_key_exists('menu', $yamlData)) {
-      $consent && $this->importMenuLinks($yamlData['menu']);
+      $siteCleanup && $this->importMenuLinks($yamlData['menu']);
     }
     if (array_key_exists('site', $yamlData)) {
-      $consent && $this->setSiteConfig($yamlData['site']);
+      $siteCleanup && $this->setSiteConfig($yamlData['site']);
     }
 
   }
@@ -246,8 +249,6 @@ class Importer {
   /**
    * Process any entity type so that I can be created.
    *
-   * @param string $collectionName
-   *   Name of the collection in the YAML file.
    * @param string $entityType
    *   Entity type name.
    * @param array $entityData
@@ -260,9 +261,9 @@ class Importer {
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    * @throws \Exception
    */
-  protected function processContent(string $collectionName, string $entityType, array $entityData): array {
+  protected function processContent(string $entityType, array $entityData): array {
     $content = [];
-    $schema = $this->schema[$collectionName];
+    $schema = $this->schema[$entityType];
     foreach ($entityData as $bundleName => $data) {
       // The paragraph data is handled separately
       // and created after its referred entity is created.
@@ -342,12 +343,12 @@ class Importer {
                       ];
                       break;
 
-                    case 'paragraphs':
+                    case 'paragraph':
                       if ($this->moduleHandler->moduleExists('paragraphs')) {
                         // Add paragraph data to the dictionary,
                         // so that its reference can be added
                         // when the entity is created.
-                        $this->dictionary['paragraphs'][$entityType][] = [
+                        $this->dictionary['paragraph'][$entityType][] = [
                           'name' => ($entityType === 'block_content') ? $propertyValues['info'] : $propertyValues['title'],
                           'field_name' => $bundleSchema[$key]['field'],
                           'para' => $value,
@@ -618,9 +619,7 @@ class Importer {
    * @throws \GuzzleHttp\Exception\GuzzleException
    */
   protected function createImageFile(array $image): mixed {
-
-    $client = $this->clientFactory->fromOptions();
-    $response = $client->get($image['field_media_image']);
+    $response = $this->httpClient->get($image['field_media_image']);
     $fileContent = $response->getBody()->getContents();
     if (!empty($fileContent)) {
       $contentType = $response->getHeader('Content-Type');
