@@ -1,0 +1,7 @@
+{#{{ attach_library('convivial_bootstrap/fastfacts') }}#}
+
+<div{{ attributes.addClass('fastfacts', classes) }}>
+  <div class="fastfact">
+    {% block fastfact_content %}{% endblock %}
+  </div>
+</div>

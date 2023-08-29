@@ -4,7 +4,7 @@
  */
 
 (function ($) {
-  Drupal.behaviors.fastFacts= {
+  Drupal.behaviors.fastfacts= {
     attach: function (context, settings) {
 
       function count($this, number, context){
@@ -28,4 +28,4 @@
     }
   };
 
-})(jQuery);
+})(jQuery, Drupal);

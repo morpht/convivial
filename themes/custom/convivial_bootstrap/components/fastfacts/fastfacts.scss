@@ -1,5 +1,9 @@
 /*! @convivial_bootstrap/fastfacts */
 
+@import "../../libraries/bootstrap/scss/functions";
+@import "../../base/scss/variables-override";
+@import "../../libraries/bootstrap/scss/variables";
+
 .fastfact {
   h3 {
     margin: 0;
