@@ -22,6 +22,7 @@ install:
   - contextual
   - convivial_breakpoints
   - convivial_core
+  - convivial_content
   - convivial_enricher
   - convivial_layouts
   - convivial_profiler
