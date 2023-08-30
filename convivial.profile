@@ -56,32 +56,34 @@ function convivial_form_install_configure_form_alter(&$form, FormStateInterface 
  * Submission handler to import the dataset.
  */
 function convivial_import_content(array $form, FormStateInterface $form_state) {
-  /** @var \Drupal\convivial_content\DataSourceManager $sourceManager */
-  $sourceManager = \Drupal::service('convivial_content.data_source_manager');
-
-  $config = \Drupal::config('convivial_content.settings');
-  $sourceUrl = $config->get('source_url');
-
   $dataset = $form_state->getValue('dataset');
-  $custom_yaml = $form_state->getValue('custom_dataset') === '' ? NULL : $form_state->getValue('custom_dataset');
-  $yml = '';
-  if ($dataset === 'custom' && isset($custom_yaml)) {
-    $yml = Yaml::parse($custom_yaml);
-  }
-  else {
-    $datasetValue = $sourceManager->fetchDataset($sourceUrl, $dataset);
-    array_key_exists('file', $datasetValue) &&
-    $yml = $sourceManager->getFileContent($sourceUrl, $datasetValue['file']);
-  }
+  if ($dataset !== 'none') {
+    /** @var \Drupal\convivial_content\DataSourceManager $sourceManager */
+    $sourceManager = \Drupal::service('convivial_content.data_source_manager');
 
-  /** @var \Drupal\convivial_content\DataImporter $dataImporter */
-  $dataImporter = \Drupal::service('convivial_content.data_importer');
+    $config = \Drupal::config('convivial_content.settings');
+    $sourceUrl = $config->get('source_url');
 
-  try {
-    $dataImporter->importContent($yml, $sourceUrl, 1);
-    \Drupal::messenger()->addMessage(ucfirst($dataset) . ' demo content installed.');
-  }
-  catch (\Exception $e) {
-    \Drupal::logger('convivial_content')->warning('An unexpected error occurred: ' . $e->getMessage());
+    $custom_yaml = $form_state->getValue('custom_dataset') === '' ? NULL : $form_state->getValue('custom_dataset');
+    $yml = '';
+    if ($dataset === 'custom' && isset($custom_yaml)) {
+      $yml = Yaml::parse($custom_yaml);
+    }
+    else {
+      $datasetValue = $sourceManager->fetchDataset($sourceUrl, $dataset);
+      array_key_exists('file', $datasetValue) &&
+      $yml = $sourceManager->getFileContent($sourceUrl, $datasetValue['file']);
+    }
+
+    /** @var \Drupal\convivial_content\DataImporter $dataImporter */
+    $dataImporter = \Drupal::service('convivial_content.data_importer');
+
+    try {
+      $dataImporter->importContent($yml, $sourceUrl, 1);
+      \Drupal::messenger()->addMessage(ucfirst($dataset) . ' demo content installed.');
+    }
+    catch (\Exception $e) {
+      \Drupal::logger('convivial_content')->warning('An unexpected error occurred: ' . $e->getMessage());
+    }
   }
 }
