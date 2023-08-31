@@ -106,6 +106,7 @@
     "drupal/replicate": "^1.2",
     "drupal/replicate_ui": "^1.1",
     "drupal/responsive_preview": "^2.0",
+    "drupal/role_delegation": "^1.2",
     "drupal/sajari": "^1.0",
     "drupal/schema_metatag": "^2.2",
     "drupal/search_api": "^1.27",
