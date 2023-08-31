@@ -15,47 +15,43 @@ use Symfony\Component\Yaml\Yaml;
  */
 function convivial_form_install_configure_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $form['site_information']['site_name']['#default_value'] = 'Convivial CXP';
-  $moduleHandler = \Drupal::service('module_handler');
-  if ($moduleHandler->moduleExists('convivial_content')) {
+  $config = \Drupal::config('convivial_content.settings');
+  $sourceUrl = $config->get('source_url');
 
-    $config = \Drupal::config('convivial_content.settings');
-    $sourceUrl = $config->get('source_url');
+  /** @var \Drupal\convivial_content\DataSourceManager $sourceManager */
+  $sourceManager = \Drupal::service('convivial_content.data_source_manager');
 
-    /** @var \Drupal\convivial_content\DataSourceManager $sourceManager */
-    $sourceManager = \Drupal::service('convivial_content.data_source_manager');
+  $datasets = ['none' => 'None'];
+  $datasets += $sourceManager->fetchDatasets($sourceUrl);
+  $datasets += ['custom' => 'Custom'];
 
-    $datasets = ['none' => 'None'];
-    $datasets += $sourceManager->fetchDatasets($sourceUrl);
-    $datasets += ['custom' => 'Custom'];
-
-    $form['dataset'] = [
-      '#type' => 'select',
-      '#title' => t('Dataset'),
-      '#options' => $datasets,
-      '#description' => t("Select the dataset retrieved from the specified data source."),
-    ];
-    $form['custom_dataset'] = [
-      '#type' => 'textarea',
-      '#title' => t('Paste the Custom YML Data'),
-      '#description' => t("Please provide the YML dataset for the site content."),
-      '#rows' => 10,
-      '#states' => [
-        'visible' => [
-          ':input[name="dataset"]' => [
-            'value' => 'custom',
-          ],
+  $form['dataset'] = [
+    '#type' => 'select',
+    '#title' => t('Dataset'),
+    '#options' => $datasets,
+    '#description' => t('Select the dataset retrieved from the specified data source.'),
+  ];
+  $form['custom_dataset'] = [
+    '#type' => 'textarea',
+    '#title' => t('Paste the Custom YML Data'),
+    '#description' => t('Please provide the YML dataset for the site content.'),
+    '#rows' => 10,
+    '#states' => [
+      'visible' => [
+        ':input[name="dataset"]' => [
+          'value' => 'custom',
         ],
       ],
-    ];
+    ],
+  ];
 
-    $form['#submit'][] = 'convivial_import_content';
-  }
+  $form['#submit'][] = '_convivial_content_import';
 }
 
 /**
  * Submission handler to import the dataset.
  */
-function convivial_import_content(array $form, FormStateInterface $form_state) {
+function _convivial_content_import(array $form, FormStateInterface $form_state) {
   $dataset = $form_state->getValue('dataset');
   if ($dataset !== 'none') {
     /** @var \Drupal\convivial_content\DataSourceManager $sourceManager */
