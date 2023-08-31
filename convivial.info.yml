@@ -100,7 +100,6 @@ install:
   - replicate_ui
   - responsive_preview
   - rest
-  - role_delegation
   - sajari
   - search_api
   - search_api_db
