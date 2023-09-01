@@ -9,7 +9,6 @@ dependencies:
     - file
     - filter
     - redirect
-    - role_delegation
     - system
     - toolbar
 id: manager

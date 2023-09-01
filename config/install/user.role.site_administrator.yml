@@ -63,7 +63,6 @@ dependencies:
     - replicate_ui
     - responsive_image
     - rest
-    - role_delegation
     - search_api
     - seckit
     - shortcut
@@ -171,8 +170,8 @@ permissions:
   - 'administer webform submission'
   - 'administer workflows'
   - 'ban IP addresses'
-  - 'bypass node access'
   - 'bypass paragraphs type content access'
+  - 'bypass` node access'
   - 'cancel account'
   - 'change own username'
   - 'configure all article node layout overrides'
