@@ -38,7 +38,7 @@ This profile is meant to be used in conjunction with `convivial-recommended` pro
 
 ## Starting a new site - Technical details
 
-
+* Use the `convivial-recommended` starter kit to spin up a new website.
 
 
 ## Updating
