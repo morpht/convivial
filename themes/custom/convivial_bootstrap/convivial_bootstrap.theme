@@ -237,37 +237,39 @@ function convivial_bootstrap_preprocess_layout(&$variables) {
 
   // Replace calendar item date field content by custom template.
   if ($layout_id === 'calendar_item') {
-    foreach (Element::children($variables['content']['date']) as $name) {
-      $block = &$variables['content']['date'][$name];
-      if (!empty($block['content']['#field_name']) && $entity && $entity->get($block['content']['#field_name'])) {
-        $field = $entity->get($block['content']['#field_name']);
-        $timestamp = NULL;
+    if (isset($variables['content']['date'])) {
+      foreach (Element::children($variables['content']['date']) as $name) {
+        $block = &$variables['content']['date'][$name];
+        if (!empty($block['content']['#field_name']) && $entity && $entity->get($block['content']['#field_name'])) {
+          $field = $entity->get($block['content']['#field_name']);
+          $timestamp = NULL;
 
-        switch ($block['content']['#field_type']) {
-          case 'datetime':
-          case 'daterange':
-            $timestamp = strtotime($field->value);
-            break;
+          switch ($block['content']['#field_type']) {
+            case 'datetime':
+            case 'daterange':
+              $timestamp = strtotime($field->value);
+              break;
 
-          case 'timestamp':
-          case 'created':
-          case 'changed':
-            $timestamp = $field->value;
-            break;
-        }
+            case 'timestamp':
+            case 'created':
+            case 'changed':
+              $timestamp = $field->value;
+              break;
+          }
 
-        if (!empty($timestamp)) {
-          $datetime = new DrupalDateTime();
-          $datetime->setTimestamp($timestamp + $datetime->getOffset());
-          $block['content'][0] = [
-            '#theme' => 'calendar_item_date',
-            '#datetime' => $datetime,
-            '#attached' => [
-              'library' => [
-                'convivial_bootstrap/calendar-item',
+          if (!empty($timestamp)) {
+            $datetime = new DrupalDateTime();
+            $datetime->setTimestamp($timestamp + $datetime->getOffset());
+            $block['content'][0] = [
+              '#theme' => 'calendar_item_date',
+              '#datetime' => $datetime,
+              '#attached' => [
+                'library' => [
+                  'convivial_bootstrap/calendar-item',
+                ],
               ],
-            ],
-          ];
+            ];
+          }
         }
       }
     }
@@ -287,28 +289,30 @@ function convivial_bootstrap_preprocess_layout(&$variables) {
   ) {
     $clickable = FALSE;
 
-    foreach (Element::children($variables['content']['title']) as $name) {
-      $block = &$variables['content']['title'][$name];
+    if (isset($variables['content']['title'])) {
+      foreach (Element::children($variables['content']['title']) as $name) {
+        $block = &$variables['content']['title'][$name];
 
-      // Check if item is linked to some URL.
-      if (array_key_exists('content', $block) && array_key_exists('#field_name', $block['content'])) {
-        if ($block['content']['#field_name'] === 'field_heading') {
-          $item = NULL;
-          // Only if URL field is available.
-          if ($entity->id() !== NULL && $entity->hasField('field_item_url')) {
-            $item = $entity->get('field_item_url')->first();
+        // Check if item is linked to some URL.
+        if (array_key_exists('content', $block) && array_key_exists('#field_name', $block['content'])) {
+          if ($block['content']['#field_name'] === 'field_heading') {
+            $item = NULL;
+            // Only if URL field is available.
+            if ($entity->id() !== NULL && $entity->hasField('field_item_url')) {
+              $item = $entity->get('field_item_url')->first();
+            }
+            if (!empty($item)) {
+              $block['content']['#item_url'] = $item->getUrl();
+              $clickable = TRUE;
+            }
           }
-          if (!empty($item)) {
-            $block['content']['#item_url'] = $item->getUrl();
+
+          // Check if node title is linked to entity.
+          elseif ($block['content']['#field_name'] === 'title'
+            && !empty($block['#configuration']['formatter']['settings']['link_to_entity'])
+          ) {
             $clickable = TRUE;
           }
-        }
-
-        // Check if node title is linked to entity.
-        elseif ($block['content']['#field_name'] === 'title'
-          && !empty($block['#configuration']['formatter']['settings']['link_to_entity'])
-        ) {
-          $clickable = TRUE;
         }
       }
     }
