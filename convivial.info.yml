@@ -49,7 +49,6 @@ install:
   - focal_point
   - geofield
   - geofield_map
-  - google_analytics
   - google_tag
   - gtranslate
   - help
@@ -100,7 +99,6 @@ install:
   - replicate_ui
   - responsive_preview
   - rest
-  - sajari
   - search_api
   - search_api_db
   - search_api_field_token
