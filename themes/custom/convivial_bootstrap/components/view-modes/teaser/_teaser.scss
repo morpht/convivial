@@ -76,7 +76,7 @@ $teaser--medium_image-width: 12.5rem; // 200px
 }
 
 .teaser__tags {
-  color: $text-muted;
+  color: var(--alt-text);
   @include font-size($small-font-size);
 }
 
