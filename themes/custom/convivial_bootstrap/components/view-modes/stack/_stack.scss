@@ -115,6 +115,13 @@
       }
     }
 
+    // If the link is expanded it prevents from adding new fields to the region.
+    .layout-builder & {
+      .card-title a:after {
+        display: none;
+      }
+    }
+
     .stack__image img {
       transition: transform $view-modes-transition-time;
     }
