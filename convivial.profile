@@ -25,20 +25,25 @@ function convivial_form_install_configure_form_alter(&$form, FormStateInterface 
   $datasets += $sourceManager->fetchDatasets($sourceUrl);
   $datasets += ['custom' => 'Custom'];
 
-  $form['dataset'] = [
+  $form['default_content'] = [
+    '#type' => 'fieldgroup',
+    '#title' => t('Default content'),
+  ];
+
+  $form['default_content']['site'] = [
     '#type' => 'select',
-    '#title' => t('Dataset'),
+    '#title' => t('Site'),
     '#options' => $datasets,
     '#description' => t('Select the dataset retrieved from the specified data source.'),
   ];
-  $form['custom_dataset'] = [
+  $form['default_content']['custom_site'] = [
     '#type' => 'textarea',
     '#title' => t('Paste the Custom YML Data'),
     '#description' => t('Please provide the YML dataset for the site content.'),
     '#rows' => 10,
     '#states' => [
       'visible' => [
-        ':input[name="dataset"]' => [
+        ':input[name="site"]' => [
           'value' => 'custom',
         ],
       ],
@@ -52,7 +57,7 @@ function convivial_form_install_configure_form_alter(&$form, FormStateInterface 
  * Submission handler to import the dataset.
  */
 function _convivial_content_import(array $form, FormStateInterface $form_state) {
-  $dataset = $form_state->getValue('dataset');
+  $dataset = $form_state->getValue('site');
   if ($dataset !== 'none') {
     /** @var \Drupal\convivial_content\DataSourceManager $sourceManager */
     $sourceManager = \Drupal::service('convivial_content.data_source_manager');
@@ -60,7 +65,7 @@ function _convivial_content_import(array $form, FormStateInterface $form_state) 
     $config = \Drupal::config('convivial_content.settings');
     $sourceUrl = $config->get('source_url');
 
-    $custom_yaml = $form_state->getValue('custom_dataset') === '' ? NULL : $form_state->getValue('custom_dataset');
+    $custom_yaml = $form_state->getValue('custom_site') === '' ? NULL : $form_state->getValue('custom_site');
     $yml = '';
     if ($dataset === 'custom' && isset($custom_yaml)) {
       $yml = Yaml::parse($custom_yaml);
