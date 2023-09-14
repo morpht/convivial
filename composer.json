@@ -135,7 +135,8 @@
       "drupal/core": {
         "2793343 - Dialog drupalAutoButtons option should be respected on initial load": "https://www.drupal.org/files/issues/2023-04-21/2793343-78.patch",
         "2309585 - There should be no output of default formatter for empty text field when summary has content": "https://www.drupal.org/files/issues/2018-07-19/empty_text_formatter_for_empty_fields-2309585-13.patch",
-        "2842858 - Site lock and basic auth combo": "https://www.drupal.org/files/issues/basic_auth_0.patch"
+        "2842858 - Site lock and basic auth combo": "https://www.drupal.org/files/issues/basic_auth_0.patch",
+        "3326684 - Deprecated function mb_strtolower passing null to parameter": "https://www.drupal.org/files/issues/2023-09-14/3326684-22.patch"
       },
       "drupal/layout_library": {
         "3133484 - Form blocks rendered inside layout builder library break save": "https://www.drupal.org/files/issues/2020-05-04/layout-library-save-issue-3133484-4.patch"
