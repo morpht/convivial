@@ -48,7 +48,7 @@
         {% block date %}
           {% if content.date|render|striptags|trim %}
             <small{{ region_attributes.date.addClass('layout__region', 'layout__region--date', 'stack__date') }}>
-              {{ content.date }}
+              {{ content.date|render|striptags('<time>')|raw }}
             </small>
           {% endif %}
         {% endblock %}
