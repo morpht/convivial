@@ -117,7 +117,7 @@
     "drupal/webform": "^6.1",
     "drush/drush": "^12",
     "grasmash/drupal-security-warning": "dev-master",
-    "morpht/mdt": "dev-main",
+    "morpht/mdt": "^1.0.1",
     "npm-asset/datatables": "^1.10.19",
     "npm-asset/handlebars": "^4.7",
     "npm-asset/jarallax": "^1.12.4",
