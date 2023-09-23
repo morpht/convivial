@@ -1,0 +1,31 @@
+name: Build and Test
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - ready_for_review
+
+jobs:
+  build:
+    name: Build Convivial
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout.
+        uses: actions/checkout@v3
+      - name: Setup PHP and tools
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          tools: composer:v2
+          extensions: mbstring, gd, intl, yaml, bcmath, curl
+      - name: Execute Composer install
+        run: composer install
+      - name: Validate composer.json and composer.lock
+        run: composer validate

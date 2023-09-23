@@ -1,0 +1,27 @@
+name: Build
+# Triggers the nightly workflow.
+on:
+  schedule:
+    # Weekday (22=10pm UTC). Evaluates to 8am AEST.
+    - cron: '0 22 * * *'
+
+jobs:
+  build:
+    name: Build Convivial
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macOS-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout.
+        uses: actions/checkout@v3
+      - name: Setup PHP and tools
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          tools: composer:v2
+          extensions: mbstring, gd, intl, yaml, bcmath, curl
+      - name: Execute Composer install
+        run: composer install
+      - name: Validate composer.json and composer.lock
+        run: composer validate
