@@ -11,7 +11,16 @@
       "email": "murray@morpht.com"
     }
   ],
-  "sort-packages": true,
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    },
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ],
   "require": {
     "bower-asset/chosen": "^1.8.7",
     "bower-asset/popper.js": "^2.4",
@@ -126,6 +135,25 @@
     "oomphinc/composer-installers-extender": "^2.0",
     "pantheon-systems/drupal-integrations": "^10",
     "pear/archive_tar": "^1.4"
+  },
+  "config": {
+    "bin-dir": "bin/",
+    "sort-packages": true,
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "platform": {
+      "php": "8.1"
+    },
+    "allow-plugins": {
+      "composer/installers": true,
+      "cweagans/composer-patches": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "drupal/core-composer-scaffold": true,
+      "ergebnis/composer-normalize": true,
+      "grasmash/drupal-security-warning": true,
+      "oomphinc/composer-installers-extender": true,
+      "phpstan/extension-installer": true
+    }
   },
   "extra": {
     "enable-patching": true,
