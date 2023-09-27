@@ -28,7 +28,6 @@ dependencies:
     - workflows.workflow.editorial
   module:
     - admin_toolbar_search
-    - ban
     - block
     - block_content
     - config
@@ -169,7 +168,6 @@ permissions:
   - 'administer webform element access'
   - 'administer webform submission'
   - 'administer workflows'
-  - 'ban IP addresses'
   - 'bypass node access'
   - 'bypass paragraphs type content access'
   - 'cancel account'
