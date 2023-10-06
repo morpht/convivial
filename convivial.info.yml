@@ -148,3 +148,5 @@ themes:
   - claro
   - convivial_bootstrap
   - convivial_claro
+distribution:
+  name: Convivial
