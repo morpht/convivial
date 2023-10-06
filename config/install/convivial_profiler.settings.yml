@@ -387,7 +387,7 @@ profilers:
           - audience_crm
           - audience_recent
           - audience_top
-        default_value: 'audience:general'
+        default_value: audience-general
         target_location:
           localstorage: localstorage
           cookie: '0'
@@ -834,7 +834,7 @@ profilers:
           - outcome
           - campaign
           - audience
-        default_value: 'audience:general'
+        default_value: audience-general
         target_location:
           localstorage: localstorage
           cookie: '0'

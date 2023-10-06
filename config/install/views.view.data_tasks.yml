@@ -106,7 +106,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "{% if field_key != 'audience:general' %}\r\n{{'Top tasks for'|t }} {{ title_1|lower }}\r\n{% endif %}"
+            text: "{% if field_key != 'audience-general' %}\r\n{{'Top tasks for'|t }} {{ title_1|lower }}\r\n{% endif %}"
             make_link: false
             path: ''
             absolute: false
