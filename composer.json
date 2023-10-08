@@ -164,6 +164,9 @@
       "drupal/layout_library": {
         "3133484 - Form blocks rendered inside layout builder library break save": "https://www.drupal.org/files/issues/2020-05-04/layout-library-save-issue-3133484-4.patch"
       },
+      "drupal/layout_paragraphs": {
+        "3276258 -  Overlay Widget Jump Stutter": "https://www.drupal.org/files/issues/2023-09-21/layout_paragraphs-overlay_widget_jump_stutter-3276258-20_0.patch"
+      },
       "drupal/redirect": {
         "3037259 - Endless Redirection loop when using Domain access": "https://www.drupal.org/files/issues/2022-09-13/3037259-28.patch"
       }
