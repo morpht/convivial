@@ -14,8 +14,6 @@ install:
   - clamav
   - components
   - config
-  - config_filter
-  - config_split
   - config_update
   - contextual
   - convivial_breakpoints

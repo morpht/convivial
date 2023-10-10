@@ -2,6 +2,7 @@
   "name": "morpht/convivial",
   "description": "Drupal personalized installation profile created by Morpht.",
   "minimum-stability": "dev",
+  "prefer-stable": true,
   "license": "proprietary",
   "type": "drupal-profile",
   "version": "v1",
