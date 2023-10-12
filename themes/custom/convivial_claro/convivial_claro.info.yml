@@ -2,6 +2,7 @@ name: 'Convivial Claro'
 description: 'Convivial administration theme.'
 base theme: claro
 core_version_requirement: ^9.5 || ^10
+# 34386-DoNotMerge Change test.
 type: theme
 libraries:
   - convivial_claro/global-styles

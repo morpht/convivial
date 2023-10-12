@@ -2,6 +2,7 @@ name: Convivial
 type: profile
 description: 'Convivial profile by Morpht.'
 core_version_requirement: ^10
+# 34386-DoNotMerge Change test.
 install:
   - address
   - admin_toolbar
