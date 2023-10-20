@@ -2,13 +2,21 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.media.image.field__image_racy
+    - field.field.media.image.field_augmentor_safe_search
     - field.field.media.image.field_body
+    - field.field.media.image.field_image_adult
+    - field.field.media.image.field_image_augmentor
+    - field.field.media.image.field_image_medical
+    - field.field.media.image.field_image_spoof
+    - field.field.media.image.field_image_violence
     - field.field.media.image.field_media_image
     - field.field.media.image.field_search_exclude
     - field.field.media.image.field_tags
     - image.style.thumbnail
     - media.type.image
   module:
+    - augmentor
     - focal_point
     - text
 id: media.image.default
@@ -18,19 +26,93 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 4
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
+  field__image_racy:
+    type: options_select
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_augmentor_safe_search:
+    type: augmentor_default_widget
+    weight: 14
+    region: content
+    settings:
+      source_fields:
+        - field_image_medical
+      targets:
+        0:
+          target_field: field__image_racy
+          key: racy
+        1:
+          target_field: field_image_spoof
+          key: spoof
+        2:
+          target_field: field_image_adult
+          key: adult
+        3:
+          target_field: field_image_violence
+          key: violence
+        actions:
+          add_target: 'Add one more target'
+          remove_target: 'Remove last target'
+      augmentor: 129bc4db-e1b1-4f61-a836-b994f86c1f18
+      action: replace
+      trim: none
+      button_label: ' Detect explicit content (SafeSearch)'
+      rows: '5'
+      placeholder: ''
+    third_party_settings: {  }
   field_body:
     type: text_textarea_with_summary
-    weight: 29
+    weight: 8
     region: content
     settings:
       rows: 9
       summary_rows: 3
       placeholder: ''
       show_summary: false
+    third_party_settings: {  }
+  field_image_adult:
+    type: options_select
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_image_augmentor:
+    type: augmentor_default_widget
+    weight: 3
+    region: content
+    settings:
+      augmentor: ''
+      source_fields: {  }
+      targets: {  }
+      action: ''
+      trim: ''
+      button_label: ''
+      rows: '5'
+      placeholder: ''
+    third_party_settings: {  }
+  field_image_medical:
+    type: options_select
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_image_spoof:
+    type: options_select
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_image_violence:
+    type: options_select
+    weight: 12
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_media_image:
     type: image_focal_point
@@ -44,14 +126,14 @@ content:
     third_party_settings: {  }
   field_search_exclude:
     type: boolean_checkbox
-    weight: 28
+    weight: 7
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   field_tags:
     type: entity_reference_autocomplete_tags
-    weight: 26
+    weight: 2
     region: content
     settings:
       match_operator: CONTAINS
@@ -69,14 +151,14 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 2
+    weight: 4
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 3
+    weight: 5
     region: content
     settings:
       match_operator: CONTAINS

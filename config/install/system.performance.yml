@@ -1,0 +1,18 @@
+adding:
+  cache:
+    page:
+      max_age: 0
+  css:
+    preprocess: false
+  js:
+    preprocess: false
+removing:
+  _core:
+    default_config_hash: b2cssrj-lOmATIbdehfCqfCFgVR0qCdxxWhwqa2KBVQ
+  cache:
+    page:
+      max_age: 21600
+  css:
+    preprocess: true
+  js:
+    preprocess: true

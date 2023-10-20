@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_image_augmentor
+    - media.type.image
+  module:
+    - augmentor
+id: media.image.field_image_augmentor
+field_name: field_image_augmentor
+entity_type: media
+bundle: image
+label: 'Image Augmentor'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: field_augmentor_type
