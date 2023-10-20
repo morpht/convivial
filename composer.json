@@ -108,7 +108,6 @@
     "drupal/schema_metatag": "^3.0",
     "drupal/search_api": "^1.27",
     "drupal/search_api_autocomplete": "^1.5",
-    "drupal/search_api_field_token": "^1.0",
     "drupal/search_api_recombee": "^4.0",
     "drupal/search_api_solr": "^4.2",
     "drupal/seckit": "^2.0",
