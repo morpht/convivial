@@ -91,7 +91,6 @@ install:
   - rest
   - search_api
   - search_api_db
-  - search_api_field_token
   - search_api_recombee
   - sendgrid_integration
   - shortcut
