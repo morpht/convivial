@@ -146,3 +146,5 @@ themes:
   - convivial_claro
 distribution:
   name: Convivial
+  install:
+    finish_url: '/admin/config/convivial/content'
