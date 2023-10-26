@@ -31,6 +31,7 @@ dependencies:
     - block
     - block_content
     - config
+    - config_split
     - content_moderation
     - contextual
     - convivial_core
@@ -106,6 +107,7 @@ permissions:
   - 'administer block_content fields'
   - 'administer block_content form display'
   - 'administer blocks'
+  - 'administer configuration split'
   - 'administer content types'
   - 'administer convivial profiler'
   - 'administer crop'
