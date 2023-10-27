@@ -51,7 +51,7 @@ install:
   - inline_entity_form
   - jquery_ui
   - json_template
-  - layout_builder_modal
+  - layout_builder_iframe_modal
   - layout_library
   - layout_paragraphs
   - link

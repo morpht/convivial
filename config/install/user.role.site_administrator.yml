@@ -46,7 +46,7 @@ dependencies:
     - filter
     - image
     - layout_builder
-    - layout_builder_modal
+    - layout_builder_iframe_modal
     - linkit
     - media
     - metatag
@@ -118,7 +118,6 @@ permissions:
   - 'administer facets'
   - 'administer filters'
   - 'administer image styles'
-  - 'administer layout builder modal'
   - 'administer linkit profiles'
   - 'administer media'
   - 'administer media display'
@@ -185,6 +184,7 @@ permissions:
   - 'configure editable person node layout overrides'
   - 'configure editable place node layout overrides'
   - 'configure editable topic node layout overrides'
+  - 'configure layout builder iframe modal'
   - 'create and edit custom blocks'
   - 'create article content'
   - 'create audience content'
