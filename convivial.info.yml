@@ -39,7 +39,6 @@ install:
   - facets
   - facets_pretty_paths
   - field_formatter_pattern
-  - field_token_value
   - field_ui
   - focal_point
   - geofield
