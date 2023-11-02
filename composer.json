@@ -89,7 +89,6 @@
     "drupal/modifiers": "^1.5",
     "drupal/modifiers_pack": "^2.1",
     "drupal/module_filter": "^4.0",
-    "drupal/pantheon_advanced_page_cache": "^2.1",
     "drupal/paragraphs": "^1.13",
     "drupal/password_policy": "^4.0",
     "drupal/pathauto": "^1.9",

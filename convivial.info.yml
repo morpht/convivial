@@ -72,7 +72,6 @@ install:
   - modifiers_hide
   - modifiers_scroll_reveal
   - module_filter
-  - pantheon_advanced_page_cache
   - paragraphs_type_permissions
   - password_policy
   - password_policy_character_types
