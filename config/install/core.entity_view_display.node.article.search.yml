@@ -21,7 +21,6 @@ dependencies:
     - field.field.node.article.field_published
     - field.field.node.article.field_search_exclude
     - field.field.node.article.field_social_message
-    - field.field.node.article.field_social_post
     - field.field.node.article.field_stage
     - field.field.node.article.field_suitable_for
     - field.field.node.article.field_summary
@@ -140,7 +139,6 @@ hidden:
   field_published: true
   field_search_exclude: true
   field_social_message: true
-  field_social_post: true
   field_stage: true
   field_suitable_for: true
   field_summary: true

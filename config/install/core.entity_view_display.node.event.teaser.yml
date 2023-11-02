@@ -22,7 +22,6 @@ dependencies:
     - field.field.node.event.field_meta_tags
     - field.field.node.event.field_search_exclude
     - field.field.node.event.field_social_message
-    - field.field.node.event.field_social_post
     - field.field.node.event.field_stage
     - field.field.node.event.field_summary
     - field.field.node.event.field_thumbnail
@@ -151,7 +150,6 @@ hidden:
   field_meta_tags: true
   field_search_exclude: true
   field_social_message: true
-  field_social_post: true
   field_stage: true
   field_summary: true
   field_thumbnail: true

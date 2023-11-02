@@ -21,7 +21,6 @@ dependencies:
     - field.field.node.event.field_meta_tags
     - field.field.node.event.field_search_exclude
     - field.field.node.event.field_social_message
-    - field.field.node.event.field_social_post
     - field.field.node.event.field_stage
     - field.field.node.event.field_summary
     - field.field.node.event.field_thumbnail
@@ -32,7 +31,6 @@ dependencies:
     - node.type.event
   module:
     - datetime
-    - field_token_value
     - layout_paragraphs
     - metatag
     - options
@@ -170,15 +168,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 21
-    region: content
-  field_social_post:
-    type: field_token_value_text
-    label: above
-    settings:
-      wrapper: ''
-      link: false
-    third_party_settings: {  }
-    weight: 20
     region: content
   field_stage:
     type: entity_reference_label

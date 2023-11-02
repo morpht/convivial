@@ -20,7 +20,6 @@ dependencies:
     - field.field.node.article.field_published
     - field.field.node.article.field_search_exclude
     - field.field.node.article.field_social_message
-    - field.field.node.article.field_social_post
     - field.field.node.article.field_stage
     - field.field.node.article.field_suitable_for
     - field.field.node.article.field_summary
@@ -33,7 +32,6 @@ dependencies:
   module:
     - datetime
     - entity_reference_revisions
-    - field_token_value
     - metatag
     - options
     - text
@@ -188,15 +186,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 24
-    region: content
-  field_social_post:
-    type: field_token_value_text
-    label: above
-    settings:
-      wrapper: ''
-      link: false
-    third_party_settings: {  }
-    weight: 23
     region: content
   field_stage:
     type: entity_reference_label
