@@ -1,4 +1,4 @@
-name: Build and Test
+name: Build, Validate and Test
 
 on:
   workflow_dispatch:
@@ -13,19 +13,90 @@ on:
       - ready_for_review
 
 jobs:
-  build:
-    name: Build Convivial
+  full:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event_name == 'push' || !github.event.pull_request.draft }}
+    name: Full (Build, Validate, and Test)
     runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/morpht/ci-php:8.1.20
+
+    services:
+      database:
+        image: mysql:5.7
+        env:
+          MYSQL_ROOT_PASSWORD: root
+        ports:
+          - 32574:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
+    env:
+      CI: GITHUB_ACTIONS
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER_PASSWORD: drupal
+      MYSQL_USER_NAME: drupal
+      MYSQL_DATABASE_NAME: drupal
+      MYSQL_HOST: database
+      GH_BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+      # github.head_ref is only defined on pull_request events.
+      # When not a PR, github.ref_name has the branch name.
+
     steps:
       - name: Checkout.
         uses: actions/checkout@v3
-      - name: Setup PHP and tools
-        uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.1'
-          tools: composer:v2
-          extensions: mbstring, gd, intl, yaml, bcmath, curl
-      - name: Execute Composer install
-        run: composer install
-      - name: Validate composer.json and composer.lock
-        run: composer validate
+          ref: ${{ github.event.pull_request.head.sha }}
+          # the commit ID for the last commit to the head branch of the pull request
+          # (the default is the last *merge* commit of the pull request merge branch)
+
+      - name: Prepare environment variables
+        run: |
+          echo "GITHUB_REF_NAME=$(echo ${GITHUB_REF##*/})" >> $GITHUB_ENV
+          echo "COMPOSER_BIN=$(echo ${GITHUB_WORKSPACE}/vendor/bin)" >> $GITHUB_ENV
+          echo "drush=$(echo ${GITHUB_WORKSPACE}/bin/drush)" >> $GITHUB_ENV
+          echo "SCRIPT_DIR=$(echo ${GITHUB_WORKSPACE}/.github/scripts)" >> $GITHUB_ENV
+
+      # Caching based on https://github.com/marketplace/actions/composer-php-actions#caching-dependencies-for-faster-builds
+      - name: Determine Composer cache directory
+        shell: bash
+        run: "echo \"COMPOSER_CACHE_DIR=$(composer config cache-dir)\" >> $GITHUB_ENV"
+
+      - name: Cache dependencies installed with Composer
+        uses: actions/cache@v3
+        with:
+          path: |
+            "${{ env.COMPOSER_CACHE_DIR }}"
+            $GITHUB_WORKSPACE/vendor
+            $GITHUB_WORKSPACE/web/core
+            $GITHUB_WORKSPACE/web/libraries
+            $GITHUB_WORKSPACE/web/modules/contrib
+            $GITHUB_WORKSPACE/web/themes/contrib
+            $GITHUB_WORKSPACE/web/profiles/contrib
+          key: os-${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+
+      - name: Cache node modules
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            ~/.nvm
+          key: ${{ runner.os }}-build-${{ github.ref }}
+      # Caching END
+
+      - name: Composer install
+        run: |
+          composer validate
+          composer self-update
+          composer --no-interaction --no-progress --prefer-dist --optimize-autoloader install
+
+      - name: Validate composer
+        run: composer validate --no-check-all --ansi
+
+      - name: Show environment variables
+        run: ls -alk ./bin
+
+      - name: Prepare environment for application
+        run: bash $SCRIPT_DIR/setup_app.sh
+
+      - name: Setup application
+        run: |
+          ./bin/drush si convivial --locale=en --db-url=mysql://drupal:drupal@database:3306/drupal --account-name=admin --account-pass=admin --account-mail=naveen.valecha+convivial@morpht.com --site-name=Convivial Demo --site-pass=admin --site-mail=naveen.valecha+convivial@morpht.com
