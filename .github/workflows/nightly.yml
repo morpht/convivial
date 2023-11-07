@@ -91,5 +91,4 @@ jobs:
 
       - name: Setup application
         run: |
-          ./bin/drush si convivial --locale=en --db-url=mysql://drupal:drupal@database:3306/drupal --account-name=admin --account-pass=admin --account-mail=naveen.valecha+convivial@morpht.com --site-name=Convivial Demo --site-pass=admin --site-mail=naveen.valecha+convivial@morpht.com
-
+          ./bin/drush si convivial --locale=en --db-url=mysql://drupal:drupal@database:3306/drupal --account-name=admin --account-pass=admin --site-name=Convivial Demo --site-pass=admin
