@@ -1,6 +1,9 @@
 name: Build, Validate and Test
 
 on:
+  schedule:
+    # Weekday (22=10pm UTC). Evaluates to 8am AEST.
+    - cron: '0 22 * * *'
   workflow_dispatch:
   push:
     branches:
@@ -14,7 +17,7 @@ on:
 
 jobs:
   full:
-    if: ${{ github.event_name == 'workflow_dispatch' || github.event_name == 'push' || !github.event.pull_request.draft }}
+    if: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push' || !github.event.pull_request.draft }}
     name: Full (Build, Validate, and Test)
     runs-on: ubuntu-latest
     container:
