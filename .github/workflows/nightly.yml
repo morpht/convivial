@@ -6,7 +6,6 @@ on:
     - cron: '0 22 * * *'
 
 jobs:
-jobs:
   full:
     name: Full (Build, Validate, and Test)
     runs-on: ubuntu-latest
