@@ -103,3 +103,17 @@ jobs:
       - name: Setup application
         run: |
           ./bin/drush si convivial --locale=en --db-url=mysql://drupal:drupal@database:3306/drupal --account-name=admin --account-pass=admin --site-name=Convivial Demo --site-pass=admin
+
+      - name: Application Status
+        run: |
+          ./bin/drush status
+
+      - name: Prepare environment for cypress tests
+        run: |
+          which node
+          node --version
+          cd web/profiles/custom/convivial
+          cp cypress.env.default.json cypress.env.json
+          npm install
+          npm list
+
