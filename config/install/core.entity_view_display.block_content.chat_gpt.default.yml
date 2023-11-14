@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.chat_gpt
+    - field.field.block_content.chat_gpt.body
+    - field.field.block_content.chat_gpt.field_chat_gpt
+  module:
+    - augmentor
+    - text
+id: block_content.chat_gpt.default
+targetEntityType: block_content
+bundle: chat_gpt
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_chat_gpt:
+    type: field_augmentor_formatter
+    label: above
+    settings:
+      debug: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

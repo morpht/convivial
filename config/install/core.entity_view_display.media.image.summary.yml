@@ -3,7 +3,14 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.summary
+    - field.field.media.image.field__image_racy
+    - field.field.media.image.field_augmentor_safe_search
     - field.field.media.image.field_body
+    - field.field.media.image.field_image_adult
+    - field.field.media.image.field_image_augmentor
+    - field.field.media.image.field_image_medical
+    - field.field.media.image.field_image_spoof
+    - field.field.media.image.field_image_violence
     - field.field.media.image.field_media_image
     - field.field.media.image.field_search_exclude
     - field.field.media.image.field_tags
@@ -83,6 +90,13 @@ content:
     region: title
 hidden:
   created: true
+  field__image_racy: true
+  field_augmentor_safe_search: true
+  field_image_adult: true
+  field_image_augmentor: true
+  field_image_medical: true
+  field_image_spoof: true
+  field_image_violence: true
   field_media_image: true
   field_media_image_field: true
   field_search_exclude: true

@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content_tags_gpt3
+    - node.type.article
+  module:
+    - augmentor
+id: node.article.field_content_tags_gpt3
+field_name: field_content_tags_gpt3
+entity_type: node
+bundle: article
+label: 'Content tags (GPT3)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: field_augmentor_type

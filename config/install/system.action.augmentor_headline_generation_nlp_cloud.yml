@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - augmentor
+id: augmentor_headline_generation_nlp_cloud
+label: 'Augmentor Headline Generation(NLP Cloud)'
+type: node
+plugin: 'entity:augmentor_action:node'
+configuration:
+  source_fields:
+    field_body: field_body
+  targets:
+    -
+      target_field: field_social_message
+      key: default
+  augmentor: 3d6bf72e-c5a9-44ef-803c-ab65c1c2eff5
+  action: replace
+  text_format: rich_text
+  explode_separator: ''

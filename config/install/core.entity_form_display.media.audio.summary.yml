@@ -4,6 +4,7 @@ dependencies:
   config:
     - core.entity_form_mode.media.summary
     - field.field.media.audio.field_body
+    - field.field.media.audio.field_google_cloud_speech_to_tex
     - field.field.media.audio.field_media_audio_file
     - field.field.media.audio.field_search_exclude
     - field.field.media.audio.field_tags
@@ -44,6 +45,7 @@ content:
 hidden:
   created: true
   field_body: true
+  field_google_cloud_speech_to_tex: true
   field_search_exclude: true
   field_transcript: true
   moderation_state: true

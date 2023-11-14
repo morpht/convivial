@@ -20,6 +20,7 @@ settings:
       - subscript
       - heading
       - style
+      - augmentor
       - '|'
       - link
       - '|'
@@ -37,6 +38,25 @@ settings:
       - '|'
       - code
   plugins:
+    augmentor_ckeditor5_augmentor:
+      augmentors:
+        c79af3ab-a822-4f6d-b274-4f73b6385bcd: 'Ask ChatGPT (GPT3.5)'
+        8f5b4750-2dc7-493d-9ce5-d746df474d2d: 'Social message (ChatGPT)'
+        357dbe45-b78a-4adc-94c9-e4b3b18730e9: 'Blog Post Generation(NLP Cloud)'
+        dc83be4e-b550-445b-945f-87202eb001f1: 'Audience Classification(NLP Cloud)'
+        31e156d1-d38a-462d-b632-a932875be532: 'Create essay (GPT3)'
+        5aac2461-5086-4dce-9fdf-8ebf65c3cbaf: 'Summarize (GPT3)'
+        8eda6a6c-bd78-4aac-b3ee-33ba6ea1a30d: 'Content tags (GPT3)'
+        2ddf2753-4d7a-461f-bf3b-083164b97761: 'TL;DR (GPT3)'
+        f1556cc1-77c4-46db-b1ed-9831eff6d2fd: 'Continue (GPT3)'
+        6a9237b9-e17b-4030-b15f-4c8ff5a9719e: 'Create essay outline (GPT3)'
+        e4e1131f-c7a6-4ade-9e24-0ba93ec9faf4: 'Grammar correction (GPT3)'
+        d4558bea-40f6-4550-bb05-6dfa3b0ded06: 'Topic Classification(NLP Cloud)'
+        3d6bf72e-c5a9-44ef-803c-ab65c1c2eff5: 'Headline Generation(NLP Cloud)'
+        6fefe463-57ce-40ad-9bd8-df3d56635e8d: 'Keywords and keyphrases extraction(NLP Cloud)'
+        f8f98abd-ea8d-4347-8fc7-f2ed9ba5cef2: 'Summarization(NLP Cloud)'
+        c2752886-e949-4b3c-8ef6-3e6dafb46beb: 'Text Generation(NLP Cloud)'
+        13963e84-5bea-429e-b7a9-f41555e87815: 'Translation(NLP Cloud)'
     ckeditor5_alignment:
       enabled_alignments:
         - center

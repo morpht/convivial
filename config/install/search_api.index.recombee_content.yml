@@ -1,9 +1,9 @@
 langcode: en
-status: true
+status: false
 dependencies:
   config:
-    - field.storage.node.field_key
     - field.storage.node.field_search_exclude
+    - field.storage.node.field_key
     - field.storage.node.field_summary
     - search_api.server.recombee
   module:
@@ -91,6 +91,7 @@ datasource_settings:
 processor_settings:
   add_url: {  }
   aggregated_field: {  }
+  custom_value: {  }
   entity_status: {  }
   entity_type: {  }
   language_with_fallback: {  }

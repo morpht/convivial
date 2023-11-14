@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_augmentor_safe_search
+    - media.type.image
+  module:
+    - augmentor
+id: media.image.field_augmentor_safe_search
+field_name: field_augmentor_safe_search
+entity_type: media
+bundle: image
+label: 'Augmentor Safe Search'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: field_augmentor_type

@@ -1,0 +1,44 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - augmentor
+id: augmentor_summarization_nlp_cloud
+label: 'Augmentor Summarization (NLP Cloud)'
+type: node
+plugin: 'entity:augmentor_action_minimal:node'
+configuration:
+  source_field_1: field_body
+  target_field_1: field_social_message
+  response_key_1: default
+  source_field_2: ''
+  target_field_2: ''
+  response_key_2: ''
+  source_field_3: ''
+  target_field_3: ''
+  response_key_3: ''
+  source_field_4: ''
+  target_field_4: ''
+  response_key_4: ''
+  source_field_5: ''
+  target_field_5: ''
+  response_key_5: ''
+  source_field_6: ''
+  target_field_6: ''
+  response_key_6: ''
+  source_field_7: ''
+  target_field_7: ''
+  response_key_7: ''
+  source_field_8: ''
+  target_field_8: ''
+  response_key_8: ''
+  source_field_9: ''
+  target_field_9: ''
+  response_key_9: ''
+  source_field_10: ''
+  target_field_10: ''
+  response_key_10: ''
+  augmentor: f8f98abd-ea8d-4347-8fc7-f2ed9ba5cef2
+  action: replace
+  text_format: ''
+  explode_separator: ''

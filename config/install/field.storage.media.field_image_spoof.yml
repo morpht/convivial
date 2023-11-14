@@ -1,0 +1,38 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - options
+id: media.field_image_spoof
+field_name: field_image_spoof
+entity_type: media
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '0'
+      label: Unknown
+    -
+      value: '1'
+      label: 'Very unlikely'
+    -
+      value: '2'
+      label: Unlikely
+    -
+      value: '3'
+      label: Possible
+    -
+      value: '4'
+      label: Likely
+    -
+      value: '5'
+      label: 'Very likely'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -3,12 +3,14 @@ status: true
 dependencies:
   config:
     - field.field.media.audio.field_body
+    - field.field.media.audio.field_google_cloud_speech_to_tex
     - field.field.media.audio.field_media_audio_file
     - field.field.media.audio.field_search_exclude
     - field.field.media.audio.field_tags
     - field.field.media.audio.field_transcript
     - media.type.audio
   module:
+    - augmentor
     - file
     - text
 id: media.audio.default
@@ -31,6 +33,26 @@ content:
       summary_rows: 3
       placeholder: ''
       show_summary: false
+    third_party_settings: {  }
+  field_google_cloud_speech_to_tex:
+    type: augmentor_default_widget
+    weight: 31
+    region: content
+    settings:
+      source_fields:
+        - field_media_audio_file
+      targets:
+        0:
+          target_field: field_transcript
+          key: default
+        actions:
+          add_target: 'Add one more target'
+      augmentor: 2fb31378-02ef-40ca-a5a2-df6138b4ed49
+      action: append
+      trim: none
+      button_label: 'Google Cloud Speech To Text'
+      rows: '5'
+      placeholder: ''
     third_party_settings: {  }
   field_media_audio_file:
     type: file_generic
