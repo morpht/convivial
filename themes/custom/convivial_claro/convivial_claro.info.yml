@@ -5,7 +5,6 @@ core_version_requirement: ^9.5 || ^10
 type: theme
 libraries:
   - convivial_claro/global-styles
-  - convivial_claro/font-family
   - convivial_claro/layout_paragraphs_hotfix
   - convivial_claro/layout_paragraphs_embedded_form_removal
 regions:

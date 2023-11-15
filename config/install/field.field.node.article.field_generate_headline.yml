@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_generate_headline
+    - node.type.article
+  module:
+    - augmentor
+id: node.article.field_generate_headline
+field_name: field_generate_headline
+entity_type: node
+bundle: article
+label: 'Generate headline'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: field_augmentor_type

@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field__spin_bulk
+    - node.type.article
+id: node.article.field__spin_bulk
+field_name: field__spin_bulk
+entity_type: node
+bundle: article
+label: 'Bulk populate'
+description: 'Populate this content with bulk operations.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

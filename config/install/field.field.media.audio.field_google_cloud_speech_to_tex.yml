@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_google_cloud_speech_to_tex
+    - media.type.audio
+  module:
+    - augmentor
+id: media.audio.field_google_cloud_speech_to_tex
+field_name: field_google_cloud_speech_to_tex
+entity_type: media
+bundle: audio
+label: "Google Cloud Speech To Text\t"
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: field_augmentor_type

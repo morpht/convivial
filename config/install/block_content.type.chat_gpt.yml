@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: chat_gpt
+label: 'Chat GPT'
+revision: 0
+description: ''

@@ -1,0 +1,550 @@
+augmentors:
+  c79af3ab-a822-4f6d-b274-4f73b6385bcd:
+    label: 'Ask ChatGPT (GPT3.5)'
+    weight: -12
+    type: chatgpt
+    configuration:
+      label: 'Ask ChatGPT (GPT3.5)'
+      uuid: c79af3ab-a822-4f6d-b274-4f73b6385bcd
+      id: chatgpt
+      weight: ''
+      key: openai
+      settings:
+        label: 'Ask ChatGPT (GPT3.5)'
+        key: openai
+        engine: null
+        temperature: '1'
+        max_tokens: '3500'
+        suffix: ''
+        stream: 0
+        logprobs: ''
+        echo: 0
+        stop: ''
+        logit_bias: ''
+        top_p: '0'
+        'n': '1'
+        best_of: '1'
+        frequency_penalty: '0'
+        presence_penalty: '0'
+        user_tracking: 1
+        chunker:
+          enable: 0
+          min: '4000'
+          max: '6000'
+        messages:
+          0:
+            role: system
+            content: 'You are a helpful assistant.'
+          1:
+            role: user
+            content: 'Who won the world series in 2020?'
+          2:
+            role: assistant
+            content: 'The Los Angeles Dodgers won the World Series in 2020.'
+          3:
+            role: user
+            content: '{input}'
+          actions: {  }
+        model: gpt-3.5-turbo
+  8f5b4750-2dc7-493d-9ce5-d746df474d2d:
+    label: 'Social message (ChatGPT)'
+    weight: -11
+    type: chatgpt
+    configuration:
+      label: 'Social message (ChatGPT)'
+      uuid: 8f5b4750-2dc7-493d-9ce5-d746df474d2d
+      id: chatgpt
+      weight: ''
+      key: openai
+      settings:
+        label: 'Social message (ChatGPT)'
+        key: openai
+        model: gpt-3.5-turbo
+        messages:
+          0:
+            role: system
+            content: 'You are a helpful marketer who is able to write engaging social media posts.'
+          1:
+            role: user
+            content: "Write a short and engaging social media post for the following article:\r\n\r\n{input}"
+          actions: {  }
+        temperature: '1'
+        max_tokens: '100'
+        top_p: '0'
+        'n': '1'
+        frequency_penalty: '0'
+        presence_penalty: '0'
+        user_tracking: 1
+  310a229a-4950-4fcf-9ef7-fdb86617f5b4:
+    label: 'Summarise (ChatGPT)'
+    weight: -10
+    type: chatgpt
+    configuration:
+      label: ''
+      uuid: ''
+      id: chatgpt
+      weight: 22
+      key: ''
+      settings:
+        label: 'Summarise (ChatGPT)'
+        key: openai
+        model: gpt-3.5-turbo
+        messages:
+          0:
+            role: user
+            content: "Summarize this for a second-grade student:\r\n\r\n{input}"
+          actions: {  }
+        temperature: '1'
+        max_tokens: '100'
+        top_p: '0'
+        'n': '1'
+        frequency_penalty: '0'
+        presence_penalty: '0'
+        user_tracking: 1
+  357dbe45-b78a-4adc-94c9-e4b3b18730e9:
+    label: 'Blog Post Generation(NLP Cloud)'
+    weight: -9
+    type: augmentor_nlpcloud_blog_post_generation
+    configuration:
+      label: ''
+      uuid: ''
+      id: augmentor_nlpcloud_blog_post_generation
+      weight: 14
+      key: ''
+      settings:
+        label: 'Blog Post Generation(NLP Cloud)'
+        key: nlp_cloud
+        language: ''
+  dc83be4e-b550-445b-945f-87202eb001f1:
+    label: 'Audience Classification(NLP Cloud)'
+    weight: -8
+    type: augmentor_nlpcloud_classification
+    configuration:
+      label: 'Audience Classification(NLP Cloud)'
+      uuid: dc83be4e-b550-445b-945f-87202eb001f1
+      id: augmentor_nlpcloud_classification
+      weight: ''
+      key: nlp_cloud
+      settings:
+        label: 'Audience Classification(NLP Cloud)'
+        key: nlp_cloud
+        language: ''
+        model: bart-large-mnli-yahoo-answers
+        entity_type: node
+        bundle: audience
+        threshold: '0.75'
+        max_labels_limit: '2'
+        no_result: 'No Audience found.'
+  b02b3693-3ef5-4e67-b2e3-54f7ea3df2f4:
+    label: 'Write article (ChatGPT)'
+    weight: -7
+    type: chatgpt
+    configuration:
+      label: 'Write article (ChatGPT)'
+      uuid: b02b3693-3ef5-4e67-b2e3-54f7ea3df2f4
+      id: chatgpt
+      weight: ''
+      key: openai
+      settings:
+        label: 'Write article (ChatGPT)'
+        key: openai
+        model: gpt-3.5-turbo
+        messages:
+          0:
+            role: user
+            content: 'Write an informative and engaing article about {input}'
+          actions: {  }
+        temperature: '1'
+        max_tokens: '4000'
+        top_p: '0'
+        'n': '1'
+        frequency_penalty: '0'
+        presence_penalty: '0'
+        user_tracking: 1
+  31e156d1-d38a-462d-b632-a932875be532:
+    label: 'Create essay (GPT3)'
+    weight: -6
+    type: openai_gpt3_completions
+    configuration:
+      label: 'Create essay (GPT3)'
+      uuid: 31e156d1-d38a-462d-b632-a932875be532
+      id: openai_gpt3_completions
+      weight: ''
+      key: openai
+      settings:
+        label: 'Create essay (GPT3)'
+        key: openai
+        engine: text-davinci-003
+        prompt: 'Create an an informative and interesting article in a friendly tone about  {input}'
+        temperature: '1'
+        max_tokens: '3500'
+        suffix: ''
+        stream: 0
+        logprobs: ''
+        echo: 0
+        stop: ''
+        logit_bias: ''
+        top_p: '1'
+        frequency_penalty: '0'
+        presence_penalty: '0'
+        user_tracking: 1
+        'n': '1'
+        best_of: '1'
+        chunker:
+          enable: 0
+          engine: text-davinci-003
+          prompt: 'Summarize the following text: {input}'
+          min: '4000'
+          max: '6000'
+  5aac2461-5086-4dce-9fdf-8ebf65c3cbaf:
+    label: 'Summarize (GPT3)'
+    weight: -5
+    type: openai_gpt3_completions
+    configuration:
+      label: 'Summarize (GPT3)'
+      uuid: 5aac2461-5086-4dce-9fdf-8ebf65c3cbaf
+      id: openai_gpt3_completions
+      weight: ''
+      key: openai
+      settings:
+        label: 'Summarize (GPT3)'
+        key: openai
+        engine: text-davinci-003
+        prompt: "Summarize this for a second-grade student:\r\n\r\n{input}"
+        temperature: '0.7'
+        max_tokens: '1800'
+        suffix: ''
+        stream: 0
+        logprobs: ''
+        echo: 0
+        stop: ''
+        logit_bias: ''
+        top_p: '1'
+        frequency_penalty: '0'
+        presence_penalty: '0'
+        user_tracking: 1
+        'n': '3'
+        best_of: '4'
+        chunker:
+          enable: 1
+          engine: text-davinci-003
+          prompt: 'Summarize the following text: {input}'
+          min: '4000'
+          max: '6000'
+  8eda6a6c-bd78-4aac-b3ee-33ba6ea1a30d:
+    label: 'Content tags (GPT3)'
+    weight: -4
+    type: openai_gpt3_completions
+    configuration:
+      label: 'Content tags (GPT3)'
+      uuid: 8eda6a6c-bd78-4aac-b3ee-33ba6ea1a30d
+      id: openai_gpt3_completions
+      weight: ''
+      key: openai
+      settings:
+        label: 'Content tags (GPT3)'
+        key: openai
+        engine: text-davinci-003
+        prompt: "Extract keywords from this text and comma separate them:\r\n\r\n{input}"
+        temperature: '0.5'
+        max_tokens: '60'
+        suffix: ''
+        stream: 0
+        logprobs: ''
+        echo: 0
+        stop: ''
+        logit_bias: ''
+        top_p: '1'
+        frequency_penalty: '0.8'
+        presence_penalty: '0'
+        user_tracking: 1
+        'n': '1'
+        best_of: '1'
+        chunker:
+          enable: 1
+          engine: text-davinci-003
+          prompt: 'Summarize the following text: {input}'
+          min: '4000'
+          max: '6000'
+  c22a9f6a-6989-4501-bb75-ba817e720a93:
+    label: 'Image tags (Google Cloud Vision)'
+    weight: -3
+    type: google_cloud_vision_labels_detection
+    configuration:
+      label: 'Image tags (Google Cloud Vision)'
+      uuid: c22a9f6a-6989-4501-bb75-ba817e720a93
+      id: google_cloud_vision_labels_detection
+      weight: ''
+      key: google_cloud_ai
+      settings:
+        label: 'Image tags (Google Cloud Vision)'
+        key: google_cloud_ai
+        max_labels: '10'
+        min_score: '0.6'
+  2ddf2753-4d7a-461f-bf3b-083164b97761:
+    label: 'TL;DR (GPT3)'
+    weight: -2
+    type: openai_gpt3_completions
+    configuration:
+      label: 'TL;DR (GPT3)'
+      uuid: 2ddf2753-4d7a-461f-bf3b-083164b97761
+      id: openai_gpt3_completions
+      weight: ''
+      key: openai
+      settings:
+        label: 'TL;DR (GPT3)'
+        key: openai
+        engine: text-davinci-002
+        prompt: "{input}\r\n\r\nTl;dr"
+        temperature: '0.7'
+        max_tokens: '120'
+        suffix: ''
+        stream: 0
+        logprobs: ''
+        echo: 0
+        stop: ''
+        logit_bias: ''
+        top_p: '1'
+        frequency_penalty: '0'
+        presence_penalty: '0'
+        user_tracking: 1
+        'n': '1'
+        best_of: '1'
+  f1556cc1-77c4-46db-b1ed-9831eff6d2fd:
+    label: 'Continue (GPT3)'
+    weight: -1
+    type: openai_gpt3_completions
+    configuration:
+      label: 'Continue (GPT3)'
+      uuid: f1556cc1-77c4-46db-b1ed-9831eff6d2fd
+      id: openai_gpt3_completions
+      weight: ''
+      key: openai
+      settings:
+        label: 'Continue (GPT3)'
+        key: openai
+        engine: text-davinci-002
+        prompt: '{input} '
+        temperature: '1'
+        max_tokens: '600'
+        suffix: ''
+        stream: 0
+        logprobs: ''
+        echo: 0
+        stop: ''
+        logit_bias: ''
+        top_p: '1'
+        frequency_penalty: '0'
+        presence_penalty: '0'
+        user_tracking: 1
+        'n': '1'
+        best_of: '1'
+  6a9237b9-e17b-4030-b15f-4c8ff5a9719e:
+    label: 'Create essay outline (GPT3)'
+    weight: 0
+    type: openai_gpt3_completions
+    configuration:
+      label: 'Create essay outline (GPT3)'
+      uuid: 6a9237b9-e17b-4030-b15f-4c8ff5a9719e
+      id: openai_gpt3_completions
+      weight: ''
+      key: openai
+      settings:
+        label: 'Create essay outline (GPT3)'
+        key: openai
+        engine: text-davinci-002
+        prompt: 'Create an outline for an essay about {input}'
+        temperature: '0'
+        max_tokens: '150'
+        suffix: ''
+        stream: 0
+        logprobs: ''
+        echo: 0
+        stop: ''
+        logit_bias: ''
+        top_p: '1'
+        frequency_penalty: '0'
+        presence_penalty: '0'
+        user_tracking: 1
+        'n': '1'
+        best_of: '1'
+  e4e1131f-c7a6-4ade-9e24-0ba93ec9faf4:
+    label: 'Grammar correction (GPT3)'
+    weight: 1
+    type: openai_gpt3_completions
+    configuration:
+      label: 'Grammar correction (GPT3)'
+      uuid: e4e1131f-c7a6-4ade-9e24-0ba93ec9faf4
+      id: openai_gpt3_completions
+      weight: ''
+      key: openai
+      settings:
+        label: 'Grammar correction (GPT3)'
+        key: openai
+        engine: text-davinci-002
+        prompt: "Correct this to standard English:\r\n\r\n{input}"
+        temperature: '0'
+        max_tokens: '600'
+        suffix: ''
+        stream: 0
+        logprobs: ''
+        echo: 0
+        stop: ''
+        logit_bias: ''
+        top_p: '1'
+        frequency_penalty: '0'
+        presence_penalty: '0'
+        user_tracking: 1
+        'n': '1'
+        best_of: '1'
+  129bc4db-e1b1-4f61-a836-b994f86c1f18:
+    label: 'Detect explicit content (SafeSearch)'
+    weight: 2
+    type: google_cloud_vision_safe_search
+    configuration:
+      label: ''
+      uuid: ''
+      id: google_cloud_vision_safe_search
+      weight: 10
+      key: ''
+      settings:
+        label: 'Detect explicit content (SafeSearch)'
+        key: google_cloud_ai
+  3be4788f-adcd-43bc-ab64-f2d35a1466c8:
+    label: 'Text-to-Speech (Google Cloud)'
+    weight: 3
+    type: augmentor_google_cloud_text_to_speech
+    configuration:
+      label: 'Text-to-Speech (Google Cloud)'
+      uuid: 3be4788f-adcd-43bc-ab64-f2d35a1466c8
+      id: augmentor_google_cloud_text_to_speech
+      weight: ''
+      key: google_cloud_text_to_speech
+      settings:
+        label: 'Text-to-Speech (Google Cloud)'
+        key: google_cloud_text_to_speech
+        store_to: text-to-speech
+        is_public: 1
+        voice_name: en-AU-Neural2-C
+        speed: '0.85'
+        pitch: '0'
+        output_type: media
+        uri_scheme: public
+        save_as_media: 1
+        folder: ../../var
+        file_directory: speech
+  2fb31378-02ef-40ca-a5a2-df6138b4ed49:
+    label: 'Speech To Text (Google Cloud)'
+    weight: 4
+    type: augmentor_google_cloud_speech_to_text
+    configuration:
+      label: 'Google Cloud Speech To Text'
+      uuid: 2fb31378-02ef-40ca-a5a2-df6138b4ed49
+      id: augmentor_google_cloud_speech_to_text
+      weight: ''
+      key: google_cloud_ai
+      settings:
+        label: 'Speech To Text (Google Cloud)'
+        key: google_cloud_ai
+        encoding: '0'
+        sample_rate_hertz: '44100'
+        max_alternatives: '1'
+        language_code: en-US
+        profanity_filter: 0
+        speech_context: ''
+  d4558bea-40f6-4550-bb05-6dfa3b0ded06:
+    label: 'Topic Classification(NLP Cloud)'
+    weight: 5
+    type: augmentor_nlpcloud_classification
+    configuration:
+      label: 'Topic Classification(NLP Cloud)'
+      uuid: d4558bea-40f6-4550-bb05-6dfa3b0ded06
+      id: augmentor_nlpcloud_classification
+      weight: ''
+      key: nlp_cloud
+      settings:
+        label: 'Topic Classification(NLP Cloud)'
+        key: nlp_cloud
+        language: ''
+        model: bart-large-mnli-yahoo-answers
+        entity_type: node
+        bundle: topic
+        threshold: '0.8'
+        max_labels_limit: '10'
+        no_result: 'No Topic found.'
+  3d6bf72e-c5a9-44ef-803c-ab65c1c2eff5:
+    label: 'Headline Generation(NLP Cloud)'
+    weight: 6
+    type: augmentor_nlpcloud_headline_generation
+    configuration:
+      label: ''
+      uuid: ''
+      id: augmentor_nlpcloud_headline_generation
+      weight: 16
+      key: ''
+      settings:
+        label: 'Headline Generation(NLP Cloud)'
+        key: nlp_cloud
+        language: ''
+  6fefe463-57ce-40ad-9bd8-df3d56635e8d:
+    label: 'Keywords and keyphrases extraction(NLP Cloud)'
+    weight: 7
+    type: augmentor_nlpcloud_keywords_and_keyphrases_extraction
+    configuration:
+      label: ''
+      uuid: ''
+      id: augmentor_nlpcloud_keywords_and_keyphrases_extraction
+      weight: 17
+      key: ''
+      settings:
+        label: 'Keywords and keyphrases extraction(NLP Cloud)'
+        key: nlp_cloud
+        language: ''
+        model: finetuned-gpt-neox-20b
+  f8f98abd-ea8d-4347-8fc7-f2ed9ba5cef2:
+    label: 'Summarization(NLP Cloud)'
+    weight: 8
+    type: augmentor_nlpcloud_summarization
+    configuration:
+      label: ''
+      uuid: ''
+      id: augmentor_nlpcloud_summarization
+      weight: 18
+      key: ''
+      settings:
+        label: 'Summarization(NLP Cloud)'
+        key: nlp_cloud
+        language: ''
+        model: bart-large-cnn
+        size: small
+  c2752886-e949-4b3c-8ef6-3e6dafb46beb:
+    label: 'Text Generation(NLP Cloud)'
+    weight: 9
+    type: augmentor_nlpcloud_text_generation
+    configuration:
+      label: ''
+      uuid: ''
+      id: augmentor_nlpcloud_text_generation
+      weight: 19
+      key: ''
+      settings:
+        label: 'Text Generation(NLP Cloud)'
+        key: nlp_cloud
+        language: ''
+        model: gpt-j
+  13963e84-5bea-429e-b7a9-f41555e87815:
+    label: 'Translation(NLP Cloud)'
+    weight: 10
+    type: augmentor_nlpcloud_translation
+    configuration:
+      label: ''
+      uuid: ''
+      id: augmentor_nlpcloud_translation
+      weight: 20
+      key: ''
+      settings:
+        label: 'Translation(NLP Cloud)'
+        key: nlp_cloud
+        language: ''
+        source: eng_Latn
+        target: fra_Latn

@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.augmentor
+  module:
+    - user
+id: user_remove_role_action.augmentor
+label: 'Remove the Augmentor role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: augmentor

@@ -3,12 +3,14 @@ status: true
 dependencies:
   config:
     - field.field.media.audio.field_body
+    - field.field.media.audio.field_google_cloud_speech_to_tex
     - field.field.media.audio.field_media_audio_file
     - field.field.media.audio.field_search_exclude
     - field.field.media.audio.field_tags
     - field.field.media.audio.field_transcript
     - media.type.audio
   module:
+    - augmentor
     - file
     - text
 id: media.audio.default
@@ -16,6 +18,14 @@ targetEntityType: media
 bundle: audio
 mode: default
 content:
+  field_google_cloud_speech_to_tex:
+    type: field_augmentor_formatter
+    label: above
+    settings:
+      debug: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
   field_media_audio_file:
     type: file_audio
     label: hidden

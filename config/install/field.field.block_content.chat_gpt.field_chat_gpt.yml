@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.chat_gpt
+    - field.storage.block_content.field_chat_gpt
+  module:
+    - augmentor
+id: block_content.chat_gpt.field_chat_gpt
+field_name: field_chat_gpt
+entity_type: block_content
+bundle: chat_gpt
+label: 'Chat GPT'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: field_augmentor_type

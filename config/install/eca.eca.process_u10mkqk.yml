@@ -1,0 +1,211 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.article.field_body
+    - field.field.node.article.field_social_message
+    - field.field.node.article.field_spin_check
+    - field.field.node.article.field_summary
+    - field.field.node.audience.field_body
+    - field.field.node.audience.field_summary
+    - field.field.node.event.field_body
+    - field.field.node.event.field_social_message
+    - field.field.node.event.field_summary
+    - field.field.node.page.field_body
+    - field.field.node.page.field_summary
+    - field.field.node.person.field_body
+    - field.field.node.person.field_summary
+    - field.field.node.place.field_body
+    - field.field.node.place.field_summary
+    - field.field.node.topic.field_body
+    - field.field.node.topic.field_summary
+    - field.storage.node.field_body
+    - field.storage.node.field_social_message
+    - field.storage.node.field_spin_check
+    - field.storage.node.field_summary
+  module:
+    - augmentor
+    - eca_content
+    - eca_vbo
+    - views_bulk_operations
+id: process_u10mkqk
+modeller: bpmn_io
+label: 'Bulk - Social message, Summary'
+version: '1.0'
+weight: null
+events:
+  Event_07jgaq7:
+    plugin: 'vbo:execute'
+    label: 'Populate Content'
+    configuration:
+      operation_name: 'Populate with Augmentations'
+      view_id: ''
+      display_id: ''
+    successors:
+      -
+        id: Activity_1ac3i7p
+        condition: Flow_0ozqd4y
+  Event_14f2yjs:
+    plugin: 'vbo:custom_access'
+    label: 'Populate with Augmentations'
+    configuration:
+      operation_name: 'Populate with Augmentations'
+      view_id: ''
+      display_id: ''
+    successors:
+      -
+        id: Activity_0v1egq5
+        condition: ''
+conditions:
+  Flow_0ozqd4y:
+    plugin: eca_entity_field_value
+    configuration:
+      negate: false
+      case: false
+      expected_value: '1'
+      field_name: field_spin_bulk
+      operator: equal
+      type: value
+      entity: ''
+gateways: {  }
+actions:
+  Activity_1ac3i7p:
+    plugin: 'entity:augmentor_action_minimal:node'
+    label: 'Social message'
+    configuration:
+      replace_tokens: false
+      source_field_1: title
+      target_field_1: field_social_message
+      response_key_1: default
+      source_field_2: field_body
+      target_field_2: ''
+      response_key_2: ''
+      source_field_3: ''
+      target_field_3: ''
+      response_key_3: ''
+      source_field_4: ''
+      target_field_4: ''
+      response_key_4: ''
+      source_field_5: ''
+      target_field_5: ''
+      response_key_5: ''
+      source_field_6: ''
+      target_field_6: ''
+      response_key_6: ''
+      source_field_7: ''
+      target_field_7: ''
+      response_key_7: ''
+      source_field_8: ''
+      target_field_8: ''
+      response_key_8: ''
+      source_field_9: ''
+      target_field_9: ''
+      response_key_9: ''
+      source_field_10: ''
+      target_field_10: ''
+      response_key_10: ''
+      augmentor: 8f5b4750-2dc7-493d-9ce5-d746df474d2d
+      action: replace
+      text_format: plain_text
+      explode_separator: ''
+      object: ''
+    successors:
+      -
+        id: Activity_1nag7j1
+        condition: ''
+  Activity_1nag7j1:
+    plugin: 'entity:augmentor_action_minimal:node'
+    label: Summarise
+    configuration:
+      replace_tokens: false
+      source_field_1: field_body
+      target_field_1: field_summary
+      response_key_1: default
+      source_field_2: ''
+      target_field_2: ''
+      response_key_2: ''
+      source_field_3: ''
+      target_field_3: ''
+      response_key_3: ''
+      source_field_4: ''
+      target_field_4: ''
+      response_key_4: ''
+      source_field_5: ''
+      target_field_5: ''
+      response_key_5: ''
+      source_field_6: ''
+      target_field_6: ''
+      response_key_6: ''
+      source_field_7: ''
+      target_field_7: ''
+      response_key_7: ''
+      source_field_8: ''
+      target_field_8: ''
+      response_key_8: ''
+      source_field_9: ''
+      target_field_9: ''
+      response_key_9: ''
+      source_field_10: ''
+      target_field_10: ''
+      response_key_10: ''
+      augmentor: 310a229a-4950-4fcf-9ef7-fdb86617f5b4
+      action: replace
+      text_format: ''
+      explode_separator: ''
+      object: ''
+    successors:
+      -
+        id: Activity_0h3w9no
+        condition: ''
+  Activity_0h3w9no:
+    plugin: eca_set_field_value
+    label: 'Set Check'
+    configuration:
+      field_name: field_spin_check
+      field_value: '1'
+      method: 'set:clear'
+      strip_tags: false
+      trim: false
+      save_entity: false
+      object: ''
+    successors:
+      -
+        id: Activity_04zeks4
+        condition: ''
+  Activity_04zeks4:
+    plugin: eca_set_field_value
+    label: 'Deselect Bulk'
+    configuration:
+      field_name: field_spin_bulk
+      field_value: '0'
+      method: 'set:clear'
+      strip_tags: false
+      trim: false
+      save_entity: false
+      object: ''
+    successors:
+      -
+        id: Activity_0v08iqd
+        condition: ''
+  Activity_0v08iqd:
+    plugin: eca_save_entity
+    label: Save
+    configuration:
+      object: ''
+    successors:
+      -
+        id: Activity_0h2dkc4
+        condition: ''
+  Activity_0h2dkc4:
+    plugin: action_message_action
+    label: Message
+    configuration:
+      replace_tokens: false
+      message: 'The content has been populated.'
+    successors: {  }
+  Activity_0v1egq5:
+    plugin: eca_vbo_set_custom_access
+    label: 'Set access'
+    configuration:
+      access_granted: true
+    successors: {  }

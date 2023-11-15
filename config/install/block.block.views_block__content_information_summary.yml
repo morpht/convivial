@@ -1,5 +1,5 @@
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - views.view.content_information
@@ -9,7 +9,7 @@ dependencies:
     - convivial_bootstrap
 id: views_block__content_information_summary
 theme: convivial_bootstrap
-region: footer_information
+region: top_bar
 weight: -22
 provider: null
 plugin: 'views_block:content_information-summary'
