@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - augmentor
+    - system
+id: augmentor
+label: Augmentor
+weight: -1
+is_admin: null
+permissions:
+  - 'add augmentor'
+  - 'administer augmentor'
+  - 'delete any augmentor'
+  - 'edit any augmentor'
+  - 'execute augmentor'
+  - 'view the administration theme'

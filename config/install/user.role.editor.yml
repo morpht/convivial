@@ -19,6 +19,7 @@ dependencies:
     - taxonomy.vocabulary.media_tags
     - workflows.workflow.editorial
   module:
+    - augmentor
     - content_moderation
     - contextual
     - eu_cookie_compliance
@@ -97,6 +98,7 @@ permissions:
   - 'edit own video media'
   - 'edit terms in goal'
   - 'edit terms in media_tags'
+  - 'execute augmentor'
   - 'replicate entities'
   - 'update any media'
   - 'update media'

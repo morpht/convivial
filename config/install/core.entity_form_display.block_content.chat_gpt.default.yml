@@ -1,0 +1,54 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.chat_gpt
+    - field.field.block_content.chat_gpt.body
+    - field.field.block_content.chat_gpt.field_chat_gpt
+  module:
+    - augmentor
+    - text
+id: block_content.chat_gpt.default
+targetEntityType: block_content
+bundle: chat_gpt
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 26
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  field_chat_gpt:
+    type: augmentor_default_widget
+    weight: 27
+    region: content
+    settings:
+      source_fields:
+        - body
+      targets:
+        0:
+          target_field: body
+          key: default
+        actions:
+          add_target: 'Add one more target'
+      augmentor: c79af3ab-a822-4f6d-b274-4f73b6385bcd
+      action: append
+      trim: none
+      button_label: Chat
+      rows: '5'
+      placeholder: ''
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

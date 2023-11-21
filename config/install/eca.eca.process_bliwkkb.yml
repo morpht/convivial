@@ -1,0 +1,184 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.article.field_body
+    - field.field.node.article.field_social_message
+    - field.field.node.article.field_spin_auto
+    - field.field.node.article.field_spin_check
+    - field.field.node.article.field_summary
+    - field.field.node.audience.field_body
+    - field.field.node.audience.field_summary
+    - field.field.node.event.field_body
+    - field.field.node.event.field_social_message
+    - field.field.node.event.field_summary
+    - field.field.node.page.field_body
+    - field.field.node.page.field_summary
+    - field.field.node.person.field_body
+    - field.field.node.person.field_summary
+    - field.field.node.place.field_body
+    - field.field.node.place.field_summary
+    - field.field.node.topic.field_body
+    - field.field.node.topic.field_summary
+    - field.storage.node.field_body
+    - field.storage.node.field_social_message
+    - field.storage.node.field_spin_auto
+    - field.storage.node.field_spin_check
+    - field.storage.node.field_summary
+    - node.type.article
+  module:
+    - augmentor
+    - eca_content
+id: process_bliwkkb
+modeller: bpmn_io
+label: 'Auto - Social Message, Summary'
+version: '1.0'
+weight: null
+events:
+  Event_1vwfra5:
+    plugin: 'content_entity:presave'
+    label: 'Presave any content'
+    configuration:
+      type: 'node article'
+    successors:
+      -
+        id: Activity_1jibysx
+        condition: Flow_1cpl4ng
+conditions:
+  Flow_1cpl4ng:
+    plugin: eca_entity_field_value
+    configuration:
+      negate: false
+      case: false
+      expected_value: '1'
+      field_name: field_spin_auto
+      operator: equal
+      type: value
+      entity: ''
+gateways: {  }
+actions:
+  Activity_1jibysx:
+    plugin: 'entity:augmentor_action_minimal:node'
+    label: 'Social message'
+    configuration:
+      replace_tokens: false
+      source_field_1: title
+      target_field_1: field_social_message
+      response_key_1: default
+      source_field_2: field_body
+      target_field_2: ''
+      response_key_2: ''
+      source_field_3: ''
+      target_field_3: ''
+      response_key_3: ''
+      source_field_4: ''
+      target_field_4: ''
+      response_key_4: ''
+      source_field_5: ''
+      target_field_5: ''
+      response_key_5: ''
+      source_field_6: ''
+      target_field_6: ''
+      response_key_6: ''
+      source_field_7: ''
+      target_field_7: ''
+      response_key_7: ''
+      source_field_8: ''
+      target_field_8: ''
+      response_key_8: ''
+      source_field_9: ''
+      target_field_9: ''
+      response_key_9: ''
+      source_field_10: ''
+      target_field_10: ''
+      response_key_10: ''
+      augmentor: 8f5b4750-2dc7-493d-9ce5-d746df474d2d
+      action: replace
+      text_format: ''
+      explode_separator: ''
+      object: ''
+    successors:
+      -
+        id: Activity_0iraivl
+        condition: ''
+  Activity_0iraivl:
+    plugin: 'entity:augmentor_action_minimal:node'
+    label: Summarise
+    configuration:
+      replace_tokens: false
+      source_field_1: title
+      target_field_1: field_summary
+      response_key_1: default
+      source_field_2: field_body
+      target_field_2: ''
+      response_key_2: ''
+      source_field_3: ''
+      target_field_3: ''
+      response_key_3: ''
+      source_field_4: ''
+      target_field_4: ''
+      response_key_4: ''
+      source_field_5: ''
+      target_field_5: ''
+      response_key_5: ''
+      source_field_6: ''
+      target_field_6: ''
+      response_key_6: ''
+      source_field_7: ''
+      target_field_7: ''
+      response_key_7: ''
+      source_field_8: ''
+      target_field_8: ''
+      response_key_8: ''
+      source_field_9: ''
+      target_field_9: ''
+      response_key_9: ''
+      source_field_10: ''
+      target_field_10: ''
+      response_key_10: ''
+      augmentor: 310a229a-4950-4fcf-9ef7-fdb86617f5b4
+      action: replace
+      text_format: ''
+      explode_separator: ''
+      object: ''
+    successors:
+      -
+        id: Activity_1n2wp91
+        condition: ''
+  Activity_1n2wp91:
+    plugin: eca_set_field_value
+    label: 'Set Check'
+    configuration:
+      field_name: field_spin_check
+      field_value: '1'
+      method: 'set:clear'
+      strip_tags: false
+      trim: false
+      save_entity: false
+      object: ''
+    successors:
+      -
+        id: Activity_09y9wya
+        condition: ''
+  Activity_09y9wya:
+    plugin: eca_set_field_value
+    label: 'Deselect Auto'
+    configuration:
+      field_name: field_spin_auto
+      field_value: '0'
+      method: 'set:clear'
+      strip_tags: false
+      trim: false
+      save_entity: false
+      object: ''
+    successors:
+      -
+        id: Activity_19g32nz
+        condition: ''
+  Activity_19g32nz:
+    plugin: action_message_action
+    label: Message
+    configuration:
+      replace_tokens: false
+      message: 'The content has been populated.'
+    successors: {  }

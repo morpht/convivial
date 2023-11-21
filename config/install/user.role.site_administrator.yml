@@ -62,7 +62,6 @@ dependencies:
     - responsive_image
     - rest
     - search_api
-    - seckit
     - shortcut
     - simple_sitemap
     - sitemap
@@ -144,7 +143,6 @@ permissions:
   - 'administer responsive images'
   - 'administer rest resources'
   - 'administer search_api'
-  - 'administer seckit'
   - 'administer shortcuts'
   - 'administer site configuration'
   - 'administer sitemap'

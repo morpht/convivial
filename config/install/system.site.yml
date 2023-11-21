@@ -1,5 +1,6 @@
 langcode: en
 name: 'Convivial Demo'
+mail: contact+ai-demo@morpht.com
 slogan: ''
 page:
   403: ''

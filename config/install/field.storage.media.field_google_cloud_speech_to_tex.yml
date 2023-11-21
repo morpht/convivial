@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - augmentor
+    - media
+id: media.field_google_cloud_speech_to_tex
+field_name: field_google_cloud_speech_to_tex
+entity_type: media
+type: field_augmentor_type
+settings: {  }
+module: augmentor
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

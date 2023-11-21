@@ -12,6 +12,7 @@ dependencies:
     - node.type.topic
     - workflows.workflow.editorial
   module:
+    - augmentor
     - content_moderation
     - contextual
     - eu_cookie_compliance
@@ -51,6 +52,7 @@ permissions:
   - 'edit any person content'
   - 'edit any place content'
   - 'edit any topic content'
+  - 'execute augmentor'
   - 'revert all revisions'
   - 'revert article revisions'
   - 'revert audience revisions'

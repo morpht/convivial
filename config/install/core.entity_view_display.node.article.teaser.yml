@@ -3,14 +3,21 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.article.field__spin_bulk
     - field.field.node.article.field_about
+    - field.field.node.article.field_about_classifier_nlp
     - field.field.node.article.field_authored_by
     - field.field.node.article.field_banner_image
     - field.field.node.article.field_banner_title
     - field.field.node.article.field_body
+    - field.field.node.article.field_body_augmentor
     - field.field.node.article.field_components
+    - field.field.node.article.field_content_tags_gpt3
     - field.field.node.article.field_featured_links
     - field.field.node.article.field_featured_title
+    - field.field.node.article.field_generate_blog_post
+    - field.field.node.article.field_generate_blog_post_nlp_
+    - field.field.node.article.field_generate_headline
     - field.field.node.article.field_goal
     - field.field.node.article.field_header_colour_classes
     - field.field.node.article.field_hero_darkness
@@ -19,11 +26,18 @@ dependencies:
     - field.field.node.article.field_keywords
     - field.field.node.article.field_meta_tags
     - field.field.node.article.field_published
+    - field.field.node.article.field_readspeaker
     - field.field.node.article.field_search_exclude
     - field.field.node.article.field_social_message
+    - field.field.node.article.field_social_message_chatgpt
+    - field.field.node.article.field_spin_auto
+    - field.field.node.article.field_spin_check
     - field.field.node.article.field_stage
     - field.field.node.article.field_suitable_for
+    - field.field.node.article.field_suitable_for_nlpcloud
     - field.field.node.article.field_summary
+    - field.field.node.article.field_tags
+    - field.field.node.article.field_text_to_speech
     - field.field.node.article.field_thumbnail
     - field.field.node.article.field_toc
     - field.field.node.article.field_updated_date
@@ -151,14 +165,21 @@ mode: teaser
 content: {  }
 hidden:
   content_moderation_control: true
+  field__spin_bulk: true
   field_about: true
+  field_about_classifier_nlp: true
   field_authored_by: true
   field_banner_image: true
   field_banner_title: true
   field_body: true
+  field_body_augmentor: true
   field_components: true
+  field_content_tags_gpt3: true
   field_featured_links: true
   field_featured_title: true
+  field_generate_blog_post: true
+  field_generate_blog_post_nlp_: true
+  field_generate_headline: true
   field_goal: true
   field_header_colour_classes: true
   field_hero_darkness: true
@@ -167,11 +188,18 @@ hidden:
   field_keywords: true
   field_meta_tags: true
   field_published: true
+  field_readspeaker: true
   field_search_exclude: true
   field_social_message: true
+  field_social_message_chatgpt: true
+  field_spin_auto: true
+  field_spin_check: true
   field_stage: true
   field_suitable_for: true
+  field_suitable_for_nlpcloud: true
   field_summary: true
+  field_tags: true
+  field_text_to_speech: true
   field_thumbnail: true
   field_toc: true
   field_updated_date: true

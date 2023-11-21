@@ -1,0 +1,491 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - eca.eca.process_u10mkqk
+id: process_u10mkqk
+label: 'Bulk - Social message, Summary'
+tags:
+  - untagged
+documentation: ''
+filename: ''
+modeldata: |
+  <?xml version="1.0" encoding="UTF-8"?>
+  <bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:qa="http://some-company/schema/bpmn/qa" id="sample-diagram" targetNamespace="http://bpmn.io/schema/bpmn" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd">
+    <bpmn2:process id="Process_u10mKqK" name="Bulk - Social message, Summary" isExecutable="true" camunda:versionTag="1.0">
+      <bpmn2:startEvent id="Event_07jgaq7" name="Populate Content" camunda:modelerTemplate="org.drupal.event.vbo:execute">
+        <bpmn2:extensionElements>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="vbo:execute" />
+          </camunda:properties>
+          <camunda:field name="operation_name">
+            <camunda:string>Populate with Augmentations</camunda:string>
+          </camunda:field>
+          <camunda:field name="view_id">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="display_id">
+            <camunda:string></camunda:string>
+          </camunda:field>
+        </bpmn2:extensionElements>
+        <bpmn2:outgoing>Flow_0ozqd4y</bpmn2:outgoing>
+      </bpmn2:startEvent>
+      <bpmn2:task id="Activity_1ac3i7p" name="Social message" camunda:modelerTemplate="org.drupal.action.entity:augmentor_action_minimal:node">
+        <bpmn2:extensionElements>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="entity:augmentor_action_minimal:node" />
+          </camunda:properties>
+          <camunda:field name="source_field_1">
+            <camunda:string>title</camunda:string>
+          </camunda:field>
+          <camunda:field name="source_field_2">
+            <camunda:string>field_body</camunda:string>
+          </camunda:field>
+          <camunda:field name="source_field_3">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="source_field_4">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="source_field_5">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="source_field_6">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="source_field_7">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="source_field_8">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="source_field_9">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="source_field_10">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="target_field_1">
+            <camunda:string>field_social_message</camunda:string>
+          </camunda:field>
+          <camunda:field name="response_key_1">
+            <camunda:string>default</camunda:string>
+          </camunda:field>
+          <camunda:field name="target_field_2">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="response_key_2">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="target_field_3">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="response_key_3">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="target_field_4">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="response_key_4">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="target_field_5">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="response_key_5">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="target_field_6">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="response_key_6">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="target_field_7">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="response_key_7">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="target_field_8">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="response_key_8">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="target_field_9">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="response_key_9">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="target_field_10">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="response_key_10">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="augmentor">
+            <camunda:string>8f5b4750-2dc7-493d-9ce5-d746df474d2d</camunda:string>
+          </camunda:field>
+          <camunda:field name="action">
+            <camunda:string>replace</camunda:string>
+          </camunda:field>
+          <camunda:field name="text_format">
+            <camunda:string>plain_text</camunda:string>
+          </camunda:field>
+          <camunda:field name="explode_separator">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="object">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="replace_tokens">
+            <camunda:string>no</camunda:string>
+          </camunda:field>
+        </bpmn2:extensionElements>
+        <bpmn2:incoming>Flow_0ozqd4y</bpmn2:incoming>
+        <bpmn2:outgoing>Flow_0m9e0az</bpmn2:outgoing>
+      </bpmn2:task>
+      <bpmn2:task id="Activity_1nag7j1" name="Summarise" camunda:modelerTemplate="org.drupal.action.entity:augmentor_action_minimal:node">
+        <bpmn2:extensionElements>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="entity:augmentor_action_minimal:node" />
+          </camunda:properties>
+          <camunda:field name="source_field_1">
+            <camunda:string>field_body</camunda:string>
+          </camunda:field>
+          <camunda:field name="source_field_2">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="source_field_3">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="source_field_4">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="source_field_5">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="source_field_6">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="source_field_7">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="source_field_8">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="source_field_9">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="source_field_10">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="target_field_1">
+            <camunda:string>field_summary</camunda:string>
+          </camunda:field>
+          <camunda:field name="response_key_1">
+            <camunda:string>default</camunda:string>
+          </camunda:field>
+          <camunda:field name="target_field_2">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="response_key_2">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="target_field_3">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="response_key_3">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="target_field_4">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="response_key_4">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="target_field_5">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="response_key_5">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="target_field_6">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="response_key_6">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="target_field_7">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="response_key_7">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="target_field_8">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="response_key_8">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="target_field_9">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="response_key_9">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="target_field_10">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="response_key_10">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="augmentor">
+            <camunda:string>310a229a-4950-4fcf-9ef7-fdb86617f5b4</camunda:string>
+          </camunda:field>
+          <camunda:field name="action">
+            <camunda:string>replace</camunda:string>
+          </camunda:field>
+          <camunda:field name="text_format">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="explode_separator">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="object">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="replace_tokens">
+            <camunda:string>no</camunda:string>
+          </camunda:field>
+        </bpmn2:extensionElements>
+        <bpmn2:incoming>Flow_0m9e0az</bpmn2:incoming>
+        <bpmn2:outgoing>Flow_1mf3p58</bpmn2:outgoing>
+      </bpmn2:task>
+      <bpmn2:task id="Activity_0h3w9no" name="Set Check" camunda:modelerTemplate="org.drupal.action.eca_set_field_value">
+        <bpmn2:extensionElements>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="eca_set_field_value" />
+          </camunda:properties>
+          <camunda:field name="method">
+            <camunda:string>set:clear</camunda:string>
+          </camunda:field>
+          <camunda:field name="strip_tags">
+            <camunda:string>no</camunda:string>
+          </camunda:field>
+          <camunda:field name="trim">
+            <camunda:string>no</camunda:string>
+          </camunda:field>
+          <camunda:field name="field_name">
+            <camunda:string>field_spin_check</camunda:string>
+          </camunda:field>
+          <camunda:field name="save_entity">
+            <camunda:string>no</camunda:string>
+          </camunda:field>
+          <camunda:field name="field_value">
+            <camunda:string>1</camunda:string>
+          </camunda:field>
+          <camunda:field name="object">
+            <camunda:string></camunda:string>
+          </camunda:field>
+        </bpmn2:extensionElements>
+        <bpmn2:incoming>Flow_1mf3p58</bpmn2:incoming>
+        <bpmn2:outgoing>Flow_0tcysav</bpmn2:outgoing>
+      </bpmn2:task>
+      <bpmn2:task id="Activity_04zeks4" name="Deselect Bulk" camunda:modelerTemplate="org.drupal.action.eca_set_field_value">
+        <bpmn2:extensionElements>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="eca_set_field_value" />
+          </camunda:properties>
+          <camunda:field name="method">
+            <camunda:string>set:clear</camunda:string>
+          </camunda:field>
+          <camunda:field name="strip_tags">
+            <camunda:string>no</camunda:string>
+          </camunda:field>
+          <camunda:field name="trim">
+            <camunda:string>no</camunda:string>
+          </camunda:field>
+          <camunda:field name="field_name">
+            <camunda:string>field_spin_bulk</camunda:string>
+          </camunda:field>
+          <camunda:field name="save_entity">
+            <camunda:string>no</camunda:string>
+          </camunda:field>
+          <camunda:field name="field_value">
+            <camunda:string>0</camunda:string>
+          </camunda:field>
+          <camunda:field name="object">
+            <camunda:string></camunda:string>
+          </camunda:field>
+        </bpmn2:extensionElements>
+        <bpmn2:incoming>Flow_0tcysav</bpmn2:incoming>
+        <bpmn2:outgoing>Flow_1n3izmr</bpmn2:outgoing>
+      </bpmn2:task>
+      <bpmn2:task id="Activity_0v08iqd" name="Save" camunda:modelerTemplate="org.drupal.action.eca_save_entity">
+        <bpmn2:extensionElements>
+          <camunda:field name="object">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="eca_save_entity" />
+          </camunda:properties>
+        </bpmn2:extensionElements>
+        <bpmn2:incoming>Flow_1n3izmr</bpmn2:incoming>
+        <bpmn2:outgoing>Flow_0qlwsdw</bpmn2:outgoing>
+      </bpmn2:task>
+      <bpmn2:task id="Activity_0h2dkc4" name="Message" camunda:modelerTemplate="org.drupal.action.action_message_action">
+        <bpmn2:extensionElements>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="action_message_action" />
+          </camunda:properties>
+          <camunda:field name="message">
+            <camunda:string>The content has been populated.</camunda:string>
+          </camunda:field>
+          <camunda:field name="replace_tokens">
+            <camunda:string>no</camunda:string>
+          </camunda:field>
+        </bpmn2:extensionElements>
+        <bpmn2:incoming>Flow_0qlwsdw</bpmn2:incoming>
+      </bpmn2:task>
+      <bpmn2:sequenceFlow id="Flow_0ozqd4y" name="Auto populate?" camunda:modelerTemplate="org.drupal.condition.eca_entity_field_value" sourceRef="Event_07jgaq7" targetRef="Activity_1ac3i7p">
+        <bpmn2:extensionElements>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="eca_entity_field_value" />
+          </camunda:properties>
+          <camunda:field name="field_name">
+            <camunda:string>field_spin_bulk</camunda:string>
+          </camunda:field>
+          <camunda:field name="operator">
+            <camunda:string>equal</camunda:string>
+          </camunda:field>
+          <camunda:field name="expected_value">
+            <camunda:string>1</camunda:string>
+          </camunda:field>
+          <camunda:field name="type">
+            <camunda:string>value</camunda:string>
+          </camunda:field>
+          <camunda:field name="case">
+            <camunda:string>no</camunda:string>
+          </camunda:field>
+          <camunda:field name="negate">
+            <camunda:string>no</camunda:string>
+          </camunda:field>
+          <camunda:field name="entity">
+            <camunda:string></camunda:string>
+          </camunda:field>
+        </bpmn2:extensionElements>
+      </bpmn2:sequenceFlow>
+      <bpmn2:sequenceFlow id="Flow_0m9e0az" sourceRef="Activity_1ac3i7p" targetRef="Activity_1nag7j1" />
+      <bpmn2:sequenceFlow id="Flow_1mf3p58" sourceRef="Activity_1nag7j1" targetRef="Activity_0h3w9no" />
+      <bpmn2:sequenceFlow id="Flow_0tcysav" sourceRef="Activity_0h3w9no" targetRef="Activity_04zeks4" />
+      <bpmn2:sequenceFlow id="Flow_1n3izmr" sourceRef="Activity_04zeks4" targetRef="Activity_0v08iqd" />
+      <bpmn2:sequenceFlow id="Flow_0qlwsdw" sourceRef="Activity_0v08iqd" targetRef="Activity_0h2dkc4" />
+      <bpmn2:startEvent id="Event_14f2yjs" name="Populate with Augmentations" camunda:modelerTemplate="org.drupal.event.vbo:custom_access">
+        <bpmn2:extensionElements>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="vbo:custom_access" />
+          </camunda:properties>
+          <camunda:field name="operation_name">
+            <camunda:string>Populate with Augmentations</camunda:string>
+          </camunda:field>
+          <camunda:field name="view_id">
+            <camunda:string></camunda:string>
+          </camunda:field>
+          <camunda:field name="display_id">
+            <camunda:string></camunda:string>
+          </camunda:field>
+        </bpmn2:extensionElements>
+        <bpmn2:outgoing>Flow_0nf45ci</bpmn2:outgoing>
+      </bpmn2:startEvent>
+      <bpmn2:task id="Activity_0v1egq5" name="Set access" camunda:modelerTemplate="org.drupal.action.eca_vbo_set_custom_access">
+        <bpmn2:extensionElements>
+          <camunda:field name="access_granted">
+            <camunda:string>yes</camunda:string>
+          </camunda:field>
+          <camunda:properties>
+            <camunda:property name="pluginid" value="eca_vbo_set_custom_access" />
+          </camunda:properties>
+        </bpmn2:extensionElements>
+        <bpmn2:incoming>Flow_0nf45ci</bpmn2:incoming>
+      </bpmn2:task>
+      <bpmn2:sequenceFlow id="Flow_0nf45ci" sourceRef="Event_14f2yjs" targetRef="Activity_0v1egq5" />
+    </bpmn2:process>
+    <bpmndi:BPMNDiagram id="sid-0cba2fdc-baa3-4436-8a78-b2c1143e2be2">
+      <bpmndi:BPMNPlane id="sid-102f0cd2-5049-41cb-82e8-198c28a0a2fc" bpmnElement="Process_u10mKqK">
+        <bpmndi:BPMNShape id="Event_07jgaq7_di" bpmnElement="Event_07jgaq7">
+          <dc:Bounds x="142" y="-378" width="36" height="36" />
+          <bpmndi:BPMNLabel>
+            <dc:Bounds x="117" y="-335" width="86" height="14" />
+          </bpmndi:BPMNLabel>
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNShape id="Activity_1ac3i7p_di" bpmnElement="Activity_1ac3i7p">
+          <dc:Bounds x="200" y="-400" width="100" height="80" />
+          <bpmndi:BPMNLabel />
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNShape id="Activity_1nag7j1_di" bpmnElement="Activity_1nag7j1">
+          <dc:Bounds x="330" y="-400" width="100" height="80" />
+          <bpmndi:BPMNLabel />
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNShape id="Activity_0h3w9no_di" bpmnElement="Activity_0h3w9no">
+          <dc:Bounds x="450" y="-400" width="100" height="80" />
+          <bpmndi:BPMNLabel />
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNShape id="Activity_04zeks4_di" bpmnElement="Activity_04zeks4">
+          <dc:Bounds x="570" y="-400" width="100" height="80" />
+          <bpmndi:BPMNLabel />
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNShape id="Activity_0v08iqd_di" bpmnElement="Activity_0v08iqd">
+          <dc:Bounds x="690" y="-400" width="100" height="80" />
+          <bpmndi:BPMNLabel />
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNShape id="Activity_0h2dkc4_di" bpmnElement="Activity_0h2dkc4">
+          <dc:Bounds x="810" y="-400" width="100" height="80" />
+          <bpmndi:BPMNLabel />
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNShape id="Event_14f2yjs_di" bpmnElement="Event_14f2yjs">
+          <dc:Bounds x="142" y="-248" width="36" height="36" />
+          <bpmndi:BPMNLabel>
+            <dc:Bounds x="123" y="-205" width="74" height="27" />
+          </bpmndi:BPMNLabel>
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNShape id="Activity_0v1egq5_di" bpmnElement="Activity_0v1egq5">
+          <dc:Bounds x="200" y="-270" width="100" height="80" />
+          <bpmndi:BPMNLabel />
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNEdge id="Flow_0ozqd4y_di" bpmnElement="Flow_0ozqd4y">
+          <di:waypoint x="178" y="-360" />
+          <di:waypoint x="200" y="-360" />
+          <bpmndi:BPMNLabel>
+            <dc:Bounds x="152" y="-378" width="74" height="14" />
+          </bpmndi:BPMNLabel>
+        </bpmndi:BPMNEdge>
+        <bpmndi:BPMNEdge id="Flow_0m9e0az_di" bpmnElement="Flow_0m9e0az">
+          <di:waypoint x="300" y="-360" />
+          <di:waypoint x="330" y="-360" />
+        </bpmndi:BPMNEdge>
+        <bpmndi:BPMNEdge id="Flow_1mf3p58_di" bpmnElement="Flow_1mf3p58">
+          <di:waypoint x="430" y="-360" />
+          <di:waypoint x="450" y="-360" />
+        </bpmndi:BPMNEdge>
+        <bpmndi:BPMNEdge id="Flow_0tcysav_di" bpmnElement="Flow_0tcysav">
+          <di:waypoint x="550" y="-360" />
+          <di:waypoint x="570" y="-360" />
+        </bpmndi:BPMNEdge>
+        <bpmndi:BPMNEdge id="Flow_1n3izmr_di" bpmnElement="Flow_1n3izmr">
+          <di:waypoint x="670" y="-360" />
+          <di:waypoint x="690" y="-360" />
+        </bpmndi:BPMNEdge>
+        <bpmndi:BPMNEdge id="Flow_0qlwsdw_di" bpmnElement="Flow_0qlwsdw">
+          <di:waypoint x="790" y="-360" />
+          <di:waypoint x="810" y="-360" />
+        </bpmndi:BPMNEdge>
+        <bpmndi:BPMNEdge id="Flow_0nf45ci_di" bpmnElement="Flow_0nf45ci">
+          <di:waypoint x="178" y="-230" />
+          <di:waypoint x="200" y="-230" />
+        </bpmndi:BPMNEdge>
+      </bpmndi:BPMNPlane>
+    </bpmndi:BPMNDiagram>
+  </bpmn2:definitions>

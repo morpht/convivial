@@ -4,6 +4,7 @@ dependencies:
   config:
     - filter.format.rich_text
   module:
+    - augmentor
     - contextual
     - eu_cookie_compliance
     - file
@@ -24,5 +25,6 @@ permissions:
   - 'administer users'
   - 'delete own files'
   - 'display eu cookie compliance popup'
+  - 'execute augmentor'
   - 'use text format rich_text'
   - 'view the administration theme'
