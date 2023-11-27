@@ -112,12 +112,6 @@ settings:
       section:
         weight: 39
         enabled: false
-      slide:
-        weight: 49
-        enabled: false
-      slideshow:
-        weight: 52
-        enabled: false
       video_bg_modifier:
         weight: 40
         enabled: true

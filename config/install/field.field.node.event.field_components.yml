@@ -152,12 +152,6 @@ settings:
       section:
         weight: -62
         enabled: true
-      slide:
-        weight: -42
-        enabled: false
-      slideshow:
-        weight: -61
-        enabled: true
       snippet:
         weight: 74
         enabled: true
