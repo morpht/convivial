@@ -442,11 +442,6 @@ function convivial_bootstrap_preprocess_block(&$variables) {
         require_once __DIR__ . '/includes/personified_data.inc';
         _convivial_bootstrap_personified_data($variables, $variables['content']['#block_content']);
         break;
-
-      case 'slideshow':
-        require_once __DIR__ . '/includes/slideshow.inc';
-        _convivial_bootstrap_slideshow($entity, $variables, 'attributes');
-        break;
     }
 
     // Add class to hide block heading if enabled.
@@ -840,11 +835,6 @@ function _convivial_bootstrap_attach_paragraph_features(FieldableEntityInterface
     case 'national_map':
       require_once __DIR__ . '/includes/national_map.inc';
       _convivial_bootstrap_national_map($entity, $build, $attributes_key);
-      break;
-
-    case 'slideshow':
-      require_once __DIR__ . '/includes/slideshow.inc';
-      _convivial_bootstrap_slideshow($entity, $build, $attributes_key);
       break;
   }
 }
