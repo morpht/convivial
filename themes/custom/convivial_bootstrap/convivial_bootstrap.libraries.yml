@@ -114,15 +114,6 @@ flexslider-apply:
     - core/drupal
     - convivial_bootstrap/flexslider
 
-flipclock:
-  js:
-    libraries/flipclock/compiled/flipclock.min.js: { minified: true }
-  css:
-    theme:
-      libraries/flipclock/compiled/flipclock.css: { }
-  dependencies:
-    - core/jquery
-
 gallery:
   js:
     js/gallery.js: { }
