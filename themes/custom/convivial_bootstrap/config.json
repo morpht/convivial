@@ -37,7 +37,6 @@
       "./node_modules/flexslider/flexslider.css",
       "./node_modules/flexslider/fonts/*",
       "./node_modules/flexslider/jquery.flexslider-min.js",
-      "./node_modules/flipclock/compiled/*",
       "./node_modules/glightbox/dist/css/*.css",
       "./node_modules/glightbox/dist/js/*.js",
       "./node_modules/handlebars/dist/handlebars.min.js",
