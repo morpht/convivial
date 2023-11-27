@@ -127,12 +127,6 @@ settings:
       section:
         weight: 70
         enabled: false
-      slide:
-        weight: 71
-        enabled: false
-      slideshow:
-        weight: 72
-        enabled: false
       tiles:
         weight: 73
         enabled: false

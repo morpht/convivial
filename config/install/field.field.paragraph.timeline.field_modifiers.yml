@@ -136,12 +136,6 @@ settings:
       section:
         weight: 75
         enabled: false
-      slide:
-        weight: 76
-        enabled: false
-      slideshow:
-        weight: 77
-        enabled: false
       timeline:
         weight: 78
         enabled: false

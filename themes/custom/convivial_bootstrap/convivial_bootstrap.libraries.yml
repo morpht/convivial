@@ -99,30 +99,6 @@ font-family:
     theme:
       https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap: { type: external }
 
-flexslider:
-  css:
-    theme:
-      libraries/flexslider/flexslider.css: { }
-  js:
-    libraries/flexslider/jquery.flexslider-min.js: { minified: true }
-
-flexslider-apply:
-  js:
-    components/slideshow/flexslider.apply.js: { }
-  dependencies:
-    - core/jquery
-    - core/drupal
-    - convivial_bootstrap/flexslider
-
-flipclock:
-  js:
-    libraries/flipclock/compiled/flipclock.min.js: { minified: true }
-  css:
-    theme:
-      libraries/flipclock/compiled/flipclock.css: { }
-  dependencies:
-    - core/jquery
-
 gallery:
   js:
     js/gallery.js: { }
@@ -195,16 +171,6 @@ mark-external-links:
     components/external-link/mark-external-links.js: { }
   dependencies:
     - core/jquery
-
-object-fit-images:
-  js:
-    libraries/object-fit-images/dist/ofi.min.js: { minified: true }
-
-object-fit-images-apply:
-  js:
-    components/slideshow/ofi.js: { }
-  dependencies:
-    - convivial_bootstrap/object-fit-images
 
 popperjs:
   js:
