@@ -697,10 +697,6 @@ function convivial_bootstrap_preprocess_field(&$variables, $hook) {
       _convivial_bootstrap_block_plugin($variables);
       break;
 
-    case 'field_slide_image':
-      $variables['attributes']['class'] = 'is-background';
-      break;
-
     case 'field_social_share_facebook':
     case 'field_social_share_twitter':
     case 'field_social_share_linkedin':
