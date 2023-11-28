@@ -61,42 +61,42 @@
         ]
       }
 
-      $('.list-layout--slider-full-width .list', context).slick({
+      $('.list-layout--slider-full-width .list', context).not('.slick-initialized').slick({
         ...defaultSettings,
         slidesToShow: 1,
       })
 
-      $('.list-layout--slider-halves .list', context).slick({
+      $('.list-layout--slider-halves .list', context).not('.slick-initialized').slick({
         ...halvesSettings,
         slidesToShow: 2,
       })
 
-      $('.list-layout--slider-thirds .list', context).slick({
+      $('.list-layout--slider-thirds .list', context).not('.slick-initialized').slick({
         ...thirdsSettings,
         slidesToShow: 3,
       })
 
-      $('.list-layout--slider-quarters .list', context).slick({
+      $('.list-layout--slider-quarters .list', context).not('.slick-initialized').slick({
         ...quartersSettings,
         slidesToShow: 4,
       })
 
-      $('.views-layout--slider-full-width .view-content', context).slick({
+      $('.views-layout--slider-full-width .view-content', context).not('.slick-initialized').slick({
         ...defaultSettings,
         slidesToShow: 1,
       })
 
-      $('.views-layout--slider-halves .view-content', context).slick({
+      $('.views-layout--slider-halves .view-content', context).not('.slick-initialized').slick({
         ...halvesSettings,
         slidesToShow: 2,
       })
 
-      $('.views-layout--slider-thirds .view-content', context).slick({
+      $('.views-layout--slider-thirds .view-content', context).not('.slick-initialized').slick({
         ...thirdsSettings,
         slidesToShow: 3,
       })
 
-      $('.views-layout--slider-quarters .view-content', context).slick({
+      $('.views-layout--slider-quarters .view-content', context).not('.slick-initialized').slick({
         ...quartersSettings,
         slidesToShow: 4,
       })

@@ -242,6 +242,8 @@ slider:
   js:
     components/slider/slider.js: { }
   dependencies:
+    - core/drupal
+    - core/jquery
     - convivial_bootstrap/slick_carousel
 
 decision_tree_library:
