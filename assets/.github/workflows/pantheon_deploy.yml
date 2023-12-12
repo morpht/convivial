@@ -27,7 +27,7 @@ jobs:
       - name: Setup PHP and tools
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.0'
+          php-version: '8.1'
           tools: composer:v2
           extensions: mbstring, gd, intl, yaml, bcmath, curl
       - name: Execute build script
