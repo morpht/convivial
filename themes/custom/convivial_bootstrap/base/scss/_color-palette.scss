@@ -30,13 +30,18 @@
 }
 
 .cp {
-  padding: 2rem $grid-gutter-width / 2;
-}
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 2rem;
 
-// Standard.
-.cp--standard {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  // Reset side padding for edgy layouts.
+  .layout--content-edgy &,
+  .edgy:not(.edgy--contained) & {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 $palettes: (
