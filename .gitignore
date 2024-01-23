@@ -12,3 +12,7 @@ themes/custom/**/js/**/*.map
 themes/custom/**/components/**/*.map
 themes/custom/**/libraries/**/*.map
 themes/custom/**/assets/bootstrap
+
+# Cypress folders
+cypress.env.json
+/tests/cypress/cypress/videos/
