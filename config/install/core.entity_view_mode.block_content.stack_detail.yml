@@ -5,5 +5,6 @@ dependencies:
     - block_content
 id: block_content.stack_detail
 label: 'Image Card'
+description: ''
 targetEntityType: block_content
 cache: true

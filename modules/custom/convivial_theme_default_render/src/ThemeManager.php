@@ -37,6 +37,13 @@ class ThemeManager extends CoreThemeManager implements ThemeManagerInterface {
   protected $configFactory;
 
   /**
+   * The service ID
+   *
+   * @var string
+   */
+  public $_serviceId;
+
+  /**
    * ThemeManager constructor.
    */
   public function __construct(

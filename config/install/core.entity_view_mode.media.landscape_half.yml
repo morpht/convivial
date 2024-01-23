@@ -5,5 +5,6 @@ dependencies:
     - media
 id: media.landscape_half
 label: 'Landscape half'
+description: ''
 targetEntityType: media
 cache: true

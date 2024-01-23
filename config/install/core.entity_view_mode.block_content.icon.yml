@@ -5,5 +5,6 @@ dependencies:
     - block_content
 id: block_content.icon
 label: Icon
+description: ''
 targetEntityType: block_content
 cache: true

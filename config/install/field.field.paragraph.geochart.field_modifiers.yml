@@ -106,8 +106,8 @@ settings:
       section:
         weight: 57
         enabled: false
-      slide:
-        weight: 58
+      snippet:
+        weight: 60
         enabled: false
       tiles:
         weight: 61

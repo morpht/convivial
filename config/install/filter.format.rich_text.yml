@@ -19,25 +19,30 @@ name: 'Rich text'
 format: rich_text
 weight: -9
 filters:
+  editor_file_reference:
+    id: editor_file_reference
+    provider: editor
+    status: false
+    weight: -42
+    settings: {  }
+  filter_align:
+    id: filter_align
+    provider: filter
+    status: true
+    weight: -48
+    settings: {  }
   filter_autop:
     id: filter_autop
     provider: filter
     status: false
     weight: -49
     settings: {  }
-  filter_htmlcorrector:
-    id: filter_htmlcorrector
+  filter_caption:
+    id: filter_caption
     provider: filter
     status: true
-    weight: -44
+    weight: -47
     settings: {  }
-  filter_url:
-    id: filter_url
-    provider: filter
-    status: true
-    weight: -45
-    settings:
-      filter_url_length: 72
   filter_html:
     id: filter_html
     provider: filter
@@ -47,11 +52,11 @@ filters:
       allowed_html: '<br> <p class="introduction alert alert-primary alert-secondary alert-success alert-danger alert-warning alert-info alert-light alert-dark callout callout--dark callout--light step__content text-align-left text-align-center text-align-right text-align-justify"> <h1 id class> <h2 id class> <h3 id class> <h4 id class> <h5 id class> <h6 id class> <ul class="list--bulletless list--inline callout callout--dark callout--light" type> <ol class="list--bulletless list--inline" type start> <a class="cta-link btn btn-primary btn-secondary btn-link step__answer step__button step__button--back step__button--restart" data-answer-path data-bs-toggle data-entity-type data-entity-uuid data-entity-substitution href hreflang title> <table class="table table-bordered table-alt-heading table-dark-heading table-dark-alt-heading table-striped table-sm"> <div class="callout callout--dark callout--light decision-tree decision-tree__summary decision-tree__summary_infos decision-tree__footer step step__answers step__content step__info step__qa text-align-left text-align-center text-align-right text-align-justify" data-cookie data-show-summary id> <cite> <dl> <dt> <dd> <be> <colgroup span> <col span> <i class> <form accept-charset action method class> <input aria-label autocomplete maxlength name placeholder size type class> <button type value data-bs-toggle data-bs-placement title class> <svg width height viewbox fill xmlns class> <path fill-rule d> <blockquote cite> <caption class> <tbody class> <thead class> <tfoot class> <th scope class rowspan colspan> <td class rowspan colspan> <tr class> <img data-entity-type data-entity-uuid class src alt height width data-caption data-align> <drupal-media title data-entity-type data-entity-uuid alt data-view-mode data-caption data-align> <strong> <em> <u> <code> <s> <sub> <sup> <li data-stop-filter data-pass-filter>'
       filter_html_help: true
       filter_html_nofollow: false
-  editor_file_reference:
-    id: editor_file_reference
-    provider: editor
+  filter_html_escape:
+    id: filter_html_escape
+    provider: filter
     status: false
-    weight: -42
+    weight: -43
     settings: {  }
   filter_html_image_secure:
     id: filter_html_image_secure
@@ -59,24 +64,25 @@ filters:
     status: false
     weight: -40
     settings: {  }
-  filter_align:
-    id: filter_align
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
     provider: filter
     status: true
-    weight: -48
+    weight: -44
     settings: {  }
-  filter_caption:
-    id: filter_caption
+  filter_image_lazy_load:
+    id: filter_image_lazy_load
     provider: filter
     status: true
-    weight: -47
+    weight: -41
     settings: {  }
-  filter_html_escape:
-    id: filter_html_escape
+  filter_url:
+    id: filter_url
     provider: filter
-    status: false
-    weight: -43
-    settings: {  }
+    status: true
+    weight: -45
+    settings:
+      filter_url_length: 72
   linkit:
     id: linkit
     provider: linkit
@@ -107,9 +113,3 @@ filters:
         image: image
         remote_video: remote_video
         video: video
-  filter_image_lazy_load:
-    id: filter_image_lazy_load
-    provider: filter
-    status: true
-    weight: -41
-    settings: {  }

@@ -54,8 +54,10 @@ settings:
     ckeditor5_imageResize:
       allow_resize: true
     ckeditor5_list:
-      reversed: false
-      startIndex: true
+      properties:
+        reversed: false
+        startIndex: true
+      multiBlock: true
     ckeditor5_sourceEditing:
       allowed_tags:
         - '<cite>'
@@ -69,7 +71,7 @@ settings:
         - '<form accept-charset action method class>'
         - '<input aria-label autocomplete maxlength name placeholder size type class>'
         - '<button type value data-bs-toggle data-bs-placement title class>'
-        - '<svg width height viewbox fill xmlns class>'
+        - '<svg width height viewBox fill class>'
         - '<path fill-rule d>'
         - '<div class="callout callout--dark callout--light decision-tree decision-tree__summary decision-tree__summary_infos decision-tree__footer step step__answers step__content step__info step__qa text-align-left text-align-center text-align-right text-align-justify" data-cookie data-show-summary id>'
         - '<blockquote cite>'

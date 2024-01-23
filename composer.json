@@ -97,7 +97,7 @@
     "drupal/recaptcha": "^3.0",
     "drupal/recombee": "^2.0",
     "drupal/redirect": "^1.7",
-    "drupal/remove_http_headers": "^2.0",
+    "drupal/remove_http_headers": "^2.1",
     "drupal/replicate": "^1.2",
     "drupal/replicate_ui": "^1.1",
     "drupal/responsive_preview": "^2.0",

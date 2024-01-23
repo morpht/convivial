@@ -24,6 +24,7 @@ dependencies:
     - eu_cookie_compliance
     - file
     - filter
+    - help
     - media
     - node
     - paragraphs
@@ -41,6 +42,7 @@ permissions:
   - 'access administration pages'
   - 'access content overview'
   - 'access contextual links'
+  - 'access help pages'
   - 'access media overview'
   - 'access taxonomy overview'
   - 'access toolbar'

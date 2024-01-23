@@ -5,5 +5,6 @@ dependencies:
     - media
 id: media.stack_simple
 label: 'Basic Card'
+description: ''
 targetEntityType: media
 cache: true

@@ -13,7 +13,7 @@ logo:
   path: ''
 favicon:
   use_default: 0
-  path: themes/contrib/convivial_bootstrap/favicon.ico
+  path: profiles/custom/convivial/themes/custom/convivial_bootstrap/favicon.ico
   mimetype: image/png
 theme__highlighted_layouts: 0
 top_bar_style: theme__top_bar--dark

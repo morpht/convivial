@@ -4,6 +4,7 @@ dependencies:
   module:
     - eu_cookie_compliance
     - file
+    - help
     - system
     - toolbar
     - webform
@@ -14,6 +15,7 @@ is_admin: null
 permissions:
   - 'access administration pages'
   - 'access any webform configuration'
+  - 'access help pages'
   - 'access toolbar'
   - 'access webform overview'
   - 'access webform submission user'

@@ -25,19 +25,24 @@ filters:
     status: false
     weight: -48
     settings: {  }
-  filter_html_image_secure:
-    id: filter_html_image_secure
-    provider: filter
-    status: false
-    weight: -41
-    settings: {  }
-  filter_url:
-    id: filter_url
+  filter_align:
+    id: filter_align
     provider: filter
     status: true
-    weight: -43
-    settings:
-      filter_url_length: 72
+    weight: -46
+    settings: {  }
+  filter_autop:
+    id: filter_autop
+    provider: filter
+    status: false
+    weight: -47
+    settings: {  }
+  filter_caption:
+    id: filter_caption
+    provider: filter
+    status: true
+    weight: -45
+    settings: {  }
   filter_html:
     id: filter_html
     provider: filter
@@ -47,23 +52,17 @@ filters:
       allowed_html: '<p class="introduction alert alert-primary alert-secondary alert-success alert-danger alert-warning alert-info alert-light alert-dark"> <ul class="list--bulletless list--inline"> <ol class="list--bulletless list--inline"> <a class="cta-link btn btn-primary btn-secondary btn-link"> <table class="table table-bordered table-alt-heading table-dark-heading table-dark-alt-heading table-striped table-sm"> <div class="callout">'
       filter_html_help: true
       filter_html_nofollow: false
-  filter_autop:
-    id: filter_autop
+  filter_html_escape:
+    id: filter_html_escape
     provider: filter
     status: false
-    weight: -47
+    weight: -49
     settings: {  }
-  filter_align:
-    id: filter_align
+  filter_html_image_secure:
+    id: filter_html_image_secure
     provider: filter
-    status: true
-    weight: -46
-    settings: {  }
-  filter_caption:
-    id: filter_caption
-    provider: filter
-    status: true
-    weight: -45
+    status: false
+    weight: -41
     settings: {  }
   filter_htmlcorrector:
     id: filter_htmlcorrector
@@ -71,12 +70,19 @@ filters:
     status: false
     weight: -40
     settings: {  }
-  filter_html_escape:
-    id: filter_html_escape
+  filter_image_lazy_load:
+    id: filter_image_lazy_load
     provider: filter
-    status: false
-    weight: -49
+    status: true
+    weight: -47
     settings: {  }
+  filter_url:
+    id: filter_url
+    provider: filter
+    status: true
+    weight: -43
+    settings:
+      filter_url_length: 72
   linkit:
     id: linkit
     provider: linkit
@@ -107,9 +113,3 @@ filters:
         image: image
         remote_video: remote_video
         video: video
-  filter_image_lazy_load:
-    id: filter_image_lazy_load
-    provider: filter
-    status: true
-    weight: -47
-    settings: {  }
