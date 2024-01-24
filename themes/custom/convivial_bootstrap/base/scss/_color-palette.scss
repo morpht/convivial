@@ -30,11 +30,15 @@
 }
 
 .cp {
-  padding: 2rem $grid-gutter-width / 2;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 2rem;
 
-  // Reset side padding for edgy layouts.
+  // Reset side padding and margin for edgy layouts.
   .layout--content-edgy &,
   .edgy:not(.edgy--contained) & {
+    margin-top: 0;
+    margin-bottom: 0;
 
     // Only on desktop.
     @include media-breakpoint-up(md) {
