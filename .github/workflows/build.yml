@@ -61,8 +61,8 @@ jobs:
       - name: Debugging
         run: which php && php -i
 
-      - name: Copy PHP configuration
-        run: echo 'memory_limit = -1' | sudo tee -a /usr/local/etc/php/conf.d/docker-php-ext-ci.ini
+      # - name: Copy PHP configuration
+      #   run: echo 'memory_limit = -1' | sudo tee -a /usr/local/etc/php/conf.d/docker-php-ext-ci.ini
 
       # Caching based on https://github.com/marketplace/actions/composer-php-actions#caching-dependencies-for-faster-builds
       - name: Determine Composer cache directory
@@ -104,7 +104,7 @@ jobs:
         run: ls -alk ./bin
 
       - name: Prepare environment for application
-        run: bash $SCRIPT_DIR/setup_app.sh
+        run: sudo bash $SCRIPT_DIR/setup_app.sh
 
       - name: Setup application
         run: |
