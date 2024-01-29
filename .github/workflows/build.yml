@@ -58,17 +58,11 @@ jobs:
           echo "drush=$(echo ${GITHUB_WORKSPACE}/bin/drush)" >> $GITHUB_ENV
           echo "SCRIPT_DIR=$(echo ${GITHUB_WORKSPACE}/.github/scripts)" >> $GITHUB_ENV
 
-      - name: Debugging which php
-        run: which php
-
-      - name: Debugging which php info
-        run: php -i
-
-      - name: Create PHP configuration directory
-        run: mkdir -p /etc/php/8.2/cli/conf.d/
+      - name: Debugging
+        run: which php && php -i
 
       - name: Copy PHP configuration
-        run: cp $SCRIPT_DIR/php.ini /etc/php/8.2/cli/conf.d/
+        run: cp $SCRIPT_DIR/php.ini /usr/local/etc/php/conf.d/docker-php-ext-ci.ini
 
       # Caching based on https://github.com/marketplace/actions/composer-php-actions#caching-dependencies-for-faster-builds
       - name: Determine Composer cache directory
