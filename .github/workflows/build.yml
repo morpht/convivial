@@ -62,7 +62,7 @@ jobs:
         run: which php && php -i
 
       - name: Copy PHP configuration
-        run: echo 'memory_limit = -1' >> /usr/local/etc/php/conf.d/docker-php-ext-ci.ini
+        run: sudo echo 'memory_limit = -1' >> /usr/local/etc/php/conf.d/docker-php-ext-ci.ini
 
       # Caching based on https://github.com/marketplace/actions/composer-php-actions#caching-dependencies-for-faster-builds
       - name: Determine Composer cache directory
