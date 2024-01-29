@@ -58,6 +58,12 @@ jobs:
           echo "drush=$(echo ${GITHUB_WORKSPACE}/bin/drush)" >> $GITHUB_ENV
           echo "SCRIPT_DIR=$(echo ${GITHUB_WORKSPACE}/.github/scripts)" >> $GITHUB_ENV
 
+      - name: Debugging which php
+        run: which php
+
+      - name: Debugging which php info
+        run: php -i
+
       - name: Create PHP configuration directory
         run: mkdir -p /etc/php/8.2/cli/conf.d/
 
