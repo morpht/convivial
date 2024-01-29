@@ -21,7 +21,7 @@ jobs:
     name: Full (Build, Validate, and Test)
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/morpht/ci-php:review-pr-13-8.2-node18
+      image: ghcr.io/morpht/ci-php:8.2.14
 
     services:
       database:
@@ -104,7 +104,7 @@ jobs:
         run: ls -alk ./bin
 
       - name: Prepare environment for application
-        run: sudo bash $SCRIPT_DIR/setup_app.sh
+        run: bash $SCRIPT_DIR/setup_app.sh
 
       - name: Setup application
         run: |
@@ -114,12 +114,12 @@ jobs:
         run: |
           ./bin/drush status
 
-      - name: Prepare environment for cypress tests
-        run: |
-          which node
-          node --version
-          cd web/profiles/custom/convivial
-          cp cypress.env.default.json cypress.env.json
-          npm install
-          npm list
+      # - name: Prepare environment for cypress tests
+      #   run: |
+      #     which node
+      #     node --version
+      #     cd web/profiles/custom/convivial
+      #     cp cypress.env.default.json cypress.env.json
+      #     npm install
+      #     npm list
 
