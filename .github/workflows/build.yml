@@ -108,11 +108,17 @@ jobs:
         run: |
           ./bin/drush status
 
-      - name: Prepare environment for cypress tests
+      - name: Prepare environment variables for cypress tests
         run: |
           which node
           node --version
+          npm --version
           cp cypress.env.default.json cypress.env.json
+
+      - name: Install cypress dependencies
+        run: |
           npm install
           npm list
 
+      - name: Run Cypress Tests
+        run: npx cypress run
