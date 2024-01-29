@@ -58,9 +58,6 @@ jobs:
           echo "drush=$(echo ${GITHUB_WORKSPACE}/bin/drush)" >> $GITHUB_ENV
           echo "SCRIPT_DIR=$(echo ${GITHUB_WORKSPACE}/.github/scripts)" >> $GITHUB_ENV
 
-      - name: Debugging
-        run: ls -alk /etc/php
-
       - name: Copy PHP configuration
         run: sudo cp $SCRIPT_DIR/php.ini /etc/php/8.2/cli/conf.d/
 
