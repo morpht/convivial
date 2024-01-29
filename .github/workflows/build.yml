@@ -59,7 +59,7 @@ jobs:
           echo "SCRIPT_DIR=$(echo ${GITHUB_WORKSPACE}/.github/scripts)" >> $GITHUB_ENV
 
       - name: Copy PHP configuration
-        run: sudo cp $SCRIPT_DIR/php.ini /etc/php/8.2/cli/conf.d/
+        run: cp $SCRIPT_DIR/php.ini /etc/php/8.2/cli/conf.d/
 
       # Caching based on https://github.com/marketplace/actions/composer-php-actions#caching-dependencies-for-faster-builds
       - name: Determine Composer cache directory
