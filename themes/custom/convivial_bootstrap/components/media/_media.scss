@@ -28,13 +28,6 @@
 
 // Image view modes.
 .media-entity--type-image {
-  &.media-entity--view-mode-half,
-  &.media-entity--view-mode-half-wide {
-    @include media-breakpoint-up(sm) {
-      max-width: 50%;
-    }
-  }
-
   &.media-entity--view-mode-medium,
   &.media-entity--view-mode-small {
     max-width: 50%;
