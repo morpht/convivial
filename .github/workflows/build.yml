@@ -112,6 +112,8 @@ jobs:
         run: |
           which node
           node --version
+          ls -alk
+          pwd
           cd web/profiles/custom/convivial
           cp cypress.env.default.json cypress.env.json
           npm install
