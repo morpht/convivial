@@ -21,7 +21,7 @@ jobs:
     name: Full (Build, Validate, and Test)
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/morpht/ci-php:8.2.14
+      image: ghcr.io/morpht/ci-php:review-pr-14-8.2-node18-runner
 
     services:
       database:
@@ -57,12 +57,6 @@ jobs:
           echo "COMPOSER_BIN=$(echo ${GITHUB_WORKSPACE}/vendor/bin)" >> $GITHUB_ENV
           echo "drush=$(echo ${GITHUB_WORKSPACE}/bin/drush)" >> $GITHUB_ENV
           echo "SCRIPT_DIR=$(echo ${GITHUB_WORKSPACE}/.github/scripts)" >> $GITHUB_ENV
-
-      - name: Debugging
-        run: which php && php -i
-
-      # - name: Copy PHP configuration
-      #   run: echo 'memory_limit = -1' | sudo tee -a /usr/local/etc/php/conf.d/docker-php-ext-ci.ini
 
       # Caching based on https://github.com/marketplace/actions/composer-php-actions#caching-dependencies-for-faster-builds
       - name: Determine Composer cache directory
@@ -114,12 +108,12 @@ jobs:
         run: |
           ./bin/drush status
 
-      # - name: Prepare environment for cypress tests
-      #   run: |
-      #     which node
-      #     node --version
-      #     cd web/profiles/custom/convivial
-      #     cp cypress.env.default.json cypress.env.json
-      #     npm install
-      #     npm list
+      - name: Prepare environment for cypress tests
+        run: |
+          which node
+          node --version
+          cd web/profiles/custom/convivial
+          cp cypress.env.default.json cypress.env.json
+          npm install
+          npm list
 
