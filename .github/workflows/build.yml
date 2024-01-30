@@ -21,7 +21,7 @@ jobs:
     name: Full (Build, Validate, and Test)
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/morpht/ci-php:review-pr-15-8.2-runner
+      image: ghcr.io/morpht/ci-php:review-pr-16-8.2-memory
 
     services:
       database:
