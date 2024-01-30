@@ -5,7 +5,7 @@ set -ev
 export PATH=${COMPOSER_BIN}:$PATH
 
 # Up the PHP Memory Limit
-echo 'memory_limit = 256M' >> /usr/local/etc/php/conf.d/docker-php-ext-ci.ini
+echo 'memory_limit = 512M' >> /usr/local/etc/php/conf.d/docker-php-ext-ci.ini
 
 # Create a MySQL database for drupal to use
 MYSQL_ROOT_COMMAND="mysql --user=root --password=$MYSQL_ROOT_PASSWORD --host=$MYSQL_HOST --protocol=tcp"
