@@ -99,6 +99,9 @@ jobs:
       - name: Show environment variables
         run: ls -alk ./bin
 
+      - name: PHP Information
+        run: php -i
+
       - name: Prepare environment for application
         run: bash $SCRIPT_DIR/setup_app.sh
 
