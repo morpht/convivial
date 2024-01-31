@@ -42,6 +42,7 @@
 {%
   set classes = [
     'gallery',
+    'gallery--' ~ paragraph.id(),
     'paragraph',
     paragraph.field_gallery_show_controls.value ? 'gallery--show-controls' : 'gallery--hide-controls',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
@@ -49,7 +50,7 @@
   ]
 %}
 {% block paragraph %}
-  <div id="gallery-{{ paragraph.id() }}" {{ attributes.addClass(classes) }}>
+  <div{{ attributes.addClass(classes) }}>
     <div class="containerised">
       {% block content %}
         {{ content }}
