@@ -21,7 +21,9 @@ jobs:
     name: Full (Build, Validate, and Test)
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/morpht/ci-php:8.1.20
+      image: ghcr.io/morpht/ci-php:review-pr-16-8.2-memory
+      env:
+        PHP_MEMORY_LIMIT: 512M
 
     services:
       database:
