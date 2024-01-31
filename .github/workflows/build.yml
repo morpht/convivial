@@ -21,7 +21,7 @@ jobs:
     name: Full (Build, Validate, and Test)
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/morpht/ci-php:8.2.14-memory
+      image: ghcr.io/morpht/ci-php:review-pr-14-8.2-node18-runner
       env:
         PHP_MEMORY_LIMIT: 512M
 
@@ -105,3 +105,22 @@ jobs:
       - name: Setup application
         run: |
           ./bin/drush si convivial --locale=en --db-url=mysql://drupal:drupal@database:3306/drupal --account-name=admin --account-pass=admin --site-name=Convivial Demo --site-pass=admin
+
+      - name: Application Status
+        run: |
+          ./bin/drush status
+
+      - name: Prepare environment variables for cypress tests
+        run: |
+          which node
+          node --version
+          npm --version
+          cp cypress.env.default.json cypress.env.json
+
+      - name: Install cypress dependencies
+        run: |
+          npm install
+          npm list
+
+      - name: Run Cypress Tests
+        run: npx cypress run
