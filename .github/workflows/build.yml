@@ -21,7 +21,7 @@ jobs:
     name: Full (Build, Validate, and Test)
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/morpht/ci-php:review-pr-14-8.2-node18-runner
+      image: ghcr.io/morpht/ci-php:review-pr-13-8.2-node18
       env:
         PHP_MEMORY_LIMIT: 512M
 
