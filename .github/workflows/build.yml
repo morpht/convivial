@@ -49,10 +49,10 @@ jobs:
           # the commit ID for the last commit to the head branch of the pull request
           # (the default is the last *merge* commit of the pull request merge branch)
 
-    - name: Setup PHP
-      uses: ghcr.io/morpht/ci-php:review-pr-17-8.2-cypress13
-      env:
-        PHP_MEMORY_LIMIT: 512M
+      - name: Setup PHP
+        uses: ghcr.io/morpht/ci-php:review-pr-17-8.2-cypress13
+        env:
+          PHP_MEMORY_LIMIT: 512M
 
       - name: Prepare environment variables
         run: |
@@ -117,11 +117,3 @@ jobs:
           node --version
           npm --version
           cp cypress.env.default.json cypress.env.json
-
-      # - name: Install cypress dependencies
-      #   run: |
-      #     npm install
-      #     npm list
-
-      # - name: Run Cypress Tests
-      #   run: npx cypress run
