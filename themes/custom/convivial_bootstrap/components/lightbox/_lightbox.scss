@@ -1,6 +1,9 @@
 h2 + .field--name-field-lightbox-thumbnail,
 .field--name-field-body + .field--name-field-lightbox-thumbnail {
   margin-top: 1.5rem;
+  img {
+    width: 100%;
+  }
 }
 
 .lightbox .field--name-field-lightbox-thumbnail a[rel~="external"]:after {
