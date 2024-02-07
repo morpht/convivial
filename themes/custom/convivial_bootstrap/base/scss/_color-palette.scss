@@ -30,27 +30,40 @@
 }
 
 .cp {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
 
+  // Only on desktop.
   @include media-breakpoint-up(md) {
     padding-left: 2rem;
     padding-right: 2rem;
   }
 
-  // Reset side padding and margin for edgy layouts.
+  // Margin between components.
+  .field--name-field-components & {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  // Reset side padding for edgy layouts.
   .layout--content-edgy &,
-  .edgy:not(.edgy--contained) &,
-  &.layout--header-section {
-    margin-top: 0;
-    margin-bottom: 0;
+  .edgy:not(.edgy--contained) & {
 
     // Only on desktop.
     @include media-breakpoint-up(md) {
       padding-left: 0;
       padding-right: 0;
+    }
+  }
+}
+
+// Reset margin for edgy layouts.
+.layout--content-edgy,
+.edgy:not(.edgy--contained) {
+  .field--name-field-components {
+    .cp {
+      margin-top: 0;
+      margin-bottom: 0;
     }
   }
 }

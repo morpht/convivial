@@ -1,21 +1,23 @@
-<h2>Recommended</h2>
-<div class="roam-recombee list-layout list-layout--row list-layout--3-3-3-3">
-  <div class="list">
-    {{#each recomms}}
-      <div class="list__item">
-        <div class="stack stack--simple card card--clickable">
-            <div class="stack__content card-body">
-              <h3 class="stack__title card-title">
-                <a href="{{values.url}}" class="stack__link">
-                  {{values.title}}
-                </a>
-              </h3>
-              <div class="stack__summary">
-                {{values.summary}}
+<div class="container cp cp--standard">
+  <h2>Recommended</h2>
+  <div class="roam-recombee list-layout list-layout--row list-layout--3-3-3-3">
+    <div class="list">
+      {{#each recomms}}
+        <div class="list__item">
+          <div class="stack stack--simple card card--clickable">
+              <div class="stack__content card-body">
+                <h3 class="stack__title card-title">
+                  <a href="{{values.url}}" class="stack__link">
+                    {{values.title}}
+                  </a>
+                </h3>
+                <div class="stack__summary">
+                  {{values.summary}}
+                </div>
               </div>
-            </div>
+          </div>
         </div>
-      </div>
-    {{/each}}
+      {{/each}}
+    </div>
   </div>
 </div>
