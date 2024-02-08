@@ -1,32 +1,34 @@
 {{#if this.length}}
   {{#each this}}
     <div class="promotion cp_trackable banner {{ classes }}"{{#if type}} data-cp-category="{{ type }}"{{/if}}{{#if label}} data-cp-label="{{ label }}"{{/if}}>
-      {{#if image}}
-        <div class="banner__image-area">
-          {{{ image }}}
-        </div>
-      {{/if}}
-      {{#if bg_color}}
-        <div class="banner__background-area"></div>
-      {{/if}}
-      <div class="banner__content-area">
-        <div class="banner__content">
-          {{#if heading}}
-            <h2 class="banner__title">
-              {{#if link}}
-                <a class="banner__link" href="{{ link }}">{{ heading }}</a>
-              {{else}}
-                {{ heading }}
-              {{/if}}
-            </h2>
-          {{/if}}
-          {{#if body}}{{{ body }}}{{/if}}
-        </div>
-        {{#if aside}}
-          <div class="banner__aside">
-            {{{ aside }}}
+      <div class="container">
+        {{#if image}}
+          <div class="banner__image-area">
+            {{{ image }}}
           </div>
         {{/if}}
+        {{#if bg_color}}
+          <div class="banner__background-area"></div>
+        {{/if}}
+        <div class="banner__content-area">
+          <div class="banner__content">
+            {{#if heading}}
+              <h2 class="banner__title">
+                {{#if link}}
+                  <a class="banner__link" href="{{ link }}">{{ heading }}</a>
+                {{else}}
+                  {{ heading }}
+                {{/if}}
+              </h2>
+            {{/if}}
+            {{#if body}}{{{ body }}}{{/if}}
+          </div>
+          {{#if aside}}
+            <div class="banner__aside">
+              {{{ aside }}}
+            </div>
+          {{/if}}
+        </div>
       </div>
     </div>
   {{/each}}

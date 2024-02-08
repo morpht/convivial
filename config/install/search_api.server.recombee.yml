@@ -10,3 +10,5 @@ backend: recombee
 backend_config:
   account: ''
   token: ''
+  region: ap-se
+  search_scenario: search_top

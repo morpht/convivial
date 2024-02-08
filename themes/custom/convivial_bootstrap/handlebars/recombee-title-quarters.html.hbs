@@ -1,16 +1,18 @@
-<h2>Recommended</h2>
-<div class="roam-recombee list-layout list-layout--12">
-  <div class="list">
-    {{#each recomms}}
-      <div class="list__item">
-        <div class="title">
-          <h3 class="title__title">
-            <a href="{{values.url}}">
-              {{values.title}}
-            </a>
-          </h3>
+<div class="container cp cp--standard">
+  <h2>Recommended</h2>
+  <div class="roam-recombee list-layout list-layout--12">
+    <div class="list">
+      {{#each recomms}}
+        <div class="list__item">
+          <div class="title">
+            <h3 class="title__title">
+              <a href="{{values.url}}">
+                {{values.title}}
+              </a>
+            </h3>
+          </div>
         </div>
-      </div>
-    {{/each}}
+      {{/each}}
+    </div>
   </div>
 </div>
