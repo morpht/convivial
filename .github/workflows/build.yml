@@ -90,7 +90,6 @@ jobs:
       - name: Composer install
         run: |
           composer validate
-          composer self-update
           composer --no-interaction --no-progress --prefer-dist --optimize-autoloader install
 
       - name: Validate composer
