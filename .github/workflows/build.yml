@@ -50,11 +50,9 @@ jobs:
           # (the default is the last *merge* commit of the pull request merge branch)
 
       - name: Setup PHP and tools
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.2'
-          tools: composer:2.6.6
-          extensions: gd, pdo_mysql
+        uses: morpht/ci-php@8.2.14-memory
+        env:
+          PHP_MEMORY_LIMIT: 512M
 
       - name: Start MySql service
         run: |
