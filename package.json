@@ -1,0 +1,9 @@
+{
+  "engines": {
+    "npm": ">=10.1.0",
+    "node": ">=20.9.0"
+  },
+  "devDependencies": {
+    "cypress": "^13.4.0"
+  }
+}
