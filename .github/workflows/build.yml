@@ -120,7 +120,7 @@ jobs:
 
       - name: Run drupal application in background
         run: |
-          ./bin/drush runserver 127.0.0.1:8080 &
+          ./bin/drush runserver localhost:8080 &
           until netstat -an 2>/dev/null | grep '8080.*LISTEN'; do true; done
 
       - name: Setup node
