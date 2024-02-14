@@ -115,7 +115,7 @@ jobs:
 
       - name: Setup application
         run: |
-          ./bin/drush si convivial --locale=en --db-url=mysql://drupal:drupal@127.0.0.1:3306/drupal --account-name=admin --account-pass=admin --site-name=Convivial Demo --site-pass=admin
+          ./bin/drush si convivial --locale=en --db-url=mysql://drupal:drupal@127.0.0.1:3306/drupal --account-name=admin --account-pass=admin --site-name='Convivial Demo' --site-pass=admin
           ./bin/drush status
 
       - name: Run drupal application in background
