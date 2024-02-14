@@ -170,6 +170,7 @@
     }
   },
   "require-dev": {
-    "drupal/coder": "^8.3"
+    "drupal/coder": "^8.3",
+    "weitzman/drupal-test-traits": "^2.2"
   }
 }
