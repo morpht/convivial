@@ -55,6 +55,7 @@ jobs:
           php-version: '8.2'
           tools: composer:2.6.6
           extensions: mbstring, gd, intl, yaml, bcmath, curl
+          ini-values: memory_limit=280M, max_execution_time=120
 
       - name: Start MySql service
         run: |
