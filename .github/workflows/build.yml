@@ -55,7 +55,7 @@ jobs:
           php-version: '8.2'
           tools: composer:2.6.6
           # See https://www.drupal.org/docs/getting-started/system-requirements/php-requirements#extensions
-          extensions: curl, date, dom, filter, gd, hash, json, mbstring, mysql, pcre, PDO, pdo, pdo_mysql, session, SimpleXML, SPL, tokenizer, xml, xmlwriter
+          extensions: curl, date, dom, filter, gd, hash, json, mbstring, mysql, pcre, pdo, pdo_mysql, session, SimpleXML, SPL, tokenizer, xml, xmlwriter
           ini-values: memory_limit=280M, max_execution_time=120
           coverage: none
 
