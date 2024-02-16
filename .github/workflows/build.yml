@@ -40,6 +40,10 @@ jobs:
       GH_BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
       # github.head_ref is only defined on pull_request events.
       # When not a PR, github.ref_name has the branch name.
+      BLACKFIRE_SERVER_ID: ${{ secrets.BLACKFIRE_SERVER_ID }}
+      BLACKFIRE_SERVER_TOKEN: ${{ secrets.BLACKFIRE_SERVER_TOKEN }}
+      BLACKFIRE_CLIENT_ID: ${{ secrets.BLACKFIRE_CLIENT_ID }}
+      BLACKFIRE_CLIENT_TOKEN: ${{ secrets.BLACKFIRE_CLIENT_TOKEN }}
 
     steps:
       - name: Checkout Code
@@ -53,10 +57,10 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
-          tools: composer:2.6.6
+          tools: composer:2.6.6, blackfire
           # See https://www.drupal.org/docs/getting-started/system-requirements/php-requirements#extensions
-          extensions: curl, date, dom, filter, gd, hash, json, mbstring, mysql, pcre, pdo, pdo_mysql, session, SimpleXML, SPL, tokenizer, xml, xmlwriter
-          ini-values: memory_limit=280M, max_execution_time=120
+          extensions: blackfire, curl, date, dom, filter, gd, hash, json, mbstring, mysql, :opcache, pcre, pdo, pdo_mysql, session, SimpleXML, SPL, tokenizer, xml, xmlwriter
+          ini-values: opcache.enable_cli=1, opcache.jit=tracing, opcache.jit_buffer_size=64M
           coverage: none
 
       - name: Start MySQL Service
@@ -117,7 +121,7 @@ jobs:
 
       - name: Setup Application
         run: |
-          ./bin/drush si convivial --locale=en --db-url=mysql://drupal:drupal@127.0.0.1:3306/drupal --account-name=admin --account-pass=admin --site-name='Convivial Demo' --site-pass=admin
+          blackfire run ./bin/drush si convivial --locale=en --db-url=mysql://drupal:drupal@127.0.0.1:3306/drupal --account-name=admin --account-pass=admin --site-name='Convivial Demo' --site-pass=admin
           ./bin/drush status
 
       - name: Start Application in background
