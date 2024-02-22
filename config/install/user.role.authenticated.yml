@@ -135,6 +135,7 @@ permissions:
   - 'view paragraph content hero_banner'
   - 'view paragraph content hide_modifier'
   - 'view paragraph content image_bg_modifier'
+  - 'view paragraph content image_sequence'
   - 'view paragraph content item'
   - 'view paragraph content item_list'
   - 'view paragraph content layout'

@@ -1,0 +1,101 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.image_sequence.field_animation_delay
+    - field.field.paragraph.image_sequence.field_animation_images
+    - field.field.paragraph.image_sequence.field_animation_repeat
+    - field.field.paragraph.image_sequence.field_body
+    - field.field.paragraph.image_sequence.field_c_colour_classes
+    - field.field.paragraph.image_sequence.field_c_style_classes
+    - field.field.paragraph.image_sequence.field_heading
+    - field.field.paragraph.image_sequence.field_hide_heading
+    - field.field.paragraph.image_sequence.field_modifiers
+    - field.field.paragraph.image_sequence.field_position
+    - paragraphs.paragraphs_type.image_sequence
+  module:
+    - media_library
+    - paragraphs
+    - text
+id: paragraph.image_sequence.default
+targetEntityType: paragraph
+bundle: image_sequence
+mode: default
+content:
+  field_animation_delay:
+    type: number
+    weight: 5
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_animation_images:
+    type: media_library_widget
+    weight: 3
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_animation_repeat:
+    type: number
+    weight: 4
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_body:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_c_colour_classes:
+    type: options_select
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_c_style_classes:
+    type: options_select
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_heading:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_hide_heading:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_modifiers:
+    type: entity_reference_paragraphs
+    weight: 9
+    region: content
+    settings:
+      title: Modifiers
+      title_plural: Modifier
+      edit_mode: preview
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+  field_position:
+    type: options_select
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

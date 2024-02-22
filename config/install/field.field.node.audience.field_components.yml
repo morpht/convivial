@@ -14,6 +14,7 @@ dependencies:
     - paragraphs.paragraphs_type.gallery
     - paragraphs.paragraphs_type.geochart
     - paragraphs.paragraphs_type.hero_banner
+    - paragraphs.paragraphs_type.image_sequence
     - paragraphs.paragraphs_type.item_list
     - paragraphs.paragraphs_type.layout
     - paragraphs.paragraphs_type.lightbox
@@ -62,6 +63,7 @@ settings:
       timeline: timeline
       geochart: geochart
       gallery: gallery
+      image_sequence: image_sequence
       lightbox: lightbox
       layout: layout
       tiles: tiles
@@ -92,6 +94,9 @@ settings:
       content_tabs:
         weight: -71
         enabled: true
+      decision_tree:
+        weight: 45
+        enabled: false
       fastfact:
         weight: -50
         enabled: false
@@ -113,6 +118,9 @@ settings:
       image_bg_modifier:
         weight: -47
         enabled: false
+      image_sequence:
+        weight: 53
+        enabled: true
       item:
         weight: -46
         enabled: false
@@ -137,9 +145,9 @@ settings:
       parallax_bg_modifier:
         weight: -44
         enabled: false
-      personified_content:
-        weight: 56
-        enabled: true
+      parameter:
+        weight: 62
+        enabled: false
       plugin_block:
         weight: -70
         enabled: true

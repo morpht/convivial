@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_animation_repeat
+    - paragraphs.paragraphs_type.image_sequence
+  module:
+    - unique_content_field_validation
+third_party_settings:
+  unique_content_field_validation:
+    unique: false
+    unique_text: ''
+id: paragraph.image_sequence.field_animation_repeat
+field_name: field_animation_repeat
+entity_type: paragraph
+bundle: image_sequence
+label: Repeat
+description: 'The number of times to repeat the animation.'
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

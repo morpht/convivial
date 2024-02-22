@@ -14,6 +14,7 @@ use Drupal\Core\Render\Element;
 use Drupal\file\Entity\File;
 use Drupal\layout_builder\Entity\LayoutEntityDisplayInterface;
 use Drupal\layout_builder\SectionStorageInterface;
+use Drupal\media\Entity\Media;
 
 /**
  * Implements hook_theme().
@@ -580,6 +581,32 @@ function convivial_bootstrap_preprocess_paragraph(&$variables) {
   // Add structured data attributes.
   require_once __DIR__ . '/includes/structured_data.inc';
   _convivial_bootstrap_attach_structured_data($variables['paragraph'], $variables, 'attributes');
+
+  switch ($variables["paragraph"]->getType()) {
+    case "image_sequence":
+      // Load the configuration for animation.
+      $delay = $variables["paragraph"]->get('field_animation_delay')->getValue();
+      $repeat = $variables["paragraph"]->get('field_animation_repeat')->getValue();
+      $paragraphId = $variables["paragraph"]->id();
+
+      // Retrieve the media image entities associated with the paragraph field.
+      $mediaImages = $variables['paragraph']->get('field_animation_images')->referencedEntities();
+
+      $imagePaths = [];
+
+      foreach ($mediaImages as $media) {
+        $imageField = $media->get('field_media_image');
+        $imageFileEntity = $imageField->entity;
+        $imageUri = $imageFileEntity->getFileUri();
+        $imagePaths[] = \Drupal::service('file_url_generator')->generateString($imageUri);
+      }
+
+      // Set the value in DrupalSettings for use in JavaScript.
+      $variables['#attached']['drupalSettings']['animation'][$paragraphId]['delay'] = (int) reset($delay)['value'];
+      $variables['#attached']['drupalSettings']['animation'][$paragraphId]['repeat'] = (int) reset($repeat)['value'];
+      $variables['#attached']['drupalSettings']['animation'][$paragraphId]['imagePaths'] = $imagePaths;
+      break;
+  }
 }
 
 /**
@@ -708,6 +735,21 @@ function convivial_bootstrap_preprocess_field(&$variables, $hook) {
     case 'field_view_definition':
       require_once __DIR__ . '/includes/view.inc';
       _convivial_bootstrap_view($variables);
+      break;
+
+    case 'field_animation_images':
+      if ($variables["element"]["#bundle"] === 'image_sequence' && $variables['element']['#object']) {
+        $media_ids = [];
+        foreach ($variables['items'] as $delta => $item) {
+          if (!empty($item['content']['#media'])) {
+            /** @var Media $media */
+            $media = $item['content']['#media'];
+            $media_ids[$delta] = $media->id();
+          }
+        }
+        $variables['media_ids'] = $media_ids;
+        $variables['paragraph_id'] = $variables['element']['#object']->id();
+      }
       break;
   }
 }

@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hide_heading
+    - paragraphs.paragraphs_type.image_sequence
+id: paragraph.image_sequence.field_hide_heading
+field_name: field_hide_heading
+entity_type: paragraph
+bundle: image_sequence
+label: 'Hide heading'
+description: 'Hide heading but keep available for screen readers.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

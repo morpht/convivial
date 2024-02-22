@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_animation_delay
+    - paragraphs.paragraphs_type.image_sequence
+  module:
+    - unique_content_field_validation
+third_party_settings:
+  unique_content_field_validation:
+    unique: false
+    unique_text: ''
+id: paragraph.image_sequence.field_animation_delay
+field_name: field_animation_delay
+entity_type: paragraph
+bundle: image_sequence
+label: Delay
+description: 'The delay in milliseconds before the animation starts.'
+required: true
+translatable: false
+default_value:
+  -
+    value: 300
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer
