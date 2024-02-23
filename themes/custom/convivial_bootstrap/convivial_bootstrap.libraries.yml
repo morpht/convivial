@@ -260,3 +260,82 @@ personified_data:
     - core/js-cookie
     - core/drupal
     - convivial_bootstrap/handlebars
+
+convivial_image_sequence:
+  js:
+    components/image-sequence/image_sequence.js: { }
+  dependencies:
+    - core/drupalSettings
+    - convivial_bootstrap/scrollmagic_core
+    - convivial_bootstrap/scrollmagic_plugins_gsap
+
+scrollmagic_core:
+  remote: https://github.com/janpaepke/ScrollMagic
+  version: 2.0.8
+  license:
+    name: MIT
+    url: https://github.com/janpaepke/ScrollMagic/blob/master/LICENSE.md
+    gpl-compatible: true
+  js:
+    libraries/scrollmagic/scrollmagic/minified/ScrollMagic.min.js: { preprocess: false, minified: true }
+  dependencies:
+    - core/jquery
+
+scrollmagic_plugins_gsap:
+  remote: https://github.com/janpaepke/ScrollMagic
+  version: 2.0.8
+  license:
+    name: MIT
+    url: https://github.com/janpaepke/ScrollMagic/blob/master/LICENSE.md
+    gpl-compatible: true
+  js:
+    libraries/scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js: { preprocess: false, minified: true }
+  dependencies:
+    - convivial_bootstrap/scrollmagic_core
+    - convivial_bootstrap/gsap
+
+scrollmagic_plugins_velocity:
+  remote: https://github.com/janpaepke/ScrollMagic
+  version: 2.0.8
+  license:
+    name: MIT
+    url: https://github.com/janpaepke/ScrollMagic/blob/master/LICENSE.md
+    gpl-compatible: true
+  js:
+    libraries/scrollmagic/scrollmagic/minified/plugins/animation.velocity.min.js: { preprocess: false, minified: true }
+  dependencies:
+    - convivial_bootstrap/scrollmagic_core
+
+scrollmagic_plugins_debug:
+  remote: https://github.com/janpaepke/ScrollMagic
+  version: 2.0.8
+  license:
+    name: MIT
+    url: https://github.com/janpaepke/ScrollMagic/blob/master/LICENSE.md
+    gpl-compatible: true
+  js:
+    libraries/scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js: { preprocess: false, minified: true }
+  dependencies:
+    - convivial_bootstrap/scrollmagic_core
+
+scrollmagic_plugins_jquery:
+  remote: https://github.com/janpaepke/ScrollMagic
+  version: 2.0.8
+  license:
+    name: MIT
+    url: https://github.com/janpaepke/ScrollMagic/blob/master/LICENSE.md
+    gpl-compatible: true
+  js:
+    libraries/scrollmagic/scrollmagic/minified/plugins/jquery.ScrollMagic.min.js: { preprocess: false, minified: true }
+  dependencies:
+    - convivial_bootstrap/scrollmagic_core
+
+gsap:
+  remote: https://github.com/greensock/GSAP
+  version: 3.12.5
+  license:
+    name: Standard
+    url: https://gsap.com/community/standard-license
+    gpl-compatible: false
+  js:
+    libraries/gsap/dist/gsap.min.js: { preprocess: false, minified: true }

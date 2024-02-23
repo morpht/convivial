@@ -53,5 +53,8 @@
     "not dead",
     "ie >= 9"
   ],
-  "dependencies": {}
+  "dependencies": {
+    "gsap": "^3.12.5",
+    "scrollmagic": "^2.0.8"
+  }
 }

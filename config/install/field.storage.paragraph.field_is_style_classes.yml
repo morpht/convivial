@@ -1,0 +1,47 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_is_style_classes
+field_name: field_is_style_classes
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: breakout
+      label: Breakout
+    -
+      value: style--hero
+      label: Hero
+    -
+      value: no-background-padding
+      label: 'No background padding'
+    -
+      value: no-header-first-component
+      label: 'No header, first component'
+    -
+      value: no-side-gaps
+      label: 'No side gaps'
+    -
+      value: text-start
+      label: 'Text left'
+    -
+      value: text-center
+      label: 'Text center'
+    -
+      value: text-end
+      label: 'Text right'
+    -
+      value: text-shadow
+      label: 'Text shadow'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
