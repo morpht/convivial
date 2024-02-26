@@ -1,0 +1,29 @@
+<div{{ attributes.addClass(classes) }}>
+  <div class="containerised">
+    {% if image %}
+      <div class="banner__image-area">
+        {# Use Twig Tweak to render media image. #}
+        {{ drupal_image(image.entity.uri.value, 'full', {alt: image.alt|t, class: 'banner__image'}, responsive=true) }}
+      </div>
+    {% endif %}
+    <div class="banner__background-area"></div>
+    <div class="banner__content-area">
+      <div class="banner__content">
+        {% if title %}
+          <h2 class="banner__title">
+        {% endif %}
+        {% if title and href %}
+          <a class="banner__link" href="{{ href }}">
+            {{ title }}
+          </a>
+        {% elseif title %}
+          {{ title }}
+        {% endif %}
+        {% if title %}
+          </h2>
+        {% endif %}
+        {{ text }}
+      </div>
+    </div>
+  </div>
+</div>

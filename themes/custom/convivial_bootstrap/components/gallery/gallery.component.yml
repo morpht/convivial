@@ -1,0 +1,44 @@
+# Everything in this file is optional. Still, the file needs to exist. Adding
+# metadata here will improve the DX when using components.
+
+# This is so your IDE knows about the syntax for fixes and autocomplete.
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+
+# The human readable name.
+name: Gallery
+
+# Schema for the props. We support www.json-schema.org. Learn more about the
+# syntax there.
+props:
+  # Props are always an object with keys. Each key is a variable in your
+  # component template.
+  type: object
+
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+    classes:
+      type: array
+    content:
+      type: object
+    id:
+      type: number
+
+
+# This is how you take control of the keys in your library
+# declaration. The overrides specified here will be merged (shallow merge) with
+# the auto-generated library. The result of the merge will become the library
+# for the component.
+libraryOverrides:
+  # Once you add a key in the overrides, you take control of it. What you type
+  # here is what will end up in the library component.
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - convivial_bootstrap/glightbox
+
+  # Here we are taking control of the JS assets. So we need to specify
+  # everything, even the parts that were auto-generated. This is useful when
+  # adding additional files or tweaking the <script> tag's attributes.
+  js:
+    gallery.js: {}

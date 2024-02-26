@@ -1,0 +1,198 @@
+/*! @convivial_bootstrap/social-share */
+
+// Variables override.
+@import "../../base/scss/variables-override";
+
+// Import Bootstrap.
+// Configuration.
+@import "../../libraries/bootstrap/scss/functions";
+@import "../../libraries/bootstrap/scss/variables";
+@import "../../libraries/bootstrap/scss/mixins";
+
+// Custom variables.
+@import "../../base/scss/custom-variables";
+
+// Custom mixins.
+@import "../../base/scss/mixins";
+
+.social-share {
+  &:not(:first-child) {
+    margin-top: $grid-gutter-width;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: $grid-gutter-width;
+  }
+
+  // Style modifications using the mixins.
+  @include social-share-size(1);
+
+  &.social-share--large {
+    @include social-share-size(2);
+  }
+
+  &.social-share--small {
+    @include social-share-size(3);
+    font-size: $small-font-size;
+
+    &:before {
+      margin-right: 2px;
+      margin-top: -3px;
+    }
+  }
+}
+
+.social-share__content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+// Services are in row.
+.social-share--row {
+  .social-share__content {
+    flex-direction: column;
+    @include media-breakpoint-up(xl) {
+      flex-direction: row;
+    }
+  }
+}
+
+// Services are in column.
+.social-share--column {
+  .social-share__content {
+    flex-direction: column;
+    max-width: 15rem;
+  }
+}
+
+// Default styling for a service item.
+.social-share__service {
+  background-color: transparent;
+  color: $social-share-color;
+  cursor: pointer;
+  display: block;
+  overflow: hidden;
+  vertical-align: middle;
+  text-decoration: none;
+
+  @include media-breakpoint-up(sm) {
+    overflow: unset;
+    width: auto;
+  }
+
+  &:before {
+    background-position: center center;
+    background-repeat: no-repeat;
+    content: "";
+    cursor: pointer;
+    display: inline-block;
+    margin-top: -2px;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  &:hover {
+    color: $social-share-color;
+  }
+}
+
+// Hide external link icon from the social share link.
+a.social-share__service[rel~='external']:after {
+  display: none;
+}
+
+// Styling for individual services.
+.social-share__service {
+  @each $social-alias, $social-color in $social-color-pallete {
+
+    // Set the bg image.
+    &.social-share__service--#{$social-alias} {
+      &:before {
+        background-image: url("../../images/#{$social-alias}.svg");
+      }
+    }
+
+    // Set the bg colour.
+    .social-share--branded &.social-share__service--#{$social-alias} {
+      background-color: $social-color;
+      color: $white;
+
+      &:hover {
+        background-color: shade-color($social-color, 10%);
+        color: $white;
+      }
+    }
+
+  }
+
+  // Black background.
+  .social-share--black-bg & {
+    background-color: $black;
+    color: $white !important;
+
+    &:hover {
+      background-color: $white;
+      color: $black !important;
+    }
+
+    &.social-share__service--facebook:hover:before {
+      background-image: escape-svg(#{$facebook-svg});
+    }
+
+    &.social-share__service--linkedin:hover:before {
+      background-image: escape-svg(#{$linkedin-svg});
+    }
+
+    &.social-share__service--twitter:hover:before {
+      background-image: escape-svg(#{$twitter-svg});
+    }
+
+    &.social-share__service--email:hover:before {
+      background-image: escape-svg(#{$email-svg});
+    }
+  }
+
+  // White background.
+  .social-share--white-bg & {
+    background-color: $white;
+    color: $black !important;
+
+    &:hover {
+      background-color: $black;
+      color: $white !important;
+    }
+
+    &.social-share__service--facebook:before {
+      background-image: escape-svg(#{$facebook-svg});
+    }
+
+    &.social-share__service--facebook:hover:before {
+      background-image: escape-svg(#{$facebook-svg--inverse});
+    }
+
+    &.social-share__service--linkedin:before {
+      background-image: escape-svg(#{$linkedin-svg});
+    }
+
+    &.social-share__service--linkedin:hover:before {
+      background-image: escape-svg(#{$linkedin-svg--inverse});
+    }
+
+    &.social-share__service--twitter:before {
+      background-image: escape-svg(#{$twitter-svg});
+    }
+
+    &.social-share__service--twitter:hover:before {
+      background-image: escape-svg(#{$twitter-svg--inverse});
+    }
+
+    &.social-share__service--email:before {
+      background-image: escape-svg(#{$email-svg});
+    }
+
+    &.social-share__service--email:hover:before {
+      background-image: escape-svg(#{$email-svg--inverse});
+    }
+  }
+}

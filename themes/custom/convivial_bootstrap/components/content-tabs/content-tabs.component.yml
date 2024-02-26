@@ -1,0 +1,47 @@
+# Everything in this file is optional. Still, the file needs to exist. Adding
+# metadata here will improve the DX when using components.
+
+# This is so your IDE knows about the syntax for fixes and autocomplete.
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+
+# The human readable name.
+name: Content tabs
+
+# Schema for the props. We support www.json-schema.org. Learn more about the
+# syntax there.
+props:
+  # Props are always an object with keys. Each key is a variable in your
+  # component template.
+  type: object
+
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+    classes:
+      type: array
+    content:
+      type: object
+    data_selected:
+      type: number
+    label:
+      type : string
+    tab_id:
+      type: string
+    title:
+      type: string
+    body:
+      type: string
+    tabs:
+      type: object
+
+# This is how you take control of the keys in your library
+# declaration. The overrides specified here will be merged (shallow merge) with
+# the auto-generated library. The result of the merge will become the library
+# for the component.
+libraryOverrides:
+
+  # Here we are taking control of the JS assets. So we need to specify
+  # everything, even the parts that were auto-generated. This is useful when
+  # adding additional files or tweaking the <script> tag's attributes.
+  js:
+    ../../libraries/van11y-accessible-tab-panel-aria/dist/van11y-accessible-tab-panel-aria.min.js: { minified: true }

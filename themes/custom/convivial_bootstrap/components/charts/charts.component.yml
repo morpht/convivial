@@ -1,0 +1,19 @@
+# Everything in this file is optional. Still, the file needs to exist. Adding
+# metadata here will improve the DX when using components.
+
+# This is so your IDE knows about the syntax for fixes and autocomplete.
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+
+# The human readable name.
+name: Charts
+
+# Schema for the props. We support www.json-schema.org. Learn more about the
+# syntax there.
+props:
+  # Props are always an object with keys. Each key is a variable in your
+  # component template.
+  type: object
+
+  properties:
+    content:
+      type: object

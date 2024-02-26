@@ -28,11 +28,6 @@ back-to-top:
   dependencies:
     - core/jquery
 
-banner:
-  css:
-    component:
-      components/banner/banner.css: { }
-
 base-bootstrap5-js:
   js:
     libraries/bootstrap/dist/js/bootstrap.min.js: { minified: true }
@@ -73,11 +68,6 @@ calendar-item:
     - core/drupal
     - core/once
 
-content-tabs:
-  version: VERSION
-  dependencies:
-    - convivial_bootstrap/van11y-accessible-tab-panel-aria
-
 d3:
   remote: https://github.com/d3/d3
   version: 5.7.0
@@ -98,14 +88,6 @@ font-family:
   css:
     theme:
       https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap: { type: external }
-
-gallery:
-  js:
-    js/gallery.js: { }
-  dependencies:
-    - core/jquery
-    - core/drupal
-    - convivial_bootstrap/glightbox
 
 geochart:
   version: 1.0
@@ -136,14 +118,6 @@ header:
     - core/drupal
     - core/once
 
-lightbox:
-  js:
-    components/lightbox/lightbox.js: { }
-  dependencies:
-    - core/jquery
-    - core/drupal
-    - convivial_bootstrap/glightbox
-
 leaflet:
   version: 1.9.4
   css:
@@ -151,13 +125,6 @@ leaflet:
       libraries/leaflet/dist/leaflet.css: { }
   js:
     libraries/leaflet/dist/leaflet.js: { }
-
-leaflet-apply:
-  js:
-    components/map/leaflet.apply.js: { }
-  dependencies:
-    - convivial_bootstrap/leaflet
-    - core/drupal
 
 mark-external-links:
   js:

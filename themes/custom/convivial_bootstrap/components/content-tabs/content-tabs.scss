@@ -1,0 +1,34 @@
+/*! @convivial_bootstrap/content-tabs */
+
+// Variables override.
+@import "../../base/scss/variables-override";
+
+// Import Bootstrap.
+// Configuration.
+@import "../../libraries/bootstrap/scss/functions";
+@import "../../libraries/bootstrap/scss/variables";
+@import "../../libraries/bootstrap/scss/maps";
+@import "../../libraries/bootstrap/scss/mixins";
+@import "../../libraries/bootstrap/scss/utilities";
+
+.content-tabs {
+  .tabs__link {
+    cursor: pointer;
+
+    &[aria-selected="true"] {
+      color: $nav-tabs-link-active-color;
+      background-color: $nav-tabs-link-active-bg;
+      border-color: $nav-tabs-link-active-border-color;
+    }
+  }
+
+  .tab-content > .tab-pane {
+    display: block;
+    opacity: 1;
+
+    &[aria-hidden="true"] {
+      display: none;
+      opacity: 0;
+    }
+  }
+}
