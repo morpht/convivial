@@ -23,6 +23,7 @@
     }
   ],
   "require": {
+    "php": "^8.2",
     "bower-asset/chosen": "^1.8.7",
     "bower-asset/popper.js": "^2.4",
     "bower-asset/videojs-youtube": "^2.6",
@@ -135,9 +136,6 @@
     "sort-packages": true,
     "optimize-autoloader": true,
     "preferred-install": "dist",
-    "platform": {
-      "php": "8.1"
-    },
     "allow-plugins": {
       "composer/installers": true,
       "cweagans/composer-patches": true,
