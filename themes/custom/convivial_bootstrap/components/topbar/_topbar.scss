@@ -2,7 +2,7 @@
 
 .top-bar {
   background: $black;
-  padding: $grid-gutter-width / 2 0;
+  padding: calc($grid-gutter-width / 2) 0;
 
   p:last-child {
     margin: 0;

@@ -54,7 +54,7 @@ $timeline-image-width: 3.5rem;
 
     .timeline__item-image {
       margin-right: 0;
-      margin-left: $timeline-image-width / 2;
+      margin-left: calc($timeline-image-width / 2);
     }
 
     .timeline__item-date {
@@ -84,7 +84,7 @@ $timeline-image-width: 3.5rem;
 
     .timeline__item-image {
       margin-left: 0;
-      margin-right: $timeline-image-width / 2;
+      margin-right: calc($timeline-image-width / 2);
     }
 
     .timeline__item-date {
@@ -134,8 +134,8 @@ $timeline-image-width: 3.5rem;
   }
 
   img {
-    height: $timeline-image-width / 3;
-    width: $timeline-image-width / 3;
+    height: calc($timeline-image-width / 3);
+    width: calc($timeline-image-width / 3);
   }
 }
 
@@ -151,13 +151,13 @@ $timeline-image-width: 3.5rem;
 
 .timeline__item-group {
   position: relative;
-  top: $timeline-image-width / 2;
+  top: calc($timeline-image-width / 2);
   flex-grow: 1;
 
   // Override card.
   .card {
     display: block;
-    margin-bottom: $timeline-image-width / 3;
+    margin-bottom: calc($timeline-image-width / 3);
     overflow: unset;
   }
 
@@ -172,7 +172,7 @@ $timeline-image-width: 3.5rem;
 
       .timeline__item-image {
         margin-left: 0;
-        margin-right: $timeline-image-width / 2;
+        margin-right: calc($timeline-image-width / 2);
       }
 
       .timeline__item-group {
@@ -187,7 +187,7 @@ $timeline-image-width: 3.5rem;
 
   .timeline__content {
     &:before {
-      left: $timeline-image-width / 2;
+      left: calc($timeline-image-width / 2);
     }
   }
 
