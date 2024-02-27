@@ -22,7 +22,6 @@ props:
     content:
       type: object
 
-
 # This is how you take control of the keys in your library
 # declaration. The overrides specified here will be merged (shallow merge) with
 # the auto-generated library. The result of the merge will become the library

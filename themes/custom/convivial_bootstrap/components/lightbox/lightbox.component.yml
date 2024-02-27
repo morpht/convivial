@@ -24,7 +24,6 @@ props:
     id:
       type: number
 
-
 # This is how you take control of the keys in your library
 # declaration. The overrides specified here will be merged (shallow merge) with
 # the auto-generated library. The result of the merge will become the library
@@ -41,4 +40,4 @@ libraryOverrides:
   # everything, even the parts that were auto-generated. This is useful when
   # adding additional files or tweaking the <script> tag's attributes.
   js:
-    lightbox.js: {}
+    lightbox.js: { }
