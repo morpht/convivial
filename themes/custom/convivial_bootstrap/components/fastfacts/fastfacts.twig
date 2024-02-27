@@ -1,0 +1,8 @@
+<div{{ attributes.addClass('fastfacts', classes) }}>
+  <div class="fastfact">
+    {% if fastfact_prefix %}<span class="fastfact__prefix">{{ fastfact_prefix }}</span>{% endif %}
+    {% if fastfact_value %}<span class="fastfact__value">{{ fastfact_value }}</span>{% endif %}
+    {% if fastfact_suffix %}<span class="fastfact__suffix">{{ fastfact_suffix }}</span>{% endif %}
+    {% if fastfact_heading %}<p class="fastfact__heading">{{ fastfact_heading }}</p>{% endif %}
+  </div>
+</div>

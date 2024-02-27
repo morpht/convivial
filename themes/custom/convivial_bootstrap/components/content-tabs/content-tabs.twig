@@ -1,0 +1,29 @@
+<div{{ attributes.addClass(classes) }}>
+  <div class="containerised">
+    {% if title %}<h2>{{ title }}</h2>{% endif %}
+    {{ body }}
+    <div class="tabs js-tabs">
+      <ul class="nav nav-tabs mb-3 js-tablist">
+        {# Loops through the tab sections to print the tab section titles. #}
+        {% for key, item in tabs %}
+          {% if key|first != '#' %}
+            {# If no ref value is provided paragraph.id is used as tab Id. #}
+            {% if item['#paragraph'].field_ct_id.value %}
+              {% set tabId = item['#paragraph'].field_ct_id.value %}
+            {% else %}
+              {% set tabId = 'tab-' ~ item['#paragraph'].id() %}
+            {% endif %}
+            <li class="nav-item js-tablist__item">
+              <a class="nav-link js-tablist__link" href="#{{ tabId }}"{% if item['#paragraph'].field_ct_default.value|render == '1' %} data-selected="1"{% endif %}>
+                {{ item['#paragraph'].field_ct_label.value }}
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+      <div class="tab-content">
+        {{ tabs }}
+      </div>
+    </div>
+  </div>
+</div>

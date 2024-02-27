@@ -1,0 +1,23 @@
+/*! @convivial_bootstrap/fastfacts */
+
+@import "../../libraries/bootstrap/scss/functions";
+@import "../../base/scss/variables-override";
+@import "../../libraries/bootstrap/scss/variables";
+
+.fastfact {
+  h3 {
+    margin: 0;
+  }
+}
+
+.fastfact__value,
+.fastfact__suffix,
+.fastfact__prefix {
+  font-size: $h1-font-size;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+}
+
+.fastfact__heading {
+  margin-top: 1rem;
+}
