@@ -75,7 +75,6 @@ install:
   - eu_cookie_compliance:eu_cookie_compliance
   - field_group:field_group
   - facets:facets
-  - facets_pretty_paths:facets_pretty_paths
   - field_formatter_pattern:field_formatter_pattern
   - focal_point:focal_point
   - geofield:geofield
@@ -98,7 +97,6 @@ install:
   - metatag:metatag
   - metatag:metatag_open_graph
   - metatag:metatag_twitter_cards
-  - moderation_dashboard:moderation_dashboard
   - modifiers:modifiers
   - modifiers:modifiers_adaptive_height
   - modifiers:modifiers_bg_image
@@ -123,7 +121,6 @@ install:
   - replicate_ui:replicate_ui
   - search_api:search_api
   - search_api_recombee:search_api_recombee
-  - sendgrid_integration:sendgrid_integration
   - simple_sitemap:simple_sitemap
   - search_api:search_api
   - search_api:search_api_db
