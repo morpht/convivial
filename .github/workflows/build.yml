@@ -27,7 +27,7 @@ jobs:
         env:
           MYSQL_ROOT_PASSWORD: root
         ports:
-          - 32574:3306
+          - 3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
 
     env:
@@ -131,7 +131,7 @@ jobs:
 
       - name: Setup Application
         run: |
-          SPX_ENABLED=1 ./bin/drush si convivial --locale=en --db-url=mysql://drupal:drupal@127.0.0.1:3306/drupal --account-name=admin --account-pass=admin --site-name='Convivial Demo' --site-pass=admin --yes
+          SPX_ENABLED=1 ./bin/drush si convivial --locale=en --db-url=mysql://drupal:drupal@127.0.0.1:${{ job.services.mysql.ports[3306] }}/drupal --account-name=admin --account-pass=admin --site-name='Convivial Demo' --site-pass=admin --yes
           SPX_ENABLED=1 ./bin/drush status
 
       - name: Start Application in background
