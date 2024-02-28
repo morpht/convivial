@@ -2,7 +2,6 @@ langcode: en
 status: true
 dependencies:
   module:
-    - eu_cookie_compliance
     - file
     - media
     - paragraphs_type_permissions
@@ -82,7 +81,6 @@ permissions:
   - 'delete paragraph content video_bg_modifier'
   - 'delete paragraph content view'
   - 'delete paragraph content webform'
-  - 'display eu cookie compliance popup'
   - 'edit own webform submission'
   - 'update paragraph content accordion'
   - 'update paragraph content accordion_group'
