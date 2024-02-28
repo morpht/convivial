@@ -127,7 +127,7 @@ install:
   - seckit:seckit
   - smart_trim:smart_trim
   - pathauto:pathauto
-  - username_enumeration_prevention
+  - username_enumeration_prevention:username_enumeration_prevention
   - webform:webform
   - webform:webform_ui
   - twig_tweak:twig_tweak
