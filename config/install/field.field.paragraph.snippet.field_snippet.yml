@@ -4,12 +4,18 @@ dependencies:
   config:
     - field.storage.paragraph.field_snippet
     - paragraphs.paragraphs_type.snippet
+  module:
+    - unique_content_field_validation
+third_party_settings:
+  unique_content_field_validation:
+    unique: false
+    unique_text: ''
 id: paragraph.snippet.field_snippet
 field_name: field_snippet
 entity_type: paragraph
 bundle: snippet
 label: Snippet
-description: ''
+description: 'Enter HTML content for the snippet. Generally, this will be a script or iframe markup.'
 required: false
 translatable: false
 default_value: {  }
