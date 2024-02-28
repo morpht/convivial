@@ -34,7 +34,7 @@
 %}
 <div{{ attributes|without('region').addClass(classes) }}>
   <div class="accordion">
-    {% include '@convivial_bootstrap/paragraphs/accordion/accordion-card.twig' with {
+    {% include '@convivial_bootstrap/components/accordion/accordion.twig' with {
       id: 0,
       title: label,
       body: content,
