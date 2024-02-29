@@ -58,8 +58,8 @@ $tooltip-color:                     $white;
 $tooltip-bg:                        $black;
 $tooltip-border-radius:             $border-radius;
 $tooltip-opacity:                   .9;
-$tooltip-padding-y:                 1rem / 4;
-$tooltip-padding-x:                 1rem / 2;
+$tooltip-padding-y:                 calc(1rem / 4);
+$tooltip-padding-x:                 calc(1rem / 2);
 $tooltip-margin:                    0;
 
 $tooltip-arrow-width:               .8rem;

@@ -4,10 +4,12 @@
   "description": "Convivial theme based on Bootstrap 5.",
   "main": "gulpfile.js",
   "author": "morpht.com",
+  "engines": {
+    "node": ">=20.11"
+  },
   "scripts": {
     "gulp": "gulp",
     "gulp-dev": "gulp dev",
-    "postinstall": "npm rebuild node-sass",
     "setup": "npm ci",
     "stylelint": "stylelint 'components/**/*.scss'",
     "stylelint-fix": "stylelint 'components/**/*.scss' --fix"
@@ -33,14 +35,14 @@
     "gulp-plumber": "^1.2.0",
     "gulp-postcss": "^7.0.1",
     "gulp-rename": "^1.2.3",
-    "gulp-sass": "^4.0.1",
+    "gulp-sass": "^5.1.0",
     "gulp-sass-glob": "^1.0.8",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.0",
     "handlebars": "^4.7.7",
     "jshint": "^2.9.5",
     "leaflet": "^1.5.1",
-    "node-sass": "^4.14.1",
+    "sass": "^1.71.1",
     "slick-carousel": "^1.8.1",
     "smooth-scroll": "^16.1.3",
     "stylelint": "^12.0.0",

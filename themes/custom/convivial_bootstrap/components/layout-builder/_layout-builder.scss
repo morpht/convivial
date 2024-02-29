@@ -15,7 +15,7 @@
   .block--help-block {
     margin-top: $grid-gutter-width;
     margin-bottom: $grid-gutter-width;
-    padding: $grid-gutter-width / 2 $grid-gutter-width;
+    padding: calc($grid-gutter-width / 2) $grid-gutter-width;
     border: 1px solid #d3d7d9;
   }
 }
@@ -61,7 +61,7 @@
   margin-bottom: 1rem;
 
   .form-wrapper {
-    margin-top: $grid-gutter-width / 2;
+    margin-top: calc($grid-gutter-width / 2);
   }
 
   .button {

@@ -5,7 +5,7 @@ const gulp = require('gulp');
 const config = require('./config.json');
 
 // Include plugins.
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 const imagemin = require('gulp-imagemin');
 const plumber = require('gulp-plumber');
 const glob = require('gulp-sass-glob');

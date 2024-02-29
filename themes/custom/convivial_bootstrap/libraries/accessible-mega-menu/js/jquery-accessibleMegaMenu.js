@@ -252,7 +252,7 @@ limitations under the License.
                     // Close top level link.
                     topli.find('[aria-expanded]')
                         .attr('aria-expanded', 'false')
-                        .removeClass(settings.openClass);
+                        .removeClass(settings.openClass)
                     // Close panel.
                     topli.find('.' + settings.panelClass)
                         .removeClass(settings.openClass)
@@ -270,8 +270,7 @@ limitations under the License.
                     menu.find('[aria-expanded=true]')
                         .attr('aria-expanded', 'false')
                         .removeClass(settings.openClass)
-                        .closest('.' + settings.topNavItemClass)
-                        .find('.' + settings.panelClass)
+                        .closest('.' + settings.panelClass)
                         .removeClass(settings.openClass)
                         .attr('aria-hidden', 'true');
                 }
@@ -280,20 +279,20 @@ limitations under the License.
             else {
                 clearTimeout(that.focusTimeoutID);
                 // Close previously open top level link and its panel.
-                var openli = menu.find('[aria-expanded=true]').closest('.' + settings.topNavItemClass);
+                var openli = menu.find('[aria-expanded=true]').parent();
                 if (!openli.is(topli)) {
                     openli.find('[aria-expanded]')
                         .attr('aria-expanded', 'false')
-                        .removeClass(settings.openClass);
-                    openli.find('.' + settings.panelClass)
+                        .removeClass(settings.openClass)
+                        .siblings('.' + settings.panelClass)
                         .removeClass(settings.openClass)
                         .attr('aria-hidden', 'true');
                 }
                 // Open current top level link and its panel.
                 topli.find('[aria-expanded]')
                     .attr('aria-expanded', 'true')
-                    .addClass(settings.openClass);
-                topli.find('.' + settings.panelClass)
+                    .addClass(settings.openClass)
+                    .siblings('.' + settings.panelClass)
                     .addClass(settings.openClass)
                     .attr('aria-hidden', 'false');
 
@@ -352,7 +351,7 @@ limitations under the License.
                 }
             }
             // Without panel on enter event.
-            else if (topli.length === 1 && panel.length === 0 && event.type == "keydown" && target.hasAttribute("href")) {
+            else if (topli.length === 1 && panel.length === 0 && event.type == "keydown") {
                 window.location.href = target.attr("href");
             }
         };
@@ -532,14 +531,13 @@ limitations under the License.
                     _togglePanel.call(that, event, true);
                     next = topnavitems.filter(':lt(' + topnavitems.index(topli) + '):last');
                     if (next.children('.' + settings.panelClass).length) {
-                        next.find('[aria-expanded]')
+                        found = (next.find('[aria-expanded]')
                             .attr('aria-expanded', 'true')
-                            .addClass(settings.openClass);
-                        found = (next.children('.' + settings.panelClass)
-                                .addClass(settings.openClass)
-                                .attr('aria-hidden', 'false')
-                                .find(':tabbable:last')
-                                .focus() === 1);
+                            .addClass(settings.openClass)
+                            .filter('.' + settings.panelClass)
+                            .attr('aria-hidden', 'false')
+                            .find(':tabbable:last')
+                            .focus() === 1);
                     }
                 } else if (!isTopNavItem) {
                     found = (tabbables.filter(':lt(' + tabbables.index(target) + '):last').focus().length === 1);
@@ -862,8 +860,8 @@ limitations under the License.
                     var topnavitemlink, topnavitempanel;
                     topnavitem = $(topnavitem);
                     topnavitem.addClass(settings.topNavItemClass);
-                    topnavitemlink = topnavitem.find(":tabbable:first");
-                    topnavitempanel = topnavitem.children(":not(:tabbable):last");
+                    topnavitemlink = topnavitem.find("a").first();
+                    topnavitempanel = topnavitem.find('.' + settings.panelClass);
                     _addUniqueId.call(that, topnavitemlink);
                     // When sub nav exists.
                     if (topnavitempanel.length) {
