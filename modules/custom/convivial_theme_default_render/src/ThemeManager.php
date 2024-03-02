@@ -73,7 +73,6 @@ class ThemeManager extends CoreThemeManager implements ThemeManagerInterface {
         // is changing quite a bit.
         // Also, paragraph--hero-search.html.twig has hardcoded form
         // which can't be altered from here.
-
         // Triggers explained:
         // '<!–– nopreview ––>'
         // * HTML comment to make it possible to indicate no render from content
@@ -81,7 +80,6 @@ class ThemeManager extends CoreThemeManager implements ThemeManagerInterface {
         // '<form '
         // * We don't want "Form in a form". This is best explained in issues
         //   linked in webform related comments above.
-
         // @ToDo: Use t().
         $render = "Paragraph preview containing another form can not be previewed when editing content.";
       }

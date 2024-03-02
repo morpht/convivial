@@ -123,6 +123,9 @@ jobs:
       - name: Validate composer
         run: composer validate --no-check-all --ansi
 
+      - name: Execute Drupal-check
+        run: php ./bin/drupal-check modules/custom
+
       - name: Show environment variables
         run: ls -alk ./bin
 
