@@ -1,8 +1,6 @@
 {
   "name": "morpht/convivial",
   "description": "Drupal personalized installation profile created by Morpht.",
-  "minimum-stability": "dev",
-  "prefer-stable": true,
   "license": "proprietary",
   "type": "drupal-profile",
   "version": "v1",
@@ -10,16 +8,6 @@
     {
       "name": "Morpht",
       "email": "murray@morpht.com"
-    }
-  ],
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://packages.drupal.org/8"
-    },
-    {
-      "type": "composer",
-      "url": "https://asset-packagist.org"
     }
   ],
   "require": {
@@ -40,8 +28,8 @@
     "drupal/config_ignore": "^3.0",
     "drupal/config_split": "^2.0",
     "drupal/config_update": "^2.0",
-    "drupal/convivial_core": "^1.0",
     "drupal/convivial_content": "^1.0",
+    "drupal/convivial_core": "^1.0",
     "drupal/convivial_enricher": "^1.0",
     "drupal/convivial_profiler": "^1.0",
     "drupal/core-composer-scaffold": "^10",
@@ -131,11 +119,22 @@
     "npm-asset/videojs-background": "^1.0",
     "oomphinc/composer-installers-extender": "^2.0"
   },
+  "require-dev": {
+    "drupal/coder": "^8.3"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    },
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "config": {
-    "bin-dir": "bin/",
-    "sort-packages": true,
-    "optimize-autoloader": true,
-    "preferred-install": "dist",
     "allow-plugins": {
       "composer/installers": true,
       "cweagans/composer-patches": true,
@@ -144,11 +143,15 @@
       "ergebnis/composer-normalize": true,
       "oomphinc/composer-installers-extender": true,
       "phpstan/extension-installer": true
-    }
+    },
+    "bin-dir": "bin/",
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
   },
   "extra": {
-    "enable-patching": true,
     "composer-exit-on-patch-failure": true,
+    "enable-patching": true,
     "patches": {
       "drupal/core": {
         "2309585 - There should be no output of default formatter for empty text field when summary has content": "https://www.drupal.org/files/issues/2018-07-19/empty_text_formatter_for_empty_fields-2309585-13.patch",
@@ -166,8 +169,5 @@
         "3037259 - Endless Redirection loop when using Domain access": "https://www.drupal.org/files/issues/2022-09-13/3037259-28.patch"
       }
     }
-  },
-  "require-dev": {
-    "drupal/coder": "^8.3"
   }
 }
