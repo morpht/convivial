@@ -134,6 +134,10 @@ jobs:
           SPX_ENABLED=1 ./bin/drush si convivial --locale=en --db-url=mysql://drupal:drupal@127.0.0.1:3306/drupal --account-name=admin --account-pass=admin --site-name='Convivial Demo' --site-pass=admin --yes
           SPX_ENABLED=1 ./bin/drush status
 
+      - name: Setup Convivial Content
+        run: |
+          ./bin/drush en -y convivial_content
+
       - name: Start Application in background
         run: |
           ./bin/drush runserver localhost:8080 &
