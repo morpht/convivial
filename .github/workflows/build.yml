@@ -123,6 +123,9 @@ jobs:
       - name: Validate composer
         run: composer validate --no-check-all --ansi
 
+      - name: Static Code Analysis
+        run: ./bin/grumphp run
+
       - name: Execute Drupal-check
         run: php ./bin/drupal-check modules/custom
 
