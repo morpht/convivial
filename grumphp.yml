@@ -23,3 +23,11 @@ grumphp:
         - vendor
       triggered_by:
         - php
+    git_branch_name:
+      whitelist:
+        - "/c-([0-9]*)/"
+        - "/conv-([0-9]*)/"
+      blacklist:
+        - "main"
+      additional_modifiers: ''
+      allow_detached_head: true
