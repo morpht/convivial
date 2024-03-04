@@ -145,6 +145,7 @@
       "drupal/core-composer-scaffold": true,
       "ergebnis/composer-normalize": true,
       "oomphinc/composer-installers-extender": true,
+      "phpro/grumphp": true,
       "phpstan/extension-installer": true
     },
     "bin-dir": "bin/",
