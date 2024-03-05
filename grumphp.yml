@@ -11,7 +11,7 @@ grumphp:
       enforce_capitalized_subject: false
       enforce_no_subject_trailing_period: false
       matchers:
-        'Git commit message must begin with a Redmine issue number': '/^convivial-demo-[0-9]+: /'
+        'Git commit message must begin with a issue number': '/^convivial-demo-[0-9]+: /'
       max_body_width: 0
       max_subject_width: 0
     yamllint: ~
