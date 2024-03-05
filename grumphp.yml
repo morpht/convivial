@@ -3,8 +3,8 @@ parameters:
 grumphp:
   stop_on_failure: true
   ascii:
-    failed: ~
-    succeeded: ~
+    failed: failed.txt
+    succeeded: succeeded.txt
   process_timeout: 60
   tasks:
     git_commit_message:
