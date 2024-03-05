@@ -230,7 +230,7 @@ personified_data:
 
 convivial_animation:
   js:
-    components/image-sequence/image_sequence.js: { }
+    components/animation/animation.js: { }
   dependencies:
     - core/drupalSettings
     - convivial_bootstrap/scrollmagic_core
