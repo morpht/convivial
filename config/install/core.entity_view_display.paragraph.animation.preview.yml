@@ -1,0 +1,42 @@
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.animation.field_animation_colour_palette
+    - field.field.paragraph.animation.field_animation_delay
+    - field.field.paragraph.animation.field_animation_images
+    - field.field.paragraph.animation.field_animation_repeat
+    - field.field.paragraph.animation.field_animation_style_classes
+    - field.field.paragraph.animation.field_body
+    - field.field.paragraph.animation.field_heading
+    - field.field.paragraph.animation.field_hide_heading
+    - field.field.paragraph.animation.field_modifiers
+    - field.field.paragraph.animation.field_position
+    - field.field.paragraph.animation.field_read_more
+    - paragraphs.paragraphs_type.animation
+id: paragraph.animation.preview
+targetEntityType: paragraph
+bundle: animation
+mode: preview
+content:
+  field_heading:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_animation_colour_palette: true
+  field_animation_delay: true
+  field_animation_images: true
+  field_animation_repeat: true
+  field_animation_style_classes: true
+  field_body: true
+  field_hide_heading: true
+  field_modifiers: true
+  field_position: true
+  field_read_more: true
+  search_api_excerpt: true

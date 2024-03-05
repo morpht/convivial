@@ -2,24 +2,26 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_is_colour_classes
-    - paragraphs.paragraphs_type.image_sequence
+    - field.storage.paragraph.field_read_more
+    - paragraphs.paragraphs_type.animation
   module:
-    - options
+    - link
     - unique_content_field_validation
 third_party_settings:
   unique_content_field_validation:
     unique: false
     unique_text: ''
-id: paragraph.image_sequence.field_is_colour_classes
-field_name: field_is_colour_classes
+id: paragraph.animation.field_read_more
+field_name: field_read_more
 entity_type: paragraph
-bundle: image_sequence
-label: 'Colour Palette'
+bundle: animation
+label: 'Read more'
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
-field_type: list_string
+settings:
+  title: 1
+  link_type: 17
+field_type: link

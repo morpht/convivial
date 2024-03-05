@@ -2,8 +2,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_is_style_classes
-    - paragraphs.paragraphs_type.image_sequence
+    - field.storage.paragraph.field_animation_colour_palette
+    - paragraphs.paragraphs_type.animation
   module:
     - options
     - unique_content_field_validation
@@ -11,13 +11,11 @@ third_party_settings:
   unique_content_field_validation:
     unique: false
     unique_text: ''
-    unique_multivalue: false
-    unique_multivalue_text: ''
-id: paragraph.image_sequence.field_is_style_classes
-field_name: field_is_style_classes
+id: paragraph.animation.field_animation_colour_palette
+field_name: field_animation_colour_palette
 entity_type: paragraph
-bundle: image_sequence
-label: Style
+bundle: animation
+label: 'Colour Palette'
 description: ''
 required: false
 translatable: false

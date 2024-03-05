@@ -6,6 +6,7 @@ dependencies:
     - node.type.topic
     - paragraphs.paragraphs_type.accordion
     - paragraphs.paragraphs_type.accordion_group
+    - paragraphs.paragraphs_type.animation
     - paragraphs.paragraphs_type.charts
     - paragraphs.paragraphs_type.content
     - paragraphs.paragraphs_type.content_block
@@ -14,7 +15,6 @@ dependencies:
     - paragraphs.paragraphs_type.gallery
     - paragraphs.paragraphs_type.geochart
     - paragraphs.paragraphs_type.hero_banner
-    - paragraphs.paragraphs_type.image_sequence
     - paragraphs.paragraphs_type.item_list
     - paragraphs.paragraphs_type.layout
     - paragraphs.paragraphs_type.lightbox
@@ -46,6 +46,7 @@ settings:
     target_bundles:
       accordion: accordion
       accordion_group: accordion_group
+      animation: animation
       charts: charts
       content: content
       content_tabs: content_tabs
@@ -63,7 +64,6 @@ settings:
       timeline: timeline
       geochart: geochart
       gallery: gallery
-      image_sequence: image_sequence
       lightbox: lightbox
       layout: layout
       tiles: tiles
@@ -71,111 +71,111 @@ settings:
     negate: 0
     target_bundles_drag_drop:
       accordion:
-        weight: -75
-        enabled: true
-      accordion_group:
-        weight: -74
-        enabled: true
-      adaptive_height_modifier:
-        weight: -57
-        enabled: false
-      charts:
         weight: -73
         enabled: true
-      content:
+      accordion_group:
         weight: -72
         enabled: true
-      content_block:
+      adaptive_height_modifier:
+        weight: -55
+        enabled: false
+      animation:
+        weight: -71
+        enabled: true
+      charts:
+        weight: -70
+        enabled: true
+      content:
         weight: -69
+        enabled: true
+      content_block:
+        weight: -66
         enabled: true
       content_tab:
         weight: -54
         enabled: false
       content_tabs:
-        weight: -71
-        enabled: true
-      decision_tree:
-        weight: 46
-        enabled: false
-      fastfact:
-        weight: -50
-        enabled: false
-      fastfacts:
-        weight: -66
-        enabled: true
-      gallery:
-        weight: 49
-        enabled: true
-      geochart:
-        weight: 44
-        enabled: true
-      hero_banner:
-        weight: -65
-        enabled: true
-      hide_modifier:
-        weight: -48
-        enabled: false
-      image_bg_modifier:
-        weight: -47
-        enabled: false
-      image_sequence:
-        weight: 53
-        enabled: true
-      item:
-        weight: -46
-        enabled: false
-      item_list:
-        weight: -64
-        enabled: true
-      layout:
-        weight: 61
-        enabled: true
-      lightbox:
-        weight: 57
-        enabled: true
-      map:
-        weight: -63
-        enabled: true
-      media_list:
-        weight: -62
-        enabled: true
-      node_list:
-        weight: -61
-        enabled: true
-      parallax_bg_modifier:
-        weight: -44
-        enabled: false
-      parameter:
-        weight: 62
-        enabled: false
-      plugin_block:
-        weight: -70
-        enabled: true
-      scroll_reveal_modifier:
-        weight: -42
-        enabled: false
-      section:
-        weight: -60
-        enabled: true
-      snippet:
-        weight: 74
-        enabled: true
-      tiles:
-        weight: 71
-        enabled: true
-      timeline:
-        weight: -58
-        enabled: true
-      timeline_item:
-        weight: -40
-        enabled: false
-      video_bg_modifier:
-        weight: -39
-        enabled: false
-      view:
         weight: -68
         enabled: true
-      webform:
+      decision_tree:
+        weight: -44
+        enabled: false
+      fastfact:
+        weight: -53
+        enabled: false
+      fastfacts:
+        weight: -63
+        enabled: true
+      gallery:
+        weight: -43
+        enabled: true
+      geochart:
+        weight: -45
+        enabled: true
+      hero_banner:
+        weight: -62
+        enabled: true
+      hide_modifier:
+        weight: -52
+        enabled: false
+      image_bg_modifier:
+        weight: -51
+        enabled: false
+      item:
+        weight: -50
+        enabled: false
+      item_list:
+        weight: -61
+        enabled: true
+      layout:
+        weight: -41
+        enabled: true
+      lightbox:
+        weight: -42
+        enabled: true
+      map:
+        weight: -60
+        enabled: true
+      media_list:
+        weight: -59
+        enabled: true
+      node_list:
+        weight: -58
+        enabled: true
+      parallax_bg_modifier:
+        weight: -49
+        enabled: false
+      parameter:
+        weight: -40
+        enabled: false
+      plugin_block:
         weight: -67
+        enabled: true
+      scroll_reveal_modifier:
+        weight: -48
+        enabled: false
+      section:
+        weight: -57
+        enabled: true
+      snippet:
+        weight: -38
+        enabled: true
+      tiles:
+        weight: -39
+        enabled: true
+      timeline:
+        weight: -56
+        enabled: true
+      timeline_item:
+        weight: -47
+        enabled: false
+      video_bg_modifier:
+        weight: -46
+        enabled: false
+      view:
+        weight: -65
+        enabled: true
+      webform:
+        weight: -64
         enabled: true
 field_type: entity_reference_revisions

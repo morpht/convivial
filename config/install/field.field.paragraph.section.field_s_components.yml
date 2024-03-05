@@ -5,11 +5,11 @@ dependencies:
     - field.storage.paragraph.field_s_components
     - paragraphs.paragraphs_type.accordion
     - paragraphs.paragraphs_type.accordion_group
+    - paragraphs.paragraphs_type.animation
     - paragraphs.paragraphs_type.charts
     - paragraphs.paragraphs_type.content
     - paragraphs.paragraphs_type.content_block
     - paragraphs.paragraphs_type.fastfacts
-    - paragraphs.paragraphs_type.image_sequence
     - paragraphs.paragraphs_type.item_list
     - paragraphs.paragraphs_type.lightbox
     - paragraphs.paragraphs_type.map
@@ -36,6 +36,7 @@ settings:
     target_bundles:
       accordion: accordion
       accordion_group: accordion_group
+      animation: animation
       content_block: content_block
       plugin_block: plugin_block
       content: content
@@ -45,117 +46,116 @@ settings:
       node_list: node_list
       view: view
       webform: webform
-      image_sequence: image_sequence
       fastfacts: fastfacts
       lightbox: lightbox
     negate: 0
     target_bundles_drag_drop:
       accordion:
-        weight: -63
+        weight: -73
         enabled: true
       accordion_group:
-        weight: -62
+        weight: -72
         enabled: true
       adaptive_height_modifier:
-        weight: -41
+        weight: -58
         enabled: false
+      animation:
+        weight: -71
+        enabled: true
       charts:
-        weight: -56
+        weight: -67
         enabled: true
       content:
-        weight: -57
+        weight: -68
         enabled: true
       content_block:
-        weight: -60
+        weight: -70
         enabled: true
       content_tab:
-        weight: 45
+        weight: -52
         enabled: false
       content_tabs:
-        weight: 46
+        weight: -50
         enabled: false
       decision_tree:
-        weight: 45
+        weight: -51
         enabled: false
       fastfact:
-        weight: 40
+        weight: -53
         enabled: false
       fastfacts:
-        weight: 55
+        weight: -46
         enabled: true
       gallery:
-        weight: 49
+        weight: -49
         enabled: false
       geochart:
-        weight: 50
+        weight: -48
         enabled: false
       hero_banner:
-        weight: 51
-        enabled: false
-      hide_modifier:
-        weight: -43
-        enabled: false
-      image_bg_modifier:
-        weight: -42
-        enabled: false
-      image_sequence:
-        weight: 53
-        enabled: true
-      item:
-        weight: -40
-        enabled: false
-      item_list:
-        weight: -54
-        enabled: true
-      layout:
-        weight: 56
-        enabled: false
-      lightbox:
-        weight: 57
-        enabled: true
-      map:
-        weight: -53
-        enabled: true
-      media_list:
-        weight: 62
-        enabled: false
-      node_list:
-        weight: -52
-        enabled: true
-      parallax_bg_modifier:
-        weight: -37
-        enabled: false
-      parameter:
-        weight: 62
-        enabled: false
-      plugin_block:
-        weight: -59
-        enabled: true
-      scroll_reveal_modifier:
-        weight: -35
-        enabled: false
-      section:
         weight: -47
         enabled: false
+      hide_modifier:
+        weight: -60
+        enabled: false
+      image_bg_modifier:
+        weight: -59
+        enabled: false
+      item:
+        weight: -57
+        enabled: false
+      item_list:
+        weight: -66
+        enabled: true
+      layout:
+        weight: -45
+        enabled: false
+      lightbox:
+        weight: -44
+        enabled: true
+      map:
+        weight: -65
+        enabled: true
+      media_list:
+        weight: -43
+        enabled: false
+      node_list:
+        weight: -64
+        enabled: true
+      parallax_bg_modifier:
+        weight: -56
+        enabled: false
+      parameter:
+        weight: -42
+        enabled: false
+      plugin_block:
+        weight: -69
+        enabled: true
+      scroll_reveal_modifier:
+        weight: -55
+        enabled: false
+      section:
+        weight: -61
+        enabled: false
       snippet:
-        weight: 68
+        weight: -41
         enabled: false
       tiles:
-        weight: 69
+        weight: -40
         enabled: false
       timeline:
-        weight: 70
+        weight: -39
         enabled: false
       timeline_item:
-        weight: 71
+        weight: -38
         enabled: false
       video_bg_modifier:
-        weight: -34
+        weight: -54
         enabled: false
       view:
-        weight: -50
+        weight: -63
         enabled: true
       webform:
-        weight: -49
+        weight: -62
         enabled: true
 field_type: entity_reference_revisions

@@ -1,8 +1,8 @@
 langcode: en
 status: true
 dependencies: {  }
-id: image_sequence
-label: 'Image sequence'
+id: animation
+label: Animation
 icon_uuid: null
 icon_default: null
 description: 'Animate with ScrollMagic component.'
