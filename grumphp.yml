@@ -1,9 +1,10 @@
 parameters:
   git_dir: .
 grumphp:
+  stop_on_failure: true
   ascii:
-    failed: failed.txt
-    succeeded: succeeded.txt
+    failed: ~
+    succeeded: ~
   process_timeout: 60
   tasks:
     git_commit_message:
