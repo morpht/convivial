@@ -9,6 +9,7 @@ grumphp:
   tasks:
     git_branch_name:
       whitelist:
+        - "/convivial-demo-([0-9]*)/"
         - "/c-([0-9]*)/"
         - "/conv-([0-9]*)/"
       blacklist:
