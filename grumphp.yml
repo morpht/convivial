@@ -39,11 +39,11 @@ grumphp:
       format: null
       locked: true
       no_dev: false
-      run_always: false
+      run_always: true
       working_dir: null
     securitychecker_enlightn:
       lockfile: ./composer.lock
-      run_always: false
+      run_always: true
   testsuites:
     code_quality:
       tasks:
