@@ -33,6 +33,6 @@ props:
     body:
       type: string
     orientation:
-      type: number
+      type: string
     faq:
       type: number

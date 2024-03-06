@@ -16,7 +16,7 @@ props:
 
   # If your component has required properties, you list them here.
   required:
-    - accordion_group_accordions
+    - accordions
 
   properties:
     attributes:
@@ -29,5 +29,5 @@ props:
       type: string
     body:
       type: string
-    accordion_group_accordions:
+    accordions:
       type: object
