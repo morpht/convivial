@@ -121,7 +121,6 @@
   },
   "require-dev": {
     "drupal/coder": "^8.3",
-    "ergebnis/composer-normalize": "^2.42",
     "mglaman/drupal-check": "^1.4",
     "phpro/grumphp": "^2.5"
   },
