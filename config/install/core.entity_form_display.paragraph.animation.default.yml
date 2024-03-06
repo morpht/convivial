@@ -2,26 +2,34 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.image_sequence.field_animation_delay
-    - field.field.paragraph.image_sequence.field_animation_images
-    - field.field.paragraph.image_sequence.field_animation_repeat
-    - field.field.paragraph.image_sequence.field_body
-    - field.field.paragraph.image_sequence.field_heading
-    - field.field.paragraph.image_sequence.field_hide_heading
-    - field.field.paragraph.image_sequence.field_is_colour_classes
-    - field.field.paragraph.image_sequence.field_is_style_classes
-    - field.field.paragraph.image_sequence.field_modifiers
-    - field.field.paragraph.image_sequence.field_position
-    - paragraphs.paragraphs_type.image_sequence
+    - field.field.paragraph.animation.field_animation_colour_classes
+    - field.field.paragraph.animation.field_animation_delay
+    - field.field.paragraph.animation.field_animation_images
+    - field.field.paragraph.animation.field_animation_repeat
+    - field.field.paragraph.animation.field_animation_style_classes
+    - field.field.paragraph.animation.field_body
+    - field.field.paragraph.animation.field_heading
+    - field.field.paragraph.animation.field_hide_heading
+    - field.field.paragraph.animation.field_modifiers
+    - field.field.paragraph.animation.field_position
+    - field.field.paragraph.animation.field_read_more
+    - paragraphs.paragraphs_type.animation
   module:
+    - link
     - media_library
     - paragraphs
     - text
-id: paragraph.image_sequence.default
+id: paragraph.animation.default
 targetEntityType: paragraph
-bundle: image_sequence
+bundle: animation
 mode: default
 content:
+  field_animation_colour_classes:
+    type: options_select
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_animation_delay:
     type: number
     weight: 5
@@ -42,6 +50,12 @@ content:
     region: content
     settings:
       placeholder: ''
+    third_party_settings: {  }
+  field_animation_style_classes:
+    type: options_select
+    weight: 7
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_body:
     type: text_textarea
@@ -66,21 +80,9 @@ content:
     settings:
       display_label: true
     third_party_settings: {  }
-  field_is_colour_classes:
-    type: options_select
-    weight: 6
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_is_style_classes:
-    type: options_select
-    weight: 7
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_modifiers:
     type: entity_reference_paragraphs
-    weight: 9
+    weight: 10
     region: content
     settings:
       title: Modifiers
@@ -95,6 +97,14 @@ content:
     weight: 8
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_read_more:
+    type: link_default
+    weight: 9
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
 hidden:
   created: true

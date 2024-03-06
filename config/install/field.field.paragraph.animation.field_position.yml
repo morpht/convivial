@@ -2,25 +2,24 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_body
-    - paragraphs.paragraphs_type.image_sequence
+    - field.storage.paragraph.field_position
+    - paragraphs.paragraphs_type.animation
   module:
-    - text
+    - options
     - unique_content_field_validation
 third_party_settings:
   unique_content_field_validation:
     unique: false
     unique_text: ''
-id: paragraph.image_sequence.field_body
-field_name: field_body
+id: paragraph.animation.field_position
+field_name: field_position
 entity_type: paragraph
-bundle: image_sequence
-label: Body
+bundle: animation
+label: Position
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings:
-  allowed_formats: {  }
-field_type: text_long
+settings: {  }
+field_type: list_string

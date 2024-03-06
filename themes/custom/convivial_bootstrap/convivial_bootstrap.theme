@@ -583,7 +583,7 @@ function convivial_bootstrap_preprocess_paragraph(&$variables) {
   _convivial_bootstrap_attach_structured_data($variables['paragraph'], $variables, 'attributes');
 
   switch ($variables["paragraph"]->getType()) {
-    case "image_sequence":
+    case "animation":
       // Load the configuration for animation.
       $delay = $variables["paragraph"]->get('field_animation_delay')->getValue();
       $repeat = $variables["paragraph"]->get('field_animation_repeat')->getValue();
@@ -738,7 +738,7 @@ function convivial_bootstrap_preprocess_field(&$variables, $hook) {
       break;
 
     case 'field_animation_images':
-      if ($variables["element"]["#bundle"] === 'image_sequence' && $variables['element']['#object']) {
+      if ($variables["element"]["#bundle"] === 'animation' && $variables['element']['#object']) {
         $media_ids = [];
         foreach ($variables['items'] as $delta => $item) {
           if (!empty($item['content']['#media'])) {

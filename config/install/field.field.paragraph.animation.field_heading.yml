@@ -3,17 +3,17 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_heading
-    - paragraphs.paragraphs_type.image_sequence
+    - paragraphs.paragraphs_type.animation
   module:
     - unique_content_field_validation
 third_party_settings:
   unique_content_field_validation:
     unique: false
     unique_text: ''
-id: paragraph.image_sequence.field_heading
+id: paragraph.animation.field_heading
 field_name: field_heading
 entity_type: paragraph
-bundle: image_sequence
+bundle: animation
 label: Heading
 description: 'The heading used on the frontend.'
 required: false

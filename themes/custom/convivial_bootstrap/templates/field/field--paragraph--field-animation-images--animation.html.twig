@@ -39,7 +39,7 @@
  * @see template_preprocess_field()
  */
 #}
-{{ attach_library('convivial_bootstrap/convivial_image_sequence') }}
+{{ attach_library('convivial_bootstrap/convivial_animation') }}
 
 {% set classes = [
   'field',
@@ -57,7 +57,7 @@
 {% if label_hidden %}
   <div {{ attributes.addClass('visually-hidden') }}>
     {% if multiple %}
-      <div{{ attributes.addClass(classes, 'field__items') }}>
+      <div{{ attributes.addClass(classes, 'field__items') }} aria-hidden="true">
         {% for item in items %}
           <div{{ item.attributes.addClass('field__item ' ~ 'field__media-'~ media_ids[key] ~ ' ' ~'field__paragraph-' ~ paragraph_id) }}>{{ item.content }}</div>
         {% endfor %}
@@ -68,7 +68,7 @@
       {% endfor %}
     {% endif %}
   </div>
-  <div{{ attributes.addClass(classes).removeClass('visually-hidden') }}>
+  <div{{ attributes.addClass(classes).removeClass('visually-hidden') }} aria-hidden="true">
     <img {{ attributes.addClass('field--paragraph-' ~ paragraph_id) }}/>
   </div>
 {% else %}
@@ -76,7 +76,7 @@
     <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
     <div {{ attributes.addClass('visually-hidden') }}>
       {% if multiple %}
-      <div class="field__items">
+      <div class="field__items" aria-hidden="true">
         {% endif %}
         {% for item in items %}
           <div{{ item.attributes.addClass('field__item ' ~ 'field__media-'~ media_ids[key] ~ ' ' ~'field__paragraph-' ~ paragraph_id) }}>{{ item.content }}</div>
