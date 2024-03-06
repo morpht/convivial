@@ -4,18 +4,18 @@ dependencies:
   config:
     - field.storage.paragraph.field_modifiers
     - paragraphs.paragraphs_type.adaptive_height_modifier
+    - paragraphs.paragraphs_type.animation
     - paragraphs.paragraphs_type.hide_modifier
     - paragraphs.paragraphs_type.image_bg_modifier
-    - paragraphs.paragraphs_type.image_sequence
     - paragraphs.paragraphs_type.parallax_bg_modifier
     - paragraphs.paragraphs_type.scroll_reveal_modifier
     - paragraphs.paragraphs_type.video_bg_modifier
   module:
     - entity_reference_revisions
-id: paragraph.image_sequence.field_modifiers
+id: paragraph.animation.field_modifiers
 field_name: field_modifiers
 entity_type: paragraph
-bundle: image_sequence
+bundle: animation
 label: Modifiers
 description: ''
 required: false
@@ -43,6 +43,9 @@ settings:
       adaptive_height_modifier:
         weight: 29
         enabled: true
+      animation:
+        weight: 40
+        enabled: false
       charts:
         weight: 36
         enabled: false
@@ -53,28 +56,28 @@ settings:
         weight: 33
         enabled: false
       content_tab:
-        weight: 43
-        enabled: false
-      content_tabs:
         weight: 44
         enabled: false
-      decision_tree:
+      content_tabs:
         weight: 45
         enabled: false
-      fastfact:
+      decision_tree:
         weight: 46
         enabled: false
-      fastfacts:
+      fastfact:
         weight: 47
         enabled: false
-      gallery:
+      fastfacts:
         weight: 48
         enabled: false
-      geochart:
+      gallery:
         weight: 49
         enabled: false
-      hero_banner:
+      geochart:
         weight: 50
+        enabled: false
+      hero_banner:
+        weight: 51
         enabled: false
       hide_modifier:
         weight: 29
@@ -82,9 +85,6 @@ settings:
       image_bg_modifier:
         weight: 11
         enabled: true
-      image_sequence:
-        weight: 53
-        enabled: false
       item:
         weight: 12
         enabled: false

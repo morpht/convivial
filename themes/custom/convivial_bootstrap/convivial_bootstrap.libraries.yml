@@ -228,9 +228,9 @@ personified_data:
     - core/drupal
     - convivial_bootstrap/handlebars
 
-convivial_image_sequence:
+convivial_animation:
   js:
-    components/image-sequence/image_sequence.js: { }
+    components/animation/animation.js: { }
   dependencies:
     - core/drupalSettings
     - convivial_bootstrap/scrollmagic_core

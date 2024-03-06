@@ -1,5 +1,5 @@
 (function ($, Drupal, drupalSettings) {
-  Drupal.behaviors.convivialImageSequence = {
+  Drupal.behaviors.convivialAnimation = {
     attach: function (context) {
       if (typeof drupalSettings.animation !== 'undefined') {
         let animations = drupalSettings.animation;
@@ -37,7 +37,7 @@
 
           // build scene
           new ScrollMagic.Scene({
-            triggerElement: 'div.paragraph--type--image-sequence.paragraph--id-' + paragraphId,
+            triggerElement: 'div.paragraph--type--animation.paragraph--id-' + paragraphId,
             duration: delay
           })
             .setTween(tween)
