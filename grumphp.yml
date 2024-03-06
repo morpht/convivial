@@ -9,10 +9,9 @@ grumphp:
   tasks:
     git_branch_name:
       whitelist:
+        - "main"
         - "/c-([0-9]*)/"
         - "/conv-([0-9]*)/"
-      blacklist:
-        - "main"
       additional_modifiers: ''
       allow_detached_head: true
     git_commit_message:
