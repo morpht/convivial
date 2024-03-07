@@ -121,8 +121,7 @@
   },
   "require-dev": {
     "drupal/coder": "^8.3",
-    "mglaman/drupal-check": "^1.4",
-    "phpro/grumphp": "^2.5"
+    "mglaman/drupal-check": "^1.4"
   },
   "repositories": [
     {
@@ -144,7 +143,6 @@
       "drupal/core-composer-scaffold": true,
       "ergebnis/composer-normalize": true,
       "oomphinc/composer-installers-extender": true,
-      "phpro/grumphp": true,
       "phpstan/extension-installer": true
     },
     "bin-dir": "bin/",
