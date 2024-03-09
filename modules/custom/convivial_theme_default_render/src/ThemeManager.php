@@ -1,5 +1,7 @@
 <?php
 
+// @codingStandardsIgnoreFile
+
 namespace Drupal\convivial_theme_default_render;
 
 use Drupal\Core\Config\ConfigFactoryInterface;

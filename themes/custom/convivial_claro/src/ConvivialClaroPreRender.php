@@ -5,7 +5,7 @@ namespace Drupal\convivial_claro;
 use Drupal\Core\Security\TrustedCallbackInterface;
 
 /**
- * ConvivialClaroPreRender.
+ * Pre render some of the components in claro theme.
  */
 class ConvivialClaroPreRender implements TrustedCallbackInterface {
 
