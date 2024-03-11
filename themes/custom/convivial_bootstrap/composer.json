@@ -1,13 +1,13 @@
 {
-  "name": "morpht/convivial_bootstrap",
-  "description": "Convivial theme based on Bootstrap 5",
-  "license": "GPL-2.0-or-later",
-  "type": "drupal-theme",
-  "authors": [
-    {
-      "name": "Morpht",
-      "homepage": "https://www.morpht.com",
-      "role": "Maintainer"
-    }
-  ]
+    "name": "morpht/convivial_bootstrap",
+    "description": "Convivial theme based on Bootstrap 5",
+    "license": "GPL-2.0-or-later",
+    "type": "drupal-theme",
+    "authors": [
+        {
+            "name": "Morpht",
+            "homepage": "https://www.morpht.com",
+            "role": "Maintainer"
+        }
+    ]
 }
