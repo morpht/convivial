@@ -121,7 +121,9 @@
   },
   "require-dev": {
     "drupal/coder": "^8.3",
-    "mglaman/drupal-check": "^1.4"
+    "enlightn/security-checker": "^1.11",
+    "mglaman/drupal-check": "^1.4",
+    "phpro/grumphp": "^2.5"
   },
   "repositories": [
     {
@@ -142,6 +144,7 @@
       "dealerdirect/phpcodesniffer-composer-installer": true,
       "drupal/core-composer-scaffold": true,
       "oomphinc/composer-installers-extender": true,
+      "phpro/grumphp": true,
       "phpstan/extension-installer": true
     },
     "bin-dir": "bin/",

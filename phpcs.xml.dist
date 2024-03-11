@@ -16,6 +16,7 @@
   <exclude-pattern>var/</exclude-pattern>
   <exclude-pattern>vendor/</exclude-pattern>
 
+  <rule ref="Drupal"/>
   <rule ref="DrupalPractice"/>
 
 </ruleset>

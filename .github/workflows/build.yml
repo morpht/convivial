@@ -123,6 +123,12 @@ jobs:
       - name: Validate composer
         run: composer validate --no-check-all --ansi
 
+      - name: Run code quality checks
+        run: ./bin/grumphp run  --testsuite=code_quality
+
+      - name: Run code security checks
+        run: ./bin/grumphp run  --testsuite=code_security
+
       - name: Execute Drupal-check
         run: php ./bin/drupal-check modules/custom
 
