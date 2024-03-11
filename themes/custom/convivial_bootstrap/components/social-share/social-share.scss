@@ -104,12 +104,12 @@ a.social-share__service[rel~='external']:after {
 
 // Styling for individual services.
 .social-share__service {
-  @each $social-alias, $social-color in $social-color-pallete {
+  @each $social-alias, $social-color, $social-svg in $social-services {
 
     // Set the bg image.
     &.social-share__service--#{$social-alias} {
       &:before {
-        background-image: url("../../images/#{$social-alias}.svg");
+        background-image: escape-svg(#{$social-svg});
       }
     }
 
@@ -150,6 +150,10 @@ a.social-share__service[rel~='external']:after {
 
     &.social-share__service--email:hover:before {
       background-image: escape-svg(#{$email-svg});
+    }
+
+    &.social-share__service--youtube:hover:before {
+      background-image: escape-svg(#{$youtube-svg});
     }
   }
 
@@ -193,6 +197,14 @@ a.social-share__service[rel~='external']:after {
 
     &.social-share__service--email:hover:before {
       background-image: escape-svg(#{$email-svg--inverse});
+    }
+
+    &.social-share__service--youtube:before {
+      background-image: escape-svg(#{$youtube-svg});
+    }
+
+    &.social-share__service--youtube:hover:before {
+      background-image: escape-svg(#{$youtube-svg--inverse});
     }
   }
 }
