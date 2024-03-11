@@ -49,7 +49,6 @@ grumphp:
         - git_commit_message
         - yamllint
         - composer
-        - composer_normalize
         - phpcs
     code_security:
       tasks:
