@@ -1,9 +1,11 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  content:
+    - 'file:file:05aeef88-8bc7-40f1-95d2-1df4f10d6083'
 id: decision_tree
 label: 'Decision Tree'
-icon_uuid: null
-icon_default: null
+icon_uuid: 05aeef88-8bc7-40f1-95d2-1df4f10d6083
+icon_default: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADKSURBVHgBzZXtDYIwEIbfNgzgCGxinMQZ1AVwAA0rOAmrdAOdwOphTIztXQ8uhD4/CCT30fvgrcNp2COiB7BBSoDzHS7bG3IofP3boGMMiBbx2YND4duML8R15xKT4xCFAND4eixMo7L6nGYWi1egS0A9/u3z/7c5gQGawQO0KXyfg+Bf9KUKDkIQCnAGj8U3A5104kZVskU1J9D9yRwqNbWgVFML7fhcU02rG3JJGhKmViBJQxaV5LJ8K+GHbE5wh3xnB+uQi2r6AmolTJlEYmeeAAAAAElFTkSuQmCC'
 description: 'Displays decision tree.'
 behavior_plugins: {  }
