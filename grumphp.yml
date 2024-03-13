@@ -1,0 +1,56 @@
+parameters:
+  git_dir: .
+grumphp:
+  stop_on_failure: true
+  ascii:
+    failed: failed.txt
+    succeeded: succeeded.txt
+  process_timeout: 60
+  tasks:
+    git_branch_name:
+      whitelist:
+        - "/c-([0-9]*)/"
+        - "/conv-([0-9]*)/"
+      blacklist:
+        - "main"
+      additional_modifiers: ''
+      allow_detached_head: true
+    git_commit_message:
+      enforce_capitalized_subject: false
+      enforce_no_subject_trailing_period: false
+      matchers:
+        'Git commit message must begin with a issue number': '/^convivial-demo-[0-9]+: /'
+      max_body_width: 0
+      max_subject_width: 0
+    yamllint: ~
+    composer: ~
+    phpcs:
+      standard: ['phpcs.xml.dist']
+      ignore_patterns:
+        - .github
+        - cypress
+        - bower_components
+        - node_modules
+        - vendor
+      triggered_by:
+        - php
+    securitychecker_composeraudit:
+      format: null
+      locked: true
+      no_dev: false
+      run_always: true
+      working_dir: null
+    securitychecker_enlightn:
+      lockfile: ./composer.lock
+      run_always: true
+  testsuites:
+    code_quality:
+      tasks:
+        - git_commit_message
+        - yamllint
+        - composer
+        - phpcs
+    code_security:
+      tasks:
+        - securitychecker_composeraudit
+        - securitychecker_enlightn
