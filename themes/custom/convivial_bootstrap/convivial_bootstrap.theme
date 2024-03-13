@@ -36,6 +36,8 @@ function convivial_bootstrap_theme() {
 function convivial_bootstrap_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
   require_once __DIR__ . '/includes/_settings.inc';
   _convivial_bootstrap_settings($form, $form_state);
+  require_once __DIR__ . '/includes/matomo.inc';
+  _convivial_bootstrap_matomo_theme_settings($form, $form_state);
 }
 
 /**
@@ -199,6 +201,10 @@ function convivial_bootstrap_preprocess_page(&$variables) {
   if (isset($variables['mark_external_links'])) {
     $variables['#attached']['library'][] = 'convivial_bootstrap/mark-external-links';
   }
+
+  // Get Matomo settings and initialize Matomo script.
+  require_once __DIR__ . '/includes/matomo.inc';
+  _convivial_bootstrap_matomo_tracking_script($variables);
 }
 
 /**

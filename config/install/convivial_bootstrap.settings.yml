@@ -14,7 +14,7 @@ logo:
 favicon:
   use_default: 0
   path: profiles/custom/convivial/themes/custom/convivial_bootstrap/favicon.ico
-  mimetype: image/png
+  mimetype: image/vnd.microsoft.icon
 theme__highlighted_layouts: 0
 top_bar_style: theme__top_bar--dark
 mark_external_links: 0
@@ -67,3 +67,18 @@ meta:
   meta_enable: 0
   meta_strategies_name: "constant,sitename,Convivial\r\ntoken,nid,[node:nid]\r\ntoken,type,[node:content-type:machine-name]\r\ntoken,thumbnail,[node:field_thumbnail:entity:field_media_image:landscape:url]\r\nreferences,audience,field_suitable_for|field_key\r\nreferences,author,field_authored_by|field_key\r\nreferences,topic,field_about|field_key\r\ntoken,audience,[node:field_key],,audience\r\ntoken,author,[node:field_key],,person\r\ntoken,topic,[node:field_key],,topic\r\nreferences,goal,field_goal|field_key\r\nreferences,stage,field_stage|field_key"
   meta_strategies_property: ''
+matomo_settings:
+  tracking: 0
+  site_id: ''
+  server: ''
+  dimensions: ''
+  user_roles:
+    anonymous: 0
+    authenticated: 0
+    editor: 0
+    approver: 0
+    manager: 0
+    site_administrator: 0
+    webform_manager: 0
+    submission_viewer: 0
+    layout_customizer: 0
