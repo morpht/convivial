@@ -1,7 +1,8 @@
 <?php
 
-use Drupal\user\Entity\User;
 use Drupal\Component\Render\MarkupInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\user\Entity\User;
 
 /**
  * Class for formatting a string to inject to html head.
@@ -65,14 +66,12 @@ function _convivial_bootstrap_matomo_theme_settings(&$form) {
     '#title' => t('Site ID'),
     '#description' => t('The Site ID on the Matomo server'),
     '#default_value' => theme_get_setting('matomo_settings.site_id'),
-    '#required' => TRUE,
   ];
   $form['matomo_settings']['server'] = [
-    '#type' => 'textfield',
+    '#type' => 'url',
     '#title' => t('Server'),
     '#description' => t('The URL of the Matomo server'),
     '#default_value' => theme_get_setting('matomo_settings.server'),
-    '#required' => TRUE,
   ];
   $form['matomo_settings']['dimensions'] = [
     '#type' => 'textarea',
@@ -99,6 +98,23 @@ function _convivial_bootstrap_matomo_theme_settings(&$form) {
       '#title' => $name->label(),
       '#default_value' => theme_get_setting('matomo_settings.user_roles.' . $rid),
     ];
+  }
+  $form['#validate'][] = '_convivial_bootstrap_matomo_theme_settings_validate';
+}
+
+/**
+ * Validate handler for the Matomo theme settings.
+ */
+function _convivial_bootstrap_matomo_theme_settings_validate(&$form, FormStateInterface $form_state) {
+  $settings = $form_state->getValue('matomo_settings');
+  // If Matomo tracking is enabled; Make site_id and server mandatory.
+  if ($settings['tracking']) {
+    if (empty($settings['site_id'])) {
+      $form_state->setErrorByName('matomo_settings[site_id]', t('Matomo tracking is enabled so Site ID is required.'));
+    }
+    if (empty($settings['server'])) {
+      $form_state->setErrorByName('matomo_settings[server]', t('Matomo tracking is enabled so Server is required.'));
+    }
   }
 }
 
