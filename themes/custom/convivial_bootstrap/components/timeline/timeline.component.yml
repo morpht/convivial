@@ -6,24 +6,3 @@ $schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.js
 
 # The human readable name.
 name: Timeline
-
-# Schema for the props. We support www.json-schema.org. Learn more about the
-# syntax there.
-props:
-  # Props are always an object with keys. Each key is a variable in your
-  # component template.
-  type: object
-
-  properties:
-    attributes:
-      type: Drupal\Core\Template\Attribute
-    classes:
-      type: array
-    content:
-      type: object
-    title:
-      type: string
-    text:
-      type: string
-    sections:
-      type: object
