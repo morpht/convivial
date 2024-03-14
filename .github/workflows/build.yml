@@ -21,6 +21,10 @@ jobs:
     name: Full (Build, Validate, and Test)
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        php: ['8.2', '8.3']
+
     services:
       database:
         image: mysql:5.7
@@ -52,7 +56,7 @@ jobs:
       - name: Setup PHP and tools
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.2'
+          php-version: ${{ matrix.php }}
           tools: composer:2.6.6
           # See https://www.drupal.org/docs/getting-started/system-requirements/php-requirements#extensions
           extensions: curl, date, dom, filter, gd, hash, json, mbstring, mysql, pcre, pdo, pdo_mysql, session, SimpleXML, SPL, tokenizer, xml, xmlwriter
@@ -122,6 +126,11 @@ jobs:
 
       - name: Validate composer
         run: composer validate --no-check-all --ansi
+
+      - name: PHP Compatibility Check
+        run: |
+          ./bin/phpcs -p modules/custom --standard=vendor/phpcompatibility/php-compatibility/PHPCompatibility --extensions=php,module,inc --runtime-set testVersion ${{ matrix.php }}
+          ./bin/phpcs -p themes/custom --standard=vendor/phpcompatibility/php-compatibility/PHPCompatibility --extensions=php,theme,inc --runtime-set testVersion ${{ matrix.php }}
 
       - name: Run code quality checks
         run: ./bin/grumphp run  --testsuite=code_quality
