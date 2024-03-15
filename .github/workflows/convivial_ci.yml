@@ -1,4 +1,4 @@
-name: Build, Validate and Test
+name: Convivial CI
 
 on:
   schedule:
@@ -77,9 +77,6 @@ jobs:
           echo "extension=${EXTENSION_DIR}/spx.so" >> "$(php -r 'echo php_ini_loaded_file();')"
         shell: bash
 
-      - name: Start MySQL Service
-        run: sudo service mysql start
-
       - name: Prepare environment variables
         run: |
           echo "GITHUB_REF_NAME=$(echo ${GITHUB_REF##*/})" >> $GITHUB_ENV
@@ -144,17 +141,22 @@ jobs:
       - name: Show environment variables
         run: ls -alk ./bin
 
-      - name: Prepare environment for application
-        run: bash $SCRIPT_DIR/setup_app.sh
+      - name: Setup MySQL
+        run: |
+          sudo service mysql start
+          mysql -uroot -proot < $(echo ${SCRIPT_DIR)/install.sql
 
       - name: Setup Application
         run: |
           SPX_ENABLED=1 ./bin/drush si convivial --locale=en --db-url=mysql://drupal:drupal@127.0.0.1:${{ job.services.mysql.ports[3306] }}/drupal --account-name=admin --account-pass=admin --site-name='Convivial Demo' --site-pass=admin --yes
           SPX_ENABLED=1 ./bin/drush status
 
+      - name: Setup Convivial content
+        run: ./bin/drush convivial_content-import bookshop --cleanup=1 --yes
+
       - name: Start Application in background
         run: |
-          ./bin/drush runserver localhost:8080 &
+          ./bin/drush runserver 127.0.0.1:8080 &
           until netstat -an 2>/dev/null | grep '8080.*LISTEN'; do true; done
 
       - name: Setup node
