@@ -11,3 +11,9 @@ effects:
     data:
       width: 34
       height: 34
+  1df17ef4-573f-46d7-9626-8c2349c244f8:
+    uuid: 1df17ef4-573f-46d7-9626-8c2349c244f8
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

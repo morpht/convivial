@@ -12,3 +12,9 @@ effects:
       width: 768
       height: null
       upscale: false
+  23668abf-6fa1-49d5-8075-e83b6a13c9aa:
+    uuid: 23668abf-6fa1-49d5-8075-e83b6a13c9aa
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp
