@@ -1,5 +1,6 @@
 langcode: en
 name: 'Convivial Demo'
+mail: ''
 slogan: ''
 page:
   403: ''
