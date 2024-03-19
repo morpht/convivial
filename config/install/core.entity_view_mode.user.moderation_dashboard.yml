@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.moderation_dashboard
+label: 'Moderation Dashboard'
+description: ''
+targetEntityType: user
+cache: true

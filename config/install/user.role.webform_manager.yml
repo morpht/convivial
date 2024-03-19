@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - eu_cookie_compliance
     - file
     - help
     - system
@@ -25,6 +26,7 @@ permissions:
   - 'delete any webform'
   - 'delete any webform submission'
   - 'delete own files'
+  - 'display eu cookie compliance popup'
   - 'edit any webform'
   - 'edit webform assets'
   - 'edit webform variants'

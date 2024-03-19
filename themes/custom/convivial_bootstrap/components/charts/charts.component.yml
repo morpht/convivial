@@ -15,5 +15,9 @@ props:
   type: object
 
   properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+    classes:
+      type: array
     content:
       type: object

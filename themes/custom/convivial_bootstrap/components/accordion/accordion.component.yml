@@ -14,25 +14,25 @@ props:
   # component template.
   type: object
 
-  # If your component has required properties, you list them here.
-  required:
-    - title
-    - orientation
-
   properties:
     attributes:
       type: Drupal\Core\Template\Attribute
     classes:
       type: array
-    content:
-      type: object
-    id:
-      type: string
-    title:
-      type: string
-    body:
-      type: string
-    orientation:
-      type: string
-    faq:
-      type: number
+
+slots:
+  faq:
+    title: Make FAQ
+    description: Turns the accordion into the FAQ component.
+  id:
+    title: Id
+    description: Accordion's id.
+  orientation:
+    title: Orientation
+    description: Defines if the accordion is closed or open.
+  text:
+    title: Body
+    description: Accordion's text area.
+  title:
+    title: Heading
+    description: Accordion's heading.

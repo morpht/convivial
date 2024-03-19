@@ -27,18 +27,17 @@
 #}
 {%
   set classes = [
-      'content-tabs',
-      'paragraph',
-      'paragraph--type--' ~ paragraph.bundle|clean_class,
-      view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    'content-tabs',
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   ]
 %}
 
 {{ include ('convivial_bootstrap:content-tabs', {
   attributes,
   classes,
-  content,
+  tabs : content.field_cts_tabs,
   title : content.field_heading[0],
-  body : content.field_body[0],
-  tabs : content.field_cts_tabs
+  text : content.field_body[0]
 }) }}

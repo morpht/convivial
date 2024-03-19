@@ -46,15 +46,9 @@
   ]
 %}
 
-{% set chart_id = 'paragraph-geochart-' ~ paragraph.id() %}
-
-{% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
-    <div class="containerised">
-      {% block content %}
-        {{ content }}
-      {% endblock %}
-      <div{{ create_attribute().setAttribute('id', chart_id).addClass('geochart') }}></div>
-    </div>
-  </div>
-{% endblock paragraph %}
+{{ include ('convivial_bootstrap:geochart', {
+  attributes,
+  classes,
+  content,
+  id : paragraph.id()
+}) }}

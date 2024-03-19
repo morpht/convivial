@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - eu_cookie_compliance
     - file
     - system
     - toolbar
@@ -14,5 +15,6 @@ permissions:
   - 'access toolbar'
   - 'access webform overview'
   - 'delete own files'
+  - 'display eu cookie compliance popup'
   - 'view any webform submission'
   - 'view the administration theme'

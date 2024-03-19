@@ -12,9 +12,3 @@ effects:
       width: 768
       height: null
       upscale: false
-  ac85da03-3489-4f17-abd5-a5325a815194:
-    uuid: ac85da03-3489-4f17-abd5-a5325a815194
-    id: image_convert
-    weight: 2
-    data:
-      extension: webp

@@ -50,8 +50,7 @@
 {{ include ('convivial_bootstrap:accordion-group', {
   attributes,
   classes,
-  content,
   title : content.field_heading[0],
-  body: content.field_body[0],
+  text: content.field_body[0],
   accordions : content.field_accordions
 }) }}
