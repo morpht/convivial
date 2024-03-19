@@ -19,20 +19,17 @@ props:
       type: Drupal\Core\Template\Attribute
     classes:
       type: array
-    content:
-      type: object
-    data_selected:
-      type: number
-    label:
-      type : string
-    tab_id:
-      type: string
-    title:
-      type: string
-    body:
-      type: string
-    tabs:
-      type: object
+
+slots:
+  tabs:
+    title: Tabs
+    description: Content tabs's tabs.
+  text:
+    title: Body
+    description: Content tabs's text area.
+  title:
+    title: Heading
+    description: Content tabs's heading.
 
 # This is how you take control of the keys in your library
 # declaration. The overrides specified here will be merged (shallow merge) with

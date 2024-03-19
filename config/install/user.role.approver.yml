@@ -14,6 +14,7 @@ dependencies:
   module:
     - content_moderation
     - contextual
+    - eu_cookie_compliance
     - file
     - filter
     - help
@@ -44,6 +45,7 @@ permissions:
   - 'delete any place content'
   - 'delete any topic content'
   - 'delete own files'
+  - 'display eu cookie compliance popup'
   - 'edit any article content'
   - 'edit any audience content'
   - 'edit any event content'

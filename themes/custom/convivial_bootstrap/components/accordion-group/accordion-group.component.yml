@@ -14,20 +14,19 @@ props:
   # component template.
   type: object
 
-  # If your component has required properties, you list them here.
-  required:
-    - accordions
-
   properties:
     attributes:
       type: Drupal\Core\Template\Attribute
     classes:
       type: array
-    content:
-      type: object
-    title:
-      type: string
-    body:
-      type: string
-    accordions:
-      type: object
+
+slots:
+  accordions:
+    title: Accordions
+    description: Accordions group's accordions.
+  body:
+    title: Body
+    description: Accordion group's text area.
+  title:
+    title: Heading
+    description: Accordion group's heading.

@@ -123,7 +123,6 @@
     "drupal/coder": "^8.3",
     "enlightn/security-checker": "^1.11",
     "mglaman/drupal-check": "^1.4",
-    "phpcompatibility/php-compatibility": "^9.3",
     "phpro/grumphp": "^2.5"
   },
   "repositories": [

@@ -39,7 +39,7 @@
   ]
 %}
 <div{{ attributes.addClass(classes) }}>
-  <div class="list">
+  <div class="list" role="list">
     {% for item in items %}
       {% set image = item.content['#media'].field_media_image.entity.uri.value %}
       <div role="listitem" {{ item.attributes.addClass('list__item').addClass('content') }}>

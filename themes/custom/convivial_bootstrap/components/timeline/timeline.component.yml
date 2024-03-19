@@ -21,9 +21,11 @@ props:
       type: array
     content:
       type: object
-    title:
-      type: string
-    text:
-      type: string
-    sections:
-      type: object
+
+slots:
+  text:
+    title: Body
+    description: Timeline's text area.
+  title:
+    title: Heading
+    description: Timeline's heading.

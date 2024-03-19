@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - eu_cookie_compliance
     - media
     - paragraphs_type_permissions
     - system
@@ -11,6 +12,7 @@ weight: -10
 is_admin: false
 permissions:
   - 'access content'
+  - 'display eu cookie compliance popup'
   - 'view media'
   - 'view paragraph content accordion'
   - 'view paragraph content accordion_group'

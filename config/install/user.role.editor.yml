@@ -21,6 +21,7 @@ dependencies:
   module:
     - content_moderation
     - contextual
+    - eu_cookie_compliance
     - file
     - filter
     - help
@@ -78,6 +79,7 @@ permissions:
   - 'delete own video media'
   - 'delete terms in goal'
   - 'delete terms in media_tags'
+  - 'display eu cookie compliance popup'
   - 'edit any article content'
   - 'edit any audience content'
   - 'edit any audio media'

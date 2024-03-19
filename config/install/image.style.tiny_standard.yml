@@ -12,9 +12,3 @@ effects:
       width: 100
       height: null
       upscale: false
-  dec25756-1000-4603-88bb-0802e887f772:
-    uuid: dec25756-1000-4603-88bb-0802e887f772
-    id: image_convert
-    weight: 2
-    data:
-      extension: webp

@@ -12,9 +12,3 @@ effects:
       width: 800
       height: null
       upscale: false
-  31dfa820-6624-4863-a94e-6727a1683d17:
-    uuid: 31dfa820-6624-4863-a94e-6727a1683d17
-    id: image_convert
-    weight: 2
-    data:
-      extension: webp

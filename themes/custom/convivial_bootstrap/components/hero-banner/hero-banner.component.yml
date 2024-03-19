@@ -17,17 +17,22 @@ props:
   properties:
     attributes:
       type: Drupal\Core\Template\Attribute
-    bg_color:
-      type: array
     classes:
       type: array
-    content:
-      type: object
-    image:
-      type: object
-    href:
-      type: string
-    text:
-      type: string
-    title:
-      type: string
+
+slots:
+  bg_color:
+    title: Background Color
+    description: Hero Banner's background color.
+  image:
+    title: Background Image
+    description: Hero Banner's background image.
+  href:
+    title: Link
+    description: Link used for linking the Hero Banner's title.
+  text:
+    title: Body
+    description: Hero Banner's text area.
+  title:
+    title: Heading
+    description: Hero Banner's heading.
