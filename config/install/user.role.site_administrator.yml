@@ -39,7 +39,6 @@ dependencies:
     - easy_breadcrumb
     - entity_reference_revisions
     - environment_indicator
-    - eu_cookie_compliance
     - facets
     - field_ui
     - file
@@ -113,8 +112,6 @@ permissions:
   - 'administer display modes'
   - 'administer easy breadcrumb'
   - 'administer environment indicator settings'
-  - 'administer eu cookie compliance categories'
-  - 'administer eu cookie compliance popup'
   - 'administer facets'
   - 'administer filters'
   - 'administer image styles'
@@ -249,7 +246,6 @@ permissions:
   - 'delete terms in goal'
   - 'delete terms in media_tags'
   - 'delete topic revisions'
-  - 'display eu cookie compliance popup'
   - 'edit any article content'
   - 'edit any audience content'
   - 'edit any audio media'

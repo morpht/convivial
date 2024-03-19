@@ -10,7 +10,6 @@ dependencies:
     - core.entity_view_display.node.place.full
     - core.entity_view_display.node.topic.full
   module:
-    - eu_cookie_compliance
     - file
     - layout_builder
     - system
@@ -38,5 +37,4 @@ permissions:
   - 'configure editable topic node layout overrides'
   - 'create and edit custom blocks'
   - 'delete own files'
-  - 'display eu cookie compliance popup'
   - 'view the administration theme'
