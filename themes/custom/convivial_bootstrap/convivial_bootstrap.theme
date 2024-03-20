@@ -973,3 +973,35 @@ function _convivial_bootstrap_is_in_layout_builder_ui() {
 
   return strpos($rountname, 'layout_builder') === 0 || strpos($rountname, 'layout') === 0;
 }
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for paragraph.
+ */
+function convivial_bootstrap_theme_suggestions_paragraph_alter(&$suggestions, $variables) {
+  $paragraph = $variables['elements']['#paragraph'];
+
+  if ($paragraph->bundle() === 'section') {
+    if ($paragraph->hasField('field_s_layout_classes')) {
+      $layout_classes = $paragraph->get('field_s_layout_classes')->value;
+
+      if ($layout_classes && strpos($layout_classes, 'section-layout--wipe')) {
+        $suggestions[] = 'paragraph__section__wipe';
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_paragraph() for section.
+ */
+function convivial_bootstrap_preprocess_paragraph__section(&$variables) {
+  $paragraph = $variables['paragraph'];
+
+  if ($paragraph->hasField('field_s_layout_classes')) {
+    $classes = $paragraph->get('field_s_layout_classes')->value;
+
+    if ($classes && strpos($classes, 'section-layout--wipe')) {
+      $variables['#attached']['library'][] = 'convivial_bootstrap/convivial_wipe';
+    }
+  }
+}

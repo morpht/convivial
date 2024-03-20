@@ -236,6 +236,12 @@ convivial_animation:
     - convivial_bootstrap/scrollmagic_core
     - convivial_bootstrap/scrollmagic_plugins_gsap
 
+convivial_wipe:
+  js:
+    components/section/wipe.js: { }
+  dependencies:
+    - convivial_bootstrap/scrollmagic_core
+
 scrollmagic_core:
   remote: https://github.com/janpaepke/ScrollMagic
   version: 2.0.8
