@@ -24,7 +24,7 @@ slots:
   accordions:
     title: Accordions
     description: Accordions group's accordions.
-  body:
+  text:
     title: Body
     description: Accordion group's text area.
   title:
