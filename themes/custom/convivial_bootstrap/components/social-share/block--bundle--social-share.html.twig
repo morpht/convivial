@@ -33,12 +33,13 @@
     'social-share',
   ]
 %}
+
 {{ include ('convivial_bootstrap:social-share', {
   attributes,
   classes,
   content,
-  title : label,
-  title_prefix,
   title_attributes,
+  title: label,
+  title_prefix,
   title_suffix
 }) }}

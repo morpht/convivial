@@ -50,10 +50,9 @@
 {{ include ('convivial_bootstrap:accordion', {
   attributes,
   classes,
-  content,
+  faq : paragraph.field_accordion_make_faq.value,
   id : paragraph.id(),
-  title : content.field_heading[0],
-  body : content.field_accordion_body[0],
   orientation : paragraph.field_accordion_orientation.value,
-  faq : paragraph.field_accordion_make_faq.value
+  text : content.field_accordion_body[0],
+  title : content.field_heading[0]
 }) }}

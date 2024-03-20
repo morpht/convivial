@@ -5,7 +5,7 @@
 $schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
 
 # The human readable name.
-name: Accordion
+name: Geochart
 
 # Schema for the props. We support www.json-schema.org. Learn more about the
 # syntax there.
@@ -19,20 +19,10 @@ props:
       type: Drupal\Core\Template\Attribute
     classes:
       type: array
+    content:
+      type: object
 
 slots:
-  faq:
-    title: Make FAQ
-    description: Turns the accordion into the FAQ component.
   id:
     title: Id
-    description: Accordion's id.
-  orientation:
-    title: Orientation
-    description: Defines if the accordion is closed or open.
-  text:
-    title: Body
-    description: Accordion's text area.
-  title:
-    title: Heading
-    description: Accordion's heading.
+    description: Geochart's id.
