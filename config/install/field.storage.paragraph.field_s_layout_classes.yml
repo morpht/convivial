@@ -49,6 +49,9 @@ settings:
     -
       value: 'section-layout section-layout--8-4 section-layout--row'
       label: 8-4
+    -
+      value: 'section-layout section-layout--wipe'
+      label: Wipe
   allowed_values_function: ''
 module: options
 locked: false
