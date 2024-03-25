@@ -1,6 +1,8 @@
 /*! @convivial_bootstrap/postscript */
 
 .postscript {
+  position: relative;
+
   &[class*='bg-'] {
     padding-top: $grid-gutter-width;
     padding-bottom: $grid-gutter-width;

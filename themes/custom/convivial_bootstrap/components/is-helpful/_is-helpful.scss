@@ -3,4 +3,10 @@
     @include make-container();
     @include container-max-widths();
   }
+
+  .field--name-field-components .cp {
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
