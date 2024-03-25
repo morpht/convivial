@@ -1,6 +1,7 @@
 /*! @convivial_bootstrap/paragraphs */
 
 .paragraph {
+  position: relative;
   height: 100%;
 
   .field--type-entity-reference-revisions > .field__item + .field__item > & {

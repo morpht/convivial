@@ -1,5 +1,5 @@
 (function (Drupal) {
-  Drupal.behaviors.convivialWipe = {
+  Drupal.behaviors.convivialSectionWipe = {
     attach: function (context) {
       const slides = document.querySelectorAll('.main-content .section-layout--wipe .section-components__item');
       let screenWidth = window.innerWidth;

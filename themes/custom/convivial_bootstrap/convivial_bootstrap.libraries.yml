@@ -238,7 +238,7 @@ convivial_animation:
 
 convivial_wipe:
   js:
-    components/section/wipe.js: { }
+    components/section-wipe/section-wipe.js: { }
   dependencies:
     - convivial_bootstrap/scrollmagic_core
 
