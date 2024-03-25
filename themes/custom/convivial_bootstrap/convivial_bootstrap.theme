@@ -518,6 +518,23 @@ function convivial_bootstrap_theme_suggestions_field_alter(array &$suggestions, 
 }
 
 /**
+ * Implements hook_theme_suggestions_HOOK_alter() for paragraph.
+ */
+function convivial_bootstrap_theme_suggestions_paragraph_alter(&$suggestions, $variables) {
+  $paragraph = $variables['elements']['#paragraph'];
+
+  if ($paragraph->bundle() === 'section') {
+    if ($paragraph->hasField('field_s_layout_classes')) {
+      $layout_classes = $paragraph->get('field_s_layout_classes')->value;
+
+      if ($layout_classes && strpos($layout_classes, 'section-layout--wipe')) {
+        $suggestions[] = 'paragraph__section__wipe';
+      }
+    }
+  }
+}
+
+/**
  * Implements template_preprocess_form().
  */
 function convivial_bootstrap_preprocess_form(&$variables) {
@@ -616,6 +633,36 @@ function convivial_bootstrap_preprocess_paragraph(&$variables) {
 }
 
 /**
+ * Implements template_preprocess_paragraph__decision_tree().
+ */
+function convivial_bootstrap_preprocess_paragraph__decision_tree(&$variables) {
+  $variables['#attached']['library'][] = 'convivial_bootstrap/decision_tree_library';
+}
+
+/**
+ * Implements template_preprocess_paragraph__geochart().
+ */
+function convivial_bootstrap_preprocess_paragraph__geochart(&$variables) {
+  require_once __DIR__ . '/includes/geochart.inc';
+  _convivial_bootstrap_geochart($variables);
+}
+
+/**
+ * Implements hook_preprocess_paragraph() for section.
+ */
+function convivial_bootstrap_preprocess_paragraph__section(&$variables) {
+  $paragraph = $variables['paragraph'];
+
+  if ($paragraph->hasField('field_s_layout_classes')) {
+    $classes = $paragraph->get('field_s_layout_classes')->value;
+
+    if ($classes && strpos($classes, 'section-layout--wipe')) {
+      $variables['#attached']['library'][] = 'convivial_bootstrap/convivial_wipe';
+    }
+  }
+}
+
+/**
  * Implements template_preprocess_paragraph__timeline().
  */
 function convivial_bootstrap_preprocess_paragraph__timeline(&$variables) {
@@ -655,21 +702,6 @@ function convivial_bootstrap_preprocess_paragraph__timeline(&$variables) {
   // Sort from low to high dates.
   ksort($sections);
   $variables['sections'] = array_values($sections);
-}
-
-/**
- * Implements template_preprocess_paragraph__geochart().
- */
-function convivial_bootstrap_preprocess_paragraph__geochart(&$variables) {
-  require_once __DIR__ . '/includes/geochart.inc';
-  _convivial_bootstrap_geochart($variables);
-}
-
-/**
- * Implements template_preprocess_paragraph__decision_tree().
- */
-function convivial_bootstrap_preprocess_paragraph__decision_tree(&$variables) {
-  $variables['#attached']['library'][] = 'convivial_bootstrap/decision_tree_library';
 }
 
 /**
@@ -972,36 +1004,4 @@ function _convivial_bootstrap_is_in_layout_builder_ui() {
   $rountname = $route->getRouteName();
 
   return strpos($rountname, 'layout_builder') === 0 || strpos($rountname, 'layout') === 0;
-}
-
-/**
- * Implements hook_theme_suggestions_HOOK_alter() for paragraph.
- */
-function convivial_bootstrap_theme_suggestions_paragraph_alter(&$suggestions, $variables) {
-  $paragraph = $variables['elements']['#paragraph'];
-
-  if ($paragraph->bundle() === 'section') {
-    if ($paragraph->hasField('field_s_layout_classes')) {
-      $layout_classes = $paragraph->get('field_s_layout_classes')->value;
-
-      if ($layout_classes && strpos($layout_classes, 'section-layout--wipe')) {
-        $suggestions[] = 'paragraph__section__wipe';
-      }
-    }
-  }
-}
-
-/**
- * Implements hook_preprocess_paragraph() for section.
- */
-function convivial_bootstrap_preprocess_paragraph__section(&$variables) {
-  $paragraph = $variables['paragraph'];
-
-  if ($paragraph->hasField('field_s_layout_classes')) {
-    $classes = $paragraph->get('field_s_layout_classes')->value;
-
-    if ($classes && strpos($classes, 'section-layout--wipe')) {
-      $variables['#attached']['library'][] = 'convivial_bootstrap/convivial_wipe';
-    }
-  }
 }
