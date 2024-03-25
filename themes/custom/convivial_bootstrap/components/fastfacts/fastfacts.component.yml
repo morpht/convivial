@@ -19,16 +19,21 @@ props:
       type: Drupal\Core\Template\Attribute
     classes:
       type: array
-    content:
-      type: object
-    fastfacts_heading:
-      type: string
-    fastfacts_prefix:
-      type: string
-    fastfacts_suffix:
-      type: string
-    fastfacts_value:
-      type: number
+
+slots:
+  fastfact_heading:
+    title: Heading
+    description: Fast facts's heading.
+  fastfact_prefix:
+    title: Prefix
+    description: Fast facts's prefix.
+  fastfact_suffix:
+    title: Suffix
+    description: Fast facts's suffix.
+  fastfact_value:
+    title: Value
+    description: Fast facts's value.
+
 
 # This is how you take control of the keys in your library
 # declaration. The overrides specified here will be merged (shallow merge) with

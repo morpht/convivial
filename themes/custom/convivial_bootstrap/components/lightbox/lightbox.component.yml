@@ -21,8 +21,11 @@ props:
       type: array
     content:
       type: object
-    id:
-      type: number
+
+slots:
+  id:
+    title: Id
+    description: Lightbox's id.
 
 # This is how you take control of the keys in your library
 # declaration. The overrides specified here will be merged (shallow merge) with
