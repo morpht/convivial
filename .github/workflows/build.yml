@@ -36,11 +36,6 @@ jobs:
 
     env:
       CI: GITHUB_ACTIONS
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_USER_PASSWORD: drupal
-      MYSQL_USER_NAME: drupal
-      MYSQL_DATABASE_NAME: drupal
-      MYSQL_HOST: 127.0.0.1
       GH_BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
       # github.head_ref is only defined on pull_request events.
       # When not a PR, github.ref_name has the branch name.
@@ -65,6 +60,7 @@ jobs:
 
       - name: Install php-spx extension
         run: |
+          cd /tmp
           git clone https://github.com/NoiseByNorthwest/php-spx.git
           cd php-spx
           git checkout release/latest
@@ -76,9 +72,6 @@ jobs:
           EXTENSION_DIR=$(find $HOME/php-exts -name 'spx.so' | sed 's|/spx.so||')
           echo "extension=${EXTENSION_DIR}/spx.so" >> "$(php -r 'echo php_ini_loaded_file();')"
         shell: bash
-
-      - name: Start MySQL Service
-        run: sudo service mysql start
 
       - name: Prepare environment variables
         run: |
@@ -129,14 +122,14 @@ jobs:
 
       - name: PHP Compatibility Check
         run: |
-          ./bin/phpcs -p modules/custom --standard=vendor/phpcompatibility/php-compatibility/PHPCompatibility --extensions=php,module,inc --runtime-set testVersion ${{ matrix.php }}
-          ./bin/phpcs -p themes/custom --standard=vendor/phpcompatibility/php-compatibility/PHPCompatibility --extensions=php,theme,inc --runtime-set testVersion ${{ matrix.php }}
+          phpcs -p modules/custom --standard=vendor/phpcompatibility/php-compatibility/PHPCompatibility --extensions=php,module,inc --runtime-set testVersion ${{ matrix.php }}
+          phpcs -p themes/custom --standard=vendor/phpcompatibility/php-compatibility/PHPCompatibility --extensions=php,theme,inc --runtime-set testVersion ${{ matrix.php }}
 
       - name: Run code quality checks
-        run: ./bin/grumphp run  --testsuite=code_quality
+        run: grumphp run  --testsuite=code_quality
 
       - name: Run code security checks
-        run: ./bin/grumphp run  --testsuite=code_security
+        run: grumphp run  --testsuite=code_security
 
       - name: Execute Drupal-check
         run: php ./bin/drupal-check modules/custom
@@ -144,17 +137,21 @@ jobs:
       - name: Show environment variables
         run: ls -alk ./bin
 
-      - name: Prepare environment for application
-        run: bash $SCRIPT_DIR/setup_app.sh
+      - name: Setup MySQL
+        run: |
+          sudo service mysql start
+          mysql -uroot -proot < $(echo ${SCRIPT_DIR})/install.sql
 
       - name: Setup Application
         run: |
-          SPX_ENABLED=1 ./bin/drush si convivial --locale=en --db-url=mysql://drupal:drupal@127.0.0.1:${{ job.services.mysql.ports[3306] }}/drupal --account-name=admin --account-pass=admin --site-name='Convivial Demo' --site-pass=admin --yes
-          SPX_ENABLED=1 ./bin/drush status
+          SPX_ENABLED=1 drush si convivial --locale=en --db-url=mysql://drupal:drupal@127.0.0.1:${{ job.services.mysql.ports[3306] }}/drupal --account-name=superadmin --account-pass=superadmin --site-name='Convivial Demo' --yes
+          drush ucrt admin --password=admin --mail=admin+ci+convivial@example.com --yes
+          drush urol site_administrator admin --yes
+          drush status
 
       - name: Start Application in background
         run: |
-          ./bin/drush runserver localhost:8080 &
+          drush runserver localhost:8080 &
           until netstat -an 2>/dev/null | grep '8080.*LISTEN'; do true; done
 
       - name: Setup node
