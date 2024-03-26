@@ -228,14 +228,6 @@ personified_data:
     - core/drupal
     - convivial_bootstrap/handlebars
 
-convivial_animation:
-  js:
-    components/animation/animation.js: { }
-  dependencies:
-    - core/drupalSettings
-    - convivial_bootstrap/scrollmagic_core
-    - convivial_bootstrap/scrollmagic_plugins_gsap
-
 scrollmagic_core:
   remote: https://github.com/janpaepke/ScrollMagic
   version: 2.0.8
