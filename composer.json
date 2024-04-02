@@ -104,7 +104,7 @@
     "drupal/sitewide_alert": "^2.0",
     "drupal/smart_trim": "^2.0",
     "drupal/stage_file_proxy": "^2.0",
-    "drupal/tfa": "^2.0",
+    "drupal/tfa": "^1.5",
     "drupal/token": "^1.10",
     "drupal/twig_tweak": "^3.1",
     "drupal/unique_content_field_validation": "^1.0",
