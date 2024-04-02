@@ -1,16 +1,36 @@
 /*! @convivial_bootstrap/section-wipe */
 
 .section-layout--wipe {
+  background-color: var(--bs-body-bg);
+
+  // Spacing for top level between body field and section components.
+  > .containerised > .paragraph__content .field--name-field-body {
+    margin-bottom: $grid-gutter-width;
+  }
+
+  // Style for top level .cp class.
   &.cp {
     padding-left: 0;
     padding-right: 0;
+    padding-bottom: 0;
+
+    // Increased margin-bottom for .cp class on top level.
+    > .containerised > .paragraph__content .field--name-field-body {
+      margin-bottom: calc($grid-gutter-width * 2);
+    }
   }
 
-  .paragraph__content {
-    padding-top: calc($grid-gutter-width * 2);
-    padding-bottom: calc($grid-gutter-width * 2);
+  // Style for top level .style--hero class.
+  &.style--hero {
+    padding-bottom: 0;
+
+    // Increased margin-bottom for .style--hero class on top level.
+    > .containerised > .paragraph__content .field--name-field-body {
+      margin-bottom: calc($grid-gutter-width * 4);
+    }
   }
 
+  // Set container for section child component.
   .paragraph {
     > .containerised {
       @include make-container();
@@ -18,7 +38,7 @@
     }
 
     &.style--hero {
-      padding: 6rem calc($grid-gutter-width / 2);
+      padding: calc($grid-gutter-width * 4) calc($grid-gutter-width / 2);
     }
   }
 }
