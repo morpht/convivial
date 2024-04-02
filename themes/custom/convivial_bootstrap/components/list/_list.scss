@@ -7,10 +7,11 @@
 
   .list__item {
     @include make-col-ready();
-    margin-top: $grid-gutter-width !important;
+
+    margin-top: $grid-gutter-width;
 
     &:first-child {
-      margin-top: 0 !important;
+      margin-top: 0;
     }
 
     // Make sure all items has same height.
@@ -24,7 +25,7 @@
 .list {
   &.erd-list--calendar-item {
     .list__item {
-      margin-top: 2px !important;
+      margin-top: 2px;
     }
   }
 }
@@ -48,7 +49,7 @@
       @include make-col(6);
 
       &:nth-child(-n+2) {
-        margin-top: 0 !important;
+        margin-top: 0;
       }
     }
   }
@@ -61,7 +62,7 @@
       @include make-col(4);
 
       &:nth-child(-n+3) {
-        margin-top: 0 !important;
+        margin-top: 0;
       }
     }
   }
@@ -74,7 +75,7 @@
       @include make-col(6);
 
       &:nth-child(-n+2) {
-        margin-top: 0 !important;
+        margin-top: 0;
       }
     }
 
@@ -82,7 +83,7 @@
       @include make-col(3);
 
       &:nth-child(-n+4) {
-        margin-top: 0 !important;
+        margin-top: 0;
       }
     }
   }
@@ -95,7 +96,7 @@
       @include make-col(6);
 
       &:nth-child(-n+2) {
-        margin-top: 0 !important;
+        margin-top: 0;
       }
     }
 
@@ -103,7 +104,7 @@
       @include make-col(3);
 
       &:nth-child(-n+4) {
-        margin-top: 0 !important;
+        margin-top: 0;
       }
     }
 
@@ -111,7 +112,7 @@
       @include make-col(2);
 
       &:nth-child(-n+6) {
-        margin-top: 0 !important;
+        margin-top: 0;
       }
     }
   }
@@ -126,7 +127,7 @@
     &:first-child:nth-last-child(2),
     &:first-child:nth-last-child(2) ~ .list__item {
       @include media-breakpoint-up(sm) {
-        margin-top: 0 !important;
+        margin-top: 0;
         width: calc(100 / 2 * 1%);
       }
     }
@@ -135,7 +136,7 @@
     &:first-child:nth-last-child(3),
     &:first-child:nth-last-child(3) ~ .list__item {
       @include media-breakpoint-up(sm) {
-        margin-top: 0 !important;
+        margin-top: 0;
         width: calc(100 / 3 * 1%);
       }
     }
@@ -144,7 +145,7 @@
     &:first-child:nth-last-child(4),
     &:first-child:nth-last-child(4) ~ .list__item {
       @include media-breakpoint-up(sm) {
-        margin-top: 0 !important;
+        margin-top: 0;
         width: calc(100 / 2 * 1%);
       }
 
@@ -157,7 +158,7 @@
     &:first-child:nth-last-child(5),
     &:first-child:nth-last-child(5) ~ .list__item {
       @include media-breakpoint-up(sm) {
-        margin-top: 0 !important;
+        margin-top: 0;
         width: calc(100 / 3 * 1%);
       }
 
@@ -172,7 +173,7 @@
       width: calc(100 / 3 * 1%);
 
       &:nth-child(-n+3) {
-        margin-top: 0 !important;
+        margin-top: 0;
       }
     }
 
@@ -180,7 +181,7 @@
       width: calc(100 / 6 * 1%);
 
       &:nth-child(-n+6) {
-        margin-top: 0 !important;
+        margin-top: 0;
       }
     }
   }
@@ -189,10 +190,10 @@
 // Alternating teaser.
 .list-layout--alternate {
   .list__item {
-    margin-top: $grid-gutter-width !important;
+    margin-top: $grid-gutter-width;
 
     &:first-child {
-      margin-top: 0 !important;
+      margin-top: 0;
     }
 
     @include media-breakpoint-up(md) {

@@ -6,8 +6,8 @@
   }
 
   &.style--hero {
-    padding-top: 6rem;
-    padding-bottom: 6.5rem;
+    padding-top: calc(#{$grid-gutter-width} * 4);
+    padding-bottom: calc(#{$grid-gutter-width} * 4);
   }
 
   &.text-shadow {

@@ -3,7 +3,7 @@
 .footer {
   position: relative;
 
-  &[class*='bg-'] {
+  .container {
     padding-top: $grid-gutter-width;
     padding-bottom: $grid-gutter-width;
   }

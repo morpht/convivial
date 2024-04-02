@@ -8,7 +8,7 @@
 }
 
 *[class^='sc'] + *[class ^='sc']:not(:empty) {
-  margin-top: 1.5rem;
+  margin-top: $grid-gutter-width;
 }
 
 .sj-tabs {
@@ -16,7 +16,7 @@
 }
 
 .sj-paginator {
-  margin-top: 1.5rem;
+  margin-top: $grid-gutter-width;
 }
 
 .sc__sort {

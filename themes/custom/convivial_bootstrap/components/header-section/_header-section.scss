@@ -1,7 +1,4 @@
 .layout--header-section {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-
   .layout__region--content-header {
     @include media-breakpoint-up(lg) {
       max-width: 75%;

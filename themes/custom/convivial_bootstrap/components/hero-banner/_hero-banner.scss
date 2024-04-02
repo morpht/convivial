@@ -12,6 +12,12 @@
     z-index: -1;
   }
 
+  // Reset margin and padding on colour palette.
+  &.cp {
+    padding: 0;
+    margin: 0;
+  }
+
   &__container {
     @include make-container();
     @include container-max-widths();
@@ -24,9 +30,8 @@
   &__content {
     @include make-col-ready();
 
-    padding-top: 32px;
-    padding-bottom: 32px;
-
+    padding-top: calc($grid-gutter-width * 2);
+    padding-bottom: calc($grid-gutter-width * 2);
 
     @include media-breakpoint-up(md) {
       @include make-col(7);
@@ -38,8 +43,8 @@
     }
 
     @include media-breakpoint-up(lg) {
-      padding-top: 88px;
-      padding-bottom: 88px;
+      padding-top: calc($grid-gutter-width * 4);
+      padding-bottom: calc($grid-gutter-width * 4);
     }
 
     @include media-breakpoint-up(xl) {
@@ -129,7 +134,7 @@
 
     @include media-breakpoint-up(xl) {
       width: 50%;
-      padding-left: calc((#{map-get($container-max-widths, xl)}/12) + #{$grid-gutter-width});
+      padding-left: calc((#{map-get($container-max-widths, xl)} / 12) + #{$grid-gutter-width});
     }
 
     // Image needs to go all the way to the edge of the screen.

@@ -1,7 +1,8 @@
 .layout--content-edgy {
   .block--field-blocknodepagefield-body,
   .block--field-blocknodepagefield-toc {
-    margin-top: 1.5rem;
+    margin-top: calc($grid-gutter-width * 2);
+    margin-bottom: calc($grid-gutter-width * 2);
 
     .containerised {
       @include make-container();

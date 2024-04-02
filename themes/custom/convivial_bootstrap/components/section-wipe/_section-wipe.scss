@@ -1,42 +1,24 @@
 /*! @convivial_bootstrap/section-wipe */
+
 .section-layout--wipe {
-
-  // Removes padding from section wipe container.
-  .field--type-entity-reference-revisions > .field__item + .field__item > & {
-    padding: 0;
-  }
-
-  .section-components__item {
-    .paragraph {
-      > .containerised {
-        @include make-container();
-        @include container-max-widths();
-      }
-
-      &.style--hero {
-        padding: 6rem 0.75rem;
-      }
-    }
-  }
-
   &.cp {
     padding-left: 0;
     padding-right: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-
-    > .paragraph__container {
-      padding-left: calc(#{$grid-gutter-width} / 2);
-      padding-right: calc(#{$grid-gutter-width} / 2);
-    }
   }
-}
 
-.field--name-field-components {
-  .section-layout--wipe {
-    .cp {
-      margin-top: 0;
-      margin-bottom: 0;
+  .paragraph__content {
+    padding-top: calc($grid-gutter-width * 2);
+    padding-bottom: calc($grid-gutter-width * 2);
+  }
+
+  .paragraph {
+    > .containerised {
+      @include make-container();
+      @include container-max-widths();
+    }
+
+    &.style--hero {
+      padding: 6rem calc($grid-gutter-width / 2);
     }
   }
 }

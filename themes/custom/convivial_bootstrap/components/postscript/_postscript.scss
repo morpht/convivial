@@ -3,12 +3,12 @@
 .postscript {
   position: relative;
 
-  &[class*='bg-'] {
-    padding-top: $grid-gutter-width;
-    padding-bottom: $grid-gutter-width;
-  }
-
   h2 {
     font-size: $h5-font-size;
+  }
+
+  .container {
+    padding-top: calc($grid-gutter-width * 2);
+    padding-bottom: calc($grid-gutter-width * 2);
   }
 }

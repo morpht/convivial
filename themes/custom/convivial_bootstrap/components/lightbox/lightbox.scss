@@ -1,6 +1,6 @@
 h2 + .field--name-field-lightbox-thumbnail,
 .field--name-field-body + .field--name-field-lightbox-thumbnail {
-  margin-top: 1.5rem;
+  margin-top: $grid-gutter-width;
 
   img {
     width: 100%;

@@ -7,6 +7,7 @@
       z-index: 2;
     }
   }
+
   @include media-breakpoint-up(lg) {
     &.layout--twocol {
       .layout__region--first > * {
@@ -66,21 +67,21 @@
   }
 
   &.layout--content-sidebar {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin-top: calc($grid-gutter-width * 2);
+    margin-bottom: calc($grid-gutter-width * 2);
 
     // Spacing between blocks.
     > .layout__region > .block + .block {
-      margin-top: 1.5rem;
+      margin-top: calc($grid-gutter-width * 2);
     }
 
     div[class*="list-layout--slider"] {
-      padding: 0 1.5rem;
+      padding: 0 $grid-gutter-width;
     }
 
     // Sidebar needs to be separated from content on mobile.
     .layout__region--sidebar {
-      margin-top: 1.5rem;
+      margin-top: $grid-gutter-width;
     }
 
     @include media-breakpoint-up(lg) {
@@ -129,12 +130,14 @@
       @include make-col(3);
     }
   }
+
   .paragraph-layout__region--second {
     @include media-breakpoint-up(sm) {
       @include make-col(9);
     }
   }
 }
+
 // Two columns (4|8).
 .paragraph-layout--4-8 {
   .paragraph-layout__region--first {
@@ -142,12 +145,14 @@
       @include make-col(4);
     }
   }
+
   .paragraph-layout__region--second {
     @include media-breakpoint-up(sm) {
       @include make-col(8);
     }
   }
 }
+
 // Two columns (5|7).
 .paragraph-layout--5-7 {
   .paragraph-layout__region--first {
@@ -155,12 +160,14 @@
       @include make-col(5);
     }
   }
+
   .paragraph-layout__region--second {
     @include media-breakpoint-up(sm) {
       @include make-col(7);
     }
   }
 }
+
 // Two columns (6|6).
 .paragraph-layout--6-6 {
   .paragraph-layout__region--first {
@@ -168,12 +175,14 @@
       @include make-col(6);
     }
   }
+
   .paragraph-layout__region--second {
     @include media-breakpoint-up(sm) {
       @include make-col(6);
     }
   }
 }
+
 // Two columns (7|5).
 .paragraph-layout--7-5 {
   .paragraph-layout__region--first {
@@ -181,12 +190,14 @@
       @include make-col(7);
     }
   }
+
   .paragraph-layout__region--second {
     @include media-breakpoint-up(sm) {
       @include make-col(5);
     }
   }
 }
+
 // Two columns (8|4).
 .paragraph-layout--8-4 {
   .paragraph-layout__region--first {
@@ -194,12 +205,14 @@
       @include make-col(8);
     }
   }
+
   .paragraph-layout__region--second {
     @include media-breakpoint-up(sm) {
       @include make-col(4);
     }
   }
 }
+
 // Two columns (9|3).
 .paragraph-layout--9-3 {
   .paragraph-layout__region--first {
@@ -207,12 +220,14 @@
       @include make-col(9);
     }
   }
+
   .paragraph-layout__region--second {
     @include media-breakpoint-up(sm) {
       @include make-col(3);
     }
   }
 }
+
 // Three columns (4|4|4).
 .paragraph-layout--4-4-4 {
   .paragraph-layout__region--first {
@@ -220,17 +235,20 @@
       @include make-col(4);
     }
   }
+
   .paragraph-layout__region--second {
     @include media-breakpoint-up(sm) {
       @include make-col(4);
-    };
+    }
   }
+
   .paragraph-layout__region--third {
     @include media-breakpoint-up(sm) {
       @include make-col(4);
     }
   }
 }
+
 // Three columns (3|6|3).
 .paragraph-layout--3-6-3 {
   .paragraph-layout__region--first {
@@ -238,17 +256,20 @@
       @include make-col(3);
     }
   }
+
   .paragraph-layout__region--second {
     @include media-breakpoint-up(sm) {
       @include make-col(6);
-    };
+    }
   }
+
   .paragraph-layout__region--third {
     @include media-breakpoint-up(sm) {
       @include make-col(3);
     }
   }
 }
+
 // Four columns (3|3|3|3).
 .paragraph-layout--3-3-3-3 {
   .paragraph-layout__region--first {
@@ -256,16 +277,19 @@
       @include make-col(3);
     }
   }
+
   .paragraph-layout__region--second {
     @include media-breakpoint-up(sm) {
       @include make-col(3);
     }
   }
+
   .paragraph-layout__region--third {
     @include media-breakpoint-up(sm) {
       @include make-col(3);
     }
   }
+
   .paragraph-layout__region--fourth {
     @include media-breakpoint-up(sm) {
       @include make-col(3);

@@ -3,15 +3,24 @@
 .paragraph {
   position: relative;
   height: 100%;
-
-  .field--type-entity-reference-revisions > .field__item + .field__item > & {
-    padding-top: 2rem;
-  }
 }
 
 .containerised {
   position: relative;
   width: 100%;
+}
+
+// Component spacing.
+.field--name-field-components {
+  > .field__item + .field__item > .paragraph {
+    margin-top: calc($grid-gutter-width * 2);
+
+    // Reset margin on edgy pages.
+    .layout.edgy:not(.edgy--contained) &,
+    .layout--content-edgy & {
+      margin-top: 0;
+    }
+  }
 }
 
 // Item component.
