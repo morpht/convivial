@@ -42,13 +42,11 @@
  * @see html.html.twig
  */
 #}
-{%
-  set classes = [
-    'layout-container',
-    theme__highlighted_layouts ? theme__highlighted_layouts,
-    has_layout_builder ? 'has-layout-builder' : 'not-layout-builder',
-  ]
-%}
+{% set classes = [
+  'layout-container',
+  theme__highlighted_layouts ? theme__highlighted_layouts,
+  has_layout_builder ? 'has-layout-builder' : 'not-layout-builder',
+] %}
 
 <div{{ attributes.addClass(classes)}}>
   {# Header element #}
@@ -56,7 +54,7 @@
 
   {% if page.help %}
     <section class="bs-header__page-help" aria-label="Help region">
-      <div class="container">
+      <div class="help__container container">
         <div class="row">
           <div class="col-sm-12">
             {{ page.help }}
@@ -70,7 +68,7 @@
   {% if not has_layout_builder %}
     {% if page.content_top|render|striptags|trim is not empty %}
       <section class="content-top header hero-banner" aria-label="Content top region">
-        <div class="container">
+        <div class="content-top__container container">
           <div class="row">
             <div class="hero-banner__content">
               {{ page.content_top }}

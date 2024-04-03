@@ -41,19 +41,22 @@
   'paragraph',
   'paragraph--type--' ~ paragraph.bundle|clean_class,
   view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  'wipe',
 ] %}
 
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
       {% if content|without('field_s_components')|render|striptags|trim %}
-        <div class="containerised">
+        <div class="wipe__container containerised">
           <div class="paragraph__content">
             {{ content|without('field_s_components') }}
           </div>
         </div>
       {% endif %}
-      {{ content.field_s_components }}
+      <div class="wipe__components">
+        {{ content.field_s_components }}
+      </div>
     {% endblock %}
   </div>
 {% endblock paragraph %}

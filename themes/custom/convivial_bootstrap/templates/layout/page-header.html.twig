@@ -3,13 +3,13 @@
 
 {# Add top bar classes. #}
 {% set top_bar_classes = [
-    'top-bar',
-    top_bar_style ? top_bar_style,
-  ]
-%}
+  'top-bar',
+  top_bar_style ? top_bar_style,
+] %}
+
 {% if page.top_bar|render|striptags|trim %}
   <section{{ top_bar_attributes.addClass(top_bar_classes) }} aria-label="Top bar region">
-    <div class="container">
+    <div class="top-bar__container container">
       {{ page.top_bar }}
     </div>
   </section>
@@ -32,12 +32,12 @@
 
 {# Add header classes. #}
 {% set header_classes = [
-    'bs-header',
-    header_style ? header_style,
-    header_layout ? header_layout,
-    header_width ? header_width,
-  ]
-%}
+  'bs-header',
+  header_style ? header_style,
+  header_layout ? header_layout,
+  header_width ? header_width,
+] %}
+
 {% if not logged_in %}
   {% set header_classes = header_classes|merge([header_stickiness]) %}
 {% endif %}
@@ -46,17 +46,21 @@
 {% set navbar_attributes = create_attribute() %}
 
 {% set navbar_classes = [
-    'navbar',
-    'navbar-expand-lg',
-  ]
-%}
+  'navbar',
+  'navbar-expand-lg',
+] %}
 
 {% if header_layout != 'bs-header--no-header' %}
   <header{{ header_attributes.addClass(header_classes) }} role="banner" data-header-style="{{ theme_header_style }}">
     <div class="bs-header__content {{ header_style }}">
 
       {% if header_layout == 'bs-header--inline-menu' %}
-        <div class="{% if header_width == 'bs-header--contained' %}container{% else %}container-fluid{% endif %}">
+        {% set header_inline_classes = [
+          'bs-header__container',
+          header_width == 'bs-header--contained' ? 'container' : 'container-fluid',
+        ] %}
+
+        <div{{ create_attribute().addClass(header_inline_classes) }}>
           <div{{ navbar_attributes.addClass(navbar_classes) }}>
             {% if page.logo|render|striptags('<img>')|trim %}
               {{ page.logo }}
@@ -98,14 +102,18 @@
       {% endif %}
 
       {% if header_layout == 'bs-header--menu-bar' %}
-        <div class="{% if header_width == 'bs-header--contained' %}container{% else %}container-fluid{% endif %}">
+        {% set header_menu_bar_classes = [
+          'bs-header__container',
+          header_width == 'bs-header--contained' ? 'container' : 'container-fluid',
+        ] %}
+
+        <div{{ create_attribute().addClass(header_menu_bar_classes) }}>
           <div class="row">
             {% if page.logo|render|striptags('<img><a>')|trim %}
               <div class="logo col-lg-6">
                 {{ page.logo }}
               </div>
             {% endif %} {# /.logo #}
-
 
             {% if page.search|render|striptags|trim %}
               <div class="search search--large col-lg-6">
