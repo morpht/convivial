@@ -2,11 +2,11 @@
 
 .footer {
   position: relative;
+}
 
-  .container {
-    padding-top: $grid-gutter-width;
-    padding-bottom: $grid-gutter-width;
-  }
+.footer__container {
+  padding-top: $grid-gutter-width;
+  padding-bottom: $grid-gutter-width;
 }
 
 // Separate content and sidebar on mobile.

@@ -6,9 +6,9 @@
   h2 {
     font-size: $h5-font-size;
   }
+}
 
-  .container {
-    padding-top: calc($grid-gutter-width * 2);
-    padding-bottom: calc($grid-gutter-width * 2);
-  }
+.postscript__container {
+  padding-top: calc($grid-gutter-width * 2);
+  padding-bottom: calc($grid-gutter-width * 2);
 }
