@@ -124,7 +124,7 @@ function _convivial_bootstrap_matomo_theme_settings_validate(&$form, FormStateIn
 function _convivial_bootstrap_matomo_tracking_script(array &$variables) {
   $matomo_settings = theme_get_setting('matomo_settings');
 
-  if ($matomo_settings['dimensions']) {
+  if (!empty($matomo_settings['dimensions'])) {
     $dimensions = array_map(function ($item) {
       return explode(',', preg_replace('/\s+/', '', $item));
     }, explode(PHP_EOL, $matomo_settings['dimensions']));
