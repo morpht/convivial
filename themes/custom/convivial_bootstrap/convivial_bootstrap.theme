@@ -481,6 +481,14 @@ function convivial_bootstrap_preprocess_block(&$variables) {
  * Implements hook_theme_suggestions_HOOK_alter().
  */
 function convivial_bootstrap_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  // Block suggestion for layout builder.
+  if (isset($variables['elements']['#configuration']['provider']) && $variables['elements']['#configuration']['provider'] === 'layout_builder') {
+    if (isset($variables['elements']['content'][0]['#field_name'])) {
+      $field_name = $variables['elements']['content'][0]['#field_name'];
+      $suggestions[] = $variables['theme_hook_original'] . '__layout_builder__' . $field_name;
+    }
+  }
+
   // Block suggestions for custom block bundles.
   if (isset($variables['elements']['content']['#block_content'])) {
     array_splice($suggestions, 1, 0, 'block__bundle__' . $variables['elements']['content']['#block_content']->bundle());

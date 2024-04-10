@@ -12,7 +12,7 @@ entity_type: paragraph
 bundle: item_list
 label: 'View Mode'
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -29,5 +29,5 @@ settings:
     teaser_small: teaser_small
     tile: tile
     title: title
-  negate: 1
+  negate: true
 field_type: entity_reference_display
