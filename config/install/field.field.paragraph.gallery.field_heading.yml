@@ -4,12 +4,18 @@ dependencies:
   config:
     - field.storage.paragraph.field_heading
     - paragraphs.paragraphs_type.gallery
+  module:
+    - unique_content_field_validation
+third_party_settings:
+  unique_content_field_validation:
+    unique: false
+    unique_text: ''
 id: paragraph.gallery.field_heading
 field_name: field_heading
 entity_type: paragraph
 bundle: gallery
 label: Heading
-description: ''
+description: 'The heading used on the frontend.'
 required: false
 translatable: true
 default_value: {  }

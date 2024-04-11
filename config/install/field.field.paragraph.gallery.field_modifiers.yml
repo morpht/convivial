@@ -17,7 +17,7 @@ field_name: field_modifiers
 entity_type: paragraph
 bundle: gallery
 label: Modifiers
-description: ''
+description: 'Apply Modifiers to the component.'
 required: false
 translatable: true
 default_value: {  }
@@ -43,7 +43,7 @@ settings:
       adaptive_height_modifier:
         weight: 39
         enabled: true
-      answer:
+      animation:
         weight: 40
         enabled: false
       charts:
@@ -61,6 +61,9 @@ settings:
       content_tabs:
         weight: 47
         enabled: false
+      decision_tree:
+        weight: 46
+        enabled: false
       fastfact:
         weight: 51
         enabled: false
@@ -69,6 +72,12 @@ settings:
         enabled: false
       gallery:
         weight: 54
+        enabled: false
+      geochart:
+        weight: 50
+        enabled: false
+      hero_banner:
+        weight: 51
         enabled: false
       hide_modifier:
         weight: 55
@@ -81,6 +90,12 @@ settings:
         enabled: false
       item_list:
         weight: 58
+        enabled: false
+      layout:
+        weight: 56
+        enabled: false
+      lightbox:
+        weight: 57
         enabled: false
       map:
         weight: 59
@@ -104,6 +119,12 @@ settings:
         weight: 66
         enabled: true
       section:
+        weight: 67
+        enabled: false
+      snippet:
+        weight: 66
+        enabled: false
+      tiles:
         weight: 67
         enabled: false
       timeline:
