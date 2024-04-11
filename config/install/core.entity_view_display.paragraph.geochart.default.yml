@@ -20,7 +20,6 @@ dependencies:
     - field.field.paragraph.geochart.field_modifiers
     - field.field.paragraph.geochart.field_position
     - field.field.paragraph.geochart.field_style_classes
-    - field.field.paragraph.geochart.field_title
     - paragraphs.paragraphs_type.geochart
   module:
     - entity_class_formatter
@@ -89,5 +88,4 @@ hidden:
   field_geochart_url: true
   field_hide_heading: true
   field_modifiers: true
-  field_title: true
   search_api_excerpt: true

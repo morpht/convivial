@@ -21,7 +21,6 @@ dependencies:
     - field.field.paragraph.geochart.field_modifiers
     - field.field.paragraph.geochart.field_position
     - field.field.paragraph.geochart.field_style_classes
-    - field.field.paragraph.geochart.field_title
     - paragraphs.paragraphs_type.geochart
   module:
     - layout_builder
@@ -33,15 +32,7 @@ id: paragraph.geochart.preview
 targetEntityType: paragraph
 bundle: geochart
 mode: preview
-content:
-  field_title:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 0
-    region: content
+content: {  }
 hidden:
   field_body: true
   field_colour_classes: true
