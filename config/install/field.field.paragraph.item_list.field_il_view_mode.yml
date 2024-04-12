@@ -19,7 +19,6 @@ default_value_callback: ''
 settings:
   exclude:
     stack_simple: stack_simple
-    calendar_item: calendar_item
     icon: icon
     image: image
     stack_detail: stack_detail
