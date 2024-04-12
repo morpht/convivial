@@ -16,7 +16,7 @@ field_name: field_colour_classes
 entity_type: paragraph
 bundle: geochart
 label: 'Colour palette'
-description: ''
+description: 'Apply a colour palette to the component.'
 required: false
 translatable: true
 default_value: {  }

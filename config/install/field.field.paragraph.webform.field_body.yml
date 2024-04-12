@@ -6,15 +6,21 @@ dependencies:
     - paragraphs.paragraphs_type.webform
   module:
     - text
+    - unique_content_field_validation
+third_party_settings:
+  unique_content_field_validation:
+    unique: false
+    unique_text: ''
 id: paragraph.webform.field_body
 field_name: field_body
 entity_type: paragraph
 bundle: webform
 label: Body
-description: ''
+description: 'Optional body text to introduce the component.'
 required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

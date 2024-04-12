@@ -9,7 +9,7 @@ field_name: field_hide_heading
 entity_type: paragraph
 bundle: gallery
 label: 'Hide heading'
-description: ''
+description: 'Hide heading but keep available for screen readers.'
 required: false
 translatable: true
 default_value:

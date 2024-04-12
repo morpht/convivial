@@ -6,15 +6,21 @@ dependencies:
     - paragraphs.paragraphs_type.accordion
   module:
     - text
+    - unique_content_field_validation
+third_party_settings:
+  unique_content_field_validation:
+    unique: false
+    unique_text: ''
 id: paragraph.accordion.field_accordion_body
 field_name: field_accordion_body
 entity_type: paragraph
 bundle: accordion
 label: Content
-description: ''
+description: 'Optional body text to introduce the component.'
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

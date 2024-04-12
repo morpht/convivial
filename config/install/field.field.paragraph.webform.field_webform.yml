@@ -5,13 +5,18 @@ dependencies:
     - field.storage.paragraph.field_webform
     - paragraphs.paragraphs_type.webform
   module:
+    - unique_content_field_validation
     - webform
+third_party_settings:
+  unique_content_field_validation:
+    unique: false
+    unique_text: ''
 id: paragraph.webform.field_webform
 field_name: field_webform
 entity_type: paragraph
 bundle: webform
 label: Webform
-description: ''
+description: 'Select the Webform to embed.'
 required: true
 translatable: false
 default_value: {  }

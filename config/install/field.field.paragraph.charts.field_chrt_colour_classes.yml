@@ -6,12 +6,17 @@ dependencies:
     - paragraphs.paragraphs_type.charts
   module:
     - options
+    - unique_content_field_validation
+third_party_settings:
+  unique_content_field_validation:
+    unique: false
+    unique_text: ''
 id: paragraph.charts.field_chrt_colour_classes
 field_name: field_chrt_colour_classes
 entity_type: paragraph
 bundle: charts
 label: 'Colour Palette'
-description: ''
+description: 'The colours to be used for the data. You can use any value accepted in the CSS, e.g. <code>#ff0000</code>, <code>red</code>, <code>rgba(255,0,0,0.8)</code>. The hexadecimal format should start with a <code>#</code>.'
 required: false
 translatable: false
 default_value: {  }

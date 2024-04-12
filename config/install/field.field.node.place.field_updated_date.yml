@@ -11,7 +11,7 @@ field_name: field_updated_date
 entity_type: node
 bundle: place
 label: 'Last updated'
-description: ''
+description: 'The date this content was last updated.'
 required: false
 translatable: true
 default_value:

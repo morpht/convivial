@@ -25,7 +25,7 @@ field_name: field_s_components
 entity_type: paragraph
 bundle: section
 label: Components
-description: ''
+description: 'Add components to the section.'
 required: false
 translatable: false
 default_value: {  }

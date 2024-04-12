@@ -6,12 +6,17 @@ dependencies:
     - paragraphs.paragraphs_type.hero_banner
   module:
     - options
+    - unique_content_field_validation
+third_party_settings:
+  unique_content_field_validation:
+    unique: false
+    unique_text: ''
 id: paragraph.hero_banner.field_hero_banner_variant
 field_name: field_hero_banner_variant
 entity_type: paragraph
 bundle: hero_banner
 label: Variant
-description: ''
+description: 'Define a variant display for the banner.'
 required: false
 translatable: false
 default_value: {  }

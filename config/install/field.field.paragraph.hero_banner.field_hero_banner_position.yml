@@ -6,12 +6,17 @@ dependencies:
     - paragraphs.paragraphs_type.hero_banner
   module:
     - options
+    - unique_content_field_validation
+third_party_settings:
+  unique_content_field_validation:
+    unique: false
+    unique_text: ''
 id: paragraph.hero_banner.field_hero_banner_position
 field_name: field_hero_banner_position
 entity_type: paragraph
 bundle: hero_banner
 label: Position
-description: ''
+description: 'Position the component in the left, center or right of the container.'
 required: false
 translatable: false
 default_value: {  }

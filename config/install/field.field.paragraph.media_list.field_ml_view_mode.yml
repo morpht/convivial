@@ -11,7 +11,7 @@ field_name: field_ml_view_mode
 entity_type: paragraph
 bundle: media_list
 label: 'View Mode'
-description: ''
+description: 'Select a display for the media.'
 required: true
 translatable: false
 default_value: {  }
@@ -22,5 +22,5 @@ settings:
     search: search
     summary: summary
     title: title
-  negate: 1
+  negate: true
 field_type: entity_reference_display

@@ -16,7 +16,7 @@ field_name: field_position
 entity_type: paragraph
 bundle: animation
 label: Position
-description: ''
+description: 'Position the component in the left, center or right of the container.'
 required: false
 translatable: false
 default_value: {  }

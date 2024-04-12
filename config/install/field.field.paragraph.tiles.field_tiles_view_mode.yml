@@ -11,7 +11,7 @@ field_name: field_tiles_view_mode
 entity_type: paragraph
 bundle: tiles
 label: 'View Mode'
-description: ''
+description: 'Select a display for the tiles.'
 required: false
 translatable: false
 default_value:
@@ -22,5 +22,5 @@ settings:
   exclude:
     image: image
     tile: tile
-  negate: 1
+  negate: true
 field_type: entity_reference_display
