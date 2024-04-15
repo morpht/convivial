@@ -522,7 +522,7 @@ display:
             title:
               alias: title
               raw_output: false
-            body:
+            field_body:
               alias: body
               raw_output: false
             type:

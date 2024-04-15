@@ -12,10 +12,14 @@
               {{/if}}
               {{#if date}}
                 <div class="stack__date">
-                  {{{ date }}}
+                  {{~{ date }~}}
                 </div>
               {{/if}}
-              {{#if title}}
+              {{#if link}}
+                <h3 class="stack__title">
+                  <a href="{{~{ link }~}}">{{~{ title }~}}</a>
+                </h3>
+              {{else}}
                 <h3 class="stack__title">
                   {{{ title }}}
                 </h3>

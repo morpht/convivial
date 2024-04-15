@@ -833,13 +833,13 @@ display:
               alias: body
               raw_output: false
             view_node:
-              alias: link_url
+              alias: link
               raw_output: false
             field_thumbnail:
               alias: image
               raw_output: false
             field_updated_date:
-              alias: ''
+              alias: date
               raw_output: false
             nothing_1:
               alias: theme
