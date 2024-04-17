@@ -1,3 +1,6 @@
+@import "../../libraries/bootstrap/scss/functions";
+@import "../../libraries/bootstrap/scss/variables";
+
 h2 + .field--name-field-lightbox-thumbnail,
 .field--name-field-body + .field--name-field-lightbox-thumbnail {
   margin-top: $grid-gutter-width;
