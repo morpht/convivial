@@ -16,7 +16,7 @@ field_name: field_position
 entity_type: paragraph
 bundle: tiles
 label: Position
-description: ''
+description: 'Position the component in the left, center or right of the container.'
 required: false
 translatable: true
 default_value: {  }

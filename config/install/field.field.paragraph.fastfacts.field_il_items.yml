@@ -12,7 +12,7 @@ field_name: field_il_items
 entity_type: paragraph
 bundle: fastfacts
 label: Items
-description: ''
+description: 'Add Fastfact items into this group.'
 required: false
 translatable: true
 default_value: {  }
@@ -33,17 +33,11 @@ settings:
       adaptive_height_modifier:
         weight: 42
         enabled: false
-      app:
-        weight: 43
+      animation:
+        weight: 40
         enabled: false
       charts:
         weight: 44
-        enabled: false
-      clip_path_modifier:
-        weight: 45
-        enabled: false
-      color_background_modifier:
-        weight: 46
         enabled: false
       content:
         weight: 47
@@ -51,20 +45,14 @@ settings:
       content_block:
         weight: 48
         enabled: false
-      custom_linear_gradient_modifier:
-        weight: 49
+      content_tab:
+        weight: 44
         enabled: false
-      custom_radial_gradient_modifier:
-        weight: 50
+      content_tabs:
+        weight: 45
         enabled: false
-      datatables_modifier:
-        weight: 51
-        enabled: false
-      dsac_modifier:
-        weight: 52
-        enabled: false
-      dssc_modifier:
-        weight: 53
+      decision_tree:
+        weight: 46
         enabled: false
       fastfact:
         weight: 40
@@ -72,8 +60,14 @@ settings:
       fastfacts:
         weight: 39
         enabled: false
-      fonts_modifier:
-        weight: 54
+      gallery:
+        weight: 49
+        enabled: false
+      geochart:
+        weight: 50
+        enabled: false
+      hero_banner:
+        weight: 51
         enabled: false
       hide_modifier:
         weight: 55
@@ -87,44 +81,47 @@ settings:
       item_list:
         weight: 58
         enabled: false
+      layout:
+        weight: 56
+        enabled: false
+      lightbox:
+        weight: 57
+        enabled: false
       map:
         weight: 59
         enabled: false
       media_list:
         weight: 60
         enabled: false
-      national_map:
-        weight: 61
-        enabled: false
-      national_map_catalog:
-        weight: 62
-        enabled: false
-      national_map_catalog_item:
-        weight: 63
-        enabled: false
       node_list:
         weight: 64
-        enabled: false
-      padding_modifier:
-        weight: 65
         enabled: false
       parallax_bg_modifier:
         weight: 66
         enabled: false
+      parameter:
+        weight: 62
+        enabled: false
       plugin_block:
         weight: 67
-        enabled: false
-      readspeaker:
-        weight: 68
-        enabled: false
-      relative_height_modifier:
-        weight: 69
         enabled: false
       scroll_reveal_modifier:
         weight: 70
         enabled: false
       section:
         weight: 71
+        enabled: false
+      snippet:
+        weight: 66
+        enabled: false
+      tiles:
+        weight: 67
+        enabled: false
+      timeline:
+        weight: 68
+        enabled: false
+      timeline_item:
+        weight: 69
         enabled: false
       video_bg_modifier:
         weight: 74

@@ -16,7 +16,7 @@ field_name: field_banner_image
 entity_type: node
 bundle: page
 label: 'Banner image'
-description: ''
+description: 'Image that will be used for the banner.'
 required: false
 translatable: false
 default_value: {  }

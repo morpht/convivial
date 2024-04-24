@@ -12,7 +12,7 @@ field_name: field_il_items
 entity_type: paragraph
 bundle: item_list
 label: Items
-description: ''
+description: 'Add items to the list.'
 required: false
 translatable: false
 default_value: {  }
@@ -30,26 +30,47 @@ settings:
       accordion_group:
         weight: 22
         enabled: false
-      color_background_modifier:
-        weight: 24
+      adaptive_height_modifier:
+        weight: 39
+        enabled: false
+      animation:
+        weight: 40
+        enabled: false
+      charts:
+        weight: 41
         enabled: false
       content:
         weight: 5
         enabled: false
-      custom_linear_gradient_modifier:
-        weight: 26
+      content_block:
+        weight: 43
         enabled: false
-      custom_radial_gradient_modifier:
-        weight: 27
+      content_tab:
+        weight: 44
         enabled: false
-      fonts_modifier:
-        weight: 28
+      content_tabs:
+        weight: 45
+        enabled: false
+      decision_tree:
+        weight: 46
+        enabled: false
+      fastfact:
+        weight: 47
+        enabled: false
+      fastfacts:
+        weight: 48
+        enabled: false
+      gallery:
+        weight: 49
+        enabled: false
+      geochart:
+        weight: 50
+        enabled: false
+      hero_banner:
+        weight: 51
         enabled: false
       hide_modifier:
         weight: 29
-        enabled: false
-      highcharts:
-        weight: 30
         enabled: false
       image_bg_modifier:
         weight: 31
@@ -60,17 +81,29 @@ settings:
       item_list:
         weight: 7
         enabled: false
+      layout:
+        weight: 56
+        enabled: false
+      lightbox:
+        weight: 57
+        enabled: false
+      map:
+        weight: 58
+        enabled: false
+      media_list:
+        weight: 59
+        enabled: false
       node_list:
         weight: 8
-        enabled: false
-      padding_modifier:
-        weight: 35
         enabled: false
       parallax_bg_modifier:
         weight: 36
         enabled: false
-      relative_height_modifier:
-        weight: 37
+      parameter:
+        weight: 62
+        enabled: false
+      plugin_block:
+        weight: 63
         enabled: false
       scroll_reveal_modifier:
         weight: 38
@@ -78,7 +111,25 @@ settings:
       section:
         weight: 39
         enabled: false
+      snippet:
+        weight: 66
+        enabled: false
+      tiles:
+        weight: 67
+        enabled: false
+      timeline:
+        weight: 68
+        enabled: false
+      timeline_item:
+        weight: 69
+        enabled: false
       video_bg_modifier:
         weight: 40
+        enabled: false
+      view:
+        weight: 71
+        enabled: false
+      webform:
+        weight: 72
         enabled: false
 field_type: entity_reference_revisions

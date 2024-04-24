@@ -4,12 +4,20 @@ dependencies:
   config:
     - field.storage.paragraph.field_nl_nodes
     - paragraphs.paragraphs_type.node_list
+  module:
+    - unique_content_field_validation
+third_party_settings:
+  unique_content_field_validation:
+    unique: false
+    unique_text: ''
+    unique_multivalue: false
+    unique_multivalue_text: ''
 id: paragraph.node_list.field_nl_nodes
 field_name: field_nl_nodes
 entity_type: paragraph
 bundle: node_list
 label: Nodes
-description: ''
+description: 'Add content items to the list.'
 required: true
 translatable: false
 default_value: {  }

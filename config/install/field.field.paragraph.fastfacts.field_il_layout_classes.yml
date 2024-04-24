@@ -6,12 +6,17 @@ dependencies:
     - paragraphs.paragraphs_type.fastfacts
   module:
     - options
+    - unique_content_field_validation
+third_party_settings:
+  unique_content_field_validation:
+    unique: false
+    unique_text: ''
 id: paragraph.fastfacts.field_il_layout_classes
 field_name: field_il_layout_classes
 entity_type: paragraph
 bundle: fastfacts
 label: Layout
-description: ''
+description: 'Arrange the items into a layout.'
 required: false
 translatable: true
 default_value: {  }

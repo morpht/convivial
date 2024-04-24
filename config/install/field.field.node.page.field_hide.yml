@@ -18,7 +18,7 @@ field_name: field_hide
 entity_type: node
 bundle: page
 label: Hide
-description: ''
+description: 'Hide various parts of the page.'
 required: false
 translatable: true
 default_value: {  }

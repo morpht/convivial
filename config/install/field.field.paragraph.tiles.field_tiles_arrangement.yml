@@ -6,12 +6,17 @@ dependencies:
     - paragraphs.paragraphs_type.tiles
   module:
     - options
+    - unique_content_field_validation
+third_party_settings:
+  unique_content_field_validation:
+    unique: false
+    unique_text: ''
 id: paragraph.tiles.field_tiles_arrangement
 field_name: field_tiles_arrangement
 entity_type: paragraph
 bundle: tiles
 label: Arrangement
-description: ''
+description: 'Define an arrangement for the tiles.'
 required: false
 translatable: false
 default_value: {  }

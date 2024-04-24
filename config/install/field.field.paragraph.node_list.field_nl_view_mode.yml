@@ -11,7 +11,7 @@ field_name: field_nl_view_mode
 entity_type: paragraph
 bundle: node_list
 label: 'View Mode'
-description: ''
+description: 'Select a display for the content items.'
 required: true
 translatable: false
 default_value: {  }
@@ -28,5 +28,5 @@ settings:
     teaser_small: teaser_small
     tile: tile
     title: title
-  negate: 1
+  negate: true
 field_type: entity_reference_display

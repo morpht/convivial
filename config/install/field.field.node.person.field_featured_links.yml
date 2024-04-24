@@ -23,7 +23,7 @@ field_name: field_featured_links
 entity_type: node
 bundle: person
 label: 'Featured links'
-description: ''
+description: 'Featured items to display in the header.'
 required: false
 translatable: true
 default_value: {  }

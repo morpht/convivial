@@ -9,7 +9,7 @@ field_name: field_geochart_hide_legend
 entity_type: paragraph
 bundle: geochart
 label: 'Hide legend'
-description: ''
+description: 'Hides the legend for the Geo Chart.'
 required: false
 translatable: false
 default_value:

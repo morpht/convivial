@@ -6,12 +6,17 @@ dependencies:
     - paragraphs.paragraphs_type.node_list
   module:
     - link
+    - unique_content_field_validation
+third_party_settings:
+  unique_content_field_validation:
+    unique: false
+    unique_text: ''
 id: paragraph.node_list.field_read_more
 field_name: field_read_more
 entity_type: paragraph
 bundle: node_list
 label: 'Read more'
-description: ''
+description: 'Add a read more link at the bottom of the component.'
 required: false
 translatable: true
 default_value: {  }

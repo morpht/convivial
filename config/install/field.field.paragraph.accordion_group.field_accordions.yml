@@ -12,7 +12,7 @@ field_name: field_accordions
 entity_type: paragraph
 bundle: accordion_group
 label: Accordions
-description: ''
+description: 'Add accordion items to appear with this group.'
 required: true
 translatable: false
 default_value: {  }
@@ -30,11 +30,47 @@ settings:
       accordion_group:
         weight: 14
         enabled: false
-      colors_modifier:
-        weight: 15
+      adaptive_height_modifier:
+        weight: 39
+        enabled: false
+      animation:
+        weight: 40
+        enabled: false
+      charts:
+        weight: 41
         enabled: false
       content:
         weight: 16
+        enabled: false
+      content_block:
+        weight: 43
+        enabled: false
+      content_tab:
+        weight: 44
+        enabled: false
+      content_tabs:
+        weight: 45
+        enabled: false
+      decision_tree:
+        weight: 46
+        enabled: false
+      fastfact:
+        weight: 47
+        enabled: false
+      fastfacts:
+        weight: 48
+        enabled: false
+      gallery:
+        weight: 49
+        enabled: false
+      geochart:
+        weight: 50
+        enabled: false
+      hero_banner:
+        weight: 51
+        enabled: false
+      hide_modifier:
+        weight: 52
         enabled: false
       image_bg_modifier:
         weight: 17
@@ -45,19 +81,55 @@ settings:
       item_list:
         weight: 19
         enabled: false
-      linear_gradient_modifier:
-        weight: 20
+      layout:
+        weight: 56
+        enabled: false
+      lightbox:
+        weight: 57
+        enabled: false
+      map:
+        weight: 58
+        enabled: false
+      media_list:
+        weight: 59
         enabled: false
       node_list:
         weight: 21
         enabled: false
-      padding_modifier:
-        weight: 22
-        enabled: false
       parallax_bg_modifier:
         weight: 23
         enabled: false
-      relative_height_modifier:
-        weight: 24
+      parameter:
+        weight: 62
+        enabled: false
+      plugin_block:
+        weight: 63
+        enabled: false
+      scroll_reveal_modifier:
+        weight: 64
+        enabled: false
+      section:
+        weight: 65
+        enabled: false
+      snippet:
+        weight: 66
+        enabled: false
+      tiles:
+        weight: 67
+        enabled: false
+      timeline:
+        weight: 68
+        enabled: false
+      timeline_item:
+        weight: 69
+        enabled: false
+      video_bg_modifier:
+        weight: 70
+        enabled: false
+      view:
+        weight: 71
+        enabled: false
+      webform:
+        weight: 72
         enabled: false
 field_type: entity_reference_revisions

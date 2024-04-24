@@ -16,10 +16,11 @@ field_name: field_body
 entity_type: node
 bundle: event
 label: Body
-description: ''
+description: 'The HTML body content.'
 required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

@@ -22,7 +22,7 @@ field_name: field_cb_block
 entity_type: paragraph
 bundle: content_block
 label: 'Custom Block'
-description: ''
+description: 'The entity reference block type.'
 required: false
 translatable: false
 default_value: {  }
