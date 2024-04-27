@@ -17,7 +17,7 @@ field_name: field_modifiers
 entity_type: paragraph
 bundle: animation
 label: Modifiers
-description: 'Apply Modifiers to the component.'
+description: ''
 required: false
 translatable: false
 default_value: {  }

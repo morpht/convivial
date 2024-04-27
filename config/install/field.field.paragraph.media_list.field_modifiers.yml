@@ -3,7 +3,13 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_modifiers
+    - paragraphs.paragraphs_type.adaptive_height_modifier
+    - paragraphs.paragraphs_type.hide_modifier
+    - paragraphs.paragraphs_type.image_bg_modifier
     - paragraphs.paragraphs_type.media_list
+    - paragraphs.paragraphs_type.parallax_bg_modifier
+    - paragraphs.paragraphs_type.scroll_reveal_modifier
+    - paragraphs.paragraphs_type.video_bg_modifier
   module:
     - entity_reference_revisions
 id: paragraph.media_list.field_modifiers
@@ -11,7 +17,7 @@ field_name: field_modifiers
 entity_type: paragraph
 bundle: media_list
 label: Modifiers
-description: 'Apply Modifiers to the component.'
+description: ''
 required: false
 translatable: true
 default_value: {  }
@@ -19,7 +25,13 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    target_bundles: null
+    target_bundles:
+      image_bg_modifier: image_bg_modifier
+      parallax_bg_modifier: parallax_bg_modifier
+      hide_modifier: hide_modifier
+      scroll_reveal_modifier: scroll_reveal_modifier
+      adaptive_height_modifier: adaptive_height_modifier
+      video_bg_modifier: video_bg_modifier
     negate: 0
     target_bundles_drag_drop:
       accordion:
@@ -31,11 +43,17 @@ settings:
       adaptive_height_modifier:
         weight: 41
         enabled: false
-      animation:
-        weight: 40
+      app:
+        weight: 42
         enabled: false
       charts:
         weight: 43
+        enabled: false
+      clip_path_modifier:
+        weight: 45
+        enabled: false
+      color_background_modifier:
+        weight: 46
         enabled: false
       content:
         weight: 47
@@ -43,29 +61,23 @@ settings:
       content_block:
         weight: 48
         enabled: false
-      content_tab:
-        weight: 44
-        enabled: false
-      content_tabs:
-        weight: 45
-        enabled: false
-      decision_tree:
-        weight: 46
-        enabled: false
-      fastfact:
-        weight: 47
-        enabled: false
-      fastfacts:
-        weight: 48
-        enabled: false
-      gallery:
+      custom_linear_gradient_modifier:
         weight: 49
         enabled: false
-      geochart:
+      custom_radial_gradient_modifier:
         weight: 50
         enabled: false
-      hero_banner:
+      datatables_modifier:
         weight: 51
+        enabled: false
+      dsac_modifier:
+        weight: 52
+        enabled: false
+      dssc_modifier:
+        weight: 53
+        enabled: false
+      fonts_modifier:
+        weight: 54
         enabled: false
       hide_modifier:
         weight: 55
@@ -79,46 +91,40 @@ settings:
       item_list:
         weight: 58
         enabled: false
-      layout:
-        weight: 56
-        enabled: false
-      lightbox:
-        weight: 57
-        enabled: false
       map:
         weight: 59
         enabled: false
       media_list:
         weight: 38
         enabled: false
+      national_map:
+        weight: 60
+        enabled: false
+      national_map_catalog:
+        weight: 61
+        enabled: false
+      national_map_catalog_item:
+        weight: 62
+        enabled: false
       node_list:
         weight: 63
+        enabled: false
+      padding_modifier:
+        weight: 64
         enabled: false
       parallax_bg_modifier:
         weight: 65
         enabled: false
-      parameter:
-        weight: 62
-        enabled: false
       plugin_block:
         weight: 66
+        enabled: false
+      relative_height_modifier:
+        weight: 67
         enabled: false
       scroll_reveal_modifier:
         weight: 68
         enabled: false
       section:
-        weight: 69
-        enabled: false
-      snippet:
-        weight: 66
-        enabled: false
-      tiles:
-        weight: 67
-        enabled: false
-      timeline:
-        weight: 68
-        enabled: false
-      timeline_item:
         weight: 69
         enabled: false
       video_bg_modifier:

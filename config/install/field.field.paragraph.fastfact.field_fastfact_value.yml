@@ -4,18 +4,12 @@ dependencies:
   config:
     - field.storage.paragraph.field_fastfact_value
     - paragraphs.paragraphs_type.fastfact
-  module:
-    - unique_content_field_validation
-third_party_settings:
-  unique_content_field_validation:
-    unique: false
-    unique_text: ''
 id: paragraph.fastfact.field_fastfact_value
 field_name: field_fastfact_value
 entity_type: paragraph
 bundle: fastfact
 label: Value
-description: 'The numeric value to display.'
+description: ''
 required: false
 translatable: false
 default_value: {  }

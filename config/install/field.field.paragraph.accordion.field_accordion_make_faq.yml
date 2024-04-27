@@ -9,7 +9,7 @@ field_name: field_accordion_make_faq
 entity_type: paragraph
 bundle: accordion
 label: 'Make FAQ'
-description: 'Uplift this according to support FAQPage metadata to help with SEO.'
+description: ''
 required: false
 translatable: false
 default_value:

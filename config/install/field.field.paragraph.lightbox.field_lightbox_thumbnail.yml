@@ -5,18 +5,12 @@ dependencies:
     - field.storage.paragraph.field_lightbox_thumbnail
     - media.type.image
     - paragraphs.paragraphs_type.lightbox
-  module:
-    - unique_content_field_validation
-third_party_settings:
-  unique_content_field_validation:
-    unique: false
-    unique_text: ''
 id: paragraph.lightbox.field_lightbox_thumbnail
 field_name: field_lightbox_thumbnail
 entity_type: paragraph
 bundle: lightbox
 label: Thumbnail
-description: 'Select a thumbnail image to display as a preview for the lightbox.'
+description: ''
 required: true
 translatable: false
 default_value: {  }

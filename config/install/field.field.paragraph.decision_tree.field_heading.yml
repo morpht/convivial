@@ -15,7 +15,7 @@ field_name: field_heading
 entity_type: paragraph
 bundle: decision_tree
 label: Heading
-description: 'The heading used on the frontend.'
+description: ''
 required: false
 translatable: true
 default_value: {  }

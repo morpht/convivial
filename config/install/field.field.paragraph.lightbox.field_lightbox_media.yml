@@ -6,18 +6,12 @@ dependencies:
     - media.type.image
     - media.type.remote_video
     - paragraphs.paragraphs_type.lightbox
-  module:
-    - unique_content_field_validation
-third_party_settings:
-  unique_content_field_validation:
-    unique: false
-    unique_text: ''
 id: paragraph.lightbox.field_lightbox_media
 field_name: field_lightbox_media
 entity_type: paragraph
 bundle: lightbox
 label: Media
-description: 'Select an image or video to display in the lightbox.'
+description: ''
 required: false
 translatable: false
 default_value: {  }

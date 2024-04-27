@@ -16,7 +16,7 @@ field_name: field_c_colour_classes
 entity_type: paragraph
 bundle: decision_tree
 label: 'Colour Palette'
-description: 'Apply a colour palette to the component.'
+description: ''
 required: false
 translatable: true
 default_value: {  }

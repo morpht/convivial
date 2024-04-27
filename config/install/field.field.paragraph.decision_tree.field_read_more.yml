@@ -16,7 +16,7 @@ field_name: field_read_more
 entity_type: paragraph
 bundle: decision_tree
 label: 'Read more'
-description: 'Add a read more link at the bottom of the component.'
+description: ''
 required: false
 translatable: true
 default_value: {  }

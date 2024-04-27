@@ -12,6 +12,7 @@ use Drupal\Core\Entity\FieldableEntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Element;
 use Drupal\file\Entity\File;
+use Drupal\image\Entity\ImageStyle;
 use Drupal\layout_builder\Entity\LayoutEntityDisplayInterface;
 use Drupal\layout_builder\SectionStorageInterface;
 use Drupal\media\Entity\Media;
@@ -816,6 +817,29 @@ function convivial_bootstrap_preprocess_field__paragraph__field_snippet(&$variab
       '#text' => $content,
       '#format' => 'unrestricted_text',
     ];
+  }
+}
+
+/**
+ * Implements template_preprocess_field().
+ */
+function convivial_bootstrap_preprocess_field__paragraph__field_gallery_media(&$variables) {
+  $paragraph = $variables['element']['#object'];
+  if ($paragraph->hasField('field_gallery_media') && !$paragraph->get('field_gallery_media')->isEmpty()) {
+    $media = $paragraph->get('field_gallery_media')->referencedEntities();
+
+    foreach ($media as $media_item) {
+      if ($media_item instanceof Media) {
+        if ($media_item->hasField('field_media_oembed_video') && !$media_item->get('field_media_oembed_video')->isEmpty()) {
+          $media_thumbnail_fid = $media_item->get('thumbnail')->target_id;
+          $file = File::load($media_thumbnail_fid);
+
+          // Alternatively, get a complete URL for the file
+          $file_url = $file->createFileUrl();
+          $variables['thumbnail_url'] = $file_url;
+        }
+      }
+    }
   }
 }
 

@@ -6,17 +6,12 @@ dependencies:
     - paragraphs.paragraphs_type.content
   module:
     - options
-    - unique_content_field_validation
-third_party_settings:
-  unique_content_field_validation:
-    unique: false
-    unique_text: ''
 id: paragraph.content.field_c_colour_classes
 field_name: field_c_colour_classes
 entity_type: paragraph
 bundle: content
 label: 'Colour Palette'
-description: 'Apply a colour palette to the component.'
+description: ''
 required: false
 translatable: false
 default_value: {  }

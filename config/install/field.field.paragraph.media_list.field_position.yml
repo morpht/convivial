@@ -6,17 +6,12 @@ dependencies:
     - paragraphs.paragraphs_type.media_list
   module:
     - options
-    - unique_content_field_validation
-third_party_settings:
-  unique_content_field_validation:
-    unique: false
-    unique_text: ''
 id: paragraph.media_list.field_position
 field_name: field_position
 entity_type: paragraph
 bundle: media_list
 label: Position
-description: 'Position the component in the left, center or right of the container.'
+description: ''
 required: false
 translatable: true
 default_value: {  }

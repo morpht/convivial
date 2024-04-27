@@ -15,7 +15,7 @@ field_name: field_featured_title
 entity_type: node
 bundle: page
 label: 'Featured title'
-description: 'Title of featured items to display in the header.'
+description: ''
 required: false
 translatable: false
 default_value: {  }

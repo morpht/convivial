@@ -6,21 +6,15 @@ dependencies:
     - paragraphs.paragraphs_type.hero_banner
   module:
     - text
-    - unique_content_field_validation
-third_party_settings:
-  unique_content_field_validation:
-    unique: false
-    unique_text: ''
 id: paragraph.hero_banner.field_body
 field_name: field_body
 entity_type: paragraph
 bundle: hero_banner
 label: Body
-description: 'Optional body text to introduce the component.'
+description: ''
 required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
-settings:
-  allowed_formats: {  }
+settings: {  }
 field_type: text_long

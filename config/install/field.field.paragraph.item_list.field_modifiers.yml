@@ -17,7 +17,7 @@ field_name: field_modifiers
 entity_type: paragraph
 bundle: item_list
 label: Modifiers
-description: 'Apply Modifiers to the component.'
+description: ''
 required: false
 translatable: true
 default_value: {  }
@@ -43,42 +43,36 @@ settings:
       adaptive_height_modifier:
         weight: 39
         enabled: true
-      animation:
+      app:
         weight: 40
         enabled: false
       charts:
         weight: 41
         enabled: false
+      clip_path_modifier:
+        weight: 43
+        enabled: true
+      color_background_modifier:
+        weight: 17
+        enabled: true
       content:
         weight: 12
         enabled: false
       content_block:
         weight: 46
         enabled: false
-      content_tab:
-        weight: 44
-        enabled: false
-      content_tabs:
-        weight: 45
-        enabled: false
-      decision_tree:
-        weight: 46
-        enabled: false
-      fastfact:
-        weight: 47
-        enabled: false
-      fastfacts:
-        weight: 48
-        enabled: false
-      gallery:
+      custom_linear_gradient_modifier:
+        weight: 17
+        enabled: true
+      custom_radial_gradient_modifier:
+        weight: 27
+        enabled: true
+      datatables_modifier:
         weight: 49
-        enabled: false
-      geochart:
-        weight: 50
-        enabled: false
-      hero_banner:
-        weight: 51
-        enabled: false
+        enabled: true
+      fonts_modifier:
+        weight: 28
+        enabled: true
       hide_modifier:
         weight: 29
         enabled: true
@@ -91,47 +85,38 @@ settings:
       item_list:
         weight: 15
         enabled: false
-      layout:
-        weight: 56
-        enabled: false
-      lightbox:
-        weight: 57
-        enabled: false
       map:
         weight: 57
         enabled: false
-      media_list:
+      national_map:
+        weight: 58
+        enabled: false
+      national_map_catalog:
         weight: 59
+        enabled: false
+      national_map_catalog_item:
+        weight: 60
         enabled: false
       node_list:
         weight: 17
         enabled: false
+      padding_modifier:
+        weight: 18
+        enabled: true
       parallax_bg_modifier:
         weight: 19
         enabled: true
-      parameter:
-        weight: 62
-        enabled: false
       plugin_block:
         weight: 64
         enabled: false
+      relative_height_modifier:
+        weight: 20
+        enabled: true
       scroll_reveal_modifier:
         weight: 38
         enabled: true
       section:
         weight: 39
-        enabled: false
-      snippet:
-        weight: 66
-        enabled: false
-      tiles:
-        weight: 67
-        enabled: false
-      timeline:
-        weight: 68
-        enabled: false
-      timeline_item:
-        weight: 69
         enabled: false
       video_bg_modifier:
         weight: 40

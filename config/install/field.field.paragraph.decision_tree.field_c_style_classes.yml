@@ -18,7 +18,7 @@ field_name: field_c_style_classes
 entity_type: paragraph
 bundle: decision_tree
 label: Style
-description: 'Apply selected styles to the component.'
+description: ''
 required: false
 translatable: true
 default_value: {  }

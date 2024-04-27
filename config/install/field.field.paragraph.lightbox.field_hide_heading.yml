@@ -9,7 +9,7 @@ field_name: field_hide_heading
 entity_type: paragraph
 bundle: lightbox
 label: 'Hide heading'
-description: 'Hide heading but keep available for screen readers.'
+description: ''
 required: false
 translatable: true
 default_value:

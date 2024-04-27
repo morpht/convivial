@@ -68,12 +68,12 @@ meta:
   meta_strategies_name: "constant,sitename,Convivial\r\ntoken,nid,[node:nid]\r\ntoken,type,[node:content-type:machine-name]\r\ntoken,thumbnail,[node:field_thumbnail:entity:field_media_image:landscape:url]\r\nreferences,audience,field_suitable_for|field_key\r\nreferences,author,field_authored_by|field_key\r\nreferences,topic,field_about|field_key\r\ntoken,audience,[node:field_key],,audience\r\ntoken,author,[node:field_key],,person\r\ntoken,topic,[node:field_key],,topic\r\nreferences,goal,field_goal|field_key\r\nreferences,stage,field_stage|field_key"
   meta_strategies_property: ''
 matomo_settings:
-  tracking: ''
+  tracking: 0
   site_id: ''
   server: ''
   dimensions: ''
   user_roles:
-    anonymous: 1
+    anonymous: 0
     authenticated: 0
     editor: 0
     approver: 0

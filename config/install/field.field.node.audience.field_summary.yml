@@ -15,7 +15,7 @@ field_name: field_summary
 entity_type: node
 bundle: audience
 label: Summary
-description: 'Summary text used in meta description and teasers.'
+description: ''
 required: true
 translatable: true
 default_value: {  }

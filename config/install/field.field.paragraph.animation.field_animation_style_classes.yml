@@ -18,7 +18,7 @@ field_name: field_animation_style_classes
 entity_type: paragraph
 bundle: animation
 label: Style
-description: 'Apply selected styles to the component.'
+description: ''
 required: false
 translatable: false
 default_value: {  }

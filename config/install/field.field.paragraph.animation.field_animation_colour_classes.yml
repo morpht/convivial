@@ -16,7 +16,7 @@ field_name: field_animation_colour_classes
 entity_type: paragraph
 bundle: animation
 label: 'Colour Palette'
-description: 'Apply a colour palette to the component.'
+description: ''
 required: false
 translatable: false
 default_value: {  }

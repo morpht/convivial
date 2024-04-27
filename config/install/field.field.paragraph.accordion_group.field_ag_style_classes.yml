@@ -6,19 +6,12 @@ dependencies:
     - paragraphs.paragraphs_type.accordion_group
   module:
     - options
-    - unique_content_field_validation
-third_party_settings:
-  unique_content_field_validation:
-    unique: false
-    unique_text: ''
-    unique_multivalue: false
-    unique_multivalue_text: ''
 id: paragraph.accordion_group.field_ag_style_classes
 field_name: field_ag_style_classes
 entity_type: paragraph
 bundle: accordion_group
 label: Style
-description: 'Apply selected styles to the component.'
+description: ''
 required: false
 translatable: false
 default_value: {  }

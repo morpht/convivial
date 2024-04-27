@@ -17,7 +17,7 @@ field_name: field_modifiers
 entity_type: paragraph
 bundle: geochart
 label: Modifiers
-description: 'Apply Modifiers to the component.'
+description: ''
 required: false
 translatable: true
 default_value: {  }
@@ -43,9 +43,6 @@ settings:
       adaptive_height_modifier:
         weight: 36
         enabled: true
-      animation:
-        weight: 40
-        enabled: false
       charts:
         weight: 37
         enabled: false
@@ -61,17 +58,11 @@ settings:
       content_tabs:
         weight: 41
         enabled: false
-      decision_tree:
-        weight: 46
-        enabled: false
       fastfact:
         weight: 42
         enabled: false
       fastfacts:
         weight: 43
-        enabled: false
-      gallery:
-        weight: 49
         enabled: false
       geochart:
         weight: 44
@@ -94,9 +85,6 @@ settings:
       layout:
         weight: 50
         enabled: false
-      lightbox:
-        weight: 57
-        enabled: false
       map:
         weight: 51
         enabled: false
@@ -109,9 +97,6 @@ settings:
       parallax_bg_modifier:
         weight: 54
         enabled: true
-      parameter:
-        weight: 62
-        enabled: false
       plugin_block:
         weight: 55
         enabled: false

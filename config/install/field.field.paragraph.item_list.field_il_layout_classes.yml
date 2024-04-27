@@ -6,20 +6,17 @@ dependencies:
     - paragraphs.paragraphs_type.item_list
   module:
     - options
-    - unique_content_field_validation
-third_party_settings:
-  unique_content_field_validation:
-    unique: false
-    unique_text: ''
 id: paragraph.item_list.field_il_layout_classes
 field_name: field_il_layout_classes
 entity_type: paragraph
 bundle: item_list
 label: Layout
-description: 'Define a layout grid for the items.'
+description: ''
 required: true
 translatable: false
-default_value: {  }
+default_value:
+  -
+    value: list-layout--12
 default_value_callback: ''
 settings: {  }
 field_type: list_string

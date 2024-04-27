@@ -5,18 +5,12 @@ dependencies:
     - field.storage.paragraph.field_hero_banner_background
     - media.type.image
     - paragraphs.paragraphs_type.hero_banner
-  module:
-    - unique_content_field_validation
-third_party_settings:
-  unique_content_field_validation:
-    unique: false
-    unique_text: ''
 id: paragraph.hero_banner.field_hero_banner_background
 field_name: field_hero_banner_background
 entity_type: paragraph
 bundle: hero_banner
 label: 'Background Image'
-description: 'Set a background image for the banner.'
+description: ''
 required: false
 translatable: false
 default_value: {  }
@@ -28,7 +22,6 @@ settings:
       image: image
     sort:
       field: _none
-      direction: ASC
     auto_create: false
     auto_create_bundle: ''
 field_type: entity_reference

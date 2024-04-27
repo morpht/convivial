@@ -16,7 +16,7 @@ field_name: field_hero_banner_colour_classes
 entity_type: paragraph
 bundle: hero_banner
 label: 'Colour Palette'
-description: 'Apply a colour palette to the component.'
+description: ''
 required: false
 translatable: false
 default_value: {  }

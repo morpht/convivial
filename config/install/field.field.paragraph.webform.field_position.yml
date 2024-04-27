@@ -6,17 +6,12 @@ dependencies:
     - paragraphs.paragraphs_type.webform
   module:
     - options
-    - unique_content_field_validation
-third_party_settings:
-  unique_content_field_validation:
-    unique: false
-    unique_text: ''
 id: paragraph.webform.field_position
 field_name: field_position
 entity_type: paragraph
 bundle: webform
 label: Position
-description: 'Position the component in the left, center or right of the container.'
+description: ''
 required: false
 translatable: true
 default_value: {  }

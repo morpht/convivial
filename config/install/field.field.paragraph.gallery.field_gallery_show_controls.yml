@@ -9,7 +9,7 @@ field_name: field_gallery_show_controls
 entity_type: paragraph
 bundle: gallery
 label: 'Show controls'
-description: 'Show the previous and next buttons for the gallery.'
+description: ''
 required: false
 translatable: false
 default_value:

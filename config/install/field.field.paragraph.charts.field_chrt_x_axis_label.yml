@@ -4,18 +4,12 @@ dependencies:
   config:
     - field.storage.paragraph.field_chrt_x_axis_label
     - paragraphs.paragraphs_type.charts
-  module:
-    - unique_content_field_validation
-third_party_settings:
-  unique_content_field_validation:
-    unique: false
-    unique_text: ''
 id: paragraph.charts.field_chrt_x_axis_label
 field_name: field_chrt_x_axis_label
 entity_type: paragraph
 bundle: charts
 label: 'X axis label'
-description: 'Label displayed next to the X axis.'
+description: ''
 required: false
 translatable: false
 default_value: {  }

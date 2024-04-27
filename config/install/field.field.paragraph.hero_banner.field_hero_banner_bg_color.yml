@@ -6,17 +6,12 @@ dependencies:
     - paragraphs.paragraphs_type.hero_banner
   module:
     - options
-    - unique_content_field_validation
-third_party_settings:
-  unique_content_field_validation:
-    unique: false
-    unique_text: ''
 id: paragraph.hero_banner.field_hero_banner_bg_color
 field_name: field_hero_banner_bg_color
 entity_type: paragraph
 bundle: hero_banner
 label: 'Background Color'
-description: 'Set a background colour for the banner.'
+description: ''
 required: false
 translatable: false
 default_value: {  }
