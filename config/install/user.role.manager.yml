@@ -10,7 +10,6 @@ dependencies:
     - help
     - redirect
     - system
-    - toolbar
 id: manager
 label: Manager
 weight: -6
@@ -19,7 +18,6 @@ permissions:
   - 'access administration pages'
   - 'access contextual links'
   - 'access help pages'
-  - 'access toolbar'
   - 'access user profiles'
   - 'administer redirects'
   - 'administer users'

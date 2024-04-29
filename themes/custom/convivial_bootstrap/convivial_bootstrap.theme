@@ -549,32 +549,32 @@ function convivial_bootstrap_preprocess_form(&$variables) {
   $variables['attributes']['novalidate'] = 'novalidate';
 }
 
-/**
- * Implements template_preprocess_menu().
- */
-function convivial_bootstrap_preprocess_menu(&$variables) {
-  if (!empty($variables['items'])) {
-    // Find the active link and apply a flag.
-    $current_path = \Drupal::request()->getRequestUri();
-    _convivial_bootstrap_theme_find_active_link($variables['items'], $current_path);
-
-    // Find the parent link (for menus starting at > depth 2).
-    $items_arr = array_values($variables['items']);
-    if (!empty($items_arr)) {
-      $parent_link_id = $items_arr[0]['original_link']->getParent();
-      if ($parent_link_id !== '') {
-        $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
-        $parent_link = $menu_link_manager->createInstance($parent_link_id);
-        $parent_title = $parent_link->getTitle();
-        $parent_url = $parent_link->getUrlObject();
-        $variables['parent_link'] = [
-          'title' => $parent_title,
-          'url' => $parent_url,
-        ];
-      }
-    }
-  }
-}
+///**
+// * Implements template_preprocess_menu().
+// */
+//function convivial_bootstrap_preprocess_menu(&$variables) {
+//  if (!empty($variables['items'])) {
+//    // Find the active link and apply a flag.
+//    $current_path = \Drupal::request()->getRequestUri();
+//    _convivial_bootstrap_theme_find_active_link($variables['items'], $current_path);
+//
+//    // Find the parent link (for menus starting at > depth 2).
+//    $items_arr = array_values($variables['items']);
+//    if (!empty($items_arr)) {
+//      $parent_link_id = $items_arr[0]['original_link']->getParent();
+//      if ($parent_link_id !== '') {
+//        $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
+//        $parent_link = $menu_link_manager->createInstance($parent_link_id);
+//        $parent_title = $parent_link->getTitle();
+//        $parent_url = $parent_link->getUrlObject();
+//        $variables['parent_link'] = [
+//          'title' => $parent_title,
+//          'url' => $parent_url,
+//        ];
+//      }
+//    }
+//  }
+//}
 
 /**
  * Implements hook_theme_suggestions_menu_alter().

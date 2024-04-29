@@ -32,7 +32,6 @@ dependencies:
     - replicate_ui
     - system
     - taxonomy
-    - toolbar
 id: editor
 label: Editor
 weight: -8
@@ -44,7 +43,6 @@ permissions:
   - 'access help pages'
   - 'access media overview'
   - 'access taxonomy overview'
-  - 'access toolbar'
   - 'administer menu'
   - 'administer redirects'
   - 'create article content'

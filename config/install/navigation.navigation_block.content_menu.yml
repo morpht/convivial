@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.content
+  module:
+    - system
+id: content_menu
+region: content
+weight: 1
+provider: null
+plugin: 'system_menu_navigation_block:content'
+settings:
+  id: 'system_menu_navigation_block:content'
+  label: Content
+  label_display: '0'
+  provider: navigation
+  level: 1
+  depth: 2
+visibility: {  }
