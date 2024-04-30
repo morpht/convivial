@@ -7,28 +7,51 @@
  * - content: The content for this layout.
  * - attributes: HTML attributes for the layout <div>.
  *
- * @ingroup themeable
  */
 #}
-{% set content_render = content|render %}
-{% if content_render %}
+{% set classes = [
+  'layout',
+  'layout--twocol-section',
+] %}
+
+{% set preview_layout %}
   <div{{ attributes }}>
     <div class="layout__region-container">
       <div class="layout__region-row">
-        {% set first_region_render = content.first|render %}
-        {% if first_region_render %}
-          <div {{ region_attributes.first.addClass('layout__region', 'layout__region--first') }}>
-            {{ first_region_render }}
-          </div>
-        {% endif %}
-
-        {% set second_region_render = content.second|render %}
-        {% if second_region_render %}
-          <div {{ region_attributes.second.addClass('layout__region', 'layout__region--second') }}>
-            {{ second_region_render }}
-          </div>
-        {% endif %}
+        <div{{ region_attributes.first.addClass('layout__region', 'layout__region--first') }}>
+          {{ content.first }}
+        </div>
+        <div{{ region_attributes.second.addClass('layout__region', 'layout__region--second') }}>
+          {{ content.second }}
+        </div>
       </div>
     </div>
   </div>
+{% endset %}
+
+{% set render_layout %}
+  {% if content|render %}
+    <div{{ attributes }}>
+      <div class="layout__region-container">
+        <div class="layout__region-row">
+          {% if content.first|render %}
+            <div{{ region_attributes.first.addClass('layout__region', 'layout__region--first') }}>
+              {{ content.first|render }}
+            </div>
+          {% endif %}
+          {% if content.second|render %}
+            <div{{ region_attributes.second.addClass('layout__region', 'layout__region--second') }}>
+              {{ content.second|render }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endset %}
+
+{% if in_preview %}
+  {{ preview_layout }}
+{% else %}
+  {{ render_layout }}
 {% endif %}

@@ -7,22 +7,37 @@
  * - content: The content for this layout.
  * - attributes: HTML attributes for the layout <div>.
  *
- * @ingroup themeable
  */
 #}
-{%
-  set classes = [
+{% set classes = [
   'layout',
   'layout--onecol',
-]
-%}
-{% set content_render = content|render %}
-{% if content_render %}
+] %}
+
+{% set preview_layout %}
   <div{{ attributes.addClass(classes) }}>
     <div class="layout__region-container">
-      <div {{ region_attributes.content.addClass('layout__region', 'layout__region--content') }}>
-        {{ content_render }}
+      <div{{ region_attributes.content.addClass('layout__region', 'layout__region--content') }}>
+        {{ content }}
       </div>
     </div>
   </div>
+{% endset %}
+
+{% set render_layout %}
+  {% if content|render %}
+    <div{{ attributes.addClass(classes) }}>
+      <div class="layout__region-container">
+        <div{{ region_attributes.content.addClass('layout__region', 'layout__region--content') }}>
+          {{ content|render }}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endset %}
+
+{% if in_preview %}
+  {{ preview_layout }}
+{% else %}
+  {{ render_layout }}
 {% endif %}

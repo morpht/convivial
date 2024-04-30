@@ -7,11 +7,9 @@
  * - content: The content for this layout.
  * - attributes: HTML attributes for the layout <div>.
  *
- * @ingroup themeable
  */
 #}
-{%
-  set classes = [
+{% set classes = [
   'header',
   'hero-banner',
   'layout',
@@ -19,57 +17,107 @@
   content.links_title|render is empty and content.links|render is empty and content.image|render is empty ? 'hero-banner--wide',
   header_section_style ? header_section_style,
   header_colour_classes ? header_colour_classes,
-]
-%}
-{% if content %}
+] %}
+
+{% set preview_layout %}
   <div{{ attributes.addClass(classes) }}>
     <div class="hero-banner__container">
       <div class="hero-banner__wrapper">
-        {% if content.breadcrumbs|render is not empty or content.content|render is not empty or content.banner_title|render is not empty or content.title|render is not empty %}
-          <div class="hero-banner__content">
-            {% if content.breadcrumbs|render is not empty %}
-              <div {{ region_attributes.breadcrumbs.addClass('layout__region', 'layout__region--banner-breadcrumbs') }}>
-                {{ content.breadcrumbs }}
-              </div>
-            {% endif %}
-            {% if content.banner_title|render is not empty %}
-              <div {{ region_attributes.banner_title.addClass('layout__region', 'layout__region--banner-title') }}>
-                {{ content.banner_title }}
-              </div>
-            {% else %}
-              <div {{ region_attributes.title.addClass('layout__region', 'layout__region--title') }}>
-                {{ content.title }}
-              </div>
-            {% endif %}
-            {% if content.content|render is not empty %}
-              <div {{ region_attributes.content.addClass('layout__region', 'layout__region--banner-content') }}>
-                {{ content.content }}
-              </div>
-            {% endif %}
+        <div class="hero-banner__content">
+          <div{{ region_attributes.breadcrumbs.addClass('layout__region', 'layout__region--banner-breadcrumbs') }}>
+            {{ content.breadcrumbs }}
           </div>
-        {% endif %}
-        {% if content.links_title|render is not empty or content.links|render is not empty %}
-          <div class="hero-banner__links">
-            <div class="hero-banner__list">
-              <div {{ region_attributes.links_title.addClass('layout__region', 'layout__region--banner-links-title', 'hero-banner__sub-title') }}>
-                {{ content.links_title }}
-              </div>
-              <div {{ region_attributes.links.addClass('layout__region', 'layout__region--banner-links') }}>
-                {{ content.links }}
-              </div>
+          <div{{ region_attributes.banner_title.addClass('layout__region', 'layout__region--banner-title') }}>
+            {{ content.banner_title }}
+          </div>
+          <div{{ region_attributes.title.addClass('layout__region', 'layout__region--title') }}>
+            {{ content.title }}
+          </div>
+          <div{{ region_attributes.content.addClass('layout__region', 'layout__region--banner-content') }}>
+            {{ content.content }}
+          </div>
+        </div>
+        <div class="hero-banner__links">
+          <div class="hero-banner__list">
+            <div{{ region_attributes.links_title.addClass('layout__region', 'layout__region--banner-links-title', 'hero-banner__sub-title') }}>
+              {{ content.links_title }}
+            </div>
+            <div{{ region_attributes.links.addClass('layout__region', 'layout__region--banner-links') }}>
+              {{ content.links }}
             </div>
           </div>
-        {% endif %}
-        {% if content.image|render is not empty %}
-          <div {{ region_attributes.image.addClass('layout__region', 'layout__region--banner-image', 'hero-banner__box') }}>
-            {{ content.image }}
-          </div>
-        {% else %}
-          <div class="hero-banner__box" role="presentation">
-            <div class="hero-banner__bg"></div>
-          </div>
-        {% endif %}
+        </div>
+        <div{{ region_attributes.image.addClass('layout__region', 'layout__region--banner-image', 'hero-banner__box') }}>
+          {{ content.image }}
+        </div>
+        <div class="hero-banner__box" role="presentation">
+          <div class="hero-banner__bg"></div>
+        </div>
       </div>
     </div>
   </div>
+{% endset %}
+
+{% set render_layout %}
+  {% if content %}
+    <div{{ attributes.addClass(classes) }}>
+      <div class="hero-banner__container">
+        <div class="hero-banner__wrapper">
+          {% if content.breadcrumbs|render is not empty
+            or content.content|render is not empty
+            or content.banner_title|render is not empty
+            or content.title|render is not empty %}
+            <div class="hero-banner__content">
+              {% if content.breadcrumbs|render is not empty %}
+                <div{{ region_attributes.breadcrumbs.addClass('layout__region', 'layout__region--banner-breadcrumbs') }}>
+                  {{ content.breadcrumbs }}
+                </div>
+              {% endif %}
+              {% if content.banner_title|render is not empty %}
+                <div{{ region_attributes.banner_title.addClass('layout__region', 'layout__region--banner-title') }}>
+                  {{ content.banner_title }}
+                </div>
+              {% else %}
+                <div{{ region_attributes.title.addClass('layout__region', 'layout__region--title') }}>
+                  {{ content.title }}
+                </div>
+              {% endif %}
+              {% if content.content|render is not empty %}
+                <div{{ region_attributes.content.addClass('layout__region', 'layout__region--banner-content') }}>
+                  {{ content.content }}
+                </div>
+              {% endif %}
+            </div>
+          {% endif %}
+          {% if content.links_title|render is not empty or content.links|render is not empty %}
+            <div class="hero-banner__links">
+              <div class="hero-banner__list">
+                <div{{ region_attributes.links_title.addClass('layout__region', 'layout__region--banner-links-title', 'hero-banner__sub-title') }}>
+                  {{ content.links_title }}
+                </div>
+                <div{{ region_attributes.links.addClass('layout__region', 'layout__region--banner-links') }}>
+                  {{ content.links }}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+          {% if content.image|render is not empty %}
+            <div{{ region_attributes.image.addClass('layout__region', 'layout__region--banner-image', 'hero-banner__box') }}>
+              {{ content.image }}
+            </div>
+          {% else %}
+            <div class="hero-banner__box" role="presentation">
+              <div class="hero-banner__bg"></div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endset %}
+
+{% if in_preview %}
+  {{ preview_layout }}
+{% else %}
+  {{ render_layout }}
 {% endif %}

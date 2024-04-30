@@ -7,28 +7,44 @@
  * - content: The content for this layout.
  * - attributes: HTML attributes for the layout <div>.
  *
- * @ingroup themeable
  */
 #}
-{%
-  set classes = [
-    'layout',
-    'layout--content-sidebar',
-    'container',
-  ]
-%}
+{% set classes = [
+  'layout',
+  'layout--content-sidebar',
+  'container',
+] %}
 
-{% if content|render %}
+{% set preview_layout %}
   <div{{ attributes.addClass(classes) }}>
-    {% if content.content|render %}
-      <div {{ region_attributes.content.addClass('layout__region', 'layout__region--content', 'main-content') }}>
-        {{ content.content|render }}
-      </div>
-    {% endif %}
-    {% if content.sidebar|render %}
-      <div {{ region_attributes.sidebar.addClass('layout__region', 'layout__region--sidebar') }}>
-        {{ content.sidebar|render }}
-      </div>
-    {% endif %}
+    <div{{ region_attributes.content.addClass('layout__region', 'layout__region--content', 'main-content') }}>
+      {{ content.content }}
+    </div>
+    <div{{ region_attributes.sidebar.addClass('layout__region', 'layout__region--sidebar') }}>
+      {{ content.sidebar }}
+    </div>
   </div>
+{% endset %}
+
+{% set render_layout %}
+  {% if content|render %}
+    <div{{ attributes.addClass(classes) }}>
+      {% if content.content|render %}
+        <div{{ region_attributes.content.addClass('layout__region', 'layout__region--content', 'main-content') }}>
+          {{ content.content|render }}
+        </div>
+      {% endif %}
+      {% if content.sidebar|render %}
+        <div{{ region_attributes.sidebar.addClass('layout__region', 'layout__region--sidebar') }}>
+          {{ content.sidebar|render }}
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
+{% endset %}
+
+{% if in_preview %}
+  {{ preview_layout }}
+{% else %}
+  {{ render_layout }}
 {% endif %}

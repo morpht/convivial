@@ -11,61 +11,87 @@
   {% set icon_only = 'true' %}
 {% endif %}
 
-{%
-  set classes = [
-    'icon',
-    bg_image ? 'icon--has-image',
-    bg_is_dark ? 'icon-bg--dark',
-    icon_only ? 'icon--icon-only',
-  ]
-%}
+{% set classes = [
+  'icon',
+  bg_image ? 'icon--has-image' : 'icon-bg--color',
+  bg_is_dark ? 'icon-bg--dark',
+  icon_only ? 'icon--icon-only',
+] %}
 
-{% if bg_image is empty %}
-  {% set classes = classes|merge(['icon-bg--color']) %}
-{% endif %}
-
-<div {{ attributes.addClass(classes) }}>
-  {{ title_suffix.contextual_links }}
-
-  {% if item_url %}
-    <a href="{{ item_url }}" class="icon__link">
-  {% endif %}
+{% set icon_content %}
   <div class="icon__wrap">
+    <div class="icon__content">
+      <div class="icon__content-wrap">
+        {% if content.image|render|striptags('<img>')|trim %}
+          <div{{ region_attributes.image.addClass('layout__region', 'layout__region--image', 'icon__icon', 'image--decorative') }}>
+            {{ content.image }}
+          </div>
+        {% endif %}
+        {% if content.title|render|striptags|trim %}
+          <h3{{ region_attributes.title.addClass('layout__region', 'layout__region--title', 'icon__title') }}>
+            {{ content.title }}
+          </h3>
+        {% endif %}
+        {% if content.summary|render|striptags|trim %}
+          <div{{ region_attributes.summary.addClass('layout__region', 'layout__region--summary', 'icon__summary') }}>
+            {{ content.summary }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <div
+    class="icon__overlay"
+    {% if bg_colour is not empty and bg_image is empty %}style="background-color: {{ bg_colour }};"{% endif %}
+  ></div>
+  <div
+    class="icon__image"
+    {% if bg_image is not empty %}style="background-image: url({{ bg_image }});"{% endif %}
+  ></div>
+  {% if icon_only == 'true' %}
+    <div
+      class="icon__ratio" style="padding-top: {{ icon_ratio }}%;"
+    ></div>
+  {% endif %}
+{% endset %}
+
+{% set preview_layout %}
+  <div{{ attributes.addClass(classes) }}>
+    <div class="icon__wrap">
       <div class="icon__content">
         <div class="icon__content-wrap">
-          {% block image %}
-            {% if content.image|render|striptags('<img>')|trim %}
-              <div{{ region_attributes.image.addClass('layout__region', 'layout__region--image', 'icon__icon', 'image--decorative') }}>
-                {{ content.image }}
-              </div>
-            {% endif %}
-          {% endblock %}
-
-          {% block title %}
-            {% if content.title|render|striptags|trim %}
-              <h3{{ region_attributes.title.addClass('layout__region', 'layout__region--title', 'icon__title') }}>
-                {{ content.title }}
-              </h3>
-            {% endif %}
-          {% endblock %}
-
-          {% block summary %}
-            {% if content.summary|render|striptags|trim %}
-              <div{{ region_attributes.summary.addClass('layout__region', 'layout__region--summary', 'icon__summary') }}>
-                {{ content.summary }}
-              </div>
-            {% endif %}
-          {% endblock %}
+          <div{{ region_attributes.image.addClass('layout__region', 'layout__region--image', 'icon__icon', 'image--decorative') }}>
+            {{ content.image }}
+          </div>
+          <h3{{ region_attributes.title.addClass('layout__region', 'layout__region--title', 'icon__title') }}>
+            {{ content.title }}
+          </h3>
+          <div{{ region_attributes.summary.addClass('layout__region', 'layout__region--summary', 'icon__summary') }}>
+            {{ content.summary }}
+          </div>
         </div>
       </div>
     </div>
-  <div class="icon__overlay" {% if bg_colour is not empty and bg_image is empty %}style="background-color: {{ bg_colour }};"{% endif %}></div>
-  <div class="icon__image" {% if bg_image is not empty %}style="background-image: url({{ bg_image }});"{% endif %}></div>
-  {% if icon_only == 'true' %}
-    <div class="icon__ratio" style="padding-top: {{ icon_ratio }}%;"></div>
-  {% endif %}
-  {% if item_url %}
-    </a>
-  {% endif %}
+    <div class="icon__overlay"></div>
+    <div class="icon__image"></div>
+    <div class="icon__ratio"></div>
+  </div>
+{% endset %}
 
-</div>
+{% set render_layout %}
+  <div{{ attributes.addClass(classes) }}>
+    {% if item_url %}
+      <a href="{{ item_url }}" class="icon__link">
+        {{ icon_content }}
+      </a>
+    {% else %}
+      {{ icon_content }}
+    {% endif %}
+  </div>
+{% endset %}
+
+{% if in_preview %}
+  {{ preview_layout }}
+{% else %}
+  {{ render_layout }}
+{% endif %}

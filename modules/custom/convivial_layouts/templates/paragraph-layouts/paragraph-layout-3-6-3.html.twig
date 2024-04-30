@@ -1,29 +1,50 @@
-{%
-  set classes = [
-    'paragraph-layout',
-    'paragraph-layout--3-6-3',
-  ]
-%}
-{% if content %}
+{% set classes = [
+  'paragraph-layout',
+  'paragraph-layout--3-6-3',
+] %}
+
+{% set preview_layout %}
   <div{{ attributes.addClass(classes) }}>
     <div class="row">
-      {% if content.region1 %}
-        <div {{ region_attributes.region1.addClass('paragraph-layout__region', 'paragraph-layout__region--first') }}>
-          {{ content.region1 }}
-        </div>
-      {% endif %}
-
-      {% if content.region2 %}
-        <div {{ region_attributes.region2.addClass('paragraph-layout__region', 'paragraph-layout__region--second') }}>
-          {{ content.region2 }}
-        </div>
-      {% endif %}
-
-      {% if content.region3 %}
-        <div {{ region_attributes.region3.addClass('paragraph-layout__region', 'paragraph-layout__region--third') }}>
-          {{ content.region3 }}
-        </div>
-      {% endif %}
+      <div{{ region_attributes.region1.addClass('paragraph-layout__region', 'paragraph-layout__region--first') }}>
+        {{ content.region1 }}
+      </div>
+      <div{{ region_attributes.region2.addClass('paragraph-layout__region', 'paragraph-layout__region--second') }}>
+        {{ content.region2 }}
+      </div>
+      <div{{ region_attributes.region3.addClass('paragraph-layout__region', 'paragraph-layout__region--third') }}>
+        {{ content.region3 }}
+      </div>
     </div>
   </div>
+{% endset %}
+
+{% set render_layout %}
+  {% if content %}
+    <div{{ attributes.addClass(classes) }}>
+      <div class="row">
+        {% if content.region1 %}
+          <div{{ region_attributes.region1.addClass('paragraph-layout__region', 'paragraph-layout__region--first') }}>
+            {{ content.region1 }}
+          </div>
+        {% endif %}
+        {% if content.region2 %}
+          <div{{ region_attributes.region2.addClass('paragraph-layout__region', 'paragraph-layout__region--second') }}>
+            {{ content.region2 }}
+          </div>
+        {% endif %}
+        {% if content.region3 %}
+          <div{{ region_attributes.region3.addClass('paragraph-layout__region', 'paragraph-layout__region--third') }}>
+            {{ content.region3 }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+{% endset %}
+
+{% if in_preview %}
+  {{ preview_layout }}
+{% else %}
+  {{ render_layout }}
 {% endif %}

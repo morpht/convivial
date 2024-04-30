@@ -5,56 +5,62 @@
 * List of regions: title, info, summary, date.
 */
 #}
+{% set classes = [
+  'stack',
+  'stack--simple',
+  'card',
+] %}
 
-{%
-  set classes = [
-    'stack',
-    'stack--simple',
-    'card',
-  ]
-%}
+{% set preview_layout %}
+  <div{{ attributes.addClass(classes) }}>
+    <div class="stack__content card-body">
+      <div{{ region_attributes.info.addClass('layout__region', 'layout__region--info', 'stack__info', 'card-subtitle') }}>
+        {{ content.info }}
+      </div>
+      <h3{{ region_attributes.title.addClass('layout__region', 'layout__region--title', 'stack__title', 'card-title') }}>
+        {{ content.title }}
+      </h3>
+      <div{{ region_attributes.summary.addClass('layout__region', 'layout__region--summary', 'stack__summary') }}>
+        {{ content.summary }}
+      </div>
+      <small{{ region_attributes.date.addClass('layout__region', 'layout__region--date', 'stack__date') }}>
+        {{ content.date }}
+      </small>
+    </div>
+  </div>
+{% endset %}
 
-<div {{ attributes.addClass(classes) }}>
-  {{ title_suffix.contextual_links }}
-
-  {% block content %}
+{% set render_layout %}
+  <div{{ attributes.addClass(classes) }}>
     {% if content %}
       <div class="stack__content card-body">
-
-        {% block info %}
-          {% if content.info|render|striptags|trim %}
-            <div{{ region_attributes.info.addClass('layout__region', 'layout__region--info', 'stack__info', 'card-subtitle') }}>
-              {{ content.info }}
-            </div>
-          {% endif %}
-        {% endblock %}
-
-        {% block title %}
-          {% if content.title|render|striptags|trim %}
-            <h3{{ region_attributes.title.addClass('layout__region', 'layout__region--title', 'stack__title', 'card-title') }}>
-              {{ content.title }}
-            </h3>
-          {% endif %}
-        {% endblock %}
-
-        {% block summary %}
-          {% if content.summary|render|striptags|trim %}
-            <div{{ region_attributes.summary.addClass('layout__region', 'layout__region--summary', 'stack__summary') }}>
-              {{ content.summary }}
-            </div>
-          {% endif %}
-        {% endblock %}
-
-        {% block date %}
-          {% if content.date|render|striptags|trim %}
-            <small{{ region_attributes.date.addClass('layout__region', 'layout__region--date', 'stack__date') }}>
-              {{ content.date }}
-            </small>
-          {% endif %}
-        {% endblock %}
-
+        {% if content.info|render|striptags|trim %}
+          <div{{ region_attributes.info.addClass('layout__region', 'layout__region--info', 'stack__info', 'card-subtitle') }}>
+            {{ content.info }}
+          </div>
+        {% endif %}
+        {% if content.title|render|striptags|trim %}
+          <h3{{ region_attributes.title.addClass('layout__region', 'layout__region--title', 'stack__title', 'card-title') }}>
+            {{ content.title }}
+          </h3>
+        {% endif %}
+        {% if content.summary|render|striptags|trim %}
+          <div{{ region_attributes.summary.addClass('layout__region', 'layout__region--summary', 'stack__summary') }}>
+            {{ content.summary }}
+          </div>
+        {% endif %}
+        {% if content.date|render|striptags|trim %}
+          <small{{ region_attributes.date.addClass('layout__region', 'layout__region--date', 'stack__date') }}>
+            {{ content.date }}
+          </small>
+        {% endif %}
       </div>
     {% endif %}
-  {% endblock %}
+  </div>
+{% endset %}
 
-</div>
+{% if in_preview %}
+  {{ preview_layout }}
+{% else %}
+  {{ render_layout }}
+{% endif %}

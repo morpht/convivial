@@ -5,30 +5,40 @@
 * List of regions: image.
 */
 #}
-
-{%
-  set classes = [
+{% set classes = [
   'image',
-]
-%}
+] %}
 
-<div {{ attributes.addClass(classes) }}>
-  {{ title_suffix.contextual_links }}
-
-  {% if item_url %}
-  <a href="{{ item_url }}" class="image__link">
-    {% endif %}
-
-    {% block image %}
-      {% if content.image|render|striptags('<img>')|trim %}
-        <div{{ region_attributes.image.addClass('layout__region', 'layout__region--image', 'image__image') }}>
-          {{ content.image }}
-        </div>
-      {% endif %}
-    {% endblock %}
-
-    {% if item_url %}
-  </a>
+{% set image_content %}
+  {% if content.image|render|striptags('<img>')|trim %}
+    <div{{ region_attributes.image.addClass('layout__region', 'layout__region--image', 'image__image') }}>
+      {{ content.image }}
+    </div>
   {% endif %}
+{% endset %}
 
-</div>
+{% set preview_layout %}
+  <div{{ attributes.addClass(classes) }}>
+    <div{{ region_attributes.image.addClass('layout__region', 'layout__region--image', 'image__image') }}>
+      {{ content.image }}
+    </div>
+  </div>
+{% endset %}
+
+{% set render_layout %}
+  <div{{ attributes.addClass(classes) }}>
+    {% if item_url %}
+      <a href="{{ item_url }}" class="image__link">
+        {{ image_content }}
+      </a>
+    {% else %}
+      {{ image_content }}
+    {% endif %}
+  </div>
+{% endset %}
+
+{% if in_preview %}
+  {{ preview_layout }}
+{% else %}
+  {{ render_layout }}
+{% endif %}

@@ -1,8 +1,36 @@
-<div {{ attributes.addClass('title') }}>
-  {{ title_suffix.contextual_links }}
-  {% if content.title|render|trim %}
+{#
+/**
+* Title view mode.
+*
+* List of regions: title.
+*/
+#}
+{% set classes = [
+  'title',
+] %}
+
+{% set preview_layout %}
+  <div{{ attributes.addClass(classes) }}>
     <h3{{ region_attributes.title.addClass('layout__region', 'layout__region--title', 'title__title') }}>
       {{ content.title }}
     </h3>
+  </div>
+{% endset %}
+
+{% set render_layout %}
+  {% if content|render %}
+    <div{{ attributes.addClass(classes) }}>
+      {% if content.title|render|trim %}
+        <h3{{ region_attributes.title.addClass('layout__region', 'layout__region--title', 'title__title') }}>
+          {{ content.title }}
+        </h3>
+      {% endif %}
+    </div>
   {% endif %}
-</div>
+{% endset %}
+
+{% if in_preview %}
+  {{ preview_layout }}
+{% else %}
+  {{ render_layout }}
+{% endif %}
