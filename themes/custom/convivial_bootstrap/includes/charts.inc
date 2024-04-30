@@ -92,27 +92,29 @@ function _convivial_bootstrap_charts(FieldableEntityInterface $entity, array &$b
     }
   }
 
-  // If there's only single color defined, convert it to array.
-  if (is_string($field_values['colors'])) {
-    $field_values['colors'] = [$field_values['colors']];
+  if (isset($field_values['csv']) || isset($field_values['csv_url'])) {
+    // If there's only single color defined, convert it to array.
+    if (is_string($field_values['colors'])) {
+      $field_values['colors'] = [$field_values['colors']];
+    }
+
+    $chart_properties = [];
+    foreach ($field_values as $name => $value) {
+      $chart_properties[$name] = $value;
+    }
+
+    $settings = [
+      'chart' => $chart_properties,
+    ];
+    // Create unique selector for current entity.
+    $class = Html::getClass('billboard-' . $entity_type . '-' . $entity->id());
+    $build[$attributes_key]['class'][] = $class;
+    $selector = '.' . $class . ' .chart-billboard';
+
+    // Attach libraries.
+    $build['#attached']['library'][] = 'convivial_bootstrap/billboard-apply';
+
+    // Attach all values for JS processing.
+    $build['#attached']['drupalSettings']['billboard'][$selector] = $settings;
   }
-
-  $chart_properties = [];
-  foreach ($field_values as $name => $value) {
-    $chart_properties[$name] = $value;
-  }
-
-  $settings = [
-    'chart' => $chart_properties,
-  ];
-  // Create unique selector for current entity.
-  $class = Html::getClass('billboard-' . $entity_type . '-' . $entity->id());
-  $build[$attributes_key]['class'][] = $class;
-  $selector = '.' . $class . ' .chart-billboard';
-
-  // Attach libraries.
-  $build['#attached']['library'][] = 'convivial_bootstrap/billboard-apply';
-
-  // Attach all values for JS processing.
-  $build['#attached']['drupalSettings']['billboard'][$selector] = $settings;
 }
