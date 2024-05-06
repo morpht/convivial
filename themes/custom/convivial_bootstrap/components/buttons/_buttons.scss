@@ -37,43 +37,43 @@
 
 $buttons: (
   primary: (
-    isdark: true,
+    is_dark: true,
     bg: var(--standard-accent-bg),
   ),
   secondary: (
-    isdark: true,
+    is_dark: true,
     bg: var(--standard-link),
   ),
   success: (
-    isdark: true,
+    is_dark: true,
     bg: var(--bs-success),
   ),
   danger: (
-    isdark: true,
+    is_dark: true,
     bg: var(--bs-danger),
   ),
   warning: (
-    isdark: false,
+    is_dark: false,
     bg: var(--bs-warning),
   ),
   info: (
-    isdark: false,
+    is_dark: false,
     bg: var(--bs-info),
   ),
   light: (
-    isdark: false,
+    is_dark: false,
     bg: var(--light-bg),
   ),
   dark: (
-    isdark: true,
+    is_dark: true,
     bg: var(--dark-bg),
   ),
 );
 
 @each $label, $map in $buttons {
-  $isdark: map-get($map, isdark);
+  $is_dark: map-get($map, is_dark);
 
-  @if $isdark == true {
+  @if $is_dark == true {
     .btn.btn-#{$label} {
       @include convivial-button-variant(map-get($map, bg), map-get($map, bg), $lighten-90);
     }

@@ -119,18 +119,17 @@ $palettes: (
     }
 
     // Foreground.
+    color: map-get($map, fg);
+
     @if $is_dark == true {
-      color: var(--standard-light);
       --alt-text: $white;
-    } @else {
-      color: var(--standard-dark);
     }
 
     // Buttons.
     // The darkness of the background will determine if things are lightened or darkened here.
     @if $is_dark == true {
       .btn.btn-primary {
-        @include convivial-button-variant(map-get($map, accent_bg), map-get($map, accent_bg), $darken-90);
+        @include convivial-button-variant(map-get($map, accent_bg), map-get($map, accent_bg), map-get($map, accent_fg));
       }
       .btn.btn-secondary {
         @include convivial-button-variant(map-get($map, link), map-get($map, link), $darken-90);
@@ -142,7 +141,7 @@ $palettes: (
         @include convivial-button-variant($darken-10, $darken-10, $lighten-90);
       }
       .btn.btn-outline-primary {
-        @include convivial-outline-button-variant(map-get($map, accent_bg), $darken-90);
+        @include convivial-outline-button-variant(map-get($map, accent_bg), map-get($map, accent_fg));
       }
       .btn.btn-outline-secondary {
         @include convivial-outline-button-variant(map-get($map, link), $darken-90);
@@ -155,9 +154,6 @@ $palettes: (
         @include convivial-outline-button-variant($lighten-90, $darken-90);
       }
     } @else {
-      .btn.btn-primary {
-        @include convivial-button-variant(map-get($map, accent_bg), map-get($map, accent_bg), $lighten-90);
-      }
       .btn.btn-secondary {
         @include convivial-button-variant(map-get($map, link), map-get($map, link), $lighten-90);
       }
@@ -166,9 +162,6 @@ $palettes: (
       }
       .btn.btn-dark {
         @include convivial-button-variant($darken-90, $darken-90, $lighten-90);
-      }
-      .btn.btn-outline-primary {
-        @include convivial-outline-button-variant(map-get($map, accent_bg), $lighten-90);
       }
       .btn.btn-outline-secondary {
         @include convivial-outline-button-variant(map-get($map, link), $lighten-90);
