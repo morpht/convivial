@@ -51,6 +51,10 @@
   }
 }
 
+.cp--standard {
+  background-color: var(--standard-bg);
+}
+
 $palettes: (
   light: (
     is_dark: false,
