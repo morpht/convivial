@@ -191,11 +191,11 @@ function _convivial_bootstrap_matomo_tracking_script(array &$variables) {
     }
 
     $tracker_js .= "_paq.push(['trackPageView']);_paq.push(['enableLinkTracking']);(function () {var u = \"{$matomo_settings['server']}\";_paq.push(['setTrackerUrl', u + 'matomo.php']);_paq.push(['setSiteId', \"{$matomo_settings['site_id']}\"]);var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];g.async = true;g.src = '//cdn.matomo.cloud/convivial.matomo.cloud/matomo.js';s.parentNode.insertBefore(g, s);})();});";
-
+    $tracker_js_snippet = new convivial_bootstrap_javascript_snippet($tracker_js);
     $variables['#attached']['html_head'][] = [
       [
         '#tag' => 'script',
-        '#value' => new convivial_bootstrap_javascript_snippet($tracker_js),
+        '#value' => $tracker_js_snippet->__toString(),
       ],
       'matomo_tracking_script',
     ];
