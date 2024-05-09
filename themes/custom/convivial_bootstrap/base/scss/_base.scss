@@ -8,6 +8,7 @@ svg {
 
 a {
   &:focus {
-    outline-color: var(--standard-focus);
+    outline: $link-outline-width $link-outline-style var(--standard-focus);
+    outline-offset: $link-outline-offset;
   }
 }
