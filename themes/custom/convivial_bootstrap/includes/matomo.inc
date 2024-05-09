@@ -5,45 +5,6 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\user\Entity\User;
 
 /**
- * Class for formatting a string to inject to html head.
- */
-class convivial_bootstrap_javascript_snippet implements MarkupInterface {
-
-  /**
-   * The string to escape.
-   *
-   * @var string
-   */
-  protected $string;
-
-  /**
-   * Constructs an HtmlEscapedText object.
-   *
-   * @param string $string
-   *   The string to escape. This value will be cast to a string.
-   */
-  public function __construct($string) {
-    $this->string = (string) $string;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function __toString() {
-    return $this->string;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  #[\ReturnTypeWillChange]
-  public function jsonSerialize() {
-    return $this->__toString();
-  }
-
-}
-
-/**
  * Add Matomo to theme settings.
  */
 function _convivial_bootstrap_matomo_theme_settings(&$form) {
@@ -195,7 +156,7 @@ function _convivial_bootstrap_matomo_tracking_script(array &$variables) {
     $variables['#attached']['html_head'][] = [
       [
         '#tag' => 'script',
-        '#value' => new convivial_bootstrap_javascript_snippet($tracker_js),
+        '#value' => $tracker_js,
       ],
       'matomo_tracking_script',
     ];
