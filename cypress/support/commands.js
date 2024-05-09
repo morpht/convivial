@@ -31,7 +31,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     return false
   }
   // Ignore a specific syntax error message
-  if (err.message.includes("Uncaught SyntaxError: expected expression, got '&'")) {
+  if (err.message.includes("Unexpected token '&'")) {
     return false;
   }
   // we still want to ensure there are no other unexpected
