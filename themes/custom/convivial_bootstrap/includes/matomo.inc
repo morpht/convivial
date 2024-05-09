@@ -5,6 +5,45 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\user\Entity\User;
 
 /**
+ * Class for formatting a string to inject to html head.
+ */
+class convivial_bootstrap_javascript_snippet implements MarkupInterface {
+
+  /**
+   * The string to escape.
+   *
+   * @var string
+   */
+  protected $string;
+
+  /**
+   * Constructs an HtmlEscapedText object.
+   *
+   * @param string $string
+   *   The string to escape. This value will be cast to a string.
+   */
+  public function __construct($string) {
+    $this->string = (string) $string;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function __toString() {
+    return $this->string;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  #[\ReturnTypeWillChange]
+  public function jsonSerialize() {
+    return $this->__toString();
+  }
+
+}
+
+/**
  * Add Matomo to theme settings.
  */
 function _convivial_bootstrap_matomo_theme_settings(&$form) {
@@ -84,6 +123,9 @@ function _convivial_bootstrap_matomo_theme_settings_validate(&$form, FormStateIn
  */
 function _convivial_bootstrap_matomo_tracking_script(array &$variables) {
   $matomo_settings = theme_get_setting('matomo_settings');
+  if (!is_int($matomo_settings['tracking'])) {
+    return;
+  }
 
   if (!empty($matomo_settings['dimensions'])) {
     $dimensions = array_map(function ($item) {
@@ -152,11 +194,11 @@ function _convivial_bootstrap_matomo_tracking_script(array &$variables) {
     }
 
     $tracker_js .= "_paq.push(['trackPageView']);_paq.push(['enableLinkTracking']);(function () {var u = \"{$matomo_settings['server']}\";_paq.push(['setTrackerUrl', u + 'matomo.php']);_paq.push(['setSiteId', \"{$matomo_settings['site_id']}\"]);var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];g.async = true;g.src = '//cdn.matomo.cloud/convivial.matomo.cloud/matomo.js';s.parentNode.insertBefore(g, s);})();});";
-
+    $tracker_js_snippet = new convivial_bootstrap_javascript_snippet($tracker_js);
     $variables['#attached']['html_head'][] = [
       [
         '#tag' => 'script',
-        '#value' => $tracker_js,
+        '#value' => $tracker_js_snippet->__toString(),
       ],
       'matomo_tracking_script',
     ];

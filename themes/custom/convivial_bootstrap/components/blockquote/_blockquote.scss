@@ -1,16 +1,13 @@
 /*! @convivial_bootstrap/blockquote */
 
 blockquote {
-  padding: 1.25rem;
-  margin: 1.25rem 0;
-  background: rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(0, 0, 0, 0.5);
-  border-left-width: 5px;
-  font-size: inherit;
+  border-left: 10px solid rgba(0,0,0,.06);
+  font-size: 20px;
+  margin: 0 0 22px;
+  padding: 23px;
+  position: relative;
 
-  p, ol, ul {
-    &:last-child {
-      margin-bottom: 0;
-    }
+  > p:last-child {
+    margin-bottom: 0;
   }
 }

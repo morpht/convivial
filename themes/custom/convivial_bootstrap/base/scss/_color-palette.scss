@@ -1,33 +1,32 @@
 /*! @convivial_bootstrap/color-palette */
 :root {
-  --standard-light: #FFFFFF;
-  --standard-dark: #000000;
   --alt-text: rgba(0, 0, 0, 0.6);
 
-  --standard-bg: var(--bs-body-bg);
-  --standard-link: #066DAC;
-  --standard-focus: #ac4606;
-  --standard-accent: #064771;
-
-  --light-bg: #F0F0F0;
-  --light-link: #066DAC;
-  --light-focus: #ac4606;
-  --light-accent: #064771;
-
-  --dark-bg: #064771;
-  --dark-link: #68BEF8;
-  --dark-focus: #f8a268;
   --dark-accent: #9FD5F9;
+  --dark-bg: #064771;
+  --dark-focus: #DBA4F9;
+  --dark-link: #68BEF8;
 
-  --primary-light-bg: #FFDBFF;
-  --primary-light-link: #a00aa0;
-  --primary-light-focus: #0A549E;
-  --primary-light-accent: #700770;
+  --light-accent: #064771;
+  --light-bg: #F0F0F0;
+  --light-focus: #8806AC;
+  --light-link: #066DAC;
 
-  --primary-dark-bg: #700770;
-  --primary-dark-focus: #dbffdb;
-  --primary-dark-link: #ff8eff;
-  --primary-dark-accent: #FFDBFF;
+  --primary-dark-accent: #FBFCFE;
+  --primary-dark-bg: #066DAC;
+  --primary-dark-focus: #FCF7FD;
+  --primary-dark-link: #FBFCFE;
+
+  --primary-light-accent: #064771;
+  --primary-light-bg: #D9EEFC;
+  --primary-light-focus: #83079C;
+  --primary-light-link: #07609C;
+
+  --standard-accent: #064771;
+  --standard-dark: #000000;
+  --standard-focus: #9506BC;
+  --standard-light: #FFFFFF;
+  --standard-link: #066DAC;
 }
 
 .cp {
@@ -42,43 +41,43 @@
 }
 
 .cp--standard {
-  background-color: var(--standard-bg);
+  background-color: var(--bs-body-bg);
 }
 
 $palettes: (
   light: (
-    is_dark: false,
+    isdark: false,
     bg: var(--light-bg),
     link: var(--light-link),
-    focus: var(--light-focus),
     accent: var(--light-accent),
+    focus: var(--light-focus)
   ),
   dark: (
-    is_dark: true,
+    isdark: true,
     bg: var(--dark-bg),
     link: var(--dark-link),
-    focus: var(--dark-focus),
     accent: var(--dark-accent),
+    focus: var(--dark-focus)
   ),
   primary: (
-    is_dark: false,
+    isdark: false,
     bg: var(--primary-light-bg),
     link: var(--primary-light-link),
-    focus: var(--primary-light-focus),
     accent: var(--primary-light-accent),
+    focus: var(--primary-light-focus)
   ),
   primary-dark: (
-    is_dark: true,
+    isdark: true,
     bg: var(--primary-dark-bg),
     link: var(--primary-dark-link),
-    focus: var(--primary-dark-focus),
     accent: var(--primary-dark-accent),
+    focus: var(--primary-dark-focus)
   ),
 );
 
 // Palettes.
 @each $label, $map in $palettes {
-  $is_dark: map-get($map, is_dark);
+  $isdark: map-get($map, isdark);
 
   .cp--#{$label} {
 
@@ -90,10 +89,10 @@ $palettes: (
       color: map-get($map, link);
 
       &:focus {
-        outline: 2px solid map-get($map, focus);
+        outline: solid map-get($map, focus);
       }
 
-      @if $is_dark == true {
+      @if $isdark == true {
         &:hover {
           filter: brightness(85%);
         }
@@ -105,7 +104,7 @@ $palettes: (
     }
 
     // Foreground.
-    @if $is_dark == true {
+    @if $isdark == true {
       color: var(--standard-light);
       --alt-text: $white;
     } @else {
@@ -113,81 +112,73 @@ $palettes: (
     }
 
     // Buttons.
-    .btn.btn-link {
-      color: map-get($map, link);
-
-      &:focus {
-        outline: $btn-outline-width $btn-outline-style map-get($map, focus);
-      }
-    }
-
     // The darkness of the background will determine if things are lightened or darkened here.
-    @if $is_dark == true {
+    @if $isdark == true {
       .btn.btn-primary {
-        @include convivial-button-variant(map-get($map, accent), map-get($map, accent), map-get($map, focus), $darken-90);
+        @include convivial-button-variant(map-get($map, accent), map-get($map, accent), $darken-90);
       }
       .btn.btn-secondary {
-        @include convivial-button-variant(map-get($map, link), map-get($map, link), map-get($map, focus), $darken-90);
+        @include convivial-button-variant(map-get($map, link), map-get($map, link), $darken-90);
       }
       .btn.btn-light {
-        @include convivial-button-variant($lighten-90, $lighten-90, map-get($map, focus), $darken-90);
+        @include convivial-button-variant($lighten-90, $lighten-90, $darken-90);
       }
       .btn.btn-dark {
-        @include convivial-button-variant($darken-90, $darken-90, map-get($map, focus), $lighten-90);
+        @include convivial-button-variant($darken-10, $darken-10, $lighten-90);
       }
       .btn.btn-outline-primary {
-        @include convivial-outline-button-variant(map-get($map, accent), $darken-90, map-get($map, focus));
+        @include convivial-outline-button-variant(map-get($map, accent), $darken-90);
       }
       .btn.btn-outline-secondary {
-        @include convivial-outline-button-variant(map-get($map, link), $darken-90, map-get($map, focus));
+        @include convivial-outline-button-variant(map-get($map, link), $darken-90);
       }
       .btn.btn-outline-light {
-        @include convivial-outline-button-variant($lighten-90, $darken-90, map-get($map, focus));
+        @include convivial-outline-button-variant($lighten-90, $darken-90);
       }
       // On dark backgrounds, the dark button looks same as the light button.
       .btn.btn-outline-dark {
-        @include convivial-outline-button-variant($lighten-90, $darken-90, map-get($map, focus));
+        @include convivial-outline-button-variant($lighten-90, $darken-90);
       }
     } @else {
       .btn.btn-primary {
-        @include convivial-button-variant(map-get($map, accent), map-get($map, accent), map-get($map, focus), $lighten-90);
+        @include convivial-button-variant(map-get($map, accent), map-get($map, accent), $lighten-90);
       }
       .btn.btn-secondary {
-        @include convivial-button-variant(map-get($map, link), map-get($map, link), map-get($map, focus), $lighten-90);
+        @include convivial-button-variant(map-get($map, link), map-get($map, link), $lighten-90);
       }
       .btn.btn-light {
-        @include convivial-button-variant($darken-10, $darken-10, map-get($map, focus), $darken-90);
+        @include convivial-button-variant($darken-10, $darken-10, $darken-90);
       }
       .btn.btn-dark {
-        @include convivial-button-variant($darken-90, $darken-90, map-get($map, focus), $lighten-90);
+        @include convivial-button-variant($darken-90, $darken-90, $lighten-90);
       }
       .btn.btn-outline-primary {
-        @include convivial-outline-button-variant(map-get($map, accent), $lighten-90, map-get($map, focus));
+        @include convivial-outline-button-variant(map-get($map, accent), $lighten-90);
       }
       .btn.btn-outline-secondary {
-        @include convivial-outline-button-variant(map-get($map, link), $lighten-90, map-get($map, focus));
+        @include convivial-outline-button-variant(map-get($map, link), $lighten-90);
       }
       // On light backgrounds, the light button looks same as the dark button.
       .btn.btn-outline-light {
-        @include convivial-outline-button-variant($darken-90, $lighten-90, map-get($map, focus));
+        @include convivial-outline-button-variant($darken-90, $lighten-90);
       }
       .btn.btn-outline-dark {
-        @include convivial-outline-button-variant($darken-90, $lighten-90, map-get($map, focus));
+        @include convivial-outline-button-variant($darken-90, $lighten-90);
       }
     }
 
     // Callout.
-    @if $is_dark == true {
-      blockquote,
+    @if $isdark == true {
       .callout {
         background: rgba(0, 0, 0, 0.08);
-        border-color: rgba(255, 255, 255, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-left-width: 5px;
       }
     } @else {
-      blockquote,
       .callout {
         background: rgba(0, 0, 0, 0.08);
-        border-color: rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        border-left-width: 5px;
       }
     }
   }

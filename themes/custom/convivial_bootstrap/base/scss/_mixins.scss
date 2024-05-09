@@ -111,7 +111,7 @@
 //
 // Easily pump out default styles, as well as :hover, :focus, :active,
 // for all buttons
-@mixin convivial-button-variant($background, $border, $focus, $color: color-contrast($background)) {
+@mixin convivial-button-variant($background, $border, $color: color-contrast($background)) {
   color: $color;
   @include gradient-bg($background);
   border-color: $border;
@@ -125,7 +125,6 @@
   &:focus {
     color: $color;
     @include gradient-bg($background);
-    outline: $btn-outline-width $btn-outline-style $focus;
   }
 
   &:active,
@@ -137,7 +136,13 @@
   }
 }
 
-@mixin convivial-outline-button-variant($color, $color-hover, $focus, $active-background: $color, $active-border: $color, $active-color: $color-hover) {
+@mixin convivial-outline-button-variant(
+  $color,
+  $color-hover,
+  $active-background: $color,
+  $active-border: $color,
+  $active-color: $color-hover
+) {
   color: $color;
   border-color: $color;
 
@@ -149,7 +154,7 @@
   }
 
   &:focus {
-    outline: $btn-outline-width $btn-outline-style $focus;
+    color: $color;
   }
 
   &:active,
