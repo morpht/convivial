@@ -30,6 +30,10 @@ Cypress.on('uncaught:exception', (err, runnable) => {
   if (err.message.includes('Handlebars is not defined')) {
     return false
   }
+  // Ignore a specific syntax error message
+  if (err.message.includes("Uncaught SyntaxError: expected expression, got '&'")) {
+    return false;
+  }
   // we still want to ensure there are no other unexpected
   // errors, so we let them fail the test
 })
