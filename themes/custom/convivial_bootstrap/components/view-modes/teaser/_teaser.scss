@@ -27,6 +27,15 @@ $teaser--medium_image-width: 12.5rem; // 200px
     width: 100%;
     height: auto;
   }
+
+  @if $enable-teaser-image-rounded {
+    overflow: hidden;
+
+    picture,
+    img {
+      @include border-radius($teaser-image-border-radius);
+    }
+  }
 }
 
 .teaser__content {
