@@ -54,6 +54,10 @@
       transform: scale($view-modes-transform-scale) translate(43.5%, -43.5%);
     }
   }
+
+  @if $enable-rounded {
+    @include border-radius($card-border-radius);
+  }
 }
 
 .node--view-mode-image {

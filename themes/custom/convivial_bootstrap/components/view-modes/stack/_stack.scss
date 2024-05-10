@@ -9,6 +9,12 @@
       display: none;
     }
   }
+
+  @if $enable-rounded {
+    @include border-radius($card-border-radius);
+
+    overflow: hidden;
+  }
 }
 
 .stack__image {

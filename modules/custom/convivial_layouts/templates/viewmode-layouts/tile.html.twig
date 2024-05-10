@@ -9,7 +9,7 @@
   'tile',
 ] %}
 
-{% set title_content %}
+{% set tile_content %}
   {% if content.title|render|striptags|trim %}
     <h3{{ region_attributes.title.addClass('layout__region', 'layout__region--title', 'tile__title') }}>
       {{ content.title }}
@@ -45,10 +45,10 @@
   <div{{ attributes.addClass(classes) }}>
     {% if item_url %}
       <a href="{{ item_url }}" class="tile__link">
-        {{ title_content }}
+        {{ tile_content }}
       </a>
     {% else %}
-      {{ title_content }}
+      {{ tile_content }}
     {% endif %}
   </div>
 {% endset %}

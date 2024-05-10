@@ -94,6 +94,10 @@
   padding: 30px 20px;
   text-align: center;
   margin: 0 auto;
+
+  @if $enable-rounded {
+    @include border-radius($card-border-radius);
+  }
 }
 
 .icon__icon {
@@ -124,6 +128,10 @@
 
   .icon--has-image.icon-bg--dark & {
     background: rgba($black, .5);
+  }
+
+  @if $enable-rounded {
+    @include border-radius($card-border-radius);
   }
 }
 
