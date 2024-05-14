@@ -20,7 +20,7 @@
     "anchorific": "github:renettarenula/anchorific.js#master",
     "autoprefixer": "^9.5.0",
     "billboard.js": "^1.6.2",
-    "bootstrap": "^5.2.1",
+    "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.0.0",
     "bootstrap-ie11": "^5.2.1",
     "browser-sync": "^2.24.4",
