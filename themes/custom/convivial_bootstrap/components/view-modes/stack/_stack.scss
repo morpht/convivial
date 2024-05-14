@@ -37,7 +37,7 @@
   .stack__info {
     @include font-size($h6-font-size);
     line-height: $headings-line-height;
-    color: $text-muted;
+    color: $body-secondary-color;
     margin-bottom: .5rem;
     text-transform: uppercase;
   }
