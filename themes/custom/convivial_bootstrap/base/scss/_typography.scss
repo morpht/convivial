@@ -1,0 +1,7 @@
+@include media-breakpoint-up('md') {
+  .main-content {
+    h1, h2, h3, h4, h5, h6, p, ul, ol, dl {
+      max-width: $text-max-width;
+    }
+  }
+}
