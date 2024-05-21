@@ -26,5 +26,7 @@ settings:
   depth: 0
   expand_all_items: false
   parent: 'footer:'
+  render_parent: false
   suggestion: footer
+  hide_on_nonactive: false
 visibility: {  }
