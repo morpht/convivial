@@ -6,7 +6,6 @@ dependencies:
     - field.field.paragraph.gallery.field_gallery_colour_classes
     - field.field.paragraph.gallery.field_gallery_layout_classes
     - field.field.paragraph.gallery.field_gallery_media
-    - field.field.paragraph.gallery.field_gallery_photos
     - field.field.paragraph.gallery.field_gallery_show_controls
     - field.field.paragraph.gallery.field_gallery_style_classes
     - field.field.paragraph.gallery.field_heading
@@ -62,15 +61,6 @@ content:
       link: false
     third_party_settings: {  }
     weight: 4
-    region: content
-  field_gallery_photos:
-    type: entity_reference_entity_view
-    label: hidden
-    settings:
-      view_mode: landscape
-      link: false
-    third_party_settings: {  }
-    weight: 3
     region: content
   field_gallery_style_classes:
     type: entity_class_formatter
