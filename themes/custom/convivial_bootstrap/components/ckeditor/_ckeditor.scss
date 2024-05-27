@@ -4,7 +4,8 @@
 // Special CKEditor classes.
 ///
 .introduction {
-  @extend .lead;
+  font-size: $introduction-font-size;
+  font-weight: $introduction-font-weight;
 }
 
 // Lists.
