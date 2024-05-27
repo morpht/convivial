@@ -6,12 +6,12 @@ dependencies:
 id: content
 label: Content
 type: 'canonical_entities:node'
-pattern: '[node:menu-link:parent:url:path]/[node:title]'
+pattern: '[node:menu-link:parent:url:path]/[node:menu-link:title]'
 selection_criteria:
-  2dffb019-4d2f-41ec-b9e6-61302c5c1c9a:
+  642142ee-6a05-4622-a8b2-3000697db5b3:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 2dffb019-4d2f-41ec-b9e6-61302c5c1c9a
+    uuid: 642142ee-6a05-4622-a8b2-3000697db5b3
     context_mapping:
       node: node
     bundles:
