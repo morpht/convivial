@@ -1,0 +1,55 @@
+.block,
+.paragraph {
+  &.style--hero {
+    font-size: $hero-font-size;
+    padding-top: $hero-vertical-spacing;
+    padding-bottom: $hero-vertical-spacing;
+
+    .introduction {
+      font-size: $hero-introduction-font-size;
+    }
+
+    .btn {
+      @include button-size($hero-btn-padding-y-lg, $hero-btn-padding-x-lg, $hero-btn-font-size-lg, $hero-btn-border-radius-lg);
+    }
+
+    h1 {
+      font-size: $hero-h1-font-size;
+    }
+
+    h2 {
+      font-size: $hero-h2-font-size;
+    }
+
+    h3 {
+      font-size: $hero-h3-font-size;
+    }
+
+    h4 {
+      font-size: $hero-h4-font-size;
+    }
+
+    h5 {
+      font-size: $hero-h5-font-size;
+    }
+
+    h6 {
+      font-size: $hero-h6-font-size;
+    }
+
+    h1, h2, h3,
+    h4, h5, h6 {
+      margin-bottom: $hero-headings-margin-bottom;
+    }
+
+    p, ol, ul, dl {
+      margin-bottom: $hero-font-margin-bottom;
+    }
+
+    blockquote,
+    .callout {
+      margin-top: $hero-font-margin-bottom;
+      margin-bottom: $hero-font-margin-bottom;
+    }
+  }
+}

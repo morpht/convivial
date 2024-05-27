@@ -1,22 +1,49 @@
+// Typography
+$text-max-width:            50rem;
+$introduction-font-size:    $font-size-base * 1.25;
+$introduction-font-weight:  300;
+
 ///
-// Components.
+// Components
 ///
 
-// Header.
+// Header
 $timing-header-transition:                      .4s;
 $timing-header-easing:                          ease;
-$zindex-navbar-header:                          500;
+$z-index-navbar-header:                          500;
 
-// Hero.
-$banner-bg:                                       #e4e4e6;
-$banner-bg-lg:                                    hsla(0, 0%, 100%, .8);
-$banner-icon-fill:                                #002664;
-$banner-dark-bg:                                  #333;
-$banner-dark-bg-lg:                               rgba(0, 0, 0, .8);
-$banner-dark-icon-fill:                           $white;
+// Hero
+$hero-scale:                    1.25;
+$hero-vertical-spacing:         calc($grid-gutter-width * 4);
+$hero-horizontal-spacing:       0;
 
-// Social share.
-// Social share icons.
+$hero-font-size:                $font-size-base * $hero-scale;
+$hero-introduction-font-size:   $introduction-font-size * $hero-scale;
+
+$hero-h1-font-size:             $h1-font-size * $hero-scale;
+$hero-h2-font-size:             $h2-font-size * $hero-scale;
+$hero-h3-font-size:             $h3-font-size * $hero-scale;
+$hero-h4-font-size:             $h4-font-size * $hero-scale;
+$hero-h5-font-size:             $h5-font-size * $hero-scale;
+$hero-h6-font-size:             $h6-font-size * $hero-scale;
+$hero-font-margin-bottom:       $spacer * $hero-scale;
+$hero-headings-margin-bottom:   $spacer * $hero-scale;
+
+// Hero button
+$hero-btn-padding-y-lg:         $btn-padding-y-lg;
+$hero-btn-padding-x-lg:         $btn-padding-x-lg;
+$hero-btn-font-size-lg:         $hero-font-size;
+$hero-btn-border-radius-lg:     $btn-border-radius-lg;
+
+// Banner
+$banner-bg:                 #E4E4E6;
+$banner-bg-lg:              hsla(0, 0%, 100%, 0.8);
+$banner-icon-fill:          #002664;
+$banner-dark-bg:            #333333;
+$banner-dark-bg-lg:         rgba(0, 0, 0, 0.8);
+$banner-dark-icon-fill:     $white;
+
+// Social share
 $facebook-svg: url('data:image/svg+xml,<svg width="500px" height="500px" viewBox="0 0 500 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="facebook" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><path d="M347.274227,50.0824742 L295.872165,50 C238.123711,50 200.804124,88.2886598 200.804124,147.550515 L200.804124,192.527835 L149.121649,192.527835 C144.65567,192.527835 141.039175,196.148454 141.039175,200.614433 L141.039175,265.781443 C141.039175,270.247423 144.659794,273.863918 149.121649,273.863918 L200.804124,273.863918 L200.804124,438.301031 C200.804124,442.76701 204.420619,446.383505 208.886598,446.383505 L276.317526,446.383505 C280.783505,446.383505 284.4,442.762887 284.4,438.301031 L284.4,273.863918 L344.828866,273.863918 C349.294845,273.863918 352.91134,270.247423 352.91134,265.781443 L352.936082,200.614433 C352.936082,198.470103 352.082474,196.416495 350.569072,194.898969 C349.05567,193.381443 346.993814,192.527835 344.849485,192.527835 L284.4,192.527835 L284.4,154.4 C284.4,136.074227 288.76701,126.771134 312.639175,126.771134 L347.265979,126.758763 C351.727835,126.758763 355.34433,123.138144 355.34433,118.676289 L355.34433,58.1649485 C355.34433,53.7072165 351.731959,50.0907216 347.274227,50.0824742 Z" id="Shape" fill="#{$black}" fill-rule="nonzero"></path></g> </svg>');
 $facebook-svg--inverse: url('data:image/svg+xml, <svg width="500px" height="500px" viewBox="0 0 500 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="facebook" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><path d="M347.274227,50.0824742 L295.872165,50 C238.123711,50 200.804124,88.2886598 200.804124,147.550515 L200.804124,192.527835 L149.121649,192.527835 C144.65567,192.527835 141.039175,196.148454 141.039175,200.614433 L141.039175,265.781443 C141.039175,270.247423 144.659794,273.863918 149.121649,273.863918 L200.804124,273.863918 L200.804124,438.301031 C200.804124,442.76701 204.420619,446.383505 208.886598,446.383505 L276.317526,446.383505 C280.783505,446.383505 284.4,442.762887 284.4,438.301031 L284.4,273.863918 L344.828866,273.863918 C349.294845,273.863918 352.91134,270.247423 352.91134,265.781443 L352.936082,200.614433 C352.936082,198.470103 352.082474,196.416495 350.569072,194.898969 C349.05567,193.381443 346.993814,192.527835 344.849485,192.527835 L284.4,192.527835 L284.4,154.4 C284.4,136.074227 288.76701,126.771134 312.639175,126.771134 L347.265979,126.758763 C351.727835,126.758763 355.34433,123.138144 355.34433,118.676289 L355.34433,58.1649485 C355.34433,53.7072165 351.731959,50.0907216 347.274227,50.0824742 Z" id="Shape" fill="#{$white}" fill-rule="nonzero"></path></g> </svg>');
 $linkedin-svg: url('data:image/svg+xml,<svg width="500px" height="500px" viewBox="0 0 500 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="linkedin" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><path d="M458.366019,295.187379 L458.366019,449.572816 L368.863107,449.572816 L368.863107,305.527184 C368.863107,269.341748 355.917476,244.646602 323.520388,244.646602 C298.78932,244.646602 284.071845,261.28932 277.597087,277.38835 C275.235922,283.143689 274.628155,291.154369 274.628155,299.21068 L274.628155,449.572816 L185.095146,449.572816 C185.095146,449.572816 186.300971,205.606796 185.095146,180.330097 L274.619417,180.330097 L274.619417,218.494175 C274.437864,218.779612 274.201942,219.087379 274.031068,219.364078 L274.619417,219.364078 L274.619417,218.494175 C286.513592,200.174757 307.75534,174.004854 355.300971,174.004854 C414.206796,174.003883 458.366019,212.486408 458.366019,295.187379 Z M91.4398058,50.5417476 C60.8106796,50.5417476 40.776699,70.6320388 40.776699,97.0514563 C40.776699,122.895146 60.231068,143.595146 90.2514563,143.595146 L90.8495146,143.595146 C122.071845,143.595146 141.48932,122.899029 141.48932,97.0514563 C140.900971,70.6320388 122.071845,50.5417476 91.4398058,50.5417476 Z M46.0941748,449.572816 L135.593204,449.572816 L135.593204,180.330097 L46.0941748,180.330097 L46.0941748,449.572816 Z" id="LinkedIn" fill="#{$black}" fill-rule="nonzero"></path></g></svg>');
@@ -28,7 +55,7 @@ $email-svg--inverse: url('data:image/svg+xml,<svg width="500px" height="500px" v
 $youtube-svg: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z" fill="#{$black}"/></svg> ');
 $youtube-svg--inverse: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z" fill="#{white}"/></svg> ');
 
-// Social services colors variable. Name is used for constructing the selector.
+// Social services colors variable. Name is used for constructing the selector
 $social-services:
   "facebook" #3b5998 $facebook-svg--inverse,
   "linkedin" #007bb6 $linkedin-svg--inverse,
@@ -40,58 +67,68 @@ $social-share-color: $white;
 $social-share-border-radius: 4px;
 $sizes: 2.5rem, 3.5rem, 1.5rem;
 
-// Search.
+// Search
 $size-searchform-height--top-reveal:            65px;
 
 ///
-// Color system.
+// Color system
 ///
 
-// Dark.
+// Dark
 $dark-body-color:                               $white;
 $dark-link-color:                               rgba($white, .75);
 $dark-link-hover-color:                         $white;
 $dark-link-active-color:                        $white;
 
 ///
-// Utility.
+// Utility
 ///
 
-// Anchor.
-$link-outline-width:  2px;
-$link-outline-style:  solid;
-$link-outline-offset: 2px;
+// Outline
+$outline-width:         2px;
+$outline-style:         solid;
+$outline-offset:        2px;
 
-// Button.
-$btn-outline-width:   $link-outline-width;
-$btn-outline-style:   $link-outline-style;
-$btn-outline-offset:  $link-outline-offset;
+// Anchor
+$link-outline-width:    $outline-width;
+$link-outline-style:    $outline-style;
+$link-outline-offset:   $outline-offset;
 
-// Color.
-$lighten-05:                                    rgba(255, 255, 255, .05);
-$lighten-10:                                    rgba(255, 255, 255, .10);
-$lighten-25:                                    rgba(255, 255, 255, .25);
-$lighten-50:                                    rgba(255, 255, 255, .50);
-$lighten-75:                                    rgba(255, 255, 255, .75);
-$lighten-90:                                    rgba(255, 255, 255, .90);
-$lighten-95:                                    rgba(255, 255, 255, .95);
+// Button
+$btn-outline-width:     $outline-width;
+$btn-outline-style:     $outline-style;
+$btn-outline-offset:    $outline-offset;
 
-$darken-05:                                     rgba(0, 0, 0, .05);
-$darken-10:                                     rgba(0, 0, 0, .10);
-$darken-25:                                     rgba(0, 0, 0, .25);
-$darken-50:                                     rgba(0, 0, 0, .50);
-$darken-75:                                     rgba(0, 0, 0, .75);
-$darken-90:                                     rgba(0, 0, 0, .90);
+// Color
+$lighten-05:                                    rgba(255, 255, 255, 0.05);
+$lighten-10:                                    rgba(255, 255, 255, 0.10);
+$lighten-20:                                    rgba(255, 255, 255, 0.20);
+$lighten-25:                                    rgba(255, 255, 255, 0.25);
+$lighten-50:                                    rgba(255, 255, 255, 0.50);
+$lighten-75:                                    rgba(255, 255, 255, 0.75);
+$lighten-80:                                    rgba(255, 255, 255, 0.80);
+$lighten-90:                                    rgba(255, 255, 255, 0.90);
+$lighten-95:                                    rgba(255, 255, 255, 0.95);
+
+$darken-05:                                     rgba(0, 0, 0, 0.05);
+$darken-10:                                     rgba(0, 0, 0, 0.10);
+$darken-20:                                     rgba(0, 0, 0, 0.20);
+$darken-25:                                     rgba(0, 0, 0, 0.25);
+$darken-50:                                     rgba(0, 0, 0, 0.50);
+$darken-75:                                     rgba(0, 0, 0, 0.75);
+$darken-80:                                     rgba(0, 0, 0, 0.80);
+$darken-90:                                     rgba(0, 0, 0, 0.90);
+$darken-95:                                     rgba(0, 0, 0, 0.95);
 
 ///
-// View modes utilities.
+// View modes utilities
 ///
 
 $view-modes-transform-scale:                    1.15;
 $view-modes-transition-time:                    .3s;
 
 ///
-// View modes colors.
+// View modes colors
 ///
 
 $shadow-color:                                  transparentize($black, .85);
@@ -103,7 +140,7 @@ $govcms8-calendar-item-background-current:      #f2fbfd;
 $govcms8-calendar-item-background-past:         #fafafa;
 $govcms8-calendar-item-foreground-past:         #737373;
 
-// Icon.
+// Icon
 $icon-color:                                    $body-color;
 $icon-link-color:                               $body-color;
 $icon-link-hover-color:                         $body-color;
@@ -111,23 +148,23 @@ $icon-dark-color:                               $dark-body-color;
 $icon-dark-link-color:                          $dark-body-color;
 $icon-dark-link-hover-color:                    $dark-body-color;
 
-// Search.
+// Search
 $search-link-color:                             $link-color;
 $search-link-hover-color:                       $link-hover-color;
 
-// Stack.
+// Stack
 $stack-bg:                                      $white;
 $stack-body-color:                              $body-color;
 $stack-link-color:                              $link-color;
 $stack-link-hover-color:                        $link-hover-color;
 
-// Summary.
+// Summary
 $summary-link-color:                            $link-color;
 $summary-link-hover-color:                      $link-hover-color;
 $summary-dark-link-color:                       $dark-link-color;
 $summary-dark-link-hover-color:                 $dark-link-hover-color;
 
-// Teaser.
+// Teaser
 $teaser-link-color:                             $link-color;
 $teaser-link-hover-color:                       $link-hover-color;
 $teaser-dark-link-color:                        $dark-link-color;
@@ -136,13 +173,13 @@ $teaser-dark-link-hover-color:                  $dark-link-hover-color;
 $enable-teaser-image-rounded:                   $enable-rounded;
 $teaser-image-border-radius:                    $card-border-radius;
 
-// Tile.
+// Tile
 $tile-body-color:                               $white;
 $tile-link-color:                               $white;
 $tile-link-hover-color:                         $white;
 $tile-overlay:                                  $black;
 
-// Title.
+// Title
 $title-bg:                                      $light;
 $title-body-color:                              $body-color;
 $title-link-color:                              $body-color;

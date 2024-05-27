@@ -1,45 +1,19 @@
 /*! @convivial_bootstrap/button */
 
 .btn {
-  display: inline-block;
-  font-family: $btn-font-family;
-  font-weight: $btn-font-weight;
-  line-height: $btn-line-height;
-  color: $body-color;
-  text-align: center;
-  text-decoration: if($link-decoration == none, null, none);
-  white-space: $btn-white-space;
-  vertical-align: middle;
-  cursor: if($enable-button-pointers, pointer, null);
-  user-select: none;
-  background-color: transparent;
-  border: $btn-border-width solid transparent;
-  @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-border-radius);
-  @include transition($btn-transition);
-
   &:hover {
     text-decoration: if($link-hover-decoration == underline, none, null);
   }
 
   &:focus {
-    outline: $btn-outline-width $btn-outline-style var(--standard-focus);
+    outline: $btn-outline-width $btn-outline-style var(--standard-link-active);
     outline-offset: $btn-outline-offset;
   }
 
-  &:active,
-  &.active {
-    filter: brightness(0.9);
-  }
-
   &:focus-visible {
-    background: transparent;
+    background: var(--standard-link-hover);
     box-shadow: none;
   }
-}
-
-// Override bootstrap reboot button
-button:focus:not(:focus-visible) {
-  outline: $btn-outline-width $btn-outline-style var(--standard-focus);
 }
 
 //
@@ -49,65 +23,88 @@ button:focus:not(:focus-visible) {
 $buttons: (
   primary: (
     is_dark: true,
-    bg: var(--standard-accent),
-    focus: var(--standard-focus),
+    background: var(--standard-accent),
+    hover: var(--standard-accent-hover),
+    active: var(--standard-accent-active),
   ),
   secondary: (
     is_dark: true,
-    bg: var(--standard-link),
-    focus: var(--standard-focus),
+    background: var(--standard-link),
+    hover: var(--standard-link-hover),
+    active: var(--standard-link-active),
   ),
   light: (
     is_dark: false,
-    bg: var(--light-bg),
-    focus: var(--standard-focus),
+    background: $darken-10,
+    hover: $darken-20,
+    active: $darken-25,
   ),
   dark: (
     is_dark: true,
-    bg: var(--dark-bg),
-    focus: var(--standard-focus),
+    background: $darken-90,
+    hover: $darken-95,
+    active: $darken-80,
   ),
   success: (
     is_dark: true,
-    bg: var(--bs-success),
-    focus: var(--standard-focus),
+    background: var(--bs-success),
+    hover: var(--bs-btn-hover-bg),
+    active: var(--bs-btn-active-bg),
   ),
   danger: (
     is_dark: true,
-    bg: var(--bs-danger),
-    focus: var(--standard-focus),
+    background: var(--bs-danger),
+    hover: var(--bs-btn-hover-bg),
+    active: var(--bs-btn-active-bg),
   ),
   warning: (
     is_dark: false,
-    bg: var(--bs-warning),
-    focus: var(--standard-focus),
+    background: var(--bs-warning),
+    hover: var(--bs-btn-hover-bg),
+    active: var(--bs-btn-active-bg),
   ),
   info: (
     is_dark: false,
-    bg: var(--bs-info),
-    focus: var(--standard-focus),
+    background: var(--bs-info),
+    hover: var(--bs-btn-hover-bg),
+    active: var(--bs-btn-active-bg),
   ),
 );
 
-@each $label, $map in $buttons {
-  $is_dark: map-get($map, is_dark);
+@each $name, $button in $buttons {
+  $is_dark: map-get($button, is_dark);
 
   @if $is_dark == true {
-    .btn.btn-#{$label} {
-      @include convivial-button-variant(map-get($map, bg), map-get($map, bg), map-get($map, focus), $lighten-90);
+    .btn.btn-#{$name} {
+      @include convivial-button-variant(
+        $background: map-get($button, background),
+        $color: $lighten-90,
+        $hover: map-get($button, hover),
+        $focus:  map-get($button, active),
+      );
     }
-
-    .btn.btn-outline-#{$label} {
-      @include convivial-outline-button-variant(map-get($map, bg), $white, map-get($map, focus));
+    .btn.btn-outline-#{$name} {
+      @include convivial-outline-button-variant(
+        $color: map-get($button, background),
+        $color-hover: $white,
+        $focus: map-get($button, active),
+      );
     }
-  }
-  @else {
-    .btn.btn-#{$label} {
-      @include convivial-button-variant(map-get($map, bg), map-get($map, bg), map-get($map, focus), $darken-90);
+  } @else {
+    .btn.btn-#{$name} {
+      @include convivial-button-variant(
+        $background: map-get($button, background),
+        $color: $darken-90,
+        $hover: map-get($button, hover),
+        $focus: map-get($button, active)
+      );
     }
-
-    .btn.btn-outline-#{$label} {
-      @include convivial-outline-button-variant(map-get($map, bg), $black, map-get($map, focus));
+    .btn.btn-outline-#{$name} {
+      @include convivial-outline-button-variant(
+        $color: map-get($button, background),
+        $color-hover: $black,
+        $focus: map-get($button, active)
+      );
     }
   }
 }
@@ -115,13 +112,14 @@ $buttons: (
 // Override for light button.
 // On light backgrounds, the light button looks same as the dark button.
 .btn.btn-outline-light {
-  @include convivial-outline-button-variant(var(--dark-bg), $lighten-90, var(--dark-focus));
+  @include convivial-outline-button-variant(
+    $color: var(--dark-background),
+    $color-hover: $lighten-90,
+    $focus: var(--dark-link-active)
+  );
 }
 
-//
 // Link buttons
-//
-
 // Make a button look and behave like a link
 .btn-link {
   font-weight: $font-weight-normal;
@@ -133,10 +131,9 @@ $buttons: (
   }
 
   &:focus {
+    background: transparent;
     text-decoration: $link-hover-decoration;
-    outline: $btn-outline-width $btn-outline-style var(--standard-focus);
+    outline: $btn-outline-width $btn-outline-style var(--standard-link-active);
     outline-offset: $btn-outline-offset;
   }
-
-  // No need for an active state here
 }

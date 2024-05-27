@@ -85,7 +85,7 @@
     &:hover,
     &:focus {
       &:before {
-        color: var(--standard-focus);
+        color: var(--standard-link-active);
         opacity: 0.75;
       }
     }
@@ -98,7 +98,7 @@
       &:hover,
       &:focus {
         &:before {
-          color: var(--light-focus);
+          color: var(--light-link-active);
         }
       }
     }
@@ -111,20 +111,20 @@
       &:hover,
       &:focus {
         &:before {
-          color: var(--dark-focus);
+          color: var(--dark-link-active);
         }
       }
     }
 
     .cp--primary & {
       &:before {
-        color: var(--primary-light-link);
+        color: var(--primary-link);
       }
 
       &:hover,
       &:focus {
         &:before {
-          color: var(--primary-light-focus);
+          color: var(--primary-link-active);
         }
       }
     }
@@ -137,7 +137,7 @@
       &:hover,
       &:focus {
         &:before {
-          color: var(--primary-dark-focus);
+          color: var(--primary-dark-link-active);
         }
       }
     }

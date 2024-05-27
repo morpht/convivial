@@ -1,4 +1,43 @@
-/* Bootstrap Overrides */
+// Override bootstrap reboot
+
+// Lists
 .list-group-item {
   border: none;
+}
+
+// Buttons
+button:focus:not(:focus-visible) {
+  outline: $btn-outline-width $btn-outline-style var(--standard-link-active);
+}
+
+:not(.btn-check) {
+  + .btn-primary:hover {
+    color: var(--standard-light);
+    background-color: var(--standard-accent-hover);
+    border-color: var(--standard-accent);
+  }
+
+  + .btn-secondary:hover {
+    color: var(--standard-light);
+    background-color: var(--standard-link-hover);
+    border-color: var(--standard-link);
+  }
+
+  + .btn:active {
+    outline: $btn-outline-width $btn-outline-style var(--standard-link);
+    outline-offset: $btn-outline-offset;
+    border-color: transparent;
+  }
+}
+
+.btn-primary:first-child:hover {
+  color: var(--standard-light);
+  background-color: var(--standard-accent-hover);
+  border-color: var(--standard-accent);
+}
+
+.btn-secondary:first-child:hover {
+  color: var(--standard-light);
+  background-color: var(--standard-link-hover);
+  border-color: var(--standard-link);
 }

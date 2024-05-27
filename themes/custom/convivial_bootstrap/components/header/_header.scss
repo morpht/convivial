@@ -4,7 +4,7 @@
   position: relative;
 
   // So it appears above mostly all elements.
-  z-index: $zindex-navbar-header;
+  z-index: $z-index-navbar-header;
 
   // Fade the background colour when it becomes Sticky, otherwise it's too fast
   // and not nice UX.
@@ -26,7 +26,7 @@
   // So it appears above mostly all elements. If we don't include this the
   // Header's Sticky placeholder element can cover up the Mobile Nav and
   // navbar-toggler button.
-  z-index: $zindex-navbar-header;
+  z-index: $z-index-navbar-header;
 
   // Since the "Default" colour scheme doesn't output a class and our Header
   // would therefore appear without a background-color, we check if these

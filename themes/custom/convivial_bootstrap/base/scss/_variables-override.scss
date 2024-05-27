@@ -1,8 +1,9 @@
 // Color system
 
-$black:    #000;
-$white:    #fff;
-
+$black:       #000000;
+$white:       #FFFFFF;
+$primary:     #064771;
+$secondary:   #066DAC;
 
 // Body
 //
@@ -32,7 +33,18 @@ $navbar-light-active-color:         $black;
 //
 // Define common padding and border radius sizes and more.
 
-$border-radius:                     4px;
+$border-radius:               4px;
+
+$box-shadow:                  none;
+$box-shadow-sm:               none;
+$box-shadow-lg:               none;
+$box-shadow-inset:            none;
+
+// Buttons + Forms
+//
+// Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
+
+$input-btn-focus-box-shadow:  none;
 
 // Badges
 

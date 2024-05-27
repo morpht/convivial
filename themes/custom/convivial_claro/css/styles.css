@@ -33,7 +33,12 @@
   width: auto;
 }
 
-/* Ckeditor fixes */
+/* CKEditor fixes */
 figure.drupal-media.ck-widget {
   width: 100%;
+}
+
+/* Hide CKEditor inapplicable styles */
+.ck.ck-style-panel .ck-style-grid .ck-style-grid__button.ck-disabled {
+  display: none;
 }
