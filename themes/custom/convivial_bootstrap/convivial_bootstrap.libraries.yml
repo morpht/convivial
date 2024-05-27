@@ -42,7 +42,9 @@ billboard:
   remote: https://github.com/naver/billboard.js
   version: 1.6.2
   license:
+    name: MIT
     url: https://github.com/c3js/c3/blob/master/LICENSE
+    gpl-compatible: true
   css:
     theme:
       libraries/billboard.js/dist/billboard.min.css: { minified: true }
@@ -72,7 +74,9 @@ d3:
   remote: https://github.com/d3/d3
   version: 5.7.0
   license:
+    name: Custom
     url: https://github.com/d3/d3/blob/master/LICENSE
+    gpl-compatible: true
   js:
     libraries/d3/dist/d3.min.js: { minified: true }
 
