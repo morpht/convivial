@@ -276,7 +276,7 @@ display:
           preserve_facet_query_args: false
       relationships: {  }
       css_class: 'views-layout views-layout--full-width'
-      use_ajax: false
+      use_ajax: true
       header:
         area:
           id: area
@@ -314,7 +314,6 @@ display:
       tags:
         - 'config:field.storage.node.field_about'
         - 'config:search_api.index.content'
-        - 'search_api_list:content'
   block_1:
     id: block_1
     display_title: Block
@@ -337,4 +336,3 @@ display:
       tags:
         - 'config:field.storage.node.field_about'
         - 'config:search_api.index.content'
-        - 'search_api_list:content'

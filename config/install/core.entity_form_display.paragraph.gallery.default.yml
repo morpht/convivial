@@ -5,7 +5,7 @@ dependencies:
     - field.field.paragraph.gallery.field_body
     - field.field.paragraph.gallery.field_gallery_colour_classes
     - field.field.paragraph.gallery.field_gallery_layout_classes
-    - field.field.paragraph.gallery.field_gallery_media
+    - field.field.paragraph.gallery.field_gallery_photos
     - field.field.paragraph.gallery.field_gallery_show_controls
     - field.field.paragraph.gallery.field_gallery_style_classes
     - field.field.paragraph.gallery.field_heading
@@ -35,33 +35,33 @@ content:
     third_party_settings: {  }
   field_gallery_colour_classes:
     type: options_select
-    weight: 8
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   field_gallery_layout_classes:
     type: options_select
-    weight: 6
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_gallery_media:
+  field_gallery_photos:
     type: media_library_widget
-    weight: 4
+    weight: 3
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   field_gallery_show_controls:
     type: boolean_checkbox
-    weight: 5
+    weight: 4
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   field_gallery_style_classes:
     type: options_select
-    weight: 9
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -82,7 +82,7 @@ content:
     third_party_settings: {  }
   field_modifiers:
     type: entity_reference_paragraphs
-    weight: 11
+    weight: 10
     region: content
     settings:
       title: Modifier
@@ -94,13 +94,13 @@ content:
     third_party_settings: {  }
   field_position:
     type: options_select
-    weight: 10
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
   field_read_more:
     type: link_default
-    weight: 7
+    weight: 6
     region: content
     settings:
       placeholder_url: ''

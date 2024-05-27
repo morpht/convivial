@@ -1,15 +1,15 @@
-// Variables override.
+// Variables override
 @import "variables-override";
 
-// Import Bootstrap.
-// Configuration.
+// Import Bootstrap
+// Configuration
 @import "../../libraries/bootstrap/scss/functions";
 @import "../../libraries/bootstrap/scss/variables";
 @import "../../libraries/bootstrap/scss/maps";
 @import "../../libraries/bootstrap/scss/mixins";
 @import "../../libraries/bootstrap/scss/utilities";
 
-// Layout & components.
+// Layout & components
 @import "../../libraries/bootstrap/scss/root";
 @import "../../libraries/bootstrap/scss/reboot";
 @import "../../libraries/bootstrap/scss/type";
@@ -48,25 +48,25 @@
 // Utilities
 @import "../../libraries/bootstrap/scss/utilities/api";
 
-// Custom variables.
+// Custom variables
 @import "custom-variables";
 
-// Custom mixins.
+// Custom mixins
 @import "mixins";
 
-// Colors.
+// Colors
 @import "colors";
 
-// Color palette.
+// Color palette
 @import "color-palette";
 
-// Base styling.
+// Base styling
 @import "base";
 
-// Typography.
-@import "typography";
+// Overridden
+@import "overrides";
 
-// Components.
+// Components
 @import "components/accessible-megamenu/accessible-megamenu";
 @import "components/anchor/anchor";
 @import "components/arrangement/arrangement";
@@ -131,7 +131,7 @@
 @import "components/user-login-form/user-login-form";
 @import "components/views/views";
 
-// View modes.
+// View modes
 @import "components/view-modes/calendar-item/calendar-item";
 @import "components/view-modes/icon/icon";
 @import "components/view-modes/image/image";

@@ -51,7 +51,7 @@
     "drupal/field_formatter_pattern": "^1.0",
     "drupal/field_group": "^3.0-rc1",
     "drupal/flood_control": "^2.3",
-    "drupal/focal_point": "^2.1",
+    "drupal/focal_point": "^2.0",
     "drupal/geofield": "^1.47",
     "drupal/geofield_map": "^3.0",
     "drupal/google_tag": "^2.0",

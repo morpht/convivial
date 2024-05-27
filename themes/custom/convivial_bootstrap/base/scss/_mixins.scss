@@ -26,7 +26,7 @@
     }
 
     &:before {
-      background-size: calc(nth($sizes, $size-num) / 1.6) calc(nth($sizes, $size-num) / 1.6) ;
+      background-size: calc(nth($sizes, $size-num) / 1.6) calc(nth($sizes, $size-num) / 1.6);
       height: nth($sizes, $size-num);
       line-height: nth($sizes, $size-num);
       width: nth($sizes, $size-num);
@@ -50,7 +50,7 @@
     border-radius: calc(nth($sizes, $size-num) / 2);
 
     @include media-breakpoint-up(sm) {
-      border-radius: calc(nth($sizes, $size-num) / 2) $social-share-border-radius $social-share-border-radius calc(nth($sizes, $size-num) / 2) ;
+      border-radius: calc(nth($sizes, $size-num) / 2) $social-share-border-radius $social-share-border-radius calc(nth($sizes, $size-num) / 2);
     }
 
     &:before {
@@ -109,35 +109,48 @@
 
 // Button variants
 //
-// Easily pump out default styles, as well as :hover, :focus, :active,
-// for all buttons
-@mixin convivial-button-variant($background, $border, $focus, $color: color-contrast($background)) {
-  color: $color;
+// Easily pump out default styles, as well as :hover, :focus, :active for all buttons
+@mixin convivial-button-variant(
+  $background,
+  $color,
+  $border: $background,
+  $hover,
+  $focus,
+  $active: $focus,
+) {
   @include gradient-bg($background);
-  border-color: $border;
   @include box-shadow($btn-box-shadow);
+
+  color: $color;
+  border-color: $border;
 
   &:hover {
     color: $color;
-    filter: brightness(85%);
+    background-color: $hover;
+    border-color: $hover;
   }
 
   &:focus {
-    color: $color;
-    @include gradient-bg($background);
-    outline: $btn-outline-width $btn-outline-style $focus;
+    @include gradient-bg($hover);
   }
 
+  &:focus,
   &:active,
   &.active {
     color: $color;
-    filter: brightness(90%);
-    // Remove CSS gradients if they're enabled
-    background-image: if($enable-gradients, none, null);
+    outline: $btn-outline-width $btn-outline-style $active;
+    outline-offset: $btn-outline-offset;
   }
 }
 
-@mixin convivial-outline-button-variant($color, $color-hover, $focus, $active-background: $color, $active-border: $color, $active-color: $color-hover) {
+@mixin convivial-outline-button-variant(
+  $color,
+  $color-hover,
+  $focus,
+  $active-background: $color,
+  $active-border: $color,
+  $active-color: $color-hover
+) {
   color: $color;
   border-color: $color;
 
@@ -145,19 +158,20 @@
     color: $color-hover;
     background-color: $active-background;
     border-color: $active-border;
-    filter: brightness(100%); // We need to override links.
   }
 
   &:focus {
     outline: $btn-outline-width $btn-outline-style $focus;
   }
 
+  &:focus,
   &:active,
   &.active {
     color: $active-color;
     background-color: $active-background;
+    border-color: $active-border;
+
     // Remove CSS gradients if they're enabled
     background-image: if($enable-gradients, none, null);
-    border-color: $active-border;
   }
 }

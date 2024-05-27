@@ -11,9 +11,7 @@ use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Entity\FieldableEntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Element;
-use Drupal\Core\Url;
 use Drupal\file\Entity\File;
-use Drupal\image\Entity\ImageStyle;
 use Drupal\layout_builder\Entity\LayoutEntityDisplayInterface;
 use Drupal\layout_builder\SectionStorageInterface;
 use Drupal\media\Entity\Media;
@@ -818,45 +816,6 @@ function convivial_bootstrap_preprocess_field__paragraph__field_snippet(&$variab
       '#text' => $content,
       '#format' => 'unrestricted_text',
     ];
-  }
-}
-
-/**
- * Implements template_preprocess_field().
- */
-function convivial_bootstrap_preprocess_field__paragraph__field_gallery_media(&$variables) {
-  $paragraph = $variables['element']['#object'];
-  if ($paragraph->hasField('field_gallery_media') && !$paragraph->get('field_gallery_media')->isEmpty()) {
-    $media = $paragraph->get('field_gallery_media')->referencedEntities();
-
-    foreach ($media as $index => $media_item) {
-      if ($media_item instanceof Media) {
-        if ($media_item->hasField('field_media_oembed_video') && !$media_item->get('field_media_oembed_video')->isEmpty()) {
-          $media_thumbnail_fid = $media_item->get('thumbnail')->target_id;
-          $file = File::load($media_thumbnail_fid);
-
-          // Load the image style.
-          $image_style = ImageStyle::load('landscape');
-
-          if ($image_style) {
-            // Create the derivative URI.
-            $derivative_uri = $image_style->buildUri($file->getFileUri());
-
-            // Check if the derivative file already exists.
-            $derivative_exists = file_exists($derivative_uri);
-
-            // Create the derivative file only if it doesn't exist.
-            if (!$derivative_exists) {
-              $image_style->createDerivative($file->getFileUri(), $derivative_uri);
-            }
-
-            // Get the URL for the derivative image.
-            $file_uri = $file->getFileUri();
-            $variables['thumbnail_url'][$index] = $file_uri;
-          }
-        }
-      }
-    }
   }
 }
 

@@ -40,28 +40,18 @@
 %}
 <div{{ attributes.addClass(classes) }}>
   <div class="list">
-    {% for key, item in items %}
+    {% for item in items %}
+      {% set image = item.content['#media'].field_media_image.entity.uri.value %}
       <div role="listitem" {{ item.attributes.addClass('list__item').addClass('content') }}>
-        {% set image = item.content['#media'].field_media_image.entity.uri.value %}
-        {% if image is empty %}
-          <a href="{{ item.content['#media'].field_media_oembed_video.value }}" class="gallery__link">
-            <img src="{{ thumbnail_url[key]|image_style('landscape') }}" alt="image">
-          </a>
-        {% else %}
-          <a href="{{ file_url(image) }}" class="gallery__link"
-            {% if not element['#object'].field_gallery_show_controls.value %}
-              data-gallery="gallery-{{ loop.index }}"
-            {% endif %}
-             data-sizes="(max-width: 800px) 768px, 992px, 1200px, 2400px"
-             data-srcset="
-              {{ image|image_style('full_wide_sm') }} 768w
-              {{ image|image_style('full_wide_md') }} 992w
-              {{ image|image_style('full_wide_lg') }} 1200w
-              {{ image|image_style('full_wide_lg_hi') }} 2400w
-              ">
-            {{ item.content }}
-          </a>
-        {% endif %}
+        <a href="{{ file_url(image) }}" class="img"
+          {% if not element['#object'].field_gallery_show_controls.value %}
+            data-gallery="gallery-{{ loop.index }}"
+          {% endif %}
+           data-sizes="(max-width: 800px) 768px, 992px, 1200px, 2400px"
+           data-srcset="{{ image|image_style('full_wide_sm') }} 768w {{ image|image_style('full_wide_md') }} 992w {{ image|image_style('full_wide_lg') }} 1200w {{ image|image_style('full_wide_lg_hi') }} 2400w"
+        >
+          {{ item.content }}
+        </a>
       </div>
     {% endfor %}
   </div>

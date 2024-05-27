@@ -9,7 +9,7 @@
         const selector = classes.replace(/\s/g, '.')
 
         GLightbox({
-          selector: '.' + selector + ' a.gallery__link',
+          selector: '.' + selector + ' a.img',
           touchNavigation: showControls,
           loop: showControls,
         });

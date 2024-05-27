@@ -2,10 +2,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_gallery_media
+    - field.storage.paragraph.field_gallery_photos
     - media.type.image
-    - media.type.remote_video
-    - media.type.video
     - paragraphs.paragraphs_type.gallery
   module:
     - unique_content_field_validation
@@ -15,13 +13,13 @@ third_party_settings:
     unique_text: ''
     unique_multivalue: false
     unique_multivalue_text: ''
-id: paragraph.gallery.field_gallery_media
-field_name: field_gallery_media
+id: paragraph.gallery.field_gallery_photos
+field_name: field_gallery_photos
 entity_type: paragraph
 bundle: gallery
-label: Media
-description: ''
-required: false
+label: Photos
+description: 'Select the images to be displayed in the gallery.'
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -30,11 +28,9 @@ settings:
   handler_settings:
     target_bundles:
       image: image
-      remote_video: remote_video
-      video: video
     sort:
       field: _none
       direction: ASC
     auto_create: false
-    auto_create_bundle: image
+    auto_create_bundle: ''
 field_type: entity_reference
