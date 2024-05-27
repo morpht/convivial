@@ -160,6 +160,10 @@ $palettes: (
     .btn.btn-link {
       color: map-get($palette, link);
 
+      &:hover {
+        color: map-get($palette, link_hover);
+      }
+
       &:focus,
       &:active,
       .active {
