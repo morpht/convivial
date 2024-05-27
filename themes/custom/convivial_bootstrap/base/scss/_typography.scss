@@ -1,0 +1,13 @@
+@include media-breakpoint-up('md') {
+  .main-content {
+    h1, h2, h3, h4, h5, h6,
+    p, ul, ol, dl,
+    blockquote, .callout {
+      max-width: $text-max-width;
+    }
+
+    .field--name-field-body div {
+      max-width: $text-max-width;
+    }
+  }
+}
