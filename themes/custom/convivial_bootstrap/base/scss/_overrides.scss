@@ -5,6 +5,12 @@
   border: none;
 }
 
+// Navs
+.nav-link:focus-visible {
+  outline: $link-outline-width $link-outline-style var(--standard-link-active);
+  box-shadow: none;
+}
+
 // Buttons
 button:focus:not(:focus-visible) {
   outline: $btn-outline-width $btn-outline-style var(--standard-link-active);
