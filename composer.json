@@ -167,7 +167,7 @@
         "3133484 - Form blocks rendered inside layout builder library break save": "https://www.drupal.org/files/issues/2020-05-04/layout-library-save-issue-3133484-4.patch"
       },
       "drupal/layout_paragraphs": {
-        "3417765 - Large modal exceeds viewport height without scrollbar = actions unreachable": "https://www.drupal.org/files/issues/2024-03-28/large-modal-exceeds-viewport-3417765-8.patch"
+        "3417765 - Large modal exceeds viewport height without scrollbar = actions unreachable": "https://www.drupal.org/files/issues/2024-06-09/3417765-10-large-modal-exceeds-viewport-2.0.5.patch"
       },
       "drupal/redirect": {
         "3037259 - Endless Redirection loop when using Domain access": "https://www.drupal.org/files/issues/2022-09-13/3037259-28.patch"
