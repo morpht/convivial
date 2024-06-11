@@ -123,7 +123,7 @@ function _convivial_bootstrap_matomo_theme_settings_validate(&$form, FormStateIn
  */
 function _convivial_bootstrap_matomo_tracking_script(array &$variables) {
   $matomo_settings = theme_get_setting('matomo_settings');
-  if (!is_int($matomo_settings['tracking'])) {
+  if (!isset($matomo_settings['tracking']) || !is_int($matomo_settings['tracking'])) {
     return;
   }
 
