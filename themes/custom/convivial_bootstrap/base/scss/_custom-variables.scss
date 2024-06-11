@@ -14,8 +14,10 @@ $z-index-navbar-header:                          500;
 
 // Hero
 $hero-scale:                    1.25;
-$hero-vertical-spacing:         calc($grid-gutter-width * 4);
+$hero-body-spacing:             calc($grid-gutter-width * 2);
+$hero-cta-spacing:              calc($grid-gutter-width * 2);
 $hero-horizontal-spacing:       0;
+$hero-vertical-spacing:         calc($grid-gutter-width * 4);
 
 $hero-font-size:                $font-size-base * $hero-scale;
 $hero-introduction-font-size:   $introduction-font-size * $hero-scale;

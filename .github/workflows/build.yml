@@ -2,8 +2,8 @@ name: Build, Validate and Test
 
 on:
   schedule:
-    # Weekdays at 22:00 UTC (Monday to Friday 8 am AEST).
-    - cron: '0 22 * * 1-5'
+    # Weekday (22=10pm UTC). Evaluates to 8am AEST.
+    - cron: '0 22 * * *'
   workflow_dispatch:
   push:
     branches:

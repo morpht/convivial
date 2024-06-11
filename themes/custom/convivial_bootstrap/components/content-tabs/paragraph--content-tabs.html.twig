@@ -25,19 +25,16 @@
  * @see template_preprocess_block()
  */
 #}
-{%
-  set classes = [
-    'content-tabs',
-    'paragraph',
-    'paragraph--type--' ~ paragraph.bundle|clean_class,
-    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-  ]
-%}
+{% set classes = [
+  'content-tabs',
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+] %}
 
 {{ include ('convivial_bootstrap:content-tabs', {
   attributes,
   classes,
+  content: content|without('field_cts_tabs'),
   tabs : content.field_cts_tabs,
-  title : content.field_heading[0],
-  text : content.field_body[0]
 }) }}

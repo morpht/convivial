@@ -1,9 +1,18 @@
-.block,
-.paragraph {
-  &.style--hero {
+.style--hero {
+  padding-top: $hero-vertical-spacing;
+  padding-bottom: $hero-vertical-spacing;
+
+  .component__heading {
+    font-size: $hero-h2-font-size;
+    margin-bottom: $hero-headings-margin-bottom;
+  }
+
+  .component__body {
     font-size: $hero-font-size;
-    padding-top: $hero-vertical-spacing;
-    padding-bottom: $hero-vertical-spacing;
+
+    &:not(:last-child) {
+      margin-bottom: $hero-body-spacing;
+    }
 
     .introduction {
       font-size: $hero-introduction-font-size;
@@ -11,6 +20,10 @@
 
     .btn {
       @include button-size($hero-btn-padding-y-lg, $hero-btn-padding-x-lg, $hero-btn-font-size-lg, $hero-btn-border-radius-lg);
+    }
+
+    a {
+      font-size: $hero-font-size;
     }
 
     h1 {
@@ -50,6 +63,20 @@
     .callout {
       margin-top: $hero-font-margin-bottom;
       margin-bottom: $hero-font-margin-bottom;
+    }
+  }
+
+  .component__cta {
+    font-size: $hero-font-size;
+    margin-top: $hero-cta-spacing;
+
+    a,
+    .cta-link {
+      font-size: $hero-font-size;
+    }
+
+    .cta-link {
+      margin-top: 0;
     }
   }
 }

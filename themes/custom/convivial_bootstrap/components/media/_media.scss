@@ -121,3 +121,10 @@ figure {
     padding-bottom: calc($grid-gutter-width / 2);
   }
 }
+
+// Transcript
+.transcript {
+  .accordion-body {
+    font-size: $font-size-base;
+  }
+}

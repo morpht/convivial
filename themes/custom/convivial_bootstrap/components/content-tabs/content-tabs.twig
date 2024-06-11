@@ -1,7 +1,8 @@
 <div{{ attributes.addClass(classes) }}>
   <div class="containerised">
-    {% if title %}<h2>{{ title }}</h2>{% endif %}
-    {{ text }}
+
+    {{ content }}
+
     <div class="tabs js-tabs">
       <ul class="nav nav-tabs mb-3 js-tablist">
         {# Loops through the tab sections to print the tab section titles. #}

@@ -734,6 +734,10 @@ function convivial_bootstrap_preprocess_field(&$variables, $hook) {
         require_once __DIR__ . '/includes/glossary.inc';
         _convivial_bootstrap_glossary($variables);
       }
+
+      if ($variables['entity_type'] === 'paragraph') {
+        $variables['attributes']['class'][] = 'component__body';
+      }
       break;
 
     case 'field_cb_block':
@@ -764,6 +768,16 @@ function convivial_bootstrap_preprocess_field(&$variables, $hook) {
       // Forward item URL to template. See convivial_bootstrap_preprocess_layout().
       if (!empty($variables['element']['#item_url'])) {
         $variables['item_url'] = $variables['element']['#item_url'];
+      }
+
+      if ($variables['entity_type'] === 'paragraph') {
+        $variables['attributes']['class'][] = 'component__heading';
+      }
+      break;
+
+    case 'field_read_more':
+      if ($variables['entity_type'] === 'paragraph') {
+        $variables['attributes']['class'][] = 'component__cta';
       }
       break;
 
@@ -941,7 +955,6 @@ function _convivial_bootstrap_theme_settings_mappings(array &$variables, array $
  */
 function _convivial_bootstrap_attach_paragraph_features(FieldableEntityInterface $entity, array &$build, $attributes_key) {
   switch ($entity->bundle()) {
-
     case 'app':
       require_once __DIR__ . '/includes/app.inc';
       _convivial_bootstrap_app($entity, $build, $attributes_key);
