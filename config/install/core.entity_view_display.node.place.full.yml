@@ -177,17 +177,109 @@ third_party_settings:
             additional: {  }
         third_party_settings: {  }
       -
-        layout_id: convivial_twocol
+        layout_id: convivial_content_sidebar
         layout_settings:
+          label: ''
           context_mapping: {  }
-          arrangement: 'arrangement arrangement--8-4'
-          containment: 'edgy edgy--contained'
-          color: ''
-          styles: {  }
         components:
+          3a2ebf91-9d8f-40b8-be94-7085099121fe:
+            uuid: 3a2ebf91-9d8f-40b8-be94-7085099121fe
+            region: content
+            configuration:
+              id: 'field_block:node:place:field_components'
+              label: Components
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: layout_paragraphs
+                label: hidden
+                settings:
+                  view_mode: default
+                third_party_settings: {  }
+            weight: 5
+            additional: {  }
+          4ebaea55-f482-445c-a24a-d77251ee6e6f:
+            uuid: 4ebaea55-f482-445c-a24a-d77251ee6e6f
+            region: content
+            configuration:
+              id: 'field_block:node:place:field_toc'
+              label: TOC
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: list_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          998e5c53-0253-4c13-a023-6a319b1cc959:
+            uuid: 998e5c53-0253-4c13-a023-6a319b1cc959
+            region: sidebar
+            configuration:
+              id: 'menu_block:main'
+              label: 'Sidebar navigation'
+              label_display: '0'
+              provider: menu_block
+              context_mapping: {  }
+              follow: false
+              follow_parent: active
+              label_link: false
+              label_type: block
+              level: 2
+              depth: 0
+              expand_all_items: true
+              parent: 'main:'
+              suggestion: main
+            weight: 0
+            additional: {  }
+          2d877892-2190-4077-a07e-ad131a33e366:
+            uuid: 2d877892-2190-4077-a07e-ad131a33e366
+            region: content
+            configuration:
+              id: 'field_block:node:place:field_updated_date'
+              label: 'Last updated'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: datetime_default
+                label: inline
+                settings:
+                  timezone_override: ''
+                  format_type: standard
+                third_party_settings: {  }
+            weight: 7
+            additional: {  }
+          86da7076-b5b3-4a77-8877-075e0dae7eb8:
+            uuid: 86da7076-b5b3-4a77-8877-075e0dae7eb8
+            region: content
+            configuration:
+              id: 'field_block:node:place:field_body'
+              label: Body
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
           73464fff-360a-4db1-b275-2302c853a3cd:
             uuid: 73464fff-360a-4db1-b275-2302c853a3cd
-            region: first
+            region: content
             configuration:
               id: 'field_block:node:place:field_place_geo'
               label: Geo
@@ -273,11 +365,11 @@ third_party_settings:
                   map_lazy_load:
                     lazy_load: false
                 third_party_settings: {  }
-            weight: 0
+            weight: 6
             additional: {  }
           3aa1f7ad-5495-4e9d-bcb4-ef8845dcb7a0:
             uuid: 3aa1f7ad-5495-4e9d-bcb4-ef8845dcb7a0
-            region: second
+            region: sidebar
             configuration:
               id: 'field_block:node:place:field_place_address'
               label: Address
@@ -295,7 +387,7 @@ third_party_settings:
             additional: {  }
           2181d63c-6276-4b88-b37d-71f9c2fbb813:
             uuid: 2181d63c-6276-4b88-b37d-71f9c2fbb813
-            region: second
+            region: sidebar
             configuration:
               id: 'field_block:node:place:field_place_telephone'
               label: Telephone
@@ -311,108 +403,6 @@ third_party_settings:
                   title: ''
                 third_party_settings: {  }
             weight: 2
-            additional: {  }
-        third_party_settings: {  }
-      -
-        layout_id: convivial_content_sidebar
-        layout_settings:
-          label: ''
-          context_mapping: {  }
-        components:
-          3a2ebf91-9d8f-40b8-be94-7085099121fe:
-            uuid: 3a2ebf91-9d8f-40b8-be94-7085099121fe
-            region: content
-            configuration:
-              id: 'field_block:node:place:field_components'
-              label: Components
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: layout_paragraphs
-                label: hidden
-                settings:
-                  view_mode: default
-                third_party_settings: {  }
-            weight: 5
-            additional: {  }
-          4ebaea55-f482-445c-a24a-d77251ee6e6f:
-            uuid: 4ebaea55-f482-445c-a24a-d77251ee6e6f
-            region: content
-            configuration:
-              id: 'field_block:node:place:field_toc'
-              label: TOC
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: list_default
-                label: hidden
-                settings: {  }
-                third_party_settings: {  }
-            weight: 2
-            additional: {  }
-          998e5c53-0253-4c13-a023-6a319b1cc959:
-            uuid: 998e5c53-0253-4c13-a023-6a319b1cc959
-            region: sidebar
-            configuration:
-              id: 'menu_block:main'
-              label: 'Sidebar navigation'
-              label_display: '0'
-              provider: menu_block
-              context_mapping: {  }
-              follow: false
-              follow_parent: active
-              label_link: false
-              label_type: block
-              level: 2
-              depth: 0
-              expand_all_items: true
-              parent: 'main:'
-              suggestion: main
-            weight: 0
-            additional: {  }
-          2d877892-2190-4077-a07e-ad131a33e366:
-            uuid: 2d877892-2190-4077-a07e-ad131a33e366
-            region: content
-            configuration:
-              id: 'field_block:node:place:field_updated_date'
-              label: 'Last updated'
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: datetime_default
-                label: inline
-                settings:
-                  timezone_override: ''
-                  format_type: standard
-                third_party_settings: {  }
-            weight: 6
-            additional: {  }
-          86da7076-b5b3-4a77-8877-075e0dae7eb8:
-            uuid: 86da7076-b5b3-4a77-8877-075e0dae7eb8
-            region: content
-            configuration:
-              id: 'field_block:node:place:field_body'
-              label: Body
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: text_default
-                label: hidden
-                settings: {  }
-                third_party_settings: {  }
-            weight: 4
             additional: {  }
         third_party_settings: {  }
   layout_library:
