@@ -42,7 +42,6 @@ This profile is meant to be used in conjunction with `convivial-recommended` pro
 
 * Use the `convivial-recommended` starter kit to spin up a new website.
 
-
 ## Updating
 
 To update configuration, one needs to manually copy new/updated configuration files to convivial/config/install folder and remove uuid and _core: default_hash items there.
