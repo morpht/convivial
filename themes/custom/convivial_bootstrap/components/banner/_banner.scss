@@ -23,16 +23,14 @@
 
 // Background area goes on top of the bg image.
 .banner__background-area {
-  @include media-breakpoint-up(lg) {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    margin-top: -50vw;
-  }
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-top: -50vw;
 
   // Background color variants.
   .banner--background-light & {
