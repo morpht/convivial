@@ -120,6 +120,9 @@ jobs:
       - name: Validate composer
         run: composer validate --no-check-all --ansi
 
+      - name: Download JavaScript Cookie Library
+        run: curl --create-dirs -o libraries/js-cookie/dist/js.cookie.min.js https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
+
       - name: PHP Compatibility Check
         run: |
           phpcs -p modules/custom --standard=vendor/phpcompatibility/php-compatibility/PHPCompatibility --extensions=php,module,inc --runtime-set testVersion ${{ matrix.php }}
