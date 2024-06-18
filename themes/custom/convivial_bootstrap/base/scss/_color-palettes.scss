@@ -1,27 +1,4 @@
-/*
-Color palettes
-Available CSS variables:
-  - --PREFIX-foreground: Foreground text color.
-    Foreground must be light on the dark background and dark on the light background.
-  - --PREFIX-background: Background color.
-  - --PREFIX-link: Link color.
-    Link color is used for the anchor and the secondary button.
-  - --PREFIX-link-hover: Link text hover state color.
-    The hover state must be lighter or darker than the link color.
-    For example: 10% darker on the light color palettes or 10% lighter on the dark color palettes.
-  - --PREFIX-link-active: The active state of the link.
-    The active state must be darker or lighter than the link color.
-    For example: 10% lighter on the light color palettes or 10% darker on the dark color palettes.
-  - --PREFIX-accent: The accent background color.
-    Accent color is used for the primary button.
-  - --PREFIX-accent-hover: The accent hover state background color.
-    The hover state must be lighter or darker than the accent color.
-    For example: 10% darker on the light color palettes or 10% lighter on the dark color palettes.
-  - --PREFIX-accent-active: The accent active state color.
-    The active state must be darker or lighter than the accent color.
-    For example: 10% lighter on the light color palettes or 10% darker on the dark color palettes.
-*/
-
+// Define color palettes CSS variables
 :root {
   --standard-light: #FFFFFF;
   --standard-dark: #000000;

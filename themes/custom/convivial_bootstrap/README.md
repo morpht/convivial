@@ -111,13 +111,38 @@ Then in format settings you need to add `views-layout__item`.
 
 Layout variants:
 
-* `views-layout--full-width` - On column layout.
+* `views-layout--full-width` - One column layout.
 * `views-layout--halves` - Two column layout.
 * `views-layout--thirds` - Three column layout.
-* `views-layout--quarters` - Foue column layout.
+* `views-layout--quarters` - Four column layout.
 * `views-layout--alternate` - This is mainly for Teaser view modes. Allows to alternate order of image and content.
 
 *Note: If you want to use Title view mode, you should also add class `views-layout--title` which removes the spaceing between each item.*
+
+## Color palettes css variables
+
+CSS variables are required for setup the color palettes.\
+Path `/base/scss/_color-palettes.scss`
+
+* **--PREFIX-foreground**: Foreground text color.\
+Foreground must be light on the dark background and dark on the light background.
+* **--PREFIX-background**: Background color.
+* **--PREFIX-link**: Link color.\
+Link color is used for the anchor and the secondary button.
+* **--PREFIX-link-hover**: Link text hover state color.\
+The hover state must be lighter or darker than the link color.\
+For example: 10% darker on the light color palettes or 10% lighter on the dark color palettes.
+* **--PREFIX-link-active**: The active state of the link.\
+The active state must be darker or lighter than the link color.\
+For example: 10% lighter on the light color palettes or 10% darker on the dark color palettes.
+* **--PREFIX-accent**: The accent background color.\
+Accent color is used for the primary button.
+* **--PREFIX-accent-hover**: The accent hover state background color.\
+The hover state must be lighter or darker than the accent color.\
+For example: 10% darker on the light color palettes or 10% lighter on the dark color palettes.
+* **--PREFIX-accent-active**: The accent active state color.\
+The active state must be darker or lighter than the accent color.\
+For example: 10% lighter on the light color palettes or 10% darker on the dark color palettes.
 
 ## Meta
 
