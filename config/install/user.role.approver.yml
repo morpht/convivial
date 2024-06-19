@@ -22,7 +22,6 @@ dependencies:
     - paragraphs
     - redirect
     - system
-    - toolbar
 id: approver
 label: Approver
 weight: -7
@@ -33,7 +32,6 @@ permissions:
   - 'access contextual links'
   - 'access help pages'
   - 'access media overview'
-  - 'access toolbar'
   - 'administer menu'
   - 'administer redirects'
   - 'delete any article content'

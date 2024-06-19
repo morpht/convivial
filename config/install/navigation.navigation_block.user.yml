@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies: {  }
+id: user
+region: footer
+weight: 0
+provider: navigation
+plugin: user
+settings:
+  id: user
+  label: User
+  label_display: '0'
+  provider: navigation
+  status: true
+  info: ''
+  view_mode: default
+visibility: {  }

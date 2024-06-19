@@ -4,14 +4,12 @@ dependencies:
   module:
     - file
     - system
-    - toolbar
     - webform
 id: submission_viewer
 label: 'Submission viewer'
 weight: -3
 is_admin: null
 permissions:
-  - 'access toolbar'
   - 'access webform overview'
   - 'delete own files'
   - 'view any webform submission'
