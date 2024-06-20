@@ -637,7 +637,7 @@ profilers:
           - topic_crm
           - topic_recent
           - topic_top
-        default_value: 'topic:general'
+        default_value: topic-general
         target_location:
           localstorage: localstorage
           cookie: '0'

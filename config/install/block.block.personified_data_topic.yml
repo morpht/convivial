@@ -23,5 +23,5 @@ settings:
       source_type: local_storage
       source_key: topic
       endpoint_key: key
-      default_value: 'topic:none'
+      default_value: topic-none
 visibility: {  }
