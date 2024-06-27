@@ -45,7 +45,7 @@
         {% set image = item.content['#media'].field_media_image.entity.uri.value %}
         {% if image is empty %}
           <a href="{{ item.content['#media'].field_media_oembed_video.value }}" class="gallery__link">
-            <img src="{{ thumbnail_url[key]|image_style('landscape') }}" alt="image">
+            <img src="{{ thumbnail_url[key]|image_style('landscape_hi') }}" alt="image">
           </a>
         {% else %}
           <a href="{{ file_url(image) }}" class="gallery__link"
