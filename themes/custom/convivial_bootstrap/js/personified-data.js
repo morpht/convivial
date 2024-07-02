@@ -9,6 +9,15 @@
   Drupal.behaviors.CBpersonifiedData = {
     attach: function attach(context, settings) {
 
+      function isJsonString (str) {
+        try {
+          JSON.parse(str);
+        }
+        catch (e) {
+          return false;
+        }
+        return true;
+      }
       if (typeof settings.personifiedData === 'undefined') {
         return
       }
@@ -38,7 +47,21 @@
                 break
             }
             if (typeof value !== 'undefined' && value !== null) {
-              urlParams[param.endpoint_key] = value
+              if (isJsonString(value)) {
+                var jsonValue = JSON.parse(value);
+                if (Array.isArray(jsonValue)) {
+                  urlParams[param.endpoint_key] = jsonValue.join('+');
+                }
+                else if (typeof jsonValue === 'object' && !Array.isArray(jsonValue)) {
+                  urlParams[param.endpoint_key] = Object.keys(jsonValue).join('+');
+                }
+                else {
+                  urlParams[param.endpoint_key] = value
+                }
+              }
+              else {
+                urlParams[param.endpoint_key] = value
+              }
             }
             else if (param.default_value !== '') {
               urlParams[param.endpoint_key] = param.default_value
