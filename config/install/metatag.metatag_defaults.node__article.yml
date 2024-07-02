@@ -4,6 +4,7 @@ dependencies: {  }
 id: node__article
 label: 'Content: Article'
 tags:
+  'custom_meta_tag_name:article_id': '[node:nid]'
   'custom_meta_tag_name:audience': '[node:field_suitable_for:0:entity:field_key],[node:field_suitable_for:1:entity:field_key],[node:field_suitable_for:2:entity:field_key],[node:field_suitable_for:3:entity:field_key]'
   'custom_meta_tag_name:author': '[node:field_authored_by:0:entity:field_key],[node:field_authored_by:1:entity:field_key],[node:field_authored_by:2:entity:field_key],[node:field_authored_by:3:entity:field_key]'
   'custom_meta_tag_name:intent': '[node:field_intent:0:entity:field_key],[node:field_intent:1:entity:field_key],[node:field_intent:2:entity:field_key],[node:field_intent:3:entity:field_key]'

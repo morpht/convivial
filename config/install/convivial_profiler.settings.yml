@@ -1105,6 +1105,58 @@ profilers:
         target_location:
           localstorage: localstorage
           cookie: '0'
+  articles_recent:
+    name: articles_recent
+    label: 'Recent Articles'
+    weight: 13
+    status: true
+    description: 'Log the article ids in convivial profiler internal storage.'
+    deferred: false
+    sources:
+      -
+        type: meta
+        attribute_name: article_id
+    processors:
+      -
+        type: logger
+        storage_key: articles_recent
+        size: 3
+    destinations:
+      -
+        type: copy
+        target_key: articles_recent
+        remove_empty: false
+        storage_key: log.articles_recent
+        stringify: true
+        target_location:
+          localstorage: localstorage
+          cookie: '0'
+  events_recent:
+    name: events_recent
+    label: 'Recent Events'
+    weight: 13
+    status: true
+    description: 'Log the event ids in convivial profiler internal storage.'
+    deferred: false
+    sources:
+      -
+        type: meta
+        attribute_name: event_id
+    processors:
+      -
+        type: logger
+        storage_key: events_recent
+        size: 5
+    destinations:
+      -
+        type: copy
+        target_key: events_recent
+        remove_empty: false
+        storage_key: log.events_recent
+        stringify: true
+        target_location:
+          localstorage: localstorage
+          cookie: '0'
   searchquery:
     name: searchquery
     label: Searchquery
