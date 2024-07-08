@@ -2,6 +2,7 @@
 
 use Drupal\Component\Render\MarkupInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Markup;
 use Drupal\user\Entity\User;
 
 /**
@@ -31,6 +32,14 @@ class convivial_bootstrap_javascript_snippet implements MarkupInterface {
    */
   public function __toString() {
     return $this->string;
+  }
+
+  /**
+   * Returns markup object of the script string to be injected in html head and
+   * avoid escaping of the script.
+   */
+  public function toMarkup() {
+    return Markup::create($this->string);
   }
 
   /**
@@ -198,7 +207,7 @@ function _convivial_bootstrap_matomo_tracking_script(array &$variables) {
     $variables['#attached']['html_head'][] = [
       [
         '#tag' => 'script',
-        '#value' => $tracker_js_snippet->__toString(),
+        '#value' => $tracker_js_snippet->toMarkup(),
       ],
       'matomo_tracking_script',
     ];

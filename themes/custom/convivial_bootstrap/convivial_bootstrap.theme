@@ -850,7 +850,7 @@ function convivial_bootstrap_preprocess_field__paragraph__field_gallery_media(&$
           $file = File::load($media_thumbnail_fid);
 
           // Load the image style.
-          $image_style = ImageStyle::load('landscape_hi');
+          $image_style = ImageStyle::load('landscape');
 
           if ($image_style) {
             // Create the derivative URI.
