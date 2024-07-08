@@ -88,7 +88,6 @@
 
 // Images with caption.
 figure {
-
   // View modes with caption pops open on mobile.
   @include media-breakpoint-down(md) {
     &.align-left,
@@ -103,6 +102,33 @@ figure {
     &,
     &.align-center {
       display: table;
+    }
+
+    // Adjusts the maximum width of figures
+    // containing media entities based on
+    // their view mode.
+    &:has(.media-entity--view-mode-tiny) {
+      max-width: 100px;
+    }
+
+    &:has(.media-entity--view-mode-extra-small) {
+      max-width: 200px;
+    }
+
+    &:has(.media-entity--view-mode-small) {
+      max-width: 300px;
+    }
+
+    &:has(.media-entity--view-mode-medium) {
+      max-width: 400px;
+    }
+
+    &:has(.media-entity--view-mode-large) {
+      max-width: 600px;
+    }
+
+    &:has(.media-entity--view-mode-half) {
+      max-width: 50%;
     }
   }
 
