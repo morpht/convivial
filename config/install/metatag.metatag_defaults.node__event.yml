@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: node__event
-label: 'Content: Event'
-tags:
-  'custom_meta_tag_name:event_id': '[node:nid]'

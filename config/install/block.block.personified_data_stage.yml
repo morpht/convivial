@@ -28,5 +28,5 @@ settings:
       source_type: local_storage
       source_key: stage
       endpoint_key: key
-      default_value: stage-orientation
+      default_value: 'stage:orientation'
 visibility: {  }

@@ -24,7 +24,7 @@ settings:
       source_type: local_storage
       source_key: experience
       endpoint_key: key
-      default_value: experience-none
+      default_value: 'experience:none'
 visibility:
   request_path:
     id: request_path
