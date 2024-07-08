@@ -23,5 +23,5 @@ settings:
       source_type: local_storage
       source_key: audience
       endpoint_key: key
-      default_value: 'audience:none'
+      default_value: audience-none
 visibility: {  }
