@@ -28,7 +28,6 @@
 
 // Image view modes.
 .media-entity--type-image {
-
   &.media-entity--view-mode-half,
   &.media-entity--view-mode-half-wide {
     @include media-breakpoint-up(sm) {
@@ -50,7 +49,7 @@
     }
   }
 
- & .media-entity--view-mode-extra-small {
+  &.media-entity--view-mode-extra-small {
     max-width: 35%;
 
     @include media-breakpoint-up(sm) {
@@ -111,7 +110,6 @@ figure {
   }
 
   @include media-breakpoint-up(md) {
-    &,
     &.align-center {
       display: table;
     }
