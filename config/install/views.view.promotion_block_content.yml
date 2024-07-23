@@ -1090,10 +1090,10 @@ display:
           field_options:
             field_heading:
               alias: heading
-              raw_output: false
+              raw_output: true
             field_body:
               alias: body
-              raw_output: false
+              raw_output: true
             field_promo_aside:
               alias: aside
               raw_output: false
