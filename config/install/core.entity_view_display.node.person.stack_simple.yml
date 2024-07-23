@@ -25,8 +25,6 @@ dependencies:
     - field.field.node.person.field_thumbnail
     - field.field.node.person.field_toc
     - field.field.node.person.field_updated_date
-    - field.field.node.person.layout_builder__layout
-    - field.field.node.person.layout_selection
     - node.type.person
   module:
     - convivial_layouts
@@ -141,7 +139,5 @@ hidden:
   field_thumbnail: true
   field_toc: true
   field_updated_date: true
-  layout_builder__layout: true
-  layout_selection: true
   links: true
   search_api_excerpt: true
