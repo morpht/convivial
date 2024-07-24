@@ -1,38 +1,42 @@
 'use strict';
 
 // Include gulp.
-const gulp = require('gulp');
-const config = require('./config.json');
+import gulp from 'gulp';
+import config from './config.json' assert {type: 'json'};
 
 // Include plugins.
-const sass = require('gulp-sass')(require('sass'));
-const imagemin = require('gulp-imagemin');
-const plumber = require('gulp-plumber');
-const glob = require('gulp-sass-glob');
-const uglify = require('gulp-uglify');
-const concat = require('gulp-concat');
-const notify = require('gulp-notify');
-const rename = require('gulp-rename');
-const sourcemaps = require('gulp-sourcemaps');
-const jshint = require('gulp-jshint');
-const postcss = require('gulp-postcss');
-const autoprefixer = require('autoprefixer');
-const del = require('del');
-const browserSync = require('browser-sync').create();
+import sass from 'gulp-sass';
+import imagemin from 'gulp-imagemin';
+import plumber from 'gulp-plumber';
+import glob from 'gulp-sass-glob';
+import uglify from 'gulp-uglify';
+import concat from 'gulp-concat';
+import notify from 'gulp-notify';
+import rename from 'gulp-rename';
+import sourcemaps from 'gulp-sourcemaps';
+import jshint from 'gulp-jshint';
+import postcss from 'gulp-postcss';
+import autoprefixer from 'autoprefixer';
+import del from 'del';
+import browserSync from 'browser-sync';
+import { readFileSync, existsSync } from 'fs';
+
+// Initialize browserSync
+const bs = browserSync.create();
 
 // Check if local config exists.
-var fs = require('fs');
-if (!fs.existsSync('./config-local.json')) {
+if (!existsSync('./config-local.json')) {
   console.log('\x1b[33m', 'You need to rename default.config-local.json to' +
       ' config-local.json and update its content if necessary.', '\x1b[0m');
   process.exit();
 }
-//Include local config.
-var configLocal = require('./config-local.json');
+
+// Include local config.
+const configLocal = JSON.parse(readFileSync('./config-local.json', 'utf8'));
 
 // Process CSS for production.
 gulp.task('css', function() {
-  var postcssPlugins = [
+  const postcssPlugins = [
     autoprefixer()
   ];
 
@@ -57,7 +61,7 @@ gulp.task('css', function() {
 
 // Process CSS for development.
 gulp.task('css_dev', function() {
-  var postcssPlugins = [
+  const postcssPlugins = [
     autoprefixer()
   ];
 
@@ -80,12 +84,12 @@ gulp.task('css_dev', function() {
     .pipe(postcss(postcssPlugins))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(config.css.dest))
-    .pipe(browserSync.reload({ stream: true, match: '**/*.css' }));
+    .pipe(bs.reload({ stream: true, match: '**/*.css' }));
 });
 
 // Process CSS for production.
 gulp.task('css_components', function() {
-  var postcssPlugins = [
+  const postcssPlugins = [
     autoprefixer()
   ];
 
@@ -110,7 +114,7 @@ gulp.task('css_components', function() {
 
 // Process CSS for development.
 gulp.task('css_components_dev', function() {
-  var postcssPlugins = [
+  const postcssPlugins = [
     autoprefixer()
   ];
 
@@ -133,7 +137,7 @@ gulp.task('css_components_dev', function() {
     .pipe(postcss(postcssPlugins))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(config.css_components.dest))
-    .pipe(browserSync.reload({ stream: true, match: 'components/**/*.css' }));
+    .pipe(bs.reload({ stream: true, match: 'components/**/*.css' }));
 });
 
 // Compress images.
@@ -190,7 +194,7 @@ gulp.task('scripts_dev', function() {
       .pipe(rename(config.js.file))
       .pipe(sourcemaps.write('./'))
       .pipe(gulp.dest(config.js.dest))
-      .pipe(browserSync.reload({ stream: true, match: '**/*.js' }))
+      .pipe(bs.reload({ stream: true, match: '**/*.js' }))
       .pipe(notify({message: 'Rebuild all custom scripts. Please refresh your browser', onLast: true}));
 });
 
@@ -237,7 +241,7 @@ gulp.task('js-lint', function() {
 
 // BrowserSync settings.
 gulp.task('browserSync', function() {
-  browserSync.init({
+  bs.init({
     proxy: 'http://appserver', // Could be 'http://appserver' if you're running apache.
     host: 'bs.convivial-demo.localhost',
     socket: {
