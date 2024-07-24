@@ -56,4 +56,4 @@ image_style_mappings:
     breakpoint_id: convivial_breakpoints.mobile
     multiplier: 2x
 breakpoint_group: convivial_breakpoints
-fallback_image_style: landscape_half_xs
+fallback_image_style: landscape_half_lg

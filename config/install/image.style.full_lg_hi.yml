@@ -9,7 +9,7 @@ effects:
     id: image_scale
     weight: 1
     data:
-      width: 1600
+      width: 1980
       height: null
       upscale: false
   7dcb387b-d9df-4b9a-bca8-cf7c495bd326:
