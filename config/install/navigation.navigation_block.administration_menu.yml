@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.admin
+  module:
+    - system
+id: administration_menu
+region: content
+weight: 2
+provider: null
+plugin: 'system_menu_navigation_block:admin'
+settings:
+  id: 'system_menu_navigation_block:admin'
+  label: Administration
+  label_display: '0'
+  provider: navigation
+  level: 2
+  depth: 2
+visibility: {  }

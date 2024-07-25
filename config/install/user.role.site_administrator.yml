@@ -27,7 +27,6 @@ dependencies:
     - taxonomy.vocabulary.media_tags
     - workflows.workflow.editorial
   module:
-    - admin_toolbar_search
     - block
     - block_content
     - config
@@ -67,7 +66,6 @@ dependencies:
     - simple_sitemap
     - system
     - taxonomy
-    - toolbar
     - update
     - views_ui
     - webform
@@ -93,7 +91,6 @@ permissions:
   - 'access site in maintenance mode'
   - 'access site reports'
   - 'access taxonomy overview'
-  - 'access toolbar'
   - 'access user profiles'
   - 'access webform help'
   - 'access webform overview'
@@ -302,7 +299,6 @@ permissions:
   - 'update media'
   - 'update paragraph content animation'
   - 'update paragraph content snippet'
-  - 'use admin toolbar search'
   - 'use editorial transition archive'
   - 'use editorial transition archived_draft'
   - 'use editorial transition archived_published'
