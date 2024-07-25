@@ -33,7 +33,23 @@
   width: auto;
 }
 
-/* Hide CKEditor inapplicable styles */
+/* CKEditor */
+/* Hide inapplicable styles */
 .ck.ck-style-panel .ck-style-grid .ck-style-grid__button.ck-disabled {
   display: none;
+}
+
+/* Media view mode */
+.ck .media-entity--type-image.media-entity--view-mode-half,
+.ck .media-entity--type-image.media-entity--view-mode-half-wide {
+  max-width: unset;
+}
+
+/* Override alignment */
+.ck-content .drupal-media-style-align-right .align-right {
+  margin-left: unset;
+}
+
+.ck-content .drupal-media-style-align-right .align-left {
+  margin-right: unset;
 }
