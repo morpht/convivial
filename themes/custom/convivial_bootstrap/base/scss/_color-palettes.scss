@@ -304,11 +304,12 @@ $palettes: (
         background: rgba(0, 0, 0, 0.08);
         border-color: rgba(255, 255, 255, 0.5);
       }
-    } @else {
-      blockquote,
-      .callout {
-        background: rgba(0, 0, 0, 0.08);
-        border-color: rgba(0, 0, 0, 0.5);
+    }
+
+    // Figure
+    @if $is_dark == true {
+      figure figcaption {
+        background: rgba(255, 255, 255, 0.05);
       }
     }
   }
