@@ -104,11 +104,13 @@ figure.drupal-media {
   // Half view modes max width 50% of it's container.
   &:has(> .media-entity--view-mode-half),
   &:has(> .media-entity--view-mode-half-wide) {
-    max-width: 50%;
+    @include media-breakpoint-up(md) {
+      max-width: 50%;
 
-    &.align-left,
-    &.align-right {
-      max-width: calc(50% - 1rem);
+      &.align-left,
+      &.align-right {
+        max-width: calc(50% - 1rem);
+      }
     }
 
     .media-entity--view-mode-half,
