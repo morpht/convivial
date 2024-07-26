@@ -163,6 +163,14 @@ figure.drupal-media {
         max-width: unset;
       }
     }
+
+    @include media-breakpoint-down(sm) {
+      max-width: 50%;
+
+      .media-entity {
+        max-width: unset;
+      }
+    }
   }
 
   &:has(> .media-entity--view-mode-large) {
