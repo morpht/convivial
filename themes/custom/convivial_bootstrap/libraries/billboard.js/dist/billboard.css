@@ -1,11 +1,11 @@
 /*!
  * Copyright (c) 2017 ~ present NAVER Corp.
  * billboard.js project is licensed under the MIT license
- * 
+ *
  * billboard.js, JavaScript chart library
  * https://naver.github.io/billboard.js/
- * 
- * @version 1.12.12
+ *
+ * @version 3.12.4
  */
 /*-- Chart --*/
 .bb svg {
@@ -24,10 +24,11 @@
 .bb-legend-item-tile,
 .bb-xgrid-focus,
 .bb-ygrid-focus,
-.bb-ygrid,
-.bb-event-rect,
-.bb-bars path {
+.bb-ygrid {
   shape-rendering: crispEdges; }
+
+.bb-chart-arcs .bb-needle {
+  fill: #000; }
 
 .bb-chart-arc .bb-gauge-value {
   fill: #000; }
@@ -43,16 +44,29 @@
   fill: #fff;
   font-size: 13px; }
 
+/*-- Funnel --*/
+.bb-chart-funnels path {
+  stroke-width: 0; }
+
+.bb-chart-funnels + .bb-chart-texts text {
+  font-size: 13px;
+  fill: #fff; }
+
 /*-- Axis --*/
 .bb-axis {
   shape-rendering: crispEdges; }
+  .bb-axis .bb-axis-x-tooltip, .bb-axis .bb-axis-y-tooltip, .bb-axis .bb-axis-y2-tooltip {
+    font-size: 1em;
+    fill: #fff;
+    white-space: nowrap; }
 
 /*-- Grid --*/
-.bb-grid line {
-  stroke: #aaa; }
-
-.bb-grid text {
-  fill: #aaa; }
+.bb-grid {
+  pointer-events: none; }
+  .bb-grid line {
+    stroke: #aaa; }
+  .bb-grid text {
+    fill: #aaa; }
 
 .bb-xgrid, .bb-ygrid {
   stroke-dasharray: 3 3; }
@@ -81,22 +95,29 @@
   .bb-bar._expanded_ {
     fill-opacity: 0.75; }
 
+/*-- Candlestick --*/
+.bb-candlestick {
+  stroke-width: 1px; }
+  .bb-candlestick._expanded_ {
+    fill-opacity: 0.75; }
+
 /*-- Focus --*/
-.bb-target.bb-focused {
+.bb-target.bb-focused, .bb-circles.bb-focused {
   opacity: 1; }
 
-.bb-target.bb-focused path.bb-line, .bb-target.bb-focused path.bb-step {
+.bb-target.bb-focused path.bb-line, .bb-target.bb-focused path.bb-step, .bb-circles.bb-focused path.bb-line, .bb-circles.bb-focused path.bb-step {
   stroke-width: 2px; }
 
-.bb-target.bb-defocused {
+.bb-target.bb-defocused, .bb-circles.bb-defocused {
   opacity: 0.3 !important; }
-  .bb-target.bb-defocused .text-overlapping {
+  .bb-target.bb-defocused .text-overlapping, .bb-circles.bb-defocused .text-overlapping {
     opacity: .05 !important; }
 
 /*-- Region --*/
 .bb-region {
-  fill: steelblue;
-  fill-opacity: .1; }
+  fill: steelblue; }
+  .bb-region rect {
+    fill-opacity: .1; }
 
 /*-- Zoom region --*/
 .bb-zoom-brush {
@@ -106,7 +127,6 @@
 .bb-brush .extent {
   fill-opacity: .1; }
 
-/*-- Select - Drag --*/
 /*-- Legend --*/
 .bb-legend-item {
   font-size: 12px;
@@ -125,6 +145,11 @@
 .bb-title {
   font: 14px sans-serif; }
 
+/*-- Treemap --*/
+.bb-chart-treemaps rect {
+  stroke: #fff;
+  stroke-width: 1px; }
+
 /*-- Tooltip --*/
 .bb-tooltip-container {
   z-index: 10;
@@ -136,9 +161,8 @@
   background-color: #fff;
   empty-cells: show;
   opacity: 0.9;
-  -webkit-box-shadow: 7px 7px 12px -9px #777777;
-  -moz-box-shadow: 7px 7px 12px -9px #777777;
-  box-shadow: 7px 7px 12px -9px #777777; }
+  box-shadow: 7px 7px 12px -9px #777777;
+  white-space: nowrap; }
   .bb-tooltip tr {
     border: 1px solid #CCC; }
   .bb-tooltip th {
@@ -170,23 +194,28 @@
   dominant-baseline: middle;
   font-size: 1.3em; }
 
-.bb-chart-arcs-gauge-title {
+text.bb-chart-arcs-gauge-title {
   dominant-baseline: middle;
   font-size: 2.7em; }
 
-.bb-chart-arcs .bb-chart-arcs-background {
-  fill: #e0e0e0;
-  stroke: #fff; }
-
-.bb-chart-arcs .bb-chart-arcs-gauge-unit {
-  fill: #000;
-  font-size: 16px; }
-
-.bb-chart-arcs .bb-chart-arcs-gauge-max {
-  fill: #777; }
-
-.bb-chart-arcs .bb-chart-arcs-gauge-min {
-  fill: #777; }
+.bb-chart-arcs {
+  /*-- Polar --*/ }
+  .bb-chart-arcs .bb-chart-arcs-background {
+    fill: #e0e0e0;
+    stroke: #fff; }
+  .bb-chart-arcs .bb-chart-arcs-gauge-unit {
+    fill: #000;
+    font-size: 16px; }
+  .bb-chart-arcs .bb-chart-arcs-gauge-max {
+    fill: #777; }
+  .bb-chart-arcs .bb-chart-arcs-gauge-min {
+    fill: #777; }
+  .bb-chart-arcs .bb-levels circle {
+    fill: none;
+    stroke: #848282;
+    stroke-width: .5px; }
+  .bb-chart-arcs .bb-levels text {
+    fill: #848282; }
 
 /*-- Radar --*/
 .bb-chart-radars .bb-levels polygon {
@@ -222,5 +251,3 @@
     border-radius: 5px;
     cursor: pointer; }
 
-
-/*# sourceMappingURL=billboard.css.map*/
