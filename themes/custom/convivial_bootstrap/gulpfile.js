@@ -3,9 +3,6 @@
 // Include gulp.
 import gulp from 'gulp';
 
-// Include config.
-import config from './config.json' assert {type: 'json'};
-
 // Include plugins.
 import gulpSass from 'gulp-sass';
 import * as dartSass from 'sass';
@@ -21,6 +18,7 @@ import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import del from 'del';
 import browserSync from 'browser-sync';
+import {createRequire} from 'module';
 import {existsSync, readFileSync} from 'fs';
 
 // Import imagemin plugins.
@@ -29,6 +27,9 @@ import imageminGifsicle from 'imagemin-gifsicle';
 import imageminMozjpeg from 'imagemin-mozjpeg';
 import imageminOptipng from 'imagemin-optipng';
 import imageminSvgo from 'imagemin-svgo';
+
+// Include config.
+const config = createRequire(import.meta.url)("./config.json");
 
 // Initialize browserSync
 const bs = browserSync.create();
@@ -264,11 +265,14 @@ gulp.task('js-lint', function () {
 // BrowserSync settings.
 gulp.task('browserSync', function () {
   bs.init({
-    proxy: 'http://appserver', // Could be 'http://appserver' if you're running apache.
+    // Could be 'http://appserver' if you're running apache.
+    proxy: 'http://appserver',
     host: 'bs.convivial-demo.localhost',
     socket: {
-      domain: 'bs.convivial-demo.localhost', // The node proxy domain you defined in .lando.yaml. Must be https?
-      port: 80 // NOT the 3000 you might expect.
+      // The node proxy domain you defined in .lando.yaml. Must be https?
+      domain: 'bs.convivial-demo.localhost',
+      // NOT the 3000 you might expect.
+      port: 80
     },
     open: false,
     logConnections: true,
