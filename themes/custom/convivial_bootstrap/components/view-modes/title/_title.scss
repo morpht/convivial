@@ -12,14 +12,14 @@ $arrow-svg: url('data:image/svg+xml,<svg width="1.5rem" height="15.rem" viewBox=
 $arrow-dark-svg: url('data:image/svg+xml,<svg width="1.5rem" height="15.rem" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#{$white}" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/></svg>');
 
 .title__title {
-  border-top: 1px solid #a0a5ae;
-  border-bottom: 1px solid #a0a5ae;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
   color: $title-body-color;
   margin: 0;
 
   a {
     padding: 1rem;
-    color: $body-color;
+    color: $title-body-color;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -27,8 +27,12 @@ $arrow-dark-svg: url('data:image/svg+xml,<svg width="1.5rem" height="15.rem" vie
 
     &:hover,
     &:focus {
+      color: $title-background;
       background: $title-link-hover-color;
-      color: $title-bg;
+
+      &:after {
+        background-image: escape-svg($arrow-dark-svg);
+      }
     }
 
     &:after {
@@ -38,17 +42,11 @@ $arrow-dark-svg: url('data:image/svg+xml,<svg width="1.5rem" height="15.rem" vie
       height: 1.5rem;
       width: 1.5rem;
     }
-
-    &:focus:after,
-    &:hover:after {
-      background-image: escape-svg($arrow-dark-svg);
-    }
   }
 
   // Dark colour palette.
   .cp--dark &,
-  .cp--primary-dark &,
-  .cp--seconadry-dark & {
+  .cp--primary-dark & {
     color: $title-dark-body-color;
 
     a {
@@ -56,10 +54,11 @@ $arrow-dark-svg: url('data:image/svg+xml,<svg width="1.5rem" height="15.rem" vie
 
       &:focus,
       &:hover {
-        color: $title-dark-link-hover-color;
+        color: $title-dark-background;
+        background: $title-dark-link-hover-color;
 
         &:after {
-          background-image: escape-svg($arrow-dark-svg);
+          background-image: escape-svg($arrow-svg);
         }
       }
 

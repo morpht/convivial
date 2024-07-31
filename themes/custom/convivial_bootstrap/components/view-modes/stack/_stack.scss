@@ -73,12 +73,16 @@
   .stack {
     color: $stack-body-color;
 
-    a:not(.cta-link) {
+    a {
       color: $stack-link-color;
-      filter: none;
 
-      &:hover {
+      &:hover,
+      &:focus {
         color: $stack-link-hover-color;
+      }
+
+      &:focus {
+        outline-color: $stack-link-active-color;
       }
     }
   }
@@ -100,7 +104,7 @@
 
     // If any element inside the card receives focus, add a focus ring around the wrapper card div
     &:focus-within {
-      outline: -webkit-focus-ring-color auto 1px;
+      outline: 2px solid $link-active-color;
       outline-offset: 2px;
     }
 

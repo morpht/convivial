@@ -1,5 +1,4 @@
 /*! @convivial_bootstrap/summary */
-
 .summary {
   .hide-info & {
     .summary__info {
@@ -11,29 +10,4 @@
 .summary__info {
   color: var(--alt-text);
   margin-bottom: .5rem;
-}
-
-// Title has a full unit gap bellow.
-.summary__title {
-
-  a {
-    color: $summary-link-color;
-
-    &:focus,
-    &:hover {
-      color: $summary-link-hover-color;
-    }
-
-    // Dark colour palette.
-    .cp--dark &,
-    .cp--primary-dark &,
-    .cp--seconadry-dark & {
-      color: $summary-dark-link-color;
-
-      &:focus,
-      &:hover {
-        color: $summary-dark-link-hover-color;
-      }
-    }
-  }
 }

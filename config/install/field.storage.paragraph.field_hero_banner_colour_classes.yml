@@ -25,9 +25,6 @@ settings:
     -
       value: 'cp cp--primary-dark'
       label: 'Primary dark'
-    -
-      value: 'cp cp--animated-dark'
-      label: 'Animated dark'
   allowed_values_function: ''
 module: options
 locked: false

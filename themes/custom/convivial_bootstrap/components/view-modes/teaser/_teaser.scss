@@ -44,39 +44,15 @@ $teaser--medium_image-width: 12.5rem; // 200px
 
 .teaser__info {
   @include font-size($small-font-size);
+
   color: var(--alt-text);
   margin-bottom: .5rem;
   text-transform: uppercase;
 
   // Dark colour palette.
   .cp--dark &,
-  .cp--primary-dark &,
-  .cp--seconadry-dark & {
+  .cp--primary-dark & {
     color: $dark-body-color;
-  }
-}
-
-// Title has a full unit gap bellow.
-.teaser__title {
-
-  a {
-    color: $teaser-link-color;
-
-    &:focus,
-    &:hover {
-      color: $teaser-link-hover-color;
-    }
-
-    // Dark colour palette.
-    .cp--dark &,
-    .cp--primary-dark &,
-    .cp--seconadry-dark & {
-      color: $teaser-dark-link-color;
-
-      &:hover {
-        color: $teaser-dark-link-hover-color;
-      }
-    }
   }
 }
 
@@ -85,8 +61,15 @@ $teaser--medium_image-width: 12.5rem; // 200px
 }
 
 .teaser__tags {
-  color: var(--alt-text);
   @include font-size($small-font-size);
+
+  color: var(--alt-text);
+
+  // Dark colour palette.
+  .cp--dark &,
+  .cp--primary-dark & {
+    color: $dark-body-color;
+  }
 }
 
 // Teaser small dimensions.

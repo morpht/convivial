@@ -156,6 +156,13 @@ $palettes: (
       }
     }
 
+    // Card
+    .card.card--clickable {
+      &:focus-within {
+        outline-color:  map-get($palette, link_active);
+      }
+    }
+
     // Buttons
     .btn.btn-link {
       color: map-get($palette, link);

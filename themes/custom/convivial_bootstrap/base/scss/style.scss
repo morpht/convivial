@@ -1,9 +1,11 @@
+// Import Bootstrap
+// Functions
+@import "../../libraries/bootstrap/scss/functions";
+
 // Variables override
 @import "variables-override";
 
-// Import Bootstrap
-// Configuration
-@import "../../libraries/bootstrap/scss/functions";
+// Configurations
 @import "../../libraries/bootstrap/scss/variables";
 @import "../../libraries/bootstrap/scss/variables-dark";
 @import "../../libraries/bootstrap/scss/maps";

@@ -160,8 +160,6 @@ abstract class ConfigurableLayoutBase extends LayoutDefault implements PluginFor
       'cp cp--dark' => 'Dark',
       'cp cp--primary' => 'Primary',
       'cp cp--primary-dark' => 'Primary dark',
-      'cp cp--secondary' => 'Secondary',
-      'cp cp--secondary-dark' => 'Secondary dark',
     ];
   }
 

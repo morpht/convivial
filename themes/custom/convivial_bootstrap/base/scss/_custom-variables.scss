@@ -159,19 +159,9 @@ $stack-bg:                                      $white;
 $stack-body-color:                              $body-color;
 $stack-link-color:                              $link-color;
 $stack-link-hover-color:                        $link-hover-color;
-
-// Summary
-$summary-link-color:                            $link-color;
-$summary-link-hover-color:                      $link-hover-color;
-$summary-dark-link-color:                       $dark-link-color;
-$summary-dark-link-hover-color:                 $dark-link-hover-color;
+$stack-link-active-color:                       $link-active-color;
 
 // Teaser
-$teaser-link-color:                             $link-color;
-$teaser-link-hover-color:                       $link-hover-color;
-$teaser-dark-link-color:                        $dark-link-color;
-$teaser-dark-link-hover-color:                  $dark-link-hover-color;
-
 $enable-teaser-image-rounded:                   $enable-rounded;
 $teaser-image-border-radius:                    $card-border-radius;
 
@@ -182,9 +172,8 @@ $tile-link-hover-color:                         $white;
 $tile-overlay:                                  $black;
 
 // Title
-$title-bg:                                      $light;
+$title-background:                              $light;
 $title-body-color:                              $body-color;
-$title-link-color:                              $body-color;
 $title-link-hover-color:                        $body-color;
 $title-dark-background:                         $dark;
 $title-dark-body-color:                         $dark-body-color;
