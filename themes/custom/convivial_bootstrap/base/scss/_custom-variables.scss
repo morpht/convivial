@@ -156,10 +156,10 @@ $search-link-hover-color:                       $link-hover-color;
 
 // Stack
 $stack-bg:                                      $white;
-$stack-body-color:                              $body-color;
-$stack-link-color:                              $link-color;
-$stack-link-hover-color:                        $link-hover-color;
-$stack-link-active-color:                       $link-active-color;
+$stack-body-color:                              var(--standard-foreground);
+$stack-link-color:                              var(--standard-link);
+$stack-link-hover-color:                        var(--standard-link-hover);
+$stack-link-active-color:                       var(--standard-link-active);
 
 // Teaser
 $enable-teaser-image-rounded:                   $enable-rounded;
