@@ -56,16 +56,24 @@ content:
       display_label: true
     third_party_settings: {  }
   field_modifiers:
-    type: entity_reference_paragraphs
+    type: paragraphs
     weight: 8
     region: content
     settings:
       title: Modifiers
       title_plural: Modifier
-      edit_mode: preview
+      edit_mode: closed_expand_nested
+      closed_mode: preview
+      autocollapse: none
+      closed_mode_threshold: 0
       add_mode: dropdown
       form_display_mode: default
       default_paragraph_type: _none
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        convert: '0'
+        duplicate: duplicate
     third_party_settings: {  }
   field_position:
     type: options_select

@@ -2,10 +2,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - image.style.featured_m_hi
     - image.style.full_lg
     - image.style.full_lg_hi
     - image.style.full_md
-    - image.style.full_md_hi
     - image.style.full_sm
     - image.style.full_sm_hi
   module:
@@ -30,7 +30,7 @@ image_style_mappings:
     multiplier: 1x
   -
     image_mapping_type: image_style
-    image_mapping: full_md_hi
+    image_mapping: featured_m_hi
     breakpoint_id: convivial_breakpoints.medium
     multiplier: 2x
   -
