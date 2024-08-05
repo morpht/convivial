@@ -27,8 +27,6 @@ dependencies:
     - field.field.node.event.field_thumbnail
     - field.field.node.event.field_toc
     - field.field.node.event.field_updated_date
-    - field.field.node.event.layout_builder__layout
-    - field.field.node.event.layout_selection
     - node.type.event
   module:
     - convivial_layouts
@@ -155,7 +153,5 @@ hidden:
   field_thumbnail: true
   field_toc: true
   field_updated_date: true
-  layout_builder__layout: true
-  layout_selection: true
   links: true
   search_api_excerpt: true
