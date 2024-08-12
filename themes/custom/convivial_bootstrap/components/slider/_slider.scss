@@ -1,3 +1,7 @@
+// Import dependencies.
+@import "../../libraries/slick-carousel/slick/slick.scss";
+@import "../../libraries/slick-carousel/slick/slick-theme.scss";
+
 // Force slider item have same height.
 .slick-slider {
   .slick-track {

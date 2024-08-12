@@ -197,10 +197,6 @@ sticky_header_height:
 slick_carousel:
   js:
     libraries/slick-carousel/slick/slick.min.js: { minified: true }
-  css:
-    theme:
-      libraries/slick-carousel/slick/slick.css: { }
-      libraries/slick-carousel/slick/slick-theme.css: { }
 
 slider:
   js:
