@@ -319,5 +319,31 @@ $palettes: (
         background: rgba(255, 255, 255, 0.05);
       }
     }
+
+    // Slider
+    .slick-slider {
+      .slick-prev,
+      .slick-next {
+        background-color: map-get($palette, link);
+
+        &:hover,
+        &:focus {
+          background-color: map-get($palette, link_hover);
+        }
+      }
+    }
+
+    @if $is_dark == true {
+      .slick-slider {
+        .slick-prev:before {
+          background-image: escape-svg(#{$slider_previous_icon_black});
+        }
+
+        .slick-next:before {
+          background-image: escape-svg(#{$slider_next_icon_black});
+        }
+      }
+    }
+
   }
 }
