@@ -166,7 +166,7 @@
         "3133484 - Form blocks rendered inside layout builder library break save": "https://www.drupal.org/files/issues/2020-05-04/layout-library-save-issue-3133484-4.patch"
       },
       "drupal/redirect": {
-        "3037259 - Endless Redirection loop when using Domain access": "https://www.drupal.org/files/issues/2022-09-13/3037259-28.patch"
+        "3037259 - Endless Redirection loop when using Domain access": "https://www.drupal.org/files/issues/2024-08-12/3037259-39.patch"
       }
     }
   }
