@@ -1,10 +1,12 @@
 (function ($, Drupal) {
-  Drupal.behaviors.convivialDemoSlider = {
+  Drupal.behaviors.convivialSlider = {
     attach: function (context, settings) {
 
       let defaultSettings = {
         adaptiveHeight: true,
         centerMode: true,
+        centerPadding: '0px',
+        slidesToShow: 1,
       }
 
       let halvesSettings = {

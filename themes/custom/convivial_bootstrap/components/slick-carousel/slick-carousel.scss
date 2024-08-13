@@ -1,0 +1,10 @@
+// Define slick path.
+$slick-font-path: "../../libraries/slick-carousel/slick/fonts/";
+$slick-loader-path: "../../libraries/slick-carousel/slick/";
+
+// Disabled slick font.
+$slick-font-family: inherit;
+
+// Import slick libraries.
+@import "../../libraries/slick-carousel/slick/slick.scss";
+@import "../../libraries/slick-carousel/slick/slick-theme.scss";
