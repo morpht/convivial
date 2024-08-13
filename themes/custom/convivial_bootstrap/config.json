@@ -29,7 +29,6 @@
       "./node_modules/accessible-mega-menu/js/jquery-accessibleMegaMenu.js",
       "./node_modules/anchorific/min/*",
       "./node_modules/billboard.js/dist/**/*",
-      "./node_modules/bootstrap-ie11/css/**/*",
       "./node_modules/bootstrap/dist/**/*",
       "./node_modules/bootstrap/js/**/*",
       "./node_modules/bootstrap/scss/**/*",
