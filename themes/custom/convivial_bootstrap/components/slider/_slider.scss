@@ -20,6 +20,8 @@
 .list-layout.list-layout--slider-halves,
 .list-layout.list-layout--slider-thirds,
 .list-layout.list-layout--slider-quarters {
+  overflow: hidden;
+
   .list {
     display: flex;
     flex-wrap: wrap;
