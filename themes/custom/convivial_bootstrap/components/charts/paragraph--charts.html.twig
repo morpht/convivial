@@ -39,12 +39,12 @@
  */
 #}
 {% set classes = [
-    'charts',
-    'paragraph',
-    'paragraph--type--' ~ paragraph.bundle|clean_class,
-    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-  ]
-%}
+  'charts',
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+] %}
+
 {{ include ('convivial_bootstrap:charts', {
   attributes,
   classes,
