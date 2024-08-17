@@ -23,6 +23,8 @@ dependencies:
     - field.field.node.topic.field_thumbnail
     - field.field.node.topic.field_toc
     - field.field.node.topic.field_updated_date
+    - field.field.node.topic.layout_builder__layout
+    - field.field.node.topic.layout_selection
     - node.type.topic
   module:
     - convivial_layouts
@@ -117,5 +119,7 @@ hidden:
   field_thumbnail: true
   field_toc: true
   field_updated_date: true
+  layout_builder__layout: true
+  layout_selection: true
   links: true
   search_api_excerpt: true

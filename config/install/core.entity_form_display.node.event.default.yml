@@ -26,6 +26,8 @@ dependencies:
     - field.field.node.event.field_thumbnail
     - field.field.node.event.field_toc
     - field.field.node.event.field_updated_date
+    - field.field.node.event.layout_builder__layout
+    - field.field.node.event.layout_selection
     - node.type.event
     - workflows.workflow.editorial
   module:
@@ -281,6 +283,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  layout_selection:
+    type: options_select
+    weight: 27
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
     weight: 14
@@ -343,4 +351,4 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
-  layout_selection: true
+  layout_builder__layout: true

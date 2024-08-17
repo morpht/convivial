@@ -23,6 +23,8 @@ dependencies:
     - field.field.node.audience.field_thumbnail
     - field.field.node.audience.field_toc
     - field.field.node.audience.field_updated_date
+    - field.field.node.audience.layout_builder__layout
+    - field.field.node.audience.layout_selection
     - node.type.audience
     - system.menu.main
     - views.view.audience_content
@@ -40,7 +42,7 @@ dependencies:
 third_party_settings:
   layout_builder:
     enabled: true
-    allow_custom: false
+    allow_custom: true
     sections:
       -
         layout_id: convivial_header
@@ -289,7 +291,7 @@ third_party_settings:
             additional: {  }
         third_party_settings: {  }
   layout_library:
-    enable: false
+    enable: true
 id: node.audience.full
 targetEntityType: node
 bundle: audience
@@ -379,4 +381,5 @@ hidden:
   field_tasks: true
   field_updated_date: true
   layout_builder__layout: true
+  layout_selection: true
   search_api_excerpt: true
