@@ -166,7 +166,6 @@ permissions:
   - 'cancel account'
   - 'change own username'
   - 'configure all article node layout overrides'
-  - 'configure all event node layout overrides'
   - 'configure all page node layout overrides'
   - 'configure all person node layout overrides'
   - 'configure all place node layout overrides'
