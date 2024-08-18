@@ -171,7 +171,6 @@ permissions:
   - 'configure any layout'
   - 'configure editable article node layout overrides'
   - 'configure editable page node layout overrides'
-  - 'configure editable place node layout overrides'
   - 'configure editable topic node layout overrides'
   - 'configure layout builder iframe modal'
   - 'create and edit custom blocks'
