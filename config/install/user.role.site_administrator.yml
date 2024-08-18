@@ -173,7 +173,6 @@ permissions:
   - 'configure all topic node layout overrides'
   - 'configure any layout'
   - 'configure editable article node layout overrides'
-  - 'configure editable audience node layout overrides'
   - 'configure editable event node layout overrides'
   - 'configure editable page node layout overrides'
   - 'configure editable person node layout overrides'
