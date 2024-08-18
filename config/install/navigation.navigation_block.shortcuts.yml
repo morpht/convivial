@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies: {  }
+id: shortcuts
+region: content
+weight: 0
+provider: navigation
+plugin: shortcuts
+settings:
+  id: shortcuts
+  label: Shortcuts
+  label_display: '0'
+  provider: navigation
+  status: true
+  info: ''
+  view_mode: default
+visibility: {  }

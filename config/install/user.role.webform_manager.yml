@@ -5,7 +5,6 @@ dependencies:
     - file
     - help
     - system
-    - toolbar
     - webform
 id: webform_manager
 label: 'Webform manager'
@@ -15,7 +14,6 @@ permissions:
   - 'access administration pages'
   - 'access any webform configuration'
   - 'access help pages'
-  - 'access toolbar'
   - 'access webform overview'
   - 'access webform submission user'
   - 'administer webform'
