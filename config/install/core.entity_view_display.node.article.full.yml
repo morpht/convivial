@@ -27,6 +27,8 @@ dependencies:
     - field.field.node.article.field_thumbnail
     - field.field.node.article.field_toc
     - field.field.node.article.field_updated_date
+    - field.field.node.article.layout_builder__layout
+    - field.field.node.article.layout_selection
     - node.type.article
     - views.view.content_author
     - views.view.content_author_time
@@ -47,7 +49,7 @@ dependencies:
 third_party_settings:
   layout_builder:
     enabled: true
-    allow_custom: false
+    allow_custom: true
     sections:
       -
         layout_id: convivial_header
@@ -367,7 +369,7 @@ third_party_settings:
             additional: {  }
         third_party_settings: {  }
   layout_library:
-    enable: false
+    enable: true
 id: node.article.full
 targetEntityType: node
 bundle: article
@@ -461,4 +463,5 @@ hidden:
   field_summary: true
   field_updated_date: true
   layout_builder__layout: true
+  layout_selection: true
   search_api_excerpt: true
