@@ -164,7 +164,8 @@
         "3353786 - Error calling a view with non-numeric argument, e.g. Content: ID": "https://git.drupalcode.org/project/drupal/-/merge_requests/4493.diff"
       },
       "drupal/layout_library": {
-        "3133484 - Form blocks rendered inside layout builder library break save": "https://www.drupal.org/files/issues/2020-05-04/layout-library-save-issue-3133484-4.patch"
+        "3133484 - Form blocks rendered inside layout builder library break save": "https://www.drupal.org/files/issues/2020-05-04/layout-library-save-issue-3133484-4.patch",
+        "3298697 - Trying to save default layout disables Layout Library": "https://git.drupalcode.org/project/layout_library/-/merge_requests/11.diff"
       },
       "drupal/redirect": {
         "3037259 - Endless Redirection loop when using Domain access": "https://www.drupal.org/files/issues/2024-08-12/3037259-39.patch"
