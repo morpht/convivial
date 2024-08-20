@@ -8,34 +8,52 @@ $introduction-font-weight:  300;
 ///
 
 // Header
-$timing-header-transition:                      .4s;
+$timing-header-transition:                      0.4s;
 $timing-header-easing:                          ease;
 $z-index-navbar-header:                          500;
 
 // Hero
-$hero-scale:                    1.25;
-$hero-body-spacing:             calc($grid-gutter-width * 2);
-$hero-cta-spacing:              calc($grid-gutter-width * 2);
-$hero-horizontal-spacing:       0;
-$hero-vertical-spacing:         calc($grid-gutter-width * 4);
+$hero-scale:                      1.15 !default;
+$hero-scale-lg:                   1.25 !default;
 
-$hero-font-size:                $font-size-base * $hero-scale;
-$hero-introduction-font-size:   $introduction-font-size * $hero-scale;
+// Hero spacing
+$hero-body-spacing:               calc($grid-gutter-width * 2) !default;
+$hero-cta-spacing:                calc($grid-gutter-width * 2) !default;
+$hero-vertical-spacing:           calc($grid-gutter-width * 3) !default;
+$hero-vertical-spacing-lg:        calc($grid-gutter-width * 4) !default;
+$hero-blockquote-spacing-lg:      $grid-gutter-width !default;
 
-$hero-h1-font-size:             $h1-font-size * $hero-scale;
-$hero-h2-font-size:             $h2-font-size * $hero-scale;
-$hero-h3-font-size:             $h3-font-size * $hero-scale;
-$hero-h4-font-size:             $h4-font-size * $hero-scale;
-$hero-h5-font-size:             $h5-font-size * $hero-scale;
-$hero-h6-font-size:             $h6-font-size * $hero-scale;
-$hero-font-margin-bottom:       $spacer * $hero-scale;
-$hero-headings-margin-bottom:   $spacer * $hero-scale;
+// Hero typography
+$hero-font-size:                  $font-size-base * $hero-scale !default;
+$hero-introduction-font-size:     $introduction-font-size * $hero-scale !default;
+
+$hero-font-size-lg:               $font-size-base * $hero-scale-lg !default;
+$hero-introduction-font-size-lg:  $introduction-font-size * $hero-scale-lg !default;
+
+$hero-h1-font-size:               $h1-font-size * $hero-scale !default;
+$hero-h2-font-size:               $h2-font-size * $hero-scale !default;
+$hero-h3-font-size:               $h3-font-size * $hero-scale !default;
+$hero-h4-font-size:               $h4-font-size * $hero-scale !default;
+$hero-h5-font-size:               $h5-font-size * $hero-scale !default;
+$hero-h6-font-size:               $h6-font-size * $hero-scale !default;
+
+$hero-h1-font-size-lg:            $h1-font-size * $hero-scale-lg !default;
+$hero-h2-font-size-lg:            $h2-font-size * $hero-scale-lg !default;
+$hero-h3-font-size-lg:            $h3-font-size * $hero-scale-lg !default;
+$hero-h4-font-size-lg:            $h4-font-size * $hero-scale-lg !default;
+$hero-h5-font-size-lg:            $h5-font-size * $hero-scale-lg !default;
+$hero-h6-font-size-lg:            $h6-font-size * $hero-scale-lg !default;
 
 // Hero button
-$hero-btn-padding-y-lg:         $btn-padding-y-lg;
-$hero-btn-padding-x-lg:         $btn-padding-x-lg;
-$hero-btn-font-size-lg:         $hero-font-size;
-$hero-btn-border-radius-lg:     $btn-border-radius-lg;
+$hero-btn-font-size:              $hero-font-size !default;
+$hero-btn-padding-x:              $btn-padding-x !default;
+$hero-btn-padding-y:              $btn-padding-y !default;
+$hero-btn-border-radius:          $btn-border-radius !default;
+
+$hero-btn-font-size-lg:           $hero-font-size-lg !default;
+$hero-btn-padding-x-lg:           $btn-padding-x-lg !default;
+$hero-btn-padding-y-lg:           $btn-padding-y-lg !default;
+$hero-btn-border-radius-lg:       $btn-border-radius-lg !default;
 
 // Banner
 $banner-bg:                 #E4E4E6;

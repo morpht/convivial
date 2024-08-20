@@ -33,19 +33,19 @@
   }
 }
 
-.stack__content {
-  .stack__info {
-    @include font-size($h6-font-size);
-    line-height: $headings-line-height;
-    color: $body-secondary-color;
-    margin-bottom: .5rem;
-    text-transform: uppercase;
-  }
+.stack__info {
+  @include font-size($h6-font-size);
 
-  // Title has a full unit gap bellow.
-  .stack__title {
-    @include font-size($h5-font-size);
-  }
+  line-height: $headings-line-height;
+  color: $body-secondary-color;
+  margin-bottom: .5rem;
+  text-transform: uppercase;
+}
+
+.stack__title {
+  @include font-size($h5-font-size);
+
+  margin-top: 0;
 }
 
 .stack__summary {

@@ -103,9 +103,7 @@
 @import "components/gtranslate/gtranslate";
 @import "components/header-section/header-section";
 @import "components/header/header";
-@import "components/hero/hero";
 @import "components/hero-banner/hero-banner";
-@import "components/hide/hide";
 @import "components/is-helpful/is-helpful";
 @import "components/layout-builder/layout-builder";
 @import "components/layout-paragraphs/layout-paragraphs";
@@ -148,3 +146,9 @@
 @import "components/view-modes/teaser/teaser";
 @import "components/view-modes/tile/tile";
 @import "components/view-modes/title/title";
+
+// Hero
+@import "components/hero/hero";
+
+// Hide
+@import "components/hide/hide";

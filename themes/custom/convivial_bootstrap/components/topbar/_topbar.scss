@@ -4,11 +4,13 @@
   background: $black;
   padding: calc($grid-gutter-width / 2) 0;
 
-  p:last-child {
-    margin: 0;
+  p {
+    &:last-child {
+      margin: 0;
+    }
   }
 
-  .region-top-bar {
+  .region {
     display: flex;
     justify-content: space-between;
   }

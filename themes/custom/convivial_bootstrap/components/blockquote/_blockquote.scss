@@ -3,9 +3,7 @@
 blockquote {
   padding: 1.25rem;
   margin: 1.25rem 0;
-  background: rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(0, 0, 0, 0.5);
-  border-left-width: 5px;
+  border-left: 5px solid var(--standard-accent);
   font-size: inherit;
 
   p, ol, ul {

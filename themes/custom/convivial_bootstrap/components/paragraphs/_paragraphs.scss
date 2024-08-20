@@ -10,32 +10,45 @@
   width: 100%;
 }
 
-// Component spacing.
-.field--name-field-components {
-  > .field__item + .field__item > .paragraph {
-    margin-top: calc($grid-gutter-width * 2);
-
-    // Reset margin on edgy pages.
-    .layout.edgy:not(.edgy--contained) &,
-    .layout--content-edgy & {
-      margin-top: 0;
-    }
-  }
-}
-
 // Item component.
 .paragraph-item-content {
   height: 100%;
 }
 
-// Top bar needs to be in container on edgy layouts.
-.top-bar,
+// Component spacing.
+.field--name-field-components {
+  > .field__item + .field__item > .paragraph {
+    margin-top: calc($grid-gutter-width * 2);
+  }
+}
+
+// Edgy layout.
 .layout.edgy:not(.edgy--contained),
 .layout--content-edgy {
+  .field__item > .paragraph {
 
-  // Set container on .containerised when it's inside edgy layout.
-  .field__item > .paragraph > .containerised {
-    @include make-container();
-    @include container-max-widths();
+    // Set container on .containerised when it's inside edgy layout.
+    > .containerised {
+      @include make-container();
+      @include container-max-widths();
+    }
+
+    // Avoid double padding.
+    &.cp {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
+
+  // Reset margin on edgy pages.
+  .field--name-field-components {
+    > .field__item + .field__item > .paragraph {
+      margin-top: 0;
+    }
+  }
+}
+
+// Components spacing.
+.component__heading {
+  margin-bottom: $grid-gutter-width;
 }

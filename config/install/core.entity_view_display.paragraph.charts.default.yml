@@ -25,17 +25,29 @@ dependencies:
     - paragraphs.paragraphs_type.charts
   module:
     - entity_class_formatter
+    - text
 id: paragraph.charts.default
 targetEntityType: paragraph
 bundle: charts
 mode: default
 content:
-  field_chrt_colour_classes:
-    type: entity_class_formatter
+  field_body:
+    type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_chrt_colour_classes:
+    type: entity_class_formatter
+    label: hidden
+    settings:
+      prefix: ''
+      suffix: ''
+      attr: ''
+      field: ''
+    third_party_settings: {  }
+    weight: 2
     region: content
   field_heading:
     type: string
@@ -46,7 +58,6 @@ content:
     weight: 0
     region: content
 hidden:
-  field_body: true
   field_chrt_colors: true
   field_chrt_csv: true
   field_chrt_csv_url: true

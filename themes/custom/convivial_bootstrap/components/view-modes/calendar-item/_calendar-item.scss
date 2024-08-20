@@ -8,56 +8,6 @@ $calendar-item__date-width: 4rem;
   display: flex;
   justify-content: stretch;
 
-  .calendar-item__date {
-    align-items: center;
-    color: #999999;
-    display: flex;
-    font-size: 1rem;
-    line-height: .8;
-    padding: .5rem;
-    text-align: center;
-    text-transform: uppercase;
-    width: $calendar-item__date-width;
-
-    .field {
-      width: 100%;
-    }
-  }
-
-  .calendar-date {
-    margin: 0 auto;
-    color: $govcms8-calendar-item-foreground;
-
-    span {
-      font-size: 2rem;
-      line-height: 1.5;
-      color: $link-color;
-      font-weight: 700;
-      display: block;
-      margin: 0;
-    }
-  }
-
-  .calendar-item__title a {
-    color: $link-color;
-
-    &:focus,
-    &:hover {
-      color: $link-hover-color;
-    }
-  }
-
-  .calendar-item__content {
-    padding: .5rem;
-    border-left: 2px solid $white;
-    width: calc(100% - #{$calendar-item__date-width});
-
-    // All regions has one third unit gap between them.
-    *[class^='calendar-item__'] + *[class^='calendar-item__'] {
-      margin-top: .3rem;
-    }
-  }
-
   &.calendar-item--current {
     background: $govcms8-calendar-item-background-current;
   }
@@ -79,5 +29,59 @@ $calendar-item__date-width: 4rem;
         color: shade-color($govcms8-calendar-item-foreground-past, 10%);
       }
     }
+  }
+}
+
+.calendar-item__title {
+  margin-top: 0;
+
+  a {
+    color: $link-color;
+
+    &:focus,
+    &:hover {
+      color: $link-hover-color;
+    }
+  }
+}
+
+.calendar-item__date {
+  align-items: center;
+  color: #999999;
+  display: flex;
+  font-size: 1rem;
+  line-height: .8;
+  padding: .5rem;
+  text-align: center;
+  text-transform: uppercase;
+  width: $calendar-item__date-width;
+
+  .field {
+    width: 100%;
+  }
+}
+
+.calendar-date {
+  margin: 0 auto;
+  color: $govcms8-calendar-item-foreground;
+
+  span {
+    font-size: 2rem;
+    line-height: 1.5;
+    color: $link-color;
+    font-weight: 700;
+    display: block;
+    margin: 0;
+  }
+}
+
+.calendar-item__content {
+  padding: .5rem;
+  border-left: 2px solid $white;
+  width: calc(100% - #{$calendar-item__date-width});
+
+  // All regions has one third unit gap between them.
+  *[class^='calendar-item__'] + *[class^='calendar-item__'] {
+    margin-top: .3rem;
   }
 }

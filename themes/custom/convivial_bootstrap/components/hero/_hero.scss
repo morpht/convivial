@@ -4,7 +4,6 @@
 
   .component__heading {
     font-size: $hero-h2-font-size;
-    margin-bottom: $hero-headings-margin-bottom;
   }
 
   .component__body {
@@ -19,7 +18,7 @@
     }
 
     .btn {
-      @include button-size($hero-btn-padding-y-lg, $hero-btn-padding-x-lg, $hero-btn-font-size-lg, $hero-btn-border-radius-lg);
+      @include button-size($hero-btn-padding-y, $hero-btn-padding-x, $hero-btn-font-size, $hero-btn-border-radius);
     }
 
     a {
@@ -49,21 +48,6 @@
     h6 {
       font-size: $hero-h6-font-size;
     }
-
-    h1, h2, h3,
-    h4, h5, h6 {
-      margin-bottom: $hero-headings-margin-bottom;
-    }
-
-    p, ol, ul, dl {
-      margin-bottom: $hero-font-margin-bottom;
-    }
-
-    blockquote,
-    .callout {
-      margin-top: $hero-font-margin-bottom;
-      margin-bottom: $hero-font-margin-bottom;
-    }
   }
 
   .component__cta {
@@ -77,6 +61,72 @@
 
     .cta-link {
       margin-top: 0;
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .style--hero {
+    padding-top: $hero-vertical-spacing-lg;
+    padding-bottom: $hero-vertical-spacing-lg;
+
+    .component__heading {
+      font-size: $hero-h2-font-size-lg;
+    }
+
+    .component__body {
+      font-size: $hero-font-size-lg;
+
+      .introduction {
+        font-size: $hero-introduction-font-size-lg;
+      }
+
+      .btn {
+        @include button-size($hero-btn-padding-y-lg, $hero-btn-padding-x-lg, $hero-btn-font-size-lg, $hero-btn-border-radius-lg);
+      }
+
+      a {
+        font-size: $hero-font-size-lg;
+      }
+
+      h1 {
+        font-size: $hero-h1-font-size-lg;
+      }
+
+      h2 {
+        font-size: $hero-h2-font-size-lg;
+      }
+
+      h3 {
+        font-size: $hero-h3-font-size-lg;
+      }
+
+      h4 {
+        font-size: $hero-h4-font-size-lg;
+      }
+
+      h5 {
+        font-size: $hero-h5-font-size-lg;
+      }
+
+      h6 {
+        font-size: $hero-h6-font-size-lg;
+      }
+
+      blockquote {
+        margin-top: $hero-blockquote-spacing-lg;
+        margin-bottom: $hero-blockquote-spacing-lg;
+        padding: $hero-blockquote-spacing-lg;
+      }
+    }
+
+    .component__cta {
+      font-size: $hero-font-size-lg;
+
+      a,
+      .cta-link {
+        font-size: $hero-font-size-lg;
+      }
     }
   }
 }

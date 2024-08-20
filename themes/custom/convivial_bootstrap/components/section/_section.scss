@@ -2,7 +2,7 @@
 
 .section-layout {
   .field--name-field-body + .section-components {
-    margin-top: calc($grid-gutter-width * 2);
+    margin-top: $grid-gutter-width;
   }
 }
 

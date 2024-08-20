@@ -2,11 +2,13 @@
 
 .search__info {
   color: var(--alt-text);
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 // Title has a full unit gap bellow.
 .search__title {
+  margin-top: 0;
+
   a {
     color: $search-link-color;
 

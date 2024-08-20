@@ -33,3 +33,9 @@ h6 {
 dd {
   margin-bottom: $paragraph-margin-bottom;
 }
+
+p {
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

@@ -11,20 +11,22 @@
 
   // Reset side padding for edgy layouts.
   .layout--content-edgy &,
-  .edgy:not(.edgy--contained) &,
-  &.layout--header-section {
-
-    // Only on desktop.
+  .edgy:not(.edgy--contained) & {
     @include media-breakpoint-up(md) {
       padding-left: 0;
       padding-right: 0;
     }
   }
 
-  // Reset margin for header section.
+  // Reset margin and side padding for header section.
   &.layout--header-section {
     margin-top: 0;
     margin-bottom: 0;
+
+    @include media-breakpoint-up(md) {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 
   // Set z-index for all elements inside modifiers-has-background class

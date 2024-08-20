@@ -7,7 +7,7 @@
 // Alignment.
 .align-left {
   margin-right: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: $paragraph-margin-bottom;
 }
 
 .align-center img {
@@ -18,12 +18,12 @@
 
 .align-right {
   margin-left: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: $paragraph-margin-bottom;
 }
 
 // Prevents from adding margin to view modes.
 .media-entity:not(:only-child) {
-  margin-bottom: 1rem;
+  margin-bottom: $paragraph-margin-bottom;
 }
 
 // Image view modes.
@@ -114,7 +114,7 @@
 // Images with caption.
 figure.drupal-media {
   display: table;
-  margin-bottom: 1rem;
+  margin-bottom: $paragraph-margin-bottom;
 
   .media-entity--type-image {
     margin-bottom: 0;

@@ -23,9 +23,3 @@
     font-weight: bold;
   }
 }
-
-// Video responsive.
-.field--name-field-media-oembed-video {
-  @extend .ratio;
-  @extend .ratio-16x9;
-}

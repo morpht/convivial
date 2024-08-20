@@ -38,6 +38,10 @@ $teaser--medium_image-width: 12.5rem; // 200px
   }
 }
 
+.teaser__title {
+  margin-top: 0;
+}
+
 .teaser__content {
   order: 2;
 }
@@ -120,7 +124,8 @@ $teaser--medium_image-width: 12.5rem; // 200px
       width: 50%;
     }
 
-    img {
+    img,
+    picture {
       width: 100%;
     }
   }
@@ -137,6 +142,20 @@ $teaser--medium_image-width: 12.5rem; // 200px
       font-size: $h2-font-size;
       font-weight: $headings-font-weight;
       line-height: $headings-line-height;
+    }
+  }
+}
+
+// If breakout, no gaps.
+.breakout {
+  &.list--no-side-gaps.list--no-row-gaps {
+    .teaser--big {
+      .teaser__image {
+        img,
+        picture {
+          border-radius: 0;
+        }
+      }
     }
   }
 }

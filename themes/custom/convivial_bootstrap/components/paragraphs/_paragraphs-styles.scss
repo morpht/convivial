@@ -1,8 +1,10 @@
 /*! @convivial_bootstrap/paragraphs-styles */
 
 .paragraph {
-  &.breakout > .containerised {
-    max-width: 100% !important;
+  &.breakout {
+    > .containerised {
+      max-width: 100% !important;
+    }
   }
 
   &.no-side-gaps {
