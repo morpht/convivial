@@ -52,3 +52,9 @@
 .component__heading {
   margin-bottom: $grid-gutter-width;
 }
+
+.component__body {
+  &:not(:last-child) {
+    margin-bottom: $grid-gutter-width;
+  }
+}
