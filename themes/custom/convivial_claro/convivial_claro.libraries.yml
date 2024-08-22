@@ -9,7 +9,6 @@ font-family:
       https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap: { type: external }
 
 layout_paragraphs_hotfix:
-  version: 1.x
   js:
     js/layout-paragraphs-hotfix.js: { }
   dependencies:
