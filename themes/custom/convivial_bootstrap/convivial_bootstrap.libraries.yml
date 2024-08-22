@@ -81,7 +81,6 @@ d3:
     libraries/d3/dist/d3.min.js: { minified: true }
 
 fastfacts:
-  version: VERSION
   js:
     components/fastfacts/fastfacts.js: { }
   dependencies:
@@ -94,10 +93,9 @@ font-family:
       https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap: { type: external }
 
 geochart:
-  version: 1.0
   header: true
   js:
-    https://www.gstatic.com/charts/loader.js: { type: external }
+    //www.gstatic.com/charts/loader.js: { type: external }
     components/geochart/geochart.js: { }
   dependencies:
     - core/drupal
