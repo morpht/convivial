@@ -39,17 +39,30 @@
   display: none;
 }
 
-/* Media view mode */
+/* Media image view modes */
 .ck .media-entity--type-image.media-entity--view-mode-half,
 .ck .media-entity--type-image.media-entity--view-mode-half-wide {
   max-width: unset;
 }
 
-/* Override alignment */
-.ck-content .drupal-media-style-align-right .align-right {
+/* Media video */
+.ck .drupal-media:has([data-drupal-media-preview] .media-entity--type-remote-video),
+.ck .drupal-media:has([data-drupal-media-preview] .media-entity--type-video) {
+  width: 100%;
+}
+
+.ck .drupal-media-style-align-left .media-entity--type-video,
+.ck .drupal-media-style-align-right .media-entity--type-video,
+.ck .drupal-media-style-align-left .media-entity--type-remote-video,
+.ck .drupal-media-style-align-right .media-entity--type-remote-video {
+  width: 100%;
+}
+
+/* Overridden alignment */
+.ck .drupal-media-style-align-right .align-right {
   margin-left: unset;
 }
 
-.ck-content .drupal-media-style-align-left .align-left {
+.ck .drupal-media-style-align-left .align-left {
   margin-right: unset;
 }

@@ -111,10 +111,13 @@
   }
 }
 
-// Images with caption.
-figure.drupal-media {
+// Figure with caption.
+figure.figure-with-caption {
   display: table;
-  margin-bottom: $paragraph-margin-bottom;
+
+  &:not(:last-child) {
+    margin-bottom: $paragraph-margin-bottom;
+  }
 
   .media-entity--type-image {
     margin-bottom: 0;
@@ -240,6 +243,23 @@ figure.drupal-media {
       margin-left: 0;
       margin-right: 0;
     }
+  }
+
+  &:has(> .media-entity--type-video),
+  &:has(> .media-entity--type-remote-video) {
+    min-width: 50%;
+  }
+}
+
+// Video.
+.media-entity--type-video,
+.media-entity--type-remote-video {
+  display: table;
+  width: 100%;
+
+  &.align-left,
+  &.align-right {
+    width: 50%;
   }
 }
 

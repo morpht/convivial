@@ -12,7 +12,11 @@
  * - string classes: The classes of the captioned HTML tag.
  */
 #}
-<figure{{ attributes.setAttribute('role', 'group').addClass([tag, classes]) }}>
+{% set additional_classes = [
+  tag == 'drupal-media' ? 'figure-with-caption'
+] %}
+
+<figure{{ attributes.setAttribute('role', 'group').addClass(classes, additional_classes) }}>
   {{ node }}
   <figcaption>{{ caption }}</figcaption>
 </figure>
