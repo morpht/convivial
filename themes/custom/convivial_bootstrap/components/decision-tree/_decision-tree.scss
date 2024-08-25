@@ -1,17 +1,11 @@
-*[class*='step__'] {
-  margin-top: $grid-gutter-width;
-}
+.decision-tree {
+  .step {
+    ul {
+      @extend .title;
 
-.step__button--back {
-  margin-right: 0.5rem;
-}
-
-.decision-tree .step {
-  ul {
-    @extend .title;
-
-    padding: 0;
-    margin: 0;
+      padding: 0;
+      margin: 0;
+    }
 
     li {
       @extend .title__title;
@@ -23,19 +17,10 @@
         border-top: 0;
       }
     }
-
-    a {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.75rem 1rem;
-      text-decoration: none;
-      font-size: 1rem;
-      margin-top: 0rem;
-
-      &:hover, &:focus {
-        text-decoration: none;
-      }
-    }
   }
+}
+
+.decision-tree__summary,
+.decision-tree__footer {
+  margin-top: $grid-gutter-width;
 }
