@@ -114,6 +114,7 @@
 // Figure with caption.
 figure.figure-with-caption {
   display: table;
+  width: 100%;
 
   &:not(:last-child) {
     margin-bottom: $paragraph-margin-bottom;
@@ -248,18 +249,28 @@ figure.figure-with-caption {
   &:has(> .media-entity--type-video),
   &:has(> .media-entity--type-remote-video) {
     min-width: 50%;
+
+    @include media-breakpoint-down(sm) {
+      min-width: unset;
+    }
   }
 }
 
 // Video.
 .media-entity--type-video,
 .media-entity--type-remote-video {
-  display: table;
   width: 100%;
 
   &.align-left,
   &.align-right {
     width: 50%;
+
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+      float: none;
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
 }
 

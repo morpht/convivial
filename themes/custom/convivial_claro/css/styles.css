@@ -58,11 +58,15 @@
   width: 100%;
 }
 
+.ck-content .drupal-media-style-align-center {
+  max-width: unset;
+}
+
 /* Overridden alignment */
-.ck .drupal-media-style-align-right .align-right {
+.ck-content .drupal-media-style-align-right .align-right {
   margin-left: unset;
 }
 
-.ck .drupal-media-style-align-left .align-left {
+.ck-content .drupal-media-style-align-left .align-left {
   margin-right: unset;
 }
