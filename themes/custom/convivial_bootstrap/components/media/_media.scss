@@ -248,10 +248,17 @@ figure.figure-with-caption {
 
   &:has(> .media-entity--type-video),
   &:has(> .media-entity--type-remote-video) {
-    min-width: 50%;
+    width: 50%;
 
     @include media-breakpoint-down(sm) {
-      min-width: unset;
+      width: 100%;
+
+      &.align-left,
+      &.align-right {
+        float: none;
+        margin-left: 0;
+        margin-right: 0;
+      }
     }
   }
 }
