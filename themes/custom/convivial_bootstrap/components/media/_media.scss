@@ -248,13 +248,12 @@ figure.figure-with-caption {
 
   &:has(> .media-entity--type-video),
   &:has(> .media-entity--type-remote-video) {
-    width: 50%;
+    &.align-left,
+    &.align-right {
+      width: 50%;
 
-    @include media-breakpoint-down(sm) {
-      width: 100%;
-
-      &.align-left,
-      &.align-right {
+      @include media-breakpoint-down(sm) {
+        width: 100%;
         float: none;
         margin-left: 0;
         margin-right: 0;
