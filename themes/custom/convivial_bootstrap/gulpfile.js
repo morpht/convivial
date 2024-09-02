@@ -223,7 +223,8 @@ gulp.task('scripts_dev', function () {
 // Move external libraries into final destination.
 gulp.task('scripts_libraries', function () {
   return gulp.src(config.libraries.src, {
-    base: './node_modules'
+    base: './node_modules',
+    encoding: false,
   })
     .pipe(plumber({
       errorHandler: function (error) {
