@@ -1,0 +1,38 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.snippet.field_colour_classes
+    - field.field.paragraph.snippet.field_heading
+    - field.field.paragraph.snippet.field_modifiers
+    - field.field.paragraph.snippet.field_position
+    - field.field.paragraph.snippet.field_snippet
+    - field.field.paragraph.snippet.field_style_classes
+    - paragraphs.paragraphs_type.snippet
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.snippet.preview
+targetEntityType: paragraph
+bundle: snippet
+mode: preview
+content:
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_colour_classes: true
+  field_modifiers: true
+  field_position: true
+  field_snippet: true
+  field_style_classes: true
+  search_api_excerpt: true

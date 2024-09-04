@@ -37,14 +37,22 @@ content:
   field_position:
     type: entity_class_formatter
     label: hidden
-    settings: {  }
+    settings:
+      prefix: ''
+      suffix: ''
+      attr: ''
+      field: ''
     third_party_settings: {  }
     weight: 5
     region: content
   field_view_colour_classes:
     type: entity_class_formatter
     label: hidden
-    settings: {  }
+    settings:
+      prefix: ''
+      suffix: ''
+      attr: ''
+      field: ''
     third_party_settings: {  }
     weight: 3
     region: content
@@ -59,7 +67,11 @@ content:
   field_view_style_classes:
     type: entity_class_formatter
     label: hidden
-    settings: {  }
+    settings:
+      prefix: ''
+      suffix: ''
+      attr: ''
+      field: ''
     third_party_settings: {  }
     weight: 4
     region: content

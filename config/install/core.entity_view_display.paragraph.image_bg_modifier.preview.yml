@@ -28,4 +28,5 @@ hidden:
   field_mod_image: true
   field_mod_image_position: true
   field_mod_image_style: true
+  search_api_excerpt: true
   uid: true

@@ -9,46 +9,22 @@ dependencies:
     - field.field.paragraph.adaptive_height_modifier.field_mod_media_query
     - field.field.paragraph.adaptive_height_modifier.field_mod_vertical_align
     - paragraphs.paragraphs_type.adaptive_height_modifier
-  module:
-    - options
 id: paragraph.adaptive_height_modifier.preview
 targetEntityType: paragraph
 bundle: adaptive_height_modifier
 mode: preview
 content:
-  field_mod_ah_comparison:
-    type: list_default
-    label: inline
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  field_mod_ah_limit:
-    type: number_integer
-    label: inline
+  field_mod_media_query:
+    type: string
+    label: hidden
     settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  field_mod_ah_ratio:
-    type: number_decimal
-    label: inline
-    settings:
-      thousand_separator: ''
-      decimal_separator: .
-      scale: 2
-      prefix_suffix: true
+      link_to_entity: false
     third_party_settings: {  }
     weight: 0
     region: content
-  field_mod_vertical_align:
-    type: list_default
-    label: inline
-    settings: {  }
-    third_party_settings: {  }
-    weight: 3
-    region: content
 hidden:
-  field_mod_media_query: true
+  field_mod_ah_comparison: true
+  field_mod_ah_limit: true
+  field_mod_ah_ratio: true
+  field_mod_vertical_align: true
+  search_api_excerpt: true

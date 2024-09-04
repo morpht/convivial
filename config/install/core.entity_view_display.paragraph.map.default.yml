@@ -36,7 +36,11 @@ content:
   field_map_colour_classes:
     type: entity_class_formatter
     label: hidden
-    settings: {  }
+    settings:
+      prefix: ''
+      suffix: ''
+      attr: ''
+      field: ''
     third_party_settings: {  }
     weight: 2
     region: content

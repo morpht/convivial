@@ -1,0 +1,44 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.fastfacts.field_body
+    - field.field.paragraph.fastfacts.field_heading
+    - field.field.paragraph.fastfacts.field_il_colour_classes
+    - field.field.paragraph.fastfacts.field_il_items
+    - field.field.paragraph.fastfacts.field_il_layout_classes
+    - field.field.paragraph.fastfacts.field_il_style_classes
+    - field.field.paragraph.fastfacts.field_modifiers
+    - field.field.paragraph.fastfacts.field_position
+    - field.field.paragraph.fastfacts.field_read_more
+    - paragraphs.paragraphs_type.fastfacts
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.fastfacts.preview
+targetEntityType: paragraph
+bundle: fastfacts
+mode: preview
+content:
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_body: true
+  field_il_colour_classes: true
+  field_il_items: true
+  field_il_layout_classes: true
+  field_il_style_classes: true
+  field_modifiers: true
+  field_position: true
+  field_read_more: true
+  search_api_excerpt: true

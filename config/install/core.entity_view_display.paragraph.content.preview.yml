@@ -1,5 +1,5 @@
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
@@ -16,12 +16,19 @@ id: paragraph.content.preview
 targetEntityType: paragraph
 bundle: content
 mode: preview
-content: {  }
+content:
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   field_body: true
   field_c_colour_classes: true
   field_c_style_classes: true
-  field_heading: true
   field_hide_heading: true
   field_modifiers: true
   field_position: true
