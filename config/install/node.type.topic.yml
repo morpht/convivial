@@ -15,7 +15,7 @@ third_party_settings:
 name: Topic
 type: topic
 description: 'Use Topics to categorize content.'
-help: ''
+help: null
 new_revision: true
 preview_mode: 1
 display_submitted: true

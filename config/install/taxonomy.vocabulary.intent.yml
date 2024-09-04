@@ -11,3 +11,4 @@ name: Intent
 vid: intent
 description: 'Assigns intent to content for augmenting the profile when the content is viewed.'
 weight: 0
+new_revision: false

@@ -3,5 +3,5 @@ status: true
 dependencies: {  }
 id: components
 label: Components
-revision: 1
+revision: true
 description: 'Components block contains multiple paragraph components.'

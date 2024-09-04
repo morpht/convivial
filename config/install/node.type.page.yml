@@ -15,7 +15,7 @@ third_party_settings:
 name: Page
 type: page
 description: 'Use Pages for building site structure and static content.'
-help: ''
+help: null
 new_revision: true
 preview_mode: 1
 display_submitted: false

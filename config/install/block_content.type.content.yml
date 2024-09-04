@@ -3,5 +3,5 @@ status: true
 dependencies: {  }
 id: content
 label: Content
-revision: 1
+revision: true
 description: 'Display simple content.'
