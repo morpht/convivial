@@ -14,13 +14,11 @@ id: paragraph.animation.field_animation_repeat
 field_name: field_animation_repeat
 entity_type: paragraph
 bundle: animation
-label: Repeat
-description: 'The number of times to repeat the animation.'
-required: true
+label: Loops
+description: 'The number of times to loop. Leave blank for no repetition. Set to 0 for infinite loops. This will start when the item appears in the viewport.'
+required: false
 translatable: false
-default_value:
-  -
-    value: 0
+default_value: {  }
 default_value_callback: ''
 settings:
   min: null
