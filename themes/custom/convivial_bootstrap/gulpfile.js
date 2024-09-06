@@ -6,11 +6,9 @@ import gulp from 'gulp';
 // Include plugins.
 import gulpSass from 'gulp-sass';
 import * as dartSass from 'sass';
-import plumber from 'gulp-plumber';
 import glob from 'gulp-sass-glob';
 import uglify from 'gulp-uglify';
 import concat from 'gulp-concat';
-import notify from 'gulp-notify';
 import rename from 'gulp-rename';
 import sourcemaps from 'gulp-sourcemaps';
 import jshint from 'gulp-jshint';
@@ -20,13 +18,6 @@ import del from 'del';
 import browserSync from 'browser-sync';
 import {createRequire} from 'module';
 import {existsSync, readFileSync} from 'fs';
-
-// Import imagemin plugins.
-import imagemin from 'gulp-imagemin';
-import imageminGifsicle from 'imagemin-gifsicle';
-import imageminMozjpeg from 'imagemin-mozjpeg';
-import imageminOptipng from 'imagemin-optipng';
-import imageminSvgo from 'imagemin-svgo';
 
 // Include config.
 const config = createRequire(import.meta.url)("./config.json");
@@ -55,19 +46,8 @@ gulp.task('css', function () {
 
   return gulp.src(config.css.src)
     .pipe(glob())
-    .pipe(plumber({
-      errorHandler: function (error) {
-        notify.onError({
-          title: "Gulp",
-          subtitle: "Failure!",
-          message: "Error: <%= error.message %>"
-        })(error);
-        this.emit('end');
-      }
-    }))
     .pipe(sass({
-      outputStyle: 'compressed',
-      errLogToConsole: true,
+      outputStyle: 'compressed'
     }).on('error', sass.logError))
     .pipe(postcss(postcssPlugins))
     .pipe(gulp.dest(config.css.dest));
@@ -81,20 +61,9 @@ gulp.task('css_dev', function () {
 
   return gulp.src(config.css.src)
     .pipe(glob())
-    .pipe(plumber({
-      errorHandler: function (error) {
-        notify.onError({
-          title: "Gulp",
-          subtitle: "Failure!",
-          message: "Error: <%= error.message %>"
-        })(error);
-        this.emit('end');
-      }
-    }))
     .pipe(sourcemaps.init())
     .pipe(sass({
-      outputStyle: 'nested',
-      errLogToConsole: true
+      outputStyle: 'expanded'
     }).on('error', sass.logError))
     .pipe(postcss(postcssPlugins))
     .pipe(sourcemaps.write('./'))
@@ -110,19 +79,8 @@ gulp.task('css_components', function () {
 
   return gulp.src(config.css_components.src)
     .pipe(glob())
-    .pipe(plumber({
-      errorHandler: function (error) {
-        notify.onError({
-          title: "Gulp",
-          subtitle: "Failure!",
-          message: "Error: <%= error.message %>"
-        })(error);
-        this.emit('end');
-      }
-    }))
     .pipe(sass({
-      outputStyle: 'compressed',
-      errLogToConsole: true
+      outputStyle: 'compressed'
     }).on('error', sass.logError))
     .pipe(postcss(postcssPlugins))
     .pipe(gulp.dest(config.css_components.dest));
@@ -136,20 +94,9 @@ gulp.task('css_components_dev', function () {
 
   return gulp.src(config.css_components.src)
     .pipe(glob())
-    .pipe(plumber({
-      errorHandler: function (error) {
-        notify.onError({
-          title: "Gulp",
-          subtitle: "Failure!",
-          message: "Error: <%= error.message %>"
-        })(error);
-        this.emit('end');
-      }
-    }))
     .pipe(sourcemaps.init())
     .pipe(sass({
-      outputStyle: 'nested',
-      errLogToConsole: true
+      outputStyle: 'expanded'
     }).on('error', sass.logError))
     .pipe(postcss(postcssPlugins))
     .pipe(sourcemaps.write('./'))
@@ -157,36 +104,9 @@ gulp.task('css_components_dev', function () {
     .pipe(bs.reload({stream: true, match: 'components/**/*.css'}));
 });
 
-// Compress images.
-gulp.task('images', function () {
-  return gulp.src(config.images.src)
-    .pipe(imagemin([
-      imageminGifsicle({interlaced: true}),
-      imageminMozjpeg({progressive: true}),
-      imageminOptipng({optimizationLevel: 5}),
-      imageminSvgo({
-        plugins: [
-          {name: 'removeViewBox', active: false},
-          {name: 'cleanupIDs', active: false}
-        ]
-      })
-    ]))
-    .pipe(gulp.dest(config.images.dest));
-});
-
 // Concat all JS files into one file and minify it.
 gulp.task('scripts', function () {
   return gulp.src(config.js.src)
-    .pipe(plumber({
-      errorHandler: function (error) {
-        notify.onError({
-          title: 'Gulp scripts processing',
-          subtitle: 'Failure!',
-          message: 'Error: <%= error.message %>'
-        })(error);
-        this.emit('end');
-      }
-    }))
     .pipe(concat('./index.js'))
     .pipe(gulp.dest('./assets/scripts/'))
     .pipe(rename(config.js.file))
@@ -197,27 +117,13 @@ gulp.task('scripts', function () {
 // Concat all JS files into one file.
 gulp.task('scripts_dev', function () {
   return gulp.src(config.js.src)
-    .pipe(plumber({
-      errorHandler: function (error) {
-        notify.onError({
-          title: 'Gulp scripts processing',
-          subtitle: 'Failure!',
-          message: 'Error: <%= error.message %>'
-        })(error);
-        this.emit('end');
-      }
-    }))
     .pipe(concat('./index.js'))
     .pipe(gulp.dest('./assets/scripts/'))
     .pipe(sourcemaps.init())
     .pipe(rename(config.js.file))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(config.js.dest))
-    .pipe(bs.reload({stream: true, match: '**/*.js'}))
-    .pipe(notify({
-      message: 'Rebuild all custom scripts. Please refresh your browser',
-      onLast: true
-    }));
+    .pipe(bs.reload({stream: true, match: '**/*.js'}));
 });
 
 // Move external libraries into final destination.
@@ -226,16 +132,6 @@ gulp.task('scripts_libraries', function () {
     base: './node_modules',
     encoding: false,
   })
-    .pipe(plumber({
-      errorHandler: function (error) {
-        notify.onError({
-          title: 'Gulp scripts processing',
-          subtitle: 'Failure!',
-          message: 'Error: <%= error.message %>'
-        })(error);
-        this.emit('end');
-      }
-    }))
     .pipe(gulp.dest(config.libraries.dest));
 });
 
@@ -265,23 +161,24 @@ gulp.task('js-lint', function () {
 
 // BrowserSync settings.
 gulp.task('browserSync', function () {
+  // Setup a browsersync server.
   bs.init({
     // Could be 'http://appserver' if you're running apache.
     proxy: 'http://appserver',
-    host: 'bs.convivial-demo.localhost',
     socket: {
       // The node proxy domain you defined in .lando.yaml. Must be https?
-      domain: 'bs.convivial-demo.localhost',
+      domain: 'https://bs.convivial-demo.lndo.site',
       // NOT the 3000 you might expect.
       port: 80
     },
     open: false,
+    logLevel: 'debug',
     logConnections: true,
   });
 });
 
 // Compile for production.
-gulp.task('serve', gulp.parallel('css', 'css_components', gulp.series('scripts', 'removeTemporaryStorage'), 'scripts_libraries', 'images', 'removeSourceMaps'));
+gulp.task('serve', gulp.parallel('css', 'css_components', gulp.series('scripts', 'removeTemporaryStorage'), 'scripts_libraries', 'removeSourceMaps'));
 
 // Compile for development + BrowserSync + Watch
 gulp.task('serve_dev', gulp.series(gulp.parallel('css_dev', 'css_components_dev', gulp.series('scripts_dev', 'removeTemporaryStorage')), 'scripts_libraries', gulp.parallel('watch', 'browserSync')));
