@@ -6,6 +6,7 @@ import gulp from 'gulp';
 // Include plugins.
 import gulpSass from 'gulp-sass';
 import * as dartSass from 'sass';
+import plumber from 'gulp-plumber';
 import glob from 'gulp-sass-glob';
 import uglify from 'gulp-uglify';
 import concat from 'gulp-concat';
@@ -46,6 +47,7 @@ gulp.task('css', function () {
 
   return gulp.src(config.css.src)
     .pipe(glob())
+    .pipe(plumber())
     .pipe(sass({
       outputStyle: 'compressed'
     }).on('error', sass.logError))
@@ -61,6 +63,7 @@ gulp.task('css_dev', function () {
 
   return gulp.src(config.css.src)
     .pipe(glob())
+    .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sass({
       outputStyle: 'expanded'
@@ -79,6 +82,7 @@ gulp.task('css_components', function () {
 
   return gulp.src(config.css_components.src)
     .pipe(glob())
+    .pipe(plumber())
     .pipe(sass({
       outputStyle: 'compressed'
     }).on('error', sass.logError))
@@ -94,6 +98,7 @@ gulp.task('css_components_dev', function () {
 
   return gulp.src(config.css_components.src)
     .pipe(glob())
+    .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sass({
       outputStyle: 'expanded'
@@ -107,6 +112,7 @@ gulp.task('css_components_dev', function () {
 // Concat all JS files into one file and minify it.
 gulp.task('scripts', function () {
   return gulp.src(config.js.src)
+    .pipe(plumber())
     .pipe(concat('./index.js'))
     .pipe(gulp.dest('./assets/scripts/'))
     .pipe(rename(config.js.file))
@@ -117,6 +123,7 @@ gulp.task('scripts', function () {
 // Concat all JS files into one file.
 gulp.task('scripts_dev', function () {
   return gulp.src(config.js.src)
+    .pipe(plumber())
     .pipe(concat('./index.js'))
     .pipe(gulp.dest('./assets/scripts/'))
     .pipe(sourcemaps.init())
@@ -132,6 +139,7 @@ gulp.task('scripts_libraries', function () {
     base: './node_modules',
     encoding: false,
   })
+    .pipe(plumber())
     .pipe(gulp.dest(config.libraries.dest));
 });
 
@@ -150,7 +158,6 @@ gulp.task('watch', function () {
   gulp.watch(config.css.src, {usePolling: true}, gulp.series('css_dev'))
   gulp.watch(config.css_components.src, {usePolling: true}, gulp.series('css_components_dev'))
   gulp.watch(config.js.src, {usePolling: true}, gulp.series('scripts_dev', 'removeTemporaryStorage'))
-  bs.stream()
 });
 
 // JS Linting.
@@ -165,10 +172,10 @@ gulp.task('browserSync', function () {
   bs.init({
     // Could be 'http://appserver' if you're running apache.
     proxy: 'http://appserver',
-    host: 'bs.convivial-demo.localhost',
+    host: 'bs.convivial-demo.lndo.site',
     socket: {
       // The node proxy domain you defined in .lando.yaml. Must be https?
-      domain: 'bs.convivial-demo.localhost',
+      domain: 'bs.convivial-demo.lndo.site',
       // NOT the 3000 you might expect.
       port: 80
     },
