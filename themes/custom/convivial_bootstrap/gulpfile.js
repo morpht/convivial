@@ -149,7 +149,8 @@ gulp.task('removeSourceMaps', function () {
 gulp.task('watch', function () {
   gulp.watch(config.css.src, {usePolling: true}, gulp.series('css_dev'))
   gulp.watch(config.css_components.src, {usePolling: true}, gulp.series('css_components_dev'))
-  gulp.watch(config.js.src, {usePolling: true}, gulp.series('scripts_dev', 'removeTemporaryStorage'));
+  gulp.watch(config.js.src, {usePolling: true}, gulp.series('scripts_dev', 'removeTemporaryStorage'))
+  bs.stream()
 });
 
 // JS Linting.
@@ -161,13 +162,13 @@ gulp.task('js-lint', function () {
 
 // BrowserSync settings.
 gulp.task('browserSync', function () {
-  // Setup a browsersync server.
   bs.init({
     // Could be 'http://appserver' if you're running apache.
     proxy: 'http://appserver',
+    host: 'bs.convivial-demo.localhost',
     socket: {
       // The node proxy domain you defined in .lando.yaml. Must be https?
-      domain: 'https://bs.convivial-demo.lndo.site',
+      domain: 'bs.convivial-demo.localhost',
       // NOT the 3000 you might expect.
       port: 80
     },
