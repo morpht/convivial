@@ -23,10 +23,17 @@ id: paragraph.hero_banner.preview
 targetEntityType: paragraph
 bundle: hero_banner
 mode: preview
-content: {  }
+content:
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   field_body: true
-  field_heading: true
   field_hero_banner_background: true
   field_hero_banner_bg_color: true
   field_hero_banner_colour_classes: true

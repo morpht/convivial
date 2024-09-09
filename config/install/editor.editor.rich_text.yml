@@ -37,6 +37,7 @@ settings:
       - '|'
       - code
   plugins:
+    augmentor_ckeditor5_augmentor: ''
     ckeditor5_alignment:
       enabled_alignments:
         - center
