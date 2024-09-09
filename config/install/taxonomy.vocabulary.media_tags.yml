@@ -11,3 +11,4 @@ name: 'Media tags'
 vid: media_tags
 description: 'Tags media for easier discovery in media browsers.'
 weight: 0
+new_revision: false

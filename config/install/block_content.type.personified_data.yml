@@ -3,5 +3,5 @@ status: true
 dependencies: {  }
 id: personified_data
 label: 'Personified data'
-revision: 1
+revision: true
 description: 'Provides configurable paragraph to render JSON results.'

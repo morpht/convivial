@@ -14,7 +14,7 @@ third_party_settings:
 name: Event
 type: event
 description: 'Create events such as conferences, seminars, and meetings.'
-help: ''
+help: null
 new_revision: true
 preview_mode: 1
 display_submitted: false

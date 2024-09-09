@@ -2,6 +2,7 @@ site_id: convivial-demo
 license_key: community
 client_cleanup: true
 event_tracking: true
+cookieconsent: true
 profilers:
   set_param:
     name: set_param

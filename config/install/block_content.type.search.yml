@@ -3,5 +3,5 @@ status: true
 dependencies: {  }
 id: search
 label: Search
-revision: 1
+revision: true
 description: 'Global search form block'
