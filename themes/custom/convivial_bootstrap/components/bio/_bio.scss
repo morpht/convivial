@@ -39,7 +39,9 @@ $bio-image-width--vertical: 12rem;
 
 .bio__title {
   @extend .card-title;
-  @extend h3;
+
+  font-size: $h3-font-size;
+  margin-bottom: $headings-margin-bottom;
 }
 
 .bio__body {

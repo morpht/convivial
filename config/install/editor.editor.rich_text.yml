@@ -37,6 +37,7 @@ settings:
       - '|'
       - code
   plugins:
+    augmentor_ckeditor5_augmentor: ''
     ckeditor5_alignment:
       enabled_alignments:
         - center
@@ -73,7 +74,7 @@ settings:
         - '<button type value data-bs-toggle data-bs-placement title class>'
         - '<svg width height viewBox fill class>'
         - '<path fill-rule d>'
-        - '<div class="callout callout--dark callout--light decision-tree decision-tree__summary decision-tree__summary_infos decision-tree__footer step step__answers step__content step__info step__qa text-align-left text-align-center text-align-right text-align-justify" data-cookie data-show-summary id>'
+        - '<div class="convivial-decision-flow convivial-decision-flow__footer step step__heading step__answer step__question text-align-left text-align-center text-align-right text-align-justify" data-cookie data-df-show id>'
         - '<blockquote cite>'
         - '<h1 id class>'
         - '<h2 id class>'
@@ -89,11 +90,11 @@ settings:
         - '<td class>'
         - '<tr class>'
         - '<ol type>'
-        - '<a class="cta-link btn btn-primary btn-secondary btn-link step__answer step__button step__button--back step__button--restart" data-answer-path data-bs-toggle data-entity-type data-entity-uuid data-entity-substitution href hreflang title>'
+        - '<a class="step__answer step__button step__button--back step__button--restart" data-answer-path data-bs-toggle data-entity-type data-entity-uuid data-entity-substitution href hreflang title>'
         - '<img data-entity-type data-entity-uuid class>'
         - '<drupal-media title>'
-        - '<p class="callout callout--dark callout--light step__content">'
-        - '<ul type class="callout callout--dark callout--light">'
+        - '<p class="callout">'
+        - '<ul type>'
         - '<li data-stop-filter data-pass-filter>'
     ckeditor5_style:
       styles:

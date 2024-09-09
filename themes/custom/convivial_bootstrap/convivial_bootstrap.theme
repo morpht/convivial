@@ -11,7 +11,6 @@ use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Entity\FieldableEntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Element;
-use Drupal\Core\Url;
 use Drupal\file\Entity\File;
 use Drupal\image\Entity\ImageStyle;
 use Drupal\layout_builder\Entity\LayoutEntityDisplayInterface;
@@ -646,7 +645,7 @@ function convivial_bootstrap_preprocess_paragraph(&$variables) {
  * Implements template_preprocess_paragraph__decision_tree().
  */
 function convivial_bootstrap_preprocess_paragraph__decision_tree(&$variables) {
-  $variables['#attached']['library'][] = 'convivial_bootstrap/decision_tree_library';
+  $variables['#attached']['library'][] = 'convivial_bootstrap/decision_flow';
 }
 
 /**

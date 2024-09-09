@@ -25,6 +25,7 @@
   },
   "libraries": {
     "src": [
+      "./node_modules/@popperjs/core/dist/umd/*",
       "./node_modules/accessible-mega-menu/css/megamenu.css",
       "./node_modules/accessible-mega-menu/js/jquery-accessibleMegaMenu.js",
       "./node_modules/anchorific/min/*",
@@ -32,12 +33,13 @@
       "./node_modules/bootstrap/dist/**/*",
       "./node_modules/bootstrap/js/**/*",
       "./node_modules/bootstrap/scss/**/*",
+      "./node_modules/convivial_decision_flow/convivial_decision_flow.min.js",
+      "./node_modules/convivial_decision_flow/style.min.css",
       "./node_modules/d3/dist/*",
       "./node_modules/glightbox/dist/css/*.css",
       "./node_modules/glightbox/dist/js/*.js",
       "./node_modules/handlebars/dist/handlebars.min.js",
       "./node_modules/leaflet/dist/**/*",
-      "./node_modules/@popperjs/core/dist/umd/*",
       "./node_modules/slick-carousel/slick/**/*",
       "./node_modules/smooth-scroll/dist/*",
       "./node_modules/van11y-accessible-tab-panel-aria/dist/*"

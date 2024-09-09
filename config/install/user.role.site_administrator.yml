@@ -2,13 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_display.node.article.full
-    - core.entity_view_display.node.audience.full
-    - core.entity_view_display.node.event.full
     - core.entity_view_display.node.page.full
-    - core.entity_view_display.node.person.full
-    - core.entity_view_display.node.place.full
-    - core.entity_view_display.node.topic.full
     - filter.format.rich_text
     - filter.format.unrestricted_text
     - media.type.audio
@@ -18,6 +12,7 @@ dependencies:
     - media.type.video
     - node.type.article
     - node.type.audience
+    - node.type.augmented_page
     - node.type.event
     - node.type.page
     - node.type.person
