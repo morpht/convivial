@@ -11,3 +11,4 @@ name: 'Promotion type'
 vid: promotion_type
 description: 'Classifies Promotions so that they can be filtered by Views for use with personified.'
 weight: 0
+new_revision: false

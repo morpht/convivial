@@ -3,5 +3,5 @@ status: true
 dependencies: {  }
 id: logo
 label: Logo
-revision: 1
+revision: true
 description: 'Allows upload of multiple image files to be used with header color variants.'

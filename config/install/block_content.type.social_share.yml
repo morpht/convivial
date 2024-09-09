@@ -3,5 +3,5 @@ status: true
 dependencies: {  }
 id: social_share
 label: 'Social Share'
-revision: 1
+revision: true
 description: 'Place the block where you need the selected share buttons to appear.'

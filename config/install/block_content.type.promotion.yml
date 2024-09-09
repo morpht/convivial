@@ -3,5 +3,5 @@ status: true
 dependencies: {  }
 id: promotion
 label: Promotion
-revision: 0
+revision: false
 description: 'Use for promotional blocks which can be displayed to users with various attributes.'

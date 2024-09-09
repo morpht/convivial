@@ -15,7 +15,7 @@ third_party_settings:
 name: Audience
 type: audience
 description: 'Use Audiences to specify who content is for.'
-help: ''
+help: null
 new_revision: true
 preview_mode: 1
 display_submitted: true
