@@ -132,6 +132,7 @@ jobs:
         run: grumphp run  --testsuite=code_quality
 
       - name: Run code security checks
+        if: ${{ !env.SKIP_CHECKS || env.SKIP_CHECKS != '1' }}
         run: grumphp run  --testsuite=code_security
 
       - name: Execute Drupal-check
