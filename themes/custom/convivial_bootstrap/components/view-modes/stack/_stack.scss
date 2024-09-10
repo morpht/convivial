@@ -3,6 +3,7 @@
 .stack {
   background: $stack-bg;
   height: 100%;
+  overflow: hidden;
 
   .hide-info & {
     .stack__info {
@@ -10,10 +11,8 @@
     }
   }
 
-  @if $enable-rounded {
+  & {
     @include border-radius($card-border-radius);
-
-    overflow: hidden;
   }
 }
 

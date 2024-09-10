@@ -33,7 +33,10 @@
 
   &.social-share--small {
     @include social-share-size(3);
-    font-size: $small-font-size;
+
+    & {
+      font-size: $small-font-size;
+    }
 
     &:before {
       margin-right: 2px;

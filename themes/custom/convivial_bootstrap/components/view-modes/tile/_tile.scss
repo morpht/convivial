@@ -93,16 +93,14 @@
   }
 
   .tile__title {
+    @include border-bottom-start-radius($card-border-radius);
+    @include border-bottom-end-radius($card-border-radius);
+
     text-decoration: underline; // We want underline only on title.
   }
 
-  @if $enable-rounded {
+  & {
     @include border-radius($card-border-radius);
-
-    .tile__title {
-      @include border-bottom-start-radius($card-border-radius);
-      @include border-bottom-end-radius($card-border-radius);
-    }
   }
 }
 
