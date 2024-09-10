@@ -35,7 +35,7 @@ jobs:
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
 
     env:
-      SKIP_CHECKS: ${{ secrets.SKIP_CHECKS }}
+      SKIP_CHECKS: ${{ vars.SKIP_CHECKS }}
       CI: GITHUB_ACTIONS
       GH_BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
       # github.head_ref is only defined on pull_request events.
