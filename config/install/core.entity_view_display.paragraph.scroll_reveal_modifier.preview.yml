@@ -13,18 +13,27 @@ dependencies:
     - field.field.paragraph.scroll_reveal_modifier.field_mod_sr_seq_interval
     - field.field.paragraph.scroll_reveal_modifier.field_mod_sr_seq_selector
     - paragraphs.paragraphs_type.scroll_reveal_modifier
+  module:
+    - options
 id: paragraph.scroll_reveal_modifier.preview
 targetEntityType: paragraph
 bundle: scroll_reveal_modifier
 mode: preview
-content: {  }
+content:
+  field_mod_sr_origin:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   field_mod_sr_delay: true
   field_mod_sr_distance: true
   field_mod_sr_duration: true
   field_mod_sr_mobile: true
   field_mod_sr_opacity: true
-  field_mod_sr_origin: true
   field_mod_sr_scale: true
   field_mod_sr_seq_interval: true
   field_mod_sr_seq_selector: true
+  search_api_excerpt: true

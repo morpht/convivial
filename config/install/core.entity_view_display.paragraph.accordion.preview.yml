@@ -1,5 +1,5 @@
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
@@ -15,7 +15,7 @@ mode: preview
 content:
   field_heading:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
