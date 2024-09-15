@@ -30,6 +30,7 @@ content:
       prefix: ''
       suffix: ''
       attr: ''
+      field: ''
     third_party_settings: {  }
     weight: 1
     region: content
@@ -40,6 +41,7 @@ content:
       prefix: ''
       suffix: ''
       attr: ''
+      field: ''
     third_party_settings: {  }
     weight: 2
     region: content

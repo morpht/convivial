@@ -1,5 +1,5 @@
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
@@ -22,9 +22,16 @@ id: paragraph.tiles.preview
 targetEntityType: paragraph
 bundle: tiles
 mode: preview
-content: {  }
+content:
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
-  field_heading: true
   field_modifiers: true
   field_position: true
   field_tiles_arrangement: true

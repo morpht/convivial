@@ -3,20 +3,21 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
-    - field.field.paragraph.content_tabs.field_body
-    - field.field.paragraph.content_tabs.field_cts_tabs
-    - field.field.paragraph.content_tabs.field_heading
-    - field.field.paragraph.content_tabs.field_hide_heading
-    - paragraphs.paragraphs_type.content_tabs
+    - field.field.paragraph.layout.field_heading
+    - field.field.paragraph.layout.field_hide_heading
+    - field.field.paragraph.layout.field_layout_colour_palette
+    - field.field.paragraph.layout.field_layout_styles
+    - field.field.paragraph.layout.field_modifiers
+    - paragraphs.paragraphs_type.layout
   module:
     - layout_builder
 third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
-id: paragraph.content_tabs.preview
+id: paragraph.layout.preview
 targetEntityType: paragraph
-bundle: content_tabs
+bundle: layout
 mode: preview
 content:
   field_heading:
@@ -28,7 +29,8 @@ content:
     weight: 0
     region: content
 hidden:
-  field_body: true
-  field_cts_tabs: true
   field_hide_heading: true
+  field_layout_colour_palette: true
+  field_layout_styles: true
+  field_modifiers: true
   search_api_excerpt: true
