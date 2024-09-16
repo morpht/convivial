@@ -25,6 +25,7 @@ install:
   - drupal:image
   - drupal:menu_ui
   - drupal:media_library
+  - drupal:language
   - drupal:options
   - drupal:path
   - drupal:page_cache

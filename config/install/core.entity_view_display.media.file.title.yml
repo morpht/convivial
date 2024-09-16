@@ -11,7 +11,6 @@ dependencies:
   module:
     - convivial_layouts
     - layout_builder
-    - layout_library
 third_party_settings:
   layout_builder:
     enabled: true
@@ -42,8 +41,6 @@ third_party_settings:
             weight: 0
             additional: {  }
         third_party_settings: {  }
-  layout_library:
-    enable: false
 id: media.file.title
 targetEntityType: media
 bundle: file

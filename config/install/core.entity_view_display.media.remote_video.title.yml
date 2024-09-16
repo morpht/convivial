@@ -12,7 +12,6 @@ dependencies:
   module:
     - convivial_layouts
     - layout_builder
-    - layout_library
     - text
 third_party_settings:
   layout_builder:
@@ -44,8 +43,6 @@ third_party_settings:
             weight: 0
             additional: {  }
         third_party_settings: {  }
-  layout_library:
-    enable: false
 id: media.remote_video.title
 targetEntityType: media
 bundle: remote_video
