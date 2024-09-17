@@ -1,7 +1,7 @@
 name: Convivial Bootstrap
 type: theme
 description: 'Convivial theme based on Bootstrap 5.'
-core_version_requirement: ^10.2
+core_version_requirement: ^10.3
 libraries:
   - convivial_bootstrap/base-global-styling
   - convivial_bootstrap/base-bootstrap5-js
@@ -36,5 +36,3 @@ regions:
   footer_content: 'Footer content'
   footer_sidebar: 'Footer sidebar'
   hidden: 'Hidden'
-dependencies:
-  - drupal:sdc
