@@ -24,7 +24,7 @@ content:
     third_party_settings: {  }
   field_body:
     type: text_textarea_with_summary
-    weight: 29
+    weight: 8
     region: content
     settings:
       rows: 9
@@ -44,14 +44,14 @@ content:
     third_party_settings: {  }
   field_search_exclude:
     type: boolean_checkbox
-    weight: 28
+    weight: 7
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   field_tags:
     type: entity_reference_autocomplete_tags
-    weight: 26
+    weight: 5
     region: content
     settings:
       match_operator: CONTAINS
