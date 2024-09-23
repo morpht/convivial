@@ -160,8 +160,7 @@ jobs:
           until netstat -an 2>/dev/null | grep '8080.*LISTEN'; do true; done
 
       - name: Run Drupal Test Traits
-        run: |
-          ./bin/phpunit --bootstrap=./vendor/weitzman/drupal-test-traits/src/bootstrap-fast.php tests/
+        run: ./bin/phpunit --bootstrap=./vendor/weitzman/drupal-test-traits/src/bootstrap-fast.php tests/
 
       - name: Setup node
         uses: actions/setup-node@v4
