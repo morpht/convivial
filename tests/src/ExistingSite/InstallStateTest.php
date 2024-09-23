@@ -1,13 +1,13 @@
 <?php
 
-namespace Drupal\Tests\dtt\ExistingSite;
+namespace Drupal\Tests\convivial\ExistingSite;
 
 use weitzman\DrupalTestTraits\ExistingSiteBase;
 
 /**
  * Tests config values that are set at install.
  *
- * @group dtt
+ * @group convivial
  * @group profile
  * @group risky
  */
@@ -30,12 +30,6 @@ class InstallStateTest extends ExistingSiteBase {
   /**
    * Tests that key administrative pages are available.
    *
-   * Acquia CMS is a big and complicated system, and it is possible that simple
-   * dependency updates can produce WSODs in key administrative places. To
-   * detect that kind of thing, this method logs in as an administrator, visits
-   * a bunch of those key administrative pages, and verifies that they produce
-   * a 200 status code. That doesn't mean they work as intended, of course, but
-   * at least they are not producing scary blank (or error) screens.
    */
   public function testKeyAdministrativePages(): void {
     $rid = $this->createAdminRole();
