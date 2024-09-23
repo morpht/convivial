@@ -9,7 +9,6 @@ use weitzman\DrupalTestTraits\ExistingSiteBase;
  *
  * @group convivial
  * @group profile
- * @group risky
  */
 class InstallStateTest extends ExistingSiteBase {
 
