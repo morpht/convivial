@@ -29,7 +29,6 @@ class InstallStateTest extends ExistingSiteBase {
 
   /**
    * Tests that key administrative pages are available.
-   *
    */
   public function testKeyAdministrativePages(): void {
     $rid = $this->createAdminRole();
