@@ -58,7 +58,10 @@
 .layout-builder-discard-changes {
   @include make-container();
   @include container-max-widths();
-  margin-bottom: 1rem;
+
+  & {
+    margin-bottom: 1rem;
+  }
 
   .form-wrapper {
     margin-top: calc($grid-gutter-width / 2);
@@ -77,8 +80,10 @@
     @include make-container();
     @include container-max-widths();
 
-    margin-top: $grid-gutter-width;
-    margin-bottom: $grid-gutter-width;
+    & {
+      margin-top: $grid-gutter-width;
+      margin-bottom: $grid-gutter-width;
+    }
 
     .form-type-checkbox {
       margin-top: $grid-gutter-width;

@@ -29,7 +29,9 @@ $teaser--medium_image-width: 12.5rem; // 200px
   }
 
   @if $enable-teaser-image-rounded {
-    overflow: hidden;
+    & {
+      overflow: hidden;
+    }
 
     picture,
     img {

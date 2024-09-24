@@ -55,7 +55,7 @@
     }
   }
 
-  @if $enable-rounded {
+  & {
     @include border-radius($card-border-radius);
   }
 }

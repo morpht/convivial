@@ -331,11 +331,11 @@ $palettes: (
     @if $is_dark == true {
       .slick-slider {
         .slick-prev:before {
-          background-image: escape-svg(#{$slider_previous_icon_black});
+          background-image: escape-svg(#{$slider-previous-icon-black});
         }
 
         .slick-next:before {
-          background-image: escape-svg(#{$slider_next_icon_black});
+          background-image: escape-svg(#{$slider-next-icon-black});
         }
       }
     }
