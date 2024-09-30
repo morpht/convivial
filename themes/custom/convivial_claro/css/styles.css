@@ -65,8 +65,10 @@
 /* Overridden alignment */
 .ck-content .drupal-media-style-align-right .align-right {
   margin-left: unset;
+  margin-bottom: unset;
 }
 
 .ck-content .drupal-media-style-align-left .align-left {
   margin-right: unset;
+  margin-bottom: unset;
 }
