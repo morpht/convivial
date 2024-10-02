@@ -53,10 +53,11 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
-          tools: composer:2.6.6
+          tools: composer:2.7.7
           # See https://www.drupal.org/docs/getting-started/system-requirements/php-requirements#extensions
           extensions: curl, date, dom, filter, gd, hash, json, mbstring, mysql, pcre, pdo, pdo_mysql, session, SimpleXML, SPL, tokenizer, xml, xmlwriter
-          ini-values: memory_limit=280M, max_execution_time=120
+          # See https://docs.pantheon.io/guides/account-mgmt/plans/resources#current-plan-resources
+          ini-values: memory_limit=256M, max_execution_time=120
           coverage: none
 
       - name: Install php-spx extension
@@ -158,6 +159,9 @@ jobs:
         run: |
           drush runserver localhost:8080 &
           until netstat -an 2>/dev/null | grep '8080.*LISTEN'; do true; done
+
+      - name: Run Drupal Test Traits
+        run: phpunit
 
       - name: Setup node
         uses: actions/setup-node@v4
