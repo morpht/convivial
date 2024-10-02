@@ -32,7 +32,7 @@ content:
     third_party_settings: {  }
   field_animation_delay:
     type: number
-    weight: 4
+    weight: 5
     region: content
     settings:
       placeholder: ''
@@ -46,7 +46,7 @@ content:
     third_party_settings: {  }
   field_animation_repeat:
     type: number
-    weight: 5
+    weight: 4
     region: content
     settings:
       placeholder: ''

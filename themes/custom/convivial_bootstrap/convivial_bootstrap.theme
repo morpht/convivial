@@ -635,12 +635,8 @@ function convivial_bootstrap_preprocess_paragraph(&$variables) {
       }
 
       // Set the value in DrupalSettings for use in JavaScript.
-      if ($delay) {
-        $variables['#attached']['drupalSettings']['animation'][$paragraphId]['delay'] = (int) reset($delay)['value'];
-      }
-      if ($repeat) {
-        $variables['#attached']['drupalSettings']['animation'][$paragraphId]['repeat'] = (int) reset($repeat)['value'];
-      }
+      $variables['#attached']['drupalSettings']['animation'][$paragraphId]['delay'] = (int) reset($delay)['value'];
+      $variables['#attached']['drupalSettings']['animation'][$paragraphId]['repeat'] = (int) reset($repeat)['value'];
       $variables['#attached']['drupalSettings']['animation'][$paragraphId]['imagePaths'] = $imagePaths;
       break;
   }

@@ -54,6 +54,6 @@
     ],
     "dependencies": {
         "gsap": "^3.12.5",
-        "scrollmagic": "^2.0.8"
+        "scrollmagic": "2.0.7"
     }
 }

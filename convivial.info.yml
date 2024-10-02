@@ -36,6 +36,7 @@ install:
   - drupal:field_ui
   - drupal:file
   - drupal:responsive_image
+  - drupal:sdc
   - drupal:views
   - drupal:views_ui
   - drupal:syslog

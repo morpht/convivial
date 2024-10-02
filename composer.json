@@ -46,7 +46,7 @@
     "drupal/environment_indicator": "^4.0",
     "drupal/eu_cookie_compliance": "^1.24",
     "drupal/facets": "^2.0",
-    "drupal/facets_pretty_paths": "^2.0",
+    "drupal/facets_pretty_paths": "^1.2",
     "drupal/field_formatter_pattern": "^1.0",
     "drupal/field_group": "^3.0-rc1",
     "drupal/flood_control": "^2.3",
@@ -68,6 +68,7 @@
     "drupal/media_entity_file_replace": "^1.1",
     "drupal/menu_block": "^1.5",
     "drupal/metatag": "^2.0",
+    "drupal/migrate_file": "^2.1",
     "drupal/migrate_plus": "^6.0",
     "drupal/migrate_source_csv": "^3.4",
     "drupal/migrate_tools": "^6.0",
@@ -117,18 +118,11 @@
     "oomphinc/composer-installers-extender": "^2.0"
   },
   "require-dev": {
-    "behat/mink": "^1.11",
-    "behat/mink-browserkit-driver": "^2.2",
-    "behat/mink-selenium2-driver": "^1.7",
     "drupal/coder": "^8.3",
     "enlightn/security-checker": "^1.11",
-    "justinrainbow/json-schema": "^5.2",
     "mglaman/drupal-check": "^1.4",
     "phpcompatibility/php-compatibility": "^9.3",
-    "phpro/grumphp": "^2.5",
-    "phpunit/phpunit": "^9.6",
-    "symfony/phpunit-bridge": "^7.1",
-    "weitzman/drupal-test-traits": "^2.3"
+    "phpro/grumphp": "^2.5"
   },
   "repositories": [
     {
