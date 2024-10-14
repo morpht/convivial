@@ -228,8 +228,10 @@ body.page__header--transparent {
   .logo__site-name-and-slogan {
     margin-top: .5rem;
   }
+
   img {
     @extend .img-fluid;
+
     width: 100%;
   }
 
@@ -306,5 +308,6 @@ body.page__header--transparent {
 }
 
 .logo__site-name {
-  @extend .h2;
+  font-size: $h2-font-size;
+  margin-bottom: $headings-margin-bottom;
 }
