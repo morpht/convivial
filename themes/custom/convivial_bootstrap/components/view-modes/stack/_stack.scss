@@ -1,19 +1,16 @@
 /*! @convivial_bootstrap/stack */
 
 .stack {
+  @include border-radius($card-border-radius);
+
   background: $stack-bg;
   height: 100%;
+  overflow: hidden;
 
   .hide-info & {
     .stack__info {
       display: none;
     }
-  }
-
-  @if $enable-rounded {
-    @include border-radius($card-border-radius);
-
-    overflow: hidden;
   }
 }
 

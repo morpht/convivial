@@ -6,12 +6,12 @@
   // So it appears above mostly all elements.
   z-index: $z-index-navbar-header;
 
+  // Because we apply absolute positioning and we still want full-width.
+  width: 100%;
+
   // Fade the background colour when it becomes Sticky, otherwise it's too fast
   // and not nice UX.
   @include transition(background-color, $timing-header-transition $timing-header-easing);
-
-  // Because we apply absolute positioning and we still want full-width.
-  width: 100%;
 }
 
 

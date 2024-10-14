@@ -1,5 +1,5 @@
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
@@ -28,7 +28,15 @@ id: paragraph.charts.preview
 targetEntityType: paragraph
 bundle: charts
 mode: preview
-content: {  }
+content:
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   field_body: true
   field_chrt_colors: true
@@ -48,6 +56,5 @@ hidden:
   field_chrt_x_axis_type: true
   field_chrt_x_y_axis_switch: true
   field_chrt_y_axis: true
-  field_heading: true
   field_hide_heading: true
   search_api_excerpt: true

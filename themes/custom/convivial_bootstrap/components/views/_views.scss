@@ -22,8 +22,11 @@
   .views-element-container {
     @include make-container();
     @include container-max-widths();
-    padding-top: $grid-gutter-width;
-    padding-bottom: $grid-gutter-width;
+
+    & {
+      padding-top: $grid-gutter-width;
+      padding-bottom: $grid-gutter-width;
+    }
   }
 }
 

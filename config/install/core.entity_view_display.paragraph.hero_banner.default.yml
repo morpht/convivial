@@ -52,6 +52,7 @@ content:
       prefix: ''
       suffix: ''
       attr: ''
+      field: ''
     third_party_settings: {  }
     weight: 3
     region: content
@@ -62,6 +63,7 @@ content:
       prefix: ''
       suffix: ''
       attr: ''
+      field: ''
     third_party_settings: {  }
     weight: 8
     region: content
@@ -84,6 +86,7 @@ content:
       prefix: ''
       suffix: ''
       attr: ''
+      field: ''
     third_party_settings: {  }
     weight: 6
     region: content
@@ -94,6 +97,7 @@ content:
       prefix: ''
       suffix: ''
       attr: ''
+      field: ''
     third_party_settings: {  }
     weight: 7
     region: content
@@ -104,6 +108,7 @@ content:
       prefix: ''
       suffix: ''
       attr: ''
+      field: ''
     third_party_settings: {  }
     weight: 5
     region: content

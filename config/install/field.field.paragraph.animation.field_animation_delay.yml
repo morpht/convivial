@@ -15,7 +15,7 @@ field_name: field_animation_delay
 entity_type: paragraph
 bundle: animation
 label: Delay
-description: 'The delay in milliseconds before the animation starts.'
+description: 'The distance in pixels before the single animation starts. This is bounded to the scrollbar position.'
 required: true
 translatable: false
 default_value:

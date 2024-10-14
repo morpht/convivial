@@ -42,7 +42,11 @@ content:
   field_il_colour_classes:
     type: entity_class_formatter
     label: hidden
-    settings: {  }
+    settings:
+      prefix: ''
+      suffix: ''
+      attr: ''
+      field: ''
     third_party_settings: {  }
     weight: 4
     region: content
@@ -50,30 +54,42 @@ content:
     type: entity_reference_display_default
     label: hidden
     settings:
-      display_field: ''
       view_mode: default
       link: false
+      display_field: ''
     third_party_settings: {  }
     weight: 2
     region: content
   field_il_layout_classes:
     type: entity_class_formatter
     label: hidden
-    settings: {  }
+    settings:
+      prefix: ''
+      suffix: ''
+      attr: ''
+      field: ''
     third_party_settings: {  }
     weight: 6
     region: content
   field_il_style_classes:
     type: entity_class_formatter
     label: hidden
-    settings: {  }
+    settings:
+      prefix: ''
+      suffix: ''
+      attr: ''
+      field: ''
     third_party_settings: {  }
     weight: 5
     region: content
   field_position:
     type: entity_class_formatter
     label: hidden
-    settings: {  }
+    settings:
+      prefix: ''
+      suffix: ''
+      attr: ''
+      field: ''
     third_party_settings: {  }
     weight: 7
     region: content
