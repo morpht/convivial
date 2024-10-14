@@ -1,12 +1,10 @@
 /*! @convivial_bootstrap/tile */
 
 .tile {
+  @include border-radius($card-border-radius);
+
   position: relative;
   height: 100%;
-
-  @if $enable-rounded {
-    @include border-radius($card-border-radius);
-  }
 }
 
 .tile__title {
@@ -71,6 +69,8 @@
 
 // Linked tile.
 .tile__link {
+  @include border-radius($card-border-radius);
+
   display: block;
   height: 100%;
   overflow: hidden;
@@ -97,10 +97,6 @@
     @include border-bottom-end-radius($card-border-radius);
 
     text-decoration: underline; // We want underline only on title.
-  }
-
-  & {
-    @include border-radius($card-border-radius);
   }
 }
 

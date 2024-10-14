@@ -72,18 +72,16 @@
 .slick-slider {
   .slick-prev,
   .slick-next {
+    @if $slider-button-enabled-rounded {
+      border-radius: $slide-button-border-radius;
+    }
+
     width: $slider-button-width;
     height: $slider-button-height;
     background-color: var(--light-link);
 
     @include media-breakpoint-down(md) {
       display: none !important;
-    }
-
-    @if $slider-button-enabled-rounded {
-      & {
-        border-radius: $slide-button-border-radius;
-      }
     }
 
     &:before {

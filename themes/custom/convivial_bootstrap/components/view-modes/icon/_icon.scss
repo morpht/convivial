@@ -91,19 +91,15 @@
 }
 
 .icon__content {
+  @include border-radius($card-border-radius);
+
   padding: 30px 20px;
   text-align: center;
   margin: 0 auto;
-
-  @if $enable-rounded {
-    @include border-radius($card-border-radius);
-  }
 }
 
 .icon__link {
-  @if $enable-rounded {
-    @include border-radius($card-border-radius);
-  }
+  @include border-radius($card-border-radius);
 }
 
 .icon__icon {
@@ -120,6 +116,8 @@
 }
 
 .icon__overlay {
+  @include border-radius($card-border-radius);
+
   height: 100%;
   display: flex;
   position: absolute;
@@ -135,10 +133,6 @@
 
   .icon--has-image.icon-bg--dark & {
     background: rgba($black, .5);
-  }
-
-  & {
-    @include border-radius($card-border-radius);
   }
 }
 

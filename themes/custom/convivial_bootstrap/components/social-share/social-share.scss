@@ -30,7 +30,6 @@
   &.social-share--large {
     @include social-share-size(2);
   }
-
   &.social-share--small {
     @include social-share-size(3);
 
@@ -55,6 +54,7 @@
 .social-share--row {
   .social-share__content {
     flex-direction: column;
+
     @include media-breakpoint-up(xl) {
       flex-direction: row;
     }

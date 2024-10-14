@@ -40,6 +40,8 @@
 
 // Linked tile.
 .image__link {
+  @include border-radius($card-border-radius);
+
   overflow: hidden;
   transition: box-shadow $view-modes-transition-time;
 
@@ -53,10 +55,6 @@
     img {
       transform: scale($view-modes-transform-scale) translate(43.5%, -43.5%);
     }
-  }
-
-  & {
-    @include border-radius($card-border-radius);
   }
 }
 
