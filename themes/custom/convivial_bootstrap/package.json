@@ -53,6 +53,7 @@
         "maintained node versions"
     ],
     "dependencies": {
+        "convivial_decision_flow": "github:morpht/convivial_decision_flow",
         "gsap": "^3.12.5",
         "scrollmagic": "^2.0.8"
     }
