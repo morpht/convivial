@@ -22,8 +22,12 @@
 }
 
 // Prevents from adding margin to view modes.
-.media-entity:not(:only-child) {
+.media-entity {
   margin-bottom: $paragraph-margin-bottom;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 // Image view modes.
@@ -114,10 +118,10 @@
 // Figure with caption.
 figure.figure-with-caption {
   display: table;
-  width: 100%;
+  margin-bottom: $paragraph-margin-bottom;
 
-  &:not(:last-child) {
-    margin-bottom: $paragraph-margin-bottom;
+  &:last-child {
+    margin-bottom: 0;
   }
 
   .media-entity--type-image {
@@ -248,6 +252,8 @@ figure.figure-with-caption {
 
   &:has(> .media-entity--type-video),
   &:has(> .media-entity--type-remote-video) {
+    width: 100%;
+
     &.align-left,
     &.align-right {
       width: 50%;
@@ -277,6 +283,11 @@ figure.figure-with-caption {
       margin-left: 0;
       margin-right: 0;
     }
+  }
+
+  // Remove caption space under video.
+  &:has(+ figcaption) {
+    margin-bottom: 0;
   }
 }
 
