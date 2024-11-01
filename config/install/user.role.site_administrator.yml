@@ -12,6 +12,7 @@ dependencies:
     - media.type.video
     - node.type.article
     - node.type.audience
+    - node.type.augmented_page
     - node.type.event
     - node.type.page
     - node.type.person

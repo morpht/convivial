@@ -40,6 +40,7 @@
       "./node_modules/glightbox/dist/js/*.js",
       "./node_modules/handlebars/dist/handlebars.min.js",
       "./node_modules/leaflet/dist/**/*",
+      "./node_modules/scrollmagic/scrollmagic/minified/**/*",
       "./node_modules/slick-carousel/slick/**/*",
       "./node_modules/smooth-scroll/dist/*",
       "./node_modules/van11y-accessible-tab-panel-aria/dist/*"

@@ -640,7 +640,9 @@ function convivial_bootstrap_preprocess_paragraph(&$variables) {
       if ($repeat) {
         $variables['#attached']['drupalSettings']['animation'][$paragraphId]['repeat'] = (int) reset($repeat)['value'];
       }
-      $variables['#attached']['drupalSettings']['animation'][$paragraphId]['imagePaths'] = $imagePaths;
+      if ($imagePaths) {
+        $variables['#attached']['drupalSettings']['animation'][$paragraphId]['imagePaths'] = $imagePaths;
+      }
       break;
   }
 }
