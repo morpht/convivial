@@ -10,14 +10,9 @@
                   {{~{ type }~}}
                 </div>
               {{/if}}
-              {{#if date}}
-                <div class="stack__date">
-                  {{~{ date }~}}
-                </div>
-              {{/if}}
               {{#if link}}
                 <h3 class="stack__title">
-                  <a href="{{~{ link }~}}">{{~{ title }~}}</a>
+                  <a href={{{ link }}}>{{{ title }}}</a>
                 </h3>
               {{else}}
                 <h3 class="stack__title">
@@ -27,6 +22,11 @@
               {{#if body}}
                 <div class="stack__summary">
                   {{~{ body }~}}
+                </div>
+              {{/if}}
+              {{#if date}}
+                <div class="stack__date">
+                  {{~{ date }~}}
                 </div>
               {{/if}}
             </div>
