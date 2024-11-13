@@ -3,30 +3,30 @@
     <div role="list" class="list">
       {{#each this}}
         <div role="listitem" class="list__item">
-          <div class="stack stack--simple">
-            <div class="stack__content">
+          <div class="stack stack--simple card{{#if link}} card--clickable{{/if}}">
+            <div class="stack__content card-body">
               {{#if type}}
                 <div class="stack__info">
                   {{~{ type }~}}
                 </div>
               {{/if}}
-              {{#if date}}
-                <div class="stack__date">
-                  {{~{ date }~}}
-                </div>
-              {{/if}}
               {{#if link}}
                 <h3 class="stack__title">
-                  <a href="{{~{ link }~}}">{{~{ title }~}}</a>
+                  <a href={{{ link }}}>{{{ title }}}</a>
                 </h3>
               {{else}}
-                <h3 class="stack__title">
+                <h3 class="stack__title card-title">
                   {{{ title }}}
                 </h3>
               {{/if}}
               {{#if body}}
                 <div class="stack__summary">
                   {{~{ body }~}}
+                </div>
+              {{/if}}
+              {{#if date}}
+                <div class="stack__date">
+                  {{~{ date }~}}
                 </div>
               {{/if}}
             </div>
