@@ -165,6 +165,7 @@
         "2309585 - There should be no output of default formatter for empty text field when summary has content": "https://www.drupal.org/files/issues/2018-07-19/empty_text_formatter_for_empty_fields-2309585-13.patch",
         "2842858 - Site lock and basic auth combo": "https://www.drupal.org/files/issues/basic_auth_0.patch",
         "3326684 - Deprecated function mb_strtolower passing null to parameter": "https://www.drupal.org/files/issues/2023-09-14/3326684-22.patch",
+        "3485296 - Regression: Deprecation of `yaml_parser_class` setting in 10.3 breaks sites < 11.0": "https://www.drupal.org/files/issues/2024-11-12/2024-11-12-D10_3_8-core-yaml-fix-snip.patch",
         "3353786 - Error calling a view with non-numeric argument, e.g. Content: ID": "https://git.drupalcode.org/project/drupal/-/merge_requests/4493.diff"
       },
       "drupal/layout_library": {
