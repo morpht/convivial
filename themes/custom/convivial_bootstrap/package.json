@@ -16,17 +16,9 @@
         "stylelint-fix": "stylelint 'components/**/*.scss' --fix"
     },
     "devDependencies": {
-        "@popperjs/core": "^2.11.8",
-        "accessible-mega-menu": "github:adobe-accessibility/Accessible-Mega-Menu#master",
-        "anchorific": "github:renettarenula/anchorific.js#master",
         "autoprefixer": "^10.4.19",
-        "billboard.js": "^3.12.4",
-        "bootstrap": "^5.3.3",
-        "bootstrap-icons": "^1.0.0",
         "browser-sync": "^3.0.2",
-        "d3": "^7.9.0",
         "del": "^3.0.0",
-        "glightbox": "^3.2.0",
         "gulp": "^5.0.0",
         "gulp-concat": "^2.6.1",
         "gulp-jshint": "^2.1.0",
@@ -37,24 +29,32 @@
         "gulp-sass-glob": "^1.0.8",
         "gulp-sourcemaps": "^2.6.4",
         "gulp-uglify": "^3.0.0",
-        "handlebars": "^4.7.7",
         "jshint": "^2.9.5",
-        "leaflet": "^1.5.1",
         "sass": "^1.77.8",
-        "slick-carousel": "^1.8.1",
-        "smooth-scroll": "^16.1.3",
         "stylelint": "^16.7.0",
         "stylelint-config-standard": "^19.0.0",
-        "stylelint-scss": "^6.4.1",
+        "stylelint-scss": "^6.4.1"
+    },
+    "dependencies": {
+        "@popperjs/core": "^2.11.8",
+        "accessible-mega-menu": "github:adobe-accessibility/Accessible-Mega-Menu#master",
+        "anchorific": "github:renettarenula/anchorific.js#master",
+        "billboard.js": "^3.12.4",
+        "bootstrap": "^5.3.3",
+        "bootstrap-icons": "^1.0.0",
+        "convivial_decision_flow": "github:morpht/convivial_decision_flow",
+        "d3": "^7.9.0",
+        "glightbox": "^3.2.0",
+        "gsap": "^3.12.5",
+        "handlebars": "^4.7.7",
+        "leaflet": "^1.5.1",
+        "scrollmagic": "2.0.7",
+        "slick-carousel": "^1.8.1",
+        "smooth-scroll": "^16.1.3",
         "van11y-accessible-tab-panel-aria": "^2.0.4"
     },
     "browserslist": [
         "defaults and fully supports es6-module",
         "maintained node versions"
-    ],
-    "dependencies": {
-        "convivial_decision_flow": "github:morpht/convivial_decision_flow",
-        "gsap": "^3.12.5",
-        "scrollmagic": "2.0.7"
-    }
+    ]
 }
