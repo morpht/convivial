@@ -1,0 +1,83 @@
+@media print {
+
+  // General resets for print-friendly layout
+  * {
+    box-shadow: none !important; // Removes box shadows
+    text-shadow: none !important; // Removes text shadows
+  }
+
+  body {
+    font-size: 12pt;        // Adjust font size for print readability
+    line-height: 1.4;       // Space out lines for clarity on print
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    page-break-after: avoid;
+  }
+
+  // Hide admin elements.
+  .contextual,
+  .region-admin {
+    display: none !important;
+  }
+
+  // Hide unnecessary elements.
+  .top-bar,
+  .navbar-expand-lg .navbar-collapse,
+  .navbar-toggler,
+  .layout__region--sidebar,
+  .cta,
+  .postscript,
+  .footer,
+  .back-to-top__link,
+  #block-is-helpful {
+    display: none !important;
+  }
+
+  // Handle sticky header.
+  .bs-header__content {
+    position: static !important;
+  }
+  .fixx-placeholder {
+    display: none !important;
+  }
+
+  // Move content to the left.
+  .navbar-expand-lg {
+    justify-content: flex-start;
+  }
+
+  // Remove container.
+  .hero-banner__container,
+  .container,
+  .containerised {
+    max-width: 100% !important;
+  }
+
+  .hero-banner__content {
+    padding-top: 0 !important;
+    padding-bottom: 16px !important;
+    width: 100% !important;
+  }
+
+    // Hide problematic elements.
+  .bg-parallax-wrap,
+  .slick-slider {
+    display: none !important;
+  }
+
+  // Prevent image splitting.
+  img {
+    page-break-inside: avoid;
+    height: auto;
+    width: 100%;
+  }
+
+  // Prevent splitting the card content.
+  .card {
+    page-break-inside: avoid;
+  }
+}

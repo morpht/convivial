@@ -52,6 +52,14 @@
         margin-top: 0;
       }
     }
+
+    @media print {
+      @include make-col(6);
+
+      &:nth-child(-n+2) {
+        margin-top: 0;
+      }
+    }
   }
 }
 
@@ -59,6 +67,14 @@
 .list-layout--4-4-4 {
   .list__item {
     @include media-breakpoint-up(md) {
+      @include make-col(4);
+
+      &:nth-child(-n+3) {
+        margin-top: 0;
+      }
+    }
+
+    @media print {
       @include make-col(4);
 
       &:nth-child(-n+3) {
@@ -80,6 +96,14 @@
     }
 
     @include media-breakpoint-up(md) {
+      @include make-col(3);
+
+      &:nth-child(-n+4) {
+        margin-top: 0;
+      }
+    }
+
+    @media print {
       @include make-col(3);
 
       &:nth-child(-n+4) {
@@ -115,6 +139,14 @@
         margin-top: 0;
       }
     }
+
+    @media print {
+      @include make-col(3);
+
+      &:nth-child(-n+4) {
+        margin-top: 0;
+      }
+    }
   }
 }
 
@@ -130,12 +162,22 @@
         margin-top: 0;
         width: calc(100 / 2 * 1%);
       }
+
+      @media print {
+        margin-top: 0;
+        width: calc(100 / 2 * 1%);
+      }
     }
 
     /* three items */
     &:first-child:nth-last-child(3),
     &:first-child:nth-last-child(3) ~ .list__item {
       @include media-breakpoint-up(sm) {
+        margin-top: 0;
+        width: calc(100 / 3 * 1%);
+      }
+
+      @media print {
         margin-top: 0;
         width: calc(100 / 3 * 1%);
       }
@@ -152,6 +194,11 @@
       @include media-breakpoint-up(md) {
         width: calc(100 / 4 * 1%);
       }
+
+      @media print {
+        margin-top: 0;
+        width: calc(100 / 4 * 1%);
+      }
     }
 
     /* five items */
@@ -164,6 +211,11 @@
 
       @include media-breakpoint-up(md) {
         width: calc(100 / 5 * 1%);
+      }
+
+      @media print {
+        margin-top: 0;
+        width: calc(100 / 3 * 1%);
       }
     }
 
@@ -181,6 +233,14 @@
       width: calc(100 / 6 * 1%);
 
       &:nth-child(-n+6) {
+        margin-top: 0;
+      }
+    }
+
+    @media print {
+      width: calc(100 / 3 * 1%);
+
+      &:nth-child(-n+3) {
         margin-top: 0;
       }
     }
