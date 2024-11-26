@@ -2,8 +2,8 @@
 
 [![Continous Integration](https://github.com/morpht/convivial/actions/workflows/build.yml/badge.svg)](https://github.com/morpht/convivial/actions?query=branch%3Amain)
 
-This is a Drupal installation profile that encapsulates our starting site configuration and basic scaffolding
-like settings.php and Lando tooling.
+This is a Drupal installation profile that encapsulates our starting site configuration and basic scaffolding,
+such as settings.php and Lando tooling.
 
 ## Structure
 
