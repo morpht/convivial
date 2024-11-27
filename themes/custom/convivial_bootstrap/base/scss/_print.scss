@@ -4,7 +4,6 @@
   * {
     box-shadow: none !important; // Removes box shadows
     text-shadow: none !important; // Removes text shadows
-    color: var(--standard-foreground); // Set color to standard foreground color
   }
 
   body {
@@ -14,15 +13,6 @@
 
   h1, h2, h3, h4, h5, h6 {
     page-break-after: avoid;
-  }
-
-  // Revert site logo to the default version.
-  .logo-block__logo-image {
-    display: block !important;
-  }
-
-  .logo-block__logo-image--inverse {
-    display: none !important;
   }
 
   // Hide admin elements.
