@@ -1,14 +1,14 @@
 @media print {
 
-  // General resets for print-friendly layout
+  // General resets for print-friendly layout.
   * {
     box-shadow: none !important; // Removes box shadows
     text-shadow: none !important; // Removes text shadows
   }
 
   body {
-    font-size: 12pt;        // Adjust font size for print readability
-    line-height: 1.4;       // Space out lines for clarity on print
+    font-size: 12pt; // Adjust font size for print readability
+    line-height: 1.4; // Space out lines for clarity on print
   }
 
   h1,
@@ -16,6 +16,26 @@
   h3,
   h4 {
     page-break-after: avoid;
+  }
+
+  // Specific for dark background
+  .cp--primary-dark,
+  .cp--dark,
+  .bg-dark {
+
+    // Set color to standard foreground color.
+    * {
+      color: var(--standard-foreground);
+    }
+
+    // Revert site logo to thhe default version.
+    .logo-block__logo-image {
+      display: block !important;
+    }
+
+    .logo-block__logo-image--inverse {
+      display: none !important;
+    }
   }
 
   // Hide admin elements.
@@ -63,7 +83,7 @@
     width: 100% !important;
   }
 
-    // Hide problematic elements.
+  // Hide problematic elements.
   .bg-parallax-wrap,
   .slick-slider {
     display: none !important;
