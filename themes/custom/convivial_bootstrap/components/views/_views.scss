@@ -76,6 +76,14 @@
         margin-top: 0 !important;
       }
     }
+
+    @media print {
+      @include make-col(6);
+
+      &:nth-child(-n+2) {
+        margin-top: 0 !important;
+      }
+    }
   }
 }
 
@@ -83,6 +91,14 @@
 .views-layout--thirds {
   .views-layout__item {
     @include media-breakpoint-up(md) {
+      @include make-col(4);
+
+      &:nth-child(-n+3) {
+        margin-top: 0 !important;
+      }
+    }
+
+    @media print {
       @include make-col(4);
 
       &:nth-child(-n+3) {
@@ -104,6 +120,14 @@
     }
 
     @include media-breakpoint-up(md) {
+      @include make-col(3);
+
+      &:nth-child(-n+4) {
+        margin-top: 0 !important;
+      }
+    }
+
+    @media print {
       @include make-col(3);
 
       &:nth-child(-n+4) {
@@ -139,6 +163,14 @@
         margin-top: 0 !important;
       }
     }
+
+    @media print {
+      @include make-col(3);
+
+      &:nth-child(-n+4) {
+        margin-top: 0 !important;
+      }
+    }
   }
 }
 
@@ -159,12 +191,20 @@
     @include media-breakpoint-up(md) {
       width: calc(100 / 2 * 1%);
     }
+
+    @media print {
+      width: calc(100 / 2 * 1%);
+    }
   }
 
   /* three items */
   &:nth-of-type(1):nth-last-of-type(3),
   &:nth-of-type(1):nth-last-of-type(3) ~ .views-layout__item {
     @include media-breakpoint-up(md) {
+      width: calc(100 / 3 * 1%);
+    }
+
+    @media print {
       width: calc(100 / 3 * 1%);
     }
   }
@@ -179,6 +219,10 @@
     @include media-breakpoint-up(lg) {
       width: calc(100 / 4 * 1%);
     }
+
+    @media print {
+      width: calc(100 / 4 * 1%);
+    }
   }
 
   /* five items */
@@ -190,6 +234,10 @@
 
     @include media-breakpoint-up(lg) {
       width: calc(100 / 5 * 1%);
+    }
+
+    @media print {
+      width: calc(100 / 3 * 1%);
     }
   }
 
@@ -206,6 +254,14 @@
     width: calc(100 / 6 * 1%);
 
     &:nth-child(-n+6) {
+      margin-top: 0 !important;
+    }
+  }
+
+  @media print {
+    width: calc(100 / 3 * 1%);
+
+    &:nth-child(-n+3) {
       margin-top: 0 !important;
     }
   }
