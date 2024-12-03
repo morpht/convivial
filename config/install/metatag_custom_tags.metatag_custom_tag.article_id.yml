@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: article_id
+label: 'Article Id'
+description: 'Article Id'
+htmlElement: meta
+htmlNameAttribute: name
+htmlValueAttribute: content

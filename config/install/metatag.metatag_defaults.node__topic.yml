@@ -4,4 +4,4 @@ dependencies: {  }
 id: node__topic
 label: 'Content: Topic'
 tags:
-  'custom_meta_tag_name:topic': '[node:field_key]'
+  'metatag_custom_tag:topic': '[node:field_key]'

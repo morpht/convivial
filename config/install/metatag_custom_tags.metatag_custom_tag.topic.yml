@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: topic
+label: 'Content Topic'
+description: 'Content Topic'
+htmlElement: meta
+htmlNameAttribute: name
+htmlValueAttribute: content

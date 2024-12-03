@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: intent_satisfied
+label: 'Intent Satisfied'
+description: 'Intent Satisfied'
+htmlElement: meta
+htmlNameAttribute: name
+htmlValueAttribute: content

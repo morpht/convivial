@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: goal
+label: 'Content Goal'
+description: 'Content Goal'
+htmlElement: meta
+htmlNameAttribute: name
+htmlValueAttribute: content

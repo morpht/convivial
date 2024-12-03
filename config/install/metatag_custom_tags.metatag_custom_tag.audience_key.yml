@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: audience_key
+label: 'Recent Content Audience'
+description: 'Recent Content Audience'
+htmlElement: meta
+htmlNameAttribute: name
+htmlValueAttribute: content

@@ -92,6 +92,7 @@ install:
   - media_library:media_library
   - menu_block:menu_block
   - metatag:metatag
+  - metatag:metatag_custom_tags
   - metatag:metatag_open_graph
   - metatag:metatag_twitter_cards
   - modifiers:modifiers

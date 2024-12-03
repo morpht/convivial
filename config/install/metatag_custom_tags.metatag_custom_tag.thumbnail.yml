@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: thumbnail
+label: 'Content thumbnail'
+description: 'Content thumbnail'
+htmlElement: meta
+htmlNameAttribute: name
+htmlValueAttribute: content
