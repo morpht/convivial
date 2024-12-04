@@ -4,4 +4,4 @@ dependencies: {  }
 id: node__audience
 label: 'Content: Audience'
 tags:
-  'custom_meta_tag_name:audience': '[node:field_key]'
+  'metatag_custom_tag:audience': '[node:field_key]'

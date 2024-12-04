@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: stage
+label: 'Content Stage'
+description: 'The stage this content is suitable for.'
+htmlElement: meta
+htmlNameAttribute: name
+htmlValueAttribute: content

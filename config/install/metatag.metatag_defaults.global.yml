@@ -4,9 +4,9 @@ dependencies: {  }
 id: global
 label: Global
 tags:
-  'custom_meta_tag_name:nid': '[node:nid]'
-  'custom_meta_tag_name:sitename': Convivial
-  'custom_meta_tag_name:type': '[node:content-type:machine-name]'
-  'custom_meta_tag_name:thumbnail': '[node:field_thumbnail:entity:field_media_image:landscape:url]'
   canonical_url: '[current-page:url]'
+  'metatag_custom_tag:nid': '[node:nid]'
+  'metatag_custom_tag:sitename': Convivial
+  'metatag_custom_tag:thumbnail': '[node:field_thumbnail:entity:field_media_image:landscape:url]'
+  'metatag_custom_tag:type': '[node:content-type:machine-name]'
   title: '[current-page:title] | [site:name]'

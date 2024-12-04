@@ -66,7 +66,7 @@
     "drupal/maxlength": "^3.1",
     "drupal/media_entity_file_replace": "^1.1",
     "drupal/menu_block": "^1.5",
-    "drupal/metatag": "^2.0",
+    "drupal/metatag": "^2.1",
     "drupal/migrate_plus": "^6.0",
     "drupal/migrate_source_csv": "^3.4",
     "drupal/migrate_tools": "^6.0",

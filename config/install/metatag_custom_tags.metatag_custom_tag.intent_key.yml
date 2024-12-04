@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: intent_key
+label: 'Recent Intent'
+description: 'Recent Content Intent'
+htmlElement: meta
+htmlNameAttribute: name
+htmlValueAttribute: content

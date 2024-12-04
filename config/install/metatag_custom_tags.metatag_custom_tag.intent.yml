@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: intent
+label: Intent
+description: 'Assigns intent to content for augmenting the profile when the content is viewed.'
+htmlElement: meta
+htmlNameAttribute: name
+htmlValueAttribute: content

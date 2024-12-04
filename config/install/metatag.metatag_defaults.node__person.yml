@@ -4,4 +4,4 @@ dependencies: {  }
 id: node__person
 label: 'Content: Person'
 tags:
-  'custom_meta_tag_name:author': '[node:field_key]'
+  'metatag_custom_tag:author': '[node:field_key]'

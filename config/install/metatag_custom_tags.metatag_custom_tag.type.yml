@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: type
+label: 'Content type'
+description: 'Content type'
+htmlElement: meta
+htmlNameAttribute: name
+htmlValueAttribute: content

@@ -4,4 +4,4 @@ dependencies: {  }
 id: node__event
 label: 'Content: Event'
 tags:
-  'custom_meta_tag_name:event_id': '[node:nid]'
+  'metatag_custom_tag:event_id': '[node:nid]'
