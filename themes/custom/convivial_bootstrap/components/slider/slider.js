@@ -4,7 +4,6 @@
 
       let defaultSettings = {
         adaptiveHeight: true,
-        centerMode: true,
         centerPadding: '0px',
         slidesToShow: 1,
       }

@@ -1,5 +1,15 @@
-// Force slider item have same height.
 .slick-slider {
+  .slick-list {
+    width: 100%;
+  }
+
+  .slick-track {
+    width: 100%;
+    margin-left: unset;
+    margin-right: auto;
+  }
+
+  // Force slider item have same height.
   .slick-track {
     display: flex !important;
   }
@@ -7,12 +17,6 @@
   .slick-slide {
     height: inherit !important;
   }
-}
-
-// Reset margin.
-.list.slick-slider {
-  margin-left: unset;
-  margin-right: unset;
 }
 
 // List slider layout.
