@@ -16,7 +16,6 @@ function _convivial_bootstrap_personified_data(&$variables, $content) {
   $template_name = $content->get('field_personified_template') ? $content->get('field_personified_template')->value : NULL;
   $template_path = $variables['theme_path'] . '/handlebars/' . $template_name . '.html.hbs';
   $template = file_get_contents($template_path) != FALSE ? file_get_contents($template_path) : NULL;
-  $vertical_spacing = $content->get('field_vertical_spacing') ? $content->get('field_vertical_spacing')->value : NULL;
   $params = [];
 
   if ($parameters) {
@@ -43,7 +42,6 @@ function _convivial_bootstrap_personified_data(&$variables, $content) {
   // Attached variables.
   $variables['personified'] = [
     'id'               => $personified_id,
-    'vertical_spacing' => $vertical_spacing,
   ];
 
   // Attached drupal settings.

@@ -6,7 +6,6 @@ dependencies:
     - field.field.block_content.personified_data.field_personified_endpoint
     - field.field.block_content.personified_data.field_personified_parameters
     - field.field.block_content.personified_data.field_personified_template
-    - field.field.block_content.personified_data.field_vertical_spacing
 id: block_content.personified_data.default
 targetEntityType: block_content
 bundle: personified_data
@@ -16,5 +15,4 @@ hidden:
   field_personified_endpoint: true
   field_personified_parameters: true
   field_personified_template: true
-  field_vertical_spacing: true
   search_api_excerpt: true
