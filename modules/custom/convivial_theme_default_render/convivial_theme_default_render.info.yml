@@ -1,5 +1,5 @@
 name: 'Convivial Theme Default Render'
 type: module
 description: 'Provides a way to alter the render theme of elements like paragraphs.'
-core_version_requirement: ^10.3
+core_version_requirement: ^10.3 || ^11
 package: Convivial
