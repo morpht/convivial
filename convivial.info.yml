@@ -2,7 +2,7 @@ name: Convivial
 type: profile
 project: convivial
 description: 'Convivial profile by Morpht.'
-core_version_requirement: ^10.3
+core_version_requirement: ^10.3 || ^11
 distribution:
   name: Convivial
   install:
