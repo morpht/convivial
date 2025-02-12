@@ -31,8 +31,8 @@
     "drupal/convivial_core": "^1.0",
     "drupal/convivial_enricher": "^1.0",
     "drupal/convivial_profiler": "^1.0",
-    "drupal/core-composer-scaffold": "^10.3",
-    "drupal/core-recommended": "^10.3",
+    "drupal/core-composer-scaffold": "^11",
+    "drupal/core-recommended": "^11",
     "drupal/crop": "^2.2",
     "drupal/csp": "^1.13",
     "drupal/ctools": "^4.1",
@@ -125,8 +125,7 @@
     "mglaman/drupal-check": "^1.4",
     "phpcompatibility/php-compatibility": "^9.3",
     "phpro/grumphp": "^2.5",
-    "phpunit/phpunit": "^9.6",
-    "symfony/phpunit-bridge": "^7.1",
+    "phpunit/phpunit": "^10.5.19",
     "weitzman/drupal-test-traits": "^2.3"
   },
   "repositories": [
