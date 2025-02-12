@@ -3,6 +3,7 @@
 use Drupal\Component\Render\MarkupInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Markup;
+use Drupal\user\Entity\Role;
 use Drupal\user\Entity\User;
 
 /**
@@ -94,7 +95,7 @@ function _convivial_bootstrap_matomo_theme_settings(&$form) {
     '#default_value' => theme_get_setting('matomo_settings.dimensions'),
   ];
 
-  $roles = user_roles();
+  $roles = Role::loadMultiple();
   $form['matomo_settings']['user_roles'] = [
     '#type' => 'fieldset',
     '#title' => t('User Roles'),
@@ -154,7 +155,7 @@ function _convivial_bootstrap_matomo_tracking_script(array &$variables) {
   }
 
   // Get all user roles.
-  $roles = user_roles();
+  $roles = Role::loadMultiple();
 
   // Get the current user object.
   $current_user = \Drupal::currentUser();
