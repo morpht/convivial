@@ -14,7 +14,7 @@ plugin: recombee_public_scenario
 settings:
   id: recombee_public_scenario
   label: Recommended
-  label_display: '0'
+  label_display: visible
   provider: recombee
   endpoint: items-to-user
   scenario: user_items_personal
