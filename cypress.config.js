@@ -10,6 +10,7 @@ module.exports = defineConfig({
     },
     specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}',
     supportFile: 'cypress/support/e2e.js',
+    baseUrl: 'https://convivial-demo.lndo.site/', // Replace with your application's base URL
   },
   chromeWebSecurity: false,
 });
