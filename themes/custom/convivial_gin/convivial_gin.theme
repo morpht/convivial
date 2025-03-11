@@ -13,9 +13,11 @@ function convivial_gin_form_system_theme_settings_alter(&$form, FormStateInterfa
   if (isset($form_id)) {
     return;
   }
+
   $groups = [
     'admin_ui' => t('Node edit'),
   ];
+
   foreach ($groups as $group => $title) {
     $form[$group] = [
       '#type'   => 'details',
@@ -124,7 +126,6 @@ function convivial_gin_form_node_form_alter(&$form, FormStateInterface $form_sta
 
 // Create array for content and tab grouping.
 function _convivial_gin_content_sidebar_groups($theme_settings) {
-
   // Define array.
   $content_tab_groups = [];
 
@@ -144,8 +145,7 @@ function _convivial_gin_content_sidebar_groups($theme_settings) {
       $group_fields = array_map('trim', explode(",", $group[1]));
 
       // Node contents group.
-      $content_tab_groups[$group_machine_name]['title']
-        = Html::escape($group[0]);
+      $content_tab_groups[$group_machine_name]['title'] = Html::escape($group[0]);
       $content_tab_groups[$group_machine_name]['fields'] = $group_fields;
     }
   }
@@ -159,7 +159,6 @@ function _convivial_gin_content_sidebar_groups($theme_settings) {
  * @see convivial_admin_form_node_form_alter()
  */
 function _convivial_gin_node_form_validate(array &$form, FormStateInterface $form_state) {
-
   /** @var \Drupal\Core\Entity\EntityFormInterface $form_object */
   $form_object = $form_state->getFormObject();
   /** @var \Drupal\Core\Entity\FieldableEntityInterface $entity */
@@ -205,9 +204,7 @@ function _convivial_gin_theme_color_palette(&$form, $theme_name) {
   if (!empty($settings) && !empty($settings['colors_enable']) && $settings['colors_enable'] == 1) {
     unset($settings['colors_enable']);
     foreach ($settings as $palette) {
-      foreach (
-        $palette['derivatives'] as $derivative_color_key => $derivative_color
-      ) {
+      foreach ($palette['derivatives'] as $derivative_color_key => $derivative_color) {
         $color_key = str_replace("_", "-", $derivative_color_key);
         $styles .= "--$color_key: $derivative_color;";
       }
