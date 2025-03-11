@@ -1,7 +1,7 @@
 name: Convivial Gin
 type: theme
 base theme: gin
-description: Convivial admin theme based on Gin.
+description: Convivial Gin is an admin theme based on the Gin theme.
 package: Custom
 core_version_requirement: ^10
 libraries:
