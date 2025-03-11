@@ -1,0 +1,18 @@
+name: Convivial Gin
+type: theme
+base theme: gin
+description: Convivial admin theme based on Gin.
+package: Custom
+core_version_requirement: ^10
+libraries:
+  - convivial_gin/global
+regions:
+  header: 'Header'
+  pre_content: 'Pre-content'
+  breadcrumb: Breadcrumb
+  highlighted: Highlighted
+  help: Help
+  content: Content
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  hidden: Hidden

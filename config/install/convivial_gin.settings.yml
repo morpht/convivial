@@ -6,9 +6,18 @@ features:
 logo:
   use_default: 1
 favicon:
-  use_default: 0
-  path: themes/contrib/convivial_claro/favicon.png
-  mimetype: image/png
-custom_css: 0
+  use_default: 1
+enable_darkmode: '0'
+preset_accent_color: blue
+accent_color: ''
+preset_focus_color: gin
+focus_color: ''
+high_contrast_mode: 0
+classic_toolbar: classic
+sticky_action_buttons: 0
+secondary_toolbar_frontend: 0
+layout_density: medium
+show_description_toggle: 1
+show_user_theme_settings: 0
 content_groups: ''
 sidebar_groups: "Personalisation|field_goal, field_stage\r\nPresentation|field_body_classes, field_hide, panelizer\r\nFunctionality|field_glossary_exclude, field_read_speaker, field_search_exclude, field_toc, field_webform"

@@ -4,9 +4,9 @@ dependencies:
   module:
     - system
   theme:
-    - convivial_claro
-id: convivial_claro_breadcrumbs
-theme: convivial_claro
+    - gin
+id: gin_breadcrumbs
+theme: gin
 region: breadcrumb
 weight: 0
 provider: null
