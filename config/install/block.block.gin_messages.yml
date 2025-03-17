@@ -4,9 +4,9 @@ dependencies:
   module:
     - system
   theme:
-    - convivial_claro
-id: convivial_claro_messages
-theme: convivial_claro
+    - gin
+id: gin_messages
+theme: gin
 region: highlighted
 weight: 0
 provider: null
