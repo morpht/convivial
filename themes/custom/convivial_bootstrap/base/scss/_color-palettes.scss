@@ -1,53 +1,6 @@
-// Define color palettes CSS variables
+// Define CSS variables
 :root {
-  --standard-light: #FFFFFF;
-  --standard-dark: #000000;
   --alt-text: rgba(0, 0, 0, 0.6);
-
-  --standard-foreground: var(--standard-dark);
-  --standard-background: #FCFCFC;
-  --standard-link: #066DAC;
-  --standard-link-hover: #044E7B;
-  --standard-link-active: #088CDD;
-  --standard-accent: #064771;
-  --standard-accent-hover: #032941;
-  --standard-accent-active: #0965A1;
-
-  --light-foreground: var(--standard-dark);
-  --light-background: #F0F0F0;
-  --light-link: #066DAC;
-  --light-link-hover: #044E7B;
-  --light-link-active: #088CDD;
-  --light-accent: #064771;
-  --light-accent-hover: #032941;
-  --light-accent-active: #0965A1;
-
-  --dark-foreground: var(--standard-light);
-  --dark-background: #064771;
-  --dark-link: #68BEF8;
-  --dark-link-hover: #99D3FA;
-  --dark-link-active: #37A9F6;
-  --dark-accent: #9FD5F9;
-  --dark-accent-hover: #CFEAFC;
-  --dark-accent-active: #6FC0F6;
-
-  --primary-foreground: var(--standard-dark);
-  --primary-background: #FFDBFF;
-  --primary-link: #A00AA0;
-  --primary-link-hover: #700770;
-  --primary-link-active: #D00DD0;
-  --primary-accent: #700770;
-  --primary-accent-hover: #400440;
-  --primary-accent-active: #A00AA0;
-
-  --primary-dark-foreground: var(--standard-light);
-  --primary-dark-background: #700770;
-  --primary-dark-link: #FF8EFF;
-  --primary-dark-link-hover: #FFC1FF;
-  --primary-dark-link-active: #FF5BFF;
-  --primary-dark-accent: #FFDBFF;
-  --primary-dark-accent-hover: #FFFFFF;
-  --primary-dark-accent-active: #FFA8FF;
 }
 
 // Default color palettes
@@ -69,56 +22,73 @@ $palettes: (
     is_dark: false,
     foreground: var(--standard-foreground),
     background: var(--standard-background),
+    focus: var(--standard-focus),
     link: var(--standard-link),
-    link_active: var(--standard-link-active),
     link_hover: var(--standard-link-hover),
+    link_active: var(--standard-link-active),
     accent: var(--standard-accent),
-    accent_active: var(--standard-accent),
     accent_hover: var(--standard-accent-hover),
+    accent_active: var(--standard-accent-active),
   ),
-  light: (
+  alt: (
     is_dark: false,
-    foreground: var(--light-foreground),
-    background: var(--light-background),
-    link: var(--light-link),
-    link_active: var(--light-link-active),
-    link_hover: var(--light-link-hover),
-    accent: var(--light-accent),
-    accent_active: var(--light-accent),
-    accent_hover: var(--light-accent-hover),
+    foreground: var(--alt-foreground),
+    background: var(--alt-background),
+    focus: var(--alt-focus),
+    link: var(--alt-link),
+    link_hover: var(--alt-link-hover),
+    link_active: var(--alt-link-active),
+    accent: var(--alt-accent),
+    accent_hover: var(--alt-accent-hover),
+    accent_active: var(--alt-accent-active),
   ),
   dark: (
     is_dark: true,
     foreground: var(--dark-foreground),
     background: var(--dark-background),
+    focus: var(--dark-focus),
     link: var(--dark-link),
-    link_active: var(--dark-link-active),
     link_hover: var(--dark-link-hover),
+    link_active: var(--dark-link-active),
     accent: var(--dark-accent),
-    accent_active: var(--dark-accent),
     accent_hover: var(--dark-accent-hover),
+    accent_active: var(--dark-accent-active),
   ),
-  primary: (
+  dark-alt: (
+    is_dark: true,
+    foreground: var(--dark-alt-foreground),
+    background: var(--dark-alt-background),
+    focus: var(--dark-alt-focus),
+    link: var(--dark-alt-link),
+    link_hover: var(--dark-alt-link-hover),
+    link_active: var(--dark-alt-link-active),
+    accent: var(--dark-alt-accent),
+    accent_hover: var(--dark-alt-accent-hover),
+    accent_active: var(--dark-alt-accent-active),
+  ),
+  primary-light: (
     is_dark: false,
-    foreground: var(--primary-foreground),
-    background: var(--primary-background),
-    link: var(--primary-link),
-    link_active: var(--primary-link-active),
-    link_hover: var(--primary-link-hover),
-    accent: var(--primary-accent),
-    accent_active: var(--primary-accent),
-    accent_hover: var(--primary-accent-hover),
+    foreground: var(--primary-light-foreground),
+    background: var(--primary-light-background),
+    focus: var(--primary-light-focus),
+    link: var(--primary-light-link),
+    link_hover: var(--primary-light-link-hover),
+    link_active: var(--primary-light-link-active),
+    accent: var(--primary-light-accent),
+    accent_hover: var(--primary-light-accent-hover),
+    accent_active: var(--primary-light-accent-active),
   ),
   primary-dark: (
     is_dark: true,
     foreground: var(--primary-dark-foreground),
     background: var(--primary-dark-background),
+    focus: var(--primary-dark-focus),
     link: var(--primary-dark-link),
-    link_active: var(--primary-dark-link-active),
     link_hover: var(--primary-dark-link-hover),
+    link_active: var(--primary-dark-link-active),
     accent: var(--primary-dark-accent),
-    accent_active: var(--primary-dark-accent),
     accent_hover: var(--primary-dark-accent-hover),
+    accent_active: var(--primary-dark-accent-active),
   ),
 );
 
@@ -151,167 +121,180 @@ $palettes: (
       }
 
       &:focus {
-        outline-color:  map-get($palette, link_active);
+        color: map-get($palette, link_hover);
+        outline-color: map-get($palette, focus);
+      }
+
+      &.active,
+      &:active {
+        color: map-get($palette, link_active);
       }
     }
 
     // Card
     .card.card--clickable {
+      &:focus,
       &:focus-within {
-        outline-color:  map-get($palette, link_active);
+        outline-color: map-get($palette, focus);
       }
     }
 
     // Buttons
-    .btn.btn-link {
-      color: map-get($palette, link);
+    // Overridden Bootstrap reset
+    button:focus:not(:focus-visible) {
+      outline-color: map-get($palette, focus);
+    }
 
-      &:hover {
-        color: map-get($palette, link_hover);
-      }
-
+    .btn {
       &:focus,
-      &:active,
-      .active {
-        outline-color: map-get($palette, link_active);
+      &:focus-visible {
+        outline-color: map-get($palette, focus);
       }
+    }
+
+    .btn-link {
+      --#{$prefix}btn-color: #{map-get($palette, link)};
+      --#{$prefix}btn-hover-color: #{map-get($palette, link_hover)};
+      --#{$prefix}btn-active-color: #{map-get($palette, link_active)};
     }
 
     @if $is_dark == true {
-      .btn.btn-primary {
+      .btn-primary {
         @include convivial-button-variant(
           $background: map-get($palette, accent),
           $color: $darken-90,
           $hover: map-get($palette, accent_hover),
-          $focus: map-get($palette, accent_active),
+          $active: map-get($palette, accent_active),
         );
       }
-      .btn.btn-secondary {
+      .btn-secondary {
         @include convivial-button-variant(
           $background: map-get($palette, link),
           $color: $darken-90,
           $hover: map-get($palette, link_hover),
-          $focus: map-get($palette, link_active),
+          $active: map-get($palette, link_active),
         );
       }
-      .btn.btn-light {
-        @include convivial-button-variant(
-          $background: $lighten-90,
-          $color: $darken-90,
-          $hover: $lighten-80,
-          $focus: $lighten-95,
-        );
-      }
-      .btn.btn-dark {
-        @include convivial-button-variant(
-          $background: $darken-90,
-          $color: $lighten-90,
-          $hover: $darken-80,
-          $focus: $darken-95,
-        );
-      }
-      .btn.btn-outline-primary {
-        @include convivial-outline-button-variant(
+      .btn-outline-primary {
+        @include convivial-button-outline-variant(
           $color: map-get($palette, accent),
           $color-hover: $darken-90,
-          $focus: map-get($palette, accent_active),
+          $hover: map-get($palette, accent_hover),
+          $active: map-get($palette, accent_active),
         );
       }
-      .btn.btn-outline-secondary {
-        @include convivial-outline-button-variant(
+      .btn-outline-secondary {
+        @include convivial-button-outline-variant(
           $color: map-get($palette, link),
           $color-hover: $darken-90,
-          $focus: map-get($palette, link_active),
-        );
-      }
-      .btn.btn-outline-light {
-        @include convivial-outline-button-variant(
-          $color: $lighten-90,
-          $color-hover: $darken-90,
-          $focus: $lighten-95,
-        );
-      }
-      // On dark backgrounds, the dark button looks same as the light button
-      .btn.btn-outline-dark {
-        @include convivial-outline-button-variant(
-          $color: $lighten-90,
-          $color-hover: $darken-90,
-          $focus: $lighten-95,
+          $hover: map-get($palette, link_hover),
+          $active: map-get($palette, link_active),
         );
       }
     } @else {
-      .btn.btn-primary {
+      .btn-primary {
         @include convivial-button-variant(
           $background: map-get($palette, accent),
           $color: $lighten-90,
           $hover: map-get($palette, accent_hover),
-          $focus: map-get($palette, accent_active),
+          $active: map-get($palette, accent_active),
         );
       }
-      .btn.btn-secondary {
+      .btn-secondary {
         @include convivial-button-variant(
           $background: map-get($palette, link),
           $color: $lighten-90,
           $hover: map-get($palette, link_hover),
-          $focus: map-get($palette, link_active),
+          $active: map-get($palette, link_active),
         );
       }
-      .btn.btn-light {
-        @include convivial-button-variant(
-          $background: $darken-10,
-          $color: $darken-90,
-          $hover: $darken-20,
-          $focus: $darken-25,
-        );
-      }
-      .btn.btn-dark {
-        @include convivial-button-variant(
-          $background: $darken-90,
-          $color: $lighten-90,
-          $hover: $darken-95,
-          $focus: $darken-80,
-        );
-      }
-      .btn.btn-outline-primary {
-        @include convivial-outline-button-variant(
+      .btn-outline-primary {
+        @include convivial-button-outline-variant(
           $color: map-get($palette, accent),
           $color-hover: $lighten-90,
-          $focus: map-get($palette, accent_active),
+          $hover: map-get($palette, accent_hover),
+          $active: map-get($palette, accent_active),
         );
       }
-      .btn.btn-outline-secondary {
-        @include convivial-outline-button-variant(
+      .btn-outline-secondary {
+        @include convivial-button-outline-variant(
           $color: map-get($palette, link),
           $color-hover: $lighten-90,
-          $focus: map-get($palette, link_active),
-        );
-      }
-      // On light backgrounds, the light button looks same as the dark button
-      .btn.btn-outline-light {
-        @include convivial-outline-button-variant(
-          $color: $darken-90,
-          $color-hover: $lighten-90,
-          $focus: $darken-80,
-        );
-      }
-      .btn.btn-outline-dark {
-        @include convivial-outline-button-variant(
-          $color: $darken-90,
-          $color-hover: $lighten-90,
-          $focus: $darken-80,
+          $hover: map-get($palette, link_hover),
+          $active: map-get($palette, link_active),
         );
       }
     }
 
-    // Blockquote
-    blockquote {
-      border-color: map-get($palette, accent);
+    // Search form
+    @if $is_dark == true {
+      .searchform {
+        .searchform__button {
+          &:before {
+            color: #FFFFFF;
+          }
+
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+          }
+        }
+
+        &.searchform--open {
+          .searchform__button {
+            &:before {
+              color: #000000;
+            }
+          }
+        }
+      }
+
+      .search-form--inline-reveal {
+        @include media-breakpoint-up(lg) {
+          .searchform {
+            .searchform__button {
+              &:hover {
+                background-color: rgba(255, 255, 255, 0.05);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // Form
+    .form-control,
+    .form-select,
+    .form-text,
+    .form-textarea,
+    .form-check-input {
+      &:focus {
+        outline-color: map-get($palette, focus);
+      }
     }
 
     // Figure
     @if $is_dark == true {
       figure figcaption {
         background: rgba(255, 255, 255, 0.05);
+      }
+    }
+
+    // Callout
+    .callout {
+      border-color: map-get($palette, accent);
+    }
+
+    // File
+    .file {
+      border-color: map-get($palette, link);
+
+      &:hover,
+      &:focus {
+        border-color: map-get($palette, link_hover);
+      }
+
+      &:active {
+        border-color: map-get($palette, link_acitve);
       }
     }
 
@@ -340,5 +323,12 @@ $palettes: (
       }
     }
 
+    // Vide modes
+    .stack {
+      @if $is_dark == true {
+        background-color: $darken-70;
+        color: $white;
+      }
+    }
   }
 }

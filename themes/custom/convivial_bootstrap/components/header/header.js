@@ -14,7 +14,7 @@
           $bsHeaderStickyWrap = $(stickyElementSelector),
           stickyClass = 'sticky',
           navOpenClass = 'header_navbar--open',
-          bsClasses = ['bg-light', 'bg-dark', 'bg-primary', 'bg-primary-dark'],
+          bsClasses = ['theme--alt', 'theme--dark', 'theme--primary', 'theme--primary-dark'],
 
       headerStyleClasses = (function () {
         // Build a list of BS colour classes that are set on the Header.
@@ -34,8 +34,8 @@
         if (useThemeStyle === true) {
 
           // Invert to non-transparent header styles.
-          $bsHeader.removeClass('bg-light bg-dark bg-primary bg-primary-dark');
-          $bsHeaderStickyWrap.removeClass('bg-light bg-dark bg-primary bg-primary-dark');
+          $bsHeader.removeClass('theme--alt theme--dark theme--primary theme--primary-dark');
+          $bsHeaderStickyWrap.removeClass('theme--alt theme--dark theme--primary theme--primary-dark');
 
           $bsHeaderStickyWrap.addClass(themeHeaderStyle);
         }

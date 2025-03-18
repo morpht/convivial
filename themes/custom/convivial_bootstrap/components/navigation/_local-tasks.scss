@@ -21,8 +21,8 @@
     }
 
     // Dark variant.
-    .bg-dark &,
-    .bg-primary-dark & {
+    .theme--dark &,
+    .theme--primary-dark & {
       .nav-link {
         color: $dark-link-color;
 

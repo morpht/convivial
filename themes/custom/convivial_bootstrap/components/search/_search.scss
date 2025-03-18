@@ -91,8 +91,8 @@ $search-icon-inverse: url('data:image/svg+xml,<svg width="1.375rem" height="1.37
 
   //Adjust search icon colour when Header is dark.
   .bs-header__content {
-    &.bg-dark,
-    &.bg-primary-dark {
+    &.theme--dark,
+    &.theme--primary-dark {
       .searchform-toggler {
         svg {
           * {
@@ -196,8 +196,8 @@ $search-icon-inverse: url('data:image/svg+xml,<svg width="1.375rem" height="1.37
     }
 
     // White icon on dark backgrounds.
-    .bg-dark,
-    .bg-primary-dark {
+    .theme--dark,
+    .theme--primary-dark {
       .searchform__button:before {
         background-image: escape-svg($search-icon-inverse);
         @include transition(background-image, $timing-header-transition $timing-header-easing);

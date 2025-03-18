@@ -24,9 +24,9 @@
 {# Override theme settings with a page field settings. #}
 {% if header_transparency %}
   {% if hero_darkness == 'hero-background--dark' or hero_darkness == 'hero-background--dark-image' %}
-    {% set header_style = 'bg-dark' %}
+    {% set header_style = 'theme--dark' %}
   {% elseif hero_darkness == 'hero-background--light' or hero_darkness == 'hero-background--light-image' %}
-    {% set header_style = 'bg-light' %}
+    {% set header_style = 'theme--alt' %}
   {% endif %}
 {% endif %}
 
