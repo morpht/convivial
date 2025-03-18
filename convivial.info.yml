@@ -140,6 +140,7 @@ install:
 themes:
   - claro
   - convivial_bootstrap
-  - convivial_claro
+  - convivial_gin
+  - gin
 
 version: 0.1.0-dev

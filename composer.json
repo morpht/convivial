@@ -53,6 +53,7 @@
     "drupal/focal_point": "^2.1",
     "drupal/geofield": "^1.47",
     "drupal/geofield_map": "^11.0",
+    "drupal/gin": "^4.0",
     "drupal/google_tag": "^2.0",
     "drupal/gtranslate": "^3.0",
     "drupal/inline_entity_form": "^3.0",

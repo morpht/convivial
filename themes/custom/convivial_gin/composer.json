@@ -1,0 +1,13 @@
+{
+    "name": "morpht/convivial_gin",
+    "description": "Convivial admin theme based on Gin.",
+    "license": "GPL-2.0-or-later",
+    "type": "drupal-theme",
+    "authors": [
+        {
+            "name": "Morpht",
+            "homepage": "https://www.morpht.com",
+            "role": "Maintainer"
+        }
+    ]
+}
