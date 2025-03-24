@@ -1,10 +1,20 @@
 /*! @convivial_bootstrap/colors */
+.theme--alt {
+  @extend .cp--alt;
+}
 
-.bg-dark {
+.theme--dark {
   @extend .cp--dark;
 }
 
-.bg-primary-dark {
-  @extend .cp--primary-dark;
+.theme--dark-alt {
+  @extend .cp--dark-alt;
 }
 
+.theme--primary-light {
+  @extend .cp--primary-light;
+}
+
+.theme--primary-dark {
+  @extend .cp--primary-dark;
+}

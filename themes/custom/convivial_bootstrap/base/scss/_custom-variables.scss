@@ -10,7 +10,9 @@ $introduction-font-weight:  300;
 // Header
 $timing-header-transition:                      0.4s;
 $timing-header-easing:                          ease;
-$z-index-navbar-header:                          500;
+
+// Z-Index
+$zindex-navbar-header:                          500;
 
 // Hero
 $hero-scale:                      1.15 !default;
@@ -125,6 +127,7 @@ $lighten-10:                                    rgba(255, 255, 255, 0.10);
 $lighten-20:                                    rgba(255, 255, 255, 0.20);
 $lighten-25:                                    rgba(255, 255, 255, 0.25);
 $lighten-50:                                    rgba(255, 255, 255, 0.50);
+$lighten-70:                                    rgba(255, 255, 255, 0.70);
 $lighten-75:                                    rgba(255, 255, 255, 0.75);
 $lighten-80:                                    rgba(255, 255, 255, 0.80);
 $lighten-90:                                    rgba(255, 255, 255, 0.90);
@@ -135,6 +138,7 @@ $darken-10:                                     rgba(0, 0, 0, 0.10);
 $darken-20:                                     rgba(0, 0, 0, 0.20);
 $darken-25:                                     rgba(0, 0, 0, 0.25);
 $darken-50:                                     rgba(0, 0, 0, 0.50);
+$darken-70:                                     rgba(0, 0, 0, 0.70);
 $darken-75:                                     rgba(0, 0, 0, 0.75);
 $darken-80:                                     rgba(0, 0, 0, 0.80);
 $darken-90:                                     rgba(0, 0, 0, 0.90);

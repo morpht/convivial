@@ -28,9 +28,7 @@ a {
 
 // Dark backgrounds.
 .cp--dark,
-.cp--primary-dark,
-.bg-dark,
-.bg-primary-dark {
+.cp--primary-dark {
   a[rel~='external']:after {
     background-image: escape-svg($external-dark-link-icon);
   }

@@ -1,139 +1,63 @@
 /*! @convivial_bootstrap/button */
 
+// Overridden Bootstrap reset
+button:focus:not(:focus-visible) {
+  outline: $btn-outline-width $btn-outline-style var(--standard-focus);
+}
+
+// Default button
 .btn {
-  &:hover {
-    text-decoration: if($link-hover-decoration == underline, none, null);
-  }
+  --#{$prefix}btn-box-shadow: none;
+  --#{$prefix}btn-focus-box-shadow: none;
 
-  &:focus {
-    outline: $btn-outline-width $btn-outline-style var(--standard-link-active);
-    outline-offset: $btn-outline-offset;
-  }
-
+  &:focus,
   &:focus-visible {
-    background: var(--standard-link-hover);
+    outline: $btn-outline-width $btn-outline-style var(--standard-focus);
+    outline-offset: $outline-offset;
+
+    // Disable ring, box shadow
     box-shadow: none;
   }
 }
 
-//
-// Alternate buttons
-//
-
-$buttons: (
-  primary: (
-    is_dark: true,
-    background: var(--standard-accent),
-    hover: var(--standard-accent-hover),
-    active: var(--standard-accent-active),
-  ),
-  secondary: (
-    is_dark: true,
-    background: var(--standard-link),
-    hover: var(--standard-link-hover),
-    active: var(--standard-link-active),
-  ),
-  light: (
-    is_dark: false,
-    background: $darken-10,
-    hover: $darken-20,
-    active: $darken-25,
-  ),
-  dark: (
-    is_dark: true,
-    background: $darken-90,
-    hover: $darken-95,
-    active: $darken-80,
-  ),
-  success: (
-    is_dark: true,
-    background: var(--bs-success),
-    hover: var(--bs-btn-hover-bg),
-    active: var(--bs-btn-active-bg),
-  ),
-  danger: (
-    is_dark: true,
-    background: var(--bs-danger),
-    hover: var(--bs-btn-hover-bg),
-    active: var(--bs-btn-active-bg),
-  ),
-  warning: (
-    is_dark: false,
-    background: var(--bs-warning),
-    hover: var(--bs-btn-hover-bg),
-    active: var(--bs-btn-active-bg),
-  ),
-  info: (
-    is_dark: false,
-    background: var(--bs-info),
-    hover: var(--bs-btn-hover-bg),
-    active: var(--bs-btn-active-bg),
-  ),
-);
-
-@each $name, $button in $buttons {
-  $is_dark: map-get($button, is_dark);
-
-  @if $is_dark == true {
-    .btn.btn-#{$name} {
-      @include convivial-button-variant(
-        $background: map-get($button, background),
-        $color: $lighten-90,
-        $hover: map-get($button, hover),
-        $focus:  map-get($button, active),
-      );
-    }
-    .btn.btn-outline-#{$name} {
-      @include convivial-outline-button-variant(
-        $color: map-get($button, background),
-        $color-hover: $white,
-        $focus: map-get($button, active),
-      );
-    }
-  } @else {
-    .btn.btn-#{$name} {
-      @include convivial-button-variant(
-        $background: map-get($button, background),
-        $color: $darken-90,
-        $hover: map-get($button, hover),
-        $focus: map-get($button, active)
-      );
-    }
-    .btn.btn-outline-#{$name} {
-      @include convivial-outline-button-variant(
-        $color: map-get($button, background),
-        $color-hover: $black,
-        $focus: map-get($button, active)
-      );
-    }
-  }
+.btn-link {
+  --#{$prefix}btn-color: var(--standard-link);
+  --#{$prefix}btn-hover-color: var(--standard-link-hover);
+  --#{$prefix}btn-active-color: var(--standard-link-focus);
 }
 
-// Override for light button.
-// On light backgrounds, the light button looks same as the dark button.
-.btn.btn-outline-light {
-  @include convivial-outline-button-variant(
-    $color: var(--dark-background),
-    $color-hover: $lighten-90,
-    $focus: var(--dark-link-active)
+.btn-primary {
+  @include convivial-button-variant(
+    $background: var(--standard-accent),
+    $color: $lighten-90,
+    $hover: var(--standard-accent-hover),
+    $active: var(--standard-accent-active),
   );
 }
 
-// Link buttons
-// Make a button look and behave like a link
-.btn-link {
-  font-weight: $font-weight-normal;
-  color: var(--standard-link);
-  text-decoration: $link-decoration;
+.btn-secondary {
+  @include convivial-button-variant(
+    $background: var(--standard-link),
+    $color: $lighten-90,
+    $hover: var(--standard-link-hover),
+    $active: var(--standard-link-active),
+  );
+}
 
-  &:hover {
-    text-decoration: $link-hover-decoration;
-  }
+.btn-outline-primary {
+  @include convivial-button-outline-variant(
+    $color: var(--standard-accent),
+    $color-hover: $lighten-90,
+    $hover: var(--standard-accent-hover),
+    $active: var(--standard-accent-active),
+  );
+}
 
-  &:focus {
-    background: transparent;
-    text-decoration: $link-hover-decoration;
-    outline: $btn-outline-width $btn-outline-style var(--standard-link-active);
-    outline-offset: $btn-outline-offset;
-  }
+.btn-outline-secondary {
+  @include convivial-button-outline-variant(
+    $color: var(--standard-link),
+    $color-hover: $lighten-90,
+    $hover: var(--standard-link-hover),
+    $active: var(--standard-link-active),
+  );
 }
