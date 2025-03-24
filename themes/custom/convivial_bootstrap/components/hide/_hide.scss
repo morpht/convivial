@@ -6,3 +6,15 @@
     display: none;
   }
 }
+
+.hide-mobile {
+  @include media-breakpoint-down(lg) {
+    display: none;
+  }
+}
+
+.hide-desktop {
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
+}
