@@ -17,5 +17,5 @@ selection_criteria:
     bundles:
       decision_tree: decision_tree
 selection_logic: and
-weight: -5
+weight: -8
 relationships: {  }
