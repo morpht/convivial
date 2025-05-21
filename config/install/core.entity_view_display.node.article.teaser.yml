@@ -82,26 +82,6 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 0
             additional: {  }
-          882f29ad-f358-4cc0-85c0-93353f4849e0:
-            uuid: 882f29ad-f358-4cc0-85c0-93353f4849e0
-            region: tags
-            configuration:
-              id: 'field_block:node:article:field_published'
-              label: 'Published date'
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: datetime_default
-                label: hidden
-                settings:
-                  timezone_override: ''
-                  format_type: standard
-                third_party_settings: {  }
-            weight: 0
-            additional: {  }
           2b002ca8-85e5-474d-8e03-5f329e9aae0b:
             uuid: 2b002ca8-85e5-474d-8e03-5f329e9aae0b
             region: info
@@ -138,6 +118,26 @@ third_party_settings:
                 settings: {  }
                 third_party_settings: {  }
             weight: 1
+            additional: {  }
+          882f29ad-f358-4cc0-85c0-93353f4849e0:
+            uuid: 882f29ad-f358-4cc0-85c0-93353f4849e0
+            region: date
+            configuration:
+              id: 'field_block:node:article:field_published'
+              label: 'Published date'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: datetime_default
+                label: hidden
+                settings:
+                  timezone_override: ''
+                  format_type: standard
+                third_party_settings: {  }
+            weight: 0
             additional: {  }
         third_party_settings: {  }
   layout_library:
