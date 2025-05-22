@@ -66,10 +66,18 @@
   .navbar-toggler {
     color: $navbar-light-color;
     border-color: $navbar-light-toggler-border-color;
-  }
 
-  .navbar-toggler-icon {
-    background-image: escape-svg($navbar-light-toggler-icon-bg);
+    // Collapsed.
+    .navbar-toggler-icon {
+      background-image: escape-svg($navbar-light-toggler-icon-bg);
+    }
+
+    // Open.
+    &[aria-expanded="true"] {
+      .navbar-toggler-icon {
+        background-image: escape-svg($navbar-light-toggler-icon-open-bg);
+      }
+    }
   }
 }
 
@@ -97,10 +105,18 @@
     .navbar-toggler {
       color: $navbar-dark-color;
       border-color: $navbar-dark-toggler-border-color;
-    }
 
-    .navbar-toggler-icon {
-      background-image: escape-svg($navbar-dark-toggler-icon-bg);
+      // Collapsed.
+      .navbar-toggler-icon {
+        background-image: escape-svg($navbar-dark-toggler-icon-bg);
+      }
+
+      // Open.
+      &[aria-expanded="true"] {
+        .navbar-toggler-icon {
+          background-image: escape-svg($navbar-dark-toggler-icon-open-bg);
+        }
+      }
     }
   }
 }
