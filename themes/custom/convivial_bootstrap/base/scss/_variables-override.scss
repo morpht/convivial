@@ -55,6 +55,13 @@ $badge-padding-y:                   .35rem;
 $badge-padding-x:                   .65rem;
 $badge-border-radius:               $border-radius;
 
+// Dropdowns
+//
+// Dropdown menu container and contents.
+
+$dropdown-color:                   var(--light-foreground);
+$dropdown-bg:                       var(--light-background);
+
 // Pills
 
 $nav-pills-border-radius:           $border-radius;
