@@ -44,36 +44,6 @@ third_party_settings:
           label: ''
           context_mapping: {  }
         components:
-          f0a28273-2d71-4db7-b961-40066126c670:
-            uuid: f0a28273-2d71-4db7-b961-40066126c670
-            region: date
-            configuration:
-              id: 'field_block:node:event:created'
-              label: 'Authored on'
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: timestamp
-                label: hidden
-                settings:
-                  date_format: medium
-                  custom_date_format: ''
-                  timezone: ''
-                  tooltip:
-                    date_format: ''
-                    custom_date_format: ''
-                  time_diff:
-                    enabled: false
-                    future_format: '@interval hence'
-                    past_format: '@interval ago'
-                    granularity: 2
-                    refresh: 60
-                third_party_settings: {  }
-            weight: 0
-            additional: {  }
           d70564d4-0f3d-40cd-b85f-20e5cddd7b0a:
             uuid: d70564d4-0f3d-40cd-b85f-20e5cddd7b0a
             region: title
@@ -110,6 +80,26 @@ third_party_settings:
                 settings: {  }
                 third_party_settings: {  }
             weight: 1
+            additional: {  }
+          d750397a-cd7b-47e7-8a2d-37f07c3dee0f:
+            uuid: d750397a-cd7b-47e7-8a2d-37f07c3dee0f
+            region: date
+            configuration:
+              id: 'field_block:node:event:field_event_date'
+              label: Date
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: datetime_default
+                label: hidden
+                settings:
+                  timezone_override: ''
+                  format_type: medium
+                third_party_settings: {  }
+            weight: 0
             additional: {  }
         third_party_settings: {  }
   layout_library:
