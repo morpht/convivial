@@ -5,6 +5,7 @@ core_version_requirement: ^10.3 || ^11
 libraries:
   - convivial_bootstrap/base-global-styling
   - convivial_bootstrap/base-bootstrap5-js
+  - convivial_bootstrap/bootstrap-icons
   - convivial_bootstrap/back-to-top
   - convivial_bootstrap/font-family
   - convivial_bootstrap/header
