@@ -7,6 +7,14 @@
   }
 }
 
+.summary__content {
+  // All regions has one third unit gap between them.
+  *[class*='summary__'] + *[class*='summary__'] {
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+  }
+}
+
 .summary__info {
   color: var(--alt-text);
   margin-bottom: 0.5rem;
@@ -14,4 +22,10 @@
 
 .summary__title {
   margin-top: 0;
+}
+
+.summary__date {
+  @include font-size($small-font-size);
+
+  color: var(--alt-text);
 }
