@@ -38,6 +38,11 @@ base-bootstrap5-js:
     - core/drupal
     - convivial_bootstrap/popperjs
 
+bootstrap-icons:
+  css:
+    theme:
+      libraries/bootstrap-icons/font/bootstrap-icons.css: { minified: true }
+
 billboard:
   remote: https://github.com/naver/billboard.js
   version: 3.12.4
