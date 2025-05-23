@@ -155,12 +155,12 @@ search:
   regions:
     info:
       label: Info
-    date:
-      label: Date
     title:
       label: Title
     summary:
       label: Summary
+    date:
+      label: Date
     tags:
       label: Tags
 stack_detail:
@@ -206,12 +206,12 @@ summary:
   regions:
     info:
       label: Info
-    date:
-      label: Date
     title:
       label: Title
     summary:
       label: Summary
+    date:
+      label: Date
     tags:
       label: Tags
 teaser:
@@ -223,12 +223,12 @@ teaser:
   regions:
     info:
       label: Info
-    date:
-      label: Date
     title:
       label: Title
     summary:
       label: Summary
+    date:
+      label: Date
     tags:
       label: Tags
     image:
@@ -242,12 +242,12 @@ teaser_big:
   regions:
     info:
       label: Info
-    date:
-      label: Date
     title:
       label: Title
     summary:
       label: Summary
+    date:
+      label: Date
     tags:
       label: Tags
     image:
@@ -261,12 +261,12 @@ teaser_small:
   regions:
     info:
       label: Info
-    date:
-      label: Date
     title:
       label: Title
     summary:
       label: Summary
+    date:
+      label: Date
     tags:
       label: Tags
     image:

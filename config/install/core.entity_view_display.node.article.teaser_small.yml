@@ -101,26 +101,6 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 0
             additional: {  }
-          9d1cbcc8-4521-451c-987b-1b3ca2c02465:
-            uuid: 9d1cbcc8-4521-451c-987b-1b3ca2c02465
-            region: tags
-            configuration:
-              id: 'field_block:node:article:field_published'
-              label: 'Published date'
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: datetime_default
-                label: hidden
-                settings:
-                  timezone_override: ''
-                  format_type: standard
-                third_party_settings: {  }
-            weight: 0
-            additional: {  }
           86a81521-9fb5-46f6-82f3-fb884f805e48:
             uuid: 86a81521-9fb5-46f6-82f3-fb884f805e48
             region: summary
@@ -138,6 +118,26 @@ third_party_settings:
                 settings: {  }
                 third_party_settings: {  }
             weight: 1
+            additional: {  }
+          9d1cbcc8-4521-451c-987b-1b3ca2c02465:
+            uuid: 9d1cbcc8-4521-451c-987b-1b3ca2c02465
+            region: date
+            configuration:
+              id: 'field_block:node:article:field_published'
+              label: 'Published date'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: datetime_default
+                label: hidden
+                settings:
+                  timezone_override: ''
+                  format_type: standard
+                third_party_settings: {  }
+            weight: 0
             additional: {  }
         third_party_settings: {  }
   layout_library:
