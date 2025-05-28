@@ -89,7 +89,6 @@ fastfacts:
   js:
     components/fastfacts/fastfacts.js: { }
   dependencies:
-    - core/jquery
     - core/drupal
 
 font-family:
