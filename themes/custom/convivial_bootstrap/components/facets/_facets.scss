@@ -10,6 +10,10 @@
   }
 }
 
+.facets-soft-limit-link {
+  display: inline-block;
+}
+
 .facets-widget-checkbox {
   .item-list__checkbox {
     padding-left: 0;
@@ -19,9 +23,20 @@
     .facet-item {
       @extend .form-check;
       margin-bottom: .125rem;
+      display: flex;
+      align-items: center;
+      margin-top: 1rem;
+      padding-left: 0;
 
       input[type="checkbox"] {
         @extend .form-check-input;
+        border-color: var(--standard-foreground);
+        float: unset;
+        margin-left: 0;
+        margin-right: .6rem;
+        margin-top: 0;
+        height: 1.5rem;
+        width: 1.5rem;
       }
 
       label {
