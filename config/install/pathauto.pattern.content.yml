@@ -6,12 +6,12 @@ dependencies:
 id: content
 label: Content
 type: 'canonical_entities:node'
-pattern: '[node:menu-link:parent:url:path]/[node:menu-link:title]'
+pattern: '[node:menu-link:parent:url:path]/[node:title]'
 selection_criteria:
-  642142ee-6a05-4622-a8b2-3000697db5b3:
+  41bf9187-e964-4414-930d-cca450d380bb:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 642142ee-6a05-4622-a8b2-3000697db5b3
+    uuid: 41bf9187-e964-4414-930d-cca450d380bb
     context_mapping:
       node: node
     bundles:
@@ -19,5 +19,5 @@ selection_criteria:
       page: page
       topic: topic
 selection_logic: and
-weight: 0
+weight: -3
 relationships: {  }
