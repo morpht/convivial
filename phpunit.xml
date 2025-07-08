@@ -31,9 +31,6 @@
             /sites/simpletest/browser_output. If using another printer such as teamcity this must be defined.
             -->
         <!--<env name="DTT_HTML_OUTPUT_DIRECTORY" value=""/>-->
-
-        <!-- @ToDo: Temporary workaround after https://www.drupal.org/project/drupal/issues/1920902 -->
-        <env name="SYMFONY_DEPRECATIONS_HELPER" value="weak" />
     </php>
 
     <testsuites>
