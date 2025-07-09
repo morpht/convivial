@@ -117,7 +117,6 @@ glightbox:
 
 header:
   js:
-    components/header/jquery.fixx.js: { }
     components/header/header.js: { }
   dependencies:
     - core/jquery
@@ -198,7 +197,7 @@ sticky_header_height:
 
 slick_carousel:
   js:
-    libraries/slick-carousel/slick/slick.min.js: { minified: true }
+    libraries/slick-carousel/slick/slick.js: { }
   css:
     theme:
       components/slick-carousel/slick-carousel.css: { minified: true }
