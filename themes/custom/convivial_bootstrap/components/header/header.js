@@ -57,22 +57,55 @@
         }
       };
 
-      // Initial the jQuery Fixx plugin.
-        // once() prevents this listener being attached multiple times...
-      $(once('convivial_bootstrap_Header--fixx', '.bs-header--sticky ' + stickyElementSelector, context))
-        .fixx({
-          // Give the placeholder a class so we can specifically target only this one on the page.
-          placeholderClass: 'bs-header-placeholder',
+      // Simple vanilla JS sticky header
+      makeStickyHeader = function (selector, stickyClass = 'sticky-fixed') {
+        const element = document.querySelector(selector);
+        if (!element) return;
 
-          // Don't prepend the placeholder before the element, append it after.
-          placeholderPrepend: false,
+        // Create placeholder
+        const placeholder = document.createElement('div');
+        placeholder.className = 'bs-header-placeholder';
+        placeholder.style.display = 'none';
+        element.parentNode.insertBefore(placeholder, element.nextSibling);
 
-          // Keep the terminology the same.
-          stateFixedClass: stickyClass,
+        // Get initial position
+        const originalTop = element.offsetTop;
+        let isSticky = false;
 
-          // Pixel offset from screen-top of when the element becomes sticky.
-          startThreshold: 0
-        });
+        function handleScroll() {
+          const shouldStick = window.scrollY > originalTop;
+
+          if (shouldStick && !isSticky) {
+            // Make sticky
+            isSticky = true;
+            placeholder.style.height = element.offsetHeight + 'px';
+            placeholder.style.display = 'block';
+
+            element.style.position = 'fixed';
+            element.style.top = '0';
+            element.style.left = '0';
+            element.style.width = '100%';
+            element.classList.add(stickyClass);
+
+          } else if (!shouldStick && isSticky) {
+            // Remove sticky
+            isSticky = false;
+            placeholder.style.display = 'none';
+
+            element.style.position = '';
+            element.style.top = '';
+            element.style.left = '';
+            element.style.width = '';
+            element.classList.remove(stickyClass);
+          }
+        }
+
+        window.addEventListener('scroll', handleScroll);
+      }
+
+      $(once('convivial_bootstrap_Header--fixx', '.bs-header--sticky ' + stickyElementSelector, context)).each(function() {
+        makeStickyHeader('.bs-header--sticky ' + stickyElementSelector, stickyClass);
+      });
 
       $(once('convivial_bootstrap_Header--window-change', context))
         .on('resize scroll', function () {
@@ -111,5 +144,6 @@
           }
         });
       }
+
   };
 })(jQuery, Drupal, once);
