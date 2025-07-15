@@ -54,7 +54,7 @@
           // Convert string to numeric.
           for (let i = 0; i < csvData.length; ++i) {
             for (let j = 0; j < csvData[i].length; ++j) {
-              if ($.isNumeric(csvData[i][j])) {
+              if (!isNaN(parseFloat(csvData[i][j])) && isFinite(csvData[i][j])) {
                 csvData[i][j] = parseFloat(csvData[i][j])
               }
             }
