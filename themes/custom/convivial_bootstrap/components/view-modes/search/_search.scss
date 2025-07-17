@@ -1,8 +1,15 @@
 /*! @convivial_bootstrap/search */
 
+.search__content {
+  // All regions has one third unit gap between them.
+  *[class*='search__'] + *[class*='search__'] {
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+  }
+}
+
 .search__info {
   color: var(--alt-text);
-  margin-bottom: 0.5rem;
 }
 
 // Title has a full unit gap bellow.
@@ -17,4 +24,10 @@
       color: $search-link-hover-color;
     }
   }
+}
+
+.search__date {
+  @include font-size($small-font-size);
+
+  color: var(--alt-text);
 }

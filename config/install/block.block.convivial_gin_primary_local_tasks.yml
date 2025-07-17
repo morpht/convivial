@@ -2,18 +2,18 @@ langcode: en
 status: true
 dependencies:
   theme:
-    - convivial_claro
-id: convivial_claro_secondary_local_tasks
-theme: convivial_claro
-region: pre_content
-weight: 0
+    - convivial_gin
+id: convivial_gin_primary_local_tasks
+theme: convivial_gin
+region: header
+weight: -1
 provider: null
 plugin: local_tasks_block
 settings:
   id: local_tasks_block
-  label: 'Secondary tabs'
+  label: 'Primary tabs'
   label_display: '0'
   provider: core
-  primary: false
-  secondary: true
+  primary: true
+  secondary: false
 visibility: {  }

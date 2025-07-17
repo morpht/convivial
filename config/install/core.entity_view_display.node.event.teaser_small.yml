@@ -119,6 +119,26 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
+          a55a399f-7404-478d-80a9-a99fa026a71c:
+            uuid: a55a399f-7404-478d-80a9-a99fa026a71c
+            region: date
+            configuration:
+              id: 'field_block:node:event:field_event_date'
+              label: Date
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: datetime_default
+                label: hidden
+                settings:
+                  timezone_override: ''
+                  format_type: standard_date_time
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
         third_party_settings: {  }
   layout_library:
     enable: false

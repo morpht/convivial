@@ -2,7 +2,7 @@ name: Convivial
 type: profile
 project: convivial
 description: 'Convivial profile by Morpht.'
-core_version_requirement: ^10.2
+core_version_requirement: ^10.3
 distribution:
   name: Convivial
   install:
@@ -140,6 +140,7 @@ install:
 themes:
   - claro
   - convivial_bootstrap
-  - convivial_claro
+  - convivial_gin
+  - gin
 
 version: 0.1.0-dev

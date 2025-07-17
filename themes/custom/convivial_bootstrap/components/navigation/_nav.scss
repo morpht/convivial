@@ -1,85 +1,227 @@
 /*! @convivial_bootstrap/nav */
+$sidebar-nav-link-border-radius: $border-radius;
+$sidebar-nav-link-hover-fg: var(--standard-background);
+$sidebar-nav-link-hover-bg: var(--standard-link);
+$sidebar-nav-link-hover-bg-darken: var(--standard-link-hover);
+$sidebar-nav-link-active-fg: var(--alt-foreground);
+$sidebar-nav-link-active-bg: var(--alt-background);
+$sidebar-nav-link-outline-color: var(--standard-link-active);
+$sidebar-nav-row-gap: 2px;
 
 .nested-nav {
   list-style: none;
 }
 
+.nav-link {
+  &:focus-visible {
+    outline: $outline-width $outline-style;
+    outline-offset: $outline-offset;
+    box-shadow: none;
+  }
+}
+
 // Sidebar nav.
 .layout__region--sidebar {
-  .nav {
-    .nav-link.active {
-      color: var(--standard-dark);
+  nav[role="navigation"] {
+
+    // Override JS inline style.
+    .nested-nav {
+      position: relative !important; // Override JS inline style.
+      transform: unset !important; // Override JS inline style.
+      margin: 0 !important; // Override JS inline style.
+    }
+
+    .main-menu__heading {
+      @extend h3;
+
+      margin-bottom: $sidebar-nav-row-gap;
+
+      a {
+        display: flex;
+        flex-grow: 1;
+        padding: 0.5rem;
+        border-radius: $sidebar-nav-link-border-radius;
+        text-decoration: none;
+
+        &:hover {
+          color: $sidebar-nav-link-hover-fg;
+          background: $sidebar-nav-link-hover-bg;
+        }
+
+        &:focus {
+          color: $sidebar-nav-link-hover-fg;
+          background: $sidebar-nav-link-hover-bg;
+          outline-offset: 0;
+        }
+
+        &:active,
+        &.active {
+          color: $sidebar-nav-link-active-fg;
+          background: $sidebar-nav-link-active-bg;
+        }
+      }
+    }
+
+    .nav {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      row-gap: $sidebar-nav-row-gap;
+    }
+
+    .nested-nav {
+      display: none;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      z-index: auto;
+
+      &.dropdown-menu.show {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        flex-basis: 100%;
+        row-gap: $sidebar-nav-row-gap;
+      }
+    }
+
+    .nav-link {
+      display: flex;
+      border-radius: $sidebar-nav-link-border-radius;
+      padding: 0.5rem;
+      flex-grow: 1;
+
+      &:focus {
+        outline-offset: 0;
+        z-index: 1;
+      }
+
+      &:focus-visible {
+        outline: 2px solid $sidebar-nav-link-outline-color;
+        box-shadow: none;
+      }
+    }
+
+    .dropdown-toggle {
+      position: relative;
+      display: flex;
+      flex: 0;
+      padding: 0.5rem;
+      border-radius: $sidebar-nav-link-border-radius;
+      text-decoration: none;
+
+      &:focus {
+        outline-offset: 0;
+      }
+
+      &:after {
+        content: '\F229';
+        font-family: 'bootstrap-icons';
+        display: inline-block;
+        vertical-align: middle;
+        border: 0;
+      }
+
+      &.show {
+        &:after {
+          content: '\F235';
+        }
+      }
     }
 
     .btn-group {
+      display: flex;
       flex-wrap: wrap;
+      flex-grow: 0;
+      border: 0;
+      flex-basis: 100%;
+      row-gap: $sidebar-nav-row-gap;
 
-      > a:first-child {
-        background-color: $link-color;
-        border-top-left-radius: $border-radius;
-        border-bottom-left-radius: $border-radius;
+      > .nav-link {
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
-        color: var(--standard-light);
-        flex-grow: 1;
+      }
 
-        &:hover,
-        &:focus {
-          background-color: var(--standard-dark);
-          color: var(--standard-light);
+      > .dropdown-toggle {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+
+    .nav-item {
+      .nav-link {
+        &:active,
+        &.active {
+          color: $sidebar-nav-link-active-fg;
+          background: $sidebar-nav-link-active-bg;
         }
 
-        &.active {
-          background-color: var(--standard-dark);
-          color: var(--standard-light);
+        &:hover {
+          color: $sidebar-nav-link-hover-fg;
+          background: $sidebar-nav-link-hover-bg;
+
+          &:has(+.dropdown-toggle.show) {
+            color: $sidebar-nav-link-hover-fg;
+            background: $sidebar-nav-link-hover-bg;
+          }
+        }
+
+        &:has(+.dropdown-toggle.show) {
+          color: $sidebar-nav-link-active-fg;
+          background: $sidebar-nav-link-active-bg;
         }
       }
 
       .dropdown-toggle {
-        position: relative;
-        background-color: $link-color;
-        width: 1.75rem;
-        border-top-right-radius: $border-radius;
-        border-bottom-right-radius: $border-radius;
-
-        &::after {
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          border-bottom-color: var(--standard-light);
-          border-top-color: var(--standard-light);
+        &:hover {
+          color: $sidebar-nav-link-hover-fg;
+          background: $sidebar-nav-link-hover-bg;
         }
 
-        &:hover,
-        &:focus {
-          background-color: var(--standard-dark);
-          color: var(--standard-light);
+        &:active,
+        &.show {
+          color: $sidebar-nav-link-active-fg;
+          background: $sidebar-nav-link-active-bg;
 
-          &::after {
-            background-color: var(--standard-dark);
+          &:hover {
+            color: $sidebar-nav-link-hover-fg;
+            background: $sidebar-nav-link-hover-bg;
           }
         }
       }
 
-      a.active + .dropdown-toggle {
-        background-color: var(--standard-dark);
-      }
+      // Nav item's active state
+      &.is-active {
+        > .nav-link,
+        > .dropdown-toggle {
+          color: $sidebar-nav-link-active-fg;
+          background: $sidebar-nav-link-active-bg;
 
-      .nested-nav {
-        position: relative !important; // Override JS inline style.
-        background-color: transparent;
-        border: unset;
-        padding-left: 2rem;
-        transform: unset !important; // Override JS inline style.
-      }
-
-      + .is-active {
-        margin-top: .5rem;
+          &:hover {
+            color: $sidebar-nav-link-hover-fg;
+            background: $sidebar-nav-link-hover-bg;
+          }
+        }
       }
     }
 
-    .is-active + .btn-group {
-      margin-top: .5rem;
+    // Indent
+    .nav {
+      .nav-link {
+        padding-left: 1rem;
+      }
+    }
+
+    .nested-nav {
+      .nav-link {
+        padding-left: 1.5rem;
+      }
+
+      .nested-nav {
+        .nav-link {
+          padding-left: 2rem;
+        }
+      }
     }
   }
 }

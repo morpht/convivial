@@ -119,6 +119,26 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
+          4297477a-033b-4825-ac95-f54add1012bb:
+            uuid: 4297477a-033b-4825-ac95-f54add1012bb
+            region: date
+            configuration:
+              id: 'field_block:node:event:field_event_date'
+              label: Date
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: datetime_default
+                label: hidden
+                settings:
+                  timezone_override: ''
+                  format_type: standard_date_time
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
         third_party_settings: {  }
   layout_library:
     enable: false

@@ -16,14 +16,14 @@
       <div{{ region_attributes.info.addClass('layout__region', 'layout__region--info', 'teaser__info') }}>
         {{ content.info }}
       </div>
-      <div{{ region_attributes.date.addClass('layout__region', 'layout__region--date', 'teaser__date') }}>
-        {{ content.date }}
-      </div>
       <h3{{ region_attributes.title.addClass('layout__region', 'layout__region--title', 'teaser__title') }}>
         {{ content.title }}
       </h3>
       <div{{ region_attributes.summary.addClass('layout__region', 'layout__region--summary', 'teaser__summary') }}>
         {{ content.summary }}
+      </div>
+      <div{{ region_attributes.date.addClass('layout__region', 'layout__region--date', 'teaser__date') }}>
+        {{ content.date }}
       </div>
       <div{{ region_attributes.tags.addClass('layout__region', 'layout__region--tags', 'teaser__tags') }}>
         {{ content.tags }}
@@ -44,11 +44,6 @@
             {{ content.info }}
           </div>
         {% endif %}
-        {% if content.date|render|striptags|trim %}
-          <div{{ region_attributes.date.addClass('layout__region', 'layout__region--date', 'teaser__date') }}>
-            {{ content.date }}
-          </div>
-        {% endif %}
         {% if content.title|render|striptags|trim %}
           <h3{{ region_attributes.title.addClass('layout__region', 'layout__region--title', 'teaser__title') }}>
             {{ content.title }}
@@ -57,6 +52,11 @@
         {% if content.summary|render|striptags|trim %}
           <div{{ region_attributes.summary.addClass('layout__region', 'layout__region--summary', 'teaser__summary') }}>
             {{ content.summary }}
+          </div>
+        {% endif %}
+        {% if content.date|render|striptags|trim %}
+          <div{{ region_attributes.date.addClass('layout__region', 'layout__region--date', 'teaser__date') }}>
+            {{ content.date }}
           </div>
         {% endif %}
         {% if content.tags|render|striptags|trim %}

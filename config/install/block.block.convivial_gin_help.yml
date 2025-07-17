@@ -4,11 +4,11 @@ dependencies:
   module:
     - help
   theme:
-    - convivial_claro
-id: convivial_claro_help
-theme: convivial_claro
+    - convivial_gin
+id: convivial_gin_help
+theme: convivial_gin
 region: help
-weight: 0
+weight: -2
 provider: null
 plugin: help_block
 settings:
