@@ -22,7 +22,7 @@
   <div class="icon__wrap">
     <div class="icon__content">
       <div class="icon__content-wrap">
-        {% if content.image|render|striptags('<img>')|trim %}
+        {% if content.image|render %}
           <div{{ region_attributes.image.addClass('layout__region', 'layout__region--image', 'icon__icon', 'image--decorative') }}>
             {{ content.image }}
           </div>

@@ -38,7 +38,7 @@
 
 {% set render_layout %}
   <div{{ attributes.addClass(classes) }}>
-    {% if content.image|render|striptags('<img>')|trim %}
+    {% if content.image|render %}
       <div{{ region_attributes.image.addClass('layout__region', 'layout__region--image', 'stack__image image--decorative') }}>
         {{ content.image }}
       </div>

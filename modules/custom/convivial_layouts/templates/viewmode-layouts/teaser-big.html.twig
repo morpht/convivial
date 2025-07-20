@@ -66,7 +66,7 @@
         {% endif %}
       </div>
     {% endif %}
-    {% if content.image|render|striptags('<img>')|trim %}
+    {% if content.image|render %}
       <div{{ region_attributes.image.addClass('layout__region', 'layout__region--image', 'teaser__image image--decorative') }}>
         {{ content.image }}
       </div>

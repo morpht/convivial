@@ -10,7 +10,7 @@
 ] %}
 
 {% set image_content %}
-  {% if content.image|render|striptags('<img>')|trim %}
+  {% if content.image|render %}
     <div{{ region_attributes.image.addClass('layout__region', 'layout__region--image', 'image__image') }}>
       {{ content.image }}
     </div>
