@@ -6,6 +6,8 @@
         adaptiveHeight: true,
         centerPadding: '0px',
         slidesToShow: 1,
+        // Temporary fix for the div wrapper
+        rows: 0
       }
 
       let halvesSettings = {
