@@ -66,7 +66,7 @@
 
   {# Page title and breadcrumbs for all pages except the ones using GovCMS8 Layouts page layout. #}
   {% if not has_layout_builder %}
-    {% if page.content_top is not empty %}
+    {% if page.content_top %}
       <section class="content-top header hero-banner" aria-label="Content top region">
         <div class="content-top__container container">
           <div class="row">

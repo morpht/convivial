@@ -38,20 +38,20 @@
 {% endif %}
 {% set logo_link = content.field_logo_link[0]['#url'] %}
 
-{% if content.field_logo_large_default['#items'] is not empty %}
+{% if content.field_logo_large_default['#items'] %}
   {% set logo_large = file_url(content.field_logo_large_default['#items'].entity.uri.value) %}
   {% set logo_large_description = content.field_logo_large_default['0']['#description'] %}
 {% endif %}
-{% if content.field_logo_large_inverse['#items'] is not empty %}
+{% if content.field_logo_large_inverse['#items'] %}
   {% set logo_large_inverse = file_url(content.field_logo_large_inverse['#items'].entity.uri.value) %}
   {% set logo_large_inverse_description = content.field_logo_large_inverse['0']['#description'] %}
   {% set classes = classes|merge(['has-inverse--large']) %}
 {% endif %}
-{% if content.field_logo_small_default['#items'] is not empty %}
+{% if content.field_logo_small_default['#items'] %}
   {% set logo_small = file_url(content.field_logo_small_default['#items'].entity.uri.value) %}
   {% set logo_small_description = content.field_logo_small_default['0']['#description'] %}
 {% endif %}
-{% if content.field_logo_small_inverse['#items'] is not empty %}
+{% if content.field_logo_small_inverse['#items'] %}
   {% set logo_small_inverse = file_url(content.field_logo_small_inverse['#items'].entity.uri.value) %}
   {% set logo_small_inverse_description = content.field_logo_small_inverse['0']['#description'] %}
   {% set classes = classes|merge(['has-inverse--small']) %}

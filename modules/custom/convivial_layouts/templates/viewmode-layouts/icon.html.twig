@@ -7,7 +7,7 @@
 #}
 
 {# Define icon_only variable if title and summary is empty. #}
-{% if icon_ratio is not empty and content.image is not empty and content.title|render is empty and content.summary|render is empty %}
+{% if icon_ratio and content.image and content.title|render is empty and content.summary|render is empty %}
   {% set icon_only = 'true' %}
 {% endif %}
 
@@ -42,11 +42,11 @@
   </div>
   <div
     class="icon__overlay"
-    {% if bg_colour is not empty and bg_image is empty %}style="background-color: {{ bg_colour }};"{% endif %}
+    {% if bg_colour and bg_image is empty %}style="background-color: {{ bg_colour }};"{% endif %}
   ></div>
   <div
     class="icon__image"
-    {% if bg_image is not empty %}style="background-image: url({{ bg_image }});"{% endif %}
+    {% if bg_image %}style="background-image: url({{ bg_image }});"{% endif %}
   ></div>
   {% if icon_only == 'true' %}
     <div

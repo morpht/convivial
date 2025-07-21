@@ -19,7 +19,7 @@
   required ? 'js-form-required',
   required ? 'form-required',
 ] %}
-{% if title is not empty %}
+{% if title %}
   <label{{ attributes.addClass(classes) }}>{{ title }}</label>
   {% if required %}
     <span class="form-required-indicator">({{ 'required'|t }})</span>
