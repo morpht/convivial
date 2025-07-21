@@ -63,19 +63,19 @@
   {{ title_suffix }}
 
   {% block content %}
-    {% if logo_large|render|striptags('<img>')|trim %}
+    {% if logo_large|render %}
       <a class="logo-block__link navbar-brand" href="{{ logo_link ? logo_link : '/' }}" title="{{ link_title ? link_title : 'Home' }}">
         <span class="logo-block__logo logo-block__logo--large">
           <img class="logo-block__logo-image" src="{{ logo_large }}" alt="{{ logo_large_description ? logo_large_description : site_name~' logo' }}">
-            {% if logo_large_inverse|render|striptags('<img>')|trim %}
+            {% if logo_large_inverse|render %}
               <img class="logo-block__logo-image logo-block__logo-image--inverse" src="{{ logo_large_inverse }}" alt="{{ logo_large_inverse_description ? logo_large_inverse_description : site_name~' logo' }}">
             {% endif %}
         </span>
         <span class="logo-block__logo logo-block__logo--small">
-        {% if logo_small|render|striptags('<img>')|trim %}
+        {% if logo_small|render %}
           <img class="logo-block__logo-image" src="{{ logo_small }}" alt="{{ logo_small_description ? logo_small_description : site_name~' logo' }}">
         {% endif %}
-          {% if logo_small_inverse|render|striptags('<img>')|trim %}
+          {% if logo_small_inverse|render %}
             <img class="logo-block__logo-image logo-block__logo-image--inverse" src="{{ logo_small_inverse }}" alt="{{ logo_small_inverse_description ? logo_small_inverse_description : site_name~' logo' }}">
           {% endif %}
         </span>

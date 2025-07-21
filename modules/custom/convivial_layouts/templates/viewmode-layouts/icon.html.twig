@@ -7,7 +7,7 @@
 #}
 
 {# Define icon_only variable if title and summary is empty. #}
-{% if icon_ratio is not empty and content.image is not empty and content.title|render|striptags|trim is empty and content.summary|render|striptags|trim is empty %}
+{% if icon_ratio is not empty and content.image is not empty and content.title|render is empty and content.summary|render is empty %}
   {% set icon_only = 'true' %}
 {% endif %}
 
@@ -27,12 +27,12 @@
             {{ content.image }}
           </div>
         {% endif %}
-        {% if content.title|render|striptags|trim %}
+        {% if content.title|render %}
           <h3{{ region_attributes.title.addClass('layout__region', 'layout__region--title', 'icon__title') }}>
             {{ content.title }}
           </h3>
         {% endif %}
-        {% if content.summary|render|striptags|trim %}
+        {% if content.summary|render %}
           <div{{ region_attributes.summary.addClass('layout__region', 'layout__region--summary', 'icon__summary') }}>
             {{ content.summary }}
           </div>

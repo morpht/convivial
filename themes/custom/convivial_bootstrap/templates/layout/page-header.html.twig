@@ -109,7 +109,7 @@
 
         <div{{ create_attribute().addClass(header_menu_bar_classes) }}>
           <div class="row">
-            {% if page.logo|render|striptags('<img><a>')|trim %}
+            {% if page.logo %}
               <div class="logo col-lg-6">
                 {{ page.logo }}
               </div>

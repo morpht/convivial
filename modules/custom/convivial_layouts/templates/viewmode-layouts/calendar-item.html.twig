@@ -33,29 +33,29 @@
 
 {% set render_layout %}
   <div{{ attributes.addClass(classes) }}>
-    {% if content.date|render|striptags|trim %}
+    {% if content.date|render %}
       <div{{ region_attributes.date.addClass('layout__region', 'layout__region--date', 'calendar-item__date') }}>
         {{ content.date }}
       </div>
     {% endif %}
     {% if content %}
       <div class="calendar-item__content">
-        {% if content.title|render|striptags|trim %}
+        {% if content.title|render %}
           <h3{{ region_attributes.title.addClass('layout__region', 'layout__region--title', 'calendar-item__title') }}>
             {{ content.title }}
           </h3>
         {% endif %}
-        {% if content.info|render|striptags|trim %}
+        {% if content.info|render %}
           <div{{ region_attributes.info.addClass('layout__region', 'layout__region--info', 'calendar-item__info') }}>
             {{ content.info }}
           </div>
         {% endif %}
-        {% if content.summary|render|striptags|trim %}
+        {% if content.summary|render %}
           <div{{ region_attributes.summary.addClass('layout__region', 'layout__region--summary', 'calendar-item__summary') }}>
             {{ content.summary }}
           </div>
         {% endif %}
-        {% if content.tags|render|striptags|trim %}
+        {% if content.tags|render %}
           <div{{ region_attributes.tags.addClass('layout__region', 'layout__region--tags', 'calendar-item__tags') }}>
             {{ content.tags }}
           </div>

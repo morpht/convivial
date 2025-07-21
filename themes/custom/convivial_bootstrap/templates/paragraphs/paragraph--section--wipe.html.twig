@@ -47,7 +47,7 @@
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      {% if content|without('field_s_components')|render|striptags|trim %}
+      {% if content|without('field_s_components')|render %}
         <div class="wipe__container containerised">
           <div class="paragraph__content">
             {{ content|without('field_s_components') }}
