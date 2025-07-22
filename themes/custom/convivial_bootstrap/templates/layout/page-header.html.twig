@@ -7,7 +7,7 @@
   top_bar_style ? top_bar_style,
 ] %}
 
-{% if page.top_bar|render|striptags|trim %}
+{% if page.top_bar %}
   <section{{ top_bar_attributes.addClass(top_bar_classes) }} aria-label="Top bar region">
     <div class="top-bar__container container">
       {{ page.top_bar }}
@@ -62,11 +62,11 @@
 
         <div{{ create_attribute().addClass(header_inline_classes) }}>
           <div{{ navbar_attributes.addClass(navbar_classes) }}>
-            {% if page.logo|render|striptags('<img>')|trim %}
+            {% if page.logo %}
               {{ page.logo }}
             {% endif %} {# /.logo #}
 
-            {% if page.navigation|render|striptags|trim %}
+            {% if page.navigation %}
               <button class="navbar-toggler"
                       type="button"
                       data-bs-toggle="collapse"
@@ -79,17 +79,17 @@
             {% endif %}{# /.navbar-toggler #}
 
             <div class="collapse navbar-collapse" id="navbar-collapse">
-              {% if page.navigation|render|striptags|trim %}
+              {% if page.navigation %}
                 {{ page.navigation }}
               {% endif %}{# /.navigation #}
 
-              {% if page.search|render|striptags|trim %}
+              {% if page.search %}
                 <div class="search">
                   {{ page.search }}
                 </div>
               {% endif %}{# /.search #}
             </div>
-            {% if page.search|render|striptags|trim %}
+            {% if page.search %}
               <button class="searchform-toggler" type="button" data-bs-target="#navbar-collapse" aria-label="Toggle search form">
                 <svg width="22" height="22" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                   <circle fill="none" stroke="#000" stroke-width="1.5" cx="9" cy="9" r="7"></circle>
@@ -109,13 +109,13 @@
 
         <div{{ create_attribute().addClass(header_menu_bar_classes) }}>
           <div class="row">
-            {% if page.logo|render|striptags('<img><a>')|trim %}
+            {% if page.logo %}
               <div class="logo col-lg-6">
                 {{ page.logo }}
               </div>
             {% endif %} {# /.logo #}
 
-            {% if page.search|render|striptags|trim %}
+            {% if page.search %}
               <div class="search search--large col-lg-6">
                 {{ page.search }}
 
@@ -135,13 +135,13 @@
             Second search form within small-screen nav because 1 search
             form wasn't possible due to the layout and markup.
             #}
-            {% if page.search|render|striptags|trim %}
+            {% if page.search %}
               <div class="search search--small">
                 {{ page.search_mobile }}
               </div>
             {% endif %}{# /.search #}
 
-            {% if page.navigation|render|striptags|trim %}
+            {% if page.navigation %}
               <button class="navbar-toggler"
                       type="button"
                       data-bs-toggle="collapse"
@@ -156,7 +156,7 @@
 
           <div class="collapse navbar-collapse" id="navbar-collapse">
             <div class="navbar-collapse__container">
-              {% if page.navigation|render|striptags|trim %}
+              {% if page.navigation %}
                 {{ page.navigation }}
               {% endif %}{# /.navigation #}
             </div>

@@ -20,7 +20,7 @@
 {% set render_layout %}
   {% if content|render %}
     <div{{ attributes.addClass(classes) }}>
-      {% if content.title|render|trim %}
+      {% if content.title|render %}
         <h3{{ region_attributes.title.addClass('layout__region', 'layout__region--title', 'title__title') }}>
           {{ content.title }}
         </h3>

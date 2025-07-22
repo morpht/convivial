@@ -39,7 +39,7 @@
 
 {% if label_hidden %}
   {% for item in items %}
-    {% if item_url is not empty %}
+    {% if item_url %}
       <a href="{{ item_url }}">
         {{- item.content -}}
       </a>
@@ -51,7 +51,7 @@
   <div{{ attributes }}>
     <div{{ title_attributes }}>{{ label }}</div>
     {% for item in items %}
-      {% if item_url is not empty %}
+      {% if item_url %}
         <a href="{{ item_url }}">
           <{{- item.content -}}
         </a>

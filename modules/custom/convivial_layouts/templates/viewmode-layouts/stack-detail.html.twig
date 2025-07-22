@@ -38,34 +38,34 @@
 
 {% set render_layout %}
   <div{{ attributes.addClass(classes) }}>
-    {% if content.image|render|striptags('<img>')|trim %}
+    {% if content.image|render %}
       <div{{ region_attributes.image.addClass('layout__region', 'layout__region--image', 'stack__image image--decorative') }}>
         {{ content.image }}
       </div>
     {% endif %}
     {% if content %}
       <div class="stack__content card-body">
-        {% if content.info|render|striptags|trim %}
+        {% if content.info|render %}
           <div{{ region_attributes.info.addClass('layout__region', 'layout__region--info', 'stack__info', 'card-subtitle') }}>
             {{ content.info }}
           </div>
         {% endif %}
-        {% if content.title|render|striptags|trim %}
+        {% if content.title|render %}
           <h3{{ region_attributes.title.addClass('layout__region', 'layout__region--title', 'stack__title', 'card-title') }}>
             {{ content.title }}
           </h3>
         {% endif %}
-        {% if content.summary|render|striptags|trim %}
+        {% if content.summary|render %}
           <div{{ region_attributes.summary.addClass('layout__region', 'layout__region--summary', 'stack__summary') }}>
             {{ content.summary }}
           </div>
         {% endif %}
-        {% if content.date|render|striptags|trim %}
+        {% if content.date|render %}
           <small{{ region_attributes.date.addClass('layout__region', 'layout__region--date', 'stack__date') }}>
             {{ content.date }}
           </small>
         {% endif %}
-        {% if content.tags|render|striptags|trim %}
+        {% if content.tags|render %}
           <div{{ region_attributes.tags.addClass('layout__region', 'layout__region--tags', 'stack__tags') }}>
             {{ content.tags }}
           </div>

@@ -10,17 +10,17 @@
 ] %}
 
 {% set tile_content %}
-  {% if content.title|render|striptags|trim %}
+  {% if content.title|render %}
     <h3{{ region_attributes.title.addClass('layout__region', 'layout__region--title', 'tile__title') }}>
       {{ content.title }}
     </h3>
   {% endif %}
-  {% if content.summary|render|striptags|trim %}
+  {% if content.summary|render %}
     <div{{ region_attributes.summary.addClass('layout__region', 'layout__region--summary', 'tile__summary') }}>
       {{ content.summary }}
     </div>
   {% endif %}
-  {% if content.image|render|striptags('<img>')|trim %}
+  {% if content.image|render %}
     <div{{ region_attributes.image.addClass('layout__region', 'layout__region--image', 'tile__image', 'image--decorative') }}>
       {{ content.image }}
     </div>

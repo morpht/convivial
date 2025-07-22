@@ -72,7 +72,7 @@
   {% if label_display in ['before', 'invisible'] %}
     {{ label }}
   {% endif %}
-  {% if prefix is not empty %}
+  {% if prefix %}
     <span class="field-prefix">{{ prefix }}</span>
   {% endif %}
   {% if description_display == 'before' and description.content %}
@@ -81,7 +81,7 @@
     </div>
   {% endif %}
   {{ children }}
-  {% if suffix is not empty %}
+  {% if suffix %}
     <span class="field-suffix">{{ suffix }}</span>
   {% endif %}
   {% if label_display == 'after' %}

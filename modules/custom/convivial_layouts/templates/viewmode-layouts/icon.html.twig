@@ -7,7 +7,7 @@
 #}
 
 {# Define icon_only variable if title and summary is empty. #}
-{% if icon_ratio is not empty and content.image is not empty and content.title|render|striptags|trim is empty and content.summary|render|striptags|trim is empty %}
+{% if icon_ratio and content.image and content.title|render is empty and content.summary|render is empty %}
   {% set icon_only = 'true' %}
 {% endif %}
 
@@ -22,17 +22,17 @@
   <div class="icon__wrap">
     <div class="icon__content">
       <div class="icon__content-wrap">
-        {% if content.image|render|striptags('<img>')|trim %}
+        {% if content.image|render %}
           <div{{ region_attributes.image.addClass('layout__region', 'layout__region--image', 'icon__icon', 'image--decorative') }}>
             {{ content.image }}
           </div>
         {% endif %}
-        {% if content.title|render|striptags|trim %}
+        {% if content.title|render %}
           <h3{{ region_attributes.title.addClass('layout__region', 'layout__region--title', 'icon__title') }}>
             {{ content.title }}
           </h3>
         {% endif %}
-        {% if content.summary|render|striptags|trim %}
+        {% if content.summary|render %}
           <div{{ region_attributes.summary.addClass('layout__region', 'layout__region--summary', 'icon__summary') }}>
             {{ content.summary }}
           </div>
@@ -42,11 +42,11 @@
   </div>
   <div
     class="icon__overlay"
-    {% if bg_colour is not empty and bg_image is empty %}style="background-color: {{ bg_colour }};"{% endif %}
+    {% if bg_colour and bg_image is empty %}style="background-color: {{ bg_colour }};"{% endif %}
   ></div>
   <div
     class="icon__image"
-    {% if bg_image is not empty %}style="background-image: url({{ bg_image }});"{% endif %}
+    {% if bg_image %}style="background-image: url({{ bg_image }});"{% endif %}
   ></div>
   {% if icon_only == 'true' %}
     <div

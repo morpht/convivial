@@ -38,20 +38,20 @@
 {% endif %}
 {% set logo_link = content.field_logo_link[0]['#url'] %}
 
-{% if content.field_logo_large_default['#items'] is not empty %}
+{% if content.field_logo_large_default['#items'] %}
   {% set logo_large = file_url(content.field_logo_large_default['#items'].entity.uri.value) %}
   {% set logo_large_description = content.field_logo_large_default['0']['#description'] %}
 {% endif %}
-{% if content.field_logo_large_inverse['#items'] is not empty %}
+{% if content.field_logo_large_inverse['#items'] %}
   {% set logo_large_inverse = file_url(content.field_logo_large_inverse['#items'].entity.uri.value) %}
   {% set logo_large_inverse_description = content.field_logo_large_inverse['0']['#description'] %}
   {% set classes = classes|merge(['has-inverse--large']) %}
 {% endif %}
-{% if content.field_logo_small_default['#items'] is not empty %}
+{% if content.field_logo_small_default['#items'] %}
   {% set logo_small = file_url(content.field_logo_small_default['#items'].entity.uri.value) %}
   {% set logo_small_description = content.field_logo_small_default['0']['#description'] %}
 {% endif %}
-{% if content.field_logo_small_inverse['#items'] is not empty %}
+{% if content.field_logo_small_inverse['#items'] %}
   {% set logo_small_inverse = file_url(content.field_logo_small_inverse['#items'].entity.uri.value) %}
   {% set logo_small_inverse_description = content.field_logo_small_inverse['0']['#description'] %}
   {% set classes = classes|merge(['has-inverse--small']) %}
@@ -63,19 +63,19 @@
   {{ title_suffix }}
 
   {% block content %}
-    {% if logo_large|render|striptags('<img>')|trim %}
+    {% if logo_large|render %}
       <a class="logo-block__link navbar-brand" href="{{ logo_link ? logo_link : '/' }}" title="{{ link_title ? link_title : 'Home' }}">
         <span class="logo-block__logo logo-block__logo--large">
           <img class="logo-block__logo-image" src="{{ logo_large }}" alt="{{ logo_large_description ? logo_large_description : site_name~' logo' }}">
-            {% if logo_large_inverse|render|striptags('<img>')|trim %}
+            {% if logo_large_inverse|render %}
               <img class="logo-block__logo-image logo-block__logo-image--inverse" src="{{ logo_large_inverse }}" alt="{{ logo_large_inverse_description ? logo_large_inverse_description : site_name~' logo' }}">
             {% endif %}
         </span>
         <span class="logo-block__logo logo-block__logo--small">
-        {% if logo_small|render|striptags('<img>')|trim %}
+        {% if logo_small|render %}
           <img class="logo-block__logo-image" src="{{ logo_small }}" alt="{{ logo_small_description ? logo_small_description : site_name~' logo' }}">
         {% endif %}
-          {% if logo_small_inverse|render|striptags('<img>')|trim %}
+          {% if logo_small_inverse|render %}
             <img class="logo-block__logo-image logo-block__logo-image--inverse" src="{{ logo_small_inverse }}" alt="{{ logo_small_inverse_description ? logo_small_inverse_description : site_name~' logo' }}">
           {% endif %}
         </span>
