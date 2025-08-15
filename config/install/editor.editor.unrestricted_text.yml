@@ -34,6 +34,7 @@ settings:
       - drupalInsertImage
       - drupalMedia
       - '|'
+      - code
       - sourceEditing
   plugins:
     ckeditor5_alignment:
@@ -176,8 +177,6 @@ settings:
         -
           label: Callout
           element: '<div class="callout">'
-    linkit_extension:
-      linkit_enabled: false
     media_media:
       allow_view_mode_override: false
 image_upload:
