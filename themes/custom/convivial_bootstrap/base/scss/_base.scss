@@ -17,3 +17,19 @@ a {
     outline-offset: $link-outline-offset;
   }
 }
+
+// Pre code
+pre {
+  code {
+    display: block;
+    background-color: $darken-05;
+    padding: calc($grid-gutter-width / 2);
+    overflow: auto;
+  }
+}
+
+pre {
+  code {
+    text-wrap: auto;
+  }
+}
