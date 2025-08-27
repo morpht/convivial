@@ -8,16 +8,17 @@ label: Content
 type: 'canonical_entities:node'
 pattern: '[node:menu-link:parent:url:path]/[node:menu-link:title]'
 selection_criteria:
-  642142ee-6a05-4622-a8b2-3000697db5b3:
+  c6727218-f337-4672-9b81-c25353b267bb:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 642142ee-6a05-4622-a8b2-3000697db5b3
+    uuid: c6727218-f337-4672-9b81-c25353b267bb
     context_mapping:
       node: node
     bundles:
       audience: audience
+      augmented_page: augmented_page
       page: page
       topic: topic
 selection_logic: and
-weight: 0
+weight: -1
 relationships: {  }
