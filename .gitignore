@@ -13,6 +13,9 @@ themes/custom/**/components/**/*.map
 themes/custom/**/libraries/**/*.map
 themes/custom/**/assets/bootstrap
 
+# Include bootstrap .map file.
+!themes/custom/**/libraries/bootstrap/**/*.map
+
 # Cypress folders
 cypress.env.json
 /tests/cypress/cypress/videos/
