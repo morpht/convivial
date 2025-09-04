@@ -188,14 +188,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              editor: '0'
-              approver: '0'
-              manager: '0'
-              site_administrator: '0'
-              webform_manager: '0'
-              submission_viewer: '0'
-              layout_customizer: '0'
             expose_fields: false
             placeholder: 'What are you looking for?'
             searched_fields_id: search_api_fulltext_searched_fields

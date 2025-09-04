@@ -5,6 +5,6 @@ dependencies:
     - media
 id: media.summary
 label: Summary
-description: ''
+description: null
 targetEntityType: media
 cache: true
