@@ -7,7 +7,18 @@ id: content
 label: Content
 type: 'canonical_entities:node'
 pattern: '[node:menu-link:parent:url:path]/[node:menu-link:title]'
-selection_criteria: {  }
+selection_criteria:
+  c6727218-f337-4672-9b81-c25353b267bb:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: c6727218-f337-4672-9b81-c25353b267bb
+    context_mapping:
+      node: node
+    bundles:
+      audience: audience
+      augmented_page: augmented_page
+      page: page
+      topic: topic
 selection_logic: and
 weight: -1
 relationships: {  }

@@ -261,6 +261,14 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
+              anonymous: '0'
+              editor: '0'
+              approver: '0'
+              manager: '0'
+              site_administrator: '0'
+              webform_manager: '0'
+              submission_viewer: '0'
+              layout_customizer: '0'
             placeholder: ''
           is_grouped: false
           group_info:
@@ -302,6 +310,14 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
+              anonymous: '0'
+              editor: '0'
+              approver: '0'
+              manager: '0'
+              site_administrator: '0'
+              webform_manager: '0'
+              submission_viewer: '0'
+              layout_customizer: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -344,6 +360,14 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
+              anonymous: '0'
+              editor: '0'
+              approver: '0'
+              manager: '0'
+              site_administrator: '0'
+              webform_manager: '0'
+              submission_viewer: '0'
+              layout_customizer: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -478,6 +502,8 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -1091,6 +1117,8 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
           is_grouped: false
           group_info:
             label: ''
@@ -1129,6 +1157,14 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
+              anonymous: '0'
+              editor: '0'
+              approver: '0'
+              manager: '0'
+              site_administrator: '0'
+              webform_manager: '0'
+              submission_viewer: '0'
+              layout_customizer: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -1424,6 +1460,8 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
           is_grouped: false
           group_info:
             label: ''
@@ -1462,6 +1500,14 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
+              anonymous: '0'
+              editor: '0'
+              approver: '0'
+              manager: '0'
+              site_administrator: '0'
+              webform_manager: '0'
+              submission_viewer: '0'
+              layout_customizer: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -1490,7 +1536,6 @@ display:
         options:
           row_class: 'media-library-item media-library-item--table js-media-library-item js-click-to-select'
           default_row_class: true
-          class: ''
       row:
         type: fields
       defaults:
