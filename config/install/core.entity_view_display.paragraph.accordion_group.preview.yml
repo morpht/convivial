@@ -4,7 +4,7 @@ dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
     - field.field.paragraph.accordion_group.field_accordions
-    - field.field.paragraph.accordion_group.field_ag_colour_classes
+    - field.field.paragraph.accordion_group.field_color_palette
     - field.field.paragraph.accordion_group.field_ag_style_classes
     - field.field.paragraph.accordion_group.field_body
     - field.field.paragraph.accordion_group.field_heading
@@ -26,9 +26,9 @@ content:
     region: content
 hidden:
   field_accordions: true
-  field_ag_colour_classes: true
   field_ag_style_classes: true
   field_body: true
+  field_color_palette: true
   field_hide_heading: true
   field_position: true
   search_api_excerpt: true

@@ -8,7 +8,7 @@ dependencies:
     - field.field.paragraph.timeline.field_hide_heading
     - field.field.paragraph.timeline.field_modifiers
     - field.field.paragraph.timeline.field_position
-    - field.field.paragraph.timeline.field_timeline_colour_classes
+    - field.field.paragraph.timeline.field_color_palette
     - field.field.paragraph.timeline.field_timeline_items
     - field.field.paragraph.timeline.field_timeline_style_classes
     - paragraphs.paragraphs_type.timeline
@@ -33,10 +33,10 @@ content:
     region: content
 hidden:
   field_body: true
+  field_color_palette: true
   field_hide_heading: true
   field_modifiers: true
   field_position: true
-  field_timeline_colour_classes: true
   field_timeline_items: true
   field_timeline_style_classes: true
   search_api_excerpt: true

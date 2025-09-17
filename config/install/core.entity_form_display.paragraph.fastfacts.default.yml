@@ -4,7 +4,7 @@ dependencies:
   config:
     - field.field.paragraph.fastfacts.field_body
     - field.field.paragraph.fastfacts.field_heading
-    - field.field.paragraph.fastfacts.field_il_colour_classes
+    - field.field.paragraph.fastfacts.field_color_palette
     - field.field.paragraph.fastfacts.field_il_items
     - field.field.paragraph.fastfacts.field_il_layout_classes
     - field.field.paragraph.fastfacts.field_il_style_classes
@@ -29,6 +29,12 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
+  field_color_palette:
+    type: options_select
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_heading:
     type: string_textfield
     weight: 1
@@ -36,12 +42,6 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  field_il_colour_classes:
-    type: options_select
-    weight: 5
-    region: content
-    settings: {  }
     third_party_settings: {  }
   field_il_items:
     type: paragraphs

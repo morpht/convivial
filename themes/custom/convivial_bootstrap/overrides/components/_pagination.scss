@@ -1,0 +1,14 @@
+.pagination {
+  --#{$prefix}pagination-color: var(--foreground);
+  --#{$prefix}pagination-bg: var(--background);
+  --#{$prefix}pagination-border-color: var(--border-color);
+  --#{$prefix}pagination-hover-color: var(--foreground);
+  --#{$prefix}pagination-hover-bg: var(--background-weak);
+  --#{$prefix}pagination-hover-border-color: var(--border-color);
+  --#{$prefix}pagination-focus-color: var(--foreground);
+  --#{$prefix}pagination-focus-bg: var(--background-weak);
+  --#{$prefix}pagination-focus-box-shadow: null;
+  --#{$prefix}pagination-active-color: var(--link-contrast);
+  --#{$prefix}pagination-active-bg: var(--link);
+  --#{$prefix}pagination-active-border-color: var(--border-color);
+}

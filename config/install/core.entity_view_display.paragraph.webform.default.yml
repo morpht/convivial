@@ -8,7 +8,7 @@ dependencies:
     - field.field.paragraph.webform.field_modifiers
     - field.field.paragraph.webform.field_position
     - field.field.paragraph.webform.field_read_more
-    - field.field.paragraph.webform.field_w_colour_classes
+    - field.field.paragraph.webform.field_color_palette
     - field.field.paragraph.webform.field_w_style_classes
     - field.field.paragraph.webform.field_webform
     - paragraphs.paragraphs_type.webform
@@ -28,6 +28,17 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_color_palette:
+    type: entity_class_formatter
+    label: hidden
+    settings:
+      prefix: ''
+      suffix: ''
+      attr: ''
+      field: ''
+    third_party_settings: {  }
+    weight: 4
     region: content
   field_heading:
     type: string
@@ -59,17 +70,6 @@ content:
       target: ''
     third_party_settings: {  }
     weight: 3
-    region: content
-  field_w_colour_classes:
-    type: entity_class_formatter
-    label: hidden
-    settings:
-      prefix: ''
-      suffix: ''
-      attr: ''
-      field: ''
-    third_party_settings: {  }
-    weight: 4
     region: content
   field_w_style_classes:
     type: entity_class_formatter

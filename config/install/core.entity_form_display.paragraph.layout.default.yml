@@ -4,7 +4,7 @@ dependencies:
   config:
     - field.field.paragraph.layout.field_heading
     - field.field.paragraph.layout.field_hide_heading
-    - field.field.paragraph.layout.field_layout_colour_palette
+    - field.field.paragraph.layout.field_color_palette
     - field.field.paragraph.layout.field_layout_styles
     - field.field.paragraph.layout.field_modifiers
     - paragraphs.paragraphs_type.layout
@@ -15,6 +15,12 @@ targetEntityType: paragraph
 bundle: layout
 mode: default
 content:
+  field_color_palette:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_heading:
     type: string_textfield
     weight: 0
@@ -29,12 +35,6 @@ content:
     region: content
     settings:
       display_label: true
-    third_party_settings: {  }
-  field_layout_colour_palette:
-    type: options_select
-    weight: 2
-    region: content
-    settings: {  }
     third_party_settings: {  }
   field_layout_styles:
     type: options_select

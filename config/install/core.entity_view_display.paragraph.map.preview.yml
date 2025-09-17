@@ -6,7 +6,7 @@ dependencies:
     - field.field.paragraph.map.field_body
     - field.field.paragraph.map.field_heading
     - field.field.paragraph.map.field_hide_heading
-    - field.field.paragraph.map.field_map_colour_classes
+    - field.field.paragraph.map.field_color_palette
     - field.field.paragraph.map.field_map_geojson_text
     - field.field.paragraph.map.field_map_geojson_url
     - field.field.paragraph.map.field_map_ratio
@@ -26,8 +26,8 @@ content:
     region: content
 hidden:
   field_body: true
+  field_color_palette: true
   field_hide_heading: true
-  field_map_colour_classes: true
   field_map_geojson_text: true
   field_map_geojson_url: true
   field_map_ratio: true

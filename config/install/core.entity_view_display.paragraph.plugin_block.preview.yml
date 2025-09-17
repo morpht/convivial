@@ -7,7 +7,7 @@ dependencies:
     - field.field.paragraph.plugin_block.field_heading
     - field.field.paragraph.plugin_block.field_hide_heading
     - field.field.paragraph.plugin_block.field_modifiers
-    - field.field.paragraph.plugin_block.field_pb_colour_classes
+    - field.field.paragraph.plugin_block.field_color_palette
     - field.field.paragraph.plugin_block.field_pb_definition
     - field.field.paragraph.plugin_block.field_pb_style_classes
     - field.field.paragraph.plugin_block.field_position
@@ -27,9 +27,9 @@ content:
     region: content
 hidden:
   field_body: true
+  field_color_palette: true
   field_hide_heading: true
   field_modifiers: true
-  field_pb_colour_classes: true
   field_pb_definition: true
   field_pb_style_classes: true
   field_position: true

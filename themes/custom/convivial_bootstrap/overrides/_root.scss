@@ -1,0 +1,23 @@
+:root {
+  // Body
+  --#{$prefix}body-color: var(--foreground);
+  --#{$prefix}body-bg: var(--background);
+  --#{$prefix}link-color: var(--link);
+  --#{$prefix}link-hover-color: var(--link-hover);
+
+  // Border
+  --#{$prefix}border-width: 1px;
+  --#{$prefix}border-color: var(--background-weaker);
+  --#{$prefix}border-radius: var(--radius);
+  --#{$prefix}border-radius-sm: var(--radius);
+  --#{$prefix}border-radius-lg: var(--radius);
+
+  // Shadow
+  --#{$prefix}box-shadow: null;
+  --#{$prefix}box-shadow-sm: null;
+  --#{$prefix}box-shadow-lg: null;
+  --#{$prefix}box-shadow-inset: null;
+
+  // Focus
+  --#{$prefix}focus-ring-width: 0.2rem;
+}

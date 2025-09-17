@@ -7,7 +7,7 @@ dependencies:
     - field.field.paragraph.timeline.field_hide_heading
     - field.field.paragraph.timeline.field_modifiers
     - field.field.paragraph.timeline.field_position
-    - field.field.paragraph.timeline.field_timeline_colour_classes
+    - field.field.paragraph.timeline.field_color_palette
     - field.field.paragraph.timeline.field_timeline_items
     - field.field.paragraph.timeline.field_timeline_style_classes
     - paragraphs.paragraphs_type.timeline
@@ -26,6 +26,12 @@ content:
     settings:
       rows: 5
       placeholder: ''
+    third_party_settings: {  }
+  field_color_palette:
+    type: options_select
+    weight: 5
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_heading:
     type: string_textfield
@@ -65,12 +71,6 @@ content:
   field_position:
     type: options_select
     weight: 7
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_timeline_colour_classes:
-    type: options_select
-    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }

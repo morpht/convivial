@@ -6,7 +6,7 @@ dependencies:
     - field.field.paragraph.tiles.field_modifiers
     - field.field.paragraph.tiles.field_position
     - field.field.paragraph.tiles.field_tiles_arrangement
-    - field.field.paragraph.tiles.field_tiles_colour_classes
+    - field.field.paragraph.tiles.field_color_palette
     - field.field.paragraph.tiles.field_tiles_gap
     - field.field.paragraph.tiles.field_tiles_node
     - field.field.paragraph.tiles.field_tiles_view_mode
@@ -19,6 +19,17 @@ targetEntityType: paragraph
 bundle: tiles
 mode: default
 content:
+  field_color_palette:
+    type: entity_class_formatter
+    label: hidden
+    settings:
+      prefix: ''
+      suffix: ''
+      attr: ''
+      field: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
   field_heading:
     type: string
     label: hidden
@@ -48,17 +59,6 @@ content:
       field: ''
     third_party_settings: {  }
     weight: 2
-    region: content
-  field_tiles_colour_classes:
-    type: entity_class_formatter
-    label: hidden
-    settings:
-      prefix: ''
-      suffix: ''
-      attr: ''
-      field: ''
-    third_party_settings: {  }
-    weight: 5
     region: content
   field_tiles_gap:
     type: entity_class_formatter

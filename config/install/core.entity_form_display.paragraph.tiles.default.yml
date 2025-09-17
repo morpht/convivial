@@ -6,7 +6,7 @@ dependencies:
     - field.field.paragraph.tiles.field_modifiers
     - field.field.paragraph.tiles.field_position
     - field.field.paragraph.tiles.field_tiles_arrangement
-    - field.field.paragraph.tiles.field_tiles_colour_classes
+    - field.field.paragraph.tiles.field_color_palette
     - field.field.paragraph.tiles.field_tiles_gap
     - field.field.paragraph.tiles.field_tiles_node
     - field.field.paragraph.tiles.field_tiles_view_mode
@@ -18,6 +18,12 @@ targetEntityType: paragraph
 bundle: tiles
 mode: default
 content:
+  field_color_palette:
+    type: options_select
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_heading:
     type: string_textfield
     weight: 1
@@ -55,12 +61,6 @@ content:
   field_tiles_arrangement:
     type: options_select
     weight: 4
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_tiles_colour_classes:
-    type: options_select
-    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }

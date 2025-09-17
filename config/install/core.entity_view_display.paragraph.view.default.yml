@@ -7,7 +7,7 @@ dependencies:
     - field.field.paragraph.view.field_hide_heading
     - field.field.paragraph.view.field_modifiers
     - field.field.paragraph.view.field_position
-    - field.field.paragraph.view.field_view_colour_classes
+    - field.field.paragraph.view.field_color_palette
     - field.field.paragraph.view.field_view_definition
     - field.field.paragraph.view.field_view_style_classes
     - paragraphs.paragraphs_type.view
@@ -25,6 +25,17 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_color_palette:
+    type: entity_class_formatter
+    label: hidden
+    settings:
+      prefix: ''
+      suffix: ''
+      attr: ''
+      field: ''
+    third_party_settings: {  }
+    weight: 3
     region: content
   field_heading:
     type: string
@@ -44,17 +55,6 @@ content:
       field: ''
     third_party_settings: {  }
     weight: 5
-    region: content
-  field_view_colour_classes:
-    type: entity_class_formatter
-    label: hidden
-    settings:
-      prefix: ''
-      suffix: ''
-      attr: ''
-      field: ''
-    third_party_settings: {  }
-    weight: 3
     region: content
   field_view_definition:
     type: string
