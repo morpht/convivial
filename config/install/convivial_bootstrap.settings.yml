@@ -1,8 +1,9 @@
-header_style: theme__header--light
-footer_style: theme__footer--dark
-footer_information_style: theme__footer_information--dark
+header_style: theme--light
+footer_style: theme--dark
 local_task_style: ''
 logo_width: '300'
+_core:
+  default_config_hash: LKq5wHV2NowJbYyUHQcSy84_IJ_pbj8FVcq_29UObFc
 features:
   node_user_picture: true
   comment_user_picture: true
@@ -15,18 +16,15 @@ favicon:
   use_default: 0
   path: profiles/custom/convivial/themes/custom/convivial_bootstrap/favicon.ico
   mimetype: image/vnd.microsoft.icon
-theme__highlighted_layouts: 0
-top_bar_style: theme__top_bar--dark
-mark_external_links: 0
+top_bar_style: theme--dark
 default_colors: "#135e70 #70132f\t #137026 #541370 #5d7013 #132f70 #702613 #137054 #70135d #2f7013 #261370 #705413"
-header_stickiness: theme__header--sticky
-appearance: theme__header--transparent
-header_width: theme__header--contained
-menu_style: theme__menu-style--simple
+header_stickiness: header_stickiness--sticky
+header_width: header--contained
+menu_style: menu-style--simple
 megamenu_columns: null
-search_form_display: theme__search-form--inline-reveal
+search_form_display: search-form--inline-reveal
 laf_enable: 0
-laf_selectors: "field_primary_modifiers|.color--primary\r\nfield_primary_dark_modifiers|.color--primary-dark\r\nfield_secondary_modifiers|.color--secondary\r\nfield_secondary_dark_modifiers|.color--secondary-dark"
+laf_selectors: ''
 laf_completes: 'apply|taxonomy_term,standard'
 laf_partials: entity|node
 chart_colors: ''
@@ -34,6 +32,7 @@ glossary_enable: 0
 glossary_bundles:
   article: 0
   audience: 0
+  augmented_page: 0
   event: 0
   page: 0
   person: 0
@@ -42,6 +41,7 @@ glossary_bundles:
 glossary_bundles_tooltip_sources:
   article: 0
   audience: 0
+  augmented_page: 0
   event: 0
   page: 0
   person: 0
@@ -50,6 +50,7 @@ glossary_bundles_tooltip_sources:
 glossary_bundles_link_sources:
   article: 0
   audience: 0
+  augmented_page: 0
   event: 0
   page: 0
   person: 0
@@ -57,21 +58,20 @@ glossary_bundles_link_sources:
   topic: 0
 glossary_tags_blacklist: ''
 icon_aspect_ratio: '1.414'
-header_layout: theme__inline_menu
+header_layout: header_layout--inline-menu
 header_section_style: ''
-back_to_top_style: theme__back-to-top--square
-main_nav_style: theme__main_nav--light
+main_nav_style: ''
 csv: ''
-postscript_style: theme__postscript--dark
+postscript_style: theme--dark
 meta:
   meta_enable: 0
   meta_strategies_name: "constant,sitename,Convivial\r\ntoken,nid,[node:nid]\r\ntoken,type,[node:content-type:machine-name]\r\ntoken,thumbnail,[node:field_thumbnail:entity:field_media_image:landscape:url]\r\nreferences,audience,field_suitable_for|field_key\r\nreferences,author,field_authored_by|field_key\r\nreferences,topic,field_about|field_key\r\ntoken,audience,[node:field_key],,audience\r\ntoken,author,[node:field_key],,person\r\ntoken,topic,[node:field_key],,topic\r\nreferences,goal,field_goal|field_key\r\nreferences,stage,field_stage|field_key"
   meta_strategies_property: ''
 matomo_settings:
-  tracking: ''
-  site_id: ''
-  server: ''
-  dimensions: ''
+  tracking: 1
+  site_id: '6'
+  server: 'https://convivial.matomo.cloud/'
+  dimensions: "type,meta,1\r\ntopic,localstorage,2\r\naudience,localstorage,3\r\nstage,localstorage,4\r\n next,localstorage,5"
   user_roles:
     anonymous: 1
     authenticated: 0
@@ -82,3 +82,6 @@ matomo_settings:
     webform_manager: 0
     submission_viewer: 0
     layout_customizer: 0
+header_container: header_container--contained
+footer_info_style: theme--dark
+highlighted_layouts: 0

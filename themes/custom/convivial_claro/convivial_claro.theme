@@ -23,7 +23,7 @@ function convivial_claro_form_alter(&$form, FormStateInterface $form_state,
     if (isset($form['field_hero_darkness'])) {
       $default_theme = \Drupal::config('system.theme')->get('default');
       $header_appearance = theme_get_setting('appearance', $default_theme);
-      if ($header_appearance !== 'theme__header--transparent') {
+      if ($header_appearance !== 'header--transparent') {
         $form['field_hero_darkness']['#access'] = FALSE;
       }
     }
