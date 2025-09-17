@@ -12,7 +12,6 @@ dependencies:
     - field.field.node.event.field_featured_title
     - field.field.node.event.field_goal
     - field.field.node.event.field_header_colour_classes
-    - field.field.node.event.field_hero_darkness
     - field.field.node.event.field_hide
     - field.field.node.event.field_intent
     - field.field.node.event.field_introduction
@@ -47,7 +46,6 @@ third_party_settings:
         - field_featured_title
         - field_featured_links
         - field_header_colour_classes
-        - field_hero_darkness
       label: Header
       region: content
       parent_name: ''
@@ -177,12 +175,6 @@ content:
   field_header_colour_classes:
     type: options_select
     weight: 10
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_hero_darkness:
-    type: options_select
-    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }

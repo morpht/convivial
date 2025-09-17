@@ -2,8 +2,6 @@ header_style: theme--light
 footer_style: theme--dark
 local_task_style: ''
 logo_width: '300'
-_core:
-  default_config_hash: LKq5wHV2NowJbYyUHQcSy84_IJ_pbj8FVcq_29UObFc
 features:
   node_user_picture: true
   comment_user_picture: true
@@ -68,10 +66,10 @@ meta:
   meta_strategies_name: "constant,sitename,Convivial\r\ntoken,nid,[node:nid]\r\ntoken,type,[node:content-type:machine-name]\r\ntoken,thumbnail,[node:field_thumbnail:entity:field_media_image:landscape:url]\r\nreferences,audience,field_suitable_for|field_key\r\nreferences,author,field_authored_by|field_key\r\nreferences,topic,field_about|field_key\r\ntoken,audience,[node:field_key],,audience\r\ntoken,author,[node:field_key],,person\r\ntoken,topic,[node:field_key],,topic\r\nreferences,goal,field_goal|field_key\r\nreferences,stage,field_stage|field_key"
   meta_strategies_property: ''
 matomo_settings:
-  tracking: 1
-  site_id: '6'
-  server: 'https://convivial.matomo.cloud/'
-  dimensions: "type,meta,1\r\ntopic,localstorage,2\r\naudience,localstorage,3\r\nstage,localstorage,4\r\n next,localstorage,5"
+  tracking: ''
+  site_id: ''
+  server: ''
+  dimensions: ''
   user_roles:
     anonymous: 1
     authenticated: 0
