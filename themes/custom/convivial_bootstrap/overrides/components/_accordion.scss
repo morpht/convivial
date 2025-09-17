@@ -1,0 +1,9 @@
+.accordion {
+  --#{$prefix}accordion-color: var(--foreground);
+  --#{$prefix}accordion-bg: var(--background-weak);
+  --#{$prefix}accordion-btn-color: var(--foreground);
+  --#{$prefix}accordion-btn-bg: var(--background-weak);
+  --#{$prefix}accordion-active-color: var(--foreground);
+  --#{$prefix}accordion-active-bg: var(--background-weak);
+  --#{$prefix}accordion-border-color: var(--background-weaker);
+}

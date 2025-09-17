@@ -1,0 +1,17 @@
+.input-group-text {
+  border-radius: var(--radius-selector);
+}
+
+.input-group-lg > .form-control,
+.input-group-lg > .form-select,
+.input-group-lg > .input-group-text,
+.input-group-lg > .btn {
+  border-radius: var(--radius-selector);
+}
+
+.input-group-sm > .form-control,
+.input-group-sm > .form-select,
+.input-group-sm > .input-group-text,
+.input-group-sm > .btn {
+  border-radius: var(--radius-selector);
+}

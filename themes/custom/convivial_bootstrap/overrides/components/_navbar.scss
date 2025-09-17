@@ -1,0 +1,5 @@
+.navbar {
+  --#{$prefix}navbar-toggler-padding-y: 0.5rem;
+  --#{$prefix}navbar-toggler-padding-x: 0.75rem;
+  --#{$prefix}navbar-toggler-border-radius: var(--radius-selector);
+}
