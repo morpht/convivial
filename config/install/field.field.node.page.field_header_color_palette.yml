@@ -2,14 +2,14 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_header_colour_classes
-    - node.type.audience
+    - field.storage.node.field_header_color_palette
+    - node.type.page
   module:
     - options
-id: node.audience.field_header_colour_classes
-field_name: field_header_colour_classes
+id: node.page.field_header_color_palette
+field_name: field_header_color_palette
 entity_type: node
-bundle: audience
+bundle: page
 label: 'Header Colour Classes'
 description: 'Select a colour palette to apply to the header region.'
 required: false

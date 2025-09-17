@@ -11,7 +11,7 @@ dependencies:
     - field.field.node.article.field_featured_links
     - field.field.node.article.field_featured_title
     - field.field.node.article.field_goal
-    - field.field.node.article.field_header_colour_classes
+    - field.field.node.article.field_header_color_palette
     - field.field.node.article.field_intent
     - field.field.node.article.field_introduction
     - field.field.node.article.field_keywords
@@ -45,7 +45,7 @@ third_party_settings:
         - field_banner_image
         - field_featured_title
         - field_featured_links
-        - field_header_colour_classes
+        - field_header_color_palette
       label: Header
       region: content
       parent_name: ''
@@ -168,7 +168,7 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_header_colour_classes:
+  field_header_color_palette:
     type: options_select
     weight: 7
     region: content

@@ -10,7 +10,7 @@ dependencies:
     - field.field.node.audience.field_featured_links
     - field.field.node.audience.field_featured_title
     - field.field.node.audience.field_goal
-    - field.field.node.audience.field_header_colour_classes
+    - field.field.node.audience.field_header_color_palette
     - field.field.node.audience.field_introduction
     - field.field.node.audience.field_key
     - field.field.node.audience.field_keywords
@@ -369,7 +369,7 @@ hidden:
   field_featured_links: true
   field_featured_title: true
   field_goal: true
-  field_header_colour_classes: true
+  field_header_color_palette: true
   field_key: true
   field_meta_tags: true
   field_stage: true

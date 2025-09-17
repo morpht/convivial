@@ -2,14 +2,14 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_header_colour_classes
-    - node.type.person
+    - field.storage.node.field_header_color_palette
+    - node.type.event
   module:
     - options
-id: node.person.field_header_colour_classes
-field_name: field_header_colour_classes
+id: node.event.field_header_color_palette
+field_name: field_header_color_palette
 entity_type: node
-bundle: person
+bundle: event
 label: 'Header Colour Classes'
 description: 'Select a colour palette to apply to the header region.'
 required: false

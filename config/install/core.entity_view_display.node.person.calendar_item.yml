@@ -10,7 +10,7 @@ dependencies:
     - field.field.node.person.field_featured_links
     - field.field.node.person.field_featured_title
     - field.field.node.person.field_goal
-    - field.field.node.person.field_header_colour_classes
+    - field.field.node.person.field_header_color_palette
     - field.field.node.person.field_intent
     - field.field.node.person.field_introduction
     - field.field.node.person.field_key
@@ -134,7 +134,7 @@ hidden:
   field_featured_links: true
   field_featured_title: true
   field_goal: true
-  field_header_colour_classes: true
+  field_header_color_palette: true
   field_intent: true
   field_introduction: true
   field_key: true

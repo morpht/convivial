@@ -12,7 +12,7 @@ dependencies:
     - field.field.node.event.field_featured_links
     - field.field.node.event.field_featured_title
     - field.field.node.event.field_goal
-    - field.field.node.event.field_header_colour_classes
+    - field.field.node.event.field_header_color_palette
     - field.field.node.event.field_hide
     - field.field.node.event.field_intent
     - field.field.node.event.field_introduction
@@ -138,7 +138,7 @@ hidden:
   field_featured_links: true
   field_featured_title: true
   field_goal: true
-  field_header_colour_classes: true
+  field_header_color_palette: true
   field_hide: true
   field_intent: true
   field_introduction: true
