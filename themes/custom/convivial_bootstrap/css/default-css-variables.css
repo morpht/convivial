@@ -1,0 +1,25 @@
+/* Default CSS variables */
+:root {
+  --radius-box: 0.5rem;
+  --radius-field: 0.25rem;
+  --radius-selector: 0.25rem;
+  --radius-button: 1.5rem;
+  --radius-image: 0.5rem;
+  --radius: 0.5rem;
+  --background: #fcfcfc;
+  --background-strong: #fdfdfd;
+  --background-stronger: #fdfdfd;
+  --background-weak: #f6f6f6;
+  --background-weaker: #b2b2b2;
+  --foreground: #000000;
+  --foreground-weak: #727272;
+  --focus: #000000;
+  --link: #00698f;
+  --link-hover: #00516f;
+  --link-active: #005e80;
+  --link-contrast: #e4e9ed;
+  --accent: #8f0069;
+  --accent-hover: #6f0051;
+  --accent-active: #80005e;
+  --accent-contrast: #ede4e9;
+}

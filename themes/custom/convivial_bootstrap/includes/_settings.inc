@@ -9,6 +9,8 @@
 
 use Drupal\Core\Form\FormStateInterface;
 
+require_once 'theme_ui.inc';
+
 /**
  * Attach theme settings form.
  */
@@ -373,6 +375,8 @@ Note that if <strong>Display: Inline menu</strong> is set, the menu type will be
     '#description' => t('Define which data should be exposed as meta tags. See theme\'s README.md for examples.'),
     '#default_value' => theme_get_setting('meta.meta_strategies_property'),
   ];
+
+  _add_theme_ui_settings($form);
 
   // Flush render cache.
   $form['#submit'][] = '_convivial_bootstrap_flush_render_cache';
