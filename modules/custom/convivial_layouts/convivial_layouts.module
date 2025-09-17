@@ -22,7 +22,7 @@ function convivial_layouts_preprocess_layout(&$variables) {
   if ($parameter instanceof NodeInterface) {
     // Only if the field_header_color_palette exists.
     if ($parameter->hasField('field_header_color_palette')) {
-      $variables['header_colour_classes'] = $parameter->get('field_header_color_palette')->value;
+      $variables['header_color_palette'] = $parameter->get('field_header_color_palette')->value;
     }
   }
 }
