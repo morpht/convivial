@@ -3,7 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.decision_tree.field_body
-    - field.field.paragraph.decision_tree.field_c_colour_classes
+    - field.field.paragraph.decision_tree.field_color_palette
     - field.field.paragraph.decision_tree.field_c_style_classes
     - field.field.paragraph.decision_tree.field_heading
     - field.field.paragraph.decision_tree.field_hide_heading
@@ -28,15 +28,15 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  field_c_colour_classes:
-    type: options_select
-    weight: 4
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_c_style_classes:
     type: options_select
     weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_color_palette:
+    type: options_select
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }

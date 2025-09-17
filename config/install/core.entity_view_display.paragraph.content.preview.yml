@@ -4,7 +4,7 @@ dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
     - field.field.paragraph.content.field_body
-    - field.field.paragraph.content.field_c_colour_classes
+    - field.field.paragraph.content.field_color_palette
     - field.field.paragraph.content.field_c_style_classes
     - field.field.paragraph.content.field_heading
     - field.field.paragraph.content.field_hide_heading
@@ -27,8 +27,8 @@ content:
     region: content
 hidden:
   field_body: true
-  field_c_colour_classes: true
   field_c_style_classes: true
+  field_color_palette: true
   field_hide_heading: true
   field_modifiers: true
   field_position: true

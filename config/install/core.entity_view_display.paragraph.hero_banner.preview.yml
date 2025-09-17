@@ -7,7 +7,7 @@ dependencies:
     - field.field.paragraph.hero_banner.field_heading
     - field.field.paragraph.hero_banner.field_hero_banner_background
     - field.field.paragraph.hero_banner.field_hero_banner_bg_color
-    - field.field.paragraph.hero_banner.field_hero_banner_colour_classes
+    - field.field.paragraph.hero_banner.field_color_palette
     - field.field.paragraph.hero_banner.field_hero_banner_link
     - field.field.paragraph.hero_banner.field_hero_banner_position
     - field.field.paragraph.hero_banner.field_hero_banner_style_classes
@@ -34,9 +34,9 @@ content:
     region: content
 hidden:
   field_body: true
+  field_color_palette: true
   field_hero_banner_background: true
   field_hero_banner_bg_color: true
-  field_hero_banner_colour_classes: true
   field_hero_banner_link: true
   field_hero_banner_position: true
   field_hero_banner_style_classes: true

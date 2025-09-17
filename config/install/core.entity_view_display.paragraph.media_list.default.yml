@@ -5,7 +5,7 @@ dependencies:
     - field.field.paragraph.media_list.field_body
     - field.field.paragraph.media_list.field_heading
     - field.field.paragraph.media_list.field_hide_heading
-    - field.field.paragraph.media_list.field_ml_colour_classes
+    - field.field.paragraph.media_list.field_color_palette
     - field.field.paragraph.media_list.field_ml_layout_classes
     - field.field.paragraph.media_list.field_ml_media
     - field.field.paragraph.media_list.field_ml_style_classes
@@ -31,15 +31,7 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_heading:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 0
-    region: content
-  field_ml_colour_classes:
+  field_color_palette:
     type: entity_class_formatter
     label: hidden
     settings:
@@ -49,6 +41,14 @@ content:
       field: ''
     third_party_settings: {  }
     weight: 4
+    region: content
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
     region: content
   field_ml_layout_classes:
     type: entity_class_formatter

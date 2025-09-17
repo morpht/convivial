@@ -4,7 +4,7 @@ dependencies:
   config:
     - block_content.type.personified_content
     - field.field.block_content.personified_content.field_modifiers
-    - field.field.block_content.personified_content.field_pc_colour_classes
+    - field.field.block_content.personified_content.field_color_palette
     - field.field.block_content.personified_content.field_pc_style_classes
     - field.field.block_content.personified_content.field_personified_content_text
     - field.field.block_content.personified_content.field_position
@@ -15,6 +15,12 @@ targetEntityType: block_content
 bundle: personified_content
 mode: default
 content:
+  field_color_palette:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_modifiers:
     type: paragraphs
     weight: 5
@@ -34,12 +40,6 @@ content:
         collapse_edit_all: collapse_edit_all
         convert: '0'
         duplicate: duplicate
-    third_party_settings: {  }
-  field_pc_colour_classes:
-    type: options_select
-    weight: 2
-    region: content
-    settings: {  }
     third_party_settings: {  }
   field_pc_style_classes:
     type: options_select

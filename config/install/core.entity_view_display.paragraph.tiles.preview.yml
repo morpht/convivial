@@ -7,7 +7,7 @@ dependencies:
     - field.field.paragraph.tiles.field_modifiers
     - field.field.paragraph.tiles.field_position
     - field.field.paragraph.tiles.field_tiles_arrangement
-    - field.field.paragraph.tiles.field_tiles_colour_classes
+    - field.field.paragraph.tiles.field_color_palette
     - field.field.paragraph.tiles.field_tiles_gap
     - field.field.paragraph.tiles.field_tiles_node
     - field.field.paragraph.tiles.field_tiles_view_mode
@@ -32,10 +32,10 @@ content:
     weight: 0
     region: content
 hidden:
+  field_color_palette: true
   field_modifiers: true
   field_position: true
   field_tiles_arrangement: true
-  field_tiles_colour_classes: true
   field_tiles_gap: true
   field_tiles_node: true
   field_tiles_view_mode: true

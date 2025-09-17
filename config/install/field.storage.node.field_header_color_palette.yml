@@ -11,20 +11,26 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: 'cp cp--standard'
+      value: cp--standard
       label: Standard
     -
-      value: 'cp cp--light'
-      label: Light
+      value: cp--alternate
+      label: Alternate
     -
-      value: 'cp cp--dark'
-      label: Dark
-    -
-      value: 'cp cp--primary'
+      value: cp--primary
       label: Primary
     -
-      value: 'cp cp--primary-dark'
-      label: 'Primary dark'
+      value: cp--secondary
+      label: Secondary
+    -
+      value: cp--tertiary
+      label: Tertiary
+    -
+      value: cp--light
+      label: Light
+    -
+      value: cp--dark
+      label: Dark
   allowed_values_function: ''
 module: options
 locked: false

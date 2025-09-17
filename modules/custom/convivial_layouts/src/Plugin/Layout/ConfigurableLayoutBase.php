@@ -86,8 +86,7 @@ abstract class ConfigurableLayoutBase extends LayoutDefault implements PluginFor
   /**
    * {@inheritdoc}
    */
-  public function validateConfigurationForm(array &$form, FormStateInterface $form_state) {
-  }
+  public function validateConfigurationForm(array &$form, FormStateInterface $form_state) {}
 
   /**
    * {@inheritdoc}
@@ -156,10 +155,12 @@ abstract class ConfigurableLayoutBase extends LayoutDefault implements PluginFor
     return [
       '' => $this->t('- None -'),
       'cp cp--standard' => 'Standard',
+      'cp cp--alternate' => 'Alternate',
+      'cp cp--primary' => 'Primary',
+      'cp cp--secondary' => 'Secondary',
+      'cp cp--tertiary' => 'Tertiary',
       'cp cp--light' => 'Light',
       'cp cp--dark' => 'Dark',
-      'cp cp--primary' => 'Primary',
-      'cp cp--primary-dark' => 'Primary dark',
     ];
   }
 

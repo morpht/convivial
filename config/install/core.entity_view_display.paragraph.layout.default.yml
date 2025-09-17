@@ -4,7 +4,7 @@ dependencies:
   config:
     - field.field.paragraph.layout.field_heading
     - field.field.paragraph.layout.field_hide_heading
-    - field.field.paragraph.layout.field_layout_colour_palette
+    - field.field.paragraph.layout.field_color_palette
     - field.field.paragraph.layout.field_layout_styles
     - field.field.paragraph.layout.field_modifiers
     - paragraphs.paragraphs_type.layout
@@ -15,15 +15,7 @@ targetEntityType: paragraph
 bundle: layout
 mode: default
 content:
-  field_heading:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 0
-    region: content
-  field_layout_colour_palette:
+  field_color_palette:
     type: entity_class_formatter
     label: hidden
     settings:
@@ -33,6 +25,14 @@ content:
       field: ''
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
     region: content
   field_layout_styles:
     type: entity_class_formatter

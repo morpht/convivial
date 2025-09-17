@@ -8,7 +8,7 @@ dependencies:
     - field.storage.block_content.field_promo_aside
     - field.storage.block_content.field_promo_background
     - field.storage.block_content.field_promo_bg_color
-    - field.storage.block_content.field_promo_colour_classes
+    - field.storage.block_content.field_color_palette
     - field.storage.block_content.field_promo_link
     - field.storage.block_content.field_promo_position
     - field.storage.block_content.field_promo_style_classes
@@ -602,10 +602,10 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_promo_colour_classes:
-          id: field_promo_colour_classes
-          table: block_content__field_promo_colour_classes
-          field: field_promo_colour_classes
+        field_color_palette:
+          id: field_color_palette
+          table: block_content__field_color_palette
+          field: field_color_palette
           relationship: none
           group_type: group
           admin_label: ''
@@ -803,7 +803,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{% if field_promo_variant %}{{ field_promo_variant }}{% endif %}{% if field_promo_position %} {{ field_promo_position }}{% endif %}{% if field_promo_style_classes %} {{ field_promo_style_classes }}{% endif %}{% if field_promo_bg_color %} {{ field_promo_bg_color }}{% endif %}{% if field_promo_colour_classes %} {{ field_promo_colour_classes }}{% endif %}{%if field_promo_aside %} banner--with-aside{%endif %}'
+            text: '{% if field_promo_variant %}{{ field_promo_variant }}{% endif %}{% if field_promo_position %} {{ field_promo_position }}{% endif %}{% if field_promo_style_classes %} {{ field_promo_style_classes }}{% endif %}{% if field_promo_bg_color %} {{ field_promo_bg_color }}{% endif %}{% if field_color_palette %} {{ field_color_palette }}{% endif %}{%if field_promo_aside %} banner--with-aside{%endif %}'
             make_link: false
             path: ''
             absolute: false
@@ -1062,7 +1062,7 @@ display:
         - 'config:field.storage.block_content.field_promo_aside'
         - 'config:field.storage.block_content.field_promo_background'
         - 'config:field.storage.block_content.field_promo_bg_color'
-        - 'config:field.storage.block_content.field_promo_colour_classes'
+        - 'config:field.storage.block_content.field_color_palette'
         - 'config:field.storage.block_content.field_promo_link'
         - 'config:field.storage.block_content.field_promo_position'
         - 'config:field.storage.block_content.field_promo_style_classes'
@@ -1128,7 +1128,7 @@ display:
         - 'config:field.storage.block_content.field_promo_aside'
         - 'config:field.storage.block_content.field_promo_background'
         - 'config:field.storage.block_content.field_promo_bg_color'
-        - 'config:field.storage.block_content.field_promo_colour_classes'
+        - 'config:field.storage.block_content.field_color_palette'
         - 'config:field.storage.block_content.field_promo_link'
         - 'config:field.storage.block_content.field_promo_position'
         - 'config:field.storage.block_content.field_promo_style_classes'

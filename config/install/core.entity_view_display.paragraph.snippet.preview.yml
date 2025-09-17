@@ -3,7 +3,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
-    - field.field.paragraph.snippet.field_colour_classes
+    - field.field.paragraph.snippet.field_color_palette
     - field.field.paragraph.snippet.field_heading
     - field.field.paragraph.snippet.field_modifiers
     - field.field.paragraph.snippet.field_position
@@ -30,7 +30,7 @@ content:
     weight: 0
     region: content
 hidden:
-  field_colour_classes: true
+  field_color_palette: true
   field_modifiers: true
   field_position: true
   field_snippet: true
