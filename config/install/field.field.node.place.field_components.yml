@@ -24,7 +24,6 @@ dependencies:
     - paragraphs.paragraphs_type.plugin_block
     - paragraphs.paragraphs_type.section
     - paragraphs.paragraphs_type.snippet
-    - paragraphs.paragraphs_type.tiles
     - paragraphs.paragraphs_type.timeline
     - paragraphs.paragraphs_type.view
     - paragraphs.paragraphs_type.webform
@@ -61,7 +60,6 @@ settings:
       media_list: media_list
       node_list: node_list
       section: section
-      tiles: tiles
       timeline: timeline
       gallery: gallery
       geochart: geochart
