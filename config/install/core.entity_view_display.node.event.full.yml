@@ -286,7 +286,7 @@ third_party_settings:
               provider: views
               context_mapping: {  }
               views_label: ''
-              items_per_page: 0
+              items_per_page: '0'
             weight: 7
             additional: {  }
           d6e6cab1-efda-48bd-837e-6dfcb50827a5:

@@ -264,7 +264,7 @@ third_party_settings:
               provider: views
               context_mapping: {  }
               views_label: ''
-              items_per_page: 0
+              items_per_page: '0'
             weight: 6
             additional: {  }
           789df3d0-1f1e-4ec5-965d-5358aa10f5f1:
@@ -277,7 +277,7 @@ third_party_settings:
               provider: views
               context_mapping: {  }
               views_label: ''
-              items_per_page: 0
+              items_per_page: '0'
             weight: 5
             additional: {  }
           437abdae-3c36-4af5-9912-64b655109cac:
