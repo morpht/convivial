@@ -28,11 +28,9 @@ content:
     weight: 0
     region: content
 hidden:
-  created: true
-  field_body: true
-  field_search_exclude: true
-  field_tags: true
-  name: true
-  search_api_excerpt: true
-  thumbnail: true
-  uid: true
+  - true
+  - true
+  - true
+  - true
+  - true
+  - true

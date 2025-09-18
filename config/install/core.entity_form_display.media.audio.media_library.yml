@@ -23,13 +23,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
 hidden:
-  created: true
-  field_body: true
-  field_media_audio_file: true
-  field_search_exclude: true
-  field_tags: true
-  field_transcript: true
-  path: true
-  replace_file: true
-  status: true
-  uid: true
+  - true
+  - true
+  - true
+  - true
+  - true
+  - true
+  - true
+  - true
+  - true
