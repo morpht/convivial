@@ -195,30 +195,107 @@ function _convivial_gin_node_form_validate(array &$form, FormStateInterface $for
 }
 
 /**
- * Attach Color Palette feature.
+ * Attach Theme feature.
  */
 function _convivial_gin_theme_color_palette(&$form, $theme_name) {
-  $settings = theme_get_setting('colors', $theme_name);
-  $styles = '';
+  $settings = theme_get_setting('theme_ui', $theme_name);
 
-  if (!empty($settings) && !empty($settings['colors_enable']) && $settings['colors_enable'] == 1) {
-    unset($settings['colors_enable']);
-    foreach ($settings as $palette) {
-      foreach ($palette['derivatives'] as $derivative_color_key => $derivative_color) {
-        $color_key = str_replace("_", "-", $derivative_color_key);
-        $styles .= "--$color_key: $derivative_color;";
+  if (empty($settings) || $settings['enable'] != 1) {
+    return;
+  }
+
+  $styles = '';
+  $root_css_variables = '';
+  $root_scheme_css_variables = '';
+  $palette_css_variables = '';
+
+  // Set radius
+  $radius = theme_get_setting('theme_ui.radius', $theme_name);
+  foreach ($radius as $key => $value) {
+    $formatted_value = $value . 'rem';
+
+    if ($key === 'default') {
+      $root_css_variables .= "--radius: $formatted_value;";
+    }
+    else {
+      $root_css_variables .= "--radius-$key: $formatted_value;";
+    }
+  }
+
+  // Set color schemes
+  $color_schemes = theme_get_setting('theme_ui.color_schemes', $theme_name);
+  foreach ($color_schemes as $color_scheme_key => $color_scheme) {
+    $color_scheme_prefix = "@media (prefers-color-scheme: $color_scheme_key) { ";
+    $color_scheme_suffix = " }";
+
+    foreach ($color_scheme as $palette_key => $palette) {
+      $root_scheme_temp_css_variables = '';
+      $palette_temp_css_variables = '';
+      $formatted_palette_key = str_replace("_", "-", $palette_key);
+      $palette_prefix = ".cp--$formatted_palette_key { ";
+      $palette_suffix = " }";
+
+      foreach ($palette['derivatives'] as $derivative_key => $derivative) {
+        $color_key = str_replace("_", "-", $derivative_key);
+
+        // Set root variables
+        if ($palette_key === 'standard') {
+          if ($color_scheme_key === 'default') {
+            $root_css_variables .= "--$color_key: $derivative;";
+          }
+          else {
+            $root_scheme_temp_css_variables .= "--$color_key: $derivative;";
+          }
+        }
+
+        // Set remaining variables
+        $palette_temp_css_variables .= "--$color_key: $derivative;";
+      }
+
+      // Set root variables with scheme
+      if ($color_scheme_key !== 'default' && $palette_key === 'standard') {
+        $root_scheme_css_variables .= $color_scheme_prefix
+          . ":root { $root_scheme_temp_css_variables }"
+          . $color_scheme_suffix;
+      }
+
+      // Set remaining variables with scheme
+      if ($color_scheme_key === 'default') {
+        $palette_css_variables .= $palette_prefix
+          . $palette_temp_css_variables
+          . $palette_suffix;
+      }
+      else {
+        $palette_css_variables .= $color_scheme_prefix
+          . $palette_prefix
+          . $palette_temp_css_variables
+          . $palette_suffix
+          . $color_scheme_suffix;
       }
     }
   }
 
+  // Attached CSS variables
+  if (!empty($root_css_variables)) {
+    $styles .= ":root { $root_css_variables }";
+  }
+
+  if (!empty($root_scheme_css_variables)) {
+    $styles .= $root_scheme_css_variables;
+  }
+
+  if (!empty($palette_css_variables)) {
+    $styles .= $palette_css_variables;
+  }
+
   if (!empty($styles)) {
-    $form['#attached']['html_head'][] = [
+    $attachments['#attached']['html_head'][] = [
       [
-        '#tag'        => 'style',
+        '#tag' => 'style',
         '#attributes' => ['type' => 'text/css'],
-        '#value'      => ":root { $styles }",
+        '#value' => $styles,
       ],
-      'theme-colors',
+      'theme-ui',
       ['weight' => 100],
     ];
   }

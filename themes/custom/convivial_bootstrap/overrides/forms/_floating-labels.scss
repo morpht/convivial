@@ -1,0 +1,12 @@
+.form-floating {
+  > .form-control:focus,
+  > .form-control:not(:placeholder-shown),
+  > .form-control-plaintext,
+  > .form-select {
+    ~ label {
+      &::after {
+        border-radius: var(--radius-selector);
+      }
+    }
+  }
+}

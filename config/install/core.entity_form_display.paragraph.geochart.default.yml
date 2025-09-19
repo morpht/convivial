@@ -3,7 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.geochart.field_body
-    - field.field.paragraph.geochart.field_colour_classes
+    - field.field.paragraph.geochart.field_color_palette
     - field.field.paragraph.geochart.field_geochart_api_key
     - field.field.paragraph.geochart.field_geochart_background_color
     - field.field.paragraph.geochart.field_geochart_color_axis
@@ -30,7 +30,7 @@ third_party_settings:
   field_group:
     group_styles:
       children:
-        - field_colour_classes
+        - field_color_palette
         - field_style_classes
         - field_position
         - field_modifiers
@@ -98,7 +98,7 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  field_colour_classes:
+  field_color_palette:
     type: options_select
     weight: 5
     region: content

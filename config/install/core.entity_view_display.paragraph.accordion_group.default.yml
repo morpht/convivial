@@ -3,7 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.accordion_group.field_accordions
-    - field.field.paragraph.accordion_group.field_ag_colour_classes
+    - field.field.paragraph.accordion_group.field_color_palette
     - field.field.paragraph.accordion_group.field_ag_style_classes
     - field.field.paragraph.accordion_group.field_body
     - field.field.paragraph.accordion_group.field_heading
@@ -28,17 +28,6 @@ content:
     third_party_settings: {  }
     weight: 5
     region: content
-  field_ag_colour_classes:
-    type: entity_class_formatter
-    label: hidden
-    settings:
-      prefix: ''
-      suffix: ''
-      attr: ''
-      field: ''
-    third_party_settings: {  }
-    weight: 6
-    region: content
   field_ag_style_classes:
     type: entity_class_formatter
     label: hidden
@@ -56,6 +45,17 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_color_palette:
+    type: entity_class_formatter
+    label: hidden
+    settings:
+      prefix: ''
+      suffix: ''
+      attr: ''
+      field: ''
+    third_party_settings: {  }
+    weight: 6
     region: content
   field_heading:
     type: string

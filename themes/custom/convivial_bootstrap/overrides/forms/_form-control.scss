@@ -1,0 +1,21 @@
+.form-control {
+  border-radius: var(--radius-selector);
+}
+
+.form-control-sm {
+  border-radius: var(--radius-selector);
+}
+
+.form-control-lg {
+  border-radius: var(--radius-selector);
+}
+
+textarea {
+  &::-moz-color-swatch {
+    border-radius: var(--radius-selector);
+  }
+
+  &::-webkit-color-swatch {
+    border-radius: var(--radius-selector);
+  }
+}

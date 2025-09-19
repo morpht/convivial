@@ -12,8 +12,7 @@ dependencies:
     - field.field.node.article.field_featured_links
     - field.field.node.article.field_featured_title
     - field.field.node.article.field_goal
-    - field.field.node.article.field_header_colour_classes
-    - field.field.node.article.field_hero_darkness
+    - field.field.node.article.field_header_color_palette
     - field.field.node.article.field_intent
     - field.field.node.article.field_introduction
     - field.field.node.article.field_keywords
@@ -94,7 +93,7 @@ third_party_settings:
               provider: views
               context_mapping: {  }
               views_label: ''
-              items_per_page: none
+              items_per_page: 0
             weight: 5
             additional: {  }
           78cd163a-caab-4f03-8f1a-9f6d8160a0a2:
@@ -282,10 +281,10 @@ third_party_settings:
               label: 'Share this article'
               label_display: '0'
               provider: block_content
+              context_mapping: {  }
               status: true
               info: ''
               view_mode: full
-              context_mapping: {  }
             weight: 7
             additional: {  }
           707938cf-920b-4235-b41d-1be1f42efa7f:
@@ -318,7 +317,7 @@ third_party_settings:
               provider: views
               context_mapping: {  }
               views_label: ''
-              items_per_page: none
+              items_per_page: 0
             weight: 3
             additional: {  }
           4155222c-fe98-43b3-8ac7-9ba16e128f3e:
@@ -450,8 +449,7 @@ hidden:
   field_featured_links: true
   field_featured_title: true
   field_goal: true
-  field_header_colour_classes: true
-  field_hero_darkness: true
+  field_header_color_palette: true
   field_intent: true
   field_meta_tags: true
   field_published: true

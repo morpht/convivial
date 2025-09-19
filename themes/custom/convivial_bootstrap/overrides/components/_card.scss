@@ -1,0 +1,7 @@
+.card {
+  --#{$prefix}card-color: var(--foreground);
+  --#{$prefix}card-bg: var(--background-stronger);
+  --#{$prefix}card-border-radius: var(--radius-box);
+  --#{$prefix}card-inner-border-radius: var(--radius-box);
+  --#{$prefix}card-border-color: rgba(0, 0, 0, 0.20);
+}

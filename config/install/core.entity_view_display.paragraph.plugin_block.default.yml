@@ -6,7 +6,7 @@ dependencies:
     - field.field.paragraph.plugin_block.field_heading
     - field.field.paragraph.plugin_block.field_hide_heading
     - field.field.paragraph.plugin_block.field_modifiers
-    - field.field.paragraph.plugin_block.field_pb_colour_classes
+    - field.field.paragraph.plugin_block.field_color_palette
     - field.field.paragraph.plugin_block.field_pb_definition
     - field.field.paragraph.plugin_block.field_pb_style_classes
     - field.field.paragraph.plugin_block.field_position
@@ -26,15 +26,7 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_heading:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 0
-    region: content
-  field_pb_colour_classes:
+  field_color_palette:
     type: entity_class_formatter
     label: hidden
     settings:
@@ -44,6 +36,14 @@ content:
       field: ''
     third_party_settings: {  }
     weight: 3
+    region: content
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
     region: content
   field_pb_definition:
     type: string

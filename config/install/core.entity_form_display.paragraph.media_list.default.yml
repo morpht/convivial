@@ -5,7 +5,7 @@ dependencies:
     - field.field.paragraph.media_list.field_body
     - field.field.paragraph.media_list.field_heading
     - field.field.paragraph.media_list.field_hide_heading
-    - field.field.paragraph.media_list.field_ml_colour_classes
+    - field.field.paragraph.media_list.field_color_palette
     - field.field.paragraph.media_list.field_ml_layout_classes
     - field.field.paragraph.media_list.field_ml_media
     - field.field.paragraph.media_list.field_ml_style_classes
@@ -32,6 +32,12 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
+  field_color_palette:
+    type: options_select
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_heading:
     type: string_textfield
     weight: 1
@@ -46,12 +52,6 @@ content:
     region: content
     settings:
       display_label: true
-    third_party_settings: {  }
-  field_ml_colour_classes:
-    type: options_select
-    weight: 7
-    region: content
-    settings: {  }
     third_party_settings: {  }
   field_ml_layout_classes:
     type: options_select

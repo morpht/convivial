@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_color_palette
+    - paragraphs.paragraphs_type.animation
+  module:
+    - options
+    - unique_content_field_validation
+third_party_settings:
+  unique_content_field_validation:
+    unique: false
+    unique_text: ''
+id: paragraph.animation.field_color_palette
+field_name: field_color_palette
+entity_type: paragraph
+bundle: animation
+label: 'Colour Palette'
+description: 'Apply a colour palette to the component.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

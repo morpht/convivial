@@ -56,13 +56,12 @@ content:
     weight: 0
     region: title
 hidden:
-  created: true
-  field_body: true
-  field_media_audio_field: true
-  field_media_audio_file: true
-  field_search_exclude: true
-  field_tags: true
-  field_transcript: true
-  search_api_excerpt: true
-  thumbnail: true
-  uid: true
+  - true
+  - true
+  - true
+  - true
+  - true
+  - true
+  - true
+  - true
+  - true

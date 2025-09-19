@@ -1,0 +1,10 @@
+.btn {
+  --#{$prefix}btn-box-shadow: none;
+  --#{$prefix}btn-focus-box-shadow: none;
+}
+
+.btn-link {
+  --#{$prefix}btn-color: var(--link);
+  --#{$prefix}btn-hover-color: var(--link-hover);
+  --#{$prefix}btn-active-color: var(--link-focus);
+}

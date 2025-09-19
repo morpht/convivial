@@ -5,7 +5,7 @@ dependencies:
     - core.entity_view_mode.paragraph.preview
     - field.field.paragraph.layout.field_heading
     - field.field.paragraph.layout.field_hide_heading
-    - field.field.paragraph.layout.field_layout_colour_palette
+    - field.field.paragraph.layout.field_color_palette
     - field.field.paragraph.layout.field_layout_styles
     - field.field.paragraph.layout.field_modifiers
     - paragraphs.paragraphs_type.layout
@@ -29,8 +29,8 @@ content:
     weight: 0
     region: content
 hidden:
+  field_color_palette: true
   field_hide_heading: true
-  field_layout_colour_palette: true
   field_layout_styles: true
   field_modifiers: true
   search_api_excerpt: true

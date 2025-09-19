@@ -19,16 +19,6 @@ function convivial_claro_form_alter(&$form, FormStateInterface $form_state,
     'node_page_edit_form',
   ];
 
-  if (in_array($form_id, $node_form_ids)) {
-    if (isset($form['field_hero_darkness'])) {
-      $default_theme = \Drupal::config('system.theme')->get('default');
-      $header_appearance = theme_get_setting('appearance', $default_theme);
-      if ($header_appearance !== 'theme__header--transparent') {
-        $form['field_hero_darkness']['#access'] = FALSE;
-      }
-    }
-  }
-
   // Attach paragraphs form altering.
   if (isset($form['field_components']['widget']['entity_form'])) {
     $form['field_components']['widget']['entity_form']['#pre_render'][] = [
