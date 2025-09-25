@@ -1,0 +1,134 @@
+/*! @convivial_bootstrap/hero */
+
+.style--hero {
+  padding-top: $hero-vertical-spacing;
+  padding-bottom: $hero-vertical-spacing;
+
+  .component__heading {
+    font-size: $hero-h2-font-size;
+  }
+
+  .component__body {
+    font-size: $hero-font-size;
+
+    &:not(:last-child) {
+      margin-bottom: $hero-body-spacing;
+    }
+
+    .introduction {
+      font-size: $hero-introduction-font-size;
+    }
+
+    .btn {
+      @include button-size($hero-btn-padding-y, $hero-btn-padding-x, $hero-btn-font-size, $hero-btn-border-radius);
+    }
+
+    a {
+      font-size: $hero-font-size;
+    }
+
+    h1 {
+      font-size: $hero-h1-font-size;
+    }
+
+    h2 {
+      font-size: $hero-h2-font-size;
+    }
+
+    h3 {
+      font-size: $hero-h3-font-size;
+    }
+
+    h4 {
+      font-size: $hero-h4-font-size;
+    }
+
+    h5 {
+      font-size: $hero-h5-font-size;
+    }
+
+    h6 {
+      font-size: $hero-h6-font-size;
+    }
+  }
+
+  .component__cta {
+    font-size: $hero-font-size;
+    margin-top: $hero-cta-spacing;
+
+    a,
+    .cta-link {
+      font-size: $hero-font-size;
+    }
+
+    .cta-link {
+      margin-top: 0;
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .style--hero {
+    padding-top: $hero-vertical-spacing-lg;
+    padding-bottom: $hero-vertical-spacing-lg;
+
+    .component__heading {
+      font-size: $hero-h2-font-size-lg;
+    }
+
+    .component__body {
+      font-size: $hero-font-size-lg;
+
+      .introduction {
+        font-size: $hero-introduction-font-size-lg;
+      }
+
+      .btn {
+        @include button-size($hero-btn-padding-y-lg, $hero-btn-padding-x-lg, $hero-btn-font-size-lg, $hero-btn-border-radius-lg);
+      }
+
+      a {
+        font-size: $hero-font-size-lg;
+      }
+
+      h1 {
+        font-size: $hero-h1-font-size-lg;
+      }
+
+      h2 {
+        font-size: $hero-h2-font-size-lg;
+      }
+
+      h3 {
+        font-size: $hero-h3-font-size-lg;
+      }
+
+      h4 {
+        font-size: $hero-h4-font-size-lg;
+      }
+
+      h5 {
+        font-size: $hero-h5-font-size-lg;
+      }
+
+      h6 {
+        font-size: $hero-h6-font-size-lg;
+      }
+
+      blockquote {
+        margin-top: $hero-blockquote-spacing-lg;
+        margin-bottom: $hero-blockquote-spacing-lg;
+        padding: $hero-blockquote-spacing-lg;
+      }
+    }
+
+    .component__cta {
+      font-size: $hero-font-size-lg;
+
+      a,
+      .cta-link {
+        font-size: $hero-font-size-lg;
+      }
+    }
+  }
+}

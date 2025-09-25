@@ -55,7 +55,6 @@ anchor:
   dependencies:
     - core/jquery
     - convivial_bootstrap/anchorific
-    - convivial_bootstrap/smooth-scroll
 
 anchorific:
   js:
@@ -170,12 +169,6 @@ popperjs:
   js:
     libraries/@popperjs/core/dist/umd/popper.min.js: { minified: true }
 
-read-speaker:
-  header: true
-  js:
-    components/readspeaker/readspeaker.js: { }
-    //f1-eu.readspeaker.com/script/3/webReader/webReader.js?pids=wr: { type: external, minified: true }
-
 search:
   js:
     components/search/search.js: { }
@@ -192,10 +185,6 @@ search_autocomplete:
     - core/drupal
     - core/once
 
-smooth-scroll:
-  js:
-    libraries/smooth-scroll/dist/smooth-scroll.polyfills.min.js: { minified: true }
-
 van11y-accessible-tab-panel-aria:
   remote: https://github.com/nico3333fr/van11y-accessible-tab-panel-aria
   version: 2.0
@@ -211,10 +200,6 @@ scroll_anchor:
     js/scroll-anchor.js: { }
   dependencies:
     - core/jquery
-    - core/drupal
-    - core/drupalSettings
-    - core/once
-    - convivial_bootstrap/sticky_header_height
 
 sticky_header_height:
   js:

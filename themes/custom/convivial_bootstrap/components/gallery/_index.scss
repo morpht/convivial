@@ -1,0 +1,9 @@
+/*! @convivial_bootstrap/gallery */
+
+h2 + .field--name-field-gallery-photos {
+  margin-top: $grid-gutter-width;
+}
+
+.gallery .field--name-field-media-image img, .gallery .field--name-field-gallery-media img {
+  width: 100%;
+}

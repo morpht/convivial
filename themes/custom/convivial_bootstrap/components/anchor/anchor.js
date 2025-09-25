@@ -21,9 +21,6 @@
       $('.anchor').each(function () {
         $(this).parent().addClass('has-anchor');
       });
-
-      // Use smooth-scroll for better scrolling effect.
-      var scroll = new SmoothScroll('.toc a[href*="#"]');
     }
   };
 

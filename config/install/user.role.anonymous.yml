@@ -26,7 +26,6 @@ permissions:
   - 'view paragraph content fastfacts'
   - 'view paragraph content gallery'
   - 'view paragraph content geochart'
-  - 'view paragraph content hero_banner'
   - 'view paragraph content hide_modifier'
   - 'view paragraph content image_bg_modifier'
   - 'view paragraph content item'

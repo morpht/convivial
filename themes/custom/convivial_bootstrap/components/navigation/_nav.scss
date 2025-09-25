@@ -1,11 +1,12 @@
 /*! @convivial_bootstrap/nav */
-$sidebar-nav-link-border-radius: $border-radius;
-$sidebar-nav-link-hover-fg: var(--standard-background);
-$sidebar-nav-link-hover-bg: var(--standard-link);
-$sidebar-nav-link-hover-bg-darken: var(--standard-link-hover);
+
+$sidebar-nav-link-border-radius: var(--radius);
+$sidebar-nav-link-hover-fg: var(--background);
+$sidebar-nav-link-hover-bg: var(--link);
+$sidebar-nav-link-hover-bg-darken: var(--link-hover);
 $sidebar-nav-link-active-fg: var(--alt-foreground);
 $sidebar-nav-link-active-bg: var(--alt-background);
-$sidebar-nav-link-outline-color: var(--standard-link-active);
+$sidebar-nav-link-outline-color: var(--link-active);
 $sidebar-nav-row-gap: 2px;
 
 .nested-nav {

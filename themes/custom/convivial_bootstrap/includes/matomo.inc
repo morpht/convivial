@@ -57,12 +57,6 @@ class convivial_bootstrap_javascript_snippet implements MarkupInterface {
  * Add Matomo to theme settings.
  */
 function _convivial_bootstrap_matomo_theme_settings(&$form) {
-  $form['matomo_settings'] = [
-    '#type' => 'details',
-    '#title' => t('Matomo'),
-    '#group' => 'convivial_bootstrap_settings',
-  ];
-
   $form['matomo_settings']['#tree'] = TRUE;
   $form['matomo_settings']['#markup'] = t('Matomo web statistics tracking system to your website.');
   $form['matomo_settings']['tracking'] = [

@@ -641,12 +641,13 @@ function convivial_bootstrap_preprocess_paragraph(&$variables) {
 
 
   }
+
 }
 
 /**
  * Implements template_preprocess_paragraph__decision_tree().
  */
-function convivial_bootstrap_preprocess_paragraph__decision_tree(&$variables) {
+function convivial_bootstrap_preprocess_paragraph__decision_flow(&$variables) {
   $variables['#attached']['library'][] = 'convivial_bootstrap/decision_flow';
 }
 

@@ -1,3 +1,5 @@
+/*! @convivial_bootstrap/mixins */
+
 // Container widths
 //
 // Set the container width.
@@ -92,65 +94,67 @@
 @mixin convivial-button-variant(
   $background,
   $color,
-  $border: $background,
   $hover,
-  $focus,
-  $active: $focus,
+  $active,
+  $border: $background,
 ) {
-  @include gradient-bg($background);
-  @include box-shadow($btn-box-shadow);
+  --#{$prefix}btn-color: #{$color};
+  --#{$prefix}btn-bg: #{$background};
+  --#{$prefix}btn-border-color: #{$border};
+  --#{$prefix}btn-hover-color: #{$color};
+  --#{$prefix}btn-hover-bg: #{$hover};
+  --#{$prefix}btn-hover-border-color: #{$hover};
+  --#{$prefix}btn-active-color: #{$color};
+  --#{$prefix}btn-active-bg: #{$active};
+  --#{$prefix}btn-active-border-color: #{$active};
 
-  color: $color;
-  border-color: $border;
+  color: var(--#{$prefix}btn-color);
+  background-color: var(--#{$prefix}btn-bg);
+  border-color: var(--#{$prefix}btn-border-color);
 
-  &:hover {
-    color: $color;
-    background-color: $hover;
-    border-color: $hover;
-  }
-
+  &:hover,
   &:focus {
-    @include gradient-bg($hover);
+    color: var(--#{$prefix}btn-hover-color);
+    background-color: var(--#{$prefix}btn-hover-bg);
+    border-color: var(--#{$prefix}btn-hover-bg);
   }
 
-  &:focus,
-  &:active,
-  &.active {
-    color: $color;
-    outline: $btn-outline-width $btn-outline-style $active;
-    outline-offset: $btn-outline-offset;
+  &:active {
+    color: var(--#{$prefix}btn-active-color);
+    background-color: var(--#{$prefix}btn-active-bg);
+    border-color: var(--#{$prefix}btn-active-border-color);
   }
 }
 
-@mixin convivial-outline-button-variant(
+@mixin convivial-button-outline-variant(
   $color,
-  $color-hover,
-  $focus,
-  $active-background: $color,
-  $active-border: $color,
-  $active-color: $color-hover
+  $color-hover: $color,
+  $hover,
+  $active,
+  $border: $color,
 ) {
-  color: $color;
-  border-color: $color;
+  --#{$prefix}btn-color: #{$color};
+  --#{$prefix}btn-border-color: #{$color};
+  --#{$prefix}btn-hover-color: #{$color-hover};
+  --#{$prefix}btn-hover-bg: #{$hover};
+  --#{$prefix}btn-hover-border-color: #{$hover};
+  --#{$prefix}btn-active-color: #{$color-hover};
+  --#{$prefix}btn-active-bg: #{$active};
+  --#{$prefix}btn-active-border-color: #{$active};
 
-  &:hover {
-    color: $color-hover;
-    background-color: $active-background;
-    border-color: $active-border;
-  }
+  color: var(--#{$prefix}btn-color);
+  border-color: var(--#{$prefix}btn-border-color);
 
+  &:hover,
   &:focus {
-    outline: $btn-outline-width $btn-outline-style $focus;
+    color: var(--#{$prefix}btn-hover-color);
+    background-color: var(--#{$prefix}btn-hover-bg);
+    border-color: var(--#{$prefix}btn-hover-border-color);
   }
 
-  &:focus,
-  &:active,
-  &.active {
-    color: $active-color;
-    background-color: $active-background;
-    border-color: $active-border;
-
-    // Remove CSS gradients if they're enabled
-    background-image: if($enable-gradients, none, null);
+  &:active {
+    color: var(--#{$prefix}btn-active-color);
+    background-color: var(--#{$prefix}btn-active-bg);
+    border-color: var(--#{$prefix}btn-active-border-color);
   }
 }

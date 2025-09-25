@@ -37,6 +37,7 @@ function _convivial_bootstrap_settings(&$form, FormStateInterface $form_state) {
     'icon' => t('Icon'),
     'redirect_import' => t('Import redirects'),
     'meta' => t('Meta'),
+    'matomo_settings' => t('Matomo'),
   ];
 
   foreach ($groups as $group => $title) {
