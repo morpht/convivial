@@ -439,6 +439,10 @@ function convivial_bootstrap_preprocess_block(&$variables) {
         _convivial_bootstrap_logo($variables, $entity);
         break;
 
+      case 'feedback':
+        $variables['#attached']['library'][] = 'convivial_bootstrap/feedback';
+        break;
+
       case 'personified_data':
         $variables['theme_path'] = \Drupal::service('extension.list.theme')->getPath('convivial_bootstrap');
         require_once __DIR__ . '/includes/personified_data.inc';

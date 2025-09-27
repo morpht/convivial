@@ -119,6 +119,13 @@ fastfacts:
   dependencies:
     - core/drupal
 
+feedback:
+  js:
+    components/feedback/feedback.js: { }
+  dependencies:
+    - core/drupal
+    - core/once
+
 font-family:
   css:
     theme:
