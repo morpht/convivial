@@ -4,7 +4,7 @@ dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
     - field.field.paragraph.gallery.field_body
-    - field.field.paragraph.gallery.field_gallery_colour_classes
+    - field.field.paragraph.gallery.field_color_palette
     - field.field.paragraph.gallery.field_gallery_layout_classes
     - field.field.paragraph.gallery.field_gallery_media
     - field.field.paragraph.gallery.field_gallery_show_controls
@@ -37,7 +37,7 @@ content:
     region: content
 hidden:
   field_body: true
-  field_gallery_colour_classes: true
+  field_color_palette: true
   field_gallery_layout_classes: true
   field_gallery_media: true
   field_gallery_show_controls: true

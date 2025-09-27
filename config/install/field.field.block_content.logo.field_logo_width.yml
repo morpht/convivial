@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.logo
+    - field.storage.block_content.field_logo_width
+id: block_content.logo.field_logo_width
+field_name: field_logo_width
+entity_type: block_content
+bundle: logo
+label: 'Default logo width'
+description: 'Width of the default logo.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

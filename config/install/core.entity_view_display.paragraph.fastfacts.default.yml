@@ -4,7 +4,7 @@ dependencies:
   config:
     - field.field.paragraph.fastfacts.field_body
     - field.field.paragraph.fastfacts.field_heading
-    - field.field.paragraph.fastfacts.field_il_colour_classes
+    - field.field.paragraph.fastfacts.field_color_palette
     - field.field.paragraph.fastfacts.field_il_items
     - field.field.paragraph.fastfacts.field_il_layout_classes
     - field.field.paragraph.fastfacts.field_il_style_classes
@@ -29,15 +29,7 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_heading:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 0
-    region: content
-  field_il_colour_classes:
+  field_color_palette:
     type: entity_class_formatter
     label: hidden
     settings:
@@ -47,6 +39,14 @@ content:
       field: ''
     third_party_settings: {  }
     weight: 5
+    region: content
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
     region: content
   field_il_items:
     type: entity_reference_revisions_entity_view

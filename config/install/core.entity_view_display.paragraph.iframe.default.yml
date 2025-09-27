@@ -1,0 +1,113 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.iframe.field_c_style_classes
+    - field.field.paragraph.iframe.field_color_palette
+    - field.field.paragraph.iframe.field_heading
+    - field.field.paragraph.iframe.field_hide_heading
+    - field.field.paragraph.iframe.field_iframe_fullscreen
+    - field.field.paragraph.iframe.field_iframe_height
+    - field.field.paragraph.iframe.field_iframe_url
+    - field.field.paragraph.iframe.field_modifiers
+    - field.field.paragraph.iframe.field_position
+    - field.field.paragraph.iframe.field_read_more
+    - field.field.paragraph.iframe.field_title
+    - paragraphs.paragraphs_type.iframe
+  module:
+    - entity_class_formatter
+    - link
+id: paragraph.iframe.default
+targetEntityType: paragraph
+bundle: iframe
+mode: default
+content:
+  field_c_style_classes:
+    type: entity_class_formatter
+    label: hidden
+    settings:
+      prefix: ''
+      suffix: ''
+      attr: ''
+      field: ''
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_color_palette:
+    type: entity_class_formatter
+    label: hidden
+    settings:
+      prefix: ''
+      suffix: ''
+      attr: ''
+      field: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_iframe_fullscreen:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_iframe_height:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_iframe_url:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_position:
+    type: entity_class_formatter
+    label: hidden
+    settings:
+      prefix: ''
+      suffix: ''
+      attr: ''
+      field: ''
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_read_more:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden:
+  field_hide_heading: true
+  field_modifiers: true
+  field_title: true
+  search_api_excerpt: true

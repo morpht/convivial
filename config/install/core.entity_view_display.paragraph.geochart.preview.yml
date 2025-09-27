@@ -4,7 +4,7 @@ dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
     - field.field.paragraph.geochart.field_body
-    - field.field.paragraph.geochart.field_colour_classes
+    - field.field.paragraph.geochart.field_color_palette
     - field.field.paragraph.geochart.field_geochart_api_key
     - field.field.paragraph.geochart.field_geochart_background_color
     - field.field.paragraph.geochart.field_geochart_color_axis
@@ -43,7 +43,7 @@ content:
     region: content
 hidden:
   field_body: true
-  field_colour_classes: true
+  field_color_palette: true
   field_geochart_api_key: true
   field_geochart_background_color: true
   field_geochart_color_axis: true

@@ -1,67 +1,69 @@
+/*! @convivial_bootstrap/custom-variables */
+
 // Typography
-$text-max-width:            50rem;
-$introduction-font-size:    $font-size-base * 1.25;
-$introduction-font-weight:  300;
+$text-max-width: 50rem;
+$introduction-font-size: $font-size-base * 1.25;
+$introduction-font-weight: 300;
 
 ///
 // Components
 ///
 
 // Header
-$timing-header-transition:                      0.4s;
-$timing-header-easing:                          ease;
-$z-index-navbar-header:                          500;
+$timing-header-transition: 0.4s;
+$timing-header-easing: ease;
+$z-index-navbar-header: 500;
 
 // Hero
-$hero-scale:                      1.15 !default;
-$hero-scale-lg:                   1.25 !default;
+$hero-scale: 1.15 !default;
+$hero-scale-lg: 1.25 !default;
 
 // Hero spacing
-$hero-body-spacing:               calc($grid-gutter-width * 2) !default;
-$hero-cta-spacing:                calc($grid-gutter-width * 2) !default;
-$hero-vertical-spacing:           calc($grid-gutter-width * 3) !default;
-$hero-vertical-spacing-lg:        calc($grid-gutter-width * 4) !default;
-$hero-blockquote-spacing-lg:      $grid-gutter-width !default;
+$hero-body-spacing: calc($grid-gutter-width * 2) !default;
+$hero-cta-spacing: calc($grid-gutter-width * 2) !default;
+$hero-vertical-spacing: calc($grid-gutter-width * 3) !default;
+$hero-vertical-spacing-lg: calc($grid-gutter-width * 4) !default;
+$hero-blockquote-spacing-lg: $grid-gutter-width !default;
 
 // Hero typography
-$hero-font-size:                  $font-size-base * $hero-scale !default;
-$hero-introduction-font-size:     $introduction-font-size * $hero-scale !default;
+$hero-font-size: $font-size-base * $hero-scale !default;
+$hero-introduction-font-size: $introduction-font-size * $hero-scale !default;
 
-$hero-font-size-lg:               $font-size-base * $hero-scale-lg !default;
-$hero-introduction-font-size-lg:  $introduction-font-size * $hero-scale-lg !default;
+$hero-font-size-lg: $font-size-base * $hero-scale-lg !default;
+$hero-introduction-font-size-lg: $introduction-font-size * $hero-scale-lg !default;
 
-$hero-h1-font-size:               $h1-font-size * $hero-scale !default;
-$hero-h2-font-size:               $h2-font-size * $hero-scale !default;
-$hero-h3-font-size:               $h3-font-size * $hero-scale !default;
-$hero-h4-font-size:               $h4-font-size * $hero-scale !default;
-$hero-h5-font-size:               $h5-font-size * $hero-scale !default;
-$hero-h6-font-size:               $h6-font-size * $hero-scale !default;
+$hero-h1-font-size: $h1-font-size * $hero-scale !default;
+$hero-h2-font-size: $h2-font-size * $hero-scale !default;
+$hero-h3-font-size: $h3-font-size * $hero-scale !default;
+$hero-h4-font-size: $h4-font-size * $hero-scale !default;
+$hero-h5-font-size: $h5-font-size * $hero-scale !default;
+$hero-h6-font-size: $h6-font-size * $hero-scale !default;
 
-$hero-h1-font-size-lg:            $h1-font-size * $hero-scale-lg !default;
-$hero-h2-font-size-lg:            $h2-font-size * $hero-scale-lg !default;
-$hero-h3-font-size-lg:            $h3-font-size * $hero-scale-lg !default;
-$hero-h4-font-size-lg:            $h4-font-size * $hero-scale-lg !default;
-$hero-h5-font-size-lg:            $h5-font-size * $hero-scale-lg !default;
-$hero-h6-font-size-lg:            $h6-font-size * $hero-scale-lg !default;
+$hero-h1-font-size-lg: $h1-font-size * $hero-scale-lg !default;
+$hero-h2-font-size-lg: $h2-font-size * $hero-scale-lg !default;
+$hero-h3-font-size-lg: $h3-font-size * $hero-scale-lg !default;
+$hero-h4-font-size-lg: $h4-font-size * $hero-scale-lg !default;
+$hero-h5-font-size-lg: $h5-font-size * $hero-scale-lg !default;
+$hero-h6-font-size-lg: $h6-font-size * $hero-scale-lg !default;
 
 // Hero button
-$hero-btn-font-size:              $hero-font-size !default;
-$hero-btn-padding-x:              $btn-padding-x !default;
-$hero-btn-padding-y:              $btn-padding-y !default;
-$hero-btn-border-radius:          $btn-border-radius !default;
+$hero-btn-font-size: $hero-font-size !default;
+$hero-btn-padding-x: $btn-padding-x !default;
+$hero-btn-padding-y: $btn-padding-y !default;
+$hero-btn-border-radius: $btn-border-radius !default;
 
-$hero-btn-font-size-lg:           $hero-font-size-lg !default;
-$hero-btn-padding-x-lg:           $btn-padding-x-lg !default;
-$hero-btn-padding-y-lg:           $btn-padding-y-lg !default;
-$hero-btn-border-radius-lg:       $btn-border-radius-lg !default;
+$hero-btn-font-size-lg: $hero-font-size-lg !default;
+$hero-btn-padding-x-lg: $btn-padding-x-lg !default;
+$hero-btn-padding-y-lg: $btn-padding-y-lg !default;
+$hero-btn-border-radius-lg: $btn-border-radius-lg !default;
 
 // Banner
-$banner-bg:                 #E4E4E6;
-$banner-bg-lg:              hsla(0, 0%, 100%, 0.8);
-$banner-icon-fill:          #002664;
-$banner-dark-bg:            #333333;
-$banner-dark-bg-lg:         rgba(0, 0, 0, 0.8);
-$banner-dark-icon-fill:     $white;
+$banner-bg: #E4E4E6;
+$banner-bg-lg: hsla(0, 0%, 100%, 0.8);
+$banner-icon-fill: #002664;
+$banner-dark-bg: #333333;
+$banner-dark-bg-lg: rgba(0, 0, 0, 0.8);
+$banner-dark-icon-fill: $white;
 
 // Navbar.
 $navbar-light-toggler-icon-open-bg: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 23L23 7L7 23ZM7 7L23 23L7 7Z' fill='white'/%3E%3Cpath d='M7 23L23 7M7 7L23 23' stroke='%23212529' stroke-opacity='0.75' stroke-width='2' stroke-miterlimit='10' stroke-linecap='round'/%3E%3C/svg%3E");
@@ -80,69 +82,68 @@ $youtube-svg: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" vi
 $youtube-svg--inverse: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z" fill="#{white}"/></svg> ');
 
 // Social services colors variable. Name is used for constructing the selector
-$social-services:
-  "facebook" #3b5998 $facebook-svg--inverse,
-  "linkedin" #007bb6 $linkedin-svg--inverse,
-  "twitter" #000000 $twitter-svg--inverse,
-  "email" #222222 $email-svg--inverse,
-  "youtube" #f50e02 $youtube-svg--inverse;
+$social-services: "facebook" #3b5998 $facebook-svg--inverse,
+"linkedin" #007bb6 $linkedin-svg--inverse,
+"twitter" #000000 $twitter-svg--inverse,
+"email" #222222 $email-svg--inverse,
+"youtube" #f50e02 $youtube-svg--inverse;
 
 $social-share-color: $white;
 $social-share-border-radius: 4px;
 $sizes: 2.5rem, 3.5rem, 1.5rem;
 
 // Search
-$size-searchform-height--top-reveal:            65px;
+$size-searchform-height--top-reveal: 65px;
 
 ///
 // Color system
 ///
 
 // Dark
-$dark-body-color:                               $white;
-$dark-link-color:                               rgba($white, .75);
-$dark-link-hover-color:                         $white;
-$dark-link-active-color:                        $white;
+$dark-body-color: $white;
+$dark-link-color: rgba($white, .75);
+$dark-link-hover-color: $white;
+$dark-link-active-color: $white;
 
 ///
 // Utility
 ///
 
 // Outline
-$outline-width:         2px;
-$outline-style:         solid;
-$outline-offset:        2px;
+$outline-width: 2px;
+$outline-style: solid;
+$outline-offset: 2px;
 
 // Anchor
-$link-outline-width:    $outline-width;
-$link-outline-style:    $outline-style;
-$link-outline-offset:   $outline-offset;
+$link-outline-width: $outline-width;
+$link-outline-style: $outline-style;
+$link-outline-offset: $outline-offset;
 
 // Button
-$btn-outline-width:     $outline-width;
-$btn-outline-style:     $outline-style;
-$btn-outline-offset:    $outline-offset;
+$btn-outline-width: $outline-width;
+$btn-outline-style: $outline-style;
+$btn-outline-offset: $outline-offset;
 
 // Color
-$lighten-05:                                    rgba(255, 255, 255, 0.05);
-$lighten-10:                                    rgba(255, 255, 255, 0.10);
-$lighten-20:                                    rgba(255, 255, 255, 0.20);
-$lighten-25:                                    rgba(255, 255, 255, 0.25);
-$lighten-50:                                    rgba(255, 255, 255, 0.50);
-$lighten-75:                                    rgba(255, 255, 255, 0.75);
-$lighten-80:                                    rgba(255, 255, 255, 0.80);
-$lighten-90:                                    rgba(255, 255, 255, 0.90);
-$lighten-95:                                    rgba(255, 255, 255, 0.95);
+$lighten-05: rgba(255, 255, 255, 0.05);
+$lighten-10: rgba(255, 255, 255, 0.10);
+$lighten-20: rgba(255, 255, 255, 0.20);
+$lighten-25: rgba(255, 255, 255, 0.25);
+$lighten-50: rgba(255, 255, 255, 0.50);
+$lighten-75: rgba(255, 255, 255, 0.75);
+$lighten-80: rgba(255, 255, 255, 0.80);
+$lighten-90: rgba(255, 255, 255, 0.90);
+$lighten-95: rgba(255, 255, 255, 0.95);
 
-$darken-05:                                     rgba(0, 0, 0, 0.05);
-$darken-10:                                     rgba(0, 0, 0, 0.10);
-$darken-20:                                     rgba(0, 0, 0, 0.20);
-$darken-25:                                     rgba(0, 0, 0, 0.25);
-$darken-50:                                     rgba(0, 0, 0, 0.50);
-$darken-75:                                     rgba(0, 0, 0, 0.75);
-$darken-80:                                     rgba(0, 0, 0, 0.80);
-$darken-90:                                     rgba(0, 0, 0, 0.90);
-$darken-95:                                     rgba(0, 0, 0, 0.95);
+$darken-05: rgba(0, 0, 0, 0.05);
+$darken-10: rgba(0, 0, 0, 0.10);
+$darken-20: rgba(0, 0, 0, 0.20);
+$darken-25: rgba(0, 0, 0, 0.25);
+$darken-50: rgba(0, 0, 0, 0.50);
+$darken-75: rgba(0, 0, 0, 0.75);
+$darken-80: rgba(0, 0, 0, 0.80);
+$darken-90: rgba(0, 0, 0, 0.90);
+$darken-95: rgba(0, 0, 0, 0.95);
 
 // Slider
 $slider-previous-icon-white: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#{$white}" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/></svg>');
@@ -159,56 +160,71 @@ $slide-button-border-radius: $border-radius;
 // View modes utilities
 ///
 
-$view-modes-transform-scale:                    1.15;
-$view-modes-transition-time:                    .3s;
+$view-modes-transform-scale: 1.15;
+$view-modes-transition-time: .3s;
 
 ///
 // View modes colors
 ///
 
-$shadow-color:                                  transparentize($black, .85);
+$shadow-color: transparentize($black, .85);
 
 // Calendar item colors.
-$govcms8-calendar-item-foreground:              #313131;
-$govcms8-calendar-item-background:              #ededed;
-$govcms8-calendar-item-background-current:      #f2fbfd;
-$govcms8-calendar-item-background-past:         #fafafa;
-$govcms8-calendar-item-foreground-past:         #737373;
+$govcms8-calendar-item-foreground: #313131;
+$govcms8-calendar-item-background: #ededed;
+$govcms8-calendar-item-background-current: #f2fbfd;
+$govcms8-calendar-item-background-past: #fafafa;
+$govcms8-calendar-item-foreground-past: #737373;
 
 // Icon
-$icon-color:                                    $body-color;
-$icon-link-color:                               $body-color;
-$icon-link-hover-color:                         $body-color;
-$icon-dark-color:                               $dark-body-color;
-$icon-dark-link-color:                          $dark-body-color;
-$icon-dark-link-hover-color:                    $dark-body-color;
+$icon-color: $body-color;
+$icon-link-color: $body-color;
+$icon-link-hover-color: $body-color;
+$icon-dark-color: $dark-body-color;
+$icon-dark-link-color: $dark-body-color;
+$icon-dark-link-hover-color: $dark-body-color;
 
 // Search
-$search-link-color:                             $link-color;
-$search-link-hover-color:                       $link-hover-color;
+$search-link-color: $link-color;
+$search-link-hover-color: $link-hover-color;
 
 // Stack
-$stack-bg:                                      $white;
-$stack-body-color:                              var(--standard-foreground);
-$stack-link-color:                              var(--standard-link);
-$stack-link-hover-color:                        var(--standard-link-hover);
-$stack-link-active-color:                       var(--standard-link-active);
+$stack-bg: var(--background);
+$stack-body-color: var(--foreground);
+$stack-link-color: var(--link);
+$stack-link-hover-color: var(--link-hover);
+$stack-link-active-color: var(--link-active);
 
 // Teaser
-$enable-teaser-image-rounded:                   $enable-rounded;
-$teaser-image-border-radius:                    $card-border-radius;
+$enable-teaser-image-rounded: $enable-rounded;
+$teaser-image-border-radius: $card-border-radius;
 
 // Tile
-$tile-body-color:                               $white;
-$tile-link-color:                               $white;
-$tile-link-hover-color:                         $white;
-$tile-overlay:                                  $black;
+$tile-body-color: $white;
+$tile-link-color: $white;
+$tile-link-hover-color: $white;
+$tile-overlay: $black;
 
 // Title
-$title-background:                              $light;
-$title-body-color:                              $body-color;
-$title-link-hover-color:                        $body-color;
-$title-dark-background:                         $dark;
-$title-dark-body-color:                         $dark-body-color;
-$title-dark-link-color:                         $dark-body-color;
-$title-dark-link-hover-color:                   $dark-body-color;
+$title-background: $light;
+$title-body-color: $body-color;
+$title-link-hover-color: $body-color;
+$title-dark-background: $dark;
+$title-dark-body-color: $dark-body-color;
+$title-dark-link-color: $dark-body-color;
+$title-dark-link-hover-color: $dark-body-color;
+
+///
+// Spacing
+///
+
+// Section
+$section-spacing: 1.5rem;
+$section-spacing-md: 3rem;
+
+// Hero
+$hero-spacing: 6rem;
+
+// Block and paragraph
+$component-spacing: 1.5rem;
+$component-spacing-md: 2rem;

@@ -6,7 +6,7 @@ dependencies:
     - field.field.paragraph.lightbox.field_body
     - field.field.paragraph.lightbox.field_heading
     - field.field.paragraph.lightbox.field_hide_heading
-    - field.field.paragraph.lightbox.field_lightbox_colour_classes
+    - field.field.paragraph.lightbox.field_color_palette
     - field.field.paragraph.lightbox.field_lightbox_media
     - field.field.paragraph.lightbox.field_lightbox_thumbnail
     - field.field.paragraph.lightbox.field_modifiers
@@ -35,9 +35,9 @@ content:
     region: content
 hidden:
   field_body: true
+  field_color_palette: true
   field_heading: true
   field_hide_heading: true
-  field_lightbox_colour_classes: true
   field_lightbox_media: true
   field_lightbox_thumbnail: true
   field_modifiers: true

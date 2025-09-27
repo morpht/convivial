@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_position
+    - paragraphs.paragraphs_type.decision_flow
+  module:
+    - options
+id: paragraph.decision_flow.field_position
+field_name: field_position
+entity_type: paragraph
+bundle: decision_flow
+label: Position
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

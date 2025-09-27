@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.animation.field_animation_colour_classes
+    - field.field.paragraph.animation.field_color_palette
     - field.field.paragraph.animation.field_animation_delay
     - field.field.paragraph.animation.field_animation_images
     - field.field.paragraph.animation.field_animation_repeat
@@ -23,17 +23,6 @@ targetEntityType: paragraph
 bundle: animation
 mode: default
 content:
-  field_animation_colour_classes:
-    type: entity_class_formatter
-    label: hidden
-    settings:
-      prefix: ''
-      suffix: ''
-      attr: ''
-      field: ''
-    third_party_settings: {  }
-    weight: 3
-    region: content
   field_animation_images:
     type: entity_reference_entity_view
     label: hidden
@@ -60,6 +49,17 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_color_palette:
+    type: entity_class_formatter
+    label: hidden
+    settings:
+      prefix: ''
+      suffix: ''
+      attr: ''
+      field: ''
+    third_party_settings: {  }
+    weight: 3
     region: content
   field_heading:
     type: string

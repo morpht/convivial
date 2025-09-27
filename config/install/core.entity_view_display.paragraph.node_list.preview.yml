@@ -7,7 +7,7 @@ dependencies:
     - field.field.paragraph.node_list.field_heading
     - field.field.paragraph.node_list.field_hide_heading
     - field.field.paragraph.node_list.field_modifiers
-    - field.field.paragraph.node_list.field_nl_colour_classes
+    - field.field.paragraph.node_list.field_color_palette
     - field.field.paragraph.node_list.field_nl_layout_classes
     - field.field.paragraph.node_list.field_nl_nodes
     - field.field.paragraph.node_list.field_nl_style_classes
@@ -30,9 +30,9 @@ content:
     region: content
 hidden:
   field_body: true
+  field_color_palette: true
   field_hide_heading: true
   field_modifiers: true
-  field_nl_colour_classes: true
   field_nl_layout_classes: true
   field_nl_nodes: true
   field_nl_style_classes: true

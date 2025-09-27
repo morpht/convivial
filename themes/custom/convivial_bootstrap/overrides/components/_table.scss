@@ -1,0 +1,7 @@
+.table {
+  --#{$prefix}table-color: var(--foreground);
+  --#{$prefix}table-bg: transparent;
+  --#{$prefix}table-striped-color: var(--foreground);
+  --#{$prefix}table-striped-bg: var(--background-weak);
+  --#{$prefix}table-border-color: var(--background-weaker);
+}

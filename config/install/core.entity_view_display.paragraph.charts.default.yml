@@ -4,7 +4,7 @@ dependencies:
   config:
     - field.field.paragraph.charts.field_body
     - field.field.paragraph.charts.field_chrt_colors
-    - field.field.paragraph.charts.field_chrt_colour_classes
+    - field.field.paragraph.charts.field_color_palette
     - field.field.paragraph.charts.field_chrt_csv
     - field.field.paragraph.charts.field_chrt_csv_url
     - field.field.paragraph.charts.field_chrt_date_time_format
@@ -38,7 +38,7 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_chrt_colour_classes:
+  field_color_palette:
     type: entity_class_formatter
     label: hidden
     settings:

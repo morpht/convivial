@@ -47,32 +47,13 @@ function convivial_bootstrap_form_system_theme_settings_alter(&$form, FormStateI
 function convivial_bootstrap_preprocess_html(&$variables) {
   $theme_settings_mappings = [
     'search_form_display' => [
-      'theme__search-form--inline' => 'search-form--inline',
-      'theme__search-form--inline-reveal' => 'search-form--inline-reveal',
-      'theme__search-form--top-reveal' => 'search-form--top-reveal',
-      'theme__search-form--bottom-reveal' => 'search-form--bottom-reveal',
+      'search-form--inline' => 'search-form--inline',
+      'search-form--inline-reveal' => 'search-form--inline-reveal',
+      'search-form--top-reveal' => 'search-form--top-reveal',
+      'search-form--bottom-reveal' => 'search-form--bottom-reveal',
     ],
   ];
   _convivial_bootstrap_theme_settings_mappings($variables, $theme_settings_mappings);
-
-  $route_match = \Drupal::routeMatch();
-  $parameters = $route_match->getParameters();
-
-  /** @var \Drupal\node\Entity\Node $node */
-  $node = $parameters->get('node');
-  // Only on node entity.
-  if (is_object($node)) {
-
-    // Only if the field_hero_darkness exists.
-    if ($node->hasField('field_hero_darkness')) {
-      if (!$node->get('field_hero_darkness')->isEmpty()) {
-        // Provide a class for body.
-        $variables['attributes']['class'][] = 'page__header--transparent';
-        $class = $node->get('field_hero_darkness')->value;
-        $variables['attributes']['class'][] = $class;
-      }
-    }
-  }
 
   // Attach Look and Feel feature if enabled.
   if (theme_get_setting('laf_enable')) {
@@ -100,58 +81,68 @@ function convivial_bootstrap_preprocess_html(&$variables) {
 function convivial_bootstrap_preprocess_page(&$variables) {
   $theme_settings_mappings = [
     'header_layout' => [
-      'theme__inline_menu' => 'bs-header--inline-menu',
-      'theme__menu_bar' => 'bs-header--menu-bar',
-      'theme__no_header' => 'bs-header--no-header',
-    ],
-    'top_bar_style' => [
-      'theme__top_bar--light' => 'bg-light',
-      'theme__top_bar--dark' => 'bg-dark',
-      'theme__top_bar--primary' => 'bg-primary',
-      'theme__top_bar--primary-dark' => 'bg-primary-dark',
+      'header_layout--inline-menu' => 'page__header--inline-menu',
+      'header_layout--menu-bar' => 'page__header--menu-bar',
+      'header_layout--no-header' => 'page__header--no-header',
     ],
     'header_style' => [
-      'theme__header--light' => 'bg-light',
-      'theme__header--dark' => 'bg-dark',
-      'theme__header--primary' => 'bg-primary',
-      'theme__header--primary-dark' => 'bg-primary-dark',
+      'theme--standard' => 'cp--standard',
+      'theme--alternate' => 'cp--alternate',
+      'theme--primary' => 'cp--primary',
+      'theme--secondary' => 'cp--secondary',
+      'theme--tertiary' => 'cp--tertiary',
+      'theme--light' => 'cp--light',
+      'theme--dark' => 'cp--dark',
     ],
     'header_stickiness' => [
-      'theme__header--non-sticky' => 'bs-header--non-sticky',
-      'theme__header--sticky' => 'bs-header--sticky',
+      'header_stickiness--non-sticky' => '',
+      'header_stickiness--sticky' => 'page__header--sticky',
     ],
-    'header_width' => [
-      'theme__header--fluid' => 'bs-header--fluid',
-      'theme__header--contained' => 'bs-header--contained',
+    'header_container' => [
+      'header_container--fluid' => 'page__header--fluid',
+      'header_container--contained' => 'page__header--contained',
+    ],
+    'top_bar_style' => [
+      'theme--standard' => 'cp--standard',
+      'theme--alternate' => 'cp--alternate',
+      'theme--primary' => 'cp--primary',
+      'theme--secondary' => 'cp--secondary',
+      'theme--tertiary' => 'cp--tertiary',
+      'theme--light' => 'cp--light',
+      'theme--dark' => 'cp--dark',
     ],
     'postscript_style' => [
-      'theme__postscript--light' => 'bg-light',
-      'theme__postscript--dark' => 'bg-dark',
-      'theme__postscript--primary' => 'bg-primary',
-      'theme__postscript--primary-dark' => 'bg-primary-dark',
+      'theme--standard' => 'cp--standard',
+      'theme--alternate' => 'cp--alternate',
+      'theme--primary' => 'cp--primary',
+      'theme--secondary' => 'cp--secondary',
+      'theme--tertiary' => 'cp--tertiary',
+      'theme--light' => 'cp--light',
+      'theme--dark' => 'cp--dark',
     ],
     'footer_style' => [
-      'theme__footer--light' => 'bg-light',
-      'theme__footer--dark' => 'bg-dark',
-      'theme__footer--primary' => 'bg-primary',
-      'theme__footer--primary-dark' => 'bg-primary-dark',
+      'theme--standard' => 'cp--standard',
+      'theme--alternate' => 'cp--alternate',
+      'theme--primary' => 'cp--primary',
+      'theme--secondary' => 'cp--secondary',
+      'theme--tertiary' => 'cp--tertiary',
+      'theme--light' => 'cp--light',
+      'theme--dark' => 'cp--dark',
     ],
-    'footer_information_style' => [
-      'theme__footer_information--light' => 'bg-light',
-      'theme__footer_information--dark' => 'bg-dark',
-      'theme__footer_information--primary' => 'bg-primary',
-      'theme__footer_information--primary-dark' => 'bg-primary-dark',
+    'footer_info_style' => [
+      'theme--standard' => 'cp--standard',
+      'theme--alternate' => 'cp--alternate',
+      'theme--primary' => 'cp--primary',
+      'theme--secondary' => 'cp--secondary',
+      'theme--tertiary' => 'cp--tertiary',
+      'theme--light' => 'cp--light',
+      'theme--dark' => 'cp--dark',
     ],
-    'theme__highlighted_layouts' => [
+    'highlighted_layouts' => [
       1 => 'highlighted-layouts',
     ],
   ];
   _convivial_bootstrap_theme_settings_mappings($variables, $theme_settings_mappings);
-
-  // Set header_transparency variable renderable in page template.
-  if (theme_get_setting('appearance') === 'theme__header--transparent') {
-    $variables['header_transparency'] = TRUE;
-  }
 
   $route_match = \Drupal::routeMatch();
   $parameters = $route_match->getParameters();
@@ -180,14 +171,6 @@ function convivial_bootstrap_preprocess_page(&$variables) {
   $node = $parameters->get('node');
   // Only on node entity.
   if (is_object($node)) {
-
-    // Only on node entity and if the field exists.
-    if ($node->hasField('field_hero_darkness')) {
-      // Attach all field values as classes.
-      $class = $node->get('field_hero_darkness')->value;
-      $variables['hero_darkness'] = $class;
-    }
-
     // Only if the field_hide exists.
     if ($node->hasField('field_hide')) {
       // Attach all field values as classes.
@@ -230,17 +213,28 @@ function convivial_bootstrap_preprocess_layout(&$variables) {
   // @see convivial_layouts_entity_view_alter()
   $entity = $variables['content']['#entity'] ?? NULL;
 
-  if (empty($variables['header_colour_classes'])) {
-    $theme_settings_mappings = [
-      'header_section_style' => [
-        'theme__node_header_section--standard' => 'cp cp--standard',
-        'theme__node_header_section--light' => 'cp cp--light',
-        'theme__node_header_section--dark' => 'cp cp--dark',
-        'theme__node_header_section--primary' => 'cp cp--primary',
-        'theme__node_header_section--primary-dark' => 'cp cp--primary-dark',
-      ],
-    ];
-    _convivial_bootstrap_theme_settings_mappings($variables, $theme_settings_mappings);
+  if ($layout_id === 'convivial_header') {
+    if (!empty($entity) && $entity->getEntityTypeId() === 'node') {
+      if ($entity->hasField('field_header_color_palette')) {
+        $variables['header_color_palette'] = $entity->get('field_header_color_palette')->value;
+      }
+    }
+
+    if (empty($variables['header_color_palette'])) {
+      $theme_settings_mappings = [
+        'header_style' => [
+          '' => 'cp--alternate', // Set default header colour as alternate
+          'theme--standard' => 'cp--standard',
+          'theme--alternate' => 'cp--alternate',
+          'theme--primary' => 'cp--primary',
+          'theme--secondary' => 'cp--secondary',
+          'theme--tertiary' => 'cp--tertiary',
+          'theme--light' => 'cp--light',
+          'theme--dark' => 'cp--dark',
+        ],
+      ];
+      _convivial_bootstrap_theme_settings_mappings($variables, $theme_settings_mappings);
+    }
   }
 
   // Replace calendar item date field content by custom template.
@@ -414,11 +408,11 @@ function convivial_bootstrap_plugin_filter_layout__layout_builder_alter(array &$
 function convivial_bootstrap_preprocess_block(&$variables) {
   $theme_settings_mappings = [
     'megamenu_columns' => [
-      'theme__megamenu-columns--2' => 'megamenu--columns-2',
-      'theme__megamenu-columns--3' => 'megamenu--columns-3',
-      'theme__megamenu-columns--4' => 'megamenu--columns-4',
-      'theme__megamenu-columns--5' => 'megamenu--columns-5',
-      'theme__megamenu-columns--6' => 'megamenu--columns-6',
+      'megamenu-columns--2' => 'megamenu--columns-2',
+      'megamenu-columns--3' => 'megamenu--columns-3',
+      'megamenu-columns--4' => 'megamenu--columns-4',
+      'megamenu-columns--5' => 'megamenu--columns-5',
+      'megamenu-columns--6' => 'megamenu--columns-6',
     ],
   ];
   _convivial_bootstrap_theme_settings_mappings($variables, $theme_settings_mappings);
@@ -443,6 +437,10 @@ function convivial_bootstrap_preprocess_block(&$variables) {
       case 'logo':
         require_once __DIR__ . '/includes/logo.inc';
         _convivial_bootstrap_logo($variables, $entity);
+        break;
+
+      case 'feedback':
+        $variables['#attached']['library'][] = 'convivial_bootstrap/feedback';
         break;
 
       case 'personified_data':
@@ -502,9 +500,9 @@ function convivial_bootstrap_theme_suggestions_block_alter(array &$suggestions, 
     // If no menu style is selected or header_layout is set to inline menu
     // in theme settings we provide the default.
     if (empty($menu_style) || (theme_get_setting('header_layout') === 'theme__inline_menu')) {
-      $menu_style = 'theme__menu-style--default';
+      $menu_style = 'menu-style--default';
     }
-    $menu_style_name = str_replace('theme__menu-style--', '', $menu_style);
+    $menu_style_name = str_replace('menu-style--', '', $menu_style);
     $suggestions[] = $variables['theme_hook_original']
       . '__system_menu_block__' . $menu_style_name;
     $suggestions[] = $variables['theme_hook_original']
@@ -590,10 +588,10 @@ function convivial_bootstrap_theme_suggestions_menu_alter(array &$suggestions, a
   // If no menu style is selected or header_layout is set to inline menu
   // in theme settings we provide the default.
   if (empty($menu_style) || (theme_get_setting('header_layout') === 'theme__inline_menu')) {
-    $menu_style = 'theme__menu-style--default';
+    $menu_style = 'menu-style--default';
   }
   if ($menu_style && (isset($variables['attributes']['region']))) {
-    $menu_style_name = str_replace('theme__menu-style--', '', $menu_style);
+    $menu_style_name = str_replace('menu-style--', '', $menu_style);
     $suggestions[] = $variables['theme_hook_original'] . '__' . $menu_style_name;
     $suggestions[] = $variables['theme_hook_original'] . '__' . $menu_style_name . '__' . $variables['attributes']['region'];
   }
@@ -644,13 +642,16 @@ function convivial_bootstrap_preprocess_paragraph(&$variables) {
         $variables['#attached']['drupalSettings']['animation'][$paragraphId]['imagePaths'] = $imagePaths;
       }
       break;
+
+
   }
+
 }
 
 /**
  * Implements template_preprocess_paragraph__decision_tree().
  */
-function convivial_bootstrap_preprocess_paragraph__decision_tree(&$variables) {
+function convivial_bootstrap_preprocess_paragraph__decision_flow(&$variables) {
   $variables['#attached']['library'][] = 'convivial_bootstrap/decision_flow';
 }
 
@@ -960,11 +961,6 @@ function _convivial_bootstrap_theme_settings_mappings(array &$variables, array $
  */
 function _convivial_bootstrap_attach_paragraph_features(FieldableEntityInterface $entity, array &$build, $attributes_key) {
   switch ($entity->bundle()) {
-    case 'app':
-      require_once __DIR__ . '/includes/app.inc';
-      _convivial_bootstrap_app($entity, $build, $attributes_key);
-      break;
-
     case 'charts':
       require_once __DIR__ . '/includes/charts.inc';
       _convivial_bootstrap_charts($entity, $build, $attributes_key);
@@ -973,11 +969,6 @@ function _convivial_bootstrap_attach_paragraph_features(FieldableEntityInterface
     case 'map':
       require_once __DIR__ . '/includes/map.inc';
       _convivial_bootstrap_map($entity, $build, $attributes_key);
-      break;
-
-    case 'national_map':
-      require_once __DIR__ . '/includes/national_map.inc';
-      _convivial_bootstrap_national_map($entity, $build, $attributes_key);
       break;
   }
 }

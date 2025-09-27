@@ -7,7 +7,7 @@ dependencies:
     - field.field.paragraph.section.field_hide_heading
     - field.field.paragraph.section.field_modifiers
     - field.field.paragraph.section.field_position
-    - field.field.paragraph.section.field_s_colour_classes
+    - field.field.paragraph.section.field_color_palette
     - field.field.paragraph.section.field_s_components
     - field.field.paragraph.section.field_s_layout_classes
     - field.field.paragraph.section.field_s_styles
@@ -28,6 +28,17 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
+  field_color_palette:
+    type: entity_class_formatter
+    label: hidden
+    settings:
+      prefix: ''
+      suffix: ''
+      attr: ''
+      field: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
   field_heading:
     type: string
     label: hidden
@@ -46,17 +57,6 @@ content:
       field: ''
     third_party_settings: {  }
     weight: 6
-    region: content
-  field_s_colour_classes:
-    type: entity_class_formatter
-    label: hidden
-    settings:
-      prefix: ''
-      suffix: ''
-      attr: ''
-      field: ''
-    third_party_settings: {  }
-    weight: 5
     region: content
   field_s_components:
     type: entity_reference_revisions_entity_view

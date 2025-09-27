@@ -114,9 +114,6 @@ settings:
       plugin_block:
         weight: 70
         enabled: false
-      readspeaker:
-        weight: 71
-        enabled: false
       relative_height_modifier:
         weight: 72
         enabled: false

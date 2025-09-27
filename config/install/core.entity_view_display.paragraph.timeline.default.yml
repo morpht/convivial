@@ -7,7 +7,7 @@ dependencies:
     - field.field.paragraph.timeline.field_hide_heading
     - field.field.paragraph.timeline.field_modifiers
     - field.field.paragraph.timeline.field_position
-    - field.field.paragraph.timeline.field_timeline_colour_classes
+    - field.field.paragraph.timeline.field_color_palette
     - field.field.paragraph.timeline.field_timeline_items
     - field.field.paragraph.timeline.field_timeline_style_classes
     - paragraphs.paragraphs_type.timeline
@@ -27,6 +27,17 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
+  field_color_palette:
+    type: entity_class_formatter
+    label: hidden
+    settings:
+      prefix: ''
+      suffix: ''
+      attr: ''
+      field: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
   field_heading:
     type: string
     label: hidden
@@ -45,17 +56,6 @@ content:
       field: ''
     third_party_settings: {  }
     weight: 4
-    region: content
-  field_timeline_colour_classes:
-    type: entity_class_formatter
-    label: hidden
-    settings:
-      prefix: ''
-      suffix: ''
-      attr: ''
-      field: ''
-    third_party_settings: {  }
-    weight: 3
     region: content
   field_timeline_items:
     type: entity_reference_revisions_entity_view

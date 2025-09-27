@@ -1,0 +1,108 @@
+{#
+/**
+ * @file
+ * Theme override to display a block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ */
+#}
+{% set classes = [
+  'logo',
+  block_class ? block_class,
+] %}
+
+{# If logo URL title store its value in link_title variable. #}
+{% if content.field_logo_url[0]['#title'] != '/' %}
+  {% set logo_title = content.field_logo_url[0]['#title'] %}
+{% endif %}
+
+{% set logo_url = content.field_logo_url[0]['#url'] %}
+
+{# Default logo #}
+{% if content.field_logo_default['#items'] %}
+  {% set logo_default_path = file_url(content.field_logo_default['#items'].entity.field_media_image.entity.uri.value) %}
+  {% set logo_default_alt = content.field_logo_default['#items'].entity.field_media_image.alt %}
+{% endif %}
+
+{% if content.field_logo_default_small['#items'] %}
+  {% set logo_default_small_path = file_url(content.field_logo_default_small['#items'].entity.field_media_image.entity.uri.value) %}
+  {% set logo_default_small_alt = content.field_logo_default_small['#items'].entity.field_media_image.alt %}
+{% endif %}
+
+{# Dark logo #}
+{% if content.field_logo_dark['#items'] %}
+  {% set logo_dark_path = file_url(content.field_logo_dark['#items'].entity.field_media_image.entity.uri.value) %}
+  {% set logo_dark_alt = content.field_logo_dark['#items'].entity.field_media_image.alt %}
+  {% set classes = classes|merge(['has-dark']) %}
+{% endif %}
+
+{% if content.field_logo_dark_small['#items'] %}
+  {% set logo_dark_small_path = file_url(content.field_logo_dark_small['#items'].entity.field_media_image.entity.uri.value) %}
+  {% set logo_dark_small_alt = content.field_logo_dark_small['#items'].entity.field_media_image.alt %}
+  {% set classes = classes|merge(['has-dark']) %}
+{% endif %}
+
+<div{{ attributes|without('region').addClass(classes) }}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+
+  <a
+    class="logo__url navbar-brand"
+    href="{{ logo_url ? logo_url : '/' }}"
+    title="{{ link_title ? link_title : 'Home' }}"
+  >
+    <div class="logo__large">
+      <img
+        class="logo__image logo__image--default"
+        src="{{ logo_default_path }}"
+        alt="{{ logo_default_alt ? logo_default_alt : site_name~' logo' }}"
+        loading="eager"
+      >
+      {% if logo_dark_path %}
+        <img
+          class="logo__image logo__image--dark"
+          src="{{ logo_dark_path }}"
+          alt="{{ logo_dark_alt ? logo_dark_alt : site_name~' logo' }}"
+          loading="eager"
+        >
+      {% endif %}
+    </div>
+    <div class="logo__small">
+      {% if logo_default_small_path %}
+        <img
+          class="logo__image logo__image--default"
+          src="{{ logo_default_small_path }}"
+          alt="{{ logo_default_small_alt ? logo_default_small_alt : site_name~' logo' }}"
+          loading="eager"
+        >
+      {% endif %}
+      {% if logo_dark_small_path %}
+        <img
+          class="logo__image logo__image--dark"
+          src="{{ logo_dark_small_path }}"
+          alt="{{ logo_dark_small_alt ? logo_dark_small_alt : site_name~' logo' }}"
+          loading="eager"
+        >
+      {% endif %}
+    </div>
+  </a>
+</div>

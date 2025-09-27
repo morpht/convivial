@@ -1,0 +1,32 @@
+# Everything in this file is optional. Still, the file needs to exist. Adding
+# metadata here will improve the DX when using components.
+
+# This is so your IDE knows about the syntax for fixes and autocomplete.
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+
+# The human readable name.
+name: IFrame
+
+# Schema for the props. We support www.json-schema.org. Learn more about the
+# syntax there.
+props:
+  # Props are always an object with keys. Each key is a variable in your
+  # component template.
+  type: object
+
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+    classes:
+      type: array
+
+slots:
+  url:
+    title: URL
+    description: The source URL for the content.
+  height:
+    title: Height
+    description: The height in pixels of the iFrame.
+  fullscreen:
+    title: Allow full screen
+    description: Show a bottom to open the content full screen.

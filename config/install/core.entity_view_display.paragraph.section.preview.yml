@@ -8,7 +8,7 @@ dependencies:
     - field.field.paragraph.section.field_hide_heading
     - field.field.paragraph.section.field_modifiers
     - field.field.paragraph.section.field_position
-    - field.field.paragraph.section.field_s_colour_classes
+    - field.field.paragraph.section.field_color_palette
     - field.field.paragraph.section.field_s_components
     - field.field.paragraph.section.field_s_layout_classes
     - field.field.paragraph.section.field_s_styles
@@ -28,10 +28,10 @@ content:
     region: content
 hidden:
   field_body: true
+  field_color_palette: true
   field_hide_heading: true
   field_modifiers: true
   field_position: true
-  field_s_colour_classes: true
   field_s_components: true
   field_s_layout_classes: true
   field_s_styles: true

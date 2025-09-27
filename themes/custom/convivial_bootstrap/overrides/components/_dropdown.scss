@@ -1,0 +1,11 @@
+.dropdown-menu {
+  --#{$prefix}dropdown-color: var(--foreground);
+  --#{$prefix}dropdown-bg: var(--background);
+  --#{$prefix}dropdown-border-color: var(--foreground);
+  --#{$prefix}dropdown-link-color: var(--link);
+  --#{$prefix}dropdown-link-hover-color: var(--link-hover);
+  --#{$prefix}dropdown-link-hover-bg: var(--background-weak);
+  --#{$prefix}dropdown-link-active-color: var(--link-hover);
+  --#{$prefix}dropdown-link-active-bg: var(--background-weak);
+  --#{$prefix}dropdown-header-color: var(--foreground);
+}

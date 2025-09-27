@@ -1,0 +1,24 @@
+/*! @convivial_bootstrap/ckeditor */
+
+// Special CKEditor classes.
+.introduction {
+  font-size: $introduction-font-size;
+  font-weight: $introduction-font-weight;
+}
+
+// Lists.
+.list--bulletless {
+  @extend .list-unstyled;
+}
+
+.list--inline {
+  @extend .list-inline;
+
+  &:only-child {
+    margin: 0;
+  }
+}
+
+.list--inline li {
+  @extend .list-inline-item;
+}

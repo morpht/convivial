@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.feedback
+id: block_content.feedback.default
+targetEntityType: block_content
+bundle: feedback
+mode: default
+content: {  }
+hidden:
+  search_api_excerpt: true

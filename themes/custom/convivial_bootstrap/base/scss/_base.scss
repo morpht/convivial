@@ -7,13 +7,13 @@ svg {
 }
 
 *:focus {
-  outline: $outline-width $outline-style var(--standard-link-active);
+  outline: $outline-width $outline-style var(--link-active);
   outline-offset: $outline-offset;
 }
 
 a {
   &:focus {
-    outline: $link-outline-width $link-outline-style var(--standard-link-active);
+    outline: $link-outline-width $link-outline-style var(--link-active);
     outline-offset: $link-outline-offset;
   }
 }

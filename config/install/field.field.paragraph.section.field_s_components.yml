@@ -92,9 +92,6 @@ settings:
       geochart:
         weight: -48
         enabled: false
-      hero_banner:
-        weight: -47
-        enabled: false
       hide_modifier:
         weight: -60
         enabled: false
@@ -139,9 +136,6 @@ settings:
         enabled: false
       snippet:
         weight: -41
-        enabled: false
-      tiles:
-        weight: -40
         enabled: false
       timeline:
         weight: -39

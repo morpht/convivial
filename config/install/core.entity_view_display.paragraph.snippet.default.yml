@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.snippet.field_colour_classes
+    - field.field.paragraph.snippet.field_color_palette
     - field.field.paragraph.snippet.field_heading
     - field.field.paragraph.snippet.field_modifiers
     - field.field.paragraph.snippet.field_position
@@ -16,7 +16,7 @@ targetEntityType: paragraph
 bundle: snippet
 mode: default
 content:
-  field_colour_classes:
+  field_color_palette:
     type: entity_class_formatter
     label: hidden
     settings:

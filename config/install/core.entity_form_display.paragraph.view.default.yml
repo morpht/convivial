@@ -7,7 +7,7 @@ dependencies:
     - field.field.paragraph.view.field_hide_heading
     - field.field.paragraph.view.field_modifiers
     - field.field.paragraph.view.field_position
-    - field.field.paragraph.view.field_view_colour_classes
+    - field.field.paragraph.view.field_color_palette
     - field.field.paragraph.view.field_view_definition
     - field.field.paragraph.view.field_view_style_classes
     - paragraphs.paragraphs_type.view
@@ -26,6 +26,12 @@ content:
     settings:
       rows: 5
       placeholder: ''
+    third_party_settings: {  }
+  field_color_palette:
+    type: options_select
+    weight: 5
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_heading:
     type: string_textfield
@@ -65,12 +71,6 @@ content:
   field_position:
     type: options_select
     weight: 7
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_view_colour_classes:
-    type: options_select
-    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }

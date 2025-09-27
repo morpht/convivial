@@ -1,0 +1,42 @@
+/*! @convivial_bootstrap/anchor */
+
+.anchor {
+  font-size: 0;
+  margin-left: 0.5rem;
+  text-decoration: none;
+
+  // Icons.
+  &:after {
+    content: '\F470';
+    font-family: 'bootstrap-icons';
+    display: block;
+    color: var(--link);
+    font-size: 2rem;
+  }
+
+  &:hover,
+  &:focus {
+    &:after {
+      color: var(--link-hover);
+    }
+  }
+
+  // Show anchor on heading hover.
+  h2 & {
+    display: none;
+  }
+
+  h2:hover & {
+    display: inline-block;
+  }
+}
+
+// Vertically align anchor in headings.
+.has-anchor {
+  display: flex;
+  align-items: center;
+
+  // Add offset top when set window.location.hash
+  padding-top: 1rem;
+  margin-top: -1rem;
+}

@@ -1,0 +1,11 @@
+{% set classes = [
+  'block',
+  'feedback',
+] %}
+
+<div{{ attributes|without('region').addClass(classes) }}>
+  <span class="feedback__label">{{ 'Did you achieve your goal?'|t }}</span>
+  <a href="/feedback" class="feedback__action btn btn-outline-primary">{{ 'Provide feedback'|t }}</a>
+
+  {{ title_suffix.contextual_links }}
+</div>

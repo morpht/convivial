@@ -1,0 +1,18 @@
+/*! @convivial_bootstrap/lightbox */
+
+h2 + .field--name-field-lightbox-thumbnail,
+.field--name-field-body + .field--name-field-lightbox-thumbnail {
+  margin-top: $grid-gutter-width;
+
+  img {
+    width: 100%;
+  }
+}
+
+.lightbox .field--name-field-lightbox-thumbnail a[rel~="external"]:after {
+  display: none;
+}
+
+.glightbox-container .glightbox-button-hidden {
+  display: none;
+}

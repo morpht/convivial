@@ -1,29 +1,8 @@
-%heading {
+/*! @convivial_bootstrap/typography */
+
+* + h1, * + h2, * + h3,
+* + h4, * + h5, * + h6 {
   margin-top: $headings-margin-top;
-}
-
-h1 {
-  @extend %heading;
-}
-
-h2 {
-  @extend %heading;
-}
-
-h3 {
-  @extend %heading;
-}
-
-h4 {
-  @extend %heading;
-}
-
-h5 {
-  @extend %heading;
-}
-
-h6 {
-  @extend %heading;
 }
 
 dd {

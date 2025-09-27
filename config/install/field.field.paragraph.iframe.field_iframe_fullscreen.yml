@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_iframe_fullscreen
+    - paragraphs.paragraphs_type.iframe
+id: paragraph.iframe.field_iframe_fullscreen
+field_name: field_iframe_fullscreen
+entity_type: paragraph
+bundle: iframe
+label: 'Allow full screen'
+description: 'Show a botton to open the content full screen.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

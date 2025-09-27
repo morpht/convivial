@@ -8,8 +8,8 @@ id: block_content.logo.field_logo_breakpoint
 field_name: field_logo_breakpoint
 entity_type: block_content
 bundle: logo
-label: Breakpoint
-description: 'The breakpoint (px) at which the logo will change from large to small.'
+label: 'Logo breakpoint'
+description: 'The breakpoint (px) at which the logo will change from the default logo to the small logo.'
 required: false
 translatable: false
 default_value: {  }

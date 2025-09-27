@@ -1,0 +1,14 @@
+.nav {
+  --#{$prefix}nav-link-color: var(--link);
+  --#{$prefix}nav-link-hover-color: var(--link-hover);
+}
+
+.nav-tabs {
+  --#{$prefix}nav-tabs-border-radius: var(--radius-field);
+}
+
+.nav-pills {
+  --#{$prefix}nav-pills-link-active-color: var(--link-contrast);
+  --#{$prefix}nav-pills-link-active-bg: var(--link);
+  --#{$prefix}nav-pills-border-radius: var(--radius-button);
+}

@@ -1,0 +1,145 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_modifiers
+    - paragraphs.paragraphs_type.adaptive_height_modifier
+    - paragraphs.paragraphs_type.hide_modifier
+    - paragraphs.paragraphs_type.iframe
+    - paragraphs.paragraphs_type.image_bg_modifier
+    - paragraphs.paragraphs_type.parallax_bg_modifier
+    - paragraphs.paragraphs_type.scroll_reveal_modifier
+    - paragraphs.paragraphs_type.video_bg_modifier
+  module:
+    - entity_reference_revisions
+id: paragraph.iframe.field_modifiers
+field_name: field_modifiers
+entity_type: paragraph
+bundle: iframe
+label: Modifiers
+description: 'Apply Modifiers to the component.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      adaptive_height_modifier: adaptive_height_modifier
+      hide_modifier: hide_modifier
+      image_bg_modifier: image_bg_modifier
+      parallax_bg_modifier: parallax_bg_modifier
+      scroll_reveal_modifier: scroll_reveal_modifier
+      video_bg_modifier: video_bg_modifier
+    negate: 0
+    target_bundles_drag_drop:
+      accordion:
+        weight: -72
+        enabled: false
+      accordion_group:
+        weight: -71
+        enabled: false
+      adaptive_height_modifier:
+        weight: -85
+        enabled: true
+      animation:
+        weight: -66
+        enabled: false
+      charts:
+        weight: -68
+        enabled: false
+      content:
+        weight: -75
+        enabled: false
+      content_block:
+        weight: -69
+        enabled: false
+      content_tab:
+        weight: -65
+        enabled: false
+      content_tabs:
+        weight: -64
+        enabled: false
+      decision_tree:
+        weight: 46
+        enabled: false
+      fastfact:
+        weight: -62
+        enabled: false
+      fastfacts:
+        weight: -61
+        enabled: false
+      gallery:
+        weight: -60
+        enabled: false
+      geochart:
+        weight: -59
+        enabled: false
+      hero_banner:
+        weight: 51
+        enabled: false
+      hide_modifier:
+        weight: -81
+        enabled: true
+      iframe:
+        weight: -53
+        enabled: false
+      image_bg_modifier:
+        weight: -80
+        enabled: true
+      item:
+        weight: -74
+        enabled: false
+      item_list:
+        weight: -73
+        enabled: false
+      layout:
+        weight: 56
+        enabled: false
+      lightbox:
+        weight: -55
+        enabled: false
+      map:
+        weight: -58
+        enabled: false
+      media_list:
+        weight: -54
+        enabled: false
+      node_list:
+        weight: -70
+        enabled: false
+      parallax_bg_modifier:
+        weight: -78
+        enabled: true
+      parameter:
+        weight: -52
+        enabled: false
+      plugin_block:
+        weight: -63
+        enabled: false
+      scroll_reveal_modifier:
+        weight: -77
+        enabled: true
+      section:
+        weight: -67
+        enabled: false
+      snippet:
+        weight: -51
+        enabled: false
+      timeline:
+        weight: -50
+        enabled: false
+      timeline_item:
+        weight: -49
+        enabled: false
+      video_bg_modifier:
+        weight: -76
+        enabled: true
+      view:
+        weight: -57
+        enabled: false
+      webform:
+        weight: -47
+        enabled: false
+field_type: entity_reference_revisions

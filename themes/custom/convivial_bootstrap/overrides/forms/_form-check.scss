@@ -1,0 +1,15 @@
+.form-check-input {
+  &[type="checkbox"] {
+    border-radius: var(--radius-selector);
+  }
+
+  &[type="radio"] {
+    border-radius: 50%;
+  }
+}
+
+.form-switch {
+  .form-check-input {
+    border-radius: var(--radius-selector);
+  }
+}

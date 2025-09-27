@@ -1,11 +1,11 @@
 // Import Bootstrap
-// Functions
+// Configuration
 @import "../../libraries/bootstrap/scss/functions";
 
-// Variables override
-@import "variables-override";
+// Variables overrides
+@import "variables-overrides";
 
-// Configurations
+// Remaining configuration
 @import "../../libraries/bootstrap/scss/variables";
 @import "../../libraries/bootstrap/scss/variables-dark";
 @import "../../libraries/bootstrap/scss/maps";
@@ -51,14 +51,15 @@
 // Utilities
 @import "../../libraries/bootstrap/scss/utilities/api";
 
-// Custom variables
+// Import Convivial Bootstrap
+// Overrides bootstrap CSS variables.
+@import "../../overrides";
+
+// Variables
 @import "custom-variables";
 
 // Custom mixins
 @import "mixins";
-
-// Colors
-@import "colors";
 
 // Color palettes
 @import "color-palettes";
@@ -69,88 +70,81 @@
 // Base styling
 @import "base";
 
-// Overridden
-@import "overrides";
+// Helper
+@import "helper";
+
+// Layouts
+@import "../../components/layout";
+
+// Page
+@import "../../components/header";
+@import "../../components/page";
+@import "../../components/footer";
+
+// Components
+@import "../../components/accessible-megamenu";
+@import "../../components/alert";
+@import "../../components/anchor";
+@import "../../components/arrangement";
+@import "../../components/back-to-top";
+@import "../../components/badge";
+@import "../../components/banner";
+@import "../../components/bio";
+@import "../../components/block";
+@import "../../components/blockquote";
+@import "../../components/breadcrumb";
+@import "../../components/buttons";
+@import "../../components/byline";
+@import "../../components/callout";
+@import "../../components/ckeditor";
+@import "../../components/content-tabs";
+@import "../../components/cta-link";
+@import "../../components/datatables";
+@import "../../components/diff";
+@import "../../components/eu-cookie-compliance";
+@import "../../components/external-link";
+@import "../../components/facets";
+@import "../../components/fastfacts";
+@import "../../components/fields";
+@import "../../components/gallery";
+@import "../../components/gtranslate";
+@import "../../components/hero";
+@import "../../components/hero-banner";
+@import "../../components/is-helpful";
+@import "../../components/layout-builder";
+@import "../../components/layout-paragraphs";
+@import "../../components/list";
+@import "../../components/logo";
+@import "../../components/media";
+@import "../../components/modifiers";
+@import "../../components/navigation";
+@import "../../components/pagination";
+@import "../../components/paragraphs";
+@import "../../components/sajari";
+@import "../../components/search";
+@import "../../components/search-autocomplete";
+@import "../../components/section";
+@import "../../components/section-wipe";
+@import "../../components/slider";
+@import "../../components/social-share";
+@import "../../components/timeline";
+@import "../../components/toc";
+@import "../../components/user-login-form";
+@import "../../components/views";
+
+// View modes
+@import "../../components/view-modes/calendar-item";
+@import "../../components/view-modes/icon";
+@import "../../components/view-modes/image";
+@import "../../components/view-modes/search";
+@import "../../components/view-modes/stack";
+@import "../../components/view-modes/summary";
+@import "../../components/view-modes/teaser";
+@import "../../components/view-modes/tile";
+@import "../../components/view-modes/title";
+
+// Hide
+@import "../../components/hide";
 
 // Print
 @import "print";
-
-// Components
-@import "components/accessible-megamenu/accessible-megamenu";
-@import "components/anchor/anchor";
-@import "components/arrangement/arrangement";
-@import "components/back-to-top/back-to-top";
-@import "components/badge/badge";
-@import "components/banner/banner";
-@import "components/bio/bio";
-@import "components/block/block";
-@import "components/block/block-styles";
-@import "components/blockquote/blockquote";
-@import "components/breadcrumb/breadcrumb";
-@import "components/buttons/buttons";
-@import "components/byline/byline";
-@import "components/callout/callout";
-@import "components/ckeditor/ckeditor";
-@import "components/cta-link/cta-link";
-@import "components/cta/cta";
-@import "components/datatables/datatables";
-@import "components/diff/diff";
-@import "components/eu-cookie-compliance/eu-cookie-compliance";
-@import "components/external-link/external-link";
-@import "components/facets/facets";
-@import "components/fields/field";
-@import "components/footer/footer";
-@import "components/footer_information/footer_information";
-@import "components/gallery/gallery";
-@import "components/gtranslate/gtranslate";
-@import "components/header-section/header-section";
-@import "components/header/header";
-@import "components/hero-banner/hero-banner";
-@import "components/is-helpful/is-helpful";
-@import "components/layout-builder/layout-builder";
-@import "components/layout-paragraphs/layout-paragraphs";
-@import "components/layout/layout";
-@import "components/legal/legal";
-@import "components/list/list";
-@import "components/logo/logo";
-@import "components/media/media";
-@import "components/modifiers/modifiers";
-@import "components/navigation/local-tasks";
-@import "components/navigation/nav";
-@import "components/navigation/navbar";
-@import "components/pagination/pagination";
-@import "components/page-alerts/page-alerts";
-@import "components/page/page";
-@import "components/paragraphs/paragraphs";
-@import "components/paragraphs/paragraphs-styles";
-@import "components/postscript/postscript";
-@import "components/readspeaker/readspeaker";
-@import "components/sajari/sajari";
-@import "components/search-autocomplete/search-autocomplete";
-@import "components/search/search";
-@import "components/section/section";
-@import "components/section-wipe/section-wipe";
-@import "components/slider/slider";
-@import "components/social-share/social-share";
-@import "components/tiles/tiles";
-@import "components/toc/toc";
-@import "components/topbar/topbar";
-@import "components/user-login-form/user-login-form";
-@import "components/views/views";
-
-// View modes
-@import "components/view-modes/calendar-item/calendar-item";
-@import "components/view-modes/icon/icon";
-@import "components/view-modes/image/image";
-@import "components/view-modes/search/search";
-@import "components/view-modes/stack/stack";
-@import "components/view-modes/summary/summary";
-@import "components/view-modes/teaser/teaser";
-@import "components/view-modes/tile/tile";
-@import "components/view-modes/title/title";
-
-// Hero
-@import "components/hero/hero";
-
-// Hide
-@import "components/hide/hide";

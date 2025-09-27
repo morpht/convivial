@@ -1,0 +1,86 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.decision_flow.field_body
+    - field.field.paragraph.decision_flow.field_color_palette
+    - field.field.paragraph.decision_flow.field_c_style_classes
+    - field.field.paragraph.decision_flow.field_heading
+    - field.field.paragraph.decision_flow.field_hide_heading
+    - field.field.paragraph.decision_flow.field_modifiers
+    - field.field.paragraph.decision_flow.field_position
+    - field.field.paragraph.decision_flow.field_read_more
+    - paragraphs.paragraphs_type.decision_flow
+  module:
+    - entity_class_formatter
+    - link
+    - text
+id: paragraph.decision_flow.default
+targetEntityType: paragraph
+bundle: decision_flow
+mode: default
+content:
+  field_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: decision_flow
+  field_c_style_classes:
+    type: entity_class_formatter
+    label: hidden
+    settings:
+      prefix: ''
+      suffix: ''
+      attr: ''
+      field: ''
+    third_party_settings: {  }
+    weight: 4
+    region: decision_flow
+  field_color_palette:
+    type: entity_class_formatter
+    label: hidden
+    settings:
+      prefix: ''
+      suffix: ''
+      attr: ''
+      field: ''
+    third_party_settings: {  }
+    weight: 3
+    region: decision_flow
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: decision_flow
+  field_position:
+    type: entity_class_formatter
+    label: hidden
+    settings:
+      prefix: ''
+      suffix: ''
+      attr: ''
+      field: ''
+    third_party_settings: {  }
+    weight: 5
+    region: decision_flow
+  field_read_more:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: decision_flow
+hidden:
+  field_hide_heading: true
+  field_modifiers: true
+  search_api_excerpt: true

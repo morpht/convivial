@@ -4,4 +4,4 @@ dependencies: {  }
 id: logo
 label: Logo
 revision: true
-description: 'Allows upload of multiple image files to be used with header color variants.'
+description: 'Manage the logo image for different screen sizes.'

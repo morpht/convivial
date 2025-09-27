@@ -1,0 +1,13 @@
+/*! @convivial_bootstrap/is-helpful */
+
+#block-is-helpful {
+  .containerised {
+    @include make-container();
+    @include container-max-widths();
+  }
+
+  .field--name-field-components .cp {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

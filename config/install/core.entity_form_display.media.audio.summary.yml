@@ -42,12 +42,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
 hidden:
-  created: true
-  field_body: true
-  field_search_exclude: true
-  field_transcript: true
-  moderation_state: true
-  path: true
-  replace_file: true
-  status: true
-  uid: true
+  - true
+  - true
+  - true
+  - true
+  - true
+  - true
+  - true
+  - true

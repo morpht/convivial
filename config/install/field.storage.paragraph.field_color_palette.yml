@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_color_palette
+field_name: field_color_palette
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'cp cp--standard'
+      label: Standard
+    -
+      value: 'cp cp--alternate'
+      label: Alternate
+    -
+      value: 'cp cp--primary'
+      label: Primary
+    -
+      value: 'cp cp--secondary'
+      label: Secondary
+    -
+      value: 'cp cp--tertiary'
+      label: Tertiary
+    -
+      value: 'cp cp--light'
+      label: Light
+    -
+      value: 'cp cp--dark'
+      label: Dark
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

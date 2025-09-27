@@ -1,0 +1,17 @@
+.form-range {
+  &::-webkit-slider-thumb {
+    border-radius: var(--radius-selector);
+  }
+
+  &::-webkit-slider-runnable-track {
+    border-radius: var(--radius-selector);
+  }
+
+  &::-moz-range-thumb {
+    border-radius: var(--radius-selector);
+  }
+
+  &::-moz-range-track {
+    border-radius: var(--radius-selector);
+  }
+}
