@@ -3,13 +3,13 @@ status: true
 dependencies:
   config:
     - block_content.type.logo
-    - field.storage.block_content.field_logo_small_width
-id: block_content.logo.field_logo_small_width
-field_name: field_logo_small_width
+    - field.storage.block_content.field_logo_width_small
+id: block_content.logo.field_logo_width_small
+field_name: field_logo_width_small
 entity_type: block_content
 bundle: logo
-label: 'Small width'
-description: 'The width of the small logo.'
+label: 'Small logo width'
+description: 'Width of the small logo.'
 required: false
 translatable: false
 default_value: {  }

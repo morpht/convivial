@@ -15,12 +15,12 @@ use Drupal\Core\Render\Markup;
 function _convivial_bootstrap_logo(&$variables, $entity) {
   $entity_id = $entity->id();
   // Specify the Block ID selector.
-  $selector = '.logo-block--' . $entity_id;
+  $selector = '.logo--' . $entity_id;
   // Create the variable for twig template.
-  $variables['block_class'] = 'logo-block--' . $entity_id;
+  $variables['block_class'] = 'logo--' . $entity_id;
 
   // Get values from block fields.
-  $width_large = $entity->get('field_logo_large_width')->value;
+  $width = $entity->get('field_logo_width')->value;
   $field_logo_breakpoint = $entity->get('field_logo_breakpoint');
 
   // Load the site name out of configuration. It's needed for default alt.
@@ -28,43 +28,38 @@ function _convivial_bootstrap_logo(&$variables, $entity) {
 
   // Provide a default value or both logo sizes will appear together when the
   // breakpoint field is left empty.
-  $width_breakpoint = !$field_logo_breakpoint->isEmpty() ?
-    $field_logo_breakpoint->value : 768;
+  $width_breakpoint = !$field_logo_breakpoint->isEmpty()
+    ? $field_logo_breakpoint->value : 768;
 
-  $field_logo_small_default = $entity->get('field_logo_small_default');
-  $field_logo_small_inverse = $entity->get('field_logo_small_inverse');
-
+  $field_logo_default_small = $entity->get('field_logo_default_small');
   $style = '';
 
   // We only include breakpoints if an alternative logo is available.
-  $include_breakpoint = (
-    !empty($width_breakpoint) &&
-    (!$field_logo_small_default->isEmpty() || !$field_logo_small_inverse->isEmpty())
-  );
+  $include_breakpoint = (!empty($width_breakpoint) && !$field_logo_default_small->isEmpty());
 
   // Check if main value is available.
-  if (!empty($width_large)) {
+  if (!empty($width)) {
     // Get other field values.
-    $width_small = $entity->get('field_logo_small_width')->value;
+    $width_small = $entity->get('field_logo_width_small')->value;
 
     // Create the style with both widths and breakpoint.
     if ($include_breakpoint && !empty($width_small)) {
       $style .= $selector . '{max-width:' . $width_small
-        . 'px;}@media(min-width:' . $width_breakpoint . 'px){'
-        . $selector . '{max-width:' . $width_large . 'px;}}';
+        . 'px;}@media(min-width:' . $width_breakpoint . 'px){' . $selector
+        . '{max-width:' . $width . 'px;}}';
     }
     else {
       // Create style just with the large width.
-      $style .= $selector . '{max-width:' . $width_large . 'px;}';
+      $style .= $selector . '{max-width:' . $width . 'px;}';
     }
   }
 
   if ($include_breakpoint) {
-    $style .= $selector . ' .logo-block__logo--small{display: block;}' . $selector
-      . ' .logo-block__logo--large{display: none;}
+    $style .= $selector . ' .logo__small{display: block;}'
+      . $selector . ' .logo__large{display: none;}
           @media (min-width:' . $width_breakpoint . 'px){' . $selector
-      . ' .logo-block__logo--small{display: none;}' . $selector
-      . ' .logo-block__logo--large{display: block;}}';
+      . ' .logo__small{display: none;}' . $selector
+      . ' .logo__large{display: block;}}';
   }
 
   // Print the style in head element.
@@ -75,7 +70,7 @@ function _convivial_bootstrap_logo(&$variables, $entity) {
         '#tag' => 'style',
         '#attributes' => [
           'media' => 'all',
-          'data-logo-block' => $variables['block_class'],
+          'data-logo' => $variables['block_class'],
         ],
         '#value' => Markup::create($style),
         '#weight' => 10,

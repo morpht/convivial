@@ -3,13 +3,13 @@ status: true
 dependencies:
   module:
     - block_content
-id: block_content.field_logo_small_width
-field_name: field_logo_small_width
+    - media
+id: block_content.field_logo_dark_small
+field_name: field_logo_dark_small
 entity_type: block_content
-type: integer
+type: entity_reference
 settings:
-  unsigned: false
-  size: normal
+  target_type: media
 module: core
 locked: false
 cardinality: 1

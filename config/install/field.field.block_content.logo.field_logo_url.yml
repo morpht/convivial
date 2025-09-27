@@ -3,15 +3,15 @@ status: true
 dependencies:
   config:
     - block_content.type.logo
-    - field.storage.block_content.field_logo_link
+    - field.storage.block_content.field_logo_url
   module:
     - link
-id: block_content.logo.field_logo_link
-field_name: field_logo_link
+id: block_content.logo.field_logo_url
+field_name: field_logo_url
 entity_type: block_content
 bundle: logo
-label: Link
-description: 'The link which wraps around the logo.'
+label: 'Logo URL'
+description: 'A URL wrapped around the logo.'
 required: true
 translatable: false
 default_value: {  }

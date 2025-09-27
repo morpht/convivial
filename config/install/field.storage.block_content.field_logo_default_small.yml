@@ -3,17 +3,14 @@ status: true
 dependencies:
   module:
     - block_content
-    - file
-id: block_content.field_logo_small_default
-field_name: field_logo_small_default
+    - media
+id: block_content.field_logo_default_small
+field_name: field_logo_default_small
 entity_type: block_content
-type: file
+type: entity_reference
 settings:
-  target_type: file
-  display_field: false
-  display_default: false
-  uri_scheme: public
-module: file
+  target_type: media
+module: core
 locked: false
 cardinality: 1
 translatable: true

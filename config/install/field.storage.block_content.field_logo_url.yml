@@ -3,14 +3,13 @@ status: true
 dependencies:
   module:
     - block_content
-id: block_content.field_logo_large_width
-field_name: field_logo_large_width
+    - link
+id: block_content.field_logo_url
+field_name: field_logo_url
 entity_type: block_content
-type: integer
-settings:
-  unsigned: false
-  size: normal
-module: core
+type: link
+settings: {  }
+module: link
 locked: false
 cardinality: 1
 translatable: true
