@@ -5,5 +5,8 @@ id: nid
 label: 'Node Id'
 description: 'Node Id'
 htmlElement: meta
-htmlNameAttribute: name
 htmlValueAttribute: content
+attributes:
+  -
+    name: name
+    value: nid
