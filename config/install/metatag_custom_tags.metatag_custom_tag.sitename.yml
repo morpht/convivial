@@ -5,5 +5,8 @@ id: sitename
 label: Sitename
 description: Sitename
 htmlElement: meta
-htmlNameAttribute: name
 htmlValueAttribute: content
+attributes:
+  -
+    name: name
+    value: sitename
