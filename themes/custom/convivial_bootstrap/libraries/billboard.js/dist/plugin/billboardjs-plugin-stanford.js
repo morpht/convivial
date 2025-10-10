@@ -5,7 +5,7 @@
  * billboard.js, JavaScript chart library
  * https://naver.github.io/billboard.js/
  *
- * @version 3.17.0
+ * @version 3.12.4
  * @requires billboard.js
  * @summary billboard.js plugin
  */
@@ -113,8 +113,6 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__9__;
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry needs to be wrapped in an IIFE because it needs to be isolated against other modules in the chunk.
-!function() {
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
@@ -127,7 +125,7 @@ var external_commonjs_d3_color_commonjs2_d3_color_amd_d3_color_root_d3_ = __webp
 var external_commonjs_d3_interpolate_commonjs2_d3_interpolate_amd_d3_interpolate_root_d3_ = __webpack_require__(6);
 // EXTERNAL MODULE: external {"commonjs":"d3-scale","commonjs2":"d3-scale","amd":"d3-scale","root":"d3"}
 var external_commonjs_d3_scale_commonjs2_d3_scale_amd_d3_scale_root_d3_ = __webpack_require__(7);
-;// ./src/config/classes.ts
+;// CONCATENATED MODULE: ./src/config/classes.ts
 var __defProp = Object.defineProperty;
 var __getOwnPropSymbols = Object.getOwnPropertySymbols;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
@@ -150,8 +148,7 @@ const $COMMON = {
   empty: "bb-empty",
   main: "bb-main",
   target: "bb-target",
-  EXPANDED: "_expanded_",
-  dummy: "_dummy_"
+  EXPANDED: "_expanded_"
 };
 const $ARC = {
   arc: "bb-arc",
@@ -178,16 +175,13 @@ const $AXIS = {
   axisYLabel: "bb-axis-y-label",
   axisXTooltip: "bb-axis-x-tooltip",
   axisYTooltip: "bb-axis-y-tooltip",
-  axisY2Tooltip: "bb-axis-y2-tooltip",
-  axisTooltipX: "bb-axis-tooltip-x",
-  axisTooltipY: "bb-axis-tooltip-y"
+  axisY2Tooltip: "bb-axis-y2-tooltip"
 };
 const $BAR = {
   bar: "bb-bar",
   bars: "bb-bars",
   chartBar: "bb-chart-bar",
-  chartBars: "bb-chart-bars",
-  barConnectLine: "bb-bar-connectLine"
+  chartBars: "bb-chart-bars"
 };
 const $CANDLESTICK = {
   candlestick: "bb-candlestick",
@@ -294,8 +288,6 @@ const $TEXT = {
   text: "bb-text",
   texts: "bb-texts",
   title: "bb-title",
-  textBorderRect: "bb-text-border",
-  textLabelImage: "bb-text-label-image",
   TextOverlapping: "text-overlapping"
 };
 const $TOOLTIP = {
@@ -318,7 +310,7 @@ const $ZOOM = {
 var external_commonjs_d3_brush_commonjs2_d3_brush_amd_d3_brush_root_d3_ = __webpack_require__(3);
 // EXTERNAL MODULE: external {"commonjs":"d3-selection","commonjs2":"d3-selection","amd":"d3-selection","root":"d3"}
 var external_commonjs_d3_selection_commonjs2_d3_selection_amd_d3_selection_root_d3_ = __webpack_require__(1);
-;// ./src/module/browser.ts
+;// CONCATENATED MODULE: ./src/module/browser.ts
 function getGlobal() {
   return typeof globalThis === "object" && globalThis !== null && globalThis.Object === Object && globalThis || typeof global === "object" && global !== null && global.Object === Object && global || typeof self === "object" && self !== null && self.Object === Object && self || Function("return this")();
 }
@@ -344,7 +336,7 @@ const [
 ] = getFallback(win);
 
 
-;// ./src/module/util.ts
+;// CONCATENATED MODULE: ./src/module/util.ts
 var util_defProp = Object.defineProperty;
 var util_getOwnPropSymbols = Object.getOwnPropertySymbols;
 var util_hasOwnProp = Object.prototype.hasOwnProperty;
@@ -440,7 +432,7 @@ function getRectSegList(path) {
   ];
 }
 function getPathBox(path) {
-  const { width, height } = getBoundingRect(path);
+  const { width, height } = path.getBoundingClientRect();
   const items = getRectSegList(path);
   const x = items[0].x;
   const y = Math.min(items[0].y, items[1].y);
@@ -472,20 +464,9 @@ function getBrushSelection(ctx) {
   }
   return selection;
 }
-function getRect(relativeViewport, node, forceEval = false) {
-  const _ = (n) => n[relativeViewport ? "getBoundingClientRect" : "getBBox"]();
-  if (forceEval) {
-    return _(node);
-  } else {
-    const needEvaluate = !("rect" in node) || "rect" in node && node.hasAttribute("width") && node.rect.width !== +(node.getAttribute("width") || 0);
-    return needEvaluate ? node.rect = _(node) : node.rect;
-  }
-}
-function getBoundingRect(node, forceEval = false) {
-  return getRect(true, node, forceEval);
-}
-function getBBox(node, forceEval = false) {
-  return getRect(false, node, forceEval);
+function getBoundingRect(node) {
+  const needEvaluate = !("rect" in node) || "rect" in node && node.hasAttribute("width") && node.rect.width !== +node.getAttribute("width");
+  return needEvaluate ? node.rect = node.getBoundingClientRect() : node.rect;
 }
 function getRandom(asStr = true, min = 0, max = 1e4) {
   const crpt = win.crypto || win.msCrypto;
@@ -568,24 +549,11 @@ function getCssRules(styleSheets) {
   return rules;
 }
 function getScrollPosition(node) {
-  var _a, _b, _c, _d, _e, _f;
+  var _a, _b, _c, _d;
   return {
-    x: ((_b = (_a = win.pageXOffset) != null ? _a : win.scrollX) != null ? _b : 0) + ((_c = node.scrollLeft) != null ? _c : 0),
-    y: ((_e = (_d = win.pageYOffset) != null ? _d : win.scrollY) != null ? _e : 0) + ((_f = node.scrollTop) != null ? _f : 0)
+    x: ((_b = (_a = win.pageXOffset) != null ? _a : win.scrollX) != null ? _b : 0) + node.scrollLeft,
+    y: ((_d = (_c = win.pageYOffset) != null ? _c : win.scrollY) != null ? _d : 0) + node.scrollTop
   };
-}
-function getTransformCTM(node, x = 0, y = 0, inverse = true) {
-  const point = new DOMPoint(x, y);
-  const screen = node.getScreenCTM();
-  const res = point.matrixTransform(
-    inverse ? screen == null ? void 0 : screen.inverse() : screen
-  );
-  if (inverse === false) {
-    const rect = getBoundingRect(node);
-    res.x -= rect.x;
-    res.y -= rect.y;
-  }
-  return res;
 }
 function getTranslation(node) {
   const transform = node ? node.transform : null;
@@ -607,14 +575,12 @@ function mergeObj(target, ...objectN) {
   const source = objectN.shift();
   if (isObject(target) && isObject(source)) {
     Object.keys(source).forEach((key) => {
-      if (!/^(__proto__|constructor|prototype)$/i.test(key)) {
-        const value = source[key];
-        if (isObject(value)) {
-          !target[key] && (target[key] = {});
-          target[key] = mergeObj(target[key], value);
-        } else {
-          target[key] = isArray(value) ? value.concat() : value;
-        }
+      const value = source[key];
+      if (isObject(value)) {
+        !target[key] && (target[key] = {});
+        target[key] = mergeObj(target[key], value);
+      } else {
+        target[key] = isArray(value) ? value.concat() : value;
       }
     });
   }
@@ -736,28 +702,12 @@ function parseDate(date) {
   }
   return parsedDate;
 }
-function hasViewBox(svg) {
-  const attr = svg.attr("viewBox");
-  return attr ? /(\d+(\.\d+)?){3}/.test(attr) : false;
-}
-function hasStyle(node, condition, all = false) {
-  const isD3Node = !!node.node;
-  let has = false;
-  for (const [key, value] of Object.entries(condition)) {
-    has = isD3Node ? node.style(key) === value : node.style[key] === value;
-    if (all === false && has) {
-      break;
-    }
-  }
-  return has;
-}
 function isTabVisible() {
   var _a, _b;
   return ((_a = doc) == null ? void 0 : _a.hidden) === false || ((_b = doc) == null ? void 0 : _b.visibilityState) === "visible";
 }
 function convertInputType(mouse, touch) {
   const { DocumentTouch, matchMedia, navigator } = win;
-  const hasPointerCoarse = matchMedia == null ? void 0 : matchMedia("(pointer:coarse)").matches;
   let hasTouch = false;
   if (touch) {
     if (navigator && "maxTouchPoints" in navigator) {
@@ -765,7 +715,7 @@ function convertInputType(mouse, touch) {
     } else if ("ontouchmove" in win || DocumentTouch && doc instanceof DocumentTouch) {
       hasTouch = true;
     } else {
-      if (hasPointerCoarse) {
+      if (matchMedia == null ? void 0 : matchMedia("(pointer:coarse)").matches) {
         hasTouch = true;
       } else {
         const UA = navigator.userAgent;
@@ -773,7 +723,7 @@ function convertInputType(mouse, touch) {
       }
     }
   }
-  const hasMouse = mouse && !hasPointerCoarse && (matchMedia == null ? void 0 : matchMedia("(pointer:fine)").matches);
+  const hasMouse = mouse && ((matchMedia == null ? void 0 : matchMedia("any-hover:hover").matches) || (matchMedia == null ? void 0 : matchMedia("any-pointer:fine").matches));
   return hasMouse && "mouse" || hasTouch && "touch" || "mouse";
 }
 function runUntil(fn, conditionFn) {
@@ -783,22 +733,8 @@ function runUntil(fn, conditionFn) {
     fn();
   }
 }
-function parseShorthand(value) {
-  if (isObject(value) && !isString(value)) {
-    const obj = value;
-    return {
-      top: obj.top || 0,
-      right: obj.right || 0,
-      bottom: obj.bottom || 0,
-      left: obj.left || 0
-    };
-  }
-  const values = (isString(value) ? value.trim().split(/\s+/) : [value]).map((v) => +v || 0);
-  const [a, b = a, c = a, d = b] = values;
-  return { top: a, right: b, bottom: c, left: d };
-}
 
-;// ./src/config/config.ts
+;// CONCATENATED MODULE: ./src/config/config.ts
 
 function loadConfig(config) {
   const thisConfig = this.config;
@@ -828,10 +764,13 @@ function loadConfig(config) {
   }
 }
 
-;// ./src/Plugin/Plugin.ts
+;// CONCATENATED MODULE: ./src/Plugin/Plugin.ts
 var Plugin_defProp = Object.defineProperty;
 var Plugin_defNormalProp = (obj, key, value) => key in obj ? Plugin_defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var __publicField = (obj, key, value) => Plugin_defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
+var __publicField = (obj, key, value) => {
+  Plugin_defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
+  return value;
+};
 class Plugin {
   /**
    * Constructor
@@ -878,13 +817,13 @@ class Plugin {
     });
   }
 }
-__publicField(Plugin, "version", "3.17.0");
+__publicField(Plugin, "version", "3.12.4");
 
 // EXTERNAL MODULE: external {"commonjs":"d3-axis","commonjs2":"d3-axis","amd":"d3-axis","root":"d3"}
 var external_commonjs_d3_axis_commonjs2_d3_axis_amd_d3_axis_root_d3_ = __webpack_require__(8);
 // EXTERNAL MODULE: external {"commonjs":"d3-format","commonjs2":"d3-format","amd":"d3-format","root":"d3"}
 var external_commonjs_d3_format_commonjs2_d3_format_amd_d3_format_root_d3_ = __webpack_require__(9);
-;// ./src/Plugin/stanford/classes.ts
+;// CONCATENATED MODULE: ./src/Plugin/stanford/classes.ts
 /* harmony default export */ var stanford_classes = ({
   colorScale: "bb-colorscale",
   stanfordElements: "bb-stanford-elements",
@@ -894,10 +833,13 @@ var external_commonjs_d3_format_commonjs2_d3_format_amd_d3_format_root_d3_ = __w
   stanfordRegions: "bb-stanford-regions"
 });
 
-;// ./src/Plugin/stanford/ColorScale.ts
+;// CONCATENATED MODULE: ./src/Plugin/stanford/ColorScale.ts
 var ColorScale_defProp = Object.defineProperty;
 var ColorScale_defNormalProp = (obj, key, value) => key in obj ? ColorScale_defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var ColorScale_publicField = (obj, key, value) => ColorScale_defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
+var ColorScale_publicField = (obj, key, value) => {
+  ColorScale_defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
+  return value;
+};
 
 
 
@@ -952,7 +894,7 @@ class ColorScale {
   }
 }
 
-;// ./src/Plugin/stanford/util.ts
+;// CONCATENATED MODULE: ./src/Plugin/stanford/util.ts
 
 function pointInRegion(point, region) {
   const x = point.x;
@@ -1012,10 +954,13 @@ function getCentroid(points) {
 }
 
 
-;// ./src/Plugin/stanford/Elements.ts
+;// CONCATENATED MODULE: ./src/Plugin/stanford/Elements.ts
 var Elements_defProp = Object.defineProperty;
 var Elements_defNormalProp = (obj, key, value) => key in obj ? Elements_defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var Elements_publicField = (obj, key, value) => Elements_defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
+var Elements_publicField = (obj, key, value) => {
+  Elements_defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
+  return value;
+};
 
 
 class Elements {
@@ -1090,17 +1035,17 @@ class Elements {
     } else if (axis.isCategorized() && isString(value)) {
       value = config.axis_x_categories.indexOf(d.value);
     }
-    return $$.scale.x(value);
+    return Math.ceil($$.scale.x(value));
   }
   yvCustom(d, xyValue) {
     const $$ = this;
     const yScale = d.axis && d.axis === "y2" ? $$.scale.y2 : $$.scale.y;
     const value = xyValue ? d[xyValue] : $$.getBaseValue(d);
-    return yScale(value);
+    return Math.ceil(yScale(value));
   }
 }
 
-;// ./src/Plugin/stanford/Options.ts
+;// CONCATENATED MODULE: ./src/Plugin/stanford/Options.ts
 class Options {
   constructor() {
     return {
@@ -1234,10 +1179,13 @@ class Options {
   }
 }
 
-;// ./src/Plugin/stanford/index.ts
+;// CONCATENATED MODULE: ./src/Plugin/stanford/index.ts
 var stanford_defProp = Object.defineProperty;
 var stanford_defNormalProp = (obj, key, value) => key in obj ? stanford_defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var stanford_publicField = (obj, key, value) => stanford_defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
+var stanford_publicField = (obj, key, value) => {
+  stanford_defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
+  return value;
+};
 
 
 
@@ -1365,7 +1313,6 @@ class Stanford extends Plugin {
   }
 }
 
-}();
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
 /******/ })()

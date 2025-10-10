@@ -5,7 +5,7 @@
  * billboard.js, JavaScript chart library
  * https://naver.github.io/billboard.js/
  *
- * @version 3.17.0
+ * @version 3.12.4
  */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
@@ -157,12 +157,12 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__14__;
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry needs to be wrapped in an IIFE because it needs to be isolated against other entry modules.
+// This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
 !function() {
 // extracted by mini-css-extract-plugin
 
 }();
-// This entry needs to be wrapped in an IIFE because it needs to be isolated against other entry modules.
+// This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
 !function() {
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
@@ -191,7 +191,6 @@ __webpack_require__.d(resolver_shape_namespaceObject, {
   areaSpline: function() { return areaSpline; },
   areaSplineRange: function() { return areaSplineRange; },
   areaStep: function() { return areaStep; },
-  areaStepRange: function() { return areaStepRange; },
   bar: function() { return resolver_shape_bar; },
   bubble: function() { return resolver_shape_bubble; },
   candlestick: function() { return resolver_shape_candlestick; },
@@ -212,7 +211,7 @@ __webpack_require__.d(resolver_shape_namespaceObject, {
 var external_commonjs_d3_selection_commonjs2_d3_selection_amd_d3_selection_root_d3_ = __webpack_require__(2);
 // EXTERNAL MODULE: external {"commonjs":"d3-time-format","commonjs2":"d3-time-format","amd":"d3-time-format","root":"d3"}
 var external_commonjs_d3_time_format_commonjs2_d3_time_format_amd_d3_time_format_root_d3_ = __webpack_require__(3);
-;// ./src/config/classes.ts
+;// CONCATENATED MODULE: ./src/config/classes.ts
 var __defProp = Object.defineProperty;
 var __getOwnPropSymbols = Object.getOwnPropertySymbols;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
@@ -235,8 +234,7 @@ const $COMMON = {
   empty: "bb-empty",
   main: "bb-main",
   target: "bb-target",
-  EXPANDED: "_expanded_",
-  dummy: "_dummy_"
+  EXPANDED: "_expanded_"
 };
 const $ARC = {
   arc: "bb-arc",
@@ -263,16 +261,13 @@ const $AXIS = {
   axisYLabel: "bb-axis-y-label",
   axisXTooltip: "bb-axis-x-tooltip",
   axisYTooltip: "bb-axis-y-tooltip",
-  axisY2Tooltip: "bb-axis-y2-tooltip",
-  axisTooltipX: "bb-axis-tooltip-x",
-  axisTooltipY: "bb-axis-tooltip-y"
+  axisY2Tooltip: "bb-axis-y2-tooltip"
 };
 const $BAR = {
   bar: "bb-bar",
   bars: "bb-bars",
   chartBar: "bb-chart-bar",
-  chartBars: "bb-chart-bars",
-  barConnectLine: "bb-bar-connectLine"
+  chartBars: "bb-chart-bars"
 };
 const $CANDLESTICK = {
   candlestick: "bb-candlestick",
@@ -379,8 +374,6 @@ const $TEXT = {
   text: "bb-text",
   texts: "bb-texts",
   title: "bb-title",
-  textBorderRect: "bb-text-border",
-  textLabelImage: "bb-text-label-image",
   TextOverlapping: "text-overlapping"
 };
 const $TOOLTIP = {
@@ -399,7 +392,7 @@ const $ZOOM = {
 };
 /* harmony default export */ var classes = (__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues(__spreadValues({}, $COMMON), $ARC), $AREA), $AXIS), $BAR), $CANDLESTICK), $CIRCLE), $COLOR), $DRAG), $GAUGE), $LEGEND), $LINE), $EVENT), $FOCUS), $FUNNEL), $GRID), $RADAR), $REGION), $SELECT), $SHAPE), $SUBCHART), $TEXT), $TOOLTIP), $TREEMAP), $ZOOM));
 
-;// ./src/config/Options/common/boost.ts
+;// CONCATENATED MODULE: ./src/config/Options/common/boost.ts
 /* harmony default export */ var boost = ({
   /**
    * Set boost options
@@ -415,7 +408,6 @@ const $ZOOM = {
    * - **NOTE:**
    *   - For now, only applies for data conversion at the initial time.
    *   - As of Web Worker's async nature, handling chart instance synchrously is not recommended.
-   *   - When given data is empty, useWorker will be ignored.
    * @example
    *  boost: {
    *      useCssRule: true,
@@ -426,7 +418,7 @@ const $ZOOM = {
   boost_useWorker: false
 });
 
-;// ./src/config/Options/common/color.ts
+;// CONCATENATED MODULE: ./src/config/Options/common/color.ts
 /* harmony default export */ var color = ({
   /**
    * Set color of the data values
@@ -508,7 +500,7 @@ const $ZOOM = {
   color_onover: void 0
 });
 
-;// ./src/config/Options/common/legend.ts
+;// CONCATENATED MODULE: ./src/config/Options/common/legend.ts
 /* harmony default export */ var legend = ({
   /**
    * Legend options
@@ -572,8 +564,7 @@ const $ZOOM = {
    *   - rectangle
    * @property {boolean} [legend.format] Set formatter function for legend text.
    * The argument:<br>
-   *  - `id`: Legend text value. When `data.names` is specified, will pass from it, otherwise will pass data id.
-   *  - `dataId`: When `data.names` specified, will pass the original data id. Otherwise will be undefined.
+   *  - `id`: legend text value. When `data.names` is specified, will pass from it, otherwise will pass data id.
    * @property {boolean} [legend.tooltip=false] Show full legend text value using system tooltip(via `<title>` element).
    * @property {boolean} [legend.usePoint=false] Whether to use custom points in legend.
    * @see [Demo: format](https://naver.github.io/billboard.js/demo/#Legend.LegendFormat)
@@ -622,12 +613,9 @@ const $ZOOM = {
    *          }
    *
    *          // when set below callback, will disable corresponding default interactions
-   *          onclick: function(id, visible) {
-   *           	// toggle based on the data visibility
-   *           	this[visible ? "hide" : "show"](id);
-   *          },
-   *          onover: function(id, visible) { ... },
-   *          onout: function(id, visible) { ... },
+   *          onclick: function(id) { ... },
+   *          onover: function(id) { ... },
+   *          onout: function(id) { ... },
    *
    *          // set tile's size
    *          tile: {
@@ -642,7 +630,7 @@ const $ZOOM = {
    *              r: 10
    *          }
    *      },
-   *      format: function(id, dataId) {
+   *      format: function(id) {
    *          // set ellipsis string when length is > 5
    *          // to get full legend value, combine with 'legend.tooltip=true'
    *          if (id.length > 5) {
@@ -680,7 +668,7 @@ const $ZOOM = {
   legend_usePoint: false
 });
 
-;// ./src/config/Options/common/main.ts
+;// CONCATENATED MODULE: ./src/config/Options/common/main.ts
 /* harmony default export */ var main = ({
   /**
    * Specify the CSS selector or the element which the chart will be set to. D3 selection object can be specified also.<br>
@@ -830,37 +818,24 @@ const $ZOOM = {
    * @memberof Options
    * @type {object}
    * @property {object} [resize] resize object
-   * @property {boolean|string} [resize.auto=true] Set chart resize automatically on viewport changes.
-   * - **NOTE:** Available options
-   *   - true: Enables automatic resize.
-   *   - false: Disables automatic resize.
-   *   - "parent": Enables automatic resize when the parent node is resized.
-   *   - "viewBox": Enables automatic resize, and size will be fixed based on the viewbox.
+   * @property {boolean} [resize.auto=true] Set chart resize automatically on viewport changes.
    * @property {boolean|number} [resize.timer=true] Set resize timer option.
-   * - **NOTE:** Available options
+   * - **NOTE:**
    *   - The resize function will be called using:
    *     - true: `setTimeout()`
    *     - false: `requestIdleCallback()`
-   *   - Given number(delay in ms) value, resize function will be triggered using `setTimeout()` with given delay.
-   * @see [Demo: resize "parent"](https://naver.github.io/billboard.js/demo/#ChartOptions.resizeParent)
-   * @see [Demo: resize "viewBox"](https://naver.github.io/billboard.js/demo/#ChartOptions.resizeViewBox)
+   *   - Given number(delay in ms) value, resize function will be triggered using `setTimer()` with given delay.
    * @example
    *  resize: {
    *      auto: false,
    *
-   *      // set resize based on parent node width value
-   *      auto: "parent",
-   *
-   *      // set resize based on viewBox value
-   *      auto: "viewBox",
-   *
-   *      // set resize function will be triggered using `setTimeout()`
+   *      // set resize function will be triggered using `setTimer()`
    *      timer: true,
    *
    *      // set resize function will be triggered using `requestIdleCallback()`
    *      timer: false,
    *
-   *      // set resize function will be triggered using `setTimeout()` with a delay of `100ms`.
+   *      // set resize function will be triggered using `setTimer()` with a delay of `100ms`.
    *      timer: 100
    *  }
    */
@@ -1019,10 +994,7 @@ const $ZOOM = {
    * @memberof Options
    * @type {object}
    * @property {object} [render] render object
-   * @property {boolean} [render.lazy=true] Make to not render at initialization.
-   * - **NOTE**:
-   *   - Enabled by default when bind element's visibility is hidden.
-   *   - When set to `false`, will initialize the chart regardless the bind element's visibility state, but in this case chart can't be guaranteed to be rendered properly.
+   * @property {boolean} [render.lazy=true] Make to not render at initialization (enabled by default when bind element's visibility is hidden).
    * @property {boolean} [render.observe=true] Observe bind element's visibility(`display` or `visiblity` inline css property or class value) & render when is visible automatically (for IEs, only works IE11+). When set to **false**, call [`.flush()`](./Chart.html#flush) to render.
    * @see [Demo](https://naver.github.io/billboard.js/demo/#ChartOptions.LazyRender)
    * @example
@@ -1059,32 +1031,17 @@ const $ZOOM = {
   render: {},
   /**
    * Show rectangles inside the chart.<br><br>
-   * - **NOTE:**<br>
-   *   - axis must be x, y or y2. start and end should be the value where regions start and end.
-   *   - If not specified, the edge values will be used.
-   *   - If timeseries x axis, date string, Date object and unixtime integer can be used.
-   *   - If category x axis, category name can be used for start and end.
-   *   - If class is set, the region element will have it as class.
-   *
-   * This option accept array of object with below values:
-   * - `axis {string}`: 'x', 'y', or 'y2'
-   * - `[start] {number|Date|string}`: Start position of the region. If not set, the start will be the edge of the chart.
-   * - `[end] {number|Date|string}`: End position of the region. If not set, the end will be the edge of the chart.
-   * - `[class] {string}`: Class value to apply to the region.
-   * - `[label] {object}` Lable text option.
-   *   - `text {string}`: Text value.
-   *   - `x {number}`: x Position.
-   *   - `y {number}`: y Position.
-   *   - `center {string}`: Align label at the center. Allowed values are 'x', 'y', 'xy'.
-   *   - `color {string}`: Color string.
-   *   - `rotated (boolean)`: Whether rotate label or not.
+   * This option accepts array including object that has axis, start, end and class.
+   * The keys start, end and class are optional.
+   * axis must be x, y or y2. start and end should be the value where regions start and end.
+   * If not specified, the edge values will be used.
+   * If timeseries x axis, date string, Date object and unixtime integer can be used.
+   * If class is set, the region element will have it as class.
    * @name regions
    * @memberof Options
    * @type {Array}
    * @default []
-   * @see [Demo: Regions](https://naver.github.io/billboard.js/demo/#Region.Region)
-   * @see [Demo: Regions Timeseries](https://naver.github.io/billboard.js/demo/#Region.RegionWithTimeseries)
-   * @see [Demo: Regions Label](https://naver.github.io/billboard.js/demo/#Region.RegionLabel)
+   * @see [Demo](https://naver.github.io/billboard.js/demo/#Region.RegionLabel)
    * @example
    *  regions: [
    *    {
@@ -1096,7 +1053,6 @@ const $ZOOM = {
    *      	text: "Region Text",
    *      	x: 5,  // position relative of the initial x coordinate
    *      	y: 5,  // position relative of the initial y coordinate
-   *      	center: "xy",  // center text label in both direction.
    *      	color: "red",  // color string
    *      	rotated: true  // make text to show in vertical or horizontal
    *      }
@@ -1106,7 +1062,7 @@ const $ZOOM = {
   regions: []
 });
 
-;// ./src/config/Options/common/title.ts
+;// CONCATENATED MODULE: ./src/config/Options/common/title.ts
 /* harmony default export */ var title = ({
   /**
    * Set title options
@@ -1147,7 +1103,7 @@ const $ZOOM = {
   title_position: "center"
 });
 
-;// ./src/config/Options/common/tooltip.ts
+;// CONCATENATED MODULE: ./src/config/Options/common/tooltip.ts
 /* harmony default export */ var tooltip = ({
   /**
    * Tooltip options
@@ -1395,7 +1351,7 @@ const $ZOOM = {
   tooltip_order: null
 });
 
-;// ./src/config/Options/data/data.ts
+;// CONCATENATED MODULE: ./src/config/Options/data/data.ts
 /* harmony default export */ var data = ({
   /**
    * Specify the key of x values in the data.<br><br>
@@ -1472,7 +1428,6 @@ const $ZOOM = {
    * - area-spline
    * - area-spline-range
    * - area-step
-   * - area-step-range
    * - bar
    * - bubble
    * - candlestick
@@ -1504,7 +1459,6 @@ const $ZOOM = {
    *   areaSpline,
    *   areaSplineRange,
    *   areaStep,
-   *   areaStepRange,
    *   bar,
    *   bubble,
    *   candlestick,
@@ -1553,7 +1507,6 @@ const $ZOOM = {
    *   areaSpline,
    *   areaSplineRange,
    *   areaStep,
-   *   areaStepRange,
    *   bar,
    *   bubble,
    *   candlestick,
@@ -1712,10 +1665,7 @@ const $ZOOM = {
    *  - `i` is the index of the data series point where the label is shown.
    *  - `texts` is the array of whole corresponding data series' text labels.<br><br>
    * Formatter function can be defined for each data by specifying as an object and D3 formatter function can be set (ex. d3.format('$'))
-   * @property {string|object|Function} [data.labels.backgroundColors] Set label text background colors.<br><br>
-   * - **NOTE**: When function is set, background colors can be specified one color per dataset.
-   *   - Within the function, the last returned color for dataset will be used.
-   *   - Only can control set or unset background color for each values.
+   * @property {string|object} [data.labels.backgroundColors] Set label text background colors.
    * @property {string|object|Function} [data.labels.colors] Set label text colors.
    * @property {object|Function} [data.labels.position] Set each dataset position, relative the original.<br><br>
    * When function is specified, will receives 5 arguments such as `type, v, id, i, texts` and it must return a position number.<br><br>
@@ -1729,32 +1679,12 @@ const $ZOOM = {
    * @property {number} [data.labels.position.y=0] y coordinate position, relative the original.
    * @property {object} [data.labels.rotate] Rotate label text. Specify degree value in a range of `0 ~ 360`.
    * - **NOTE:** Depend on rotate value, text position need to be adjusted manually(using `data.labels.position` option) to be shown nicely.
-   * @property {boolean|object} [data.labels.border=false] Add border to data label text. NOTE: When set as `true`, styling aren't applied. Hence, need to set using `.bb-text-border` class.
-   * @property {number|string|object} [data.labels.border.padding="3 5"] Border padding. Can be a single number, string or object with top, bottom, left, right properties.
-   * @property {number} [data.labels.border.radius=10] Border radius value.
-   * @property {number} [data.labels.border.strokeWidth=1] Border stroke width.
-   * @property {string} [data.labels.border.stroke="#000"] Border stroke color.
-   * @property {string} [data.labels.border.fill="none"] Border fill color.
-   * @property {object|Function} [data.labels.image] Set image to be displayed next to the label text.<br><br>
-   * When function is specified, will receives 3 arguments such as `v, id, i` and it must return an image object with `url`, `width`, `height`, and optional `pos` properties.<br><br>
-   * The arguments are:<br>
-   *  - `v` is the value of the data point where the label is shown.
-   *  - `id` is the id of the data where the label is shown.
-   *  - `i` is the index of the data series point where the label is shown.
-   * @property {string} data.labels.image.url Image URL path. Can use placeholder `{=ID}` which will be replaced with the data ID.
-   * @property {number} data.labels.image.width Image width in pixels.
-   * @property {number} data.labels.image.height Image height in pixels.
-   * @property {object} [data.labels.image.pos] Image position relative to the label text.
-   * @property {number} [data.labels.image.pos.x=0] x coordinate position, relative the original.
-   * @property {number} [data.labels.image.pos.y=0] y coordinate position, relative the original.
    * @memberof Options
    * @type {object}
    * @default {}
    * @see [Demo](https://naver.github.io/billboard.js/demo/#Data.DataLabel)
-   * @see [Demo: label border](https://naver.github.io/billboard.js/demo/#Data.DataLabelBorder)
    * @see [Demo: label colors](https://naver.github.io/billboard.js/demo/#Data.DataLabelColors)
    * @see [Demo: label format](https://naver.github.io/billboard.js/demo/#Data.DataLabelFormat)
-   * @see [Demo: label image](https://naver.github.io/billboard.js/demo/#Data.DataLabelImage)
    * @see [Demo: label multiline](https://naver.github.io/billboard.js/demo/#Data.DataLabelMultiline)
    * @see [Demo: label overlap](https://naver.github.io/billboard.js/demo/#Data.DataLabelOverlap)
    * @see [Demo: label position](https://naver.github.io/billboard.js/demo/#Data.DataLabelPosition)
@@ -1787,15 +1717,7 @@ const $ZOOM = {
    *     backgroundColors: {
    *          data1: "green",
    *          data2: "yellow"
-   *     },
-   *
-   *     // call back for label text background color
-   *     backgroundColors: function(color, d) {
-   *         // color: the default data label color string
-   *         // data: ex) {x: 0, value: 200, id: "data3", index: 0}
-   *         ....
-   *         return d.value > 200 ? "cyan" : "red";
-   *     },
+   *     }
    *
    *     // apply for all label texts
    *     colors: "red",
@@ -1835,76 +1757,7 @@ const $ZOOM = {
    *     },
    *
    * 	   // rotate degree for label text
-   *     rotate: 90,
-   *
-   *     // add border to data label text
-   *     // NOTE: When set as `true`, styling aren't applied. Hence, need to set using '.bb-text-border' class.
-   *     // ex. ".bb-text-border { fill: red; stroke: #000; stroke-width: 2px; rx: 10px; ry: 10px; }"
-   *     border: true,
-   *
-   *     // or set detailed border options
-   *     border: {
-   *        padding: 10,  // set all padding to 10
-   *        padding: "5 10",  // set top and bottom padding to 5, left and right padding to 10
-   *        padding: {  // specify each padding
-   *           top: 3,
-   *           bottom: 5,
-   *           left: 10,
-   *           right: 13
-   *        },
-   *        radius: 10,
-   *        strokeWidth: 2,
-   *        stroke: "#000",
-   *        fill: "red"
-   *     },
-   *
-   *     // set image to be displayed next to the label text
-   *     image: {
-   *        url: "./sample.svg",
-   *
-   *        // use placeholder to dynamically set image URL based on data ID
-   *        url: "./images/{=ID}.svg",  // will be replaced to "./images/data1.svg", "./images/data2.svg", etc.
-   *        width: 35,
-   *        height: 35,
-   *        pos: {
-   *           x: 0,
-   *           y: 0
-   *        }
-   *     },
-   *
-   *     // or use function to return image configuration dynamically
-   *     image: function(v, id, i) {
-   *        // v is the value of the data point where the label is shown.
-   *        // id is the id of the data where the label is shown.
-   *        // i is the index of the data series point where the label is shown.
-   *
-   *        // Return different images based on value
-   *        if (v > 500) {
-   *           return {
-   *              url: "./high-value.svg",
-   *              width: 40,
-   *              height: 40,
-   *              pos: { x: 0, y: 0 }
-   *           };
-   *        } else if (v > 100) {
-   *           return {
-   *              url: "./medium-value.svg",
-   *              width: 30,
-   *              height: 30,
-   *              pos: { x: 0, y: 0 }
-   *           };
-   *        } else if(v < 5) {
-   *        	// Return falsy value in case of don't want to show image
-   *           return null;
-   *        } else {
-   *           return {
-   *              url: "./low-value.svg",
-   *              width: 20,
-   *              height: 20,
-   *              pos: { x: 0, y: 0 }
-   *           };
-   *        }
-   *     }
+   *     rotate: 90
    *   }
    * }
    */
@@ -1912,7 +1765,6 @@ const $ZOOM = {
   data_labels_backgroundColors: void 0,
   data_labels_colors: void 0,
   data_labels_position: {},
-  data_labels_imgUrl: void 0,
   /**
    * Hide each data when the chart appears.<br><br>
    * If true specified, all of data will be hidden. If multiple ids specified as an array, those will be hidden.
@@ -2046,7 +1898,7 @@ const $ZOOM = {
   data_onhidden: void 0,
   /**
    * Set a callback for minimum data
-   * - **NOTE:** For 'area-line-range', 'area-step-range' and 'area-spline-range', `mid` data will be taken for the comparison
+   * - **NOTE:** For 'area-line-range' and 'area-spline-range', `mid` data will be taken for the comparison
    * @name data․onmin
    * @memberof Options
    * @type {Function}
@@ -2061,7 +1913,7 @@ const $ZOOM = {
   data_onmin: void 0,
   /**
    * Set a callback for maximum data
-   * - **NOTE:** For 'area-line-range', 'area-step-range' and 'area-spline-range', `mid` data will be taken for the comparison
+   * - **NOTE:** For 'area-line-range' and 'area-spline-range', `mid` data will be taken for the comparison
    * @name data․onmax
    * @memberof Options
    * @type {Function}
@@ -2164,7 +2016,7 @@ const $ZOOM = {
    *   type: "bar"
    * }
    *
-   * // for 'range' types('area-line-range' or 'area-step-range' or 'area-spline-range'), data should contain:
+   * // for 'range' types('area-line-range' or 'area-spline-range'), data should contain:
    * // - an array of [high, mid, low] data following the order
    * // - or an object with 'high', 'mid' and 'low' key value
    * data: {
@@ -2249,7 +2101,7 @@ const $ZOOM = {
    *   type: "bar"
    * }
    *
-   * // for 'range' types('area-line-range' or 'area-step-range' or 'area-spline-range'), data should contain:
+   * // for 'range' types('area-line-range' or 'area-spline-range'), data should contain:
    * // - an array of [high, mid, low] data following the order
    * // - or an object with 'high', 'mid' and 'low' key value
    * data: {
@@ -2353,7 +2205,7 @@ const $ZOOM = {
   data_empty_label_text: ""
 });
 
-;// ./src/config/Options/interaction/interaction.ts
+;// CONCATENATED MODULE: ./src/config/Options/interaction/interaction.ts
 /* harmony default export */ var interaction = ({
   /**
    * Interaction options
@@ -2367,8 +2219,6 @@ const $ZOOM = {
    * @property {boolean} [interaction.inputType.mouse=true] enable or disable mouse interaction
    * @property {boolean} [interaction.inputType.touch=true] enable or disable  touch interaction
    * @property {boolean|number} [interaction.inputType.touch.preventDefault=false] enable or disable to call event.preventDefault on touchstart & touchmove event. It's usually used to prevent document scrolling.
-   * @property {boolean} [interaction.onout=true] Enable or disable "onout" event.<br>
-   * 		When is disabled, defocus(hiding tooltip, focused gridline, etc.) event won't work.
    * @see [Demo: touch.preventDefault](https://naver.github.io/billboard.js/demo/#Interaction.PreventScrollOnTouch)
    * @example
    * interaction: {
@@ -2386,22 +2236,18 @@ const $ZOOM = {
    *            // or threshold pixel value (pixel moved from touchstart to touchmove)
    *            preventDefault: 5
    *        }
-   *    },
-   *
-   *    // disable "onout" event
-   *    onout: false
+   *    }
    * }
    */
   interaction_enabled: true,
   interaction_brighten: true,
   interaction_inputType_mouse: true,
-  interaction_inputType_touch: {},
-  interaction_onout: true
+  interaction_inputType_touch: {}
 });
 
 // EXTERNAL MODULE: external {"commonjs":"d3-brush","commonjs2":"d3-brush","amd":"d3-brush","root":"d3"}
 var external_commonjs_d3_brush_commonjs2_d3_brush_amd_d3_brush_root_d3_ = __webpack_require__(4);
-;// ./src/module/browser.ts
+;// CONCATENATED MODULE: ./src/module/browser.ts
 function getGlobal() {
   return typeof globalThis === "object" && globalThis !== null && globalThis.Object === Object && globalThis || typeof global === "object" && global !== null && global.Object === Object && global || typeof self === "object" && self !== null && self.Object === Object && self || Function("return this")();
 }
@@ -2427,7 +2273,7 @@ const [
 ] = getFallback(win);
 
 
-;// ./src/module/util.ts
+;// CONCATENATED MODULE: ./src/module/util.ts
 var util_defProp = Object.defineProperty;
 var util_getOwnPropSymbols = Object.getOwnPropertySymbols;
 var util_hasOwnProp = Object.prototype.hasOwnProperty;
@@ -2523,7 +2369,7 @@ function getRectSegList(path) {
   ];
 }
 function getPathBox(path) {
-  const { width, height } = getBoundingRect(path);
+  const { width, height } = path.getBoundingClientRect();
   const items = getRectSegList(path);
   const x = items[0].x;
   const y = Math.min(items[0].y, items[1].y);
@@ -2555,20 +2401,9 @@ function getBrushSelection(ctx) {
   }
   return selection;
 }
-function getRect(relativeViewport, node, forceEval = false) {
-  const _ = (n) => n[relativeViewport ? "getBoundingClientRect" : "getBBox"]();
-  if (forceEval) {
-    return _(node);
-  } else {
-    const needEvaluate = !("rect" in node) || "rect" in node && node.hasAttribute("width") && node.rect.width !== +(node.getAttribute("width") || 0);
-    return needEvaluate ? node.rect = _(node) : node.rect;
-  }
-}
-function getBoundingRect(node, forceEval = false) {
-  return getRect(true, node, forceEval);
-}
-function getBBox(node, forceEval = false) {
-  return getRect(false, node, forceEval);
+function getBoundingRect(node) {
+  const needEvaluate = !("rect" in node) || "rect" in node && node.hasAttribute("width") && node.rect.width !== +node.getAttribute("width");
+  return needEvaluate ? node.rect = node.getBoundingClientRect() : node.rect;
 }
 function getRandom(asStr = true, min = 0, max = 1e4) {
   const crpt = win.crypto || win.msCrypto;
@@ -2651,24 +2486,11 @@ function getCssRules(styleSheets) {
   return rules;
 }
 function getScrollPosition(node) {
-  var _a, _b, _c, _d, _e, _f;
+  var _a, _b, _c, _d;
   return {
-    x: ((_b = (_a = win.pageXOffset) != null ? _a : win.scrollX) != null ? _b : 0) + ((_c = node.scrollLeft) != null ? _c : 0),
-    y: ((_e = (_d = win.pageYOffset) != null ? _d : win.scrollY) != null ? _e : 0) + ((_f = node.scrollTop) != null ? _f : 0)
+    x: ((_b = (_a = win.pageXOffset) != null ? _a : win.scrollX) != null ? _b : 0) + node.scrollLeft,
+    y: ((_d = (_c = win.pageYOffset) != null ? _c : win.scrollY) != null ? _d : 0) + node.scrollTop
   };
-}
-function getTransformCTM(node, x = 0, y = 0, inverse = true) {
-  const point = new DOMPoint(x, y);
-  const screen = node.getScreenCTM();
-  const res = point.matrixTransform(
-    inverse ? screen == null ? void 0 : screen.inverse() : screen
-  );
-  if (inverse === false) {
-    const rect = getBoundingRect(node);
-    res.x -= rect.x;
-    res.y -= rect.y;
-  }
-  return res;
 }
 function getTranslation(node) {
   const transform = node ? node.transform : null;
@@ -2690,14 +2512,12 @@ function mergeObj(target, ...objectN) {
   const source = objectN.shift();
   if (isObject(target) && isObject(source)) {
     Object.keys(source).forEach((key) => {
-      if (!/^(__proto__|constructor|prototype)$/i.test(key)) {
-        const value = source[key];
-        if (isObject(value)) {
-          !target[key] && (target[key] = {});
-          target[key] = mergeObj(target[key], value);
-        } else {
-          target[key] = isArray(value) ? value.concat() : value;
-        }
+      const value = source[key];
+      if (isObject(value)) {
+        !target[key] && (target[key] = {});
+        target[key] = mergeObj(target[key], value);
+      } else {
+        target[key] = isArray(value) ? value.concat() : value;
       }
     });
   }
@@ -2819,28 +2639,12 @@ function parseDate(date) {
   }
   return parsedDate;
 }
-function hasViewBox(svg) {
-  const attr = svg.attr("viewBox");
-  return attr ? /(\d+(\.\d+)?){3}/.test(attr) : false;
-}
-function hasStyle(node, condition, all = false) {
-  const isD3Node = !!node.node;
-  let has = false;
-  for (const [key, value] of Object.entries(condition)) {
-    has = isD3Node ? node.style(key) === value : node.style[key] === value;
-    if (all === false && has) {
-      break;
-    }
-  }
-  return has;
-}
 function isTabVisible() {
   var _a, _b;
   return ((_a = browser_doc) == null ? void 0 : _a.hidden) === false || ((_b = browser_doc) == null ? void 0 : _b.visibilityState) === "visible";
 }
 function convertInputType(mouse, touch) {
   const { DocumentTouch, matchMedia, navigator } = win;
-  const hasPointerCoarse = matchMedia == null ? void 0 : matchMedia("(pointer:coarse)").matches;
   let hasTouch = false;
   if (touch) {
     if (navigator && "maxTouchPoints" in navigator) {
@@ -2848,7 +2652,7 @@ function convertInputType(mouse, touch) {
     } else if ("ontouchmove" in win || DocumentTouch && browser_doc instanceof DocumentTouch) {
       hasTouch = true;
     } else {
-      if (hasPointerCoarse) {
+      if (matchMedia == null ? void 0 : matchMedia("(pointer:coarse)").matches) {
         hasTouch = true;
       } else {
         const UA = navigator.userAgent;
@@ -2856,7 +2660,7 @@ function convertInputType(mouse, touch) {
       }
     }
   }
-  const hasMouse = mouse && !hasPointerCoarse && (matchMedia == null ? void 0 : matchMedia("(pointer:fine)").matches);
+  const hasMouse = mouse && ((matchMedia == null ? void 0 : matchMedia("any-hover:hover").matches) || (matchMedia == null ? void 0 : matchMedia("any-pointer:fine").matches));
   return hasMouse && "mouse" || hasTouch && "touch" || "mouse";
 }
 function runUntil(fn, conditionFn) {
@@ -2866,22 +2670,8 @@ function runUntil(fn, conditionFn) {
     fn();
   }
 }
-function parseShorthand(value) {
-  if (isObject(value) && !isString(value)) {
-    const obj = value;
-    return {
-      top: obj.top || 0,
-      right: obj.right || 0,
-      bottom: obj.bottom || 0,
-      left: obj.left || 0
-    };
-  }
-  const values = (isString(value) ? value.trim().split(/\s+/) : [value]).map((v) => +v || 0);
-  const [a, b = a, c = a, d = b] = values;
-  return { top: a, right: b, bottom: c, left: d };
-}
 
-;// ./src/config/Options/Options.ts
+;// CONCATENATED MODULE: ./src/config/Options/Options.ts
 var Options_defProp = Object.defineProperty;
 var Options_getOwnPropSymbols = Object.getOwnPropertySymbols;
 var Options_hasOwnProp = Object.prototype.hasOwnProperty;
@@ -2898,7 +2688,10 @@ var Options_spreadValues = (a, b) => {
     }
   return a;
 };
-var __publicField = (obj, key, value) => Options_defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
+var __publicField = (obj, key, value) => {
+  Options_defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
+  return value;
+};
 
 
 
@@ -2930,7 +2723,7 @@ __publicField(_Options, "data", {});
 let Options = _Options;
 
 
-;// ./src/config/Store/Element.ts
+;// CONCATENATED MODULE: ./src/config/Store/Element.ts
 class Element {
   constructor() {
     const element = {
@@ -3006,7 +2799,7 @@ class Element {
   }
 }
 
-;// ./src/config/Store/State.ts
+;// CONCATENATED MODULE: ./src/config/Store/State.ts
 class State {
   constructor() {
     return {
@@ -3062,10 +2855,8 @@ class State {
         },
         // current used chart type list
         types: [],
-        needle: void 0,
+        needle: void 0
         // arc needle current value
-        zoomDomain: null
-        // zoomed domain value
       },
       // legend
       isLegendRight: false,
@@ -3160,7 +2951,7 @@ class State {
   }
 }
 
-;// ./src/config/Store/Store.ts
+;// CONCATENATED MODULE: ./src/config/Store/Store.ts
 
 
 const Store_classes = {
@@ -3178,10 +2969,13 @@ class Store {
   }
 }
 
-;// ./src/module/Cache.ts
+;// CONCATENATED MODULE: ./src/module/Cache.ts
 var Cache_defProp = Object.defineProperty;
 var Cache_defNormalProp = (obj, key, value) => key in obj ? Cache_defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var Cache_publicField = (obj, key, value) => Cache_defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
+var Cache_publicField = (obj, key, value) => {
+  Cache_defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
+  return value;
+};
 
 const KEY = {
   bubbleBaseLength: "$baseLength",
@@ -3269,14 +3063,13 @@ class Cache {
   }
 }
 
-;// ./src/config/const.ts
+;// CONCATENATED MODULE: ./src/config/const.ts
 const TYPE = {
   AREA: "area",
   AREA_LINE_RANGE: "area-line-range",
   AREA_SPLINE: "area-spline",
   AREA_SPLINE_RANGE: "area-spline-range",
   AREA_STEP: "area-step",
-  AREA_STEP_RANGE: "area-step-range",
   BAR: "bar",
   BUBBLE: "bubble",
   CANDLESTICK: "candlestick",
@@ -3298,7 +3091,6 @@ const TYPE_METHOD_NEEDED = {
   AREA_SPLINE: "initArea",
   AREA_SPLINE_RANGE: "initArea",
   AREA_STEP: "initArea",
-  AREA_STEP_RANGE: "initArea",
   BAR: "initBar",
   BUBBLE: "initCircle",
   CANDLESTICK: "initCandlestick",
@@ -3320,13 +3112,11 @@ const TYPE_BY_CATEGORY = {
     TYPE.AREA_SPLINE,
     TYPE.AREA_SPLINE_RANGE,
     TYPE.AREA_LINE_RANGE,
-    TYPE.AREA_STEP,
-    TYPE.AREA_STEP_RANGE
+    TYPE.AREA_STEP
   ],
   AreaRange: [
     TYPE.AREA_SPLINE_RANGE,
-    TYPE.AREA_LINE_RANGE,
-    TYPE.AREA_STEP_RANGE
+    TYPE.AREA_LINE_RANGE
   ],
   Arc: [
     TYPE.PIE,
@@ -3343,13 +3133,11 @@ const TYPE_BY_CATEGORY = {
     TYPE.AREA_SPLINE_RANGE,
     TYPE.AREA_LINE_RANGE,
     TYPE.STEP,
-    TYPE.AREA_STEP,
-    TYPE.AREA_STEP_RANGE
+    TYPE.AREA_STEP
   ],
   Step: [
     TYPE.STEP,
-    TYPE.AREA_STEP,
-    TYPE.AREA_STEP_RANGE
+    TYPE.AREA_STEP
   ],
   Spline: [
     TYPE.SPLINE,
@@ -3358,7 +3146,7 @@ const TYPE_BY_CATEGORY = {
   ]
 };
 
-;// ./src/module/error.ts
+;// CONCATENATED MODULE: ./src/module/error.ts
 
 
 
@@ -3380,27 +3168,26 @@ function checkModuleImport(ctx) {
   }
   type && logError(
     `Please, make sure if %c${camelize(type)}`,
-    "module has been imported and specified correctly.",
-    "https://github.com/naver/billboard.js/wiki/CHANGELOG-v2#modularization-by-its-functionality"
+    "module has been imported and specified correctly."
   );
 }
-function logError(head, tail, info) {
+function logError(head, tail) {
   var _a;
   const prefix = "[billboard.js]";
+  const info = "https://github.com/naver/billboard.js/wiki/CHANGELOG-v2#modularization-by-its-functionality";
   const hasConsole = (_a = win.console) == null ? void 0 : _a.error;
   if (hasConsole) {
-    const tailMsg = tail ? ["background:red;color:white;display:block;font-size:15px", tail] : [];
     console.error(
       `\u274C ${prefix} ${head}`,
       "background:red;color:white;display:block;font-size:15px",
-      ...tailMsg
+      tail
     );
-    info && console.info("%c\u2139\uFE0F", "font-size:15px", info);
+    console.info("%c\u2139\uFE0F", "font-size:15px", info);
   }
-  throw Error(`${prefix} ${head.replace(/\%c([a-z-]+)/i, "'$1' ")} ${tail != null ? tail : ""}`);
+  throw Error(`${prefix} ${head.replace(/\%c([a-z-]+)/i, "'$1' ")} ${tail}`);
 }
 
-;// ./src/module/generator.ts
+;// CONCATENATED MODULE: ./src/module/generator.ts
 
 
 const { setTimeout: generator_setTimeout, clearTimeout: generator_clearTimeout } = win;
@@ -3462,7 +3249,7 @@ function generateWait() {
   return f;
 }
 
-;// ./src/module/worker.ts
+;// CONCATENATED MODULE: ./src/module/worker.ts
 
 const blob = {};
 function getObjectURL(fn, depsFn) {
@@ -3511,7 +3298,7 @@ function runWorker(useWorker = true, fn, callback, depsFn) {
 
 // EXTERNAL MODULE: external {"commonjs":"d3-dsv","commonjs2":"d3-dsv","amd":"d3-dsv","root":"d3"}
 var external_commonjs_d3_dsv_commonjs2_d3_dsv_amd_d3_dsv_root_d3_ = __webpack_require__(5);
-;// ./src/ChartInternal/data/convert.helper.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/data/convert.helper.ts
 
 
 function columns(columns2) {
@@ -3644,7 +3431,7 @@ function tsv(tsv2) {
   }, tsv2);
 }
 
-;// ./src/ChartInternal/data/convert.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/data/convert.ts
 
 
 
@@ -3654,35 +3441,6 @@ function getDataKeyForJson(keysParam, config) {
     config.data_x = keys.x;
   }
   return keys;
-}
-function setXS(ids, data, params) {
-  const $$ = this;
-  const { config } = $$;
-  let xsData;
-  ids.forEach((id) => {
-    const xKey = $$.getXKey(id);
-    if (params.customX || params.timeSeries) {
-      if (params.xs.indexOf(xKey) >= 0) {
-        xsData = (params.appendXs && $$.data.xs[id] || []).concat(
-          data.map((d, i) => {
-            const rawX = isValue(d[xKey]);
-            return rawX ? $$.generateTargetX(rawX, id, i) : false;
-          }).filter((v) => v !== false)
-        );
-      } else if (config.data_x) {
-        xsData = this.getOtherTargetXs();
-      } else if (notEmpty(config.data_xs)) {
-        xsData = $$.getXValuesOfXKey(xKey, $$.data.targets);
-      }
-    } else {
-      xsData = data.map((d, i) => i);
-    }
-    if (xsData) {
-      $$.data.xs[id] = xsData;
-    } else {
-      throw new Error(`x is not defined for id = "${id}".`);
-    }
-  });
 }
 /* harmony default export */ var convert = ({
   /**
@@ -3713,55 +3471,61 @@ function setXS(ids, data, params) {
         callback
       );
     } else if (data.json) {
-      runWorker(data.json.length ? useWorker : false, json, callback, [columns, rows])(
+      runWorker(useWorker, json, callback, [columns, rows])(
         data.json,
         getDataKeyForJson(data.keys, config)
       );
     } else if (data.rows) {
-      runWorker(data.rows.length ? useWorker : false, rows, callback)(data.rows);
+      runWorker(useWorker, rows, callback)(data.rows);
     } else if (data.columns) {
-      runWorker(data.columns.length ? useWorker : false, columns, callback)(data.columns);
+      runWorker(useWorker, columns, callback)(data.columns);
     } else if (args.bindto) {
       throw Error("url or json or rows or columns is required.");
     }
   },
-  /**
-   * Convert data to targets
-   * @param {object[]} data Data to convert
-   * @param {boolean} appendXs Whether to append xs
-   * @returns {IData[]} Converted targets
-   * @private
-   */
   convertDataToTargets(data, appendXs) {
     const $$ = this;
     const { axis, config, state } = $$;
     const chartType = config.data_type;
+    let isCategorized = false;
+    let isTimeSeries = false;
+    let isCustomX = false;
+    if (axis) {
+      isCategorized = axis.isCategorized();
+      isTimeSeries = axis.isTimeSeries();
+      isCustomX = axis.isCustomX();
+    }
     const dataKeys = Object.keys(data[0] || {});
-    const { ids, xs } = dataKeys.length ? dataKeys.reduce((acc, key) => {
-      if ($$.isX.call($$, key)) {
-        acc.xs.push(key);
-      } else if ($$.isNotX.call($$, key)) {
-        acc.ids.push(key);
+    const ids = dataKeys.length ? dataKeys.filter($$.isNotX, $$) : [];
+    const xs = dataKeys.length ? dataKeys.filter($$.isX, $$) : [];
+    let xsData;
+    ids.forEach((id) => {
+      const xKey = this.getXKey(id);
+      if (isCustomX || isTimeSeries) {
+        if (xs.indexOf(xKey) >= 0) {
+          xsData = (appendXs && $$.data.xs[id] || []).concat(
+            data.map((d) => d[xKey]).filter(isValue).map((rawX, i) => $$.generateTargetX(rawX, id, i))
+          );
+        } else if (config.data_x) {
+          xsData = this.getOtherTargetXs();
+        } else if (notEmpty(config.data_xs)) {
+          xsData = $$.getXValuesOfXKey(xKey, $$.data.targets);
+        }
+      } else {
+        xsData = data.map((d, i) => i);
       }
-      return acc;
-    }, { ids: [], xs: [] }) : { ids: [], xs: [] };
-    const params = {
-      appendXs,
-      xs,
-      idConverter: config.data_idConverter.bind($$.api),
-      categorized: axis == null ? void 0 : axis.isCategorized(),
-      timeSeries: axis == null ? void 0 : axis.isTimeSeries(),
-      customX: axis == null ? void 0 : axis.isCustomX()
-    };
-    setXS.bind($$)(ids, data, params);
+      xsData && (this.data.xs[id] = xsData);
+    });
+    ids.forEach((id) => {
+      if (!this.data.xs[id]) {
+        throw new Error(`x is not defined for id = "${id}".`);
+      }
+    });
     const targets = ids.map((id, index) => {
       const convertedId = config.data_idConverter.bind($$.api)(id);
       const xKey = $$.getXKey(id);
-      const isCategory = params.customX && params.categorized;
-      const hasCategory = isCategory && (() => {
-        const categorySet = new Set(config.axis_x_categories);
-        return data.every((v) => categorySet.has(v.x));
-      })();
+      const isCategory = isCustomX && isCategorized;
+      const hasCategory = isCategory && data.map((v) => v.x).every((v) => config.axis_x_categories.indexOf(v) > -1);
       const isDataAppend = data.__append__;
       const xIndex = xKey === null && isDataAppend ? $$.api.data.values(id).length : 0;
       return {
@@ -3821,7 +3585,7 @@ function setXS(ids, data, params) {
   }
 });
 
-;// ./src/ChartInternal/data/data.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/data/data.ts
 
 
 
@@ -4025,10 +3789,9 @@ function setXS(ids, data, params) {
       const minMax = $$.getMinMaxValue(data);
       let min = [];
       let max = [];
-      const { min: minVal, max: maxVal } = minMax;
       data.forEach((v) => {
-        const minData = $$.getFilteredDataByValue(v, minVal);
-        const maxData = $$.getFilteredDataByValue(v, maxVal);
+        const minData = $$.getFilteredDataByValue(v, minMax.min);
+        const maxData = $$.getFilteredDataByValue(v, minMax.max);
         if (minData.length) {
           min = min.concat(minData);
         }
@@ -4056,7 +3819,7 @@ function setXS(ids, data, params) {
           if (!sum[i]) {
             sum[i] = 0;
           }
-          sum[i] += ~~v.value;
+          sum[i] += isNumber(v.value) ? v.value : 0;
         });
       });
     }
@@ -4073,9 +3836,8 @@ function setXS(ids, data, params) {
     const cacheKey = KEY.dataTotalSum;
     let total = $$.cache.get(cacheKey);
     if (!isNumber(total)) {
-      total = $$.data.targets.reduce((acc, t) => {
-        return acc + t.values.reduce((sum, v) => sum + ~~v.value, 0);
-      }, 0);
+      const sum = mergeArray($$.data.targets.map((t) => t.values)).map((v) => v.value);
+      total = sum.length ? sum.reduce((p, c) => p + c) : 0;
       $$.cache.add(cacheKey, total);
     }
     if (subtractHidden) {
@@ -4239,7 +4001,17 @@ function setXS(ids, data, params) {
     return ys;
   },
   checkValueInTargets(targets, checker) {
-    return Object.keys(targets).some((id) => targets[id].values.some((v) => checker(v.value)));
+    const ids = Object.keys(targets);
+    let values;
+    for (let i = 0; i < ids.length; i++) {
+      values = targets[ids[i]].values;
+      for (let j = 0; j < values.length; j++) {
+        if (checker(values[j].value)) {
+          return true;
+        }
+      }
+    }
+    return false;
   },
   hasMultiTargets() {
     return this.filterTargetsToShow().length > 1;
@@ -4293,12 +4065,6 @@ function setXS(ids, data, params) {
   filterByX(targets, x) {
     return mergeArray(targets.map((t) => t.values)).filter((v) => v.x - x === 0);
   },
-  filterNullish(data) {
-    const filter = (v) => isValue(v.value);
-    return data ? data.filter(
-      (v) => "value" in v ? filter(v) : v.values.some(filter)
-    ) : data;
-  },
   filterRemoveNull(data) {
     return data.filter((d) => isValue(this.getBaseValue(d)));
   },
@@ -4314,27 +4080,13 @@ function setXS(ids, data, params) {
     return isBoolean(dataLabels) && dataLabels || isObjectType(dataLabels) && notEmpty(dataLabels);
   },
   /**
-   * Determine if has null value
-   * @param {Array} targets Data array to be evaluated
-   * @returns {boolean}
-   * @private
-   */
-  hasNullDataValue(targets) {
-    return targets.some(({ value }) => value === null);
-  },
-  /**
    * Get data index from the event coodinates
    * @param {Event} event Event object
    * @returns {number}
-   * @private
    */
   getDataIndexFromEvent(event) {
     const $$ = this;
-    const {
-      $el,
-      config,
-      state: { hasRadar, inputType, eventReceiver: { coords, rect } }
-    } = $$;
+    const { $el, config, state: { hasRadar, inputType, eventReceiver: { coords, rect } } } = $$;
     let index;
     if (hasRadar) {
       let target = event.target;
@@ -4347,17 +4099,9 @@ function setXS(ids, data, params) {
       const isRotated = config.axis_rotated;
       const scrollPos = getScrollPosition($el.chart.node());
       const e = inputType === "touch" && event.changedTouches ? event.changedTouches[0] : event;
-      let point = isRotated ? e.clientY + scrollPos.y : e.clientX + scrollPos.x;
-      if (hasViewBox($el.svg)) {
-        const pos = [point, 0];
-        isRotated && pos.reverse();
-        point = getTransformCTM($el.eventRect.node(), ...pos)[isRotated ? "y" : "x"];
-      } else {
-        point -= isRotated ? rect.top : rect.left;
-      }
       index = findIndex(
         coords,
-        point,
+        isRotated ? e.clientY + scrollPos.y - rect.top : e.clientX + scrollPos.x - rect.left,
         0,
         coords.length - 1,
         isRotated
@@ -4366,12 +4110,13 @@ function setXS(ids, data, params) {
     return index;
   },
   getDataLabelLength(min, max, key) {
-    var _a;
     const $$ = this;
+    const lengths = [0, 0];
     const paddingCoef = 1.3;
-    return ((_a = $$.getTextRect(
-      [min, max].map((v) => $$.dataLabelFormat()(v))
-    )) == null ? void 0 : _a.map((rect) => rect[key] * paddingCoef)) || [0, 0];
+    $$.$el.chart.select("svg").selectAll(".dummy").data([min, max]).enter().append("text").text((d) => $$.dataLabelFormat(d.id)(d)).each(function(d, i) {
+      lengths[i] = this.getBoundingClientRect()[key] * paddingCoef;
+    }).remove();
+    return lengths;
   },
   isNoneArc(d) {
     return this.hasTarget(this.data.targets, d.id);
@@ -4553,7 +4298,9 @@ function setXS(ids, data, params) {
         if (state.hiddenTargetIds.length) {
           let hiddenSum = dataValues(state.hiddenTargetIds, false);
           if (hiddenSum.length) {
-            hiddenSum = hiddenSum.reduce((acc, curr) => acc.map((v, i) => ~~v + curr[i]));
+            hiddenSum = hiddenSum.reduce(
+              (acc, curr) => acc.map((v, i) => (isNumber(v) ? v : 0) + curr[i])
+            );
             total = total.map((v, i) => v - hiddenSum[i]);
           }
         }
@@ -4614,7 +4361,7 @@ function setXS(ids, data, params) {
   isBarRangeType(d) {
     const $$ = this;
     const { value } = d;
-    return $$.isBarType(d) && isArray(value) && value.length >= 2 && value.every(isNumber);
+    return $$.isBarType(d) && isArray(value) && value.length >= 2 && value.every((v) => isNumber(v));
   },
   /**
    * Get data object by id
@@ -4629,7 +4376,7 @@ function setXS(ids, data, params) {
   }
 });
 
-;// ./src/ChartInternal/data/load.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/data/load.ts
 
 
 function callDone(fn, resizeAfter = false) {
@@ -4697,8 +4444,6 @@ function callDone(fn, resizeAfter = false) {
         org.xScale = zoomState.x.domain(org.xDomain);
       }
       $$.updateCurrentZoomTransform(zoomState.x, zoomState.currentDomain);
-    } else if (org.xScale) {
-      org.xScale.domain(org.xDomain);
     }
     $$.updateTypesElements();
     callDone.call($$, args.done, args.resizeAfter);
@@ -4752,7 +4497,7 @@ function callDone(fn, resizeAfter = false) {
 
 // EXTERNAL MODULE: external {"commonjs":"d3-drag","commonjs2":"d3-drag","amd":"d3-drag","root":"d3"}
 var external_commonjs_d3_drag_commonjs2_d3_drag_amd_d3_drag_root_d3_ = __webpack_require__(6);
-;// ./src/ChartInternal/interactions/interaction.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/interactions/interaction.ts
 
 
 
@@ -4800,7 +4545,7 @@ var external_commonjs_d3_drag_commonjs2_d3_drag_amd_d3_drag_root_d3_ = __webpack
     if (isArcishData || d !== -1) {
       const callback = config[isOver ? "data_onover" : "data_onout"].bind($$.api);
       config.color_onover && $$.setOverColor(isOver, d, isArcishData);
-      if (isArcishData) {
+      if (isArcishData && "id") {
         const suffix = $$.getTargetSelectorSuffix(d.id);
         const selector = hasFunnel || hasTreemap ? `${$COMMON.target + suffix} .${$SHAPE.shape}` : $ARC.arc + suffix;
         callback(d, main.select(`.${selector}`).node());
@@ -4877,7 +4622,7 @@ var external_commonjs_d3_drag_commonjs2_d3_drag_amd_d3_drag_root_d3_ = __webpack
    * @param {Array} mouse x and y coordinate value
    */
   dispatchEvent(type, index, mouse) {
-    var _a, _b, _c;
+    var _a, _b;
     const $$ = this;
     const {
       config,
@@ -4888,13 +4633,13 @@ var external_commonjs_d3_drag_commonjs2_d3_drag_amd_d3_drag_root_d3_ = __webpack
         hasRadar,
         hasTreemap
       },
-      $el: { eventRect, funnel, radar, svg, treemap }
+      $el: { eventRect, funnel, radar, treemap }
     } = $$;
-    let element = (_c = (_b = (hasFunnel || hasTreemap) && eventReceiver.rect || hasRadar && radar.axes.select(`.${$AXIS.axis}-${index} text`) || (eventRect || ((_a = $$.getArcElementByIdOrIndex) == null ? void 0 : _a.call($$, index)))) == null ? void 0 : _b.node) == null ? void 0 : _c.call(_b);
+    let element = (_b = (hasFunnel || hasTreemap) && eventReceiver.rect || hasRadar && radar.axes.select(`.${$AXIS.axis}-${index} text`) || (eventRect || ((_a = $$.getArcElementByIdOrIndex) == null ? void 0 : _a.call($$, index)))) == null ? void 0 : _b.node();
     if (element) {
       const isMultipleX = $$.isMultipleX();
       const isRotated = config.axis_rotated;
-      let { width, left, top } = getBoundingRect(element);
+      let { width, left, top } = element.getBoundingClientRect();
       if (hasAxis && !hasRadar && !isMultipleX) {
         const coords = eventReceiver.coords[index];
         if (coords) {
@@ -4907,13 +4652,8 @@ var external_commonjs_d3_drag_commonjs2_d3_drag_amd_d3_drag_root_d3_ = __webpack
           top = 0;
         }
       }
-      let x = left + (mouse ? mouse[0] : 0) + (isMultipleX || isRotated ? 0 : width / 2);
-      let y = top + (mouse ? mouse[1] : 0) + (isRotated ? 4 : 0);
-      if (hasViewBox(svg)) {
-        const ctm = getTransformCTM($$.$el.eventRect.node(), x, y, false);
-        x = ctm.x;
-        y = ctm.y;
-      }
+      const x = left + (mouse ? mouse[0] : 0) + (isMultipleX || isRotated ? 0 : width / 2);
+      const y = top + (mouse ? mouse[1] : 0) + (isRotated ? 4 : 0);
       const params = {
         screenX: x,
         screenY: y,
@@ -4984,7 +4724,7 @@ var external_commonjs_d3_drag_commonjs2_d3_drag_amd_d3_drag_root_d3_ = __webpack
   }
 });
 
-;// ./src/ChartInternal/internals/category.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/internals/category.ts
 /* harmony default export */ var category = ({
   /**
    * Category Name
@@ -4999,7 +4739,7 @@ var external_commonjs_d3_drag_commonjs2_d3_drag_amd_d3_drag_root_d3_ = __webpack
   }
 });
 
-;// ./src/ChartInternal/internals/class.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/internals/class.ts
 
 /* harmony default export */ var internals_class = ({
   generateClass(prefix, targetId) {
@@ -5086,7 +4826,7 @@ var external_commonjs_d3_drag_commonjs2_d3_drag_amd_d3_drag_root_d3_ = __webpack
 
 // EXTERNAL MODULE: external {"commonjs":"d3-scale","commonjs2":"d3-scale","amd":"d3-scale","root":"d3"}
 var external_commonjs_d3_scale_commonjs2_d3_scale_amd_d3_scale_root_d3_ = __webpack_require__(7);
-;// ./src/ChartInternal/internals/color.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/internals/color.ts
 
 
 
@@ -5132,6 +4872,8 @@ const schemeCategory10 = [
   generateColor() {
     const $$ = this;
     const { $el, config } = $$;
+    const colors = config.data_colors;
+    const callback = config.data_color;
     const ids = [];
     let pattern = notEmpty(config.color_pattern) ? config.color_pattern : (0,external_commonjs_d3_scale_commonjs2_d3_scale_amd_d3_scale_root_d3_.scaleOrdinal)(getColorFromCss($el.chart) || schemeCategory10).range();
     const originalColorPattern = pattern;
@@ -5147,8 +4889,6 @@ const schemeCategory10 = [
     }
     return function(d) {
       var _a;
-      const colors = config.data_colors;
-      const callback = config.data_color;
       const id = d.id || ((_a = d.data) == null ? void 0 : _a.id) || d;
       const isLine = $$.isTypeOf(id, ["line", "spline", "step"]) || !config.data_types[id];
       let color;
@@ -5188,7 +4928,7 @@ const schemeCategory10 = [
   },
   /**
    * Append data backgound color filter definition
-   * @param {string|object|Function} color Color string, object, or function
+   * @param {string|object} color Color string
    * @param {object} attr filter attribute
    * @private
    */
@@ -5199,25 +4939,20 @@ const schemeCategory10 = [
     height: 1
   }) {
     const $$ = this;
-    const { $el: { defs }, state } = $$;
+    const { $el, state } = $$;
     if (color) {
       let ids = [];
       if (isString(color)) {
         ids.push("");
       } else if (isObject(color)) {
         ids = Object.keys(color);
-      } else if (isFunction(color)) {
-        ids = $$.mapToTargetIds();
       }
       ids.forEach((v) => {
         const id = `${state.datetimeId}-labels-bg${$$.getTargetSelectorSuffix(v)}${isString(color) ? $$.getTargetSelectorSuffix(color) : ""}`;
-        const colorValue = v === "" ? color : (color == null ? void 0 : color[v]) || "";
-        if (defs.select(`#${id}`).empty()) {
-          defs.append("filter").attr("x", attr.x).attr("y", attr.y).attr("width", attr.width).attr("height", attr.height).attr("id", id).html(
-            `<feFlood flood-color="${colorValue}" />
-							<feComposite in="SourceGraphic" />`
-          );
-        }
+        $el.defs.append("filter").attr("x", attr.x).attr("y", attr.y).attr("width", attr.width).attr("height", attr.height).attr("id", id).html(
+          `<feFlood flood-color="${v === "" ? color : color[v]}" />
+						<feComposite in="SourceGraphic" />`
+        );
       });
     }
   },
@@ -5304,7 +5039,7 @@ const schemeCategory10 = [
   }
 });
 
-;// ./src/ChartInternal/internals/domain.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/internals/domain.ts
 
 
 /* harmony default export */ var domain = ({
@@ -5414,10 +5149,7 @@ const schemeCategory10 = [
     }
     if (showHorizontalDataLabel) {
       const diff = diffDomain(scale.y.range());
-      const ratio = $$.getDataLabelLength(yDomainMin, yDomainMax, "width").map((v) => {
-        const result = v / diff;
-        return isFinite(result) ? result : 0;
-      });
+      const ratio = $$.getDataLabelLength(yDomainMin, yDomainMax, "width").map((v) => v / diff);
       ["bottom", "top"].forEach((v, i) => {
         padding[v] += domainLength * (ratio[i] / (1 - ratio[0] - ratio[1]));
       });
@@ -5658,7 +5390,7 @@ const schemeCategory10 = [
   }
 });
 
-;// ./src/ChartInternal/internals/format.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/internals/format.ts
 
 function getFormat($$, typeValue, v) {
   const { config } = $$;
@@ -5723,7 +5455,7 @@ function getFormat($$, typeValue, v) {
   }
 });
 
-;// ./src/ChartInternal/internals/legend.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/internals/legend.ts
 
 
 
@@ -5740,7 +5472,7 @@ function getFormattedText(id, formatted = true) {
   const { config } = this;
   let text = (_a = config.data_names[id]) != null ? _a : id;
   if (formatted && isFunction(config.legend_format)) {
-    text = config.legend_format(text, id !== text ? id : void 0);
+    text = config.legend_format(text);
   }
   return text;
 }
@@ -5927,8 +5659,7 @@ function getFormattedText(id, formatted = true) {
     const $$ = this;
     const { current, isLegendRight, legendItemHeight, legendStep } = $$.state;
     const isFitPadding = ((_a = $$.config.padding) == null ? void 0 : _a.mode) === "fit";
-    const height = $$.config.legend_show ? isLegendRight ? current.height : Math.max(isFitPadding ? 10 : 20, legendItemHeight) * (legendStep + 1) : 0;
-    return height;
+    return $$.config.legend_show ? isLegendRight ? current.height : (isFitPadding ? 10 : Math.max(20, legendItemHeight)) * (legendStep + 1) : 0;
   },
   /**
    * Get the opacity of the legend that is unfocused
@@ -6050,12 +5781,7 @@ function getFormattedText(id, formatted = true) {
       item.on(
         interaction.dblclick ? "dblclick" : "click",
         interaction || isFunction(config.legend_item_onclick) ? function(event, id) {
-          if (!callFn(
-            config.legend_item_onclick,
-            api,
-            id,
-            !state.hiddenTargetIds.includes(id)
-          )) {
+          if (!callFn(config.legend_item_onclick, api, id)) {
             const { altKey, target, type } = event;
             if (type === "dblclick" || altKey) {
               if (state.hiddenTargetIds.length && target.parentNode.getAttribute("class").indexOf(
@@ -6075,12 +5801,7 @@ function getFormattedText(id, formatted = true) {
         } : null
       );
       !isTouch && item.on("mouseout", interaction || isFunction(config.legend_item_onout) ? function(event, id) {
-        if (!callFn(
-          config.legend_item_onout,
-          api,
-          id,
-          !state.hiddenTargetIds.includes(id)
-        )) {
+        if (!callFn(config.legend_item_onout, api, id)) {
           (0,external_commonjs_d3_selection_commonjs2_d3_selection_amd_d3_selection_root_d3_.select)(this).classed($FOCUS.legendItemFocused, false);
           if (hasGauge) {
             $$.undoMarkOverlapped($$, `.${$GAUGE.gaugeValue}`);
@@ -6088,12 +5809,7 @@ function getFormattedText(id, formatted = true) {
           $$.api.revert();
         }
       } : null).on("mouseover", interaction || isFunction(config.legend_item_onover) ? function(event, id) {
-        if (!callFn(
-          config.legend_item_onover,
-          api,
-          id,
-          !state.hiddenTargetIds.includes(id)
-        )) {
+        if (!callFn(config.legend_item_onover, api, id)) {
           (0,external_commonjs_d3_selection_commonjs2_d3_selection_amd_d3_selection_root_d3_.select)(this).classed($FOCUS.legendItemFocused, true);
           if (hasGauge) {
             $$.markOverlapped(id, $$, `.${$GAUGE.gaugeValue}`);
@@ -6382,7 +6098,7 @@ function getFormattedText(id, formatted = true) {
 
 // EXTERNAL MODULE: external {"commonjs":"d3-transition","commonjs2":"d3-transition","amd":"d3-transition","root":"d3"}
 var external_commonjs_d3_transition_commonjs2_d3_transition_amd_d3_transition_root_d3_ = __webpack_require__(8);
-;// ./src/ChartInternal/internals/redraw.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/internals/redraw.ts
 
 
 
@@ -6547,10 +6263,10 @@ var external_commonjs_d3_transition_commonjs2_d3_transition_amd_d3_transition_ro
   }
 });
 
-;// ./src/ChartInternal/internals/scale.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/internals/scale.ts
 
 
-function getScale(type = "linear", min, max) {
+function getScale(type = "linear", min = 0, max = 1) {
   const scale = {
     linear: external_commonjs_d3_scale_commonjs2_d3_scale_amd_d3_scale_root_d3_.scaleLinear,
     log: external_commonjs_d3_scale_commonjs2_d3_scale_amd_d3_scale_root_d3_.scaleSymlog,
@@ -6560,7 +6276,7 @@ function getScale(type = "linear", min, max) {
   }[type]();
   scale.type = type;
   /_?log/.test(type) && scale.clamp(true);
-  return scale.range([min != null ? min : 0, max != null ? max : 1]);
+  return scale.range([min, max]);
 }
 /* harmony default export */ var scale = ({
   /**
@@ -6619,8 +6335,9 @@ function getScale(type = "linear", min, max) {
     const $$ = this;
     const offset = offsetValue || (() => $$.axis.x.tickOffset());
     const isInverted = $$.config.axis_x_inverted;
-    const scale = function(d) {
-      return scaleValue(d) + offset();
+    const scale = function(d, raw) {
+      const v = scaleValue(d) + offset();
+      return raw ? v : Math.ceil(v);
     };
     for (const key in scaleValue) {
       scale[key] = scaleValue[key];
@@ -6743,20 +6460,20 @@ function getScale(type = "linear", min, max) {
     } else if (axis.isCategorized() && isString(value)) {
       value = config.axis_x_categories.indexOf(value);
     }
-    return fn(value);
+    return Math.ceil(fn(value));
   },
   yv(d) {
     const $$ = this;
     const { scale: { y, y2 } } = $$;
     const yScale = d.axis && d.axis === "y2" ? y2 : y;
-    return yScale($$.getBaseValue(d));
+    return Math.ceil(yScale($$.getBaseValue(d)));
   },
   subxx(d) {
     return d ? this.scale.subX(d.x) : null;
   }
 });
 
-;// ./src/ChartInternal/internals/size.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/internals/size.ts
 
 
 
@@ -6794,7 +6511,7 @@ function getScale(type = "linear", min, max) {
     let v = 0;
     while (v < 30 && parent && parent.tagName !== "BODY") {
       try {
-        v = getBoundingRect(parent, true)[key];
+        v = parent.getBoundingClientRect()[key];
       } catch (e) {
         if (offsetName in parent) {
           v = parent[offsetName];
@@ -6829,11 +6546,11 @@ function getScale(type = "linear", min, max) {
     if (hasAxis && (isString(leftLabel) || isString(leftLabel.text) || /^inner-/.test(leftLabel == null ? void 0 : leftLabel.position))) {
       const label = $el.main.select(`.${leftAxisClass}-label`);
       if (!label.empty()) {
-        labelWidth = getBoundingRect(label.node()).left;
+        labelWidth = label.node().getBoundingClientRect().left;
       }
     }
-    const svgRect = leftAxis && hasLeftAxisRect ? getBoundingRect(leftAxis, !withoutRecompute) : { right: 0 };
-    const chartRectLeft = getBoundingRect($el.chart.node(), !withoutRecompute).left + labelWidth;
+    const svgRect = leftAxis && hasLeftAxisRect ? leftAxis.getBoundingClientRect() : { right: 0 };
+    const chartRectLeft = $el.chart.node().getBoundingClientRect().left + labelWidth;
     const hasArc = $$.hasArcType();
     const svgLeft = svgRect.right - chartRectLeft - (hasArc ? 0 : $$.getCurrentPaddingByDirection("left", withoutRecompute));
     return svgLeft > 0 ? svgLeft : 0;
@@ -6851,12 +6568,8 @@ function getScale(type = "linear", min, max) {
   },
   updateSvgSize() {
     const $$ = this;
-    const { config, state: { clip, current, hasAxis, width, height }, $el: { svg } } = $$;
-    if (config.resize_auto === "viewBox") {
-      svg.attr("viewBox", `0 0 ${current.width} ${current.height}`);
-    } else {
-      svg.attr("width", current.width).attr("height", current.height);
-    }
+    const { state: { clip, current, hasAxis, width, height }, $el: { svg } } = $$;
+    svg.attr("width", current.width).attr("height", current.height);
     if (hasAxis) {
       const brush = svg.select(`.${$SUBCHART.brush} .overlay`);
       const brushSize = { width: 0, height: 0 };
@@ -7053,7 +6766,7 @@ function getScale(type = "linear", min, max) {
   }
 });
 
-;// ./src/ChartInternal/internals/style.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/internals/style.ts
 
 
 /* harmony default export */ var style = ({
@@ -7095,7 +6808,8 @@ function getScale(type = "linear", min, max) {
   }
 });
 
-;// ./src/ChartInternal/internals/text.util.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/internals/text.ts
+
 
 
 
@@ -7150,139 +6864,13 @@ function getTextPos(d, type) {
   const { id, index, value } = d;
   return (_a = isFunction(position) ? position.bind(this.api)(type, value, id, index, this.$el.text) : (id in position ? position[id] : position)[type]) != null ? _a : 0;
 }
-function updateTextBorder(text, pos, rectClass) {
-  var _a, _b;
-  const $$ = this;
-  const { config, $T } = $$;
-  const isRotated = config.axis_rotated;
-  const {
-    border: {
-      padding = "3 5",
-      radius = 10,
-      stroke = "#000",
-      strokeWidth = 1,
-      fill = "none"
-    }
-  } = config.data_labels;
-  const borderPadding = parseShorthand(padding);
-  const applyStyle = config.data_labels.border !== true;
-  const textRect = getBBox(text);
-  let borderRect = (0,external_commonjs_d3_selection_commonjs2_d3_selection_amd_d3_selection_root_d3_.select)(text.previousElementSibling);
-  if (borderRect.empty() || ((_a = borderRect.node()) == null ? void 0 : _a.tagName) !== "rect" || !((_b = borderRect.attr("class")) == null ? void 0 : _b.includes(rectClass))) {
-    borderRect = (0,external_commonjs_d3_selection_commonjs2_d3_selection_amd_d3_selection_root_d3_.select)(text.parentNode).insert("rect", () => text).attr("class", `${$TEXT.textBorderRect} ${rectClass}`).attr(
-      "width",
-      textRect.width + (applyStyle ? borderPadding.left + borderPadding.right : 0)
-    ).attr(
-      "height",
-      textRect.height + (applyStyle ? borderPadding.top + borderPadding.bottom : 0)
-    );
-    if (applyStyle) {
-      borderRect.style("fill", fill).style("stroke", stroke).style("stroke-width", `${strokeWidth}px`).attr("rx", radius).attr("ry", radius);
-    }
-  }
-  $T(borderRect).attr(
-    "x",
-    pos.x - (applyStyle ? borderPadding.left : 0) - (isRotated ? 0 : textRect.width / 2)
-  ).attr("y", pos.y - (applyStyle ? borderPadding.top : 0) - textRect.height / 4 * 3.2);
-}
-function meetsLabelThreshold(ratio = 0, type) {
-  const $$ = this;
-  const { config } = $$;
-  const threshold = config[`${type}_label_threshold`] || 0;
-  return ratio >= threshold;
-}
-function updateTextImage() {
-  const $$ = this;
-  const { $el: { text }, config } = $$;
-  const isArc = $$.state.arcWidth;
-  if (isArc ? $$.getArcLabelConfig("image") : config.data_labels.image) {
-    text.filter(function() {
-      const prev = this.previousElementSibling;
-      if (prev) {
-        return prev.tagName !== "image" || !prev.classList.contains($TEXT.textLabelImage);
-      }
-      return true;
-    }).each(function(d) {
-      var _a, _b, _c, _d;
-      const { url, width, height, pos } = getDataLabelImgUrl.call($$, d);
-      if (url) {
-        const parentNode = (0,external_commonjs_d3_selection_commonjs2_d3_selection_amd_d3_selection_root_d3_.select)(this.parentNode);
-        parentNode == null ? void 0 : parentNode.insert(
-          "image",
-          `${(_b = (_a = this.getAttribute("class")) == null ? void 0 : _a.replace(/(?:^(.)|\s)/g, ".$1")) != null ? _b : "text"}`
-        ).style("opacity", "0").attr("href", (d2) => tplProcess(url, {
-          ID: "id" in d2 ? d2.id : d2.data.id
-        })).attr("class", $TEXT.textLabelImage).style("pointer-events", "none").attr("width", width).attr("height", height).attr("transform", pos ? `translate(${(_c = pos.x) != null ? _c : 0} ${(_d = pos.y) != null ? _d : 0})` : null);
-      }
-    });
-  }
-}
-function getDataLabelImgUrl(d) {
-  var _a;
-  const $$ = this;
-  const { config, state } = $$;
-  const image = state.arcWidth ? $$.getArcLabelConfig("image") : config.data_labels.image;
-  if (isFunction(image)) {
-    return (_a = image.call($$.api, d.value, d.id, d.index)) != null ? _a : {
-      url: "",
-      width: 0,
-      height: 0,
-      pos: { x: 0, y: 0 }
-    };
-  } else if (image) {
-    const { url = "", width = 0, height = 0, pos } = image;
-    return {
-      url,
-      width,
-      height,
-      pos
-    };
-  }
-  return null;
-}
-function updateTextImagePos(textNode, pos) {
-  var _a;
-  const $$ = this;
-  const { config, state: { arcWidth, hasTreemap } } = $$;
-  const isRotated = config.axis_rotated;
-  const image = (0,external_commonjs_d3_selection_commonjs2_d3_selection_amd_d3_selection_root_d3_.select)(textNode.previousElementSibling);
-  const isShown = (textNode2) => {
-    var _a2;
-    const isShown2 = textNode2.style.opacity !== "0" && textNode2.style.fillOpacity !== "0";
-    return (arcWidth ? textNode2.textContent : isShown2) && ((_a2 = this.previousElementSibling) == null ? void 0 : _a2.tagName) !== "image";
-  };
-  if (!image.empty() && ((_a = image.node()) == null ? void 0 : _a.tagName) === "image") {
-    const textRect = getBoundingRect(textNode);
-    const w = +image.attr("width") / 2;
-    const h = +image.attr("height") / 2;
-    let x = pos.x - w;
-    let y = pos.y - h - textRect.height / 2;
-    if (isRotated) {
-      pos.x += w;
-    } else {
-      if (hasTreemap) {
-        x = -w;
-        y = -(h * 2 + textRect.height);
-      }
-      if (!($$.hasType("pie") || $$.hasType("polar"))) {
-        pos.y += h;
-      }
-    }
-    $$.$T(image).style("opacity", isShown(textNode) ? null : "0").attr("x", x).attr("y", y);
-  }
-}
-
-
-;// ./src/ChartInternal/internals/text.ts
-
-
-
-
-
 /* harmony default export */ var internals_text = ({
   opacityForText(d) {
     const $$ = this;
-    return $$.isBarType(d) && !meetsLabelThreshold.call($$, Math.abs($$.getRatio("bar", d)), "bar") ? "0" : $$.hasDataLabel ? null : "0";
+    return $$.isBarType(d) && !$$.meetsLabelThreshold(
+      Math.abs($$.getRatio("bar", d)),
+      "bar"
+    ) ? "0" : $$.hasDataLabel ? null : "0";
   },
   /**
    * Initializes the text
@@ -7302,7 +6890,7 @@ function updateTextImagePos(textNode, pos) {
     const classChartText = $$.getChartClass("Text");
     const classTexts = $$.getClass("texts", "id");
     const classFocus = $$.classFocus.bind($$);
-    const mainTextUpdate = $$.$el.main.select(`.${$TEXT.chartTexts}`).selectAll(`.${$TEXT.chartText}`).data($$.filterNullish(targets)).attr("class", (d) => `${classChartText(d)}${classFocus(d)}`.trim());
+    const mainTextUpdate = $$.$el.main.select(`.${$TEXT.chartTexts}`).selectAll(`.${$TEXT.chartText}`).data(targets).attr("class", (d) => `${classChartText(d)}${classFocus(d)}`.trim());
     const mainTextEnter = mainTextUpdate.enter().append("g").style("opacity", "0").attr("class", classChartText).call(
       $$.setCssRule(
         true,
@@ -7352,7 +6940,6 @@ function updateTextImagePos(textNode, pos) {
         setTextValue(node, value);
       }
     });
-    updateTextImage.call($$);
   },
   updateTextColor(d) {
     const $$ = this;
@@ -7380,29 +6967,19 @@ function updateTextImagePos(textNode, pos) {
   /**
    * Update data label text background color
    * @param {object} d Data object
-   * @param {object|string|Function} option option object
+   * @param {object|string} option option object
    * @returns {string|null}
    * @private
    */
   updateTextBGColor(d, option) {
     const $$ = this;
-    const { $el: { defs } } = $$;
+    const { $el } = $$;
     let color = "";
-    if (option) {
+    if (isString(option) || isObject(option)) {
       const id = isString(option) ? "" : $$.getTargetSelectorSuffix("id" in d ? d.id : d.data.id);
-      const filter = defs.select(["filter[id*='labels-bg", "']"].join(id));
+      const filter = $el.defs.select(["filter[id*='labels-bg", "']"].join(id));
       if (filter.size()) {
         color = `url(#${filter.attr("id")})`;
-      }
-      if (isFunction(option)) {
-        $$.generateTextBGColorFilter(option);
-        const defaultColor = $$.color(d);
-        const bgColor = option.bind($$.api)(defaultColor, d);
-        if (bgColor) {
-          filter.select("feFlood").attr("flood-color", bgColor);
-        } else {
-          color = "";
-        }
       }
     }
     return color || null;
@@ -7430,7 +7007,7 @@ function updateTextImagePos(textNode, pos) {
     ).style("fill-opacity", forFlow ? 0 : $$.opacityForText.bind($$)).each(function(d, i) {
       const node = $T(
         hasTreemap && this.childElementCount ? this.parentNode : this,
-        !!(withTransition && (this.getAttribute("x") || this.getAttribute("transform"))),
+        !!(withTransition && this.getAttribute("x")),
         t
       );
       const isInverted = config[`axis_${axis == null ? void 0 : axis.getId(d.id)}_inverted`];
@@ -7442,47 +7019,37 @@ function updateTextImagePos(textNode, pos) {
         pos = setRotatePos.bind($$)(d, pos, anchorString, isRotated, isInverted);
         node.attr("text-anchor", anchorString);
       }
-      updateTextImagePos.call($$, this, pos);
       if (this.childElementCount || angle) {
         node.attr("transform", `translate(${pos.x} ${pos.y}) ${rotateString}`);
       } else {
         node.attr("x", pos.x).attr("y", pos.y);
       }
-      config.data_labels.border && updateTextBorder.call($$, node.node(), pos, `${$TEXT.textBorderRect}-${i}`);
     });
     return true;
   },
   /**
    * Gets the getBoundingClientRect value of the element
-   * @param {HTMLElement|d3.selection|Array} source Target element
+   * @param {HTMLElement|d3.selection} element Target element
    * @param {string} className Class name
    * @returns {object} value of element.getBoundingClientRect()
    * @private
    */
-  getTextRect(source, className) {
-    var _a, _b;
+  getTextRect(element, className) {
     const $$ = this;
-    let cacheKey;
-    let base;
-    let text;
-    if (Array.isArray(source)) {
-      cacheKey = `${KEY.textRect}-${source.join("_")}`;
-    } else {
-      base = (_b = (_a = source.node) == null ? void 0 : _a.call(source)) != null ? _b : source;
-      if (!/text/i.test(base.tagName)) {
-        base = base.querySelector("text");
-      }
-      text = base.textContent;
-      cacheKey = `${KEY.textRect}-${text.replace(/\W/g, "_")}`;
+    let base = element.node ? element.node() : element;
+    if (!/text/i.test(base.tagName)) {
+      base = base.querySelector("text");
     }
-    const rect = $$.cache.get(cacheKey) || [];
-    if (rect.length === 0) {
-      ($$.$el.svg || $$.$el.chart.select("svg")).selectAll(`.${$COMMON.dummy}`).data(text ? [text] : source).enter().append("text").style("visibility", "hidden").style("font", base ? (0,external_commonjs_d3_selection_commonjs2_d3_selection_amd_d3_selection_root_d3_.select)(base).style("font") : null).classed(className || $COMMON.dummy, true).text((d) => d).each(function(v, i) {
-        rect[i] = getBoundingRect(this);
+    const text = base.textContent;
+    const cacheKey = `${KEY.textRect}-${text.replace(/\W/g, "_")}`;
+    let rect = $$.cache.get(cacheKey);
+    if (!rect) {
+      $$.$el.svg.append("text").style("visibility", "hidden").style("font", (0,external_commonjs_d3_selection_commonjs2_d3_selection_amd_d3_selection_root_d3_.select)(base).style("font")).classed(className, true).text(text).call((v) => {
+        rect = getBoundingRect(v.node());
       }).remove();
       $$.cache.add(cacheKey, rect);
     }
-    return rect.length > 1 ? rect : rect[0];
+    return rect;
   },
   /**
    * Gets the x or y coordinate of the text
@@ -7685,10 +7252,23 @@ function updateTextImagePos(textNode, pos) {
     $$.$el.arcs.selectAll(selector).each(function() {
       (0,external_commonjs_d3_selection_commonjs2_d3_selection_amd_d3_selection_root_d3_.selectAll)([this, this.previousSibling]).classed($TEXT.TextOverlapping, false);
     });
+  },
+  /**
+   * Check if meets the ratio to show data label text
+   * @param {number} ratio ratio to meet
+   * @param {string} type chart type
+   * @returns {boolean}
+   * @private
+   */
+  meetsLabelThreshold(ratio = 0, type) {
+    const $$ = this;
+    const { config } = $$;
+    const threshold = config[`${type}_label_threshold`] || 0;
+    return ratio >= threshold;
   }
 });
 
-;// ./src/ChartInternal/internals/title.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/internals/title.ts
 
 
 function getTextXPos(pos = "left", width) {
@@ -7742,7 +7322,7 @@ function getTextXPos(pos = "left", width) {
   }
 });
 
-;// ./src/ChartInternal/internals/tooltip.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/internals/tooltip.ts
 
 
 
@@ -7940,7 +7520,7 @@ function getTextXPos(pos = "left", width) {
   setTooltipPosition(dataToShow, eventTarget) {
     var _a, _b;
     const $$ = this;
-    const { config, scale, state, $el: { eventRect, tooltip, svg } } = $$;
+    const { config, scale, state, $el: { eventRect, tooltip } } = $$;
     const { bindto } = config.tooltip_contents;
     const isRotated = config.axis_rotated;
     const datum = tooltip == null ? void 0 : tooltip.datum();
@@ -7969,7 +7549,7 @@ function getTextXPos(pos = "left", width) {
         height,
         eventRect == null ? void 0 : eventRect.node(),
         currPos
-      )) != null ? _b : hasViewBox(svg) ? $$.getTooltipPositionViewBox.bind($$)(width, height, currPos) : $$.getTooltipPosition.bind($$)(width, height, currPos);
+      )) != null ? _b : $$.getTooltipPosition.bind($$)(width, height, currPos);
       ["top", "left"].forEach((v) => {
         const value = pos[v];
         tooltip.style(v, `${value}px`);
@@ -7978,50 +7558,6 @@ function getTextXPos(pos = "left", width) {
         }
       });
     }
-  },
-  /**
-   * Get tooltip position when svg has vieBox attribute
-   * @param {number} tWidth Tooltip width value
-   * @param {number} tHeight Tooltip height value
-   * @param {object} currPos Current event position value from SVG coordinate
-   * @returns {object} top, left value
-   */
-  getTooltipPositionViewBox(tWidth, tHeight, currPos) {
-    var _a, _b;
-    const $$ = this;
-    const { $el: { eventRect, svg }, config, state } = $$;
-    const isRotated = config.axis_rotated;
-    const hasArcType = $$.hasArcType() || state.hasFunnel || state.hasTreemap;
-    const target = (_b = (_a = hasArcType ? svg : eventRect) == null ? void 0 : _a.node()) != null ? _b : state.event.target;
-    let { x, y } = currPos;
-    if (state.hasAxis) {
-      x = isRotated ? x : currPos.xAxis;
-      y = isRotated ? currPos.xAxis : y;
-    }
-    const ctm = getTransformCTM(target, x, y, false);
-    const rect = getBoundingRect(target);
-    const size = getTransformCTM(target, 20, 0, false).x;
-    let top = ctm.y;
-    let left = ctm.x + tWidth / 2 + size;
-    if (hasArcType) {
-      if (state.hasFunnel || state.hasTreemap || state.hasRadar) {
-        left -= tWidth / 2 + size;
-        top += tHeight;
-      } else {
-        top += rect.height / 2;
-        left += rect.width / 2 - (tWidth - size);
-      }
-    }
-    if (left + tWidth > rect.width) {
-      left = rect.width - tWidth - size;
-    }
-    if (top + tHeight > rect.height) {
-      top -= tHeight * 2;
-    }
-    return {
-      top,
-      left
-    };
   },
   /**
    * Returns the position of the tooltip
@@ -8221,8 +7757,8 @@ function getTextXPos(pos = "left", width) {
       } else {
         const { clientX, clientY } = event;
         setTimeout(() => {
-          let target = [clientX, clientY].every(Number.isFinite) && browser_doc.elementFromPoint(clientX, clientY);
-          const data = target && (0,external_commonjs_d3_selection_commonjs2_d3_selection_amd_d3_selection_root_d3_.select)(target).datum();
+          let target = browser_doc.elementFromPoint(clientX, clientY);
+          const data = (0,external_commonjs_d3_selection_commonjs2_d3_selection_amd_d3_selection_root_d3_.select)(target).datum();
           if (data) {
             const d = $$.hasArcType() ? $$.convertToArcData($$.updateAngle(data)) : data == null ? void 0 : data.data;
             hasTreemap && (target = svg.node());
@@ -8236,7 +7772,7 @@ function getTextXPos(pos = "left", width) {
   }
 });
 
-;// ./src/ChartInternal/internals/transform.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/internals/transform.ts
 
 
 /* harmony default export */ var transform = ({
@@ -8309,7 +7845,7 @@ function getTextXPos(pos = "left", width) {
   }
 });
 
-;// ./src/ChartInternal/internals/type.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/internals/type.ts
 
 
 /* harmony default export */ var type = ({
@@ -8537,7 +8073,7 @@ function getTextXPos(pos = "left", width) {
 
 // EXTERNAL MODULE: external {"commonjs":"d3-shape","commonjs2":"d3-shape","amd":"d3-shape","root":"d3"}
 var external_commonjs_d3_shape_commonjs2_d3_shape_amd_d3_shape_root_d3_ = __webpack_require__(9);
-;// ./src/ChartInternal/shape/shape.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/shape/shape.ts
 
 
 
@@ -8839,7 +8375,7 @@ function getGroupedDataPointsFn(d) {
   getBarW(type, axis, targetsNum) {
     var _a, _b, _c, _d, _e;
     const $$ = this;
-    const { config, org, scale, state } = $$;
+    const { config, org, scale } = $$;
     const maxDataCount = $$.getMaxDataCount();
     const isGrouped = type === "bar" && ((_a = config.data_groups) == null ? void 0 : _a.length);
     const configName = `${type}_width`;
@@ -8860,7 +8396,7 @@ function getGroupedDataPointsFn(d) {
       const width = id ? config[configName][id] : config[configName];
       const ratio = id ? width.ratio : config[`${configName}_ratio`];
       const max = id ? width.max : config[`${configName}_max`];
-      const w = isNumber(width) ? width : isFunction(width) ? width.call($$, state.width, targetsNum, maxDataCount) : targetsNum ? tickInterval * ratio / targetsNum : 0;
+      const w = isNumber(width) ? width : targetsNum ? tickInterval * ratio / targetsNum : 0;
       return max && w > max ? max : w;
     };
     let result = getWidth();
@@ -8905,7 +8441,7 @@ function getGroupedDataPointsFn(d) {
     if (!$$.isTargetToShow(d.id)) {
       isWithin = false;
     } else if ((_a = $$.hasValidPointType) == null ? void 0 : _a.call($$, that.nodeName)) {
-      isWithin = $$.isStepType(d) ? $$.isWithinStep(that, $$.getYScaleById(d.id)($$.getBaseValue(d))) : $$.isWithinCircle(
+      isWithin = $$.isStepType(d) ? $$.isWithinStep(that, $$.getYScaleById(d.id)(d.value)) : $$.isWithinCircle(
         that,
         $$.isBubbleType(d) ? $$.pointSelectR(d) * 1.5 : 0
       );
@@ -8952,7 +8488,7 @@ function getGroupedDataPointsFn(d) {
     const x = Math.min(seg0.x, seg1.x);
     const y = Math.min(seg0.y, seg1.y);
     const offset = this.config.bar_sensitivity;
-    const { width, height } = getBBox(that, true);
+    const { width, height } = that.getBBox();
     const sx = x - offset;
     const ex = x + width + offset;
     const sy = y + height + offset;
@@ -8962,10 +8498,13 @@ function getGroupedDataPointsFn(d) {
   }
 });
 
-;// ./src/ChartInternal/ChartInternal.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/ChartInternal.ts
 var ChartInternal_defProp = Object.defineProperty;
 var ChartInternal_defNormalProp = (obj, key, value) => key in obj ? ChartInternal_defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var ChartInternal_publicField = (obj, key, value) => ChartInternal_defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
+var ChartInternal_publicField = (obj, key, value) => {
+  ChartInternal_defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
+  return value;
+};
 
 
 
@@ -9094,15 +8633,14 @@ class ChartInternal {
   init() {
     const $$ = this;
     const { config, state, $el } = $$;
-    const { boost_useCssRule, bindto } = config;
+    const useCssRule = config.boost_useCssRule;
     checkModuleImport($$);
-    const hasArcType = $$.hasArcType();
     state.hasRadar = !state.hasAxis && $$.hasType("radar");
     state.hasFunnel = !state.hasAxis && $$.hasType("funnel");
     state.hasTreemap = !state.hasAxis && $$.hasType("treemap");
-    state.hasAxis = !hasArcType && !state.hasFunnel && !state.hasTreemap;
+    state.hasAxis = !$$.hasArcType() && !state.hasFunnel && !state.hasTreemap;
     state.datetimeId = `bb-${+/* @__PURE__ */ new Date() * getRandom()}`;
-    if (boost_useCssRule) {
+    if (useCssRule) {
       const styleEl = browser_doc.createElement("style");
       styleEl.type = "text/css";
       browser_doc.head.appendChild(styleEl);
@@ -9112,19 +8650,19 @@ class ChartInternal {
       };
       $el.style = styleEl;
     }
-    const bindConfig = {
-      element: bindto,
+    const bindto = {
+      element: config.bindto,
       classname: "bb"
     };
-    if (isObject(bindto)) {
-      bindConfig.element = bindto.element || "#chart";
-      bindConfig.classname = bindto.classname || bindConfig.classname;
+    if (isObject(config.bindto)) {
+      bindto.element = config.bindto.element || "#chart";
+      bindto.classname = config.bindto.classname || bindto.classname;
     }
-    $el.chart = isFunction(bindConfig.element.node) ? bindto.element : (0,external_commonjs_d3_selection_commonjs2_d3_selection_amd_d3_selection_root_d3_.select)(bindConfig.element || []);
+    $el.chart = isFunction(bindto.element.node) ? config.bindto.element : (0,external_commonjs_d3_selection_commonjs2_d3_selection_amd_d3_selection_root_d3_.select)(bindto.element || []);
     if ($el.chart.empty()) {
       $el.chart = (0,external_commonjs_d3_selection_commonjs2_d3_selection_amd_d3_selection_root_d3_.select)(browser_doc.body.appendChild(browser_doc.createElement("div")));
     }
-    $el.chart.html("").classed(bindConfig.classname, true).classed(state.datetimeId, boost_useCssRule).style("position", "relative");
+    $el.chart.html("").classed(bindto.classname, true).classed(state.datetimeId, useCssRule).style("position", "relative");
     $$.initParams();
     $$.initToRender();
   }
@@ -9136,8 +8674,8 @@ class ChartInternal {
   initToRender(forced) {
     const $$ = this;
     const { config, state, $el: { chart } } = $$;
-    const isHidden = () => hasStyle(chart, { display: "none", visibility: "hidden" });
-    const isLazy = config.render.lazy === false ? false : config.render.lazy || isHidden();
+    const isHidden = () => chart.style("display") === "none" || chart.style("visibility") === "hidden";
+    const isLazy = config.render.lazy || isHidden();
     const MutationObserver = win.MutationObserver;
     if (isLazy && MutationObserver && config.render.observe !== false && !forced) {
       new MutationObserver((mutation, observer) => {
@@ -9161,6 +8699,7 @@ class ChartInternal {
     var _a;
     const $$ = this;
     const { config, format: format2, state } = $$;
+    const isRotated = config.axis_rotated;
     $$.color = $$.generateColor();
     $$.levelColor = $$.generateLevelColor();
     if (config.padding === false) {
@@ -9177,7 +8716,7 @@ class ChartInternal {
       format2.extraLineClasses = $$.generateExtraLineClass();
       format2.dataTime = config.data_xLocaltime ? external_commonjs_d3_time_format_commonjs2_d3_time_format_amd_d3_time_format_root_d3_.timeParse : external_commonjs_d3_time_format_commonjs2_d3_time_format_amd_d3_time_format_root_d3_.utcParse;
       format2.axisTime = config.axis_x_localtime ? external_commonjs_d3_time_format_commonjs2_d3_time_format_amd_d3_time_format_root_d3_.timeFormat : external_commonjs_d3_time_format_commonjs2_d3_time_format_amd_d3_time_format_root_d3_.utcFormat;
-      const isDragZoom = config.zoom_enabled && config.zoom_type === "drag";
+      const isDragZoom = $$.config.zoom_enabled && $$.config.zoom_type === "drag";
       format2.defaultAxisTime = (d) => {
         const { x, zoom } = $$.scale;
         const isZoomed = isDragZoom ? zoom : zoom && x.orgDomain().toString() !== zoom.domain().toString();
@@ -9185,13 +8724,12 @@ class ChartInternal {
         return format2.axisTime(specifier)(d);
       };
     }
-    const { legend_position, legend_inset_anchor, axis_rotated } = config;
-    state.isLegendRight = legend_position === "right";
-    state.isLegendInset = legend_position === "inset";
-    state.isLegendTop = legend_inset_anchor === "top-left" || legend_inset_anchor === "top-right";
-    state.isLegendLeft = legend_inset_anchor === "top-left" || legend_inset_anchor === "bottom-left";
+    state.isLegendRight = config.legend_position === "right";
+    state.isLegendInset = config.legend_position === "inset";
+    state.isLegendTop = config.legend_inset_anchor === "top-left" || config.legend_inset_anchor === "top-right";
+    state.isLegendLeft = config.legend_inset_anchor === "top-left" || config.legend_inset_anchor === "bottom-left";
     state.rotatedPadding.top = $$.getResettedPadding(state.rotatedPadding.top);
-    state.rotatedPadding.right = axis_rotated && !config.axis_x_show ? 0 : 30;
+    state.rotatedPadding.right = isRotated && !config.axis_x_show ? 0 : 30;
     state.inputType = convertInputType(
       config.interaction_inputType_mouse,
       config.interaction_inputType_touch
@@ -9318,23 +8856,22 @@ class ChartInternal {
       if ($$.config.bar_front) {
         shapes.push(shapes.shift());
       }
-      for (const shape2 of shapes) {
-        const name = capitalize(shape2);
-        if (shape2 === "line" && $$.hasTypeOf(name) || $$.hasType(shape2)) {
+      shapes.forEach((v) => {
+        const name = capitalize(v);
+        if (v === "line" && $$.hasTypeOf(name) || $$.hasType(v)) {
           types.push(name);
         }
-      }
+      });
     } else if (hasTreemap) {
       types.push("Treemap");
     } else if ($$.hasType("funnel")) {
       types.push("Funnel");
     } else {
       const hasPolar = $$.hasType("polar");
-      const hasGauge = $$.hasType("gauge");
       if (!hasRadar) {
         types.push("Arc", "Pie");
       }
-      if (hasGauge) {
+      if ($$.hasType("gauge")) {
         types.push("Gauge");
       } else if (hasRadar) {
         types.push("Radar");
@@ -9342,12 +8879,10 @@ class ChartInternal {
         types.push("Polar");
       }
     }
-    for (const type of types) {
-      $$[`init${type}`]();
-    }
-    if (notEmpty($$.config.data_labels) && !$$.hasArcType(null, ["radar"])) {
-      $$.initText();
-    }
+    types.forEach((v) => {
+      $$[`init${v}`]();
+    });
+    notEmpty($$.config.data_labels) && !$$.hasArcType(null, ["radar"]) && $$.initText();
   }
   /**
    * Set chart elements
@@ -9416,7 +8951,7 @@ class ChartInternal {
    * @private
    */
   updateTargets(targets) {
-    var _a, _b;
+    var _a;
     const $$ = this;
     const { hasAxis, hasFunnel, hasRadar, hasTreemap } = $$.state;
     const helper = (type) => $$[`updateTargetsFor${type}`](
@@ -9424,14 +8959,13 @@ class ChartInternal {
     );
     $$.updateTargetsForText(targets);
     if (hasAxis) {
-      const shapes = ["bar", "candlestick", "line"];
-      for (const shape2 of shapes) {
-        const name = capitalize(shape2);
-        if (shape2 === "line" && $$.hasTypeOf(name) || $$.hasType(shape2)) {
+      ["bar", "candlestick", "line"].forEach((v) => {
+        const name = capitalize(v);
+        if (v === "line" && $$.hasTypeOf(name) || $$.hasType(v)) {
           helper(name);
         }
-      }
-      (_a = $$.updateTargetsForSubchart) == null ? void 0 : _a.call($$, targets);
+      });
+      $$.updateTargetsForSubchart && $$.updateTargetsForSubchart(targets);
     } else if ($$.hasArcType(targets)) {
       let type = "Arc";
       if (hasRadar) {
@@ -9447,7 +8981,7 @@ class ChartInternal {
     }
     const hasPointType = $$.hasType("bubble") || $$.hasType("scatter");
     if (hasPointType) {
-      (_b = $$.updateTargetForCircle) == null ? void 0 : _b.call($$);
+      (_a = $$.updateTargetForCircle) == null ? void 0 : _a.call($$);
     }
     $$.filterTargetsToShowAtInit(hasPointType);
   }
@@ -9481,25 +9015,28 @@ class ChartInternal {
       TransitionForAxis: "Transition",
       Y: true
     };
-    for (const [key, defVal] of Object.entries(withOptions)) {
-      const value = isString(defVal) ? withOptions[defVal] : defVal;
-      withOptions[key] = getOption(options, `with${key}`, value);
-    }
+    Object.keys(withOptions).forEach((key) => {
+      let defVal = withOptions[key];
+      if (isString(defVal)) {
+        defVal = withOptions[defVal];
+      }
+      withOptions[key] = getOption(options, `with${key}`, defVal);
+    });
     return withOptions;
   }
   initialOpacity(d) {
     const $$ = this;
     const { withoutFadeIn } = $$.state;
-    return $$.getBaseValue(d) !== null && withoutFadeIn[d.id] ? null : "0";
+    const r = $$.getBaseValue(d) !== null && withoutFadeIn[d.id] ? null : "0";
+    return r;
   }
   bindResize() {
     const $$ = this;
-    const { $el, config, state } = $$;
+    const { config, state } = $$;
     const resizeFunction = generateResize(config.resize_timer);
-    const { resize_auto } = config;
     const list = [];
     list.push(() => callFn(config.onresize, $$.api));
-    if (/^(true|parent)$/.test(resize_auto)) {
+    if (config.resize_auto) {
       list.push(() => {
         state.resizing = true;
         if (config.legend_show) {
@@ -9515,11 +9052,7 @@ class ChartInternal {
     });
     list.forEach((v) => resizeFunction.add(v));
     $$.resizeFunction = resizeFunction;
-    if (resize_auto === "parent") {
-      ($$.resizeFunction.resizeObserver = new ResizeObserver($$.resizeFunction.bind($$))).observe($el.chart.node().parentNode);
-    } else {
-      win.addEventListener("resize", $$.resizeFunction);
-    }
+    win.addEventListener("resize", $$.resizeFunction = resizeFunction);
   }
   /**
    * Call plugin hook
@@ -9561,7 +9094,7 @@ extend(ChartInternal.prototype, [
   type
 ]);
 
-;// ./src/config/config.ts
+;// CONCATENATED MODULE: ./src/config/config.ts
 
 function loadConfig(config) {
   const thisConfig = this.config;
@@ -9591,7 +9124,7 @@ function loadConfig(config) {
   }
 }
 
-;// ./src/Chart/api/chart.ts
+;// CONCATENATED MODULE: ./src/Chart/api/chart.ts
 
 
 /* harmony default export */ var chart = ({
@@ -9645,9 +9178,6 @@ function loadConfig(config) {
         (_b = $$.axis) == null ? void 0 : _b.setOrient();
       }
       zoomResetBtn == null ? void 0 : zoomResetBtn.style("display", "none");
-      if ($$.scale.zoom) {
-        state.current.zoomDomain = $$.scale.zoom.domain();
-      }
       $$.scale.zoom = null;
       soft ? $$.redraw({
         withTransform: true,
@@ -9663,10 +9193,6 @@ function loadConfig(config) {
         $$.brush.getSelection().call($$.brush.move);
         $$.unselectRect();
       }
-      if (state.current.zoomDomain) {
-        $$.api.zoom(state.current.zoomDomain);
-        state.current.zoomDomain = null;
-      }
     } else {
       $$.initToRender(true);
     }
@@ -9681,7 +9207,6 @@ function loadConfig(config) {
    * chart.destroy();
    */
   destroy() {
-    var _a;
     const $$ = this.internal;
     const { $el: { chart, style, svg } } = $$;
     if (notEmpty($$)) {
@@ -9690,7 +9215,6 @@ function loadConfig(config) {
       $$.unbindAllEvents();
       svg.select("*").interrupt();
       $$.resizeFunction.clear();
-      (_a = $$.resizeFunction.resizeObserver) == null ? void 0 : _a.disconnect();
       win.removeEventListener("resize", $$.resizeFunction);
       chart.classed("bb", false).style("position", null).selectChildren().remove();
       style && style.parentNode.removeChild(style);
@@ -9763,7 +9287,7 @@ function loadConfig(config) {
   }
 });
 
-;// ./src/Chart/api/color.ts
+;// CONCATENATED MODULE: ./src/Chart/api/color.ts
 /* harmony default export */ var api_color = ({
   /**
    * Get the color
@@ -9780,7 +9304,7 @@ function loadConfig(config) {
   }
 });
 
-;// ./src/Chart/api/data.ts
+;// CONCATENATED MODULE: ./src/Chart/api/data.ts
 
 const api_data_data = function(targetIds) {
   const { targets } = this.internal.data;
@@ -9935,7 +9459,7 @@ extend(api_data_data, {
 });
 /* harmony default export */ var api_data = ({ data: api_data_data });
 
-;// ./src/Chart/api/export.ts
+;// CONCATENATED MODULE: ./src/Chart/api/export.ts
 
 
 
@@ -9977,9 +9501,9 @@ function nodeToSvgDataUrl(node, option, orgSize) {
 }
 function getCoords(elem, svgOffset) {
   const { top, left } = svgOffset;
-  const { x, y } = getBBox(elem, true);
+  const { x, y } = elem.getBBox();
   const { a, b, c, d, e, f } = elem.getScreenCTM();
-  const { width, height } = getBoundingRect(elem, true);
+  const { width, height } = elem.getBoundingClientRect();
   return {
     x: a * x + c * y + e - left,
     y: b * x + d * y + f - top + (height - Math.round(height / 4)),
@@ -9988,7 +9512,7 @@ function getCoords(elem, svgOffset) {
   };
 }
 function getGlyph(svg) {
-  const { left, top } = getBoundingRect(svg);
+  const { left, top } = svg.getBoundingClientRect();
   const filterFn = (t) => t.textContent || t.childElementCount;
   const glyph = [];
   toArray(svg.querySelectorAll("text")).filter(filterFn).forEach((t) => {
@@ -10101,7 +9625,7 @@ function renderText(ctx, glyph) {
     const $$ = this.internal;
     const { state, $el: { chart, svg } } = $$;
     const { width, height } = state.current;
-    const opt = mergeObj(/* @__PURE__ */ Object.create(null), {
+    const opt = mergeObj({
       width,
       height,
       preserveAspectRatio: true,
@@ -10131,7 +9655,7 @@ function renderText(ctx, glyph) {
   }
 });
 
-;// ./src/Chart/api/focus.ts
+;// CONCATENATED MODULE: ./src/Chart/api/focus.ts
 
 
 /* harmony default export */ var api_focus = ({
@@ -10238,7 +9762,7 @@ function renderText(ctx, glyph) {
   }
 });
 
-;// ./src/Chart/api/legend.ts
+;// CONCATENATED MODULE: ./src/Chart/api/legend.ts
 const legend_legend = {
   /**
    * Show legend for each target.
@@ -10292,7 +9816,7 @@ const legend_legend = {
 };
 /* harmony default export */ var api_legend = ({ legend: legend_legend });
 
-;// ./src/Chart/api/load.ts
+;// CONCATENATED MODULE: ./src/Chart/api/load.ts
 
 
 
@@ -10505,7 +10029,7 @@ const legend_legend = {
   }
 });
 
-;// ./src/Chart/api/show.ts
+;// CONCATENATED MODULE: ./src/Chart/api/show.ts
 
 function showHide(show, targetIdsValue, options) {
   const $$ = this.internal;
@@ -10520,10 +10044,9 @@ function showHide(show, targetIdsValue, options) {
     callFn($$.config.data_onshown, this, hiddenIds);
   }
   $$.$T(targets).style("opacity", opacity, "important").call(endall, () => {
-    var _a;
     if (!show && hiddenIds.length === 0) {
       targets.style("display", "none");
-      callFn((_a = $$.config) == null ? void 0 : _a.data_onhidden, this, targetIds);
+      callFn($$.config.data_onhidden, this, targetIds);
     }
     targets.style("opacity", opacity);
   });
@@ -10608,7 +10131,7 @@ function showHide(show, targetIdsValue, options) {
   }
 });
 
-;// ./src/Chart/api/tooltip.ts
+;// CONCATENATED MODULE: ./src/Chart/api/tooltip.ts
 
 
 const tooltip_tooltip = {
@@ -10731,10 +10254,13 @@ const tooltip_tooltip = {
 };
 /* harmony default export */ var api_tooltip = ({ tooltip: tooltip_tooltip });
 
-;// ./src/Chart/Chart.ts
+;// CONCATENATED MODULE: ./src/Chart/Chart.ts
 var Chart_defProp = Object.defineProperty;
 var Chart_defNormalProp = (obj, key, value) => key in obj ? Chart_defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var Chart_publicField = (obj, key, value) => Chart_defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
+var Chart_publicField = (obj, key, value) => {
+  Chart_defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
+  return value;
+};
 
 
 
@@ -10786,7 +10312,7 @@ extend(Chart.prototype, [
   api_tooltip
 ]);
 
-;// ./src/Chart/api/selection.ts
+;// CONCATENATED MODULE: ./src/Chart/api/selection.ts
 
 
 
@@ -10897,7 +10423,7 @@ function setSelection(isSelection = false, ids, indices, resetOther) {
   }
 });
 
-;// ./src/Chart/api/subchart.ts
+;// CONCATENATED MODULE: ./src/Chart/api/subchart.ts
 
 
 const subchart = function(domainValue) {
@@ -11028,7 +10554,7 @@ extend(subchart, {
 
 // EXTERNAL MODULE: external {"commonjs":"d3-zoom","commonjs2":"d3-zoom","amd":"d3-zoom","root":"d3"}
 var external_commonjs_d3_zoom_commonjs2_d3_zoom_amd_d3_zoom_root_d3_ = __webpack_require__(10);
-;// ./src/Chart/api/zoom.ts
+;// CONCATENATED MODULE: ./src/Chart/api/zoom.ts
 
 
 const zoom = function(domainValue) {
@@ -11195,7 +10721,7 @@ extend(zoom, {
   }
 });
 
-;// ./src/ChartInternal/interactions/subchart.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/interactions/subchart.ts
 
 
 
@@ -11259,7 +10785,7 @@ extend(zoom, {
     };
     $$.brush.scale = function(scale2) {
       const h = config.subchart_size_height;
-      let extent = $$.axis.getExtent();
+      let extent = $$.getExtent();
       if (!extent && scale2.range) {
         extent = [[0, 0], [scale2.range()[1], h]];
       } else if (isArray(extent)) {
@@ -11440,11 +10966,29 @@ extend(zoom, {
     const subXAxis = (transitions == null ? void 0 : transitions.axisSubX) ? transitions.axisSubX : $T(subchart.main.select(`.${classes.axisX}`), withTransition);
     subchart.main.attr("transform", $$.getTranslate("context"));
     subXAxis.attr("transform", $$.getTranslate("subX"));
+  },
+  /**
+   * Get extent value
+   * @returns {Array} default extent
+   * @private
+   */
+  getExtent() {
+    const $$ = this;
+    const { config, scale } = $$;
+    let extent = config.axis_x_extent;
+    if (extent) {
+      if (isFunction(extent)) {
+        extent = extent.bind($$.api)($$.getXDomain($$.data.targets), scale.subX);
+      } else if ($$.axis.isTimeSeries() && extent.every(isNaN)) {
+        const fn = parseDate.bind($$);
+        extent = extent.map((v) => scale.subX(fn(v)));
+      }
+    }
+    return extent;
   }
 });
 
-;// ./src/ChartInternal/interactions/zoom.ts
-
+;// CONCATENATED MODULE: ./src/ChartInternal/interactions/zoom.ts
 
 
 
@@ -11458,7 +11002,7 @@ extend(zoom, {
     const $$ = this;
     $$.scale.zoom = null;
     $$.generateZoom();
-    $$.config.zoom_type === "drag" && $$.initZoomBehaviour();
+    $$.initZoomBehaviour();
   },
   /**
    * Bind zoom event
@@ -11499,9 +11043,6 @@ extend(zoom, {
       const isRotated = config.axis_rotated;
       (_a = org.xScale) == null ? void 0 : _a.range(scale.x.range());
       const newScale = transform[isRotated ? "rescaleY" : "rescaleX"](org.xScale || scale.x);
-      if (newScale.domain().some((v) => /(Invalid Date|NaN)/.test(v.toString()))) {
-        return;
-      }
       const domain = $$.trimXDomain(newScale.domain());
       const rescale = config.zoom_rescale;
       newScale.domain(domain, org.xDomain);
@@ -11660,14 +11201,9 @@ extend(zoom, {
    * @private
    */
   bindZoomOnEventRect() {
-    var _a;
     const $$ = this;
-    const { config, $el: { eventRect, svg } } = $$;
+    const { config, $el: { eventRect } } = $$;
     const behaviour = config.zoom_type === "drag" ? $$.zoomBehaviour : $$.zoom;
-    if (win.GestureEvent && /^((?!chrome|android|mobile).)*safari/i.test((_a = win.navigator) == null ? void 0 : _a.userAgent)) {
-      svg.on("wheel", () => {
-      });
-    }
     eventRect == null ? void 0 : eventRect.call(behaviour).on("dblclick.zoom", null);
   },
   /**
@@ -11681,14 +11217,12 @@ extend(zoom, {
     let start = 0;
     let end = 0;
     let zoomRect;
-    let extent;
     const prop = {
       axis: isRotated ? "y" : "x",
       attr: isRotated ? "height" : "width",
       index: isRotated ? 1 : 0
     };
     $$.zoomBehaviour = (0,external_commonjs_d3_drag_commonjs2_d3_drag_amd_d3_drag_root_d3_.drag)().clickDistance(4).on("start", function(event) {
-      extent = $$.scale.zoom ? null : $$.axis.getExtent();
       state.event = event;
       $$.setDragStatus(true);
       $$.unselectRect();
@@ -11696,25 +11230,11 @@ extend(zoom, {
         zoomRect = $$.$el.main.append("rect").attr("clip-path", state.clip.path).attr("class", $ZOOM.zoomBrush).attr("width", isRotated ? state.width : 0).attr("height", isRotated ? 0 : state.height);
       }
       start = getPointer(event, this)[prop.index];
-      if (extent) {
-        if (start < extent[0]) {
-          start = extent[0];
-        } else if (start > extent[1]) {
-          start = extent[1];
-        }
-      }
       end = start;
       zoomRect.attr(prop.axis, start).attr(prop.attr, 0);
       $$.onZoomStart(event);
     }).on("drag", function(event) {
       end = getPointer(event, this)[prop.index];
-      if (extent) {
-        if (end > extent[1]) {
-          end = extent[1];
-        } else if (end < extent[0]) {
-          end = extent[0];
-        }
-      }
       zoomRect.attr(prop.axis, Math.min(start, end)).attr(prop.attr, Math.abs(end - start));
     }).on("end", (event) => {
       const scale = $$.scale.zoom || $$.scale.x;
@@ -11755,7 +11275,7 @@ extend(zoom, {
   }
 });
 
-;// ./src/ChartInternal/interactions/drag.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/interactions/drag.ts
 
 
 
@@ -11841,7 +11361,7 @@ extend(zoom, {
   }
 });
 
-;// ./src/ChartInternal/internals/selection.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/internals/selection.ts
 var selection_defProp = Object.defineProperty;
 var __defProps = Object.defineProperties;
 var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
@@ -12000,7 +11520,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
   }
 }));
 
-;// ./src/config/Options/data/selection.ts
+;// CONCATENATED MODULE: ./src/config/Options/data/selection.ts
 /* harmony default export */ var data_selection = ({
   /**
    * Set data selection enabled<br><br>
@@ -12127,7 +11647,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
   }
 });
 
-;// ./src/config/Options/interaction/subchart.ts
+;// CONCATENATED MODULE: ./src/config/Options/interaction/subchart.ts
 /* harmony default export */ var interaction_subchart = ({
   /**
    * Set subchart options.
@@ -12195,7 +11715,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
   }
 });
 
-;// ./src/config/Options/interaction/zoom.ts
+;// CONCATENATED MODULE: ./src/config/Options/interaction/zoom.ts
 /* harmony default export */ var interaction_zoom = ({
   /**
    * Set zoom options
@@ -12276,7 +11796,7 @@ var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
   zoom_x_max: void 0
 });
 
-;// ./src/config/resolver/interaction.ts
+;// CONCATENATED MODULE: ./src/config/resolver/interaction.ts
 
 
 
@@ -12310,7 +11830,7 @@ let zoomModule = () => {
   return (zoomModule = () => true)();
 };
 
-;// ./src/Chart/api/axis.ts
+;// CONCATENATED MODULE: ./src/Chart/api/axis.ts
 
 function setMinMax($$, type, value) {
   const { config } = $$;
@@ -12517,7 +12037,7 @@ const axis = {
 };
 /* harmony default export */ var api_axis = ({ axis });
 
-;// ./src/Chart/api/category.ts
+;// CONCATENATED MODULE: ./src/Chart/api/category.ts
 
 /* harmony default export */ var api_category = ({
   /**
@@ -12565,7 +12085,7 @@ const axis = {
   }
 });
 
-;// ./src/Chart/api/flow.ts
+;// CONCATENATED MODULE: ./src/Chart/api/flow.ts
 
 /* harmony default export */ var flow = ({
   /**
@@ -12738,7 +12258,7 @@ const axis = {
   }
 });
 
-;// ./src/Chart/api/grid.ts
+;// CONCATENATED MODULE: ./src/Chart/api/grid.ts
 
 function grid(grids, axisId) {
   const $$ = this.internal;
@@ -12871,7 +12391,7 @@ extend(ygrids, {
 });
 /* harmony default export */ var api_grid = ({ xgrids, ygrids });
 
-;// ./src/Chart/api/group.ts
+;// CONCATENATED MODULE: ./src/Chart/api/group.ts
 
 /* harmony default export */ var group = ({
   /**
@@ -12899,7 +12419,7 @@ extend(ygrids, {
   }
 });
 
-;// ./src/Chart/api/regions.ts
+;// CONCATENATED MODULE: ./src/Chart/api/regions.ts
 
 
 function regionsFn(regions2, isAdd = false) {
@@ -12924,7 +12444,7 @@ extend(regions, {
    * @function regions․add
    * @instance
    * @memberof Chart
-   * @param {Array|object} regions New region will be added. The format of this argument is the same as [regions](./Options.html#.regions) and it's possible to give an Object if only one region will be added.
+   * @param {Array|object} regions New region will be added. The format of this argument is the same as regions and it's possible to give an Object if only one region will be added.
    * @returns {Array} regions
    * @example
    * // Add a new region
@@ -13005,7 +12525,7 @@ extend(regions, {
 });
 /* harmony default export */ var api_regions = ({ regions });
 
-;// ./src/Chart/api/x.ts
+;// CONCATENATED MODULE: ./src/Chart/api/x.ts
 
 /* harmony default export */ var x = ({
   /**
@@ -13071,10 +12591,13 @@ extend(regions, {
 
 // EXTERNAL MODULE: external {"commonjs":"d3-axis","commonjs2":"d3-axis","amd":"d3-axis","root":"d3"}
 var external_commonjs_d3_axis_commonjs2_d3_axis_amd_d3_axis_root_d3_ = __webpack_require__(11);
-;// ./src/ChartInternal/Axis/AxisRendererHelper.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/Axis/AxisRendererHelper.ts
 var AxisRendererHelper_defProp = Object.defineProperty;
 var AxisRendererHelper_defNormalProp = (obj, key, value) => key in obj ? AxisRendererHelper_defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var AxisRendererHelper_publicField = (obj, key, value) => AxisRendererHelper_defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
+var AxisRendererHelper_publicField = (obj, key, value) => {
+  AxisRendererHelper_defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
+  return value;
+};
 
 
 class AxisRendererHelper {
@@ -13082,7 +12605,6 @@ class AxisRendererHelper {
     AxisRendererHelper_publicField(this, "owner");
     AxisRendererHelper_publicField(this, "config");
     AxisRendererHelper_publicField(this, "scale");
-    AxisRendererHelper_publicField(this, "charSize", {});
     const scale = getScale();
     const { config, params } = owner;
     this.owner = owner;
@@ -13095,32 +12617,28 @@ class AxisRendererHelper {
   }
   /**
    * Compute a character dimension
-   * @param {string} orient Axis orientation
-   * @param {d3.selection} text SVG text selection
-   * @param {boolean} memoize memoize the calculated size
+   * @param {d3.selection} node <g class=tick> node
    * @returns {{w: number, h: number}}
    * @private
    */
-  getSizeFor1Char(orient, text, memoize = true) {
+  static getSizeFor1Char(node) {
     const size = {
       w: 5.5,
       h: 11.5
     };
-    if (this.charSize[orient] && memoize) {
-      return this.charSize[orient];
-    }
-    !text.empty() && text.text("0").call((el) => {
+    !node.empty() && node.select("text").text("0").call((el) => {
       try {
-        const { width, height } = getBBox(el.node(), true);
+        const { width, height } = el.node().getBBox();
         if (width && height) {
           size.w = width;
           size.h = height;
         }
+      } catch (e) {
       } finally {
         el.text("");
       }
     });
-    this.charSize[orient] = size;
+    this.getSizeFor1Char = () => size;
     return size;
   }
   /**
@@ -13133,10 +12651,7 @@ class AxisRendererHelper {
     const { config } = this;
     const fn = id === "x" ? (value) => `translate(${value + config.tickOffset},0)` : (value) => `translate(0,${value})`;
     return (selection, scale) => {
-      selection.attr("transform", (d) => {
-        const x = scale(d);
-        return isValue(d) ? fn(x) : null;
-      });
+      selection.attr("transform", (d) => isValue(d) ? fn(Math.ceil(scale(d))) : null);
     };
   }
   scaleExtent(domain) {
@@ -13203,11 +12718,13 @@ class AxisRendererHelper {
   }
 }
 
-;// ./src/ChartInternal/Axis/AxisRenderer.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/Axis/AxisRenderer.ts
 var AxisRenderer_defProp = Object.defineProperty;
 var AxisRenderer_defNormalProp = (obj, key, value) => key in obj ? AxisRenderer_defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var AxisRenderer_publicField = (obj, key, value) => AxisRenderer_defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
-
+var AxisRenderer_publicField = (obj, key, value) => {
+  AxisRenderer_defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
+  return value;
+};
 
 
 
@@ -13266,7 +12783,6 @@ class AxisRenderer {
       tick: axisShow ? params.config[`${prefix}_tick_show`] : false,
       text: axisShow ? params.config[`${prefix}_tick_text_show`] : false
     };
-    const evalTextSize = params.config.axis_evalTextSize;
     let $g;
     g.each(function() {
       const g2 = (0,external_commonjs_d3_selection_commonjs2_d3_selection_amd_d3_selection_root_d3_.select)(this);
@@ -13274,14 +12790,14 @@ class AxisRenderer {
       let scale1 = helper.copyScale();
       $g = g2;
       this.__chart__ = scale1;
-      config.tickOffset = params.isCategory ? (scale1(1) - scale1(0)) / 2 : 0;
+      config.tickOffset = params.isCategory ? Math.ceil((scale1(1) - scale1(0)) / 2) : 0;
       const path = g2.selectAll(".domain").data([0]);
       path.enter().append("path").attr("class", "domain").merge(path).attr("d", () => {
         const outerTickSized = config.outerTickSize * sign;
         return isTopBottom ? `M${range[0]},${outerTickSized}V0H${range[1]}V${outerTickSized}` : `M${outerTickSized},${range[0]}H0V${range[1]}H${outerTickSized}`;
       });
       if (tickShow.tick || tickShow.text) {
-        const ticks = config.tickValues || helper.generateTicks(scale1, isLeftRight || params.config.axis_rotated);
+        const ticks = config.tickValues || helper.generateTicks(scale1, isLeftRight);
         ctx.generatedTicks = ticks;
         let tick = g2.selectAll(".tick").data(ticks, scale1);
         const tickEnter = tick.enter().insert("g", ".domain").attr("class", "tick");
@@ -13289,19 +12805,9 @@ class AxisRenderer {
         tick = tickEnter.merge(tick);
         tickShow.tick && tickEnter.append("line");
         tickShow.text && tickEnter.append("text");
-        const tickText = tick.select("text");
+        const sizeFor1Char = AxisRendererHelper.getSizeFor1Char(tick);
         const counts = [];
-        let sizeFor1Char = { w: 0, h: 0 };
-        if (isFunction(evalTextSize)) {
-          sizeFor1Char = evalTextSize.bind(ctx.params.owner.api)(tickText.node(), id);
-          if (this.classList.contains($COMMON.dummy)) {
-            this.sizeFor1Char = sizeFor1Char;
-          }
-        }
-        if (!sizeFor1Char || sizeFor1Char.w === 0 || sizeFor1Char.h === 0) {
-          sizeFor1Char = ctx.helper.getSizeFor1Char(orient, tickText, !!evalTextSize);
-        }
-        let tspan = tickText.selectAll("tspan").data((d, index) => {
+        let tspan = tick.select("text").selectAll("tspan").data((d, index) => {
           const split = params.tickMultiline ? splitTickText(d, scale1, ticks, isLeftRight, sizeFor1Char.w) : isArray(helper.textFormatted(d)) ? helper.textFormatted(d).concat() : [helper.textFormatted(d)];
           counts[index] = split.length;
           return split.map((splitted) => ({ index, splitted }));
@@ -13329,7 +12835,7 @@ class AxisRenderer {
         const textUpdate = tick.select("text");
         tickEnter.select("line").attr(`${axisPx}2`, innerTickSize * sign);
         tickEnter.select("text").attr(axisPx, tickLength * sign);
-        ctx.setTickLineTextPosition(lineUpdate, textUpdate, sizeFor1Char);
+        ctx.setTickLineTextPosition(lineUpdate, textUpdate);
         if (params.tickTitle) {
           const title = textUpdate.select("title");
           (title.empty() ? textUpdate.append("title") : title).text((index) => params.tickTitle[index]);
@@ -13398,16 +12904,12 @@ class AxisRenderer {
    * Set tick's line & text position
    * @param {d3.selection} lineUpdate Line selection
    * @param {d3.selection} textUpdate Text selection
-   * @param {object} sizeFor1Char Size for 1 char
    * @private
    */
-  setTickLineTextPosition(lineUpdate, textUpdate, sizeFor1Char) {
+  setTickLineTextPosition(lineUpdate, textUpdate) {
     const tickPos = this.getTickXY();
     const { innerTickSize, orient, tickLength, tickOffset } = this.config;
-    const axisId = this.params.id;
     const rotate = this.params.tickTextRotate;
-    const baseHeight = 6;
-    const charHeight = sizeFor1Char.h / 2 - baseHeight;
     const textAnchorForText = (r) => {
       const value = ["start", "end"];
       orient === "top" && value.reverse();
@@ -13416,8 +12918,7 @@ class AxisRenderer {
     const textTransform = (r) => r ? `rotate(${r})` : null;
     const yForText = (r) => {
       const r2 = r / (orient === "bottom" ? 15 : 23);
-      const y = r ? 11.5 - 2.5 * r2 * (r > 0 ? 1 : -1) : tickLength;
-      return y;
+      return r ? 11.5 - 2.5 * r2 * (r > 0 ? 1 : -1) : tickLength;
     };
     const {
       config: {
@@ -13425,10 +12926,9 @@ class AxisRenderer {
         axis_x_tick_text_inner: inner
       }
     } = this.params.owner;
-    const tickLineInner = this.params.config[`axis_${axisId}_tick_inner`];
     switch (orient) {
       case "bottom":
-        lineUpdate.attr("x1", tickPos.x).attr("x2", tickPos.x).attr("y2", (d) => this.getTickSize.bind(this)(d) * (tickLineInner ? -1 : 1));
+        lineUpdate.attr("x1", tickPos.x).attr("x2", tickPos.x).attr("y2", this.getTickSize.bind(this));
         textUpdate.attr("x", 0).attr("y", yForText(rotate)).style("text-anchor", textAnchorForText(rotate)).style("text-anchor", (d, i, { length }) => {
           if (!isRotated && i === 0 && (inner === true || inner.first)) {
             return "start";
@@ -13439,16 +12939,16 @@ class AxisRenderer {
         }).attr("transform", textTransform(rotate));
         break;
       case "top":
-        lineUpdate.attr("x2", 0).attr("y2", tickLineInner ? innerTickSize : -innerTickSize);
-        textUpdate.attr("x", 0).attr("y", -(yForText(rotate) + charHeight + baseHeight)).style("text-anchor", textAnchorForText(rotate)).attr("transform", textTransform(rotate));
+        lineUpdate.attr("x2", 0).attr("y2", -innerTickSize);
+        textUpdate.attr("x", 0).attr("y", -yForText(rotate) * 2).style("text-anchor", textAnchorForText(rotate)).attr("transform", textTransform(rotate));
         break;
       case "left":
-        lineUpdate.attr("x2", tickLineInner ? innerTickSize : -innerTickSize).attr("y1", tickPos.y).attr("y2", tickPos.y);
-        textUpdate.attr("x", -tickLength).attr("y", tickOffset + (isRotated ? charHeight / 4 : charHeight)).style("text-anchor", "end");
+        lineUpdate.attr("x2", -innerTickSize).attr("y1", tickPos.y).attr("y2", tickPos.y);
+        textUpdate.attr("x", -tickLength).attr("y", tickOffset).style("text-anchor", "end");
         break;
       case "right":
-        lineUpdate.attr("x2", tickLineInner ? -innerTickSize : innerTickSize).attr("y2", 0);
-        textUpdate.attr("x", tickLength).attr("y", charHeight).style("text-anchor", "start");
+        lineUpdate.attr("x2", innerTickSize).attr("y2", 0);
+        textUpdate.attr("x", tickLength).attr("y", 0).style("text-anchor", "start");
     }
   }
   // this should be called only when category axis
@@ -13464,7 +12964,9 @@ class AxisRenderer {
     }
     let tickWidth = params.tickWidth;
     if (!tickWidth || tickWidth <= 0) {
-      tickWidth = isLeftRight ? 95 : params.isCategory ? (params.isInverted ? scale(ticks[0]) - scale(ticks[1]) : scale(ticks[1]) - scale(ticks[0])) - 12 : 110;
+      tickWidth = isLeftRight ? 95 : params.isCategory ? Math.ceil(
+        params.isInverted ? scale(ticks[0]) - scale(ticks[1]) : scale(ticks[1]) - scale(ticks[0])
+      ) - 12 : 110;
     }
     function split(splitted2, text) {
       let subtext;
@@ -13589,10 +13091,13 @@ class AxisRenderer {
   }
 }
 
-;// ./src/ChartInternal/Axis/Axis.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/Axis/Axis.ts
 var Axis_defProp = Object.defineProperty;
 var Axis_defNormalProp = (obj, key, value) => key in obj ? Axis_defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var Axis_publicField = (obj, key, value) => Axis_defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
+var Axis_publicField = (obj, key, value) => {
+  Axis_defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
+  return value;
+};
 
 
 
@@ -13659,32 +13164,15 @@ class Axis_Axis {
     }
     return type;
   }
-  /**
-   * Get extent value
-   * @returns {Array} default extent
-   * @private
-   */
-  getExtent() {
-    const $$ = this.owner;
-    const { config, scale } = $$;
-    let extent = config.axis_x_extent;
-    if (extent) {
-      if (isFunction(extent)) {
-        extent = extent.bind($$.api)($$.getXDomain($$.data.targets), scale.subX);
-      } else if (this.isTimeSeries() && extent.every(isNaN)) {
-        const fn = parseDate.bind($$);
-        extent = extent.map((v) => scale.subX(fn(v)));
-      }
-    }
-    return extent;
-  }
   init() {
     const $$ = this.owner;
     const { config, $el: { main, axis }, state: { clip } } = $$;
+    const isRotated = config.axis_rotated;
     const target = ["x", "y"];
     config.axis_y2_show && target.push("y2");
     target.forEach((v) => {
       const classAxis = this.getAxisClassName(v);
+      const classLabel = $AXIS[`axis${v.toUpperCase()}Label`];
       axis[v] = main.append("g").attr("class", classAxis).attr("clip-path", () => {
         let res = null;
         if (v === "x") {
@@ -13694,8 +13182,10 @@ class Axis_Axis {
         }
         return res;
       }).attr("transform", $$.getTranslate(v)).style("visibility", config[`axis_${v}_show`] ? null : "hidden");
+      axis[v].append("text").attr("class", classLabel).attr("transform", ["rotate(-90)", null][v === "x" ? +!isRotated : +isRotated]).style("text-anchor", () => this.textAnchorForAxisLabel(v));
       this.generateAxes(v);
     });
+    config.axis_tooltip && this.setAxisTooltip();
   }
   /**
    * Set axis orient according option value
@@ -13742,7 +13232,7 @@ class Axis_Axis {
         v.domain && scale.domain(v.domain);
         axes.push(
           d3Axis(scale).ticks(tick.count).tickFormat(
-            isFunction(tick.format) ? tick.format.bind($$.api) : ((x) => x)
+            isFunction(tick.format) ? tick.format.bind($$.api) : (x) => x
           ).tickValues(tick.values).tickSizeOuter(tick.outer === false ? 0 : 6)
         );
       });
@@ -13971,17 +13461,6 @@ class Axis_Axis {
     }
     return x;
   }
-  textAnchorForAxisLabel(id) {
-    const $$ = this.owner;
-    const position = this.getAxisLabelPosition(id);
-    let anchor = position.isMiddle ? "middle" : "end";
-    if (this.isHorizontal($$, id !== "x")) {
-      anchor = position.isLeft ? "start" : position.isCenter ? "middle" : "end";
-    } else if (position.isBottom) {
-      anchor = "start";
-    }
-    return anchor;
-  }
   dxForAxisLabel(id) {
     const $$ = this.owner;
     const position = this.getAxisLabelPosition(id);
@@ -13992,6 +13471,17 @@ class Axis_Axis {
       dx = "-0.5em";
     }
     return dx;
+  }
+  textAnchorForAxisLabel(id) {
+    const $$ = this.owner;
+    const position = this.getAxisLabelPosition(id);
+    let anchor = position.isMiddle ? "middle" : "end";
+    if (this.isHorizontal($$, id !== "x")) {
+      anchor = position.isLeft ? "start" : position.isCenter ? "middle" : "end";
+    } else if (position.isBottom) {
+      anchor = "start";
+    }
+    return anchor;
   }
   dyForAxisLabel(id) {
     const $$ = this.owner;
@@ -14042,14 +13532,14 @@ class Axis_Axis {
    */
   getMaxTickSize(id, withoutRecompute) {
     const $$ = this.owner;
-    const { config, state: { current, resizing }, $el: { svg, chart } } = $$;
+    const { config, state: { current }, $el: { svg, chart } } = $$;
     const currentTickMax = current.maxTickSize[id];
     const configPrefix = `axis_${id}`;
     const max = {
       width: 0,
       height: 0
     };
-    if (resizing || withoutRecompute || !config[`${configPrefix}_show`] || currentTickMax.width > 0 && $$.filterTargetsToShow().length === 0) {
+    if (withoutRecompute || !config[`${configPrefix}_show`] || currentTickMax.width > 0 && $$.filterTargetsToShow().length === 0) {
       return currentTickMax;
     }
     if (svg) {
@@ -14084,14 +13574,9 @@ class Axis_Axis {
       }
       !isYAxis && this.updateXAxisTickValues(targetsToShow, axis);
       const dummy = chart.append("svg").style("visibility", "hidden").style("position", "fixed").style("top", "0").style("left", "0");
-      const g = dummy.append("g").attr("class", `${$AXIS[`axis${capitalize(id)}`]} ${$COMMON.dummy}`);
-      axis.create(g);
-      const { sizeFor1Char } = g.node();
+      axis.create(dummy);
       dummy.selectAll("text").attr("transform", isNumber(tickRotate) ? `rotate(${tickRotate})` : null).each(function(d, i) {
-        const { width, height } = sizeFor1Char ? {
-          width: this.textContent.length * sizeFor1Char.w,
-          height: sizeFor1Char.h
-        } : getBoundingRect(this, true);
+        const { width, height } = this.getBoundingClientRect();
         max.width = Math.max(max.width, width);
         max.height = Math.max(max.height, height);
         if (!isYAxis) {
@@ -14160,30 +13645,21 @@ class Axis_Axis {
         left * -1,
         $$.getXDomainMax($$.data.targets) + 1 + right
       ]);
-      tickOffset = (scale(1) - scale(0)) / 2;
+      tickOffset = Math.ceil((scale(1) - scale(0)) / 2);
     }
     return maxOverflow + tickOffset;
   }
-  /**
-   * Update axis label text
-   * @param {boolean} withTransition Weather update with transition
-   * @private
-   */
   updateLabels(withTransition) {
     const $$ = this.owner;
-    const { config, $el: { main }, $T } = $$;
-    const isRotated = config.axis_rotated;
-    ["x", "y", "y2"].forEach((id) => {
-      const text = this.getLabelText(id);
-      const selector = `axis${capitalize(id)}`;
-      const classLabel = $AXIS[`${selector}Label`];
-      if (text) {
-        let axisLabel = main.select(`text.${classLabel}`);
-        if (axisLabel.empty()) {
-          axisLabel = main.select(`g.${$AXIS[selector]}`).insert("text", ":first-child").attr("class", classLabel).attr("transform", ["rotate(-90)", null][id === "x" ? +!isRotated : +isRotated]).style("text-anchor", () => this.textAnchorForAxisLabel(id));
-        }
-        $T(axisLabel, withTransition).attr("x", () => this.xForAxisLabel(id)).attr("dx", () => this.dxForAxisLabel(id)).attr("dy", () => this.dyForAxisLabel(id)).text(text);
-      }
+    const { $el: { main }, $T } = $$;
+    const labels = {
+      x: main.select(`.${$AXIS.axisX} .${$AXIS.axisXLabel}`),
+      y: main.select(`.${$AXIS.axisY} .${$AXIS.axisYLabel}`),
+      y2: main.select(`.${$AXIS.axisY2} .${$AXIS.axisY2Label}`)
+    };
+    Object.keys(labels).filter((id) => !labels[id].empty()).forEach((v) => {
+      const node = labels[v];
+      $T(node, withTransition).attr("x", () => this.xForAxisLabel(v)).attr("dx", () => this.dxForAxisLabel(v)).attr("dy", () => this.dyForAxisLabel(v)).text(() => this.getLabelText(v));
     });
   }
   /**
@@ -14244,7 +13720,7 @@ class Axis_Axis {
   }
   redraw(transitions, isHidden, isInit) {
     const $$ = this.owner;
-    const { config, state, $el } = $$;
+    const { config, $el } = $$;
     const opacity = isHidden ? "0" : null;
     ["x", "y", "y2", "subX"].forEach((id) => {
       const axis = this[id];
@@ -14258,7 +13734,6 @@ class Axis_Axis {
       }
     });
     this.updateAxes();
-    !state.rendered && config.axis_tooltip && this.setAxisTooltip();
   }
   /**
    * Redraw axis
@@ -14339,10 +13814,7 @@ class Axis_Axis {
       const toCull = config[cullingOptionPrefix];
       if (axis && toCull) {
         const tickNodes = axis.selectAll(".tick");
-        const tickValues = sortValue(
-          tickNodes.data(),
-          !config[`${cullingOptionPrefix}_reverse`]
-        );
+        const tickValues = sortValue(tickNodes.data());
         const tickSize = tickValues.length;
         const cullingMax = config[`${cullingOptionPrefix}_max`];
         const lines = config[`${cullingOptionPrefix}_lines`];
@@ -14390,23 +13862,21 @@ class Axis_Axis {
     );
     ["x", "y", "y2"].forEach((v) => {
       var _a2, _b, _c;
-      if (isString(bgColor) || bgColor[v]) {
-        axisTooltip[v] = (_a2 = axis[v]) == null ? void 0 : _a2.append("text").classed($AXIS[`axis${v.toUpperCase()}Tooltip`], true).attr("filter", $$.updateTextBGColor({ id: v }, bgColor));
-        if (isRotated) {
-          const pos = v === "x" ? "x" : "y";
-          const val = v === "y" ? "1.15em" : v === "x" ? "-0.3em" : "-0.4em";
-          (_b = axisTooltip[v]) == null ? void 0 : _b.attr(pos, val).attr(`d${v === "x" ? "y" : "x"}`, v === "x" ? "0.4em" : "-1.3em").style("text-anchor", v === "x" ? "end" : null);
-        } else {
-          const pos = v === "x" ? "y" : "x";
-          const val = v === "x" ? "1.15em" : `${v === "y" ? "-" : ""}0.4em`;
-          (_c = axisTooltip[v]) == null ? void 0 : _c.attr(pos, val).attr(`d${v === "x" ? "x" : "y"}`, v === "x" ? "-1em" : "0.3em").style("text-anchor", v === "y" ? "end" : null);
-        }
+      axisTooltip[v] = (_a2 = axis[v]) == null ? void 0 : _a2.append("text").classed($AXIS[`axis${v.toUpperCase()}Tooltip`], true).attr("filter", $$.updateTextBGColor({ id: v }, bgColor));
+      if (isRotated) {
+        const pos = v === "x" ? "x" : "y";
+        const val = v === "y" ? "1.15em" : v === "x" ? "-0.3em" : "-0.4em";
+        (_b = axisTooltip[v]) == null ? void 0 : _b.attr(pos, val).attr(`d${v === "x" ? "y" : "x"}`, v === "x" ? "0.4em" : "-1.3em").style("text-anchor", v === "x" ? "end" : null);
+      } else {
+        const pos = v === "x" ? "y" : "x";
+        const val = v === "x" ? "1.15em" : `${v === "y" ? "-" : ""}0.4em`;
+        (_c = axisTooltip[v]) == null ? void 0 : _c.attr(pos, val).attr(`d${v === "x" ? "x" : "y"}`, v === "x" ? "-1em" : "0.3em").style("text-anchor", v === "y" ? "end" : null);
       }
     });
   }
 }
 
-;// ./src/ChartInternal/interactions/eventrect.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/interactions/eventrect.ts
 
 
 /* harmony default export */ var eventrect = ({
@@ -14536,7 +14006,7 @@ class Axis_Axis {
     const updateClientRect = () => {
       if (eventReceiver) {
         const scrollPos = getScrollPosition($el.chart.node());
-        eventReceiver.rect = getBoundingRect(rectElement.node(), true).toJSON();
+        eventReceiver.rect = rectElement.node().getBoundingClientRect().toJSON();
         eventReceiver.rect.top += scrollPos.y;
         eventReceiver.rect.left += scrollPos.x;
       }
@@ -14672,7 +14142,7 @@ class Axis_Axis {
     const shapeAtIndex = main.selectAll(`.${$SHAPE.shape}-${index}`).classed($COMMON.EXPANDED, true).style("cursor", isSelectable ? "pointer" : null).filter(function(d) {
       return $$.isWithinShape(this, d);
     });
-    if (shapeAtIndex.empty() && !isTooltipGrouped && config.interaction_onout) {
+    if (shapeAtIndex.empty() && !isTooltipGrouped) {
       (_b = $$.hideGridFocus) == null ? void 0 : _b.call($$);
       $$.hideTooltip();
       !isSelectionGrouped && $$.setExpand(index);
@@ -14805,7 +14275,7 @@ class Axis_Axis {
         $$.setOverOut(index !== -1, index);
       }).on("mouseout", (event) => {
         state.event = event;
-        if (!config || $$.hasArcType() || eventReceiver.currentIdx === -1 || !config.interaction_onout) {
+        if (!config || $$.hasArcType() || eventReceiver.currentIdx === -1) {
           return;
         }
         $$.hideAxisGridFocus();
@@ -14840,7 +14310,7 @@ class Axis_Axis {
    */
   generateEventRectsForMultipleXs(eventRectEnter) {
     const $$ = this;
-    const { config, state } = $$;
+    const { state } = $$;
     eventRectEnter.on("click", function(event) {
       state.event = event;
       $$.clickHandlerForMultipleXS.bind(this)($$);
@@ -14851,7 +14321,7 @@ class Axis_Axis {
         $$.selectRectForMultipleXs(this);
       }).on("mouseout", (event) => {
         state.event = event;
-        if (!$$.config || $$.hasArcType() || !config.interaction_onout) {
+        if (!$$.config || $$.hasArcType()) {
           return;
         }
         $$.unselectRect();
@@ -14867,7 +14337,7 @@ class Axis_Axis {
     }
     const mouse = getPointer(state.event, this);
     const closest = $$.findClosestFromTargets(targetsToShow, mouse);
-    const sensitivity = $$.getPointSensitivity(closest);
+    const sensitivity = config.point_sensitivity === "radius" ? closest.r : config.point_sensitivity;
     if (!closest) {
       return;
     }
@@ -14885,7 +14355,7 @@ class Axis_Axis {
 
 // EXTERNAL MODULE: external {"commonjs":"d3-ease","commonjs2":"d3-ease","amd":"d3-ease","root":"d3"}
 var external_commonjs_d3_ease_commonjs2_d3_ease_amd_d3_ease_root_d3_ = __webpack_require__(12);
-;// ./src/ChartInternal/interactions/flow.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/interactions/flow.ts
 
 
 
@@ -15066,7 +14536,7 @@ var external_commonjs_d3_ease_commonjs2_d3_ease_amd_d3_ease_root_d3_ = __webpack
   }
 });
 
-;// ./src/ChartInternal/internals/clip.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/internals/clip.ts
 /* harmony default export */ var clip = ({
   initClip() {
     const $$ = this;
@@ -15160,7 +14630,7 @@ var external_commonjs_d3_ease_commonjs2_d3_ease_amd_d3_ease_root_d3_ = __webpack
   }
 });
 
-;// ./src/ChartInternal/internals/grid.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/internals/grid.ts
 
 
 
@@ -15181,7 +14651,7 @@ function smoothLines(el, type) {
   if (type === "grid") {
     el.each(function() {
       const g = (0,external_commonjs_d3_selection_commonjs2_d3_selection_amd_d3_selection_root_d3_.select)(this);
-      ["x1", "x2", "y1", "y2"].forEach((v) => g.attr(v, +g.attr(v)));
+      ["x1", "x2", "y1", "y2"].forEach((v) => g.attr(v, Math.ceil(+g.attr(v))));
     });
   }
 }
@@ -15242,7 +14712,7 @@ function smoothLines(el, type) {
     const $$ = this;
     const { axis, config, scale, state, $el: { grid, main } } = $$;
     const isRotated = config.axis_rotated;
-    const pos = (d) => scale.y(d);
+    const pos = (d) => Math.ceil(scale.y(d));
     const gridValues = axis.y.getGeneratedTicks(config.grid_y_ticks) || $$.scale.y.ticks(config.grid_y_ticks);
     grid.y = main.select(`.${$GRID.ygrids}`).selectAll(`.${$GRID.ygrid}`).data(gridValues);
     grid.y.exit().remove();
@@ -15366,7 +14836,7 @@ function smoothLines(el, type) {
   hideAxisGridFocus() {
     const $$ = this;
     $$.$el.main.selectAll(
-      `line.${$AXIS.axisTooltipX}, line.${$AXIS.axisTooltipY}`
+      `line.bb-axis-tooltip-x, line.bb-axis-tooltip-y`
     ).style("visibility", "hidden");
     Object.values($$.$el.axisTooltip).forEach((v) => v == null ? void 0 : v.style("display", "none"));
   },
@@ -15505,7 +14975,7 @@ function smoothLines(el, type) {
   }
 });
 
-;// ./src/ChartInternal/internals/region.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/internals/region.ts
 
 
 
@@ -15538,31 +15008,22 @@ function smoothLines(el, type) {
   redrawRegion(withTransition) {
     const $$ = this;
     const { $el: { region }, $T } = $$;
-    const regionX = $$.regionX.bind($$);
-    const regionY = $$.regionY.bind($$);
-    const attr = ["width", "height"];
     let regions = region.list.select("rect");
     let label = region.list.selectAll("text");
-    regions = $T(regions, withTransition).attr("x", regionX).attr("y", regionY).attr("width", $$.regionWidth.bind($$)).attr("height", $$.regionHeight.bind($$));
-    label = $T(label, withTransition).text((d) => {
+    regions = $T(regions, withTransition).attr("x", $$.regionX.bind($$)).attr("y", $$.regionY.bind($$)).attr("width", $$.regionWidth.bind($$)).attr("height", $$.regionHeight.bind($$));
+    label = $T(label, withTransition).attr("transform", (d) => {
+      var _a;
+      const { x = 0, y = 0, rotated = false } = (_a = d.label) != null ? _a : {};
+      return `translate(${$$.regionX.bind($$)(d) + x}, ${$$.regionY.bind($$)(d) + y})${rotated ? ` rotate(-90)` : ``}`;
+    }).attr("text-anchor", (d) => {
+      var _a;
+      return ((_a = d.label) == null ? void 0 : _a.rotated) ? "end" : null;
+    }).attr("dy", "1em").style("fill", (d) => {
+      var _a, _b;
+      return (_b = (_a = d.label) == null ? void 0 : _a.color) != null ? _b : null;
+    }).text((d) => {
       var _a;
       return (_a = d.label) == null ? void 0 : _a.text;
-    }).attr("transform", ({ label: label2 }) => label2.rotated ? ` rotate(-90)` : null).attr("transform", function(d) {
-      var _a;
-      const { x = 0, y = 0, center = false, rotated = false } = (_a = d.label) != null ? _a : {};
-      const rect = this.previousElementSibling;
-      const pos = { x: 0, y: 0 };
-      if (isString(center)) {
-        ["x", "y"].forEach((v, i) => {
-          if (center.indexOf(v) > -1) {
-            pos[v] = (+rect.getAttribute(attr[i]) - getBoundingRect(this)[attr[i]]) / 2;
-          }
-        });
-      }
-      return `translate(${regionX(d) + pos.x + x}, ${regionY(d) + pos.y + y})${rotated ? ` rotate(-90)` : ``}`;
-    }).attr("text-anchor", ({ label: label2 }) => (label2 == null ? void 0 : label2.rotated) ? "end" : null).attr("dy", "1em").style("fill", ({ label: label2 }) => {
-      var _a;
-      return (_a = label2 == null ? void 0 : label2.color) != null ? _a : null;
     });
     return [
       regions.style("fill-opacity", (d) => isValue(d.opacity) ? d.opacity : null).on("end", function() {
@@ -15571,11 +15032,56 @@ function smoothLines(el, type) {
       label.style("opacity", null)
     ];
   },
+  getRegionXY(type, d) {
+    const $$ = this;
+    const { config, scale } = $$;
+    const isRotated = config.axis_rotated;
+    const isX = type === "x";
+    let key = "start";
+    let currScale;
+    let pos = 0;
+    if (d.axis === "y" || d.axis === "y2") {
+      if (!isX) {
+        key = "end";
+      }
+      if ((isX ? isRotated : !isRotated) && key in d) {
+        currScale = scale[d.axis];
+        pos = currScale(d[key]);
+      }
+    } else if ((isX ? !isRotated : isRotated) && key in d) {
+      currScale = scale.zoom || scale.x;
+      pos = currScale($$.axis.isTimeSeries() ? parseDate.call($$, d[key]) : d[key]);
+    }
+    return pos;
+  },
   regionX(d) {
-    return this.getRegionSize("x", d);
+    return this.getRegionXY("x", d);
   },
   regionY(d) {
-    return this.getRegionSize("y", d);
+    return this.getRegionXY("y", d);
+  },
+  getRegionSize(type, d) {
+    const $$ = this;
+    const { config, scale, state } = $$;
+    const isRotated = config.axis_rotated;
+    const isWidth = type === "width";
+    const start = $$[isWidth ? "regionX" : "regionY"](d);
+    let currScale;
+    let key = "end";
+    let end = state[type];
+    if (d.axis === "y" || d.axis === "y2") {
+      if (!isWidth) {
+        key = "start";
+      }
+      if ((isWidth ? isRotated : !isRotated) && key in d) {
+        currScale = scale[d.axis];
+        end = currScale(d[key]);
+      }
+    } else if ((isWidth ? !isRotated : isRotated) && key in d) {
+      currScale = scale.zoom || scale.x;
+      end = currScale($$.axis.isTimeSeries() ? parseDate.call($$, d[key]) : d[key]);
+    }
+    return end < start ? 0 : end - start;
   },
   regionWidth(d) {
     return this.getRegionSize("width", d);
@@ -15583,54 +15089,12 @@ function smoothLines(el, type) {
   regionHeight(d) {
     return this.getRegionSize("height", d);
   },
-  /**
-   * Get Region size according start/end position
-   * @param {string} type Type string
-   * @param {ojbect} d Data object
-   * @returns {number}
-   * @private
-   */
-  getRegionSize(type, d) {
-    const $$ = this;
-    const { config, scale, state } = $$;
-    const isRotated = config.axis_rotated;
-    const isAxisType = /(x|y|y2)/.test(type);
-    const isType = isAxisType ? type === "x" : type === "width";
-    const start = !isAxisType && $$[isType ? "regionX" : "regionY"](d);
-    let key = isAxisType ? "start" : "end";
-    let pos = isAxisType ? 0 : state[type];
-    let currScale;
-    if (d.axis === "y" || d.axis === "y2") {
-      if (!isAxisType && !isType) {
-        key = "start";
-      } else if (isAxisType && !isType) {
-        key = "end";
-      }
-      if ((isType ? isRotated : !isRotated) && key in d) {
-        currScale = scale[d.axis];
-      }
-    } else if ((isType ? !isRotated : isRotated) && key in d) {
-      currScale = scale.zoom || scale.x;
-    }
-    if (currScale) {
-      let offset = 0;
-      pos = d[key];
-      if ($$.axis.isTimeSeries(d.axis)) {
-        pos = parseDate.call($$, pos);
-      } else if (/(x|width)/.test(type) && $$.axis.isCategorized() && isNaN(pos)) {
-        pos = config.axis_x_categories.indexOf(pos);
-        offset = $$.axis.x.tickOffset() * (key === "start" ? -1 : 1);
-      }
-      pos = currScale(pos) + offset;
-    }
-    return isAxisType ? pos : pos < start ? 0 : pos - start;
-  },
   isRegionOnX(d) {
     return !d.axis || d.axis === "x";
   }
 });
 
-;// ./src/ChartInternal/internals/size.axis.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/internals/size.axis.ts
 
 /* harmony default export */ var size_axis = ({
   /**
@@ -15746,7 +15210,7 @@ function smoothLines(el, type) {
   }
 });
 
-;// ./src/config/Options/axis/x.ts
+;// CONCATENATED MODULE: ./src/config/Options/axis/x.ts
 /* harmony default export */ var axis_x = ({
   /**
    * Set clip-path attribute for x axis element
@@ -15913,7 +15377,7 @@ function smoothLines(el, type) {
    * axis: {
    *   x: {
    *     tick: {
-   *       culling: false,
+   *       culling: false
    *     }
    *   }
    * }
@@ -15956,26 +15420,6 @@ function smoothLines(el, type) {
    */
   axis_x_tick_culling_lines: true,
   /**
-   * Control culling start point to be reversed. If set to true, the culling will be started from the end to start.
-   * - **NOTE:** This option is only available when `axis.x.tick.culling` is set to truthy value.
-   * @name axis․x․tick․culling․reverse
-   * @memberof Options
-   * @type {boolean}
-   * @default false
-   * @see [Demo](https://naver.github.io/billboard.js/demo/#Axis.XAxisTickCulling)
-   * @example
-   * axis: {
-   *   x: {
-   *     tick: {
-   *       culling: {
-   *           reverse: true,
-   *       }
-   *     }
-   *   }
-   * }
-   */
-  axis_x_tick_culling_reverse: false,
-  /**
    * The number of x axis ticks to show.<br><br>
    * This option hides tick lines together with tick text. If this option is used on timeseries axis, the ticks position will be determined precisely and not nicely positioned (e.g. it will have rough second value).
    * @name axis․x․tick․count
@@ -15992,23 +15436,6 @@ function smoothLines(el, type) {
    * }
    */
   axis_x_tick_count: void 0,
-  /**
-   * Set the axis tick line to be positioned inside of the chart.
-   * @name axis․x․tick․inner
-   * @memberof Options
-   * @type {boolean}
-   * @default false
-   * @see [Demo](https://naver.github.io/billboard.js/demo/#Axis.TickInner)
-   * @example
-   * axis: {
-   *   x: {
-   *     tick: {
-   *       inner: true
-   *     }
-   *   }
-   * }
-   */
-  axis_x_tick_inner: false,
   /**
    * Show or hide x axis tick line.
    * @name axis․x․tick․show
@@ -16385,8 +15812,7 @@ function smoothLines(el, type) {
    */
   axis_x_height: void 0,
   /**
-   * Set extent for subchart and zoom(drag only). This can be an array or function that returns an array.
-   * - **NOTE:** Specifying value, will limit the zoom scope selection within.
+   * Set default extent for subchart and zoom. This can be an array or function that returns an array.
    * @name axis․x․extent
    * @memberof Options
    * @type {Array|Function}
@@ -16496,7 +15922,7 @@ function smoothLines(el, type) {
   axis_x_axes: []
 });
 
-;// ./src/config/Options/axis/y.ts
+;// CONCATENATED MODULE: ./src/config/Options/axis/y.ts
 /* harmony default export */ var y = ({
   /**
    * Set clip-path attribute for y axis element
@@ -16725,41 +16151,6 @@ function smoothLines(el, type) {
    * }
    */
   axis_y_tick_culling_lines: true,
-  /**
-   * Control culling start point to be reversed. If set to true, the culling will be started from the end to start.
-   * - **NOTE:** This option is only available when `axis.y.tick.culling` is set to truthy value.
-   * @name axis․y․tick․culling․reverse
-   * @memberof Options
-   * @type {boolean}
-   * @default false
-   * @example
-   * axis: {
-   *   y: {
-   *     tick: {
-   *       culling: {
-   *           reverse: true,
-   *       }
-   *     }
-   *   }
-   * }
-   */
-  axis_y_tick_culling_reverse: false,
-  /**
-   * Set the axis tick line to be positioned inside of the chart.
-   * @name axis․y․tick․inner
-   * @memberof Options
-   * @type {boolean}
-   * @default false
-   * @see [Demo](https://naver.github.io/billboard.js/demo/#Axis.TickInner)
-   * axis: {
-   *   y: {
-   *     tick: {
-   *       inner: true
-   *     }
-   *   }
-   * }
-   */
-  axis_y_tick_inner: false,
   /**
    * Show y axis outer tick.
    * @name axis․y․tick․outer
@@ -17013,7 +16404,7 @@ function smoothLines(el, type) {
   axis_y_axes: []
 });
 
-;// ./src/config/Options/axis/y2.ts
+;// CONCATENATED MODULE: ./src/config/Options/axis/y2.ts
 /* harmony default export */ var y2 = ({
   /**
    * Show or hide y2 axis.
@@ -17229,42 +16620,6 @@ function smoothLines(el, type) {
    * }
    */
   axis_y2_tick_culling_lines: true,
-  /**
-   * Control culling start point to be reversed. If set to true, the culling will be started from the end to start.
-   * - **NOTE:** This option is only available when `axis.y2.tick.culling` is set to truthy value.
-   * @name axis․y2․tick․culling․reverse
-   * @memberof Options
-   * @type {boolean}
-   * @default false
-   * @example
-   * axis: {
-   *   y2: {
-   *     tick: {
-   *       culling: {
-   *           reverse: true,
-   *       }
-   *     }
-   *   }
-   * }
-   */
-  axis_y2_tick_culling_reverse: false,
-  /**
-   * Set the axis tick line to be positioned inside of the chart.
-   * @name axis․y2․tick․inner
-   * @memberof Options
-   * @type {boolean}
-   * @default false
-   * @see [Demo](https://naver.github.io/billboard.js/demo/#Axis.TickInner)
-   * @example
-   * axis: {
-   *   y2: {
-   *     tick: {
-   *       inner: true
-   *     }
-   *   }
-   * }
-   */
-  axis_y2_tick_inner: false,
   /**
    * Show or hide y2 axis outer tick.
    * @name axis․y2․tick․outer
@@ -17493,7 +16848,7 @@ function smoothLines(el, type) {
   axis_y2_axes: []
 });
 
-;// ./src/config/Options/axis/axis.ts
+;// CONCATENATED MODULE: ./src/config/Options/axis/axis.ts
 var axis_defProp = Object.defineProperty;
 var axis_getOwnPropSymbols = Object.getOwnPropertySymbols;
 var axis_hasOwnProp = Object.prototype.hasOwnProperty;
@@ -17514,46 +16869,6 @@ var axis_spreadValues = (a, b) => {
 
 
 /* harmony default export */ var axis_axis = (axis_spreadValues(axis_spreadValues(axis_spreadValues({
-  /**
-   * Setup the way to evaluate tick text size.
-   * - **NOTE:**
-   *   - Setting `false` or custom evaluator, highly recommended to memoize evaluated text dimension value to not degrade performance.
-   * @name axis․evalTextSize
-   * @memberof Options
-   * @type {boolean|Function}
-   * @default true
-   * @see [Demo](https://naver.github.io/billboard.js/demo/#Axis.AxisEvalTextSize)
-   * @example
-   * axis: {
-   *   // will evaluate getting text size every time.
-   *   evalTextSize: false.
-   *
-   *   // set a custom evaluator
-   *   evalTextSize: function(textElement, axisId) {
-   *     // set some character to be evaluated
-   *     // NOTE: The dummy textElement is a descendant of given axisId('x', 'y' or 'y2').
-   *     textElement.textContent = "0";
-   *
-   *     // get the size
-   *     const box = textElement.getBBox();
-   *
-   *     // clear text
-   *     textElement.textContent = "";
-   *
-   *     return { w: 7, h: 12};
-   *   },
-   *
-   *   // set a custom evaluator by returning fixed value
-   *   evalTextSize: function(textElement, axisId) {
-   *     return {
-   *        x: {w: 7, h: 12},
-   *        y: {w: 15.75, h: 30},
-   *        y2: {w: 9.5, h: 18}
-   *     }[axisId];
-   *   }
-   * }
-   */
-  axis_evalTextSize: true,
   /**
    * Switch x and y axis position.
    * @name axis․rotated
@@ -17601,7 +16916,7 @@ var axis_spreadValues = (a, b) => {
   axis_tooltip: false
 }, axis_x), y), y2));
 
-;// ./src/config/Options/common/grid.ts
+;// CONCATENATED MODULE: ./src/config/Options/common/grid.ts
 /* harmony default export */ var common_grid = ({
   /**
    * Set related options
@@ -17674,7 +16989,7 @@ var axis_spreadValues = (a, b) => {
   grid_lines_front: true
 });
 
-;// ./src/config/Options/data/axis.ts
+;// CONCATENATED MODULE: ./src/config/Options/data/axis.ts
 /* harmony default export */ var data_axis = ({
   /**
    * Specify the keys of the x values for each data.<br><br>
@@ -17771,12 +17086,8 @@ var axis_spreadValues = (a, b) => {
    * - The object type should be as:
    *   - start {number}: Start data point number. If not set, the start will be the first data point.
    *   - [end] {number}: End data point number. If not set, the end will be the last data point.
-   *   - [style.dasharray="2 2"] {string}: The first number specifies a distance for the filled area, and the second a distance for the unfilled area.
-   * - **NOTE:**
-   *   - Supports only line type.
-   *   - `start` and `end` values should be in the exact x value range.
-   *   - Dashes will be applied using `stroke-dasharray` css property when data doesn't contain nullish value(or nullish value with `line.connectNull=true` set).
-   *   - Dashes will be applied via path command when data contains nullish value.
+   *   - [style.dasharray="2 2"] {object}: The first number specifies a distance for the filled area, and the second a distance for the unfilled area.
+   * - **NOTE:** Currently this option supports only line chart and dashed style. If this option specified, the line will be dashed only in the regions.
    * @name data․regions
    * @memberof Options
    * @type {object}
@@ -17819,7 +17130,7 @@ var axis_spreadValues = (a, b) => {
   data_stack_normalize: false
 });
 
-;// ./src/config/resolver/axis.ts
+;// CONCATENATED MODULE: ./src/config/resolver/axis.ts
 
 
 
@@ -17863,7 +17174,7 @@ const options = {
 
 // EXTERNAL MODULE: external {"commonjs":"d3-interpolate","commonjs2":"d3-interpolate","amd":"d3-interpolate","root":"d3"}
 var external_commonjs_d3_interpolate_commonjs2_d3_interpolate_amd_d3_interpolate_root_d3_ = __webpack_require__(13);
-;// ./src/ChartInternal/shape/arc.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/shape/arc.ts
 var arc_defProp = Object.defineProperty;
 var arc_defProps = Object.defineProperties;
 var arc_getOwnPropDescs = Object.getOwnPropertyDescriptors;
@@ -17883,7 +17194,6 @@ var arc_spreadValues = (a, b) => {
   return a;
 };
 var arc_spreadProps = (a, b) => arc_defProps(a, arc_getOwnPropDescs(b));
-
 
 
 
@@ -18180,9 +17490,7 @@ function getAttrTweenFn(fn) {
         return isFunction(format) ? format(range) : `${range}${isPercent ? "%" : ""}`;
       }).merge(rangeText));
       if ((!state.rendered || state.rendered && !fixed) && totalSum > 0) {
-        rangeText.attr("transform", function(d, i) {
-          return $$.transformForArcLabel(this, pieData[i], true);
-        });
+        rangeText.attr("transform", (d, i) => $$.transformForArcLabel(pieData[i], true));
       }
       rangeText.style(
         "opacity",
@@ -18192,32 +17500,30 @@ function getAttrTweenFn(fn) {
   },
   /**
    * Set transform attributes to arc label text
-   * @param {SVGTextElement} textNode Text node element
    * @param {object} d Data object
    * @param {boolean} forRange Weather is for ranged text option(arc.rangeText.values)
    * @returns {string} Translate attribute string
    * @private
    */
-  transformForArcLabel(textNode, d, forRange = false) {
+  transformForArcLabel(d, forRange = false) {
     var _a, _b, _c;
     const $$ = this;
     const { config, state: { radiusExpanded } } = $$;
     const updated = $$.updateAngle(d, forRange);
-    const pos = { x: 0, y: 0 };
     let translate = "";
-    let ratio = 1;
     if (updated) {
       if (forRange || $$.hasMultiArcGauge()) {
         const y1 = Math.sin(updated.endAngle - Math.PI / 2);
         const rangeTextPosition = config.arc_rangeText_position;
-        pos.x = Math.cos(updated.endAngle - Math.PI / 2) * (radiusExpanded + (forRange ? 5 : 25));
-        pos.y = y1 * (radiusExpanded + 15 - Math.abs(y1 * 10)) + 3;
+        let x = Math.cos(updated.endAngle - Math.PI / 2) * (radiusExpanded + (forRange ? 5 : 25));
+        let y = y1 * (radiusExpanded + 15 - Math.abs(y1 * 10)) + 3;
         if (forRange && rangeTextPosition) {
           const rangeValues = config.arc_rangeText_values;
-          const position = isFunction(rangeTextPosition) ? rangeTextPosition(rangeValues[d.index]) : rangeTextPosition;
-          pos.x += (_a = position == null ? void 0 : position.x) != null ? _a : 0;
-          pos.y += (_b = position == null ? void 0 : position.y) != null ? _b : 0;
+          const pos = isFunction(rangeTextPosition) ? rangeTextPosition(rangeValues[d.index]) : rangeTextPosition;
+          x += (_a = pos == null ? void 0 : pos.x) != null ? _a : 0;
+          y += (_b = pos == null ? void 0 : pos.y) != null ? _b : 0;
         }
+        translate = `translate(${x},${y})`;
       } else if (!$$.hasType("gauge") || $$.data.targets.length > 1) {
         let { outerRadius } = $$.getRadius(d);
         if ($$.hasType("polar")) {
@@ -18226,17 +17532,14 @@ function getAttrTweenFn(fn) {
         const c = this.svgArc.centroid(updated);
         const [x, y] = c.map((v) => isNaN(v) ? 0 : v);
         const h = Math.sqrt(x * x + y * y);
-        pos.x = x;
-        pos.y = y;
-        ratio = (_c = ["donut", "gauge", "pie", "polar"].filter($$.hasType.bind($$)).map((v) => config[`${v}_label_ratio`])) == null ? void 0 : _c[0];
+        let ratio = (_c = ["donut", "gauge", "pie", "polar"].filter($$.hasType.bind($$)).map((v) => config[`${v}_label_ratio`])) == null ? void 0 : _c[0];
         if (ratio) {
           ratio = isFunction(ratio) ? ratio.bind($$.api)(d, outerRadius, h) : ratio;
         } else {
           ratio = outerRadius && (h ? (36 / outerRadius > 0.375 ? 1.175 - 36 / outerRadius : 0.8) * outerRadius / h : 0);
         }
+        translate = `translate(${x * ratio},${y * ratio})`;
       }
-      updateTextImagePos.call($$, textNode, pos);
-      translate = `translate(${pos.x * ratio},${pos.y * ratio})`;
     }
     return translate;
   },
@@ -18257,14 +17560,13 @@ function getAttrTweenFn(fn) {
         const node = (0,external_commonjs_d3_selection_commonjs2_d3_selection_amd_d3_selection_root_d3_.select)(this);
         const updated = $$.updateAngle(d);
         const ratio = $$.getRatio("arc", updated);
-        const isUnderThreshold = meetsLabelThreshold.call(
-          $$,
+        const isUnderThreshold = $$.meetsLabelThreshold(
           ratio,
           (_a = ["donut", "gauge", "pie", "polar"].filter($$.hasType.bind($$))) == null ? void 0 : _a[0]
         );
         if (isUnderThreshold) {
           const { value } = updated || d;
-          const text = ($$.getArcLabelConfig("format") || $$.defaultArcValueFormat)(value, ratio, d.data.id).toString();
+          const text = ($$.getArcLabelFormat() || $$.defaultArcValueFormat)(value, ratio, d.data.id).toString();
           setTextValue(node, text, [-1, 1], hasGauge);
         } else {
           node.text("");
@@ -18340,18 +17642,14 @@ function getAttrTweenFn(fn) {
     const { config } = $$;
     return ["donut", "gauge", "pie", "polar"].some((v) => $$.hasType(v) && config[`${v}_label_show`]);
   },
-  getArcLabelConfig(name = "format") {
+  getArcLabelFormat() {
     const $$ = this;
     const { config } = $$;
-    let fn = (v) => v;
+    let format = (v) => v;
     ["donut", "gauge", "pie", "polar"].filter($$.hasType.bind($$)).forEach((v) => {
-      fn = config[`${v}_label_${name}`];
+      format = config[`${v}_label_format`];
     });
-    if (name === "format") {
-      return isFunction(fn) ? fn.bind($$.api) : fn;
-    } else {
-      return fn;
-    }
+    return isFunction(format) ? format.bind($$.api) : format;
   },
   updateTargetsForArc(targets) {
     const $$ = this;
@@ -18422,7 +17720,7 @@ function getAttrTweenFn(fn) {
         value = config.arc_needle_value;
       }
       return tplProcess(title, {
-        NEEDLE_VALUE: ~~value
+        NEEDLE_VALUE: isNumber(value) ? value : 0
       });
     }
     return false;
@@ -18645,7 +17943,7 @@ function getAttrTweenFn(fn) {
         selectArc(this, arcData, id);
         $$.setOverOut(true, arcData);
       }).on("mouseout", (event, d) => {
-        if (state.transiting || !config.interaction_onout) {
+        if (state.transiting) {
           return;
         }
         state.event = event;
@@ -18689,11 +17987,7 @@ function getAttrTweenFn(fn) {
     const hasMultiArcGauge = $$.hasMultiArcGauge();
     let text;
     if (!(hasGauge && $$.data.targets.length === 1 && config.gauge_title)) {
-      text = main.selectAll(`.${$ARC.chartArc}`).select("text").style("opacity", "0").attr("class", (d) => $$.isGaugeType(d.data) ? $GAUGE.gaugeValue : null).call($$.textForArcLabel.bind($$)).style("font-size", (d) => $$.isGaugeType(d.data) && $$.data.targets.length === 1 && !hasMultiArcGauge ? `${Math.round(state.radius / 5)}px` : null);
-      updateTextImage.call($$);
-      text.attr("transform", function(d) {
-        return $$.transformForArcLabel.bind($$)(this, d);
-      }).transition().duration(duration).style(
+      text = main.selectAll(`.${$ARC.chartArc}`).select("text").style("opacity", "0").attr("class", (d) => $$.isGaugeType(d.data) ? $GAUGE.gaugeValue : null).call($$.textForArcLabel.bind($$)).attr("transform", (d) => $$.transformForArcLabel.bind($$)(d)).style("font-size", (d) => $$.isGaugeType(d.data) && $$.data.targets.length === 1 && !hasMultiArcGauge ? `${Math.round(state.radius / 5)}px` : null).transition().duration(duration).style(
         "opacity",
         (d) => $$.isTargetToShow(d.data.id) && $$.isArcType(d.data) ? null : "0"
       );
@@ -18724,7 +18018,7 @@ function getAttrTweenFn(fn) {
   }
 });
 
-;// ./src/ChartInternal/shape/area.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/shape/area.ts
 
 
 
@@ -18857,15 +18151,9 @@ function getAttrTweenFn(fn) {
   }
 });
 
-;// ./src/ChartInternal/shape/bar.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/shape/bar.ts
 
 
-
-function getConnectLineType(id) {
-  const connectLine = this.config.bar_connectLine;
-  const type = (connectLine == null ? void 0 : connectLine[id]) || connectLine;
-  return /^(start|end)\-(start|end)$/.test(type) ? type : null;
-}
 /* harmony default export */ var bar = ({
   initBar() {
     const { $el, config, state: { clip } } = this;
@@ -18886,19 +18174,17 @@ function getConnectLineType(id) {
     if (!$el.bar) {
       $$.initBar();
     }
-    const mainBarUpdate = $el.main.select(`.${$BAR.chartBars}`).selectAll(`.${$BAR.chartBar}`).data($$.filterNullish(targets)).attr("class", (d) => classChartBar(d) + classFocus(d));
+    const mainBarUpdate = $el.main.select(`.${$BAR.chartBars}`).selectAll(`.${$BAR.chartBar}`).data(
+      // remove
+      targets.filter(
+        (v) => v.values.some((d) => isNumber(d.value) || $$.isBarRangeType(d))
+      )
+    ).attr("class", (d) => classChartBar(d) + classFocus(d));
     const mainBarEnter = mainBarUpdate.enter().append("g").attr("class", classChartBar).style("opacity", "0").style("pointer-events", $$.getStylePropValue("none"));
     mainBarEnter.append("g").attr("class", classBars).style("cursor", (d) => {
       var _a;
       return ((_a = isSelectable == null ? void 0 : isSelectable.bind) == null ? void 0 : _a.call(isSelectable, $$.api)(d)) ? "pointer" : null;
-    }).call((selection) => {
-      $$.setCssRule(true, ` .${$BAR.bar}`, ["fill"], $$.color)(selection);
-      selection.each(function(d) {
-        if (getConnectLineType.call($$, d.id)) {
-          (0,external_commonjs_d3_selection_commonjs2_d3_selection_amd_d3_selection_root_d3_.select)(this).append("path").attr("class", $BAR.barConnectLine);
-        }
-      });
-    });
+    }).call($$.setCssRule(true, ` .${$BAR.bar}`, ["fill"], $$.color));
   },
   /**
    * Generate/Update elements
@@ -18940,25 +18226,8 @@ function getConnectLineType(id) {
   redrawBar(drawFn, withTransition, isSub = false) {
     const $$ = this;
     const { bar } = isSub ? $$.$el.subchart : $$.$el;
-    const barPath = [];
     return [
-      $$.$T(bar, withTransition, getRandom()).attr("d", function(d, i, arr) {
-        const path = (isNumber(d.value) || $$.isBarRangeType(d)) && drawFn(d, i);
-        const connectLineType = getConnectLineType.call($$, d.id);
-        if (path.length > 1) {
-          barPath.push(path[1]);
-          if (i === arr.length - 1) {
-            const barConnectLineNode = $$.$T(
-              (0,external_commonjs_d3_selection_commonjs2_d3_selection_amd_d3_selection_root_d3_.select)(this.parentNode.querySelector(`.${$BAR.barConnectLine}`)),
-              withTransition,
-              getRandom()
-            );
-            $$.updateConnectLine(barConnectLineNode, connectLineType, barPath);
-            barPath.splice(0);
-          }
-        }
-        return path[0];
-      }).style("fill", $$.updateBarColor.bind($$)).style("clip-path", (d) => d.clipPath).style("opacity", null)
+      $$.$T(bar, withTransition, getRandom()).attr("d", (d) => (isNumber(d.value) || $$.isBarRangeType(d)) && drawFn(d)).style("fill", $$.updateBarColor.bind($$)).style("opacity", null)
     ];
   },
   /**
@@ -18997,59 +18266,20 @@ function getConnectLineType(id) {
       const isInverted = config[`axis_${$$.axis.getId(d.id)}_inverted`];
       const isNegative = !isInverted && isUnderZero || isInverted && !isUnderZero;
       const pathRadius = ["", ""];
+      let radius = 0;
       const isGrouped = $$.isGrouped(d.id);
       const isRadiusData = getRadius && isGrouped ? $$.isStackingRadiusData(d) : false;
-      const init = [
-        points[0][indexX],
-        points[0][indexY]
-      ];
-      let radius = 0;
-      d.clipPath = null;
       if (getRadius) {
         const index = isRotated ? indexY : indexX;
         const barW = points[2][index] - points[0][index];
         radius = !isGrouped || isRadiusData ? getRadius(barW) : 0;
-        const arc = `a${radius} ${radius} ${isNegative ? `1 0 0` : `0 0 1`} `;
+        const arc = `a${radius},${radius} ${isNegative ? `1 0 0` : `0 0 1`} `;
         pathRadius[+!isRotated] = `${arc}${radius},${radius}`;
         pathRadius[+isRotated] = `${arc}${[-radius, radius][isRotated ? "sort" : "reverse"]()}`;
         isNegative && pathRadius.reverse();
       }
-      const pos = isRotated ? points[1][indexX] + (isNegative ? radius : -radius) : points[1][indexY] + (isNegative ? -radius : radius);
-      if (radius) {
-        let clipPath = "";
-        if (isRotated) {
-          if (isNegative && init[0] < pos) {
-            clipPath = `0 ${pos - init[0]}px 0 0`;
-          } else if (!isNegative && init[0] > pos) {
-            clipPath = `0 0 0 ${init[0] - pos}px`;
-          }
-        } else {
-          if (isNegative && init[1] > pos) {
-            clipPath = `${init[1] - pos}px 0 0 0`;
-          } else if (!isNegative && init[1] < pos) {
-            clipPath = `0 0 ${pos - init[1]}px 0`;
-          }
-        }
-        if (clipPath) {
-          d.clipPath = `inset(${clipPath})`;
-        }
-      }
-      const path = isRotated ? `H${pos} ${pathRadius[0]}V${points[2][indexY] - radius} ${pathRadius[1]}H${points[3][indexX]}` : `V${pos} ${pathRadius[0]}H${points[2][indexX] - radius} ${pathRadius[1]}V${points[3][indexY]}`;
-      const coords = [`M${points[0][indexX]},${points[0][indexY]}${path}z`];
-      if (getConnectLineType.call($$, d.id)) {
-        coords.push(isRotated ? {
-          x: points[0][indexX],
-          y: points[0][indexY],
-          width: points[0][indexX] - pos,
-          height: points[2][indexY] - points[0][indexY]
-        } : {
-          x: points[0][indexX],
-          y: pos,
-          width: points[2][indexX] - points[0][indexX],
-          height: points[3][indexY] - pos
-        });
-      }
-      return coords;
+      const path = isRotated ? `H${points[1][indexX] + (isNegative ? radius : -radius)} ${pathRadius[0]}V${points[2][indexY] - radius} ${pathRadius[1]}H${points[3][indexX]}` : `V${points[1][indexY] + (isNegative ? -radius : radius)} ${pathRadius[0]}H${points[2][indexX] - radius} ${pathRadius[1]}V${points[3][indexY]}`;
+      return `M${points[0][indexX]},${points[0][indexY]}${path}z`;
     };
   },
   /**
@@ -19116,38 +18346,10 @@ function getConnectLineType(id) {
         [startPosX, offset]
       ];
     };
-  },
-  /**
-   * Update the bar connect line path
-   * @param {d3Selection} node d3 selection of bar connect line
-   * @param {string} type Type of connect line, one of "start-start", "start-end", "end-start", "end-end"
-   * @param {Array} barPath d3 path data for the bar
-   */
-  updateConnectLine(node, type, barPath) {
-    const path = barPath.map((v, i, arr) => {
-      const isRotated = this.config.axis_rotated;
-      const isStart = /^start-(start|end)$/.test(type);
-      const isEnd = /^end-(start|end)$/.test(type);
-      const path2 = [];
-      const x = isRotated ? isEnd ? v.x - v.width : v.x : v.x + v.width;
-      const y = isRotated ? v.y + v.height : isStart ? v.y + v.height : v.y;
-      if (i === 0) {
-        path2.push(`${x},${y}`);
-      } else {
-        path2.push(
-          isRotated ? `L${v.x - (/\w+-end$/.test(type) ? v.width : 0)},${v.y}` : `L${v.x},${v.y + (/\w+-start$/.test(type) ? v.height : 0)}`
-        );
-        if (i < arr.length - 1) {
-          path2.push(`M${x},${y}`);
-        }
-      }
-      return path2.join(" ");
-    });
-    node.attr("d", `M${path.join("")}z`);
   }
 });
 
-;// ./src/ChartInternal/shape/bubble.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/shape/bubble.ts
 
 
 /* harmony default export */ var bubble = ({
@@ -19209,7 +18411,7 @@ function getConnectLineType(id) {
   }
 });
 
-;// ./src/ChartInternal/shape/candlestick.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/shape/candlestick.ts
 var candlestick_defProp = Object.defineProperty;
 var candlestick_getOwnPropSymbols = Object.getOwnPropertySymbols;
 var candlestick_hasOwnProp = Object.prototype.hasOwnProperty;
@@ -19247,7 +18449,7 @@ var candlestick_spreadValues = (a, b) => {
     if (!$el.candlestick) {
       $$.initCandlestick();
     }
-    const mainUpdate = $$.$el.main.select(`.${$CANDLESTICK.chartCandlesticks}`).selectAll(`.${$CANDLESTICK.chartCandlestick}`).data($$.filterNullish(targets));
+    const mainUpdate = $$.$el.main.select(`.${$CANDLESTICK.chartCandlesticks}`).selectAll(`.${$CANDLESTICK.chartCandlestick}`).data(targets);
     mainUpdate.enter().append("g").attr("class", classChart).style("pointer-events", "none");
   },
   /**
@@ -19405,7 +18607,7 @@ var candlestick_spreadValues = (a, b) => {
   }
 });
 
-;// ./src/ChartInternal/shape/funnel.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/shape/funnel.ts
 var funnel_defProp = Object.defineProperty;
 var funnel_getOwnPropSymbols = Object.getOwnPropertySymbols;
 var funnel_hasOwnProp = Object.prototype.hasOwnProperty;
@@ -19577,10 +18779,8 @@ function updateRatio(data) {
         }
       }).on(isTouch ? "touchend" : "mouseout", (event) => {
         const data = getTarget(event);
-        if (config.interaction_onout) {
-          $$.hideTooltip();
-          $$.setOverOut(false, data);
-        }
+        $$.hideTooltip();
+        $$.setOverOut(false, data);
       });
     }
   },
@@ -19598,7 +18798,7 @@ function updateRatio(data) {
       $$.initFunnel();
     }
     const targets = getFunnelData.call($$, t.filter($$.isFunnelType.bind($$)));
-    const mainFunnelUpdate = funnel.selectAll(`.${$FUNNEL.chartFunnel}`).data($$.filterNullish(targets));
+    const mainFunnelUpdate = funnel.selectAll(`.${$FUNNEL.chartFunnel}`).data(targets);
     mainFunnelUpdate.exit().remove();
     const mainFunnelEnter = mainFunnelUpdate.enter().insert("g", `.${$FUNNEL.funnelBackground}`);
     mainFunnelEnter.append("path");
@@ -19653,7 +18853,7 @@ function updateRatio(data) {
   }
 });
 
-;// ./src/ChartInternal/shape/gauge.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/shape/gauge.ts
 
 
 
@@ -19731,61 +18931,11 @@ function updateRatio(data) {
   }
 });
 
-;// ./src/ChartInternal/shape/line.ts
-var line_defProp = Object.defineProperty;
-var line_defProps = Object.defineProperties;
-var line_getOwnPropDescs = Object.getOwnPropertyDescriptors;
-var line_getOwnPropSymbols = Object.getOwnPropertySymbols;
-var line_hasOwnProp = Object.prototype.hasOwnProperty;
-var line_propIsEnum = Object.prototype.propertyIsEnumerable;
-var line_defNormalProp = (obj, key, value) => key in obj ? line_defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var line_spreadValues = (a, b) => {
-  for (var prop in b || (b = {}))
-    if (line_hasOwnProp.call(b, prop))
-      line_defNormalProp(a, prop, b[prop]);
-  if (line_getOwnPropSymbols)
-    for (var prop of line_getOwnPropSymbols(b)) {
-      if (line_propIsEnum.call(b, prop))
-        line_defNormalProp(a, prop, b[prop]);
-    }
-  return a;
-};
-var line_spreadProps = (a, b) => line_defProps(a, line_getOwnPropDescs(b));
+;// CONCATENATED MODULE: ./src/ChartInternal/shape/line.ts
 
 
 
 
-function getStrokeDashArray(start, end, pattern, isLastX = false) {
-  const dash = start ? [start, 0] : pattern;
-  for (let i = start ? start : pattern.reduce((a, c) => a + c); i <= end; ) {
-    pattern.forEach((v) => {
-      if (i + v <= end) {
-        dash.push(v);
-      }
-      i += v;
-    });
-  }
-  dash.length % 2 !== 0 && dash.push(isLastX ? pattern[1] : 0);
-  return {
-    dash: dash.join(" "),
-    length: dash.reduce((a, b) => a + b, 0)
-  };
-}
-function getRegions(d, _regions, isTimeSeries) {
-  const $$ = this;
-  const regions = [];
-  const dasharray = "2 2";
-  if (isDefined(_regions)) {
-    const getValue = (v, def) => isUndefined(v) ? def : isTimeSeries ? parseDate.call($$, v) : v;
-    for (let i = 0, reg; reg = _regions[i]; i++) {
-      const start = getValue(reg.start, d[0].x);
-      const end = getValue(reg.end, d[d.length - 1].x);
-      const style = reg.style || { dasharray };
-      regions[i] = { start, end, style };
-    }
-  }
-  return regions;
-}
 /* harmony default export */ var line = ({
   initLine() {
     const { $el } = this;
@@ -19801,7 +18951,7 @@ function getRegions(d, _regions, isTimeSeries) {
       $$.initLine();
     }
     const targets = t.filter((d) => !($$.isScatterType(d) || $$.isBubbleType(d)));
-    const mainLineUpdate = main.select(`.${$LINE.chartLines}`).selectAll(`.${$LINE.chartLine}`).data($$.filterNullish(targets)).attr("class", (d) => classChartLine(d) + classFocus(d));
+    const mainLineUpdate = main.select(`.${$LINE.chartLines}`).selectAll(`.${$LINE.chartLine}`).data(targets).attr("class", (d) => classChartLine(d) + classFocus(d));
     const mainLineEnter = mainLineUpdate.enter().append("g").attr("class", classChartLine).style("opacity", "0").style("pointer-events", $$.getStylePropValue("none"));
     mainLineEnter.append("g").attr("class", classLines);
     if ($$.hasTypeOf("Area")) {
@@ -19830,7 +18980,6 @@ function getRegions(d, _regions, isTimeSeries) {
    * @param {boolean} withTransition With or without transition
    * @param {boolean} isSub Subchart draw
    * @returns {Array}
-   * @private
    */
   redrawLine(drawFn, withTransition, isSub = false) {
     const $$ = this;
@@ -19890,9 +19039,6 @@ function getRegions(d, _regions, isTimeSeries) {
       if ($$.isLineType(d)) {
         const regions = config.data_regions[d.id];
         if (regions) {
-          if ($$.isAreaRangeType(d)) {
-            values = values.map((dv) => line_spreadProps(line_spreadValues({}, dv), { value: $$.getRangedData(dv, "mid") }));
-          }
           path = $$.lineWithRegions(values, scale.zoom || x, y, regions);
         } else {
           if ($$.isStepType(d)) {
@@ -19910,27 +19056,26 @@ function getRegions(d, _regions, isTimeSeries) {
       return path || "M 0 0";
     };
   },
-  /**
-   * Set regions dasharray and get path
-   * @param {Array} d Data object
-   * @param {Function} x x scale function
-   * @param {Function} y y scale function
-   * @param {object} _regions regions to be set
-   * @returns {stirng} Path string
-   * @private
-   */
   lineWithRegions(d, x, y, _regions) {
     const $$ = this;
     const { config } = $$;
     const isRotated = config.axis_rotated;
     const isTimeSeries = $$.axis.isTimeSeries();
+    const regions = [];
     const dasharray = "2 2";
-    const regions = getRegions.bind($$)(d, _regions, isTimeSeries);
-    const hasNullDataValue = $$.hasNullDataValue(d);
     let xp;
     let yp;
     let diff;
     let diffx2;
+    if (isDefined(_regions)) {
+      const getValue = (v, def) => isUndefined(v) ? def : isTimeSeries ? parseDate.call($$, v) : v;
+      for (let i = 0, reg; reg = _regions[i]; i++) {
+        const start = getValue(reg.start, d[0].x);
+        const end = getValue(reg.end, d[d.length - 1].x);
+        const style = reg.style || { dasharray };
+        regions[i] = { start, end, style };
+      }
+    }
     const xValue = isRotated ? (dt) => y(dt.value) : (dt) => x(dt.x);
     const yValue = isRotated ? (dt) => x(dt.x) : (dt) => y(dt.value);
     const generateM = (points) => `M${points[0][0]},${points[0][1]}L${points[1][0]},${points[1][1]}`;
@@ -19942,36 +19087,17 @@ function getRegions(d, _regions, isTimeSeries) {
       const points = isRotated ? [[y(yp(k)), x(xv0)], [y(yp(k + diff)), x(xv1)]] : [[x(xv0), y(yp(k))], [x(xv1), y(yp(k + diff))]];
       return generateM(points);
     } : (d0, d1, k, otherDiff) => {
-      const x0 = x(d1.x, !isRotated);
-      const y0 = y(d1.value, isRotated);
-      const gap = k + otherDiff;
-      const xValue2 = x(xp(k), !isRotated);
-      const yValue2 = y(yp(k), isRotated);
-      let xDiff = x(xp(gap), !isRotated);
-      let yDiff = y(yp(gap), isRotated);
-      if (xDiff > x0) {
-        xDiff = x0;
-      }
-      if (d0.value > d1.value && (isRotated ? yDiff < y0 : yDiff > y0)) {
-        yDiff = y0;
-      }
-      const points = [
-        [xValue2, yValue2],
-        [xDiff, yDiff]
-      ];
-      isRotated && points.forEach((v) => v.reverse());
+      const points = isRotated ? [[y(yp(k), true), x(xp(k))], [
+        y(yp(k + otherDiff), true),
+        x(xp(k + otherDiff))
+      ]] : [[x(xp(k), true), y(yp(k))], [
+        x(xp(k + otherDiff), true),
+        y(yp(k + otherDiff))
+      ]];
       return generateM(points);
     };
     const axisType = { x: $$.axis.getAxisType("x"), y: $$.axis.getAxisType("y") };
     let path = "";
-    const target = $$.$el.line.filter(({ id }) => id === d[0].id);
-    const tempNode = target.clone().style("display", "none");
-    const getLength = (node, path2) => node.attr("d", path2).node().getTotalLength();
-    const dashArray = {
-      dash: [],
-      lastLength: 0
-    };
-    let isLastX = false;
     for (let i = 0, data; data = d[i]; i++) {
       const prevData = d[i - 1];
       const hasPrevData = prevData && isValue(prevData.value);
@@ -19982,60 +19108,25 @@ function getRegions(d, _regions, isTimeSeries) {
       if (isUndefined(regions) || !style || !hasPrevData) {
         path += `${i && hasPrevData ? "L" : "M"}${xValue(data)},${yValue(data)}`;
       } else if (hasPrevData) {
-        style = ((style == null ? void 0 : style.dasharray) || dasharray).split(" ").map(Number);
+        try {
+          style = style.dasharray.split(" ");
+        } catch (e) {
+          style = dasharray.split(" ");
+        }
         xp = getScale(axisType.x, prevData.x, data.x);
         yp = getScale(axisType.y, prevData.value, data.value);
-        if (hasNullDataValue) {
-          const dx = x(data.x) - x(prevData.x);
-          const dy = y(data.value) - y(prevData.value);
-          const dd = Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2));
-          diff = style[0] / dd;
-          diffx2 = diff * style[1];
-          for (let j = diff; j <= 1; j += diffx2) {
-            path += sWithRegion(prevData, data, j, diff);
-            if (j + diffx2 >= 1) {
-              path += sWithRegion(prevData, data, 1, 0);
-            }
+        const dx = x(data.x) - x(prevData.x);
+        const dy = y(data.value) - y(prevData.value);
+        const dd = Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2));
+        diff = style[0] / dd;
+        diffx2 = diff * style[1];
+        for (let j = diff; j <= 1; j += diffx2) {
+          path += sWithRegion(prevData, data, j, diff);
+          if (j + diffx2 >= 1) {
+            path += sWithRegion(prevData, data, 1, 0);
           }
-        } else {
-          let points = [];
-          isLastX = data.x === d[d.length - 1].x;
-          if (isTimeSeries) {
-            const x0 = +prevData.x;
-            const xv0 = new Date(x0);
-            const xv1 = new Date(x0 + (+data.x - x0));
-            points = [
-              [x(xv0), y(yp(0))],
-              // M
-              [x(xv1), y(yp(1))]
-              // L
-            ];
-          } else {
-            points = [
-              [x(xp(0)), y(yp(0))],
-              // M
-              [x(xp(1)), y(yp(1))]
-              // L
-            ];
-          }
-          isRotated && points.forEach((v) => v.reverse());
-          const startLength = getLength(tempNode, path);
-          const endLength = getLength(tempNode, path += `L${points[1].join(",")}`);
-          const strokeDashArray = getStrokeDashArray(
-            startLength - dashArray.lastLength,
-            endLength - dashArray.lastLength,
-            style,
-            isLastX
-          );
-          dashArray.lastLength += strokeDashArray.length;
-          dashArray.dash.push(strokeDashArray.dash);
         }
       }
-    }
-    if (dashArray.dash.length) {
-      !isLastX && dashArray.dash.push(getLength(tempNode, path));
-      tempNode.remove();
-      target.attr("stroke-dasharray", dashArray.dash.join(" "));
     }
     return path;
   },
@@ -20056,7 +19147,7 @@ function getRegions(d, _regions, isTimeSeries) {
   }
 });
 
-;// ./src/ChartInternal/shape/point.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/shape/point.ts
 
 
 
@@ -20101,7 +19192,7 @@ const getTransitionName = () => getRandom();
     let targets = targetsValue;
     let enterNode = enterNodeValue;
     if (!targets) {
-      targets = $$.filterNullish(data.targets).filter((d) => this.isScatterType(d) || this.isBubbleType(d));
+      targets = data.targets.filter((d) => this.isScatterType(d) || this.isBubbleType(d));
       const mainCircle = $el.main.select(`.${$CIRCLE.chartCircles}`).style("pointer-events", "none").selectAll(`.${$CIRCLE.circles}`).data(targets);
       mainCircle.exit().remove();
       enterNode = mainCircle.enter();
@@ -20129,10 +19220,7 @@ const getTransitionName = () => getRandom();
     const $root = isSub ? $el.subchart : $el;
     if (config.point_show && !state.toggling) {
       config.point_radialGradient && $$.updateLinearGradient();
-      const circles = $root.main.selectAll(`.${$CIRCLE.circles}`).selectAll(`.${$CIRCLE.circle}`).data((d) => {
-        const data = $$.isLineType(d) && $$.shouldDrawPointsForLine(d) || $$.isBubbleType(d) || $$.isRadarType(d) || $$.isScatterType(d) ? focusOnly ? [d.values[0]] : d.values : [];
-        return $$.filterNullish(data);
-      });
+      const circles = $root.main.selectAll(`.${$CIRCLE.circles}`).selectAll(`.${$CIRCLE.circle}`).data((d) => $$.isLineType(d) && $$.shouldDrawPointsForLine(d) || $$.isBubbleType(d) || $$.isRadarType(d) || $$.isScatterType(d) ? focusOnly ? [d.values[0]] : d.values : []);
       circles.exit().remove();
       circles.enter().filter(Boolean).append(
         $$.point("create", this, $$.pointR.bind($$), $$.updateCircleColor.bind($$))
@@ -20261,7 +19349,7 @@ const getTransitionName = () => getRandom();
         if (this.tagName === "circle") {
           point.attr("r", r);
         } else {
-          const { width, height } = getBBox(this);
+          const { width, height } = this.getBBox();
           const x = ratio * (+point.attr("x") + width / 2);
           const y = ratio * (+point.attr("y") + height / 2);
           point.attr("transform", `translate(${x} ${y}) scale(${scale})`);
@@ -20315,11 +19403,11 @@ const getTransitionName = () => getRandom();
     return $$.config.point_focus_only && !$$.hasType("bubble") && !$$.hasType("scatter") && !$$.hasArcType(null, ["radar"]);
   },
   isWithinCircle(node, r) {
-    const { state } = this;
+    const { config, state } = this;
     const mouse = getPointer(state.event, node);
     const element = (0,external_commonjs_d3_selection_commonjs2_d3_selection_amd_d3_selection_root_d3_.select)(node);
     const prefix = this.isCirclePoint(node) ? "c" : "";
-    const pointSensitivity = this.getPointSensitivity(element == null ? void 0 : element.datum());
+    const sensitivity = config.point_sensitivity === "radius" ? node.getAttribute("r") : config.point_sensitivity;
     let cx = +element.attr(`${prefix}x`);
     let cy = +element.attr(`${prefix}y`);
     if (!(cx || cy) && node.nodeType === 1) {
@@ -20329,7 +19417,7 @@ const getTransitionName = () => getRandom();
     }
     return Math.sqrt(
       Math.pow(cx - mouse[0], 2) + Math.pow(cy - mouse[1], 2)
-    ) < (r || pointSensitivity);
+    ) < (r || sensitivity);
   },
   /**
    * Get data point sensitivity radius
@@ -20339,9 +19427,7 @@ const getTransitionName = () => getRandom();
   getPointSensitivity(d) {
     const $$ = this;
     let sensitivity = $$.config.point_sensitivity;
-    if (!d) {
-      return sensitivity;
-    } else if (isFunction(sensitivity)) {
+    if (isFunction(sensitivity)) {
       sensitivity = sensitivity.call($$.api, d);
     } else if (sensitivity === "radius") {
       sensitivity = d.r;
@@ -20394,7 +19480,7 @@ const getTransitionName = () => getRandom();
     },
     update(element, xPosFn, yPosFn, fillStyleFn, withTransition, flow, selectedCircles) {
       const $$ = this;
-      const { width, height } = getBBox(element.node());
+      const { width, height } = element.node().getBBox();
       const xPosFn2 = (d) => isValue(d.value) ? xPosFn(d) - width / 2 : 0;
       const yPosFn2 = (d) => isValue(d.value) ? yPosFn(d) - height / 2 : 0;
       let mainCircles = element;
@@ -20449,7 +19535,7 @@ const getTransitionName = () => getRandom();
   }
 });
 
-;// ./src/ChartInternal/shape/point.common.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/shape/point.common.ts
 
 
 
@@ -20546,7 +19632,7 @@ function insertPointInfoDefs(point, id) {
   }
 });
 
-;// ./src/ChartInternal/shape/polar.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/shape/polar.ts
 
 
 function getDataMax($$) {
@@ -20629,7 +19715,7 @@ function getDataMax($$) {
   }
 });
 
-;// ./src/ChartInternal/shape/radar.ts
+;// CONCATENATED MODULE: ./src/ChartInternal/shape/radar.ts
 
 
 
@@ -20802,7 +19888,7 @@ const cacheKeyTextWidth = KEY.radarTextWidth;
         });
       }).datum((d, i) => ({ index: i })).attr("transform", function(d) {
         if (isUndefined(this.width)) {
-          this.width = getBoundingRect(this, true).width / 2;
+          this.width = this.getBoundingClientRect().width / 2;
         }
         let posX = $$.getRadarPosition("x", d.index, void 0, 1);
         let posY = Math.round($$.getRadarPosition("y", d.index, void 0, 1));
@@ -20831,15 +19917,12 @@ const cacheKeyTextWidth = KEY.radarTextWidth;
   },
   bindRadarEvent() {
     const $$ = this;
-    const { config, state, $el: { radar, svg } } = $$;
+    const { state, $el: { radar, svg } } = $$;
     const focusOnly = $$.isPointFocusOnly();
     const { inputType, transiting } = state;
     const isMouse = inputType === "mouse";
     const hide = (event) => {
       state.event = event;
-      if (!config.interaction_onout) {
-        return;
-      }
       const index = $$.getDataIndexFromEvent(event);
       const noIndex = isUndefined(index);
       if (isMouse || noIndex) {
@@ -20869,7 +19952,7 @@ const cacheKeyTextWidth = KEY.radarTextWidth;
     const $$ = this;
     const targets = $$.data.targets.filter((d) => $$.isRadarType(d));
     const points = $$.cache.get(cacheKeyPoints);
-    const areas = $$.$el.radar.shapes.selectAll("polygon").data($$.filterNullish(targets));
+    const areas = $$.$el.radar.shapes.selectAll("polygon").data(targets);
     const areasEnter = areas.enter().append("g").attr("class", $$.getChartClass("Radar"));
     $$.$T(areas.exit()).remove();
     areasEnter.append("polygon").merge(areas).style("fill", $$.color).style("stroke", $$.color).attr("points", (d) => points[d.id].join(" "));
@@ -20897,8 +19980,7 @@ const cacheKeyTextWidth = KEY.radarTextWidth;
 
 // EXTERNAL MODULE: external {"commonjs":"d3-hierarchy","commonjs2":"d3-hierarchy","amd":"d3-hierarchy","root":"d3"}
 var external_commonjs_d3_hierarchy_commonjs2_d3_hierarchy_amd_d3_hierarchy_root_d3_ = __webpack_require__(14);
-;// ./src/ChartInternal/shape/treemap.ts
-
+;// CONCATENATED MODULE: ./src/ChartInternal/shape/treemap.ts
 
 
 
@@ -20976,10 +20058,8 @@ function getHierachyData(data) {
         }
       }).on(isTouch ? "touchend" : "mouseout", (event) => {
         const data = getTarget(event);
-        if (config.interaction_onout) {
-          $$.hideTooltip();
-          $$.setOverOut(false, data);
-        }
+        $$.hideTooltip();
+        $$.setOverOut(false, data);
       });
     }
   },
@@ -21034,7 +20114,7 @@ function getHierachyData(data) {
     const $$ = this;
     const { $el: { treemap } } = $$;
     const treemapData = getHierachyData.call($$, $$.getTreemapData(targets != null ? targets : $$.data.targets));
-    treemap.data($$.filterNullish(treemapData));
+    treemap.data(treemapData);
   },
   /**
    * Render treemap
@@ -21096,7 +20176,10 @@ function getHierachyData(data) {
     const format = config.treemap_label_format;
     const ratio = $$.getRatio("treemap", d);
     const percentValue = (ratio * 100).toFixed(2);
-    const meetLabelThreshold = config.treemap_label_show && meetsLabelThreshold.call($$, ratio, "treemap") ? null : "0";
+    const meetLabelThreshold = config.treemap_label_show && $$.meetsLabelThreshold(
+      ratio,
+      "treemap"
+    ) ? null : "0";
     return function(node) {
       node.style("opacity", meetLabelThreshold);
       return isFunction(format) ? format.bind($$.api)(value, ratio, id) : `${id}
@@ -21105,7 +20188,7 @@ ${percentValue}%`;
   }
 });
 
-;// ./src/config/Options/common/point.ts
+;// CONCATENATED MODULE: ./src/config/Options/common/point.ts
 /* harmony default export */ var common_point = ({
   /**
    * Set point options
@@ -21261,7 +20344,7 @@ ${percentValue}%`;
   point_type: "circle"
 });
 
-;// ./src/config/Options/shape/area.ts
+;// CONCATENATED MODULE: ./src/config/Options/shape/area.ts
 /* harmony default export */ var Options_shape_area = ({
   /**
    * Set area options
@@ -21327,7 +20410,7 @@ ${percentValue}%`;
   area_zerobased: true
 });
 
-;// ./src/config/Options/shape/bar.ts
+;// CONCATENATED MODULE: ./src/config/Options/shape/bar.ts
 /* harmony default export */ var shape_bar = ({
   /**
    * Set bar options
@@ -21349,19 +20432,14 @@ ${percentValue}%`;
    * @property {number} [bar.radius] Set the radius of bar edge in pixel.
    * @property {number} [bar.radius.ratio] Set the radius ratio of bar edge in relative the bar's width.
    * @property {number} [bar.sensitivity=2] The senstivity offset value for interaction boundary.
-   * @property {number|Function|object} [bar.width] Change the width of bar chart.
+   * @property {number} [bar.width] Change the width of bar chart.
    * @property {number} [bar.width.ratio=0.6] Change the width of bar chart by ratio.
-   * - **NOTE:** Criteria for ratio.
-   *   - When x ticks count is same with the data count, the baseline for ratio is the minimum interval value of x ticks.
-   * 	   - ex. when timeseries x values are: [2024-01-01, 2024-02-01, 2024-03-01], the minimum interval will be `2024-02-01 ~ 2024-03-01`
-   *     - if the minimum interval is 30px, then ratio=1 means 30px.
-   *   - When x ticks count is lower than the data count, the baseline will be calculated as `chart width / data count`.
-   * 	   - ex. when chart width is 500, data count is 5, then ratio=1 means 100px.
    * @property {number} [bar.width.max] The maximum width value for ratio.
    * @property {number} [bar.width.dataname] Change the width of bar for indicated dataset only.
-   * @property {number} [bar.width.dataname.ratio=0.6] Change the width of bar chart by ratio.
-   *  - **NOTE:**
+   * - **NOTE:**
    *   - Works only for non-stacked bar
+   *   - Bars are centered accoding its total width value
+   * @property {number} [bar.width.dataname.ratio=0.6] Change the width of bar chart by ratio.
    * @property {number} [bar.width.dataname.max] The maximum width value for ratio.
    * @property {boolean} [bar.zerobased=true] Set if min or max value will be 0 on bar chart.
    * @see [Demo: bar front](https://naver.github.io/billboard.js/demo/#BarChartOptions.BarFront)
@@ -21429,15 +20507,7 @@ ${percentValue}%`;
    *
    *      width: 10,
    *
-   *      // or specify width callback. The callback will receive width, targetsNum, maxDataCount as arguments.
-   *      // - width: chart area width
-   *      // - targetsNum: number of targets
-   *      // - maxDataCount: maximum data count among targets
-   *      width: function(width, targetsNum, maxDataCount) {
-   *            return width / (targetsNum * maxDataCount);
-   *      }
-   *
-   *      // or specify ratio & max
+   *      // or
    *      width: {
    *          ratio: 0.2,
    *          max: 20
@@ -21455,7 +20525,6 @@ ${percentValue}%`;
    *      zerobased: false
    *  }
    */
-  bar_connectLine: false,
   bar_front: false,
   bar_indices_removeNull: false,
   bar_label_threshold: 0,
@@ -21471,7 +20540,7 @@ ${percentValue}%`;
   bar_zerobased: true
 });
 
-;// ./src/config/Options/shape/bubble.ts
+;// CONCATENATED MODULE: ./src/config/Options/shape/bubble.ts
 /* harmony default export */ var shape_bubble = ({
   /**
    * Set bubble options
@@ -21500,7 +20569,7 @@ ${percentValue}%`;
   bubble_zerobased: false
 });
 
-;// ./src/config/Options/shape/candlestick.ts
+;// CONCATENATED MODULE: ./src/config/Options/shape/candlestick.ts
 /* harmony default export */ var shape_candlestick = ({
   /**
    * Set candlestick options
@@ -21555,7 +20624,7 @@ ${percentValue}%`;
   candlestick_color_down: "red"
 });
 
-;// ./src/config/Options/shape/line.ts
+;// CONCATENATED MODULE: ./src/config/Options/shape/line.ts
 /* harmony default export */ var shape_line = ({
   /**
    * Set line options
@@ -21607,7 +20676,7 @@ ${percentValue}%`;
   line_point: true
 });
 
-;// ./src/config/Options/shape/scatter.ts
+;// CONCATENATED MODULE: ./src/config/Options/shape/scatter.ts
 /* harmony default export */ var scatter = ({
   /**
    * Set scatter options
@@ -21637,7 +20706,7 @@ ${percentValue}%`;
   scatter_zerobased: false
 });
 
-;// ./src/config/Options/shape/spline.ts
+;// CONCATENATED MODULE: ./src/config/Options/shape/spline.ts
 /* harmony default export */ var spline = ({
   /**
    * Set spline options
@@ -21677,7 +20746,7 @@ ${percentValue}%`;
   spline_interpolation_type: "cardinal"
 });
 
-;// ./src/config/Options/shape/arc.ts
+;// CONCATENATED MODULE: ./src/config/Options/shape/arc.ts
 /* harmony default export */ var shape_arc = ({
   /**
    * Set arc options
@@ -21821,7 +20890,7 @@ ${percentValue}%`;
   arc_rangeText_position: void 0
 });
 
-;// ./src/config/Options/shape/donut.ts
+;// CONCATENATED MODULE: ./src/config/Options/shape/donut.ts
 /* harmony default export */ var donut = ({
   /**
    * Set donut options
@@ -21833,18 +20902,6 @@ ${percentValue}%`;
    * @property {Function} [donut.label.format] Set formatter for the label on each donut piece.
    * @property {number} [donut.label.threshold=0.05] Set threshold ratio to show/hide labels.
    * @property {number|Function} [donut.label.ratio=undefined] Set ratio of labels position.
-   * @property {object|Function} [donut.label.image] Set image to be displayed next to the label text.<br><br>
-   * When function is specified, will receives 3 arguments such as `v, id, i` and it must return an image object with `url`, `width`, `height`, and optional `pos` properties.<br><br>
-   * The arguments are:<br>
-   *  - `v` is the value of the data point where the label is shown.
-   *  - `id` is the id of the data where the label is shown.
-   *  - `i` is the index of the data series point where the label is shown.
-   * @property {string} donut.label.image.url Image URL path. Can use placeholder `{=ID}` which will be replaced with the data ID.
-   * @property {number} donut.label.image.width Image width in pixels.
-   * @property {number} donut.label.image.height Image height in pixels.
-   * @property {object} [donut.label.image.pos] Image position relative to the label text.
-   * @property {number} [donut.label.image.pos.x=0] x coordinate position, relative the original.
-   * @property {number} [donut.label.image.pos.y=0] y coordinate position, relative the original.
    * @property {boolean} [donut.expand=true] Enable or disable expanding donut pieces.
    * @property {number} [donut.expand.rate=0.98] Set expand rate.
    * @property {number} [donut.expand.duration=50] Set expand transition time in ms.
@@ -21854,16 +20911,6 @@ ${percentValue}%`;
    *    - When `arc.needle.show=true` is set, special template `{=NEEDLE_VALUE}` can be used inside the title text to show current needle value.
    * @property {number} [donut.padAngle=0] Set padding between data.
    * @property {number} [donut.startingAngle=0] Set starting angle where data draws.
-   * @see [Demo: Corner Radius](https://naver.github.io/billboard.js/demo/#DonutChartOptions.DonutCornerRadius)
-   * @see [Demo: Needle](https://naver.github.io/billboard.js/demo/#DonutChartOptions.DonutNeedle)
-   * @see [Demo: Range Text](https://naver.github.io/billboard.js/demo/#DonutChartOptions.DonutRangeText)
-   * @see [Demo: Label Image](https://naver.github.io/billboard.js/demo/#DonutChartOptions.LabelImage)
-   * @see [Demo: Label Ratio](https://naver.github.io/billboard.js/demo/#DonutChartOptions.LabelRatio)
-   * @see [Demo: Multiline Label](https://naver.github.io/billboard.js/demo/#DonutChartOptions.MultilineLabel)
-   * @see [Demo: Multiline Title](https://naver.github.io/billboard.js/demo/#DonutChartOptions.MultilineTitle)
-   * @see [Demo: Pad Angle](https://naver.github.io/billboard.js/demo/#DonutChartOptions.padAngle)
-   * @see [Demo: Starting Angle](https://naver.github.io/billboard.js/demo/#DonutChartOptions.StartingAngle)
-   *
    * @example
    *  donut: {
    *      label: {
@@ -21885,51 +20932,7 @@ ${percentValue}%`;
    *          	return ratio;
    *          },
    *          // or set ratio number
-   *          ratio: 0.5,
-   *
-   *          // set image to be displayed next to the label text
-   *          image: {
-   *             url: "./sample.svg",
-   *
-   *             // use placeholder to dynamically set image URL based on data ID
-   *             url: "./images/{=ID}.svg",  // will be replaced to "./images/data1.svg", "./images/data2.svg", etc.
-   *             width: 35,
-   *             height: 35,
-   *             pos: {
-   *                x: 0,
-   *                y: 0
-   *             }
-   *          },
-   *
-   *          // or use function to return image configuration dynamically
-   *          image: function(v, id, i) {
-   *             // Return different images based on value
-   *             if (v > 500) {
-   *                return {
-   *                   url: "./high-value.svg",
-   *                   width: 40,
-   *                   height: 40,
-   *                   pos: { x: 0, y: 0 }
-   *                };
-   *             } else if (v > 100) {
-   *                return {
-   *                   url: "./medium-value.svg",
-   *                   width: 30,
-   *                   height: 30,
-   *                   pos: { x: 0, y: 0 }
-   *                };
-   *             } else if(v < 5) {
-   *                // Return falsy value in case of don't want to show image
-   *                return null;
-   *             } else {
-   *                return {
-   *                   url: "./low-value.svg",
-   *                   width: 20,
-   *                   height: 20,
-   *                   pos: { x: 0, y: 0 }
-   *                };
-   *             }
-   *          }
+   *          ratio: 0.5
    *      },
    *
    *      // disable expand transition for interaction
@@ -21958,7 +20961,6 @@ ${percentValue}%`;
   donut_label_show: true,
   donut_label_format: void 0,
   donut_label_threshold: 0.05,
-  donut_label_image: void 0,
   donut_label_ratio: void 0,
   donut_width: void 0,
   donut_title: "",
@@ -21969,7 +20971,7 @@ ${percentValue}%`;
   donut_startingAngle: 0
 });
 
-;// ./src/config/Options/shape/funnel.ts
+;// CONCATENATED MODULE: ./src/config/Options/shape/funnel.ts
 /* harmony default export */ var shape_funnel = ({
   /**
    * Set funnel options
@@ -22002,7 +21004,7 @@ ${percentValue}%`;
   funnel_neck_height: 0
 });
 
-;// ./src/config/Options/shape/gauge.ts
+;// CONCATENATED MODULE: ./src/config/Options/shape/gauge.ts
 /* harmony default export */ var shape_gauge = ({
   /**
    * Set gauge options
@@ -22021,25 +21023,12 @@ ${percentValue}%`;
    * - id {string}: data's id value
    * @property {number|Function} [gauge.label.ratio=undefined] Set ratio of labels position.
    * @property {number} [gauge.label.threshold=0] Set threshold ratio to show/hide labels.
-   * @property {object|Function} [gauge.label.image] Set image to be displayed next to the label text.<br><br>
-   * When function is specified, will receives 3 arguments such as `v, id, i` and it must return an image object with `url`, `width`, `height`, and optional `pos` properties.<br><br>
-   * The arguments are:<br>
-   *  - `v` is the value of the data point where the label is shown.
-   *  - `id` is the id of the data where the label is shown.
-   *  - `i` is the index of the data series point where the label is shown.
-   * @property {string} gauge.label.image.url Image URL path. Can use placeholder `{=ID}` which will be replaced with the data ID.
-   * @property {number} gauge.label.image.width Image width in pixels.
-   * @property {number} gauge.label.image.height Image height in pixels.
-   * @property {object} [gauge.label.image.pos] Image position relative to the label text.
-   * @property {number} [gauge.label.image.pos.x=0] x coordinate position, relative the original.
-   * @property {number} [gauge.label.image.pos.y=0] y coordinate position, relative the original.
    * @property {boolean} [gauge.expand=true] Enable or disable expanding gauge.
    * @property {number} [gauge.expand.rate=0.98] Set expand rate.
    * @property {number} [gauge.expand.duration=50] Set the expand transition time in milliseconds.
    * @property {boolean} [gauge.enforceMinMax=false] Enforce to given min/max value.
-   * - **Note:** Only works for single data series.
-   * 	- When `gauge.min=50` and given value is `30`, gauge will render as empty value.
-   * 	- When `gauge.max=100` and given value is `120`, gauge will render till 100, not surpassing max value.
+   * - When `gauge.min=50` and given value is `30`, gauge will render as empty value.
+   * - When `gauge.max=100` and given value is `120`, gauge will render till 100, not surpassing max value.
    * @property {number} [gauge.min=0] Set min value of the gauge.
    * @property {number} [gauge.max=100] Set max value of the gauge.
    * @property {number} [gauge.startingAngle=-1 * Math.PI / 2] Set starting angle where data draws.
@@ -22073,8 +21062,7 @@ ${percentValue}%`;
    * @see [Demo: enforceMinMax, min/max](https://naver.github.io/billboard.js/demo/#GaugeChartOptions.GaugeMinMax)
    * @see [Demo: archLength](https://naver.github.io/billboard.js/demo/#GaugeChartOptions.GaugeArcLength)
    * @see [Demo: startingAngle](https://naver.github.io/billboard.js/demo/#GaugeChartOptions.GaugeStartingAngle)
-   * @see [Demo: label image](https://naver.github.io/billboard.js/demo/#GaugeChartOptions.GaugeLabelImage)
-   * @see [Demo: label ratio](https://naver.github.io/billboard.js/demo/#GaugeChartOptions.GaugeLabelRatio)
+   * @see [Demo: labelRatio](https://naver.github.io/billboard.js/demo/#GaugeChartOptions.GaugeLabelRatio)
    * @example
    *  gauge: {
    *      background: "#eee", // will set 'fill' css prop for '.bb-chart-arcs-background' classed element.
@@ -22102,51 +21090,7 @@ ${percentValue}%`;
    *              return ratio;
    *          },
    *          // or set ratio number
-   *          ratio: 0.5,
-   *
-   *          // set image to be displayed next to the label text
-   *          image: {
-   *             url: "./sample.svg",
-   *
-   *             // use placeholder to dynamically set image URL based on data ID
-   *             url: "./images/{=ID}.svg",  // will be replaced to "./images/data1.svg", "./images/data2.svg", etc.
-   *             width: 35,
-   *             height: 35,
-   *             pos: {
-   *                x: 0,
-   *                y: 0
-   *             }
-   *          },
-   *
-   *          // or use function to return image configuration dynamically
-   *          image: function(v, id, i) {
-   *             // Return different images based on value
-   *             if (v > 500) {
-   *                return {
-   *                   url: "./high-value.svg",
-   *                   width: 40,
-   *                   height: 40,
-   *                   pos: { x: 0, y: 0 }
-   *                };
-   *             } else if (v > 100) {
-   *                return {
-   *                   url: "./medium-value.svg",
-   *                   width: 30,
-   *                   height: 30,
-   *                   pos: { x: 0, y: 0 }
-   *                };
-   *             } else if(v < 5) {
-   *                // Return falsy value in case of don't want to show image
-   *                return null;
-   *             } else {
-   *                return {
-   *                   url: "./low-value.svg",
-   *                   width: 20,
-   *                   height: 20,
-   *                   pos: { x: 0, y: 0 }
-   *                };
-   *             }
-   *          }
+   *          ratio: 0.5
    *      },
    *
    *      // disable expand transition for interaction
@@ -22189,7 +21133,6 @@ ${percentValue}%`;
   gauge_label_format: void 0,
   gauge_label_ratio: void 0,
   gauge_label_threshold: 0,
-  gauge_label_image: void 0,
   gauge_enforceMinMax: false,
   gauge_min: 0,
   gauge_max: 100,
@@ -22205,7 +21148,7 @@ ${percentValue}%`;
   gauge_expand_duration: 50
 });
 
-;// ./src/config/Options/shape/pie.ts
+;// CONCATENATED MODULE: ./src/config/Options/shape/pie.ts
 /* harmony default export */ var pie = ({
   /**
    * Set pie options
@@ -22217,18 +21160,6 @@ ${percentValue}%`;
    * @property {Function} [pie.label.format] Set formatter for the label on each pie piece.
    * @property {number|Function} [pie.label.ratio=undefined] Set ratio of labels position.
    * @property {number} [pie.label.threshold=0.05] Set threshold ratio to show/hide labels.
-   * @property {object|Function} [pie.label.image] Set image to be displayed next to the label text.<br><br>
-   * When function is specified, will receives 3 arguments such as `v, id, i` and it must return an image object with `url`, `width`, `height`, and optional `pos` properties.<br><br>
-   * The arguments are:<br>
-   *  - `v` is the value of the data point where the label is shown.
-   *  - `id` is the id of the data where the label is shown.
-   *  - `i` is the index of the data series point where the label is shown.
-   * @property {string} pie.label.image.url Image URL path. Can use placeholder `{=ID}` which will be replaced with the data ID.
-   * @property {number} pie.label.image.width Image width in pixels.
-   * @property {number} pie.label.image.height Image height in pixels.
-   * @property {object} [pie.label.image.pos] Image position relative to the label text.
-   * @property {number} [pie.label.image.pos.x=0] x coordinate position, relative the original.
-   * @property {number} [pie.label.image.pos.y=0] y coordinate position, relative the original.
    * @property {boolean|object} [pie.expand=true] Enable or disable expanding pie pieces.
    * @property {number} [pie.expand.rate=0.98] Set expand rate.
    * @property {number} [pie.expand.duration=50] Set expand transition time in ms.
@@ -22241,7 +21172,6 @@ ${percentValue}%`;
    * @see [Demo: innerRadius](https://naver.github.io/billboard.js/demo/#PieChartOptions.InnerRadius)
    * @see [Demo: outerRadius](https://naver.github.io/billboard.js/demo/#PieChartOptions.OuterRadius)
    * @see [Demo: startingAngle](https://naver.github.io/billboard.js/demo/#PieChartOptions.StartingAngle)
-   * @see [Demo: label image](https://naver.github.io/billboard.js/demo/#PieChartOptions.LabelImage)
    * @example
    *  pie: {
    *      label: {
@@ -22263,51 +21193,7 @@ ${percentValue}%`;
    *              return ratio;
    *          },
    *          // or set ratio number
-   *          ratio: 0.5,
-   *
-   *          // set image to be displayed next to the label text
-   *          image: {
-   *             url: "./sample.svg",
-   *
-   *             // use placeholder to dynamically set image URL based on data ID
-   *             url: "./images/{=ID}.svg",  // will be replaced to "./images/data1.svg", "./images/data2.svg", etc.
-   *             width: 35,
-   *             height: 35,
-   *             pos: {
-   *                x: 0,
-   *                y: 0
-   *             }
-   *          },
-   *
-   *          // or use function to return image configuration dynamically
-   *          image: function(v, id, i) {
-   *             // Return different images based on value
-   *             if (v > 500) {
-   *                return {
-   *                   url: "./high-value.svg",
-   *                   width: 40,
-   *                   height: 40,
-   *                   pos: { x: 0, y: 0 }
-   *                };
-   *             } else if (v > 100) {
-   *                return {
-   *                   url: "./medium-value.svg",
-   *                   width: 30,
-   *                   height: 30,
-   *                   pos: { x: 0, y: 0 }
-   *                };
-   *             } else if(v < 5) {
-   *                // Return falsy value in case of don't want to show image
-   *                return null;
-   *             } else {
-   *                return {
-   *                   url: "./low-value.svg",
-   *                   width: 20,
-   *                   height: 20,
-   *                   pos: { x: 0, y: 0 }
-   *                };
-   *             }
-   *          }
+   *          ratio: 0.5
    *      },
    *
    *      // disable expand transition for interaction
@@ -22346,7 +21232,6 @@ ${percentValue}%`;
   pie_label_format: void 0,
   pie_label_ratio: void 0,
   pie_label_threshold: 0.05,
-  pie_label_image: void 0,
   pie_expand: {},
   pie_expand_rate: 0.98,
   pie_expand_duration: 50,
@@ -22357,7 +21242,7 @@ ${percentValue}%`;
   pie_startingAngle: 0
 });
 
-;// ./src/config/Options/shape/polar.ts
+;// CONCATENATED MODULE: ./src/config/Options/shape/polar.ts
 /* harmony default export */ var shape_polar = ({
   /**
    * Set polar options
@@ -22369,18 +21254,6 @@ ${percentValue}%`;
    * @property {Function} [polar.label.format] Set formatter for the label on each polar piece.
    * @property {number} [polar.label.threshold=0.05] Set threshold ratio to show/hide labels.
    * @property {number|Function} [polar.label.ratio=undefined] Set ratio of labels position.
-   * @property {object|Function} [polar.label.image] Set image to be displayed next to the label text.<br><br>
-   * When function is specified, will receives 3 arguments such as `v, id, i` and it must return an image object with `url`, `width`, `height`, and optional `pos` properties.<br><br>
-   * The arguments are:<br>
-   *  - `v` is the value of the data point where the label is shown.
-   *  - `id` is the id of the data where the label is shown.
-   *  - `i` is the index of the data series point where the label is shown.
-   * @property {string} polar.label.image.url Image URL path. Can use placeholder `{=ID}` which will be replaced with the data ID.
-   * @property {number} polar.label.image.width Image width in pixels.
-   * @property {number} polar.label.image.height Image height in pixels.
-   * @property {object} [polar.label.image.pos] Image position relative to the label text.
-   * @property {number} [polar.label.image.pos.x=0] x coordinate position, relative the original.
-   * @property {number} [polar.label.image.pos.y=0] y coordinate position, relative the original.
    * @property {number} [polar.level.depth=3] Set the level depth.
    * @property {boolean} [polar.level.show=true] Show or hide level.
    * @property {string} [polar.level.text.backgroundColor="#fff"] Set label text's background color.
@@ -22390,7 +21263,6 @@ ${percentValue}%`;
    * @property {number} [polar.padding=0] Sets the gap between pie arcs.
    * @property {number} [polar.startingAngle=0] Set starting angle where data draws.
    * @see [Demo](https://naver.github.io/billboard.js/demo/#Chart.PolarChart)
-   * @see [Demo: label image](https://naver.github.io/billboard.js/demo/#PolarChartOptions.LabelImage)
    * @example
    *  polar: {
    *      label: {
@@ -22412,51 +21284,7 @@ ${percentValue}%`;
    *              return ratio;
    *          },
    *          // or set ratio number
-   *          ratio: 0.5,
-   *
-   *          // set image to be displayed next to the label text
-   *          image: {
-   *             url: "./sample.svg",
-   *
-   *             // use placeholder to dynamically set image URL based on data ID
-   *             url: "./images/{=ID}.svg",  // will be replaced to "./images/data1.svg", "./images/data2.svg", etc.
-   *             width: 35,
-   *             height: 35,
-   *             pos: {
-   *                x: 0,
-   *                y: 0
-   *             }
-   *          },
-   *
-   *          // or use function to return image configuration dynamically
-   *          image: function(v, id, i) {
-   *             // Return different images based on value
-   *             if (v > 500) {
-   *                return {
-   *                   url: "./high-value.svg",
-   *                   width: 40,
-   *                   height: 40,
-   *                   pos: { x: 0, y: 0 }
-   *                };
-   *             } else if (v > 100) {
-   *                return {
-   *                   url: "./medium-value.svg",
-   *                   width: 30,
-   *                   height: 30,
-   *                   pos: { x: 0, y: 0 }
-   *                };
-   *             } else if(v < 5) {
-   *                // Return falsy value in case of don't want to show image
-   *                return null;
-   *             } else {
-   *                return {
-   *                   url: "./low-value.svg",
-   *                   width: 20,
-   *                   height: 20,
-   *                   pos: { x: 0, y: 0 }
-   *                };
-   *             }
-   *          }
+   *          ratio: 0.5
    *      },
    *      level: {
    *          depth: 3,
@@ -22478,7 +21306,6 @@ ${percentValue}%`;
   polar_label_show: true,
   polar_label_format: void 0,
   polar_label_threshold: 0.05,
-  polar_label_image: void 0,
   polar_label_ratio: void 0,
   polar_level_depth: 3,
   polar_level_max: void 0,
@@ -22491,7 +21318,7 @@ ${percentValue}%`;
   polar_startingAngle: 0
 });
 
-;// ./src/config/Options/shape/radar.ts
+;// CONCATENATED MODULE: ./src/config/Options/shape/radar.ts
 /* harmony default export */ var shape_radar = ({
   /**
    * Set radar options
@@ -22561,7 +21388,7 @@ ${percentValue}%`;
   radar_direction_clockwise: false
 });
 
-;// ./src/config/Options/shape/treemap.ts
+;// CONCATENATED MODULE: ./src/config/Options/shape/treemap.ts
 /* harmony default export */ var shape_treemap = ({
   /**
    * Set treemap options
@@ -22609,7 +21436,7 @@ ${percentValue}%`;
   treemap_label_show: true
 });
 
-;// ./src/config/resolver/shape.ts
+;// CONCATENATED MODULE: ./src/config/resolver/shape.ts
 
 
 
@@ -22661,7 +21488,6 @@ function extendArc(module, option) {
 }
 let resolver_shape_area = () => (extendLine(shape_area, [Options_shape_area]), (resolver_shape_area = () => TYPE.AREA)());
 let areaLineRange = () => (extendLine(shape_area, [Options_shape_area]), (areaLineRange = () => TYPE.AREA_LINE_RANGE)());
-let areaStepRange = () => (extendLine(shape_area, [Options_shape_area]), (areaStepRange = () => TYPE.AREA_STEP_RANGE)());
 let areaSpline = () => (extendLine(shape_area, [Options_shape_area, spline]), (areaSpline = () => TYPE.AREA_SPLINE)());
 let areaSplineRange = () => (extendLine(shape_area, [Options_shape_area, spline]), (areaSplineRange = () => TYPE.AREA_SPLINE_RANGE)());
 let areaStep = () => (extendLine(shape_area, [Options_shape_area]), (areaStep = () => TYPE.AREA_STEP)());
@@ -22692,10 +21518,10 @@ let shape_scatter = () => (extendAxis(
 let resolver_shape_funnel = () => (extendArc([funnel], [shape_funnel]), (resolver_shape_funnel = () => TYPE.FUNNEL)());
 let resolver_shape_treemap = () => (extendAxis([treemap], [shape_treemap]), (resolver_shape_treemap = () => TYPE.TREEMAP)());
 
-;// ./src/core.ts
+;// CONCATENATED MODULE: ./src/core.ts
 
 
-let defaults = /* @__PURE__ */ Object.create(null);
+let defaults = {};
 const bb = {
   /**
    * Version information
@@ -22704,7 +21530,7 @@ const bb = {
    *    bb.version;  // "1.0.0"
    * @memberof bb
    */
-  version: "3.17.0",
+  version: "3.12.4",
   /**
    * Generate chart
    * - **NOTE:** Bear in mind for the possiblity of ***throwing an error***, during the generation when:
@@ -22776,7 +21602,7 @@ const bb = {
    * });
    */
   generate(config) {
-    const options = mergeObj(/* @__PURE__ */ Object.create(null), defaults, config);
+    const options = mergeObj({}, defaults, config);
     const inst = new Chart(options);
     inst.internal.charts = this.instance;
     this.instance.push(inst);
@@ -22834,7 +21660,7 @@ const bb = {
 };
 
 
-;// ./src/index.ts
+;// CONCATENATED MODULE: ./src/index.ts
 
 
 Object.keys(resolver_shape_namespaceObject).forEach((v) => resolver_shape_namespaceObject[v]());
