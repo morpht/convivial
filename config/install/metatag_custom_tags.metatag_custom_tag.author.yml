@@ -5,5 +5,8 @@ id: author
 label: 'Content Author'
 description: 'Content Author'
 htmlElement: meta
-htmlNameAttribute: name
 htmlValueAttribute: content
+attributes:
+  -
+    name: name
+    value: author

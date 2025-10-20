@@ -5,7 +5,7 @@
  * billboard.js, JavaScript chart library
  * https://naver.github.io/billboard.js/
  *
- * @version 3.12.4
+ * @version 3.17.0
  * @requires billboard.js
  * @summary billboard.js plugin
  */
@@ -82,13 +82,15 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__3__;
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
+// This entry needs to be wrapped in an IIFE because it needs to be isolated against other modules in the chunk.
+!function() {
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
   "default": function() { return /* binding */ Sparkline; }
 });
 
-;// CONCATENATED MODULE: ./src/config/classes.ts
+;// ./src/config/classes.ts
 var __defProp = Object.defineProperty;
 var __getOwnPropSymbols = Object.getOwnPropertySymbols;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
@@ -111,7 +113,8 @@ const $COMMON = {
   empty: "bb-empty",
   main: "bb-main",
   target: "bb-target",
-  EXPANDED: "_expanded_"
+  EXPANDED: "_expanded_",
+  dummy: "_dummy_"
 };
 const $ARC = {
   arc: "bb-arc",
@@ -138,13 +141,16 @@ const $AXIS = {
   axisYLabel: "bb-axis-y-label",
   axisXTooltip: "bb-axis-x-tooltip",
   axisYTooltip: "bb-axis-y-tooltip",
-  axisY2Tooltip: "bb-axis-y2-tooltip"
+  axisY2Tooltip: "bb-axis-y2-tooltip",
+  axisTooltipX: "bb-axis-tooltip-x",
+  axisTooltipY: "bb-axis-tooltip-y"
 };
 const $BAR = {
   bar: "bb-bar",
   bars: "bb-bars",
   chartBar: "bb-chart-bar",
-  chartBars: "bb-chart-bars"
+  chartBars: "bb-chart-bars",
+  barConnectLine: "bb-bar-connectLine"
 };
 const $CANDLESTICK = {
   candlestick: "bb-candlestick",
@@ -251,6 +257,8 @@ const $TEXT = {
   text: "bb-text",
   texts: "bb-texts",
   title: "bb-title",
+  textBorderRect: "bb-text-border",
+  textLabelImage: "bb-text-label-image",
   TextOverlapping: "text-overlapping"
 };
 const $TOOLTIP = {
@@ -273,7 +281,7 @@ const $ZOOM = {
 var external_commonjs_d3_brush_commonjs2_d3_brush_amd_d3_brush_root_d3_ = __webpack_require__(3);
 // EXTERNAL MODULE: external {"commonjs":"d3-selection","commonjs2":"d3-selection","amd":"d3-selection","root":"d3"}
 var external_commonjs_d3_selection_commonjs2_d3_selection_amd_d3_selection_root_d3_ = __webpack_require__(1);
-;// CONCATENATED MODULE: ./src/module/browser.ts
+;// ./src/module/browser.ts
 function getGlobal() {
   return typeof globalThis === "object" && globalThis !== null && globalThis.Object === Object && globalThis || typeof global === "object" && global !== null && global.Object === Object && global || typeof self === "object" && self !== null && self.Object === Object && self || Function("return this")();
 }
@@ -299,7 +307,7 @@ const [
 ] = getFallback(win);
 
 
-;// CONCATENATED MODULE: ./src/module/util.ts
+;// ./src/module/util.ts
 var util_defProp = Object.defineProperty;
 var util_getOwnPropSymbols = Object.getOwnPropertySymbols;
 var util_hasOwnProp = Object.prototype.hasOwnProperty;
@@ -395,7 +403,7 @@ function getRectSegList(path) {
   ];
 }
 function getPathBox(path) {
-  const { width, height } = path.getBoundingClientRect();
+  const { width, height } = getBoundingRect(path);
   const items = getRectSegList(path);
   const x = items[0].x;
   const y = Math.min(items[0].y, items[1].y);
@@ -427,9 +435,20 @@ function getBrushSelection(ctx) {
   }
   return selection;
 }
-function getBoundingRect(node) {
-  const needEvaluate = !("rect" in node) || "rect" in node && node.hasAttribute("width") && node.rect.width !== +node.getAttribute("width");
-  return needEvaluate ? node.rect = node.getBoundingClientRect() : node.rect;
+function getRect(relativeViewport, node, forceEval = false) {
+  const _ = (n) => n[relativeViewport ? "getBoundingClientRect" : "getBBox"]();
+  if (forceEval) {
+    return _(node);
+  } else {
+    const needEvaluate = !("rect" in node) || "rect" in node && node.hasAttribute("width") && node.rect.width !== +(node.getAttribute("width") || 0);
+    return needEvaluate ? node.rect = _(node) : node.rect;
+  }
+}
+function getBoundingRect(node, forceEval = false) {
+  return getRect(true, node, forceEval);
+}
+function getBBox(node, forceEval = false) {
+  return getRect(false, node, forceEval);
 }
 function getRandom(asStr = true, min = 0, max = 1e4) {
   const crpt = win.crypto || win.msCrypto;
@@ -512,11 +531,24 @@ function getCssRules(styleSheets) {
   return rules;
 }
 function getScrollPosition(node) {
-  var _a, _b, _c, _d;
+  var _a, _b, _c, _d, _e, _f;
   return {
-    x: ((_b = (_a = win.pageXOffset) != null ? _a : win.scrollX) != null ? _b : 0) + node.scrollLeft,
-    y: ((_d = (_c = win.pageYOffset) != null ? _c : win.scrollY) != null ? _d : 0) + node.scrollTop
+    x: ((_b = (_a = win.pageXOffset) != null ? _a : win.scrollX) != null ? _b : 0) + ((_c = node.scrollLeft) != null ? _c : 0),
+    y: ((_e = (_d = win.pageYOffset) != null ? _d : win.scrollY) != null ? _e : 0) + ((_f = node.scrollTop) != null ? _f : 0)
   };
+}
+function getTransformCTM(node, x = 0, y = 0, inverse = true) {
+  const point = new DOMPoint(x, y);
+  const screen = node.getScreenCTM();
+  const res = point.matrixTransform(
+    inverse ? screen == null ? void 0 : screen.inverse() : screen
+  );
+  if (inverse === false) {
+    const rect = getBoundingRect(node);
+    res.x -= rect.x;
+    res.y -= rect.y;
+  }
+  return res;
 }
 function getTranslation(node) {
   const transform = node ? node.transform : null;
@@ -538,12 +570,14 @@ function mergeObj(target, ...objectN) {
   const source = objectN.shift();
   if (isObject(target) && isObject(source)) {
     Object.keys(source).forEach((key) => {
-      const value = source[key];
-      if (isObject(value)) {
-        !target[key] && (target[key] = {});
-        target[key] = mergeObj(target[key], value);
-      } else {
-        target[key] = isArray(value) ? value.concat() : value;
+      if (!/^(__proto__|constructor|prototype)$/i.test(key)) {
+        const value = source[key];
+        if (isObject(value)) {
+          !target[key] && (target[key] = {});
+          target[key] = mergeObj(target[key], value);
+        } else {
+          target[key] = isArray(value) ? value.concat() : value;
+        }
       }
     });
   }
@@ -665,12 +699,28 @@ function parseDate(date) {
   }
   return parsedDate;
 }
+function hasViewBox(svg) {
+  const attr = svg.attr("viewBox");
+  return attr ? /(\d+(\.\d+)?){3}/.test(attr) : false;
+}
+function hasStyle(node, condition, all = false) {
+  const isD3Node = !!node.node;
+  let has = false;
+  for (const [key, value] of Object.entries(condition)) {
+    has = isD3Node ? node.style(key) === value : node.style[key] === value;
+    if (all === false && has) {
+      break;
+    }
+  }
+  return has;
+}
 function isTabVisible() {
   var _a, _b;
   return ((_a = doc) == null ? void 0 : _a.hidden) === false || ((_b = doc) == null ? void 0 : _b.visibilityState) === "visible";
 }
 function convertInputType(mouse, touch) {
   const { DocumentTouch, matchMedia, navigator } = win;
+  const hasPointerCoarse = matchMedia == null ? void 0 : matchMedia("(pointer:coarse)").matches;
   let hasTouch = false;
   if (touch) {
     if (navigator && "maxTouchPoints" in navigator) {
@@ -678,7 +728,7 @@ function convertInputType(mouse, touch) {
     } else if ("ontouchmove" in win || DocumentTouch && doc instanceof DocumentTouch) {
       hasTouch = true;
     } else {
-      if (matchMedia == null ? void 0 : matchMedia("(pointer:coarse)").matches) {
+      if (hasPointerCoarse) {
         hasTouch = true;
       } else {
         const UA = navigator.userAgent;
@@ -686,7 +736,7 @@ function convertInputType(mouse, touch) {
       }
     }
   }
-  const hasMouse = mouse && ((matchMedia == null ? void 0 : matchMedia("any-hover:hover").matches) || (matchMedia == null ? void 0 : matchMedia("any-pointer:fine").matches));
+  const hasMouse = mouse && !hasPointerCoarse && (matchMedia == null ? void 0 : matchMedia("(pointer:fine)").matches);
   return hasMouse && "mouse" || hasTouch && "touch" || "mouse";
 }
 function runUntil(fn, conditionFn) {
@@ -696,8 +746,22 @@ function runUntil(fn, conditionFn) {
     fn();
   }
 }
+function parseShorthand(value) {
+  if (isObject(value) && !isString(value)) {
+    const obj = value;
+    return {
+      top: obj.top || 0,
+      right: obj.right || 0,
+      bottom: obj.bottom || 0,
+      left: obj.left || 0
+    };
+  }
+  const values = (isString(value) ? value.trim().split(/\s+/) : [value]).map((v) => +v || 0);
+  const [a, b = a, c = a, d = b] = values;
+  return { top: a, right: b, bottom: c, left: d };
+}
 
-;// CONCATENATED MODULE: ./src/config/config.ts
+;// ./src/config/config.ts
 
 function loadConfig(config) {
   const thisConfig = this.config;
@@ -727,13 +791,10 @@ function loadConfig(config) {
   }
 }
 
-;// CONCATENATED MODULE: ./src/Plugin/Plugin.ts
+;// ./src/Plugin/Plugin.ts
 var Plugin_defProp = Object.defineProperty;
 var Plugin_defNormalProp = (obj, key, value) => key in obj ? Plugin_defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var __publicField = (obj, key, value) => {
-  Plugin_defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
-  return value;
-};
+var __publicField = (obj, key, value) => Plugin_defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
 class Plugin {
   /**
    * Constructor
@@ -780,9 +841,9 @@ class Plugin {
     });
   }
 }
-__publicField(Plugin, "version", "3.12.4");
+__publicField(Plugin, "version", "3.17.0");
 
-;// CONCATENATED MODULE: ./src/Plugin/sparkline/Options.ts
+;// ./src/Plugin/sparkline/Options.ts
 class Options {
   constructor() {
     return {
@@ -801,13 +862,10 @@ class Options {
   }
 }
 
-;// CONCATENATED MODULE: ./src/Plugin/sparkline/index.ts
+;// ./src/Plugin/sparkline/index.ts
 var sparkline_defProp = Object.defineProperty;
 var sparkline_defNormalProp = (obj, key, value) => key in obj ? sparkline_defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var sparkline_publicField = (obj, key, value) => {
-  sparkline_defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
-  return value;
-};
+var sparkline_publicField = (obj, key, value) => sparkline_defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
 
 
 
@@ -983,6 +1041,7 @@ class Sparkline extends Plugin {
 }
 sparkline_publicField(Sparkline, "version", `0.0.1`);
 
+}();
 __webpack_exports__ = __webpack_exports__["default"];
 /******/ 	return __webpack_exports__;
 /******/ })()
