@@ -3,6 +3,45 @@ base-global-styling:
     component:
       css/style.css: { }
 
+base-bootstrap5-js:
+  js:
+    libraries/bootstrap/dist/js/bootstrap.min.js: { minified: true }
+    js/convivial-bootstrap.js: { }
+  dependencies:
+    - core/jquery
+    - core/once
+    - core/drupal
+    - convivial_bootstrap/popperjs
+
+# Include this library in the theme.info.yml if Theme UI is disabled
+default_css_variables:
+  version: 1.x
+  css:
+    theme:
+      css/default-css-variables.css: { weight: -1 }
+
+# Theme UI
+theme_ui:
+  version: 1.x
+  js:
+    js/theme-ui.js: { }
+  css:
+    theme:
+      css/theme-ui.css: { }
+  dependencies:
+    - core/jquery
+    - convivial_bootstrap/leader_line_library
+
+leader_line_library:
+  remote: https://github.com/anseki/leader-line
+  version: 1.0.7
+  license:
+    name: MIT
+    url: http://opensource.org/licenses/mit-license.php
+    gpl-compatible: true
+  js:
+    //cdn.jsdelivr.net/npm/leader-line@1.0.7/leader-line.min.js: { type: external, minified: true }
+
 accessible-megamenu:
   js:
     components/accessible-megamenu/accessible-mega-menu.js: { }
@@ -16,7 +55,6 @@ anchor:
   dependencies:
     - core/jquery
     - convivial_bootstrap/anchorific
-    - convivial_bootstrap/smooth-scroll
 
 anchorific:
   js:
@@ -27,16 +65,6 @@ back-to-top:
     components/back-to-top/back-to-top.js: { }
   dependencies:
     - core/jquery
-
-base-bootstrap5-js:
-  js:
-    libraries/bootstrap/dist/js/bootstrap.min.js: { minified: true }
-    js/convivial-bootstrap.js: { }
-  dependencies:
-    - core/jquery
-    - core/once
-    - core/drupal
-    - convivial_bootstrap/popperjs
 
 bootstrap-icons:
   css:
@@ -91,6 +119,13 @@ fastfacts:
   dependencies:
     - core/drupal
 
+feedback:
+  js:
+    components/feedback/feedback.js: { }
+  dependencies:
+    - core/drupal
+    - core/once
+
 font-family:
   css:
     theme:
@@ -141,12 +176,6 @@ popperjs:
   js:
     libraries/@popperjs/core/dist/umd/popper.min.js: { minified: true }
 
-read-speaker:
-  header: true
-  js:
-    components/readspeaker/readspeaker.js: { }
-    //f1-eu.readspeaker.com/script/3/webReader/webReader.js?pids=wr: { type: external, minified: true }
-
 search:
   js:
     components/search/search.js: { }
@@ -163,10 +192,6 @@ search_autocomplete:
     - core/drupal
     - core/once
 
-smooth-scroll:
-  js:
-    libraries/smooth-scroll/dist/smooth-scroll.polyfills.min.js: { minified: true }
-
 van11y-accessible-tab-panel-aria:
   remote: https://github.com/nico3333fr/van11y-accessible-tab-panel-aria
   version: 2.0
@@ -182,10 +207,6 @@ scroll_anchor:
     js/scroll-anchor.js: { }
   dependencies:
     - core/jquery
-    - core/drupal
-    - core/drupalSettings
-    - core/once
-    - convivial_bootstrap/sticky_header_height
 
 sticky_header_height:
   js:

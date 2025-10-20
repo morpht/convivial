@@ -9,26 +9,27 @@
 
 use Drupal\Core\Form\FormStateInterface;
 
+require_once 'theme_ui.inc';
+
 /**
  * Attach theme settings form.
  */
 function _convivial_bootstrap_settings(&$form, FormStateInterface $form_state) {
-  // Create a section for My Theme settings.
-  $form['convivial_bootstrap_settings'] = [
+  // Create a section for Convivial theme settings.
+  $form['convivial_theme_settings'] = [
     '#type' => 'vertical_tabs',
-    '#title' => t('Custom Settings'),
-    '#description' => t('Configure Convivial Bootstrap options'),
+    '#title' => t('Theme settings'),
+    '#description' => t('Configure options'),
     '#weight' => -1000,
     '#open' => TRUE,
   ];
 
   $groups = [
-    'top_bar' => t('Top bar'),
+    'theme_ui' => t('Theme UI'),
     'header' => t('Header'),
     'page' => t('Page'),
-    'postscript' => t('Postscript'),
     'footer' => t('Footer'),
-    'laf' => t('Look and Feel'),
+    'laf' => t('Look and feel'),
     'charts' => t('Charts'),
     'glossary' => t('Glossary'),
     'external_links' => t('External links'),
@@ -36,65 +37,57 @@ function _convivial_bootstrap_settings(&$form, FormStateInterface $form_state) {
     'icon' => t('Icon'),
     'redirect_import' => t('Import redirects'),
     'meta' => t('Meta'),
+    'matomo_settings' => t('Matomo'),
   ];
+
   foreach ($groups as $group => $title) {
     $form[$group] = [
       '#type' => 'details',
       '#title' => $title,
-      '#group' => 'convivial_bootstrap_settings',
+      '#group' => 'convivial_theme_settings',
     ];
   }
+
   $form['header']['general'] = [
     '#type' => 'details',
     '#title' => t('General'),
     '#open' => TRUE,
   ];
-
   $form['header']['general']['header_style'] = [
     '#type' => 'select',
     '#title' => t('Color scheme'),
     '#options' => [
       '' => t('-none-'),
-      'theme__header--light' => t('Light'),
-      'theme__header--dark' => t('Dark'),
-      'theme__header--primary' => t('Primary'),
-      'theme__header--primary-dark' => t('Primary dark'),
+      'theme--standard' => t('Standard'),
+      'theme--alternate' => t('Alternate'),
+      'theme--primary' => t('Primary'),
+      'theme--secondary' => t('Secondary'),
+      'theme--tertiary' => t('Tertiary'),
+      'theme--light' => t('Light'),
+      'theme--dark' => t('Dark'),
     ],
     '#description' => t('Set style for header.'),
     '#default_value' => theme_get_setting('header_style'),
   ];
-
   $form['header']['general']['header_stickiness'] = [
     '#type' => 'radios',
     '#title' => t('Placement'),
     '#options' => [
-      'theme__header--non-sticky' => t('Static'),
-      'theme__header--sticky' => t('Sticky'),
+      'header_stickiness--non-sticky' => t('Static'),
+      'header_stickiness--sticky' => t('Sticky'),
     ],
     '#description' => t('A Static header remains in place while a Sticky header will stick to the top of the screen when you scroll.'),
     '#default_value' => theme_get_setting('header_stickiness'),
   ];
-
-  $form['header']['general']['appearance'] = [
-    '#type' => 'radios',
-    '#title' => t('Appearance'),
-    '#options' => [
-      'theme__header--solid' => t('Solid'),
-      'theme__header--transparent' => t('Transparent'),
-    ],
-    '#description' => t('Set the header to Transparent on pages that have a Hero component. To make the header transparent you must also specify a Hero ambiance on individual pages under Hero Components.'),
-    '#default_value' => theme_get_setting('appearance'),
-  ];
-
-  $form['header']['general']['header_width'] = [
+  $form['header']['general']['header_container'] = [
     '#type' => 'radios',
     '#title' => t('Layout'),
     '#options' => [
-      'theme__header--fluid' => t('Fluid-width'),
-      'theme__header--contained' => t('Contained'),
+      'header_container--fluid' => t('Fluid-width'),
+      'header_container--contained' => t('Contained'),
     ],
     '#description' => t('Set whether the Header should be Contained within the website’s outer boundary or unconstrained and Fluid-width.'),
-    '#default_value' => theme_get_setting('header_width'),
+    '#default_value' => theme_get_setting('header_container'),
   ];
 
   $form['header']['primary_navigation'] = [
@@ -102,16 +95,15 @@ function _convivial_bootstrap_settings(&$form, FormStateInterface $form_state) {
     '#title' => t('Primary navigation'),
     '#open' => TRUE,
   ];
-
   $form['header']['primary_navigation']['menu_style'] = [
     '#type' => 'radios',
     '#title' => t('Type'),
     '#options' => [
-      'theme__menu-style--simple' => t('Simple (mobile open down) – 1 level'),
-      'theme__menu-style--dropdown' => t('Dropdown – up to 3 levels'),
-      'theme__menu-style--megamenu' => t('Megamenu – up to 4 levels'),
-      'theme__menu-style--overview' => t('Megamenu (description first level) – up to 4 levels'),
-      'theme__menu-style--description' => t('Megamenu (descriptions all levels) – up to 4 levels'),
+      'menu-style--simple' => t('Simple (mobile open down) – 1 level'),
+      'menu-style--dropdown' => t('Dropdown – up to 3 levels'),
+      'menu-style--megamenu' => t('Megamenu – up to 4 levels'),
+      'menu-style--overview' => t('Megamenu (description first level) – up to 4 levels'),
+      'menu-style--description' => t('Megamenu (descriptions all levels) – up to 4 levels'),
     ],
     '#description' => t('Select the type of menu to use for the Primary Navigation.
 "Description" option uses the standard Drupal menu items description field.<br>
@@ -119,16 +111,15 @@ Note that if <strong>Display: Inline menu</strong> is set, the menu type will be
 <strong>Simple (mobile slide out) – 1 level</strong>.'),
     '#default_value' => theme_get_setting('menu_style'),
   ];
-
   $form['header']['primary_navigation']['megamenu_columns'] = [
     '#type' => 'radios',
     '#title' => t('Megamenu columns'),
     '#options' => [
-      'theme__megamenu-columns--2' => t('Two columns'),
-      'theme__megamenu-columns--3' => t('Three columns'),
-      'theme__megamenu-columns--4' => t('Four columns'),
-      'theme__megamenu-columns--5' => t('Five columns'),
-      'theme__megamenu-columns--6' => t('Six columns'),
+      'megamenu-columns--2' => t('Two columns'),
+      'megamenu-columns--3' => t('Three columns'),
+      'megamenu-columns--4' => t('Four columns'),
+      'megamenu-columns--5' => t('Five columns'),
+      'megamenu-columns--6' => t('Six columns'),
     ],
     '#description' => t('In to how many columns should the items be sorted.'),
     '#default_value' => theme_get_setting('megamenu_columns'),
@@ -136,21 +127,20 @@ Note that if <strong>Display: Inline menu</strong> is set, the menu type will be
       // Display only if menu_style is set to megamenu, overview or description.
       'visible' => [
         'input[name="menu_style"]' => [
-          ['value' => 'theme__menu-style--megamenu'],
-          ['value' => 'theme__menu-style--overview'],
-          ['value' => 'theme__menu-style--description'],
+          ['value' => 'menu-style--megamenu'],
+          ['value' => 'menu-style--overview'],
+          ['value' => 'menu-style--description'],
         ],
       ],
     ],
   ];
-
   $form['header']['primary_navigation']['header_layout'] = [
     '#type' => 'radios',
     '#title' => t('Display'),
     '#options' => [
-      'theme__inline_menu' => t('Inline menu'),
-      'theme__menu_bar' => t('Menu bar'),
-      'theme__no_header' => t('No header'),
+      'header_layout--inline-menu' => t('Inline menu'),
+      'header_layout--menu-bar' => t('Menu bar'),
+      'header_layout--no-header' => t('No header'),
     ],
     '#description' => t('Set the layout for the header.'),
     '#default_value' => theme_get_setting('header_layout'),
@@ -161,59 +151,61 @@ Note that if <strong>Display: Inline menu</strong> is set, the menu type will be
     '#title' => t('Search form'),
     '#open' => TRUE,
   ];
-
   $form['header']['search_form']['search_form_display'] = [
     '#type' => 'radios',
     '#title' => t('Display'),
     '#options' => [
-      'theme__search-form--inline' => t('Inline'),
-      'theme__search-form--inline-reveal' => t('Inline reveal'),
-      'theme__search-form--top-reveal' => t('Top reveal'),
-      // 'theme__search-form--botom-reveal' => t('Bottom reveal'),
+      'search-form--inline' => t('Inline'),
+      'search-form--inline-reveal' => t('Inline reveal'),
+      'search-form--top-reveal' => t('Top reveal'),
     ],
-    '#description' => t('Set how the search form is displayed. An Inline search form will remain visible on larger screens while reveal options toggle their visibility by clicking a button. '),
+    '#description' => t('Set how the search form is displayed. An Inline search form will remain visible on larger screens while reveal options toggle their visibility by clicking a button.'),
     '#default_value' => theme_get_setting('search_form_display'),
   ];
 
-  $form['debugging']['theme__highlighted_layouts'] = [
-    '#type' => 'checkbox',
-    '#title' => t('Layout highlighter'),
-    '#description' => t('Default Convivial layouts get borders for easier debugging. Do not forgot to turn off before going live.'),
-    '#default_value' => theme_get_setting('theme__highlighted_layouts'),
-  ];
-
-  $form['external_links']['mark_external_links'] = [
-    '#type' => 'checkbox',
-    '#title' => t('Mark external links'),
-    '#description' => t('Enable special styling for external links.'),
-    '#default_value' => theme_get_setting('mark_external_links'),
-  ];
-
-  $form['top_bar']['top_bar_style'] = [
+  $form['page']['top_bar_style'] = [
     '#type' => 'select',
-    '#title' => t('Top Bar style'),
+    '#title' => t('Top bar style'),
     '#options' => [
       '' => t('-none-'),
-      'theme__top_bar--light' => t('Light'),
-      'theme__top_bar--dark' => t('Dark'),
-      'theme__top_bar--primary' => t('Primary'),
-      'theme__top_bar--primary-dark' => t('Primary dark'),
+      'theme--light' => t('Light'),
+      'theme--dark' => t('Dark'),
+      'theme--primary' => t('Primary'),
+      'theme--primary-dark' => t('Primary dark'),
     ],
-    '#description' => t('Set style for top bar.'),
+    '#description' => t('Set style for the top bar region.'),
     '#default_value' => theme_get_setting('top_bar_style'),
   ];
-
-  $form['postscript']['postscript_style'] = [
+  $form['page']['main_nav_style'] = [
+    '#type' => 'select',
+    '#title' => t('Main navigation style'),
+    '#options' => [
+      '' => t('-none-'),
+      'theme--standard' => t('Standard'),
+      'theme--alternate' => t('Alternate'),
+      'theme--primary' => t('Primary'),
+      'theme--secondary' => t('Secondary'),
+      'theme--tertiary' => t('Tertiary'),
+      'theme--light' => t('Light'),
+      'theme--dark' => t('Dark'),
+    ],
+    '#description' => t('Set style for the main navigation region.'),
+    '#default_value' => theme_get_setting('main_nav_style'),
+  ];
+  $form['page']['postscript_style'] = [
     '#type' => 'select',
     '#title' => t('Postscript style'),
     '#options' => [
       '' => t('-none-'),
-      'theme__postscript--light' => t('Light'),
-      'theme__postscript--dark' => t('Dark'),
-      'theme__postscript--primary' => t('Primary'),
-      'theme__postscript--primary-dark' => t('Primary dark'),
+      'theme--standard' => t('Standard'),
+      'theme--alternate' => t('Alternate'),
+      'theme--primary' => t('Primary'),
+      'theme--secondary' => t('Secondary'),
+      'theme--tertiary' => t('Tertiary'),
+      'theme--light' => t('Light'),
+      'theme--dark' => t('Dark'),
     ],
-    '#description' => t('Set style for postscript.'),
+    '#description' => t('Set style for postscript region.'),
     '#default_value' => theme_get_setting('postscript_style'),
   ];
 
@@ -222,47 +214,46 @@ Note that if <strong>Display: Inline menu</strong> is set, the menu type will be
     '#title' => t('Footer style'),
     '#options' => [
       '' => t('-none-'),
-      'theme__footer--light' => t('Light'),
-      'theme__footer--dark' => t('Dark'),
-      'theme__footer--primary' => t('Primary'),
-      'theme__footer--primary-dark' => t('Primary dark'),
+      'theme--standard' => t('Standard'),
+      'theme--alternate' => t('Alternate'),
+      'theme--primary' => t('Primary'),
+      'theme--secondary' => t('Secondary'),
+      'theme--tertiary' => t('Tertiary'),
+      'theme--light' => t('Light'),
+      'theme--dark' => t('Dark'),
     ],
-    '#description' => t('Set style for footer.'),
+    '#description' => t('Set style for footer region.'),
     '#default_value' => theme_get_setting('footer_style'),
   ];
-
-  $form['footer']['footer_information_style'] = [
+  $form['footer']['footer_info_style'] = [
     '#type' => 'select',
-    '#title' => t('Footer information style'),
+    '#title' => t('Footer info style'),
     '#options' => [
       '' => t('-none-'),
-      'theme__footer_information--light' => t('Light'),
-      'theme__footer_information--dark' => t('Dark'),
-      'theme__footer_information--primary' => t('Primary'),
-      'theme__footer_information--primary-dark' => t('Primary dark'),
+      'theme--standard' => t('Standard'),
+      'theme--alternate' => t('Alternate'),
+      'theme--primary' => t('Primary'),
+      'theme--secondary' => t('Secondary'),
+      'theme--tertiary' => t('Tertiary'),
+      'theme--light' => t('Light'),
+      'theme--dark' => t('Dark'),
     ],
-    '#description' => t('Set style for footer information.'),
-    '#default_value' => theme_get_setting('footer_information_style'),
+    '#description' => t('Set style for footer info region.'),
+    '#default_value' => theme_get_setting('footer_info_style'),
   ];
 
-  $form['page']['header_section'] = [
-    '#type' => 'details',
-    '#title' => t('Header section'),
-    '#open' => TRUE,
+  $form['debugging']['highlighted_layouts'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Layout highlighter'),
+    '#description' => t('Default Convivial layouts get borders for easier debugging. Do not forgot to turn off before going live.'),
+    '#default_value' => theme_get_setting('highlighted_layouts'),
   ];
-  $form['page']['header_section']['header_section_style'] = [
-    '#type' => 'select',
-    '#title' => t('Color scheme'),
-    '#options' => [
-      '' => t('-none-'),
-      'theme__node_header_section--standard' => t('Standard'),
-      'theme__node_header_section--light' => t('Light'),
-      'theme__node_header_section--dark' => t('Dark'),
-      'theme__node_header_section--primary' => t('Primary'),
-      'theme__node_header_section--primary-dark' => t('Primary dark'),
-    ],
-    '#description' => t('Set style for header.'),
-    '#default_value' => theme_get_setting('header_section_style'),
+
+  $form['external_links']['mark_external_links'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Mark external links'),
+    '#description' => t('Enable special styling for external links.'),
+    '#default_value' => theme_get_setting('mark_external_links'),
   ];
 
   $form['charts']['chart_colors'] = [
@@ -385,6 +376,8 @@ Note that if <strong>Display: Inline menu</strong> is set, the menu type will be
     '#description' => t('Define which data should be exposed as meta tags. See theme\'s README.md for examples.'),
     '#default_value' => theme_get_setting('meta.meta_strategies_property'),
   ];
+
+  _add_theme_ui_settings($form);
 
   // Flush render cache.
   $form['#submit'][] = '_convivial_bootstrap_flush_render_cache';

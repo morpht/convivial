@@ -9,7 +9,7 @@ dependencies:
     - field.field.paragraph.webform.field_modifiers
     - field.field.paragraph.webform.field_position
     - field.field.paragraph.webform.field_read_more
-    - field.field.paragraph.webform.field_w_colour_classes
+    - field.field.paragraph.webform.field_color_palette
     - field.field.paragraph.webform.field_w_style_classes
     - field.field.paragraph.webform.field_webform
     - paragraphs.paragraphs_type.webform
@@ -28,11 +28,11 @@ content:
     region: content
 hidden:
   field_body: true
+  field_color_palette: true
   field_hide_heading: true
   field_modifiers: true
   field_position: true
   field_read_more: true
-  field_w_colour_classes: true
   field_w_style_classes: true
   field_webform: true
   search_api_excerpt: true

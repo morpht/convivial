@@ -4,7 +4,7 @@ dependencies:
   config:
     - field.field.paragraph.content_block.field_body
     - field.field.paragraph.content_block.field_cb_block
-    - field.field.paragraph.content_block.field_cb_colour_classes
+    - field.field.paragraph.content_block.field_color_palette
     - field.field.paragraph.content_block.field_cb_style_classes
     - field.field.paragraph.content_block.field_heading
     - field.field.paragraph.content_block.field_hide_heading
@@ -33,15 +33,15 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_cb_colour_classes:
-    type: options_select
-    weight: 5
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_cb_style_classes:
     type: options_select
     weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_color_palette:
+    type: options_select
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }

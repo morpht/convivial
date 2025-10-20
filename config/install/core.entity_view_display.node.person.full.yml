@@ -10,8 +10,7 @@ dependencies:
     - field.field.node.person.field_featured_links
     - field.field.node.person.field_featured_title
     - field.field.node.person.field_goal
-    - field.field.node.person.field_header_colour_classes
-    - field.field.node.person.field_hero_darkness
+    - field.field.node.person.field_header_color_palette
     - field.field.node.person.field_intent
     - field.field.node.person.field_introduction
     - field.field.node.person.field_key
@@ -265,7 +264,7 @@ third_party_settings:
               provider: views
               context_mapping: {  }
               views_label: ''
-              items_per_page: none
+              items_per_page: 0
             weight: 6
             additional: {  }
           789df3d0-1f1e-4ec5-965d-5358aa10f5f1:
@@ -278,7 +277,7 @@ third_party_settings:
               provider: views
               context_mapping: {  }
               views_label: ''
-              items_per_page: none
+              items_per_page: 0
             weight: 5
             additional: {  }
           437abdae-3c36-4af5-9912-64b655109cac:
@@ -402,8 +401,7 @@ hidden:
   field_featured_links: true
   field_featured_title: true
   field_goal: true
-  field_header_colour_classes: true
-  field_hero_darkness: true
+  field_header_color_palette: true
   field_intent: true
   field_key: true
   field_location: true

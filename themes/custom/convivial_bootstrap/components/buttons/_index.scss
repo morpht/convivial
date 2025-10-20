@@ -1,0 +1,54 @@
+/*! @convivial_bootstrap/buttons */
+
+// Overridden Bootstrap reset
+button:focus:not(:focus-visible) {
+  outline: $btn-outline-width $btn-outline-style var(--focus);
+}
+
+// Default button
+.btn {
+  &:focus,
+  &:focus-visible {
+    outline: $btn-outline-width $btn-outline-style var(--focus);
+    outline-offset: $outline-offset;
+
+    // Disable ring, box shadow
+    box-shadow: none;
+  }
+}
+
+.btn-primary {
+  @include convivial-button-variant(
+    $background: var(--accent),
+    $color: var(--accent-contrast),
+    $hover: var(--accent-hover),
+    $active: var(--accent-active),
+  );
+}
+
+.btn-secondary {
+  @include convivial-button-variant(
+    $background: var(--link),
+    $color: var(--link-contrast),
+    $hover: var(--link-hover),
+    $active: var(--link-active),
+  );
+}
+
+.btn-outline-primary {
+  @include convivial-button-outline-variant(
+    $color: var(--accent),
+    $color-hover: var(--accent-contrast),
+    $hover: var(--accent-hover),
+    $active: var(--accent-active),
+  );
+}
+
+.btn-outline-secondary {
+  @include convivial-button-outline-variant(
+    $color: var(--link),
+    $color-hover: var(--link-contrast),
+    $hover: var(--link-hover),
+    $active: var(--link-active),
+  );
+}

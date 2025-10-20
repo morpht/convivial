@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.decision_flow.field_body
+    - field.field.paragraph.decision_flow.field_c_style_classes
+    - field.field.paragraph.decision_flow.field_color_palette
+    - field.field.paragraph.decision_flow.field_heading
+    - field.field.paragraph.decision_flow.field_hide_heading
+    - field.field.paragraph.decision_flow.field_modifiers
+    - field.field.paragraph.decision_flow.field_position
+    - field.field.paragraph.decision_flow.field_read_more
+    - paragraphs.paragraphs_type.decision_flow
+id: paragraph.decision_flow.preview
+targetEntityType: paragraph
+bundle: decision_flow
+mode: preview
+content:
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_body: true
+  field_c_style_classes: true
+  field_color_palette: true
+  field_hide_heading: true
+  field_modifiers: true
+  field_position: true
+  field_read_more: true
+  search_api_excerpt: true

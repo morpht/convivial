@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_color_palette
+    - paragraphs.paragraphs_type.iframe
+  module:
+    - options
+id: paragraph.iframe.field_color_palette
+field_name: field_color_palette
+entity_type: paragraph
+bundle: iframe
+label: 'Colour Palette'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

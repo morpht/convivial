@@ -1,0 +1,15 @@
+/*! @convivial_bootstrap/breadcrumb */
+
+.breadcrumb {
+  background-color: transparent;
+  margin-top: 1rem;
+  padding-left: 0;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.breadcrumb-item {
+  align-items: center;
+}

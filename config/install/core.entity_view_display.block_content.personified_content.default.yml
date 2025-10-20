@@ -4,7 +4,7 @@ dependencies:
   config:
     - block_content.type.personified_content
     - field.field.block_content.personified_content.field_modifiers
-    - field.field.block_content.personified_content.field_pc_colour_classes
+    - field.field.block_content.personified_content.field_color_palette
     - field.field.block_content.personified_content.field_pc_style_classes
     - field.field.block_content.personified_content.field_personified_content_text
     - field.field.block_content.personified_content.field_position
@@ -16,7 +16,7 @@ targetEntityType: block_content
 bundle: personified_content
 mode: default
 content:
-  field_pc_colour_classes:
+  field_color_palette:
     type: entity_class_formatter
     label: hidden
     settings:

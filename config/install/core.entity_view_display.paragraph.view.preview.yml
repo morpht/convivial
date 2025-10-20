@@ -8,7 +8,7 @@ dependencies:
     - field.field.paragraph.view.field_hide_heading
     - field.field.paragraph.view.field_modifiers
     - field.field.paragraph.view.field_position
-    - field.field.paragraph.view.field_view_colour_classes
+    - field.field.paragraph.view.field_color_palette
     - field.field.paragraph.view.field_view_definition
     - field.field.paragraph.view.field_view_style_classes
     - paragraphs.paragraphs_type.view
@@ -27,10 +27,10 @@ content:
     region: content
 hidden:
   field_body: true
+  field_color_palette: true
   field_hide_heading: true
   field_modifiers: true
   field_position: true
-  field_view_colour_classes: true
   field_view_definition: true
   field_view_style_classes: true
   search_api_excerpt: true

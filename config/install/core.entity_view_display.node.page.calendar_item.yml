@@ -10,8 +10,7 @@ dependencies:
     - field.field.node.page.field_featured_links
     - field.field.node.page.field_featured_title
     - field.field.node.page.field_goal
-    - field.field.node.page.field_header_colour_classes
-    - field.field.node.page.field_hero_darkness
+    - field.field.node.page.field_header_color_palette
     - field.field.node.page.field_hide
     - field.field.node.page.field_intent
     - field.field.node.page.field_introduction
@@ -126,8 +125,7 @@ hidden:
   field_featured_links: true
   field_featured_title: true
   field_goal: true
-  field_header_colour_classes: true
-  field_hero_darkness: true
+  field_header_color_palette: true
   field_hide: true
   field_intent: true
   field_introduction: true

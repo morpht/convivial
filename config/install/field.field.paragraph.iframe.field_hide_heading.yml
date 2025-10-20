@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hide_heading
+    - paragraphs.paragraphs_type.iframe
+id: paragraph.iframe.field_hide_heading
+field_name: field_hide_heading
+entity_type: paragraph
+bundle: iframe
+label: 'Hide heading'
+description: 'Hide heading but keep available for screen readers.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

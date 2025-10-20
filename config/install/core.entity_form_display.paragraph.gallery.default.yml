@@ -3,7 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.gallery.field_body
-    - field.field.paragraph.gallery.field_gallery_colour_classes
+    - field.field.paragraph.gallery.field_color_palette
     - field.field.paragraph.gallery.field_gallery_layout_classes
     - field.field.paragraph.gallery.field_gallery_media
     - field.field.paragraph.gallery.field_gallery_show_controls
@@ -33,7 +33,7 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  field_gallery_colour_classes:
+  field_color_palette:
     type: options_select
     weight: 8
     region: content

@@ -9,7 +9,7 @@ dependencies:
     - field.field.block_content.promotion.field_promo_aside
     - field.field.block_content.promotion.field_promo_background
     - field.field.block_content.promotion.field_promo_bg_color
-    - field.field.block_content.promotion.field_promo_colour_classes
+    - field.field.block_content.promotion.field_color_palette
     - field.field.block_content.promotion.field_promo_keys
     - field.field.block_content.promotion.field_promo_link
     - field.field.block_content.promotion.field_promo_position
@@ -41,6 +41,12 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
+  field_color_palette:
+    type: options_select
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_heading:
     type: string_textfield
     weight: 3
@@ -67,12 +73,6 @@ content:
   field_promo_bg_color:
     type: options_select
     weight: 7
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_promo_colour_classes:
-    type: options_select
-    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }

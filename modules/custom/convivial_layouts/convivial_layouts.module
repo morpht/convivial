@@ -20,9 +20,9 @@ function convivial_layouts_preprocess_layout(&$variables) {
 
   // Only on node entity.
   if ($parameter instanceof NodeInterface) {
-    // Only if the field_header_colour_classes exists.
-    if ($parameter->hasField('field_header_colour_classes')) {
-      $variables['header_colour_classes'] = $parameter->get('field_header_colour_classes')->value;
+    // Only if the field_header_color_palette exists.
+    if ($parameter->hasField('field_header_color_palette')) {
+      $variables['header_color_palette'] = $parameter->get('field_header_color_palette')->value;
     }
   }
 }

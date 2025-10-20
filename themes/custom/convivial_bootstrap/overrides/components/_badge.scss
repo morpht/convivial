@@ -1,0 +1,6 @@
+.badge {
+  --#{$prefix}badge-padding-x: 0.65rem;
+  --#{$prefix}badge-padding-y:  0.35rem;
+  --#{$prefix}badge-font-size:  0.875rem;
+  --#{$prefix}badge-border-radius: var(--radius-button);
+}

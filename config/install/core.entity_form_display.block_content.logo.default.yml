@@ -4,16 +4,16 @@ dependencies:
   config:
     - block_content.type.logo
     - field.field.block_content.logo.field_logo_breakpoint
-    - field.field.block_content.logo.field_logo_large_default
-    - field.field.block_content.logo.field_logo_large_inverse
-    - field.field.block_content.logo.field_logo_large_width
-    - field.field.block_content.logo.field_logo_link
-    - field.field.block_content.logo.field_logo_small_default
-    - field.field.block_content.logo.field_logo_small_inverse
-    - field.field.block_content.logo.field_logo_small_width
+    - field.field.block_content.logo.field_logo_dark
+    - field.field.block_content.logo.field_logo_dark_small
+    - field.field.block_content.logo.field_logo_default
+    - field.field.block_content.logo.field_logo_default_small
+    - field.field.block_content.logo.field_logo_url
+    - field.field.block_content.logo.field_logo_width
+    - field.field.block_content.logo.field_logo_width_small
   module:
-    - file
     - link
+    - media_library
 id: block_content.logo.default
 targetEntityType: block_content
 bundle: logo
@@ -21,57 +21,57 @@ mode: default
 content:
   field_logo_breakpoint:
     type: number
-    weight: 9
+    weight: 8
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-  field_logo_large_default:
-    type: file_generic
-    weight: 2
-    region: content
-    settings:
-      progress_indicator: throbber
-    third_party_settings: {  }
-  field_logo_large_inverse:
-    type: file_generic
+  field_logo_dark:
+    type: media_library_widget
     weight: 3
     region: content
     settings:
-      progress_indicator: throbber
+      media_types: {  }
     third_party_settings: {  }
-  field_logo_large_width:
-    type: number
-    weight: 7
+  field_logo_dark_small:
+    type: media_library_widget
+    weight: 4
     region: content
     settings:
-      placeholder: ''
+      media_types: {  }
     third_party_settings: {  }
-  field_logo_link:
+  field_logo_default:
+    type: media_library_widget
+    weight: 1
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_logo_default_small:
+    type: media_library_widget
+    weight: 2
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_logo_url:
     type: link_default
-    weight: 6
+    weight: 5
     region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
-  field_logo_small_default:
-    type: file_generic
-    weight: 4
-    region: content
-    settings:
-      progress_indicator: throbber
-    third_party_settings: {  }
-  field_logo_small_inverse:
-    type: file_generic
-    weight: 5
-    region: content
-    settings:
-      progress_indicator: throbber
-    third_party_settings: {  }
-  field_logo_small_width:
+  field_logo_width:
     type: number
-    weight: 8
+    weight: 6
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_logo_width_small:
+    type: number
+    weight: 7
     region: content
     settings:
       placeholder: ''

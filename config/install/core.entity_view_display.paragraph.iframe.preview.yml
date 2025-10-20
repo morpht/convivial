@@ -1,0 +1,42 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.iframe.field_c_style_classes
+    - field.field.paragraph.iframe.field_color_palette
+    - field.field.paragraph.iframe.field_heading
+    - field.field.paragraph.iframe.field_hide_heading
+    - field.field.paragraph.iframe.field_iframe_fullscreen
+    - field.field.paragraph.iframe.field_iframe_height
+    - field.field.paragraph.iframe.field_iframe_url
+    - field.field.paragraph.iframe.field_modifiers
+    - field.field.paragraph.iframe.field_position
+    - field.field.paragraph.iframe.field_read_more
+    - field.field.paragraph.iframe.field_title
+    - paragraphs.paragraphs_type.iframe
+id: paragraph.iframe.preview
+targetEntityType: paragraph
+bundle: iframe
+mode: preview
+content:
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_c_style_classes: true
+  field_color_palette: true
+  field_heading: true
+  field_hide_heading: true
+  field_iframe_fullscreen: true
+  field_iframe_height: true
+  field_iframe_url: true
+  field_modifiers: true
+  field_position: true
+  field_read_more: true
+  search_api_excerpt: true

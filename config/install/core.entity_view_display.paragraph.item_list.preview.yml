@@ -6,7 +6,7 @@ dependencies:
     - field.field.paragraph.item_list.field_body
     - field.field.paragraph.item_list.field_heading
     - field.field.paragraph.item_list.field_hide_heading
-    - field.field.paragraph.item_list.field_il_colour_classes
+    - field.field.paragraph.item_list.field_color_palette
     - field.field.paragraph.item_list.field_il_items
     - field.field.paragraph.item_list.field_il_layout_classes
     - field.field.paragraph.item_list.field_il_style_classes
@@ -30,8 +30,8 @@ content:
     region: content
 hidden:
   field_body: true
+  field_color_palette: true
   field_hide_heading: true
-  field_il_colour_classes: true
   field_il_items: true
   field_il_layout_classes: true
   field_il_style_classes: true
