@@ -287,81 +287,10 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
               formatter:
-                type: geofield_google_map
+                type: geofield_latlon
                 label: hidden
                 settings:
-                  map_dimensions:
-                    width: 100%
-                    height: 450px
-                  map_empty:
-                    empty_behaviour: '0'
-                    empty_message: 'No Geofield Value entered for this field'
-                  map_center:
-                    lat: null
-                    lon: null
-                    center_force: false
-                    geocode: 'Find my location'
-                  map_zoom_and_pan:
-                    zoom:
-                      initial: 16
-                      force: false
-                      min: 1
-                      max: 22
-                      finer: 0
-                    gestureHandling: auto
-                    scrollwheel: true
-                    draggable: true
-                    map_reset_position: TOP_RIGHT
-                    map_reset: false
-                  map_controls:
-                    zoom_control: false
-                    map_type_id: roadmap
-                    map_type_control: false
-                    map_type_control_options_type_ids:
-                      roadmap: '0'
-                      satellite: '0'
-                      hybrid: '0'
-                      terrain: '0'
-                    scale_control: false
-                    street_view_control: false
-                    fullscreen_control: false
-                    disable_default_ui: false
-                  map_marker_and_infowindow:
-                    icon_image_mode: icon_file
-                    icon_file_wrapper:
-                      icon_file:
-                        fids: {  }
-                        upload_button: Upload
-                        remove_button: Remove
-                        upload: ''
-                        is_svg: false
-                      image_style: geofield_map_default_icon_style
-                    icon_image_path: ''
-                    infowindow_field: title
-                    view_mode: full
-                    tooltip_field: '0'
-                    multivalue_split: false
-                    force_open: false
-                  map_oms:
-                    map_oms_control: false
-                    map_oms_options: '{"markersWontMove":"true","markersWontHide":"true","basicFormatEvents":"true","nearbyDistance":3}'
-                  map_additional_options: ''
-                  map_geometries_options: '{"strokeColor":"black","strokeOpacity":"0.8","strokeWeight":2,"fillColor":"blue","fillOpacity":"0.1","clickable":false}'
-                  custom_style_map:
-                    custom_style_name: ''
-                    custom_style_options: ''
-                    custom_style_control: false
-                    custom_style_default: false
-                  map_markercluster:
-                    markercluster_additional_options: '{"maxZoom":12,"gridSize":50}'
-                    markercluster_control: false
-                  map_additional_libraries:
-                    places: false
-                    drawing: false
-                    geometry: false
-                    visualization: false
-                  map_lazy_load:
-                    lazy_load: false
+                  output_format: decimal
                 third_party_settings: {  }
             weight: 6
             additional: {  }
