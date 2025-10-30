@@ -28,7 +28,6 @@ dependencies:
     - field.field.node.event.field_toc
     - field.field.node.event.field_updated_date
     - node.type.event
-    - views.view.map
   module:
     - convivial_layouts
     - entity_reference_revisions
@@ -38,7 +37,6 @@ dependencies:
     - system
     - text
     - user
-    - views
 third_party_settings:
   layout_builder:
     enabled: true
@@ -276,19 +274,6 @@ third_party_settings:
                   format_type: standard_date_time
                 third_party_settings: {  }
             weight: 0
-            additional: {  }
-          66c1af5c-b9ff-4310-9219-1e35d60fcbd8:
-            uuid: 66c1af5c-b9ff-4310-9219-1e35d60fcbd8
-            region: content
-            configuration:
-              id: 'views_block:map-block'
-              label: ''
-              label_display: '0'
-              provider: views
-              context_mapping: {  }
-              views_label: ''
-              items_per_page: none
-            weight: 7
             additional: {  }
           d6e6cab1-efda-48bd-837e-6dfcb50827a5:
             uuid: d6e6cab1-efda-48bd-837e-6dfcb50827a5
