@@ -75,7 +75,6 @@ install:
   - field_formatter_pattern:field_formatter_pattern
   - focal_point:focal_point
   - geofield:geofield
-  - geofield_map:geofield_map
   - google_tag:google_tag
   - gtranslate:gtranslate
   - jquery_ui:jquery_ui
