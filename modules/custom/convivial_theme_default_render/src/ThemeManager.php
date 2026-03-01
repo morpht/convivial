@@ -29,7 +29,7 @@ class ThemeManager extends CoreThemeManager implements ThemeManagerInterface {
    *
    * @var \Drupal\Core\Theme\ThemeInitializationInterface
    */
-  protected $themeInitialization;
+  protected ThemeInitializationInterface $themeInitialization;
 
   /**
    * Config factory.
