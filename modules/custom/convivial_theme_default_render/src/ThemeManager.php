@@ -9,6 +9,7 @@ use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Theme\ActiveTheme;
 use Drupal\Core\Theme\Registry;
 use Drupal\Core\Theme\ThemeInitializationInterface;
+use Drupal\Core\Theme\ThemeEngineInterface;
 use Drupal\Core\Theme\ThemeManager as CoreThemeManager;
 use Drupal\Core\Theme\ThemeManagerInterface;
 
@@ -154,6 +155,27 @@ class ThemeManager extends CoreThemeManager implements ThemeManagerInterface {
    */
   public function setThemeRegistry(Registry $theme_registry) {
     return $this->themeManager->setThemeRegistry($theme_registry);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function invoke(string $theme, string $hook, array $args = []) {
+    return $this->themeManager->invoke($theme, $hook, $args);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function invokeAllWith(string $hook, callable $callback): void {
+    $this->themeManager->invokeAllWith($hook, $callback);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getThemeEngine(string $name): ?ThemeEngineInterface {
+    return $this->themeManager->getThemeEngine($name);
   }
 
 }
