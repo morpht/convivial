@@ -132,10 +132,12 @@ settings:
         - '<th scope class>'
         - '<td class>'
         - '<tr class>'
+        - '<ol type>'
         - '<a class="step__answer step__button step__button--back step__button--restart" data-answer-path data-bs-toggle data-entity-type data-entity-uuid data-entity-substitution href hreflang title>'
         - '<img data-entity-type data-entity-uuid class>'
         - '<drupal-media title>'
         - '<p class="callout">'
+        - '<ul type>'
         - '<li data-stop-filter data-pass-filter>'
     ckeditor5_style:
       styles:
