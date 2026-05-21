@@ -1,6 +1,8 @@
 langcode: en
 status: true
 dependencies:
+  config:
+    - node.type.person
   module:
     - node
 id: person
@@ -11,7 +13,6 @@ selection_criteria:
   0d0ee4c9-19cd-44fd-b182-b108345b89c4:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 0d0ee4c9-19cd-44fd-b182-b108345b89c4
     context_mapping:
       node: node
     bundles:

@@ -113,8 +113,7 @@
     "npm-asset/jarallax": "^1.12.4",
     "npm-asset/jquery-ui-touch-punch": "^0.2.3",
     "npm-asset/scrollreveal": "^4.0.7",
-    "npm-asset/videojs-background": "^1.0",
-    "oomphinc/composer-installers-extender": "^2.0"
+    "npm-asset/videojs-background": "^1.0"
   },
   "require-dev": {
     "behat/mink": "^1.11",
@@ -147,7 +146,6 @@
       "cweagans/composer-patches": true,
       "dealerdirect/phpcodesniffer-composer-installer": true,
       "drupal/core-composer-scaffold": true,
-      "oomphinc/composer-installers-extender": true,
       "phpro/grumphp": true,
       "phpstan/extension-installer": true
     },
