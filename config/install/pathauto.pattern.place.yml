@@ -1,6 +1,8 @@
 langcode: en
 status: true
 dependencies:
+  config:
+    - node.type.place
   module:
     - node
 id: place
@@ -11,7 +13,6 @@ selection_criteria:
   22b85b39-bf4f-427f-bcfe-97cb8db06e21:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 22b85b39-bf4f-427f-bcfe-97cb8db06e21
     context_mapping:
       node: node
     bundles:

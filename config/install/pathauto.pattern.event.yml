@@ -1,6 +1,8 @@
 langcode: en
 status: true
 dependencies:
+  config:
+    - node.type.event
   module:
     - node
 id: event
@@ -11,7 +13,6 @@ selection_criteria:
   8db7a319-41a5-4f2c-9cca-bcb6ce3404d5:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 8db7a319-41a5-4f2c-9cca-bcb6ce3404d5
     context_mapping:
       node: node
     bundles:

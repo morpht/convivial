@@ -1,6 +1,8 @@
 langcode: en
 status: true
 dependencies:
+  config:
+    - node.type.article
   module:
     - node
 id: article
@@ -11,7 +13,6 @@ selection_criteria:
   9429dac5-e33c-4f4c-bd10-03b49fe9c5f8:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 9429dac5-e33c-4f4c-bd10-03b49fe9c5f8
     context_mapping:
       node: node
     bundles:
