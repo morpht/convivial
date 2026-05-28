@@ -113,7 +113,8 @@
     "npm-asset/jarallax": "^1.12.4",
     "npm-asset/jquery-ui-touch-punch": "^0.2.3",
     "npm-asset/scrollreveal": "^4.0.7",
-    "npm-asset/videojs-background": "^1.0"
+    "npm-asset/videojs-background": "^1.0",
+    "oomphinc/composer-installers-extender": "^2.0"
   },
   "require-dev": {
     "behat/mink": "^1.11",
@@ -146,6 +147,7 @@
       "cweagans/composer-patches": true,
       "dealerdirect/phpcodesniffer-composer-installer": true,
       "drupal/core-composer-scaffold": true,
+      "oomphinc/composer-installers-extender": true,
       "phpro/grumphp": true,
       "phpstan/extension-installer": true
     },
@@ -157,39 +159,6 @@
   "extra": {
     "composer-exit-on-patch-failure": true,
     "enable-patching": true,
-    "drupal-scaffold": {
-      "locations": {
-        "web-root": "./"
-      }
-    },
-    "installer-paths": {
-      "core": [
-        "type:drupal-core"
-      ],
-      "libraries/{$name}": [
-        "type:drupal-library",
-        "type:bower-asset",
-        "type:npm-asset"
-      ],
-      "modules/contrib/{$name}": [
-        "type:drupal-module"
-      ],
-      "profiles/contrib/{$name}": [
-        "type:drupal-profile"
-      ],
-      "themes/contrib/{$name}": [
-        "type:drupal-theme"
-      ],
-      "modules/custom/{$name}": [
-        "type:drupal-custom-module"
-      ],
-      "themes/custom/{$name}": [
-        "type:drupal-custom-theme"
-      ],
-      "drush/Commands/contrib/{$name}": [
-        "type:drupal-drush"
-      ]
-    },
     "patches": {
       "drupal/core": {
         "2309585 - There should be no output of default formatter for empty text field when summary has content": "https://www.drupal.org/files/issues/2018-07-19/empty_text_formatter_for_empty_fields-2309585-13.patch",

@@ -35,6 +35,7 @@ grumphp:
       triggered_by:
         - php
     securitychecker_composeraudit:
+      abandoned: ignore
       format: null
       locked: true
       no_dev: false
