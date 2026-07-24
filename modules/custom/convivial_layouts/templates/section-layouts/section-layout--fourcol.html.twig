@@ -36,7 +36,7 @@
 {% endset %}
 
 {% set render_layout %}
-  {% if content|render %}
+  {% if content|render|striptags|trim %}
     <div{{ attributes.addClass(classes) }}>
       <div class="layout__region-container">
         <div class="layout__region-row">

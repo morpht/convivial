@@ -23,7 +23,7 @@
 {% endset %}
 
 {% set render_layout %}
-  {% if content|render %}
+  {% if content|render|striptags|trim %}
     <div{{ attributes.addClass(classes) }}>
       {% if content.content|render %}
         <div{{ region_attributes.content.addClass('layout__region', 'layout__region--content', 'main-content') }}>
