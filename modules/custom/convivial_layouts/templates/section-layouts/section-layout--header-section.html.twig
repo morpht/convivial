@@ -59,7 +59,7 @@
 {% endset %}
 
 {% set render_layout %}
-  {% if content %}
+  {% if content|render|striptags|trim %}
     <div{{ attributes.addClass(classes) }}>
       <div class="hero-banner__container">
         <div class="hero-banner__wrapper">
